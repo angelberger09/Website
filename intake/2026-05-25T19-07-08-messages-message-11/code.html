@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>message-11.html</title>
+<style>
+  :root { color-scheme: dark; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  body { margin: 0; min-height: 100vh; background: #050505; color: #f5f5f5; }
+  main { max-width: 1200px; margin: 0 auto; padding: clamp(16px, 3vw, 40px); }
+  h1 { margin: 0 0 16px; font: 700 clamp(22px, 3vw, 36px)/1.1 system-ui, sans-serif; }
+  p { margin: 0 0 24px; color: #a7a7a7; font: 15px/1.5 system-ui, sans-serif; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: clamp(14px, 2vw, 24px); border: 1px solid #2a2a2a; border-radius: 8px; background: #0b0b0b; line-height: 1.55; font-size: clamp(12px, 1.35vw, 15px); }
+</style>
+</head>
+<body>
+<main>
+<h1>message-11.html</h1>
+<p>React/JSX source imported from message (11).txt. Displayed as source for review because it is not a standalone HTML document.</p>
+<pre>import React, { useState, useEffect, useRef } from 'react';
+
+// --- CUSTOM FONTS &amp; GLOBAL ANIMATIC KEYFRAMES ---
+const globalStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&amp;family=Syne:wght@700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;700&amp;display=swap');
+
+  /* Custom Typography Classes */
+  .font-title { font-family: 'Syne', sans-serif; }
+  .font-body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-serif-editorial { font-family: 'Playfair Display', serif; }
+  .font-mono-tag { font-family: 'Space Grotesk', monospace; }
+
+  /* Smooth Custom Scroll Snap with points of pause */
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+  }
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* Paper post-process visual overlay */
+  .paper-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 40;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Slow drifting stars background style */
+  @keyframes drift {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-80px) rotate(360deg); }
+  }
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: drift 40s linear infinite;
+  }
+
+  /* Scroll Progress Bar indicator */
+  .scroll-progress {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Hide scrollbar completely to preserve clean interface */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
+
+// --- SAMPLE DATA ---
+const galleryItems = [
+  {
+    id: 1,
+    title: 'Shadow &amp; Plaster',
+    category: 'Material Study',
+    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&amp;w=800&amp;auto=format&amp;fit=crop',
+    text: 'An exploration of minimalist forms in natural light. Sculptural objects set against lime-washed plaster walls, catching the low autumn sun.'
+  },
+  {
+    id: 2,
+    title: 'Organic Structure',
+    category: 'Spatial Design',
+    src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&amp;w=800&amp;auto=format&amp;fit=crop',
+    text: 'Where raw timber meets machined metal. This installation is a testament to the relationship between soft natural elements and architectural precision.'
+  },
+  {
+    id: 3,
+    title: 'Silent Geometry',
+    category: 'Atmospheric Art',
+    src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&amp;w=800&amp;auto=format&amp;fit=crop',
+    text: 'Capturing the geometric rhythm of a quiet studio environment in Paris. The repetitive shadows compose a silent, comforting graphic framework.'
+  },
+  {
+    id: 4,
+    title: 'Vapor &amp; Glass',
+    category: 'Object Design',
+    src: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&amp;w=800&amp;auto=format&amp;fit=crop',
+    text: 'Light refraction shifting through layers of hand-blown glass and warm steam. A balance between clarity and complete architectural abstraction.'
+  }
+];
+
+const blogPosts = [
+  {
+    id: 1,
+    title: 'The Resonance of Solitude',
+    excerpt: 'Exploring quiet spaces and the physical architecture of creative recovery inside modern working ateliers.',
+    category: '[ Space ]',
+    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+    date: '12.04.2026'
+  },
+  {
+    id: 2,
+    title: 'Tactile Luxuries &amp; Physical Objects',
+    excerpt: 'Why digital fatigue is driving a silent renaissance of textured cotton paper, micro-mechanical tools, and physical interfaces.',
+    category: '[ Materials ]',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+    date: '28.03.2026'
+  },
+  {
+    id: 3,
+    title: 'The Atelier Diaries',
+    excerpt: 'A physical record of chemical, structural, and spatial investigations performed weekly in our secluded woodland laboratory.',
+    category: '[ Practice ]',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+    date: '02.02.2026'
+  }
+];
+
+const servicesList = [
+  {
+    id: 'sd',
+    num: '01',
+    title: 'Spatial Architecture &amp; Curation',
+    description: 'We orchestrate residential interiors, micro-ateliers, and gallery installations with physical materials, balanced volume, and sensory lighting design.',
+    skills: ['Volume Studies', 'Material Mapping', 'Exhibition Architecture']
+  },
+  {
+    id: 'cd',
+    num: '02',
+    title: 'Creative Direction &amp; Identity Systems',
+    description: 'Designing raw, emotional brand identities and editorial publications. Every project focuses on custom typography, high-grade paper, and visual restraint.',
+    skills: ['Visual Systems', 'Editorial Design', 'Material Sourcing']
+  },
+  {
+    id: 'od',
+    num: '03',
+    title: 'Bespoke Objects &amp; Functional Sculpture',
+    description: 'Crafting objects that float between function and sculpture, including hand-blown smoke glass, cast volcanic basalt pieces, and raw steel furniture.',
+    skills: ['Material Prototyping', 'Limited Runs', 'Architectural Furniture']
+  }
+];
+
+const productList = [
+  {
+    id: 'chronos',
+    title: 'Chronos Sandglass',
+    subtitle: 'Batch No. 04',
+    price: '$220',
+    desc: 'Hand-blown smoky grey glass filled with ultra-fine volcanic silica sand. Calibrated for 20 minutes of tactile reflection.',
+    img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&amp;w=600&amp;auto=format&amp;fit=crop'
+  },
+  {
+    id: 'journal',
+    title: 'Atelier Layflat Journal',
+    subtitle: 'Batch No. 12',
+    price: '$45',
+    desc: 'Smyth-sewn spine using 120gsm unbleached organic cotton rag paper. Deep charcoal heavy-weight cardstock wrapper.',
+    img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&amp;w=600&amp;auto=format&amp;fit=crop'
+  },
+  {
+    id: 'monolith',
+    title: 'Monolithic Vessel',
+    subtitle: 'Batch No. 01',
+    price: '$185',
+    desc: 'Chiseled obsidian basalt holder with hand-finished bronze insert. Designed for premium raw incense sticks.',
+    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&amp;w=600&amp;auto=format&amp;fit=crop'
+  }
+];
+
+// --- Main App Component ---
+export default function App() {
+  const [activeSection, setActiveSection] = useState('home');
+  const [starCount] = useState(45);
+  const containerRef = useRef(null);
+
+  // Home Page Interactive Frame states
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHeroHovered, setIsHeroHovered] = useState(false);
+
+  // Animatic stages for Home page intro sequences
+  const [animStage, setAnimStage] = useState(0); // 0: Start, 1: Move Name Up, 2: Reveal Content
+
+  // Gallery Modal
+  const [activePolaroid, setActivePolaroid] = useState(null);
+
+  // Contact Form Feedback
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [formSuccess, setFormSuccess] = useState(false);
+
+  // Product modal / inquiry sequence
+  const [inquiredProduct, setInquiredProduct] = useState(null);
+
+  // Setup three-stage animatic sequence on mount
+  useEffect(() =&gt; {
+    // Stage 0 -&gt; 1: Slide name upward after 1.2 seconds
+    const timer1 = setTimeout(() =&gt; {
+      setAnimStage(1);
+    }, 1200);
+
+    // Stage 1 -&gt; 2: Reveal the secondary hero modules and tags
+    const timer2 = setTimeout(() =&gt; {
+      setAnimStage(2);
+    }, 2000);
+
+    return () =&gt; {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
+  // Set up Scroll Snapping &amp; Section tracking with IntersectionObserver
+  useEffect(() =&gt; {
+    const sections = ['home', 'gallery', 'blog', 'services', 'products', 'contact'];
+    const observers = [];
+
+    sections.forEach((secId) =&gt; {
+      const el = document.getElementById(secId);
+      if (el) {
+        const observer = new IntersectionObserver(
+          ([entry]) =&gt; {
+            if (entry.isIntersecting) {
+              setActiveSection(secId);
+            }
+          },
+          { threshold: 0.45 }
+        );
+        observer.observe(el);
+        observers.push({ observer, el });
+      }
+    });
+
+    return () =&gt; {
+      observers.forEach(({ observer, el }) =&gt; observer.unobserve(el));
+    };
+  }, []);
+
+  // Handle Parallax shift for Home Atelier Frame
+  const handleHeroMouseMove = (e) =&gt; {
+    const rect = e.currentTarget.getBoundingClientRect();
+    // Normalize coordinates to range of -0.5 to 0.5
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMousePos({ x: x * 18, y: y * 18 }); // max offset 18px
+  };
+
+  const handleHeroMouseLeave = () =&gt; {
+    setIsHeroHovered(false);
+    setMousePos({ x: 0, y: 0 });
+  };
+
+  // Smooth scroll helper
+  const navigateTo = (id) =&gt; {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Form submit simulated action
+  const handleContactSubmit = (e) =&gt; {
+    e.preventDefault();
+    if (!formState.name || !formState.email) return;
+    setFormSuccess(true);
+    setTimeout(() =&gt; {
+      setFormSuccess(false);
+      setFormState({ name: '', email: '', message: '' });
+    }, 5000);
+  };
+
+  return (
+    &lt;div className="bg-[#0b0914] text-white overflow-hidden relative selection:bg-purple-900/50 selection:text-purple-200"&gt;
+      &lt;style dangerouslySetInnerHTML={{ __html: globalStyles }} /&gt;
+
+      {/* --- BACKGROUND LAYER: STAR FIELD --- */}
+      &lt;div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40"&gt;
+        {[...Array(starCount)].map((_, i) =&gt; {
+          const style = {
+            width: `${Math.random() * 2 + 1}px`,
+            height: `${Math.random() * 2 + 1}px`,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 8}s`,
+            animationDuration: `${25 + Math.random() * 30}s`,
+            opacity: Math.random() * 0.7 + 0.1,
+          };
+          return &lt;div key={i} className="star" style={style} /&gt;;
+        })}
+      &lt;/div&gt;
+
+      {/* --- BG GRADIENT SHIFT EFFECT --- */}
+      &lt;div className="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-950/20 via-slate-950/80 to-[#050308]" /&gt;
+
+      {/* --- VISUAL-ONLY POST-PROCESS PAPER TEXTURE OVERLAY --- */}
+      &lt;div className="paper-overlay" /&gt;
+
+      {/* --- ANALOG SIDE SCROLLER DOT INDICATORS --- */}
+      &lt;nav className="scroll-progress hidden md:flex"&gt;
+        {['home', 'gallery', 'blog', 'services', 'products', 'contact'].map((id, index) =&gt; (
+          &lt;button
+            key={id}
+            onClick={() =&gt; navigateTo(id)}
+            className="group relative flex items-center justify-center p-2"
+            aria-label={`Scroll to ${id}`}
+          &gt;
+            &lt;span className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ease-out 
+              ${activeSection === id ? 'bg-white scale-[1.8] shadow-lg shadow-white/30' : 'bg-white/20 group-hover:bg-white/50 scale-100'}
+            `} /&gt;
+            &lt;span className="absolute left-8 px-2 py-0.5 rounded text-[10px] font-mono-tag tracking-widest text-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase"&gt;
+              {id}
+            &lt;/span&gt;
+          &lt;/button&gt;
+        ))}
+      &lt;/nav&gt;
+
+      {/* --- SYSTEM SCROLL CONTAINER --- */}
+      &lt;div className="snap-container no-scrollbar z-10 relative" ref={containerRef}&gt;
+
+        {/* ================= HOME SECTION ================= */}
+        &lt;section id="home" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-12"&gt;
+          {/* Top spacer */}
+          &lt;div className="h-6" /&gt;
+
+          {/* Centered Composition Core */}
+          &lt;div className="w-full max-w-4xl flex flex-col items-center justify-center relative"&gt;
+            
+            {/* Stage Title Container */}
+            &lt;div className="w-full flex flex-col items-center text-center z-20 pointer-events-none mb-10"&gt;
+              {/* Main Name Heading with 3-Stage Animatic upward transition */}
+              &lt;h1 className={`font-title font-bold text-5xl sm:text-7xl md:text-[90px] leading-none tracking-tight text-white select-none transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]
+                ${animStage === 0 ? 'translate-y-[15vh] scale-105 opacity-100' : 'translate-y-0 scale-100 opacity-100'}
+              `}&gt;
+                A. BERGER
+              &lt;/h1&gt;
+
+              {/* Subtitle with reveal */}
+              &lt;p className={`font-mono-tag text-xs md:text-sm tracking-[0.35em] text-white/60 uppercase mt-4 transition-all duration-[1000ms] ease-out delay-500
+                ${animStage &gt;= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+              `}&gt;
+                A DIVERSE CREATIVE
+              &lt;/p&gt;
+            &lt;/div&gt;
+
+            {/* INTERACTIVE HERO ATELIER FRAME (Fade-color, unblur &amp; parallax on hover) */}
+            &lt;div 
+              onMouseMove={handleHeroMouseMove}
+              onMouseLeave={handleHeroMouseLeave}
+              onMouseEnter={() =&gt; setIsHeroHovered(true)}
+              className={`w-full max-w-3xl aspect-[1.85] rounded-lg overflow-hidden border border-white/10 relative transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl cursor-crosshair
+                ${animStage &gt;= 1 ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-12'}
+              `}
+            &gt;
+              {/* The Interior Photo Layer */}
+              &lt;img 
+                src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&amp;w=1600&amp;auto=format&amp;fit=crop"
+                alt="Angel Berger Atelier"
+                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{
+                  transform: `scale(${isHeroHovered ? 1.15 : 1.05}) translate(${mousePos.x}px, ${mousePos.y}px)`,
+                  filter: isHeroHovered 
+                    ? 'blur(0px) grayscale(10%) contrast(1.15)' 
+                    : 'blur(5px) grayscale(65%) contrast(0.9)',
+                  opacity: isHeroHovered ? 0.95 : 0.65
+                }}
+              /&gt;
+
+              {/* Interactive Fade-Color Vertical Gradients */}
+              &lt;div 
+                className="absolute inset-0 bg-gradient-to-t from-[#0b0914] via-black/40 to-[#0b0914] transition-opacity duration-700 pointer-events-none"
+                style={{ opacity: isHeroHovered ? 0.4 : 0.75 }}
+              /&gt;
+
+              {/* Frame Label (Analog Touch) */}
+              &lt;div className="absolute bottom-4 left-6 z-20 flex items-center gap-2 pointer-events-none"&gt;
+                &lt;span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" /&gt;
+                &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/70 uppercase"&gt;Atelier Session No. 85 // Interactive Frame&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Resolved Stage 3 Content Blocks (Staggered slide-in) */}
+            &lt;div className={`w-full max-w-2xl mt-12 grid grid-cols-2 gap-6 transition-all duration-[1200ms] ease-out delay-700
+              ${animStage === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}&gt;
+              &lt;div className="p-4 border-l border-white/10 flex flex-col justify-center"&gt;
+                &lt;span className="font-mono-tag text-[10px] text-white/40 tracking-widest uppercase mb-1"&gt;Curation&lt;/span&gt;
+                &lt;p className="font-serif-editorial text-sm italic text-white/70"&gt;"Form follows atmosphere, materials drive the consciousness."&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div className="p-4 border-l border-white/10 flex flex-col justify-center"&gt;
+                &lt;span className="font-mono-tag text-[10px] text-white/40 tracking-widest uppercase mb-1"&gt;Location&lt;/span&gt;
+                &lt;p className="font-mono-tag text-xs text-white/80"&gt;NE / ATELIER PORTFOLIO 2026&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+
+          {/* Animated Scroll Indicator (Analog vibe) */}
+          &lt;div className="flex flex-col items-center mt-6 group cursor-pointer" onClick={() =&gt; navigateTo('gallery')}&gt;
+            &lt;span className="font-mono-tag text-[10px] tracking-[0.25em] text-white/30 group-hover:text-white/60 transition-colors duration-300 uppercase mb-2"&gt;Scroll To View Archives&lt;/span&gt;
+            &lt;div className="w-6 h-9 rounded-full border border-white/20 flex items-start justify-center p-1.5"&gt;
+              &lt;div className="w-1 h-2 bg-white/50 rounded-full animate-bounce" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ================= GALLERY SECTION ================= */}
+        &lt;section id="gallery" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-24"&gt;
+          &lt;div className="w-full max-w-5xl mt-8"&gt;
+            {/* Header Block */}
+            &lt;div className="flex flex-col items-center text-center mb-10"&gt;
+              &lt;span className="font-mono-tag text-xs tracking-[0.2em] text-white/40 uppercase mb-2"&gt;// CAPTURED ATMOSPHERES&lt;/span&gt;
+              &lt;h2 className="font-title text-3xl md:text-5xl tracking-tight text-white uppercase"&gt;Visual Archives&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Staggered Polaroid Table Grid */}
+            &lt;div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4"&gt;
+              {galleryItems.map((item, index) =&gt; {
+                // Alternating analog layout tilt styles
+                const tilts = ['-hover:rotate-1 -rotate-2', 'hover:rotate-2 rotate-1', '-hover:rotate-2 rotate-2', 'hover:rotate-1 -rotate-1'];
+                return (
+                  &lt;div
+                    key={item.id}
+                    onClick={() =&gt; setActivePolaroid(item)}
+                    className={`bg-stone-100 p-3.5 pb-10 shadow-xl cursor-zoom-in transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:z-10 text-neutral-900 group ${tilts[index % tilts.length]}`}
+                  &gt;
+                    {/* Image First Container */}
+                    &lt;div className="aspect-square w-full bg-neutral-950 overflow-hidden relative mb-4"&gt;
+                      &lt;img 
+                        src={item.src} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110 duration-700"
+                      /&gt;
+                      &lt;div className="absolute inset-0 bg-neutral-900/10 mix-blend-color-burn pointer-events-none" /&gt;
+                    &lt;/div&gt;
+
+                    {/* Label/Title */}
+                    &lt;div className="flex flex-col items-center"&gt;
+                      &lt;span className="font-mono-tag text-[9px] text-neutral-400 tracking-wider uppercase mb-1"&gt;
+                        {item.category}
+                      &lt;/span&gt;
+                      &lt;h3 className="font-serif-editorial text-sm italic font-bold tracking-tight text-neutral-800 text-center leading-none"&gt;
+                        {item.title}
+                      &lt;/h3&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                );
+              })}
+            &lt;/div&gt;
+            
+            {/* Meaningful visual filler spacer */}
+            &lt;div className="mt-14 w-full flex justify-center items-center gap-4 opacity-20"&gt;
+              &lt;div className="h-px w-24 bg-white" /&gt;
+              &lt;div className="w-1.5 h-1.5 rounded-full bg-white" /&gt;
+              &lt;div className="h-px w-24 bg-white" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          {/* Section Indicator */}
+          &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/30 uppercase mt-2"&gt;Section 02 // Gallery Grid&lt;/span&gt;
+        &lt;/section&gt;
+
+        {/* ================= BLOG SECTION ================= */}
+        &lt;section id="blog" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-24"&gt;
+          &lt;div className="w-full max-w-4xl mt-8"&gt;
+            {/* Heading */}
+            &lt;div className="flex flex-col items-center text-center mb-12"&gt;
+              &lt;span className="font-mono-tag text-xs tracking-[0.2em] text-white/40 uppercase mb-2"&gt;// PRINTED ESSAYS&lt;/span&gt;
+              &lt;h2 className="font-title text-3xl md:text-5xl tracking-tight text-white uppercase"&gt;Editorial Blog&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Editorial Row Grid */}
+            &lt;div className="flex flex-col gap-6"&gt;
+              {blogPosts.map((post) =&gt; (
+                &lt;article 
+                  key={post.id}
+                  className="group flex flex-col md:flex-row items-center gap-6 p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 cursor-pointer"
+                &gt;
+                  {/* Visual Image Preview */}
+                  &lt;div className="w-full md:w-44 aspect-video md:aspect-[4/3] rounded overflow-hidden bg-black flex-shrink-0"&gt;
+                    &lt;img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-70 group-hover:opacity-90"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  {/* Text Details Stretched to prioritize clean look */}
+                  &lt;div className="flex-grow flex flex-col justify-between h-full"&gt;
+                    &lt;div&gt;
+                      &lt;div className="flex justify-between items-center mb-2"&gt;
+                        &lt;span className="font-mono-tag text-[10px] text-white/40 tracking-wider uppercase"&gt;
+                          {post.category}
+                        &lt;/span&gt;
+                        &lt;span className="font-mono-tag text-[10px] text-white/30"&gt;
+                          {post.date}
+                        &lt;/span&gt;
+                      &lt;/div&gt;
+                      &lt;h3 className="font-serif-editorial text-lg md:text-xl font-bold tracking-tight text-white/90 group-hover:text-white transition-colors duration-300"&gt;
+                        {post.title}
+                      &lt;/h3&gt;
+                      &lt;p className="font-body text-xs text-white/50 font-light mt-2 line-clamp-2 md:line-clamp-none"&gt;
+                        {post.excerpt}
+                      &lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  {/* Analog visual tag indicator */}
+                  &lt;div className="hidden md:flex flex-col items-end justify-center self-stretch pr-4"&gt;
+                    &lt;span className="font-mono-tag text-xs text-white/20 group-hover:text-white/80 transition-colors duration-300"&gt;READ →&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/article&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/30 uppercase"&gt;Section 03 // Journal Pieces&lt;/span&gt;
+        &lt;/section&gt;
+
+        {/* ================= SERVICES SECTION ================= */}
+        &lt;section id="services" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-24"&gt;
+          &lt;div className="w-full max-w-4xl mt-8"&gt;
+            {/* Header */}
+            &lt;div className="flex flex-col items-center text-center mb-12"&gt;
+              &lt;span className="font-mono-tag text-xs tracking-[0.2em] text-white/40 uppercase mb-2"&gt;// CAPABILITIES&lt;/span&gt;
+              &lt;h2 className="font-title text-3xl md:text-5xl tracking-tight text-white uppercase"&gt;Services&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Visual Modules Rows */}
+            &lt;div className="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;
+              {servicesList.map((service) =&gt; (
+                &lt;div 
+                  key={service.id}
+                  className="group relative p-8 rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.03] to-transparent hover:from-white/[0.06] transition-all duration-500 flex flex-col justify-between"
+                &gt;
+                  &lt;div&gt;
+                    {/* Module Counter */}
+                    &lt;span className="font-mono-tag text-2xl font-light text-white/10 group-hover:text-white/30 transition-colors duration-300"&gt;
+                      {service.num}
+                    &lt;/span&gt;
+                    
+                    {/* Service Name */}
+                    &lt;h3 className="font-title text-lg tracking-tight text-white/90 group-hover:text-white mt-4 mb-3"&gt;
+                      {service.title}
+                    &lt;/h3&gt;
+
+                    {/* Simple Divider */}
+                    &lt;div className="w-12 h-px bg-white/20 group-hover:w-full transition-all duration-500 ease-out mb-4" /&gt;
+
+                    {/* Short Description */}
+                    &lt;p className="font-body text-xs text-white/60 font-light leading-relaxed"&gt;
+                      {service.description}
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                  {/* Skills/Tags listed */}
+                  &lt;div className="mt-8 flex flex-wrap gap-1.5"&gt;
+                    {service.skills.map((skill, i) =&gt; (
+                      &lt;span key={i} className="font-mono-tag text-[8px] bg-white/5 border border-white/5 text-white/40 px-2 py-0.5 rounded-full uppercase"&gt;
+                        {skill}
+                      &lt;/span&gt;
+                    ))}
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+
+            {/* Meaningful visual placeholder fills */}
+            &lt;div className="mt-12 flex justify-center"&gt;
+              &lt;div className="w-full max-w-sm h-12 bg-white/[0.02] border border-white/5 rounded-full flex items-center justify-between px-6"&gt;
+                &lt;span className="font-mono-tag text-[9px] text-white/30 tracking-widest uppercase"&gt;Currently accepting Q3-Q4 Commissions&lt;/span&gt;
+                &lt;span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/30 uppercase"&gt;Section 04 // Studio Practice&lt;/span&gt;
+        &lt;/section&gt;
+
+        {/* ================= PRODUCTS SECTION ================= */}
+        &lt;section id="products" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-24"&gt;
+          &lt;div className="w-full max-w-4xl mt-8"&gt;
+            {/* Header */}
+            &lt;div className="flex flex-col items-center text-center mb-12"&gt;
+              &lt;span className="font-mono-tag text-xs tracking-[0.2em] text-white/40 uppercase mb-2"&gt;// PHYSICAL ARTIFACTS&lt;/span&gt;
+              &lt;h2 className="font-title text-3xl md:text-5xl tracking-tight text-white uppercase"&gt;The Store&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Product Cards Layout */}
+            &lt;div className="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;
+              {productList.map((prod) =&gt; (
+                &lt;div 
+                  key={prod.id}
+                  className="group bg-white/[0.01] border border-white/5 rounded-lg p-4 flex flex-col justify-between hover:border-white/15 transition-all duration-500"
+                &gt;
+                  &lt;div&gt;
+                    {/* Visual Showcase (Image driven first) */}
+                    &lt;div className="aspect-[5/4] w-full bg-black overflow-hidden rounded mb-4 relative"&gt;
+                      &lt;img 
+                        src={prod.img} 
+                        alt={prod.title} 
+                        className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                      /&gt;
+                      &lt;div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-mono-tag text-white/90 border border-white/10 uppercase"&gt;
+                        {prod.subtitle}
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    {/* Metadata */}
+                    &lt;div className="flex justify-between items-baseline mb-2"&gt;
+                      &lt;h3 className="font-title text-base text-white/90 tracking-tight group-hover:text-white transition-colors duration-300"&gt;
+                        {prod.title}
+                      &lt;/h3&gt;
+                      &lt;span className="font-mono-tag text-xs text-white/80 font-bold"&gt;{prod.price}&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    {/* Description */}
+                    &lt;p className="font-body text-[11px] text-white/50 leading-relaxed font-light line-clamp-3"&gt;
+                      {prod.desc}
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                  {/* Analog Transparent Control Button */}
+                  &lt;div className="mt-6"&gt;
+                    &lt;button 
+                      onClick={() =&gt; setInquiredProduct(prod)}
+                      className="w-full py-2 bg-transparent hover:bg-white text-white hover:text-black border border-white/20 hover:border-white text-[11px] font-mono-tag tracking-wider uppercase rounded transition-all duration-300 active:scale-[0.98]"
+                    &gt;
+                      Inquire Artifact
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/30 uppercase"&gt;Section 05 // Tangibles&lt;/span&gt;
+        &lt;/section&gt;
+
+        {/* ================= CONTACT SECTION ================= */}
+        &lt;section id="contact" className="snap-section flex flex-col justify-between items-center py-16 px-4 md:px-24"&gt;
+          &lt;div className="w-full max-w-xl mt-8"&gt;
+            {/* Header */}
+            &lt;div className="flex flex-col items-center text-center mb-10"&gt;
+              &lt;span className="font-mono-tag text-xs tracking-[0.2em] text-white/40 uppercase mb-2"&gt;// ESTABLISH SIGNAL&lt;/span&gt;
+              &lt;h2 className="font-title text-3xl md:text-5xl tracking-tight text-white uppercase"&gt;Contact&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Centered Form / Glass Panel */}
+            &lt;div className="bg-white/[0.02] backdrop-blur-md border border-white/10 p-8 rounded-2xl shadow-2xl relative overflow-hidden"&gt;
+              {formSuccess ? (
+                &lt;div className="py-12 flex flex-col items-center text-center animate-fade-in"&gt;
+                  &lt;div className="w-12 h-12 rounded-full border border-emerald-500/50 flex items-center justify-center mb-6 bg-emerald-500/10"&gt;
+                    &lt;span className="text-emerald-400"&gt;✓&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;h3 className="font-title text-lg uppercase text-white tracking-wide"&gt;Signal Transmitted&lt;/h3&gt;
+                  &lt;p className="font-body text-xs text-white/50 mt-2 max-w-xs"&gt;Your transmission is received. Angel Berger will verify the parameters and respond shortly.&lt;/p&gt;
+                &lt;/div&gt;
+              ) : (
+                &lt;form onSubmit={handleContactSubmit} className="space-y-5"&gt;
+                  &lt;div className="space-y-1"&gt;
+                    &lt;label className="font-mono-tag text-[10px] tracking-widest text-white/50 uppercase block"&gt;Identifier Name&lt;/label&gt;
+                    &lt;input 
+                      type="text" 
+                      required
+                      value={formState.name}
+                      onChange={(e) =&gt; setFormState({...formState, name: e.target.value})}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:border-white/40 text-white transition-all duration-300" 
+                      placeholder="Your Name"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1"&gt;
+                    &lt;label className="font-mono-tag text-[10px] tracking-widest text-white/50 uppercase block"&gt;Digital Address (Email)&lt;/label&gt;
+                    &lt;input 
+                      type="email" 
+                      required
+                      value={formState.email}
+                      onChange={(e) =&gt; setFormState({...formState, email: e.target.value})}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:border-white/40 text-white transition-all duration-300" 
+                      placeholder="Your Address"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1"&gt;
+                    &lt;label className="font-mono-tag text-[10px] tracking-widest text-white/50 uppercase block"&gt;Project Brief Outline&lt;/label&gt;
+                    &lt;textarea 
+                      rows="3"
+                      value={formState.message}
+                      onChange={(e) =&gt; setFormState({...formState, message: e.target.value})}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:border-white/40 text-white transition-all duration-300 resize-none" 
+                      placeholder="Message context..."
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;button 
+                    type="submit"
+                    className="w-full py-3 bg-white text-black font-bold font-mono-tag text-xs tracking-widest uppercase rounded shadow-lg hover:bg-neutral-200 transition-colors duration-300 active:scale-[0.98]"
+                  &gt;
+                    Send Signal
+                  &lt;/button&gt;
+                &lt;/form&gt;
+              )}
+            &lt;/div&gt;
+
+            {/* Simple Direct Links Footer */}
+            &lt;div className="mt-10 flex justify-center gap-8 text-[11px] font-mono-tag tracking-wider text-white/40"&gt;
+              &lt;a href="#instagram" className="hover:text-white transition-colors"&gt;INSTAGRAM&lt;/a&gt;
+              &lt;a href="#vimeo" className="hover:text-white transition-colors"&gt;VIMEO&lt;/a&gt;
+              &lt;a href="#are.na" className="hover:text-white transition-colors"&gt;ARE.NA&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;span className="font-mono-tag text-[10px] tracking-widest text-white/30 uppercase mt-2"&gt;Section 06 // Terminal&lt;/span&gt;
+        &lt;/section&gt;
+
+      &lt;/div&gt;
+
+      {/* ================= FIXED NAVIGATION BAR ================= */}
+      {/* Minimalistic, Analog &amp; Reactive Page Bar at bottom */}
+      &lt;nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"&gt;
+        &lt;div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 flex items-center gap-2 md:gap-4 shadow-2xl"&gt;
+          {[
+            { id: 'home', label: 'Home' },
+            { id: 'gallery', label: 'Gallery' },
+            { id: 'blog', label: 'Blog' },
+            { id: 'services', label: 'Services' },
+            { id: 'products', label: 'Products' },
+            { id: 'contact', label: 'Contact' }
+          ].map((item) =&gt; {
+            const isActive = activeSection === item.id;
+            return (
+              &lt;button
+                key={item.id}
+                onClick={() =&gt; navigateTo(item.id)}
+                className={`group relative px-3 py-1.5 rounded-full transition-all duration-300 flex items-center justify-center
+                  ${isActive ? 'text-white' : 'text-white/45 hover:text-white/85'}
+                `}
+              &gt;
+                {/* Visual Active Capsule Backplate */}
+                {isActive &amp;&amp; (
+                  &lt;span className="absolute inset-0 bg-white/10 border border-white/25 rounded-full shadow-inner animate-pulse-slow pointer-events-none" /&gt;
+                )}
+                
+                &lt;span className="font-mono-tag text-[10px] font-bold tracking-widest uppercase relative z-10"&gt;
+                  {item.label}
+                &lt;/span&gt;
+
+                {/* Tactile indicator underline on Hover */}
+                {!isActive &amp;&amp; (
+                  &lt;span className="absolute bottom-0 w-0 h-0.5 bg-white/20 transition-all duration-300 group-hover:w-1/2" /&gt;
+                )}
+              &lt;/button&gt;
+            );
+          })}
+        &lt;/div&gt;
+      &lt;/nav&gt;
+
+      {/* ================= CUSTOM EXPANDED POLAROID OVERLAY ================= */}
+      {activePolaroid &amp;&amp; (
+        &lt;div 
+          onClick={() =&gt; setActivePolaroid(null)}
+          className="fixed inset-0 z-50 bg-[#07060ca0] backdrop-blur-md flex items-center justify-center p-4 transition-all duration-500"
+        &gt;
+          &lt;div 
+            onClick={(e) =&gt; e.stopPropagation()}
+            className="bg-[#f2f1ed] p-6 pb-20 rounded-sm shadow-2xl max-w-lg w-full relative border border-neutral-300 transform scale-100 transition-all duration-500 text-neutral-900"
+          &gt;
+            {/* Close Button Control */}
+            &lt;button 
+              onClick={() =&gt; setActivePolaroid(null)}
+              className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-900 font-mono-tag text-xs tracking-wider border border-neutral-200 hover:border-neutral-400 rounded-full px-2 py-1 transition-all"
+              aria-label="Close Polaroid"
+            &gt;
+              ✕ CLOSE
+            &lt;/button&gt;
+
+            {/* Immersive Image Display */}
+            &lt;div className="bg-neutral-950 w-full aspect-[4/3] overflow-hidden rounded-sm relative"&gt;
+              &lt;img 
+                src={activePolaroid.src} 
+                alt={activePolaroid.title} 
+                className="w-full h-full object-cover opacity-90"
+              /&gt;
+              &lt;div className="absolute inset-0 bg-neutral-900/10 mix-blend-color-burn" /&gt;
+            &lt;/div&gt;
+
+            {/* Structural Body Content */}
+            &lt;div className="mt-8 text-center px-4"&gt;
+              &lt;span className="font-mono-tag text-[10px] text-neutral-400 tracking-[0.25em] uppercase block mb-2"&gt;
+                {activePolaroid.category}
+              &lt;/span&gt;
+              &lt;h3 className="font-serif-editorial text-2xl font-bold italic tracking-tight text-neutral-800 mb-4"&gt;
+                {activePolaroid.title}
+              &lt;/h3&gt;
+              &lt;p className="font-body text-xs text-neutral-600 leading-relaxed font-light border-t border-neutral-200/60 pt-4"&gt;
+                {activePolaroid.text}
+              &lt;/p&gt;
+            &lt;/div&gt;
+
+            {/* Bottom Analog Print Tag */}
+            &lt;div className="absolute bottom-4 left-6 right-6 flex justify-between text-[8px] font-mono-tag text-neutral-400"&gt;
+              &lt;span&gt;PRINT REF // #00{activePolaroid.id}&lt;/span&gt;
+              &lt;span&gt;ANGEL BERGER PHOTO ARCHIVES&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+      {/* ================= PRODUCT INQUIRY OVERLAY ================= */}
+      {inquiredProduct &amp;&amp; (
+        &lt;div 
+          onClick={() =&gt; setInquiredProduct(null)}
+          className="fixed inset-0 z-50 bg-[#07060ca0] backdrop-blur-md flex items-center justify-center p-4 transition-all duration-500"
+        &gt;
+          &lt;div 
+            onClick={(e) =&gt; e.stopPropagation()}
+            className="bg-[#0f0c1c] border border-white/10 p-8 rounded-2xl shadow-2xl max-w-md w-full relative"
+          &gt;
+            &lt;button 
+              onClick={() =&gt; setInquiredProduct(null)}
+              className="absolute top-4 right-4 text-white/50 hover:text-white font-mono-tag text-xs"
+            &gt;
+              ✕
+            &lt;/button&gt;
+
+            &lt;h3 className="font-title text-xl text-white uppercase mb-1"&gt;Inquire Artifact&lt;/h3&gt;
+            &lt;p className="font-mono-tag text-xs text-white/40 tracking-wider mb-6"&gt;{inquiredProduct.title} // {inquiredProduct.subtitle}&lt;/p&gt;
+
+            &lt;div className="space-y-4"&gt;
+              &lt;p className="font-body text-xs text-white/60 leading-relaxed"&gt;
+                Our physical design batches are produced in limited numbers and individually signed and packed inside our atelier. Please confirm you would like to reserve a slot for this piece.
+              &lt;/p&gt;
+              &lt;div className="border border-white/10 p-4 rounded bg-white/[0.02]"&gt;
+                &lt;span className="font-mono-tag text-[10px] text-white/30 block mb-1"&gt;Reserve Unit Value&lt;/span&gt;
+                &lt;span className="font-title text-base text-white"&gt;{inquiredProduct.price}&lt;/span&gt;
+              &lt;/div&gt;
+
+              &lt;button 
+                onClick={() =&gt; {
+                  setInquiredProduct(null);
+                  navigateTo('contact');
+                }}
+                className="w-full py-3 bg-white hover:bg-neutral-200 text-black font-bold font-mono-tag text-xs tracking-widest uppercase rounded transition-colors duration-300"
+              &gt;
+                Proceed to Request Form
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+    &lt;/div&gt;
+  );
+}</pre>
+</main>
+</body>
+</html>

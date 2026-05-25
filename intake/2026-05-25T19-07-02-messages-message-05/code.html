@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>message-05.html</title>
+<style>
+  :root { color-scheme: dark; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  body { margin: 0; min-height: 100vh; background: #050505; color: #f5f5f5; }
+  main { max-width: 1200px; margin: 0 auto; padding: clamp(16px, 3vw, 40px); }
+  h1 { margin: 0 0 16px; font: 700 clamp(22px, 3vw, 36px)/1.1 system-ui, sans-serif; }
+  p { margin: 0 0 24px; color: #a7a7a7; font: 15px/1.5 system-ui, sans-serif; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: clamp(14px, 2vw, 24px); border: 1px solid #2a2a2a; border-radius: 8px; background: #0b0b0b; line-height: 1.55; font-size: clamp(12px, 1.35vw, 15px); }
+</style>
+</head>
+<body>
+<main>
+<h1>message-05.html</h1>
+<p>React/JSX source imported from message (5).txt. Displayed as source for review because it is not a standalone HTML document.</p>
+<pre>import React, { useState, useEffect, useRef } from 'react';
+import { X, ArrowRight, Camera, PenTool, Layout, Box, Compass, Shuffle, Target, Cpu } from 'lucide-react';
+
+// --- STYLES &amp; CORE SYSTEM ---
+const customStyles = `
+  /* Base Setup &amp; Snap Scrolling System */
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #07050f; /* Deep violet black */
+    color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* Scroll Snap Implementation for deliberate pause and focus */
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 120px 0;
+  }
+
+  /* Paper Overlay (Visual post-process layer) */
+  .paper-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 90;
+    mix-blend-mode: overlay;
+    opacity: 0.15; /* Slightly reduced for better text clarity */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Starfield Under the Page */
+  .starfield-container {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #1c1233 0%, #07050f 100%);
+  }
+  
+  .star {
+    position: absolute;
+    background-color: #a78bfa; /* Lavender colored stars */
+    border-radius: 50%;
+    opacity: 0;
+    animation: driftAndTwinkle var(--duration) ease-in-out infinite alternate;
+  }
+
+  @keyframes driftAndTwinkle {
+    0% { opacity: 0.05; transform: translateY(0px) scale(0.8); }
+    100% { opacity: 0.7; transform: translateY(-30px) scale(1.2); }
+  }
+
+  /* Analog UI Style Defaults */
+  .analog-btn {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    color: #d8b4fe;
+  }
+  .analog-btn:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(192, 132, 252, 0.7);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+  .analog-btn.active {
+    background: rgba(139, 92, 246, 0.25);
+    border-color: rgba(192, 132, 252, 0.9);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Interactive Hero Image Parallax Frame */
+  .hero-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: -30px; /* Extends bounds to prevent edge cropping on parallax */
+    background-image: url('https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(90%) blur(5px) brightness(0.4);
+    transition: filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s linear;
+    z-index: 1;
+  }
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(7, 5, 15, 0.95) 0%, rgba(7, 5, 15, 0.2) 100%);
+    z-index: 2;
+    transition: opacity 1.2s ease;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  /* Hero Interactive State Styles */
+  .hero-frame:hover .hero-bg {
+    filter: grayscale(10%) blur(0px) brightness(0.8);
+  }
+  .hero-frame:hover .hero-gradient {
+    opacity: 0.3;
+  }
+
+  /* Typography Design */
+  .title-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Tactile Polaroid Styling */
+  .polaroid-wrapper {
+    perspective: 1000px;
+  }
+  .polaroid {
+    background: #fdfdfd;
+    padding: 16px 16px 64px 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 40px rgba(0,0,0,0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,1);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background: #ececec;
+    filter: contrast(1.05) sepia(0.08) brightness(0.98);
+    transition: all 0.5s ease;
+  }
+  .polaroid:hover {
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
+  }
+  .polaroid:hover .polaroid-img {
+    filter: contrast(1.1) sepia(0) brightness(1.05);
+  }
+
+  /* Three-Stage Reveal System (Establish -&gt; Reveal -&gt; Resolve) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Delicate Glass Panel Components - Enhanced Clarity */
+  .glass-panel {
+    background: rgba(18, 14, 38, 0.65);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  /* Elegant Connection Loop Line for Process Step Cards */
+  .process-timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.6) 20%, rgba(167, 139, 250, 0.6) 80%, transparent);
+    z-index: 0;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(7, 5, 15, 0.95);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.4);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(167, 139, 250, 0.8);
+  }
+`;
+
+// --- DATA DICTIONARIES ---
+const NAV_LINKS = ['Home', 'Gallery', 'Blog', 'Services', 'Products', 'Process', 'Contact'];
+
+const GALLERY_IMAGES = [
+  { id: 1, url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80', title: 'Spatial Design', text: 'Minimal interior layouts emphasizing clean vectors, negative space, and physical-digital balance.', rotation: '-2.5deg' },
+  { id: 2, url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80', title: 'Atelier Studies', text: 'Documenting the raw sensory details of natural materials under changing morning light.', rotation: '2deg' },
+  { id: 3, url: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80', title: 'Visual Weights', text: 'Exploring the geometry of balance using stark sculptural structures and high-contrast forms.', rotation: '-1.5deg' },
+  { id: 4, url: 'https://images.unsplash.com/photo-1507149833265-60c372dac586?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80', title: 'Monochrome', text: 'High-contrast landscape and texture photography exploring delicate gradients.', rotation: '3deg' },
+];
+
+const BLOG_POSTS = [
+  { id: 1, date: 'Oct 12, 2025', category: 'Thoughts', title: 'The Value of Stillness in Design', excerpt: 'Reflecting on why deliberate pauses in user interfaces are as vital as the active content. When we force a user to stop and breathe, we give the work room to be truly felt.', img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80' },
+  { id: 2, date: 'Sep 28, 2025', category: 'Process', title: 'Returning to Analog Methods', excerpt: 'How incorporating paper grain and natural textures grounds visual portfolios in reality.', img: 'https://images.unsplash.com/photo-1455390582262-044cdead27d8?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80' },
+  { id: 3, date: 'Aug 14, 2025', category: 'Curation', title: 'Building a Visual Vocabulary', excerpt: 'A guide to choosing evocative aesthetics that communicate feeling instantly without words.', img: 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80' },
+];
+
+const SERVICES = [
+  { id: 1, number: '01', title: 'Art Direction', desc: 'Curating the overall stylistic language, photography tone, and brand layouts with an elegant, visual-first identity that commands attention without raising its voice.' },
+  { id: 2, number: '02', title: 'Spatial Curation', desc: 'Synthesizing spatial harmony, architectural layouts, and physical gallery installations that elevate negative space into a primary design element.' },
+  { id: 3, number: '03', title: 'Identity Systems', desc: 'Designing unified visual packages, utilizing custom analog typography, delicate geometric patterns, and rich editorial color palettes.' },
+];
+
+const PRODUCTS = [
+  { id: 1, name: 'Atelier Presets Vol. 1', price: '$45', type: 'Digital Preset Pack', img: 'https://images.unsplash.com/photo-1588665427918-2e5f3775f2eb?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80' },
+  { id: 2, name: 'Raw Paper Texture Library', price: '$20', type: 'Digital Scan Pack', img: 'https://images.unsplash.com/photo-1616628188550-808682f3926d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80' },
+  { id: 3, name: 'Monochrome Original Prints', price: '$120', type: 'Physical Print', img: 'https://images.unsplash.com/photo-1506806732259-39c2d0268443?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80' },
+];
+
+const PROCESS_STEPS = [
+  { id: 1, stepNumber: '01', title: 'Plan', icon: &lt;Compass size={26} className="text-sky-300" /&gt;, desc: 'Define the creative direction, visual goal, constraints, and intended feeling.' },
+  { id: 2, stepNumber: '02', title: 'Randomize', icon: &lt;Shuffle size={26} className="text-violet-300" /&gt;, desc: 'Explore unexpected variations, references, colors, compositions, and possibilities.' },
+  { id: 3, stepNumber: '03', title: 'Extract', icon: &lt;Target size={26} className="text-pink-300" /&gt;, desc: 'Identify the strongest patterns, useful ideas, and visual directions from the exploration.' },
+  { id: 4, stepNumber: '04', title: 'Execute', icon: &lt;Cpu size={26} className="text-emerald-300" /&gt;, desc: 'Build the final piece, refine the details, and turn the direction into finished work.' },
+];
+
+// --- STAR BACKGROUND COMPONENT ---
+const Starfield = () =&gt; {
+  const [stars, setStars] = useState([]);
+  useEffect(() =&gt; {
+    const starCount = 70;
+    const items = Array.from({ length: starCount }).map((_, i) =&gt; ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      size: `${Math.random() * 2.5 + 1}px`,
+      duration: `${Math.random() * 5 + 4}s`,
+      delay: `${Math.random() * 6}s`
+    }));
+    setStars(items);
+  }, []);
+
+  return (
+    &lt;div className="starfield-container"&gt;
+      {stars.map(star =&gt; (
+        &lt;div
+          key={star.id}
+          className="star"
+          style={{
+            left: star.left,
+            top: star.top,
+            width: star.size,
+            height: star.size,
+            '--duration': star.duration,
+            animationDelay: star.delay
+          }}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+};
+
+// --- EXPANDED POLAROID DIALOG COMPONENT ---
+const ExpandedPolaroid = ({ image, onClose }) =&gt; {
+  if (!image) return null;
+  return (
+    &lt;div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#07050f]/95 backdrop-blur-xl p-4 transition-all duration-300"&gt;
+      &lt;button 
+        onClick={onClose}
+        className="absolute top-8 right-8 analog-btn p-3.5 rounded-full text-white z-[101]"
+        aria-label="Close expanded Polaroid"
+      &gt;
+        &lt;X size={28} /&gt;
+      &lt;/button&gt;
+      &lt;div className="max-w-xl w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-500"&gt;
+        &lt;div className="bg-[#fdfdfd] p-6 pb-20 shadow-2xl relative w-full border border-gray-200"&gt;
+          &lt;img 
+            src={image.url} 
+            alt={image.title} 
+            className="w-full h-auto max-h-[60vh] object-contain filter contrast-105 sepia-[0.05]" 
+          /&gt;
+          &lt;div className="absolute bottom-6 left-0 right-0 text-center px-8"&gt;
+            &lt;h3 className="text-[#151124] title-serif text-3xl font-bold tracking-wide"&gt;{image.title}&lt;/h3&gt;
+            &lt;p className="text-gray-600 text-sm mt-3 max-w-sm mx-auto leading-relaxed"&gt;{image.text}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+// --- MAIN PORTFOLIO COMPONENT ---
+export default function App() {
+  const [activeSection, setActiveSection] = useState('Home');
+  const [expandedImage, setExpandedImage] = useState(null);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+  const sectionRefs = useRef({});
+
+  // Use Intersection Observer to sync active navigation and trigger animate-in
+  useEffect(() =&gt; {
+    const observerOptions = {
+      root: containerRef.current,
+      rootMargin: '-20% 0px -40% 0px',
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries) =&gt; {
+      entries.forEach((entry) =&gt; {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          setActiveSection(id);
+          
+          const reveals = entry.target.querySelectorAll('.reveal');
+          reveals.forEach((element, idx) =&gt; {
+            setTimeout(() =&gt; {
+              element.classList.add('active');
+            }, idx * 120);
+          });
+        }
+      });
+    }, observerOptions);
+
+    NAV_LINKS.forEach((id) =&gt; {
+      const el = document.getElementById(id);
+      if (el) {
+        sectionRefs.current[id] = el;
+        observer.observe(el);
+      }
+    });
+
+    return () =&gt; observer.disconnect();
+  }, []);
+
+  // Handle Home interactive workspace parallax positioning
+  const handleHeroMouseMove = (e) =&gt; {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setParallax({
+      x: (x / rect.width) * 20,
+      y: (y / rect.height) * 20,
+    });
+  };
+
+  const handleHeroMouseLeave = () =&gt; {
+    setParallax({ x: 0, y: 0 });
+  };
+
+  const navigateToSection = (id) =&gt; {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    &lt;&gt;
+      &lt;style dangerouslySetInnerHTML={{ __html: customStyles }} /&gt;
+      
+      &lt;Starfield /&gt;
+      &lt;div className="paper-overlay"&gt;&lt;/div&gt;
+
+      {/* Elegant Page Bar Header */}
+      &lt;nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-center pointer-events-none"&gt;
+        &lt;div className="flex flex-wrap justify-center gap-2 p-2 rounded-full glass-panel pointer-events-auto"&gt;
+          {NAV_LINKS.map(link =&gt; (
+            &lt;button
+              key={link}
+              onClick={() =&gt; navigateToSection(link)}
+              className={`analog-btn px-5 py-2 rounded-full text-xs font-semibold tracking-[0.2em] transition-all duration-300 ${activeSection === link ? 'active' : ''}`}
+            &gt;
+              {link}
+            &lt;/button&gt;
+          ))}
+        &lt;/div&gt;
+      &lt;/nav&gt;
+
+      &lt;ExpandedPolaroid image={expandedImage} onClose={() =&gt; setExpandedImage(null)} /&gt;
+
+      {/* Fluid Frame Container */}
+      &lt;div ref={containerRef} className="scroll-container w-full max-w-6xl mx-auto px-6 sm:px-12"&gt;
+        
+        {/* --- 1. HOME --- */}
+        &lt;section id="Home" className="snap-section"&gt;
+          &lt;div className="reveal w-full"&gt;
+            &lt;div 
+              className="hero-frame group"
+              onMouseMove={handleHeroMouseMove}
+              onMouseLeave={handleHeroMouseLeave}
+            &gt;
+              &lt;div 
+                className="hero-bg"
+                style={{
+                  transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0) scale(1.06)`,
+                }}
+              &gt;&lt;/div&gt;
+              &lt;div className="hero-gradient"&gt;&lt;/div&gt;
+              &lt;div className="hero-content px-4"&gt;
+                &lt;h1 className="title-serif text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-tight mb-4 select-none drop-shadow-lg"&gt;
+                  ANGEL BERGER
+                &lt;/h1&gt;
+                &lt;p className="text-sm sm:text-base tracking-[0.5em] uppercase text-violet-200 font-semibold select-none"&gt;
+                  A Diverse Creative
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 2. GALLERY --- */}
+        &lt;section id="Gallery" className="snap-section"&gt;
+          &lt;div className="w-full"&gt;
+            &lt;div className="reveal mb-16 text-center"&gt;
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-3"&gt;Visual Works&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl font-bold text-white mb-4"&gt;Selected Exhibition&lt;/h2&gt;
+              &lt;div className="h-px w-12 bg-violet-400/40 mx-auto"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"&gt;
+              {GALLERY_IMAGES.map((img) =&gt; (
+                &lt;div key={img.id} className="reveal polaroid-wrapper flex justify-center"&gt;
+                  &lt;div 
+                    className="polaroid"
+                    style={{ transform: `rotate(${img.rotation})` }}
+                    onClick={() =&gt; setExpandedImage(img)}
+                  &gt;
+                    &lt;img src={img.url} alt={img.title} className="polaroid-img" loading="lazy" /&gt;
+                    &lt;div className="mt-5 text-center"&gt;
+                      &lt;h4 className="text-[#1c1233] title-serif font-extrabold text-base tracking-wide"&gt;{img.title}&lt;/h4&gt;
+                      &lt;p className="text-gray-500 text-xs mt-1 tracking-wider uppercase font-semibold"&gt;Tap to expand&lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 3. BLOG --- */}
+        &lt;section id="Blog" className="snap-section"&gt;
+          &lt;div className="w-full"&gt;
+            {/* Left Aligned Header to diversify layout */}
+            &lt;div className="reveal mb-14 text-left border-l-2 border-violet-400/40 pl-6"&gt;
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-2"&gt;Thoughts &amp; Records&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl font-bold text-white"&gt;Journal Entries&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* Asymmetric Editorial Layout */}
+            &lt;div className="grid grid-cols-1 md:grid-cols-12 gap-10"&gt;
+              
+              {/* Featured Post */}
+              &lt;article className="reveal md:col-span-7 group cursor-pointer" onClick={() =&gt; navigateToSection('Contact')}&gt;
+                &lt;div className="overflow-hidden mb-6 border border-violet-500/20 rounded-md relative aspect-[4/3] shadow-lg"&gt;
+                  &lt;img 
+                    src={BLOG_POSTS[0].img} 
+                    alt={BLOG_POSTS[0].title} 
+                    className="w-full h-full object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  /&gt;
+                  &lt;div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 text-xs uppercase tracking-widest text-violet-200 border border-violet-500/30 rounded-sm"&gt;
+                    Featured
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="flex items-center gap-3 text-xs text-violet-300/80 mb-3 tracking-widest uppercase font-semibold"&gt;
+                  &lt;span&gt;{BLOG_POSTS[0].date}&lt;/span&gt;
+                  &lt;span className="w-1.5 h-1.5 rounded-full bg-violet-400/50"&gt;&lt;/span&gt;
+                  &lt;span&gt;{BLOG_POSTS[0].category}&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;h3 className="title-serif text-3xl text-white mb-4 group-hover:text-violet-300 transition-colors duration-300 font-bold"&gt;{BLOG_POSTS[0].title}&lt;/h3&gt;
+                &lt;p className="text-gray-300 text-sm leading-relaxed max-w-xl"&gt;{BLOG_POSTS[0].excerpt}&lt;/p&gt;
+              &lt;/article&gt;
+
+              {/* Stacked Smaller Posts */}
+              &lt;div className="md:col-span-5 flex flex-col gap-10"&gt;
+                {BLOG_POSTS.slice(1).map(post =&gt; (
+                  &lt;article key={post.id} className="reveal group cursor-pointer" onClick={() =&gt; navigateToSection('Contact')}&gt;
+                    &lt;div className="overflow-hidden mb-4 border border-violet-500/20 rounded-md relative aspect-video shadow-md"&gt;
+                      &lt;img 
+                        src={post.img} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      /&gt;
+                    &lt;/div&gt;
+                    &lt;div className="flex items-center gap-2 text-[10px] text-violet-300/80 mb-2 tracking-widest uppercase font-semibold"&gt;
+                      &lt;span&gt;{post.date}&lt;/span&gt;
+                      &lt;span className="w-1 h-1 rounded-full bg-violet-400/50"&gt;&lt;/span&gt;
+                      &lt;span&gt;{post.category}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h3 className="title-serif text-xl text-white mb-2 group-hover:text-violet-300 transition-colors duration-300 font-bold"&gt;{post.title}&lt;/h3&gt;
+                    &lt;p className="text-gray-400 text-xs leading-relaxed"&gt;{post.excerpt}&lt;/p&gt;
+                  &lt;/article&gt;
+                ))}
+              &lt;/div&gt;
+
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 4. SERVICES --- */}
+        &lt;section id="Services" className="snap-section"&gt;
+          &lt;div className="w-full"&gt;
+            &lt;div className="reveal mb-16 text-left border-l-2 border-violet-400/40 pl-6"&gt;
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-2"&gt;What I Offer&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl font-bold text-white"&gt;Creative Practices&lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* List Layout to break up the card monotony */}
+            &lt;div className="flex flex-col"&gt;
+              {SERVICES.map((srv) =&gt; (
+                &lt;div key={srv.id} className="reveal flex flex-col md:flex-row gap-6 md:gap-12 py-10 border-b border-violet-500/20 items-start hover:border-violet-400 transition-colors duration-500 group"&gt;
+                  &lt;div className="flex-shrink-0"&gt;
+                    &lt;span className="text-4xl md:text-6xl font-light text-violet-500/30 group-hover:text-violet-400/80 transition-colors font-serif italic"&gt;
+                      {srv.number}
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div className="flex-grow"&gt;
+                    &lt;h3 className="text-2xl font-bold text-white tracking-wide mb-3 group-hover:text-violet-200 transition-colors"&gt;{srv.title}&lt;/h3&gt;
+                    &lt;p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl"&gt;{srv.desc}&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;div className="hidden md:flex flex-shrink-0 items-center justify-center p-4 bg-violet-900/10 rounded-full border border-violet-500/10 group-hover:bg-violet-900/30 transition-colors"&gt;
+                    &lt;ArrowRight size={24} className="text-violet-400/50 group-hover:text-violet-300" /&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 5. PRODUCTS --- */}
+        &lt;section id="Products" className="snap-section"&gt;
+          &lt;div className="w-full"&gt;
+            &lt;div className="reveal mb-16 text-center"&gt;
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-3"&gt;Tangible Tools&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl font-bold text-white mb-4"&gt;Aesthetic Products&lt;/h2&gt;
+              &lt;div className="h-px w-12 bg-violet-400/40 mx-auto"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div className="grid grid-cols-1 md:grid-cols-3 gap-10"&gt;
+              {PRODUCTS.map(product =&gt; (
+                &lt;div key={product.id} className="reveal group bg-slate-900/40 p-3 rounded-lg border border-violet-500/15 hover:border-violet-400/50 transition-colors shadow-lg"&gt;
+                  &lt;div className="relative overflow-hidden mb-5 rounded-md bg-black"&gt;
+                    &lt;img 
+                      src={product.img} 
+                      alt={product.name}
+                      className="w-full h-64 object-cover filter brightness-75 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                      loading="lazy"
+                    /&gt;
+                    &lt;div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 text-[10px] uppercase tracking-widest text-violet-200 border border-violet-500/30 rounded-sm font-semibold"&gt;
+                      {product.type}
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div className="flex justify-between items-center px-2 pb-2"&gt;
+                    &lt;div&gt;
+                      &lt;h3 className="text-white text-base font-bold tracking-wide mb-1.5 group-hover:text-violet-200 transition-colors"&gt;{product.name}&lt;/h3&gt;
+                      &lt;p className="text-violet-400 text-sm font-semibold"&gt;{product.price}&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;button 
+                      onClick={() =&gt; navigateToSection('Contact')}
+                      className="analog-btn w-11 h-11 rounded-full flex items-center justify-center shadow-md"
+                      title="Acquire Item"
+                    &gt;
+                      &lt;Box size={18} /&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 6. PROCESS --- */}
+        &lt;section id="Process" className="snap-section"&gt;
+          &lt;div className="w-full"&gt;
+            &lt;div className="reveal mb-20 text-center"&gt;
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-3"&gt;How I Work&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl font-bold text-white mb-4"&gt;Creative Process&lt;/h2&gt;
+              &lt;div className="h-px w-12 bg-violet-400/40 mx-auto"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div className="relative mt-8"&gt;
+              {/* Horizontal connecting line hidden on mobile, visible on desktop */}
+              &lt;div className="hidden md:block process-timeline-line"&gt;&lt;/div&gt;
+
+              &lt;div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10"&gt;
+                {PROCESS_STEPS.map((step) =&gt; (
+                  &lt;div key={step.id} className="reveal"&gt;
+                    &lt;div className="glass-panel p-8 rounded-lg h-full flex flex-col items-center text-center relative hover:border-violet-400 transition-all duration-300 transform hover:-translate-y-2"&gt;
+                      
+                      {/* Step Number Badge */}
+                      &lt;div className="absolute -top-4 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 px-4 py-1 bg-slate-900 border border-violet-500/30 text-xs tracking-widest text-violet-200 rounded-full font-mono shadow-lg font-bold"&gt;
+                        {step.stepNumber}
+                      &lt;/div&gt;
+
+                      {/* Icon */}
+                      &lt;div className="p-4 bg-violet-950/40 border border-violet-400/20 rounded-full mt-4 mb-5 text-white shadow-inner"&gt;
+                        {step.icon}
+                      &lt;/div&gt;
+
+                      {/* Content */}
+                      &lt;h3 className="text-lg font-bold text-white tracking-wide mb-3"&gt;{step.title}&lt;/h3&gt;
+                      &lt;p className="text-gray-300 text-sm leading-relaxed"&gt;{step.desc}&lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                ))}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* --- 7. CONTACT --- */}
+        &lt;section id="Contact" className="snap-section"&gt;
+          &lt;div className="w-full max-w-2xl mx-auto text-center"&gt;
+            &lt;div className="reveal glass-panel p-10 sm:p-16 rounded-xl relative overflow-hidden shadow-2xl border border-violet-400/20"&gt;
+              &lt;div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-transparent pointer-events-none"&gt;&lt;/div&gt;
+              
+              &lt;span className="text-xs tracking-[0.3em] uppercase text-violet-400 font-bold block mb-3"&gt;Get in touch&lt;/span&gt;
+              &lt;h2 className="title-serif text-4xl sm:text-5xl mb-5 text-white relative z-10 font-bold"&gt;Initiate Dialogue&lt;/h2&gt;
+              &lt;p className="text-gray-300 mb-10 text-sm tracking-wide relative z-10 max-w-md mx-auto leading-relaxed"&gt;
+                Available for worldwide architectural collaborations, editorial commissions, and sensory visual setups.
+              &lt;/p&gt;
+              
+              &lt;form className="flex flex-col gap-5 relative z-10 text-left"&gt;
+                &lt;input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  className="w-full bg-violet-950/20 border border-violet-500/30 p-4 text-white placeholder-gray-400 focus:outline-none focus:border-violet-300 transition-colors rounded-md text-sm shadow-inner"
+                  required
+                /&gt;
+                &lt;input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="w-full bg-violet-950/20 border border-violet-500/30 p-4 text-white placeholder-gray-400 focus:outline-none focus:border-violet-300 transition-colors rounded-md text-sm shadow-inner"
+                  required
+                /&gt;
+                &lt;textarea 
+                  placeholder="What shall we build together?" 
+                  rows="4"
+                  className="w-full bg-violet-950/20 border border-violet-500/30 p-4 text-white placeholder-gray-400 focus:outline-none focus:border-violet-300 transition-colors rounded-md text-sm resize-none shadow-inner"
+                  required
+                &gt;&lt;/textarea&gt;
+                
+                &lt;button 
+                  type="submit" 
+                  className="analog-btn py-4 w-full flex items-center justify-center gap-3 mt-3 rounded-md font-bold text-sm transition-transform hover:scale-[1.02] shadow-lg"
+                &gt;
+                  SEND ENQUIRY &lt;ArrowRight size={18} /&gt;
+                &lt;/button&gt;
+              &lt;/form&gt;
+
+              &lt;div className="mt-12 pt-8 border-t border-violet-500/20 flex justify-center gap-8 relative z-10"&gt;
+                &lt;a href="#" className="text-violet-300/80 hover:text-white text-xs font-bold tracking-widest uppercase transition-colors"&gt;Instagram&lt;/a&gt;
+                &lt;a href="#" className="text-violet-300/80 hover:text-white text-xs font-bold tracking-widest uppercase transition-colors"&gt;Twitter&lt;/a&gt;
+                &lt;a href="#" className="text-violet-300/80 hover:text-white text-xs font-bold tracking-widest uppercase transition-colors"&gt;Read.cv&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div className="reveal mt-16 text-xs font-semibold text-gray-500 tracking-widest uppercase"&gt;
+              © 2026 Angel Berger. Crafted as a tactile experience.
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+      &lt;/div&gt;
+    &lt;/&gt;
+  );
+}</pre>
+</main>
+</body>
+</html>

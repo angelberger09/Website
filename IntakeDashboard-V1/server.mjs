@@ -179,6 +179,6 @@ createServer(async (request, response) => {
       }),
     );
   }
-}).listen(port, () => {
+}).listen(port, "127.0.0.1", () => {
   console.log(`IntakeDashboard-V1 running at http://127.0.0.1:${port}`);
 });

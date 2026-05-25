@@ -1,0 +1,5 @@
+[      60ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ about:blank:0
+[     151ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ http://127.0.0.1:3011/preview?entry=index.html:0
+[    3858ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ http://127.0.0.1:3011/preview?entry=downloads%2Fwindow_walker.html:0
+[   13559ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ http://127.0.0.1:3011/preview?entry=downloads%2Fmasked_layers_lilacs_mountains%2Flayer_demo.html:0
+[   13564ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:3011/preview-assets/downloads/1a7eb36a-cc68-4ea4-8732-c2864cd5614e.png:0

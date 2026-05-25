@@ -1,0 +1,88 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: IntakeDashboard-V1
+      - generic [ref=e8]: Ready
+    - combobox "Review entry" [ref=e10]:
+      - option "index.html" [selected]
+      - option "artifact-study.html"
+      - option "downloads/masked_layers_lilacs_mountains/layer_demo.html"
+      - option "downloads/window_walker.html"
+    - generic [ref=e11]:
+      - generic [ref=e12]: 127.0.0.1:3011
+      - button "Open selected preview" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+      - button "Refresh entries" [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+  - generic [ref=e23]:
+    - region "Sandbox preview" [ref=e24]:
+      - heading "Play (Sandbox Preview)" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - iframe [ref=e27]:
+          - main [ref=f14e2]:
+            - generic [ref=f14e3]: ✣ Drag to curate
+            - article [ref=f14e4]:
+              - img "Sand ripples" [ref=f14e5]
+              - strong [ref=f14e6]: A4. Sand Ripples
+              - generic [ref=f14e7]: Elemental
+            - article [ref=f14e8]:
+              - img "Fossil imprint" [ref=f14e9]
+              - strong [ref=f14e10]: B7. Fossil Imprint
+              - generic [ref=f14e11]: Biological
+            - article [ref=f14e12]:
+              - img "Obsidian blade" [ref=f14e13]
+              - strong [ref=f14e14]: C2. Obsidian Blade
+              - generic [ref=f14e15]: Artifact
+            - article [ref=f14e16]:
+              - img "Cave painting" [ref=f14e17]
+              - strong [ref=f14e18]: D9. Cave Painting
+              - generic [ref=f14e19]: Cultural
+            - generic [ref=f14e20]:
+              - strong [ref=f14e21]: "01"
+              - generic [ref=f14e22]: Origins
+            - generic [ref=f14e23]:
+              - strong [ref=f14e24]: "03"
+              - generic [ref=f14e25]: Tools
+            - generic [ref=f14e26]:
+              - strong [ref=f14e27]: "02"
+              - generic [ref=f14e28]: Life
+            - generic [ref=f14e29]:
+              - strong [ref=f14e30]: "04"
+              - generic [ref=f14e31]: Expression
+        - generic [ref=e28]: No HTML entries found in ReviewTargets.
+      - generic "Preview controls" [ref=e29]:
+        - generic [ref=e30]:
+          - button "Zoom out" [ref=e31] [cursor=pointer]: "-"
+          - generic [ref=e32]: 100%
+          - button "Zoom in" [ref=e33] [cursor=pointer]: +
+        - button "Reset" [ref=e34] [cursor=pointer]
+    - region "Review and feedback" [ref=e35]:
+      - heading "Review & Feedback" [level=2] [ref=e36]
+      - generic [ref=e37]:
+        - heading "A4. Sand Ripples" [level=1] [ref=e38]
+        - generic [ref=e40]: Elemental
+        - generic [ref=e42]:
+          - heading "Notes /" [level=3] [ref=e43]:
+            - text: Notes
+            - generic [ref=e44]: /
+          - generic [ref=e45]: Strong composition and texture. Consider increasing contrast slightly to match the obsidian's tonal weight.
+        - generic [ref=e46]:
+          - heading "Feedback" [level=3] [ref=e47]
+          - list [ref=e48]:
+            - listitem [ref=e49]: Excellent use of negative space
+            - listitem [ref=e50]: Typography scale works well
+            - listitem [ref=e51]: Consider alt text for accessibility
+        - generic [ref=e52]:
+          - generic [ref=e53]: Status
+          - combobox "Status" [ref=e54]:
+            - option "Approved" [selected]
+            - option "Request Changes"
+            - option "Needs Review"
+        - generic [ref=e55]:
+          - generic [ref=e56]: Comments
+          - textbox "Comments" [ref=e57]:
+            - /placeholder: Add a comment...
+        - generic [ref=e58]:
+          - button "Request Changes" [ref=e59] [cursor=pointer]
+          - button "Approve" [ref=e60] [cursor=pointer]
+        - generic [ref=e61]: No packet created yet.

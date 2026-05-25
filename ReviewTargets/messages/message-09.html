@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angel Berger — Diverse Creative</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts for premium, editorial typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Space Grotesk', 'sans-serif'],
+            handwritten: ['La Belle Aurore', 'cursive'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'slide-up': 'slideUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'slide-down': 'slideDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'float-slow': 'floatSlow 8s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(40px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideDown: {
+              '0%': { transform: 'translateY(-20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-10px) rotate(1deg)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.3' },
+              '50%': { opacity: '0.7' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Fixed visual post-process paper texture overlay over the entire screen */
+    .paper-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.045;
+      mix-blend-mode: overlay;
+      /* Generates a high-fidelity fine paper fiber/grain structure CSS pattern */
+      background-image: 
+        radial-gradient(circle, #000 10%, transparent 11%),
+        radial-gradient(circle, #000 10%, transparent 11%),
+        linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
+        linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+      background-size: 4px 4px, 4px 4px, 12px 12px, 12px 12px;
+      background-position: 0 0, 2px 2px, 0 0, 6px 6px;
+    }
+
+    /* Scroll snapping layout styles to satisfy mechanical pause / resistance rules */
+    #scroll-container {
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none; /* Hide standard scrollbar for minimal layout */
+      -ms-overflow-style: none;
+    }
+    
+    #scroll-container::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Safari and Chrome */
+    }
+
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always; /* Hard mechanical notch: forces the scroll to pause and resist skipping sections */
+    }
+
+    /* Additional paper shadow & organic edge simulation for panels */
+    .analog-panel {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 18, 22, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    /* Analog tactical button aesthetics: crisp, mechanical, changes shadow on click */
+    .analog-btn {
+      position: relative;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+    
+    .analog-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.45);
+      transform: translateY(-1px);
+      box-shadow: 
+        0 4px 12px rgba(255, 255, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .analog-btn:active {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(1px);
+      box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navigation Indicator */
+    .nav-indicator {
+      position: absolute;
+      bottom: -1px;
+      height: 2px;
+      background: #ffffff;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Polaroid Aspect & Handcrafted Feel */
+    .polaroid-card {
+      background: #fdfdfd;
+      color: #121214;
+      padding: 12px 12px 24px 12px;
+      box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.15);
+      transform: rotate(var(--polaroid-angle, 0deg));
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .polaroid-card:hover {
+      transform: scale(1.03) rotate(0deg) translateY(-8px);
+      box-shadow: 
+        0 20px 35px rgba(0, 0, 0, 0.45),
+        0 4px 10px rgba(0, 0, 0, 0.25);
+      z-index: 10;
+    }
+
+    /* Custom style to handle smooth transitions of interactive hero image details */
+    #hero-img {
+      transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#09090b] via-[#111116] to-[#050508] text-[#f4f4f7] font-sans overflow-hidden min-h-screen selection:bg-white selection:text-black">
+
+  <!-- Fixed Visual Paper Post-Process Overlay (Stars move beneath) -->
+  <div class="paper-overlay"></div>
+
+  <!-- Slow Animated Interactive Starfield Background (Canvas is fixed) -->
+  <canvas id="starfield" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- Ambient lighting/vignette glow beneath paper -->
+  <div class="fixed inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(139,92,246,0.035),transparent_70%)] pointer-events-none z-0"></div>
+
+  <!-- FIXED HEADER & MINIMAL NAVIGATION BAR -->
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 z-40 w-full max-w-4xl px-4 py-6 flex flex-col items-center gap-4 animate-slide-down">
+    <!-- Subtle top branding element -->
+    <div class="text-[9px] sm:text-[10px] tracking-[0.4em] text-neutral-400 font-sans uppercase select-none">
+      Digital Monograph &bull; Vol. V
+    </div>
+    
+    <!-- Analog minimalist tab bar -->
+    <nav class="relative flex flex-wrap items-center justify-center gap-1 sm:gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-black/45 backdrop-blur-md">
+      <button onclick="switchTab('home')" data-tab="home" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Home
+      </button>
+      <button onclick="switchTab('gallery')" data-tab="gallery" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Gallery
+      </button>
+      <button onclick="switchTab('blog')" data-tab="blog" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Blog
+      </button>
+      <button onclick="switchTab('services')" data-tab="services" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Services
+      </button>
+      <button onclick="switchTab('products')" data-tab="products" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Products
+      </button>
+      <button onclick="switchTab('contact')" data-tab="contact" class="nav-btn relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium tracking-wide text-neutral-400 hover:text-white transition-colors duration-300">
+        Contact
+      </button>
+      
+      <!-- Active Slide indicator line -->
+      <div id="nav-indicator-bar" class="absolute bottom-1.5 left-0 h-[1.5px] bg-white transition-all duration-300 ease-out"></div>
+    </nav>
+  </header>
+
+  <!-- MAIN SCROLL CONTAINER WITH PHYSICAL MECHANICAL PAUSES (CSS Snap Points) -->
+  <div id="scroll-container" class="relative z-10 w-full h-screen overflow-y-auto scroll-smooth">
+    
+    <!-- ==================== HOME SECTION ==================== -->
+    <section id="view-home" class="snap-section min-h-screen flex flex-col justify-center items-center py-24 px-4 sm:px-8 max-w-4xl mx-auto text-center space-y-12">
+      <div class="w-full flex flex-col items-center space-y-8">
+        
+        <!-- Wide Interactive Hero Frame -->
+        <div id="hero-frame" class="w-full max-w-3xl aspect-[21/9] sm:aspect-[2.4/1] relative overflow-hidden rounded border border-white/10 group cursor-pointer shadow-2xl transition-all duration-[1000ms] ease-out">
+          
+          <!-- Soft interior/atelier photo featuring interactive parallax on hover -->
+          <img id="hero-img" 
+               src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200" 
+               alt="A. Berger Atelier" 
+               class="absolute inset-0 w-full h-full object-cover origin-center scale-105 blur-[3px] grayscale-[55%] contrast-[90%] group-hover:blur-[0px] group-hover:grayscale-0 group-hover:contrast-[115%]">
+          
+          <!-- Fade-color gradient system: shifts from deep and dark to subtle warm gold tone on hover -->
+          <div id="hero-gradient" 
+               class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/85 group-hover:from-black/45 group-hover:via-amber-950/15 group-hover:to-black/55 transition-all duration-[1000ms] ease-out">
+          </div>
+          
+          <!-- Visually dominant centered name overlay -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center select-none pointer-events-none">
+            <h1 id="home-title" class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-[0.12em] text-white transition-transform duration-[1200ms] cubic-bezier(0.16, 1, 0.3, 1) translate-y-8 opacity-0">
+              A. BERGER
+            </h1>
+            <p id="home-subtitle" class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.45em] text-neutral-300 mt-2.5 transition-all duration-[1200ms] delay-200 opacity-0 transform translate-y-6">
+              A Diverse Creative
+            </p>
+          </div>
+        </div>
+
+        <!-- Curated visual grid that reveals underneath after name is animated upward -->
+        <div id="home-reveal" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl opacity-0 transform translate-y-10 transition-all duration-[1200ms] delay-500">
+          <div class="group relative overflow-hidden aspect-[16/10] rounded border border-white/10 bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" 
+                 alt="Tactile horizon" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
+              <div class="text-left">
+                <span class="text-[9px] tracking-widest text-neutral-400 uppercase font-sans">Exhibition 01</span>
+                <h3 class="font-serif text-sm tracking-wide text-white">Quiet Horizons</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden aspect-[16/10] rounded border border-white/10 bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=800" 
+                 alt="Monochromatic architecture" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
+              <div class="text-left">
+                <span class="text-[9px] tracking-widest text-neutral-400 uppercase font-sans">Exhibition 02</span>
+                <h3 class="font-serif text-sm tracking-wide text-white">Structural Void</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downward Indicator -->
+        <div id="home-footer" class="opacity-0 transition-opacity duration-1000 delay-[900ms] pt-4">
+          <button onclick="switchTab('gallery')" class="analog-btn px-6 py-2.5 text-[10px] uppercase tracking-widest text-white rounded">
+            Enter Exhibition
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section id="view-gallery" class="snap-section min-h-screen flex flex-col justify-center py-28 px-4 sm:px-8 max-w-4xl mx-auto">
+      <div class="space-y-2 mb-10 text-center sm:text-left">
+        <h2 class="font-serif text-2xl tracking-wide">The Polaroid Deck</h2>
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Select an artifact to examine closer</p>
+      </div>
+
+      <!-- Polaroid Deck Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+        
+        <!-- Polaroid 1 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&q=80&w=900', 'Static Light, 2026', 'Taken during a period of meditative isolation. Exploring the interplay of warm filament illumination and cool digital darkrooms.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: -2deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&q=80&w=600" alt="Static Light" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Static Light, 2026</div>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1502691876148-a84978e59fa8?auto=format&fit=crop&q=80&w=900', 'Paper Architecture', 'Visual geometries sculpted from recycled high-density heavy pressboards. Focused entirely on clean shadows and minimal geometric friction.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: 1.5deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1502691876148-a84978e59fa8?auto=format&fit=crop&q=80&w=600" alt="Paper Architecture" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Paper Geometries</div>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=900', 'Saturations', 'A research paper on light decay. How artificial color profiles break down when passing through dense, particulate-loaded physical filters.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: -1.8deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=600" alt="Saturations" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Study of Void</div>
+        </div>
+
+        <!-- Polaroid 4 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&q=80&w=900', 'Organic Texture', 'Captured on old grain-rich medium format negative stock. Exploring the quiet decay of forest microstructures during deep winter.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: 2.2deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&q=80&w=600" alt="Organic Texture" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Winter Bark</div>
+        </div>
+
+        <!-- Polaroid 5 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=900', 'Anomalous Glow', 'Long exposure experiments capturing bioluminescent patterns in controlled physical vats. Unedited optical phenomena.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: -1.2deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=600" alt="Anomalous Glow" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Liquid Optics</div>
+        </div>
+
+        <!-- Polaroid 6 -->
+        <div onclick="expandPolaroid('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=900', 'Distant Silence', 'Archival landscape documentation of the high desert plateau. A visual representation of absolute scale and human transience.')" 
+             class="polaroid-card cursor-pointer w-full max-w-[240px]" style="--polaroid-angle: 3deg;">
+          <div class="aspect-square w-full bg-zinc-800 overflow-hidden relative mb-4">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=600" alt="Distant Silence" class="w-full h-full object-cover filter contrast-110 saturate-75">
+          </div>
+          <div class="font-handwritten text-xl text-neutral-800 pl-1">Desert Plateau</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== BLOG SECTION ==================== -->
+    <section id="view-blog" class="snap-section min-h-screen flex flex-col justify-center py-28 px-4 sm:px-8 max-w-4xl mx-auto space-y-8">
+      <div class="space-y-2 mb-4 text-center sm:text-left">
+        <h2 class="font-serif text-2xl tracking-wide">Journal</h2>
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Sparsely recorded notes and creative dispatches</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Post 1 -->
+        <article class="group cursor-pointer flex flex-col space-y-4" onclick="openFullPost('01', 'Tactile Presence in a Void-centric Era', 'April 14, 2026', 'ESSAY', 'How do we design for texture when every artifact is rendered behind perfectly polished, clinical glass panels? In this dispatch, I explore the slow return of textured and physical-adjacent designs.')">
+          <div class="aspect-[16/10] overflow-hidden rounded bg-zinc-900 border border-white/10 relative">
+            <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=600" alt="Journal preview" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-102 transition-all duration-500">
+            <div class="absolute top-3 left-3 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-white font-sans uppercase">
+              ESSAY
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-[10px] tracking-widest text-neutral-400 font-sans">APRIL 14, 2026 &bull; DISPATCH 01</div>
+            <h3 class="font-serif text-lg tracking-wide group-hover:text-white group-hover:translate-x-1 transition-all">Tactile Presence in a Void-centric Era</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2">How do we design for texture when every artifact is rendered behind perfectly polished, clinical glass panels?</p>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="group cursor-pointer flex flex-col space-y-4" onclick="openFullPost('02', 'The Color of Silence: Deserts & Deep Space', 'March 09, 2026', 'THEORY', 'An examination of monochromatic balance. Why removing heavy hue saturation activates an ancient, primitive human focus mechanism that digital platforms actively try to suppress.')">
+          <div class="aspect-[16/10] overflow-hidden rounded bg-zinc-900 border border-white/10 relative">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=600" alt="Journal preview" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-102 transition-all duration-500">
+            <div class="absolute top-3 left-3 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-white font-sans uppercase">
+              THEORY
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-[10px] tracking-widest text-neutral-400 font-sans">MARCH 09, 2026 &bull; DISPATCH 02</div>
+            <h3 class="font-serif text-lg tracking-wide group-hover:text-white group-hover:translate-x-1 transition-all">The Color of Silence: Deserts & Deep Space</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2">An examination of monochromatic balance and visual space. Why removing heavy hue saturation activates an ancient, primitive focus.</p>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="group cursor-pointer flex flex-col space-y-4" onclick="openFullPost('03', 'Crafting Analog Feedback Systems', 'February 21, 2026', 'DESIGN', 'Can a digital webpage communicate physical mass? Through variable resistance animations, light leaks, and three-stage responsive design, we can approximate structural density.')">
+          <div class="aspect-[16/10] overflow-hidden rounded bg-zinc-900 border border-white/10 relative">
+            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=600" alt="Journal preview" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-102 transition-all duration-500">
+            <div class="absolute top-3 left-3 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-white font-sans uppercase">
+              DESIGN
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-[10px] tracking-widest text-neutral-400 font-sans">FEB 21, 2026 &bull; DISPATCH 03</div>
+            <h3 class="font-serif text-lg tracking-wide group-hover:text-white group-hover:translate-x-1 transition-all">Crafting Analog Feedback Systems</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2">Can a digital webpage communicate physical mass? Through variable resistance animations and three-stage layouts.</p>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="group cursor-pointer flex flex-col space-y-4" onclick="openFullPost('04', 'Quiet Artifacts: Monograph Previews', 'January 15, 2026', 'PUBLISHING', 'Behind-the-scenes layout blueprints for the upcoming physical print project. Paper curation notes, ink compound specifications, and deep-indigo tint profiles.')">
+          <div class="aspect-[16/10] overflow-hidden rounded bg-zinc-900 border border-white/10 relative">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600" alt="Journal preview" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-102 transition-all duration-500">
+            <div class="absolute top-3 left-3 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-white font-sans uppercase">
+              PUBLISHING
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-[10px] tracking-widest text-neutral-400 font-sans">JAN 15, 2026 &bull; DISPATCH 04</div>
+            <h3 class="font-serif text-lg tracking-wide group-hover:text-white group-hover:translate-x-1 transition-all">Quiet Artifacts: Monograph Previews</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2">Behind-the-scenes layout blueprints for the upcoming physical print project. Curation and deep-indigo tint profiles.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="view-services" class="snap-section min-h-screen flex flex-col justify-center py-28 px-4 sm:px-8 max-w-4xl mx-auto">
+      <div class="space-y-2 mb-10 text-center sm:text-left">
+        <h2 class="font-serif text-2xl tracking-wide">Creative Disciplines</h2>
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Co-conspirating with brands & houses worldwide</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Module 1 -->
+        <div class="group border border-white/10 rounded p-6 sm:p-8 hover:border-white/20 hover:bg-white/[0.01] transition-all duration-500 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div class="space-y-2 max-w-lg">
+            <div class="text-xs tracking-widest text-neutral-400 uppercase font-sans">01 &bull; Identity Curation</div>
+            <h3 class="font-serif text-xl text-white">Visual & Narrative Systems</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">Developing cohesive creative universes that balance high tactile sensitivity with functional, responsive digital architecture.</p>
+          </div>
+          <div class="text-white group-hover:translate-x-2 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="group border border-white/10 rounded p-6 sm:p-8 hover:border-white/20 hover:bg-white/[0.01] transition-all duration-500 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div class="space-y-2 max-w-lg">
+            <div class="text-xs tracking-widest text-neutral-400 uppercase font-sans">02 &bull; Tactile Media</div>
+            <h3 class="font-serif text-xl text-white">Archival Monography & Print</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">From curated artist publications and high-end monographs to limited runs, I direct color matching, material sourcing, and binding layout.</p>
+          </div>
+          <div class="text-white group-hover:translate-x-2 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="group border border-white/10 rounded p-6 sm:p-8 hover:border-white/20 hover:bg-white/[0.01] transition-all duration-500 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div class="space-y-2 max-w-lg">
+            <div class="text-xs tracking-widest text-neutral-400 uppercase font-sans">03 &bull; Exhibition Design</div>
+            <h3 class="font-serif text-xl text-white">Spatial Installation Curating</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">Mapping layout flow, lighting coordinates, and dimensional artwork placement inside gallery halls to formulate cohesive viewing tension.</p>
+          </div>
+          <div class="text-white group-hover:translate-x-2 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <section id="view-products" class="snap-section min-h-screen flex flex-col justify-center py-28 px-4 sm:px-8 max-w-4xl mx-auto">
+      <div class="space-y-2 mb-10 text-center sm:text-left">
+        <h2 class="font-serif text-2xl tracking-wide">Archival Objects</h2>
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">Tangible materials for sensory collectors</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        
+        <!-- Product Card 1 -->
+        <div class="group flex flex-col border border-white/10 rounded bg-black/20 overflow-hidden hover:border-white/20 transition-all duration-500">
+          <div class="aspect-[4/5] bg-zinc-900 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600" alt="Object 01" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-750">
+            <span class="absolute top-4 right-4 bg-black/75 px-3 py-1 rounded text-xs tracking-wider text-neutral-300 font-sans">
+              Edition of 100
+            </span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="text-[10px] tracking-widest text-neutral-400 uppercase font-sans">Artifact 01 &bull; Publication</div>
+              <h3 class="font-serif text-lg text-white mt-1">Monograph Vol. I: "Silences"</h3>
+              <p class="text-sm text-neutral-400 mt-2 leading-relaxed font-sans">A massive 240-page clothbound tactile study highlighting landscape, negative margins, and minimal layout structures. Debossed foil finish.</p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <span class="font-sans text-sm font-medium tracking-wide text-neutral-300">$85.00</span>
+              <button onclick="openPurchaseModal('Monograph Vol. I: &quot;Silences&quot;')" class="analog-btn px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded">
+                Inquire Acquisition
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="group flex flex-col border border-white/10 rounded bg-black/20 overflow-hidden hover:border-white/20 transition-all duration-500">
+          <div class="aspect-[4/5] bg-zinc-900 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=600" alt="Object 02" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-750">
+            <span class="absolute top-4 right-4 bg-black/75 px-3 py-1 rounded text-xs tracking-wider text-neutral-300 font-sans">
+              Signed Print
+            </span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="text-[10px] tracking-widest text-neutral-400 uppercase font-sans">Artifact 02 &bull; Visual</div>
+              <h3 class="font-serif text-lg text-white mt-1">Archival Giclée: "Optic Decay 04"</h3>
+              <p class="text-sm text-neutral-400 mt-2 leading-relaxed font-sans">Printed on ultra-weight Hahnemühle Photo Rag 308gsm pure cotton paper. Signed and marked by the hand of the creative.</p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <span class="font-sans text-sm font-medium tracking-wide text-neutral-300">$120.00</span>
+              <button onclick="openPurchaseModal('Archival Giclée: &quot;Optic Decay 04&quot;')" class="analog-btn px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded">
+                Inquire Acquisition
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="view-contact" class="snap-section min-h-screen flex flex-col justify-center py-28 px-4 sm:px-8 max-w-4xl mx-auto space-y-8">
+      <div class="space-y-2 mb-4 text-center">
+        <h2 class="font-serif text-2xl tracking-wide">Initiate Contact</h2>
+        <p class="text-xs text-neutral-400 uppercase tracking-widest">For representation, monographs, or joint experiments</p>
+      </div>
+
+      <div class="analog-panel p-6 sm:p-10 rounded max-w-2xl mx-auto w-full">
+        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-1.5">
+              <label for="name" class="text-[10px] uppercase tracking-widest text-neutral-400 font-sans block">YOUR NAME</label>
+              <input required type="text" id="name" name="name" 
+                     class="w-full bg-white/5 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white/30 transition-all font-sans">
+            </div>
+            <div class="space-y-1.5">
+              <label for="email" class="text-[10px] uppercase tracking-widest text-neutral-400 font-sans block">YOUR EMAIL</label>
+              <input required type="email" id="email" name="email" 
+                     class="w-full bg-white/5 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white/30 transition-all font-sans">
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="subject" class="text-[10px] uppercase tracking-widest text-neutral-400 font-sans block">NATURE OF INQUIRY</label>
+            <select id="subject" name="subject" 
+                    class="w-full bg-[#121216] border border-white/10 rounded px-4 py-2.5 text-sm text-neutral-300 focus:outline-none focus:border-white/30 transition-all font-sans">
+              <option value="collaboration">Joint Visual Collaboration</option>
+              <option value="acquisition">Artifact Acquisition</option>
+              <option value="curatorial">Curatorial Project / Commission</option>
+              <option value="general">A Casual Note</option>
+            </select>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="message" class="text-[10px] uppercase tracking-widest text-neutral-400 font-sans block">THE MESSAGE</label>
+            <textarea required id="message" name="message" rows="5" 
+                      class="w-full bg-white/5 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white/30 transition-all font-sans resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="analog-btn w-full py-3.5 text-xs uppercase tracking-widest font-semibold text-white rounded">
+            Transmit Transmission
+          </button>
+        </form>
+
+        <!-- Status Message Layer -->
+        <div id="form-success" class="hidden text-center py-8 space-y-4">
+          <div class="w-12 h-12 rounded-full border border-green-500/30 bg-green-500/10 flex items-center justify-center mx-auto text-green-400">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-lg text-white">Transmission Logged</h3>
+          <p class="text-sm text-neutral-400 max-w-sm mx-auto leading-relaxed">The message wave has been safely dispatched into Angel’s receiver. You will hear back when the stars align correctly.</p>
+          <button onclick="resetContactForm()" class="analog-btn px-6 py-2 text-xs uppercase tracking-widest text-white rounded">
+            Send Another
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-6 mt-6 text-[10px] uppercase tracking-[0.25em] text-neutral-500 font-sans">
+        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+        <span>&bull;</span>
+        <a href="#" class="hover:text-white transition-colors">Foundation</a>
+        <span>&bull;</span>
+        <a href="#" class="hover:text-white transition-colors">Are.na</a>
+      </div>
+
+      <!-- FOOTER ARCHIVAL LABELS -->
+      <footer class="w-full border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] tracking-widest text-neutral-500 gap-4">
+        <div>&copy; 2026 Angel Berger. All Rights Deserved.</div>
+        <div class="font-sans uppercase text-right flex items-center gap-2">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse-soft"></span>
+          Lat. 45.4215° N / Lon. 75.6972° W
+        </div>
+      </footer>
+    </section>
+
+  </div>
+
+  <!-- ==================== MODALS / OVERLAYS ==================== -->
+
+  <!-- Polaroid Expand Modal -->
+  <div id="polaroid-overlay" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4" onclick="closePolaroid()">
+    <div class="relative max-w-lg w-full" onclick="event.stopPropagation()">
+      <button class="absolute -top-12 right-0 text-white hover:text-neutral-300 text-sm tracking-widest uppercase flex items-center gap-2" onclick="closePolaroid()">
+        Close &times;
+      </button>
+      
+      <!-- Expanded Polaroid Frame -->
+      <div class="polaroid-card p-4 sm:p-6 bg-[#fcfcfc] text-[#111114] rounded-sm transform rotate-1 scale-100 transition-all duration-300 shadow-2xl">
+        <div class="aspect-square w-full bg-zinc-900 overflow-hidden relative mb-6">
+          <img id="overlay-img" src="" alt="Expanded Artwork" class="w-full h-full object-cover">
+        </div>
+        <div class="space-y-2">
+          <div id="overlay-title" class="font-handwritten text-2xl text-neutral-900">Title</div>
+          <p id="overlay-desc" class="text-xs sm:text-sm text-neutral-600 font-sans leading-relaxed pt-2 border-t border-neutral-200">
+            Detail description text goes here...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Blog Post Modal -->
+  <div id="blog-overlay" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto" onclick="closeFullPost()">
+    <div class="relative max-w-2xl mx-auto px-6 py-20 min-h-screen flex flex-col justify-center" onclick="event.stopPropagation()">
+      <button class="absolute top-10 right-6 text-white hover:text-neutral-300 text-sm tracking-widest uppercase" onclick="closeFullPost()">
+        Close &times;
+      </button>
+
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <span id="blog-modal-category" class="bg-white/10 px-3 py-1 rounded text-[10px] tracking-widest text-white font-sans uppercase">CATEGORY</span>
+          <span id="blog-modal-date" class="text-xs text-neutral-400 tracking-widest">DATE</span>
+        </div>
+        <h2 id="blog-modal-title" class="font-serif text-3xl sm:text-5xl text-white tracking-wide leading-tight">Title</h2>
+        <div class="h-px bg-white/10 w-24 my-6"></div>
+        <div id="blog-modal-body" class="text-neutral-300 space-y-6 text-sm sm:text-base leading-relaxed font-sans">
+          <!-- Text dynamically loaded -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acquisition Inquiry Modal -->
+  <div id="purchase-overlay" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4" onclick="closePurchaseModal()">
+    <div class="analog-panel p-6 sm:p-8 max-w-md w-full relative" onclick="event.stopPropagation()">
+      <button class="absolute top-4 right-4 text-white hover:text-neutral-300 text-lg" onclick="closePurchaseModal()">
+        &times;
+      </button>
+      <div class="space-y-4">
+        <div class="text-[10px] tracking-widest text-neutral-400 uppercase font-sans">ACQUISITION DISPATCH</div>
+        <h3 id="purchase-item-name" class="font-serif text-xl text-white">Item Name</h3>
+        <p class="text-xs text-neutral-400 leading-relaxed font-sans">Please transmit your email below. Angel will coordinate secure handling, signing preferences, and physical carrier logs to your destination.</p>
+        
+        <form onsubmit="handleAcquisitionSubmit(event)" class="space-y-4 pt-2">
+          <input type="hidden" id="acq-item" name="item">
+          <input required type="email" id="acq-email" placeholder="Your primary email" 
+                 class="w-full bg-white/5 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white/30 transition-all font-sans">
+          <button type="submit" class="analog-btn w-full py-3 text-xs uppercase tracking-widest font-semibold text-white rounded">
+            Request Log Access
+          </button>
+        </form>
+        <p id="acq-success-msg" class="hidden text-xs text-green-400 text-center font-sans">Inquiry recorded. Secure channel pending dispatch.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== LOGIC & ANIMATIONS ==================== -->
+  <script>
+    // --- MAIN TAB CONTROLLER & AUTOMATIC SCROLL SYNCHRONIZATION ---
+    let activeTab = 'home';
+    const scrollContainer = document.getElementById('scroll-container');
+
+    function switchTab(tabId) {
+      const targetSection = document.getElementById(`view-${tabId}`);
+      if (!targetSection) return;
+
+      // Scroll smoothly to target section with mechanical notches pausing naturally
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateNavIndicator(activeButton) {
+      const indicator = document.getElementById('nav-indicator-bar');
+      if (indicator && activeButton) {
+        indicator.style.width = `${activeButton.offsetWidth - 16}px`;
+        indicator.style.left = `${activeButton.offsetLeft + 8}px`;
+      }
+    }
+
+    // --- INTERSECTION OBSERVER FOR ACTIVE SCROLL PAUSES ---
+    // Tracks current section during manual scroll snap pauses, updates analog nav elements instantly
+    const sections = document.querySelectorAll('.snap-section');
+    const navBtns = document.querySelectorAll('.nav-btn');
+
+    const observerOptions = {
+      root: scrollContainer,
+      threshold: 0.45, // Identifies active notch when 45% visible
+      rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const tabId = entry.target.id.replace('view-', '');
+          activeTab = tabId;
+
+          // Highlight the associated navigation button
+          navBtns.forEach(btn => {
+            if (btn.getAttribute('data-tab') === tabId) {
+              btn.classList.remove('text-neutral-400');
+              btn.classList.add('text-white');
+              updateNavIndicator(btn);
+            } else {
+              btn.classList.remove('text-white');
+              btn.classList.add('text-neutral-400');
+            }
+          });
+
+          // Custom entry reveal for the landing view
+          if (tabId === 'home') {
+            runHomeIntro();
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+
+    // --- HOME INTRO THREE-STAGE ANIMATIC SEQUENCE ---
+    function runHomeIntro() {
+      const title = document.getElementById('home-title');
+      const subtitle = document.getElementById('home-subtitle');
+      const revealSection = document.getElementById('home-reveal');
+      const footer = document.getElementById('home-footer');
+
+      // Stage 1: Establish scene (Clear name center state)
+      title.style.transform = 'translateY(40px)';
+      title.style.opacity = '0';
+      subtitle.style.transform = 'translateY(30px)';
+      subtitle.style.opacity = '0';
+      revealSection.style.opacity = '0';
+      revealSection.style.transform = 'translateY(25px)';
+      footer.style.opacity = '0';
+
+      setTimeout(() => {
+        // Stage 2: Animate name upward cleanly inside frame
+        title.style.transform = 'translateY(0)';
+        title.style.opacity = '1';
+      }, 100);
+
+      setTimeout(() => {
+        subtitle.style.transform = 'translateY(0)';
+        subtitle.style.opacity = '1';
+      }, 350);
+
+      setTimeout(() => {
+        // Stage 3: Resolve State (Reveal physical gallery spotlight grid below)
+        revealSection.style.opacity = '1';
+        revealSection.style.transform = 'translateY(0)';
+      }, 700);
+
+      setTimeout(() => {
+        footer.style.opacity = '1';
+      }, 1000);
+    }
+
+
+    // --- INTERACTIVE HERO IMAGE PARALLAX LOGIC ---
+    const heroFrame = document.getElementById('hero-frame');
+    const heroImg = document.getElementById('hero-img');
+
+    if (heroFrame && heroImg) {
+      heroFrame.addEventListener('mousemove', (e) => {
+        const rect = heroFrame.getBoundingClientRect();
+        // Calculate coordinates relative to the center of the frame (-0.5 to 0.5)
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Apply smooth mechanical parallax translations
+        heroImg.style.transform = `translate(${x * 16}px, ${y * 16}px) scale(1.1)`;
+      });
+
+      heroFrame.addEventListener('mouseleave', () => {
+        // Soft snapback reset
+        heroImg.style.transform = 'translate(0px, 0px) scale(1.05)';
+      });
+    }
+
+
+    // --- POLAROID DECK LOGIC ---
+    function expandPolaroid(imgUrl, title, desc) {
+      const overlay = document.getElementById('polaroid-overlay');
+      const overlayImg = document.getElementById('overlay-img');
+      const overlayTitle = document.getElementById('overlay-title');
+      const overlayDesc = document.getElementById('overlay-desc');
+
+      overlayImg.src = imgUrl;
+      overlayTitle.textContent = title;
+      overlayDesc.textContent = desc;
+
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      
+      const card = overlay.querySelector('.polaroid-card');
+      card.style.transform = 'scale(0.9) rotate(-3deg)';
+      setTimeout(() => {
+        card.style.transform = 'scale(1) rotate(0.5deg)';
+      }, 50);
+    }
+
+    function closePolaroid() {
+      const overlay = document.getElementById('polaroid-overlay');
+      overlay.classList.remove('flex');
+      overlay.classList.add('hidden');
+    }
+
+
+    // --- EDITORIAL JOURNAL LOGIC ---
+    function openFullPost(dispatchNum, title, date, category, excerpt) {
+      const overlay = document.getElementById('blog-overlay');
+      document.getElementById('blog-modal-category').textContent = category;
+      document.getElementById('blog-modal-date').textContent = `${date} • DISPATCH ${dispatchNum}`;
+      document.getElementById('blog-modal-title').textContent = title;
+      
+      document.getElementById('blog-modal-body').innerHTML = `
+        <p class="italic text-lg text-neutral-300 leading-relaxed">"${excerpt}"</p>
+        <p>In this documentation, we break down our active aesthetic principles. The pursuit of tactile analog systems in contemporary creative engineering is not simply a retro-revivalist reaction. Instead, it is an essential strategy of spatial friction. Digital friction provides gravity to thoughts that would otherwise drift into pure background telemetry.</p>
+        <p>When studying light decay profiles, we often find that the most satisfying gradients are those containing structural noise. Perfect mathematical curves look lifeless on physical surfaces. True balance demands small imperfections, dust artifacts, and tactile paper finishes that diffuse raw glow into comfortable organic shades.</p>
+        <p>As we prep the final runs for Monograph Vol. I, our studio presses are calibrated using ancient heavy-ink saturation offsets. Each visual spread operates under strict grid lines, yet leaves adequate space for human eyes to settle. Tension, scale, and quiet surfaces form the foundational triad of all my upcoming visual objects.</p>
+      `;
+
+      overlay.classList.remove('hidden');
+      scrollContainer.style.overflowY = 'hidden'; // Lock scrolling
+    }
+
+    function closeFullPost() {
+      const overlay = document.getElementById('blog-overlay');
+      overlay.classList.add('hidden');
+      scrollContainer.style.overflowY = 'auto'; // Unlock scrolling
+    }
+
+
+    // --- ACQUISITION LOGIC ---
+    function openPurchaseModal(itemName) {
+      document.getElementById('purchase-item-name').textContent = itemName;
+      document.getElementById('acq-item').value = itemName;
+      document.getElementById('acq-success-msg').classList.add('hidden');
+      document.getElementById('purchase-overlay').classList.remove('hidden');
+      document.getElementById('purchase-overlay').classList.add('flex');
+    }
+
+    function closePurchaseModal() {
+      const overlay = document.getElementById('purchase-overlay');
+      overlay.classList.remove('flex');
+      overlay.classList.add('hidden');
+    }
+
+    function handleAcquisitionSubmit(e) {
+      e.preventDefault();
+      const success = document.getElementById('acq-success-msg');
+      success.classList.remove('hidden');
+      setTimeout(() => {
+        closePurchaseModal();
+        e.target.reset();
+      }, 1500);
+    }
+
+
+    // --- CONTACT FORM LOGIC ---
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    }
+
+    function resetContactForm() {
+      document.getElementById('contact-form').reset();
+      document.getElementById('contact-form').classList.remove('hidden');
+      document.getElementById('form-success').classList.add('hidden');
+    }
+
+
+    // --- SLOW ANIMATED STARFIELD CANVAS SYSTEM ---
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    let stars = [];
+    const numStars = 65;
+    let mouse = { x: 0, y: 0 };
+    let targetMouse = { x: 0, y: 0 };
+
+    function initCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = [];
+      
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.2 + 0.3,
+          alpha: Math.random() * 0.4 + 0.1,
+          speedX: (Math.random() - 0.5) * 0.05,
+          speedY: (Math.random() - 0.5) * 0.04,
+          twinkleSpeed: 0.005 + Math.random() * 0.01
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      mouse.x += (targetMouse.x - mouse.x) * 0.04;
+      mouse.y += (targetMouse.y - mouse.y) * 0.04;
+
+      for (let i = 0; i < stars.length; i++) {
+        let s = stars[i];
+        
+        s.x += s.speedX;
+        s.y += s.speedY;
+
+        if (s.x < 0) s.x = canvas.width;
+        if (s.x > canvas.width) s.x = 0;
+        if (s.y < 0) s.y = canvas.height;
+        if (s.y > canvas.height) s.y = 0;
+
+        s.alpha += s.twinkleSpeed;
+        if (s.alpha > 0.65 || s.alpha < 0.08) {
+          s.twinkleSpeed = -s.twinkleSpeed;
+        }
+
+        const parallaxX = mouse.x * s.radius * 6;
+        const parallaxY = mouse.y * s.radius * 6;
+
+        ctx.beginPath();
+        ctx.arc(s.x + parallaxX, s.y + parallaxY, s.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(s.alpha)})`;
+        ctx.fill();
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      targetMouse.x = (e.clientX / window.innerWidth) - 0.5;
+      targetMouse.y = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        targetMouse.x = (e.touches[0].clientX / window.innerWidth) - 0.5;
+        targetMouse.y = (e.touches[0].clientY / window.innerHeight) - 0.5;
+      }
+    });
+
+    window.addEventListener('resize', initCanvas);
+
+
+    // --- INITIAL STARTUP SETUP ---
+    window.onload = function() {
+      initCanvas();
+      draw();
+      
+      const initialBtn = document.querySelector('[data-tab="home"]');
+      updateNavIndicator(initialBtn);
+
+      // Begin default landing animatic sequence
+      runHomeIntro();
+    };
+  </script>
+</body>
+</html>

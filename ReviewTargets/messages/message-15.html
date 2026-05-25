@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>message-15.html</title>
+<style>
+  :root { color-scheme: dark; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  body { margin: 0; min-height: 100vh; background: #050505; color: #f5f5f5; }
+  main { max-width: 1200px; margin: 0 auto; padding: clamp(16px, 3vw, 40px); }
+  h1 { margin: 0 0 16px; font: 700 clamp(22px, 3vw, 36px)/1.1 system-ui, sans-serif; }
+  p { margin: 0 0 24px; color: #a7a7a7; font: 15px/1.5 system-ui, sans-serif; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: clamp(14px, 2vw, 24px); border: 1px solid #2a2a2a; border-radius: 8px; background: #0b0b0b; line-height: 1.55; font-size: clamp(12px, 1.35vw, 15px); }
+</style>
+</head>
+<body>
+<main>
+<h1>message-15.html</h1>
+<p>React/JSX source imported from message (15).txt. Displayed as source for review because it is not a standalone HTML document.</p>
+<pre>import React, { useState, useEffect, useRef } from 'react';
+import { 
+  ShoppingBag, 
+  ArrowRight, 
+  X, 
+  ChevronDown, 
+  MapPin, 
+  Mail, 
+  ArrowDown, 
+  Check, 
+  BookOpen, 
+  Plus, 
+  Eye,
+  Info,
+  Sparkles,
+  Camera,
+  Cpu,
+  Layers,
+  Compass
+} from 'lucide-react';
+
+// ==========================================
+// HIGH-FIDELITY ATMOSPHERIC IMAGES &amp; DATA
+// ==========================================
+
+const PROCESS_STEPS = [
+  {
+    step: "01",
+    name: "Plan",
+    excerpt: "Define the creative direction, visual goal, constraints, and intended feeling.",
+    accent: "bg-teal-50 border-teal-200 text-teal-800",
+    icon: &lt;Compass className="w-5 h-5 text-teal-700" /&gt;
+  },
+  {
+    step: "02",
+    name: "Randomize",
+    excerpt: "Explore unexpected variations, references, colors, compositions, and visual possibilities.",
+    accent: "bg-rose-50 border-rose-200 text-rose-800",
+    icon: &lt;Sparkles className="w-5 h-5 text-rose-700" /&gt;
+  },
+  {
+    step: "03",
+    name: "Extract",
+    excerpt: "Identify the strongest patterns, useful ideas, and visual directions from the exploration.",
+    accent: "bg-amber-50 border-amber-200 text-amber-800",
+    icon: &lt;Layers className="w-5 h-5 text-amber-700" /&gt;
+  },
+  {
+    step: "04",
+    name: "Execute",
+    excerpt: "Build the final piece, refine the details, and turn the selected direction into finished work.",
+    accent: "bg-stone-50 border-stone-200 text-stone-800",
+    icon: &lt;Cpu className="w-5 h-5 text-stone-700" /&gt;
+  }
+];
+
+const GALLERY_ITEMS = [
+  {
+    id: 1,
+    title: "Fluid Glass &amp; Iron",
+    category: "Scenography",
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "August 2025",
+    location: "Stockholm Gallery",
+    body: "An installation focusing on tension. Molten Swedish crystal slumped over cold-rolled industrial steel bars. A kinetic study of state-transitions, looking at how light bends under stress in both organic glass and raw iron."
+  },
+  {
+    id: 2,
+    title: "Clay Form No. 42",
+    category: "Sculpture",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "October 2025",
+    location: "Atelier Berlin",
+    body: "This stoneware vessel is raw, unglazed, and fired with local forest timber. I let the path of the kiln's smoke paint the surface. There are no brush strokes here—only the literal imprint of rushing heat and trapped carbon."
+  },
+  {
+    id: 3,
+    title: "Typographic Friction",
+    category: "Publishing",
+    image: "https://images.unsplash.com/photo-1565192647048-f997ded879f0?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "December 2025",
+    location: "Independent Press",
+    body: "A tactile research project. Setting metal type on weathered heavy-grain mulberry paper. By applying intentionally erratic pressures on a manual printing press, we explored the point where digital legibility gives way to physical texture."
+  },
+  {
+    id: 4,
+    title: "Echoes of Tiveden",
+    category: "Photography",
+    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "January 2026",
+    location: "Sweden's Deep South",
+    body: "Large-format analog plate photography. Exploring the silence of old growth canopy in heavy fog. This shot took six hours of sitting in wet moss, waiting for the wind to drop so the leaves would stay perfectly still during exposure."
+  },
+  {
+    id: 5,
+    title: "The Tactile Interface",
+    category: "UX Concept",
+    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "March 2026",
+    location: "Digital Lab",
+    body: "An interaction design experiment mapping physical pottery-throwing gestures onto virtual three-dimensional modeling software. We use high-precision hand-tracking to make digital sculpting feel heavy and resistive, like physical wet clay."
+  },
+  {
+    id: 6,
+    title: "Organic Pigment Grids",
+    category: "Fine Art",
+    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    date: "May 2026",
+    location: "Atelier Berlin",
+    body: "A canvas composed of crushed raw minerals, charcoal dust, and organic honey binder. The pigments are hand-ground using a heavy stone pestle. Designed to gradually shift shade and crack over decades as atmospheric humidity ebbs."
+  }
+];
+
+const BLOG_POSTS = [
+  {
+    id: 1,
+    title: "The Danger of a Single Creative Label",
+    date: "April 11, 2026",
+    category: "Philosophy",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    excerpt: "Why specialization is a modern commercial myth. Exploring the rich friction of choosing physical clay, code, and analog film all at once.",
+    content: "The market demands that we pack ourselves into tiny, understandable boxes. They ask: 'Are you a programmer? A potter? A photographer?' I argue that the boundaries between these mediums are entirely artificial. Translating the feedback of a wet pottery wheel into digital UX design makes both the physical clay and the digital code infinitely richer. Embracing interdisciplinary chaos is the only way to design with a soul."
+  },
+  {
+    id: 2,
+    title: "Designing with Dust: Working with Raw Elements",
+    date: "May 02, 2026",
+    category: "Material Science",
+    image: "https://images.unsplash.com/photo-1565192647048-f997ded879f0?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    excerpt: "How I collect earth, soot, and mountain stone to formulate custom glazes that carry the spatial footprint of specific geographies.",
+    content: "Every mountain, every valley, and every urban alleyway has a chemical signature. By gathering wild clay from erosion banks, filtering it through basic silk, and mixing it with local wood ash, we create glaze formulas that aren't just beautiful colors—they are a direct physical archive of a specific coordinate on earth. Your tableware should tell a geographic story."
+  },
+  {
+    id: 3,
+    title: "Designing Silent Interactions in a Loud World",
+    date: "May 20, 2026",
+    category: "Human Interfaces",
+    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    excerpt: "Why the finest digital and physical products are defined not by what they announce, but by what they gracefully leave unsaid.",
+    content: "We are plagued by notifications, blinking lights, and visual clutter designed to harvest our attention. My studio practice focuses on 'silent design.' A wooden stool with invisible joins, a webpage with wide empty margins, or a digital app that only speaks when physically tapped. We must design sanctuaries, not arenas."
+  }
+];
+
+const SERVICES = [
+  {
+    id: "consultation",
+    title: "Creative Direction &amp; Spatial Identity",
+    duration: "4-6 Week Partnership",
+    price: "$3,200",
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    description: "Developing custom visual narratives, material boards, and architectural styling for experimental galleries, forward-thinking boutiques, or bespoke architectural workspaces.",
+    deliverables: ["Comprehensive material &amp; visual guideline books", "On-site sensory spatial styling", "Custom light routing layout", "Exclusive physical object sourcing list"]
+  },
+  {
+    id: "exhibition",
+    title: "Art Exhibition Scenography",
+    duration: "Project-Based Timeline",
+    price: "Custom Estimate",
+    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    description: "Curating three-dimensional paths, custom architectural displays, and ambient atmospheres for solo and collective art exhibitions. Let's make visitors move with intention.",
+    deliverables: ["3D floorplans &amp; traffic architecture", "Atmospheric scent and lighting systems", "Bespoke mounting furniture creation", "Exhibition typographic direction"]
+  },
+  {
+    id: "prototyping",
+    title: "Experimental Product Prototyping",
+    duration: "3-5 Week Iteration",
+    price: "$4,500",
+    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&amp;fit=crop&amp;q=80&amp;w=600",
+    description: "Blending digital technology with raw physical materials. Perfect for tech companies looking to build organic physical prototypes, or traditional artisans integrating modern sensory feedback.",
+    deliverables: ["Physical-digital interaction wireframes", "Casting of custom composite components", "Embedded sensor system testing", "Functional working multi-material prototype"]
+  }
+];
+
+const PRODUCTS = [
+  {
+    id: 1,
+    title: "Hand-Thrown Ash Tumbler",
+    price: 85,
+    category: "Ceramics",
+    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&amp;fit=crop&amp;q=80&amp;w=500",
+    description: "Hand-thrown in my Berlin workspace using rich, iron-heavy clay. Glazed with a wild-sourced birch wood ash wash. Tactile, heavy-set bottom designed for hot tea or clean well water.",
+    details: "Volume: 220ml | Fired at 1280°C | Dishwasher and food-safe"
+  },
+  {
+    id: 2,
+    title: "Issue 01: 'DIVERGE' Journal",
+    price: 34,
+    category: "Publishing",
+    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&amp;fit=crop&amp;q=80&amp;w=500",
+    description: "A gorgeous, raw-stitch bound catalog documenting experimental craft movements in Europe. Printed on heavy 100% recycled cotton pulp with zero synthetic coatings.",
+    details: "Pages: 142 | Dimensions: 18cm x 24cm | Self-published by Angel Berger"
+  },
+  {
+    id: 3,
+    title: "Machined Brass Incense Vault",
+    price: 110,
+    category: "Objects",
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&amp;fit=crop&amp;q=80&amp;w=500",
+    description: "A solid unpolished block of brass featuring a raw industrial milled texture. Designed with variable sliding holds to firmly support multiple incense sticks of varying widths.",
+    details: "Material: 100% Solid Brass | Weight: 480g | Naturally patinas"
+  },
+  {
+    id: 4,
+    title: "Sorensen Joint Ash Wood Stool",
+    price: 450,
+    category: "Furniture",
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;q=80&amp;w=500",
+    description: "A solid Danish Ash stool using a historic double-wedged joint construction technique. Fused purely through friction and wooden dowels without a single screw.",
+    details: "Height: 46cm | Width: 33cm | Finish: Solvent-free organic wax"
+  }
+];
+
+// ==========================================
+// BACKGROUND CANVAS (Ambient Starfield)
+// ==========================================
+function SpaceBackground() {
+  const canvasRef = useRef(null);
+
+  useEffect(() =&gt; {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let stars = [];
+
+    const resizeCanvas = () =&gt; {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    };
+
+    const initStars = () =&gt; {
+      stars = [];
+      const density = Math.floor((canvas.width * canvas.height) / 12000);
+      for (let i = 0; i &lt; Math.min(density, 100); i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.0 + 0.3,
+          alpha: Math.random() * 0.4 + 0.1,
+          speed: Math.random() * 0.04 + 0.01
+        });
+      }
+    };
+
+    const draw = () =&gt; {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let star of stars) {
+        ctx.fillStyle = `rgba(168, 162, 158, ${star.alpha})`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        star.x -= star.speed;
+        if (star.x &lt; 0) {
+          star.x = canvas.width;
+          star.y = Math.random() * canvas.height;
+        }
+      }
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    draw();
+
+    return () =&gt; {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    &lt;canvas 
+      ref={canvasRef} 
+      className="fixed inset-0 w-full h-full -z-20 pointer-events-none opacity-[0.3]"
+    /&gt;
+  );
+}
+
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  const [selectedPolaroid, setSelectedPolaroid] = useState(null);
+  const [expandedBlogId, setExpandedBlogId] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [activeService, setActiveService] = useState(null);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [checkoutStep, setCheckoutStep] = useState(null);
+
+  // Parallax / Interaction State (Hero Frame)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeHeroState, setActiveHeroState] = useState(1); // 1 = Resting, 2 = Hover/Parallax
+  const heroRef = useRef(null);
+
+  // Contact State
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+
+  // Main scroll container reference
+  const scrollContainerRef = useRef(null);
+
+  // Intersection Observer to automatically trigger menu item highlight on scroll
+  useEffect(() =&gt; {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const sections = container.querySelectorAll('section');
+    const observerOptions = {
+      root: container,
+      threshold: 0.4, // Snaps active indicator when 40% of page is visible
+    };
+
+    const observer = new IntersectionObserver((entries) =&gt; {
+      entries.forEach((entry) =&gt; {
+        if (entry.isIntersecting) {
+          const id = entry.target.id.replace('section-', '');
+          setCurrentPage(id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((sec) =&gt; observer.observe(sec));
+    return () =&gt; sections.forEach((sec) =&gt; observer.unobserve(sec));
+  }, []);
+
+  // Smooth scroll helper matching semantic snapped sections
+  const handleNavClick = (pageId) =&gt; {
+    setCurrentPage(pageId);
+    const targetSection = document.getElementById(`section-${pageId}`);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleMouseMove = (e) =&gt; {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 16;
+    setMousePosition({ x, y });
+  };
+
+  const handleContactSubmit = (e) =&gt; {
+    e.preventDefault();
+    if (contactForm.name &amp;&amp; contactForm.email &amp;&amp; contactForm.message) {
+      setContactSubmitted(true);
+      setTimeout(() =&gt; {
+        setContactForm({ name: '', email: '', message: '' });
+      }, 400);
+    }
+  };
+
+  const addToCart = (product) =&gt; {
+    const existingItem = cart.find(item =&gt; item.id === product.id);
+    if (existingItem) {
+      setCart(cart.map(item =&gt; item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item));
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+    setIsCartOpen(true);
+  };
+
+  const removeFromCart = (id) =&gt; {
+    setCart(cart.filter(item =&gt; item.id !== id));
+  };
+
+  const cartTotal = cart.reduce((total, item) =&gt; total + (item.price * item.quantity), 0);
+
+  const handleCheckout = () =&gt; {
+    setCheckoutStep('checking-out');
+    setTimeout(() =&gt; {
+      setCheckoutStep('success');
+      setCart([]);
+    }, 1800);
+  };
+
+  return (
+    &lt;div className="relative min-h-screen text-stone-800 selection:bg-stone-300 selection:text-stone-900 overflow-hidden"&gt;
+      
+      {/* 1. SLOW ANIMATED STARFIELD BACKGROUND */}
+      &lt;SpaceBackground /&gt;
+
+      {/* 2. FIXED PRINT-PAPER VISUAL TEXTURE (Overlaying the starfield) */}
+      &lt;div 
+        className="fixed inset-0 w-full h-full pointer-events-none -z-10 opacity-[0.06] mix-blend-multiply bg-repeat"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+        }}
+      /&gt;
+
+      {/* Gentle Editorial Color Wash */}
+      &lt;div className="fixed inset-0 bg-gradient-to-br from-[#f8f6f2]/95 via-[#f0e7dc]/90 to-[#e4eef2]/95 -z-30 w-full h-full" /&gt;
+
+      {/* ==========================================
+          HEADER &amp; MINIMAL ANALOG NAVIGATION BAR
+          ========================================== */}
+      &lt;header className="sticky top-0 z-40 bg-white/10 backdrop-blur-md border-b border-stone-300/30 py-5"&gt;
+        &lt;div className="max-w-xl mx-auto px-6 flex flex-col items-center"&gt;
+          
+          &lt;button 
+            onClick={() =&gt; handleNavClick('home')} 
+            className="group flex flex-col items-center focus:outline-none mb-3"
+            aria-label="Back to top"
+          &gt;
+            &lt;h1 className="text-xl font-serif tracking-[0.25em] text-stone-900 font-normal uppercase transition-colors group-hover:text-stone-600"&gt;
+              ANGEL BERGER
+            &lt;/h1&gt;
+            &lt;span className="text-[9px] tracking-[0.35em] text-stone-500 font-mono uppercase mt-0.5"&gt;
+              • A Diverse Creative •
+            &lt;/span&gt;
+          &lt;/button&gt;
+
+          {/* Minimal Navigation Bar */}
+          &lt;nav className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[9px] tracking-widest uppercase font-mono" aria-label="Main Portfolio Directory"&gt;
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'blog', label: 'Blog' },
+              { id: 'gallery', label: 'Gallery' },
+              { id: 'services', label: 'Services' },
+              { id: 'products', label: 'Products' },
+              { id: 'process', label: 'Process' },
+              { id: 'contact', label: 'Contact' }
+            ].map((page) =&gt; (
+              &lt;button
+                key={page.id}
+                onClick={() =&gt; handleNavClick(page.id)}
+                className={`transition-all duration-300 relative px-2.5 py-1 border rounded-sm focus:outline-none ${
+                  currentPage === page.id 
+                    ? 'border-stone-800 bg-stone-900 text-[#fcfbf9] font-semibold' 
+                    : 'border-transparent text-stone-500 hover:text-stone-900 hover:border-stone-300 bg-transparent'
+                }`}
+              &gt;
+                {page.label}
+              &lt;/button&gt;
+            ))}
+          &lt;/nav&gt;
+        &lt;/div&gt;
+
+        {/* Global Cart Counter (Transparent Analog Control Style) */}
+        &lt;button 
+          onClick={() =&gt; setIsCartOpen(true)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-stone-600 hover:text-stone-900 bg-white/20 hover:bg-white/50 border border-stone-300/40 rounded-sm transition-all focus:outline-none"
+          aria-label="Atelier Acquisitions Collection"
+        &gt;
+          &lt;ShoppingBag strokeWidth={1.5} size={18} /&gt;
+          {cart.length &gt; 0 &amp;&amp; (
+            &lt;span className="absolute -top-1.5 -right-1.5 bg-stone-900 text-[#fcfbf9] text-[8px] font-mono rounded-full w-4.5 h-4.5 flex items-center justify-center font-bold"&gt;
+              {cart.reduce((sum, item) =&gt; sum + item.quantity, 0)}
+            &lt;/span&gt;
+          )}
+        &lt;/button&gt;
+      &lt;/header&gt;
+
+      {/* ==========================================
+          HEAVY SCROLL-SNAP CONTAINER
+          ========================================== */}
+      &lt;main 
+        ref={scrollContainerRef}
+        className="snap-y snap-mandatory h-[calc(100vh-110px)] overflow-y-auto overflow-x-hidden scroll-smooth"
+      &gt;
+        
+        {/* ==========================================
+            SECTION: HOME (Instant Slogan &amp; Animated Hero Frame)
+            ========================================== */}
+        &lt;section 
+          id="section-home"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center items-center px-6 relative py-12"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-10 text-center"&gt;
+            
+            {/* Slogan Text Header */}
+            &lt;div className="space-y-3 animate-fade-down"&gt;
+              &lt;span className="text-[10px] tracking-[0.35em] text-stone-400 font-mono uppercase block"&gt;
+                [ Statement of Intent ]
+              &lt;/span&gt;
+              &lt;h2 className="text-3xl md:text-4xl font-serif text-stone-900 font-light leading-tight"&gt;
+                Answering the silent friction between &lt;span className="italic font-normal text-teal-800"&gt;raw materials&lt;/span&gt; and digital canvases.
+              &lt;/h2&gt;
+            &lt;/div&gt;
+
+            {/* HIGH-FIDELITY HERO IMAGE FRAME (Fade-Color Parallax Visual) */}
+            &lt;div 
+              ref={heroRef}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() =&gt; setActiveHeroState(2)}
+              onMouseLeave={() =&gt; {
+                setActiveHeroState(1);
+                setMousePosition({ x: 0, y: 0 });
+              }}
+              className="relative rounded-lg overflow-hidden aspect-[16/9] w-full bg-stone-950 border border-stone-400/40 shadow-lg group cursor-crosshair transition-all duration-500"
+              aria-label="Interactive Atelier Visualizer"
+            &gt;
+              {/* Parallax Image Component */}
+              &lt;div className="absolute inset-0 z-0 overflow-hidden"&gt;
+                &lt;div 
+                  className="absolute inset-[-25px] transition-all duration-700 ease-out"
+                  style={{
+                    transform: `translate(${mousePosition.x}px, ${mousePosition.y}px) scale(1.12)`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;q=80&amp;w=1200')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: activeHeroState === 2 
+                      ? 'grayscale(0%) blur(0px) contrast(1.15) brightness(1.02)' 
+                      : 'grayscale(60%) blur(4px) contrast(0.85) brightness(0.60)'
+                  }}
+                /&gt;
+              &lt;/div&gt;
+
+              {/* Dynamic Overlay Gradient System */}
+              &lt;div 
+                className={`absolute inset-0 z-10 transition-all duration-700 ease-out ${
+                  activeHeroState === 2 
+                    ? 'bg-gradient-to-t from-stone-950/60 via-stone-950/15 to-stone-950/10 opacity-60' 
+                    : 'bg-gradient-to-t from-stone-950/90 via-stone-950/65 to-stone-950/45 opacity-100'
+                }`} 
+              /&gt;
+
+              {/* Centered Composition */}
+              &lt;div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center pointer-events-none p-6"&gt;
+                &lt;span className="text-[9px] tracking-[0.5em] text-white/75 font-mono uppercase mb-1"&gt;
+                  Atelier
+                &lt;/span&gt;
+                &lt;h3 className="text-3xl md:text-4xl font-serif font-black tracking-[0.25em] uppercase text-white drop-shadow-md transition-all duration-500"&gt;
+                  A. BERGER
+                &lt;/h3&gt;
+                &lt;span className="text-[8px] tracking-[0.3em] text-white/50 font-mono uppercase mt-2"&gt;
+                  {activeHeroState === 1 ? "[ Rest State ]" : "[ Parallax Unlocked ]"}
+                &lt;/span&gt;
+              &lt;/div&gt;
+
+              {/* Physical analog prompt label */}
+              &lt;div className="absolute bottom-3 right-3 z-30 text-[8px] font-mono uppercase tracking-widest text-white/60 bg-black/50 backdrop-blur-md px-2 py-1 rounded-sm border border-white/10"&gt;
+                Hover Frame
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Scroll Assist Prompt */}
+            &lt;div className="flex flex-col items-center justify-center text-stone-400 text-[10px] tracking-[0.3em] font-mono gap-1 pt-4"&gt;
+              &lt;span&gt;SCROLL DOWN TO PROGRESS&lt;/span&gt;
+              &lt;ArrowDown size={12} className="animate-bounce" /&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: BLOG (Editorial Tiles First)
+            ========================================== */}
+        &lt;section 
+          id="section-blog"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 01&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;Theoretical Essays&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Editorial Grid (Image First, Category Tags, Analog Buttons) */}
+            &lt;div className="space-y-6"&gt;
+              {BLOG_POSTS.map((post) =&gt; {
+                const isExpanded = expandedBlogId === post.id;
+                return (
+                  &lt;article 
+                    key={post.id}
+                    className="bg-white/30 backdrop-blur-md border border-stone-300/40 rounded-lg overflow-hidden p-4 transition-all duration-300 flex flex-col md:flex-row gap-5 hover:border-stone-400/80"
+                  &gt;
+                    &lt;div className="w-full md:w-1/3 aspect-video md:aspect-square overflow-hidden rounded bg-stone-100 shrink-0"&gt;
+                      &lt;img 
+                        src={post.image} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover filter grayscale-[15%] hover:grayscale-0 transition-all duration-500" 
+                      /&gt;
+                    &lt;/div&gt;
+
+                    &lt;div className="flex-1 flex flex-col justify-between space-y-3"&gt;
+                      &lt;div className="space-y-1.5"&gt;
+                        &lt;div className="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-400"&gt;
+                          &lt;span className="text-teal-800 font-semibold"&gt;{post.category}&lt;/span&gt;
+                          &lt;span&gt;{post.date}&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 className="font-serif text-base text-stone-800 font-medium"&gt;
+                          {post.title}
+                        &lt;/h3&gt;
+                        &lt;p className="text-xs text-stone-500 font-light leading-relaxed line-clamp-2"&gt;
+                          {post.excerpt}
+                        &lt;/p&gt;
+                      &lt;/div&gt;
+
+                      &lt;div&gt;
+                        &lt;button
+                          onClick={() =&gt; setExpandedBlogId(isExpanded ? null : post.id)}
+                          className="px-3 py-1 border border-stone-800 hover:bg-stone-900 hover:text-white transition-colors text-[9px] font-mono tracking-widest uppercase rounded-sm"
+                        &gt;
+                          {isExpanded ? 'Fold Article' : 'Unfold Thoughts'}
+                        &lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/article&gt;
+                );
+              })}
+            &lt;/div&gt;
+
+            {/* Stage 3 Animated Content Drawer for active essay */}
+            {expandedBlogId &amp;&amp; (
+              &lt;div className="bg-[#1c1917] text-[#fbf9f6] p-6 rounded-lg border border-stone-800 space-y-3 animate-fade-down"&gt;
+                &lt;div className="flex justify-between items-center border-b border-stone-800 pb-2"&gt;
+                  &lt;span className="text-[9px] font-mono text-stone-400 uppercase tracking-widest"&gt;
+                    Active Essay Reader
+                  &lt;/span&gt;
+                  &lt;button 
+                    onClick={() =&gt; setExpandedBlogId(null)}
+                    className="text-stone-400 hover:text-white"
+                  &gt;
+                    &lt;X size={14} /&gt;
+                  &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;h4 className="font-serif text-lg italic text-white"&gt;
+                  {BLOG_POSTS.find(p =&gt; p.id === expandedBlogId)?.title}
+                &lt;/h4&gt;
+                &lt;p className="text-xs text-stone-300 font-serif leading-relaxed"&gt;
+                  {BLOG_POSTS.find(p =&gt; p.id === expandedBlogId)?.content}
+                &lt;/p&gt;
+              &lt;/div&gt;
+            )}
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: GALLERY (Polaroid Tiles First)
+            ========================================== */}
+        &lt;section 
+          id="section-gallery"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 02&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;The Polaroid Tiles&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Responsive Polaroid Grid */}
+            &lt;div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center"&gt;
+              {GALLERY_ITEMS.slice(0, 4).map((item, index) =&gt; {
+                const tilts = ["-rotate-1", "rotate-1", "rotate-1.5", "-rotate-1.5"];
+                const curTilt = tilts[index % tilts.length];
+
+                return (
+                  &lt;div 
+                    key={item.id}
+                    onClick={() =&gt; setSelectedPolaroid(item)}
+                    className={`bg-white/40 backdrop-blur-md p-3 pb-6 shadow-md border border-stone-300/40 rounded-xs transform transition duration-300 ${curTilt} hover:rotate-0 hover:scale-[1.02] cursor-pointer flex flex-col justify-between`}
+                  &gt;
+                    &lt;div className="aspect-square bg-stone-100 overflow-hidden relative group rounded-xs shadow-inner"&gt;
+                      &lt;img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+                      /&gt;
+                      &lt;div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"&gt;
+                        &lt;span className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow text-stone-800"&gt;
+                          &lt;Eye size={14} /&gt;
+                        &lt;/span&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div className="pt-3 text-center"&gt;
+                      &lt;span className="font-serif italic text-xs text-stone-700 tracking-wide block"&gt;
+                        {item.title}
+                      &lt;/span&gt;
+                      &lt;span className="text-[8px] tracking-widest text-stone-400 font-mono uppercase block mt-1"&gt;
+                        {item.category}
+                      &lt;/span&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                );
+              })}
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: SERVICES (Visual Modules &amp; Simple Interactions)
+            ========================================== */}
+        &lt;section 
+          id="section-services"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 03&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;Custom Design Commitments&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Visual Modules */}
+            &lt;div className="space-y-4"&gt;
+              {SERVICES.map((srv) =&gt; {
+                const isActive = activeService === srv.id;
+                return (
+                  &lt;div 
+                    key={srv.id}
+                    className="border border-stone-300/40 bg-white/30 backdrop-blur-md rounded-lg overflow-hidden transition-all duration-300"
+                  &gt;
+                    &lt;button
+                      onClick={() =&gt; setActiveService(isActive ? null : srv.id)}
+                      className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none"
+                    &gt;
+                      &lt;div&gt;
+                        &lt;h3 className="font-serif text-base text-stone-800 font-medium"&gt;{srv.title}&lt;/h3&gt;
+                        &lt;div className="flex gap-3 text-[8px] font-mono text-stone-400 uppercase mt-1"&gt;
+                          &lt;span className="text-rose-700"&gt;{srv.duration}&lt;/span&gt;
+                          &lt;span&gt;•&lt;/span&gt;
+                          &lt;span&gt;{srv.price}&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;ChevronDown 
+                        size={16} 
+                        className={`text-stone-400 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} 
+                      /&gt;
+                    &lt;/button&gt;
+
+                    {isActive &amp;&amp; (
+                      &lt;div className="px-5 pb-5 pt-3 border-t border-stone-300/20 space-y-3 animate-fade-down"&gt;
+                        &lt;p className="text-stone-500 text-xs font-light leading-relaxed"&gt;
+                          {srv.description}
+                        &lt;/p&gt;
+                        &lt;div className="space-y-1.5"&gt;
+                          &lt;span className="text-[8px] uppercase tracking-widest text-stone-400 font-mono block"&gt;
+                            Direct Deliverables:
+                          &lt;/span&gt;
+                          &lt;ul className="space-y-1"&gt;
+                            {srv.deliverables.map((item, index) =&gt; (
+                              &lt;li key={index} className="flex items-center gap-2 text-[11px] text-stone-600"&gt;
+                                &lt;Check size={10} className="text-stone-600 animate-pulse" /&gt;
+                                &lt;span&gt;{item}&lt;/span&gt;
+                              &lt;/li&gt;
+                            ))}
+                          &lt;/ul&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    )}
+                  &lt;/div&gt;
+                );
+              })}
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: PRODUCTS (Product Cards &amp; Visual Showcase)
+            ========================================== */}
+        &lt;section 
+          id="section-products"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 04&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;The Atelier Stock&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Visual Product Grid */}
+            &lt;div className="grid grid-cols-2 gap-4"&gt;
+              {PRODUCTS.map((prod) =&gt; (
+                &lt;div 
+                  key={prod.id}
+                  className="bg-white/30 backdrop-blur-md border border-stone-300/40 rounded-lg p-3 flex flex-col justify-between space-y-3 hover:border-stone-400"
+                &gt;
+                  &lt;div className="aspect-square bg-stone-50 overflow-hidden rounded relative group shadow-inner"&gt;
+                    &lt;img 
+                      src={prod.image} 
+                      alt={prod.title} 
+                      className="w-full h-full object-cover filter grayscale-[10%]" 
+                    /&gt;
+                    &lt;button 
+                      onClick={() =&gt; setSelectedProduct(prod)}
+                      className="absolute bottom-2 right-2 p-1.5 bg-white/95 rounded-full text-stone-700 shadow-sm"
+                      title="Quick Specs"
+                    &gt;
+                      &lt;Info size={12} /&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1"&gt;
+                    &lt;h3 className="font-serif text-xs text-stone-800 font-semibold truncate"&gt;{prod.title}&lt;/h3&gt;
+                    &lt;div className="flex justify-between items-center text-[10px] font-mono"&gt;
+                      &lt;span className="text-stone-400 uppercase"&gt;{prod.category}&lt;/span&gt;
+                      &lt;span className="text-stone-950 font-bold"&gt;${prod.price}&lt;/span&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  &lt;button
+                    onClick={() =&gt; addToCart(prod)}
+                    className="w-full py-1.5 bg-stone-900 hover:bg-stone-950 text-[#fbf9f6] text-[9px] font-mono tracking-widest uppercase rounded-sm transition-all"
+                  &gt;
+                    Acquire Object
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: PROCESS (Creative Process Loop)
+            ========================================== */}
+        &lt;section 
+          id="section-process"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 05&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;Creative Process&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Visual Process Timeline Chain */}
+            &lt;div className="relative grid grid-cols-1 md:grid-cols-4 gap-4 pt-4"&gt;
+              {/* Process Cards loop */}
+              {PROCESS_STEPS.map((step, idx) =&gt; (
+                &lt;div 
+                  key={step.step}
+                  className="bg-white/30 backdrop-blur-md border border-stone-300/40 p-4 rounded-lg relative flex flex-col justify-between space-y-3 hover:scale-[1.01] transition-transform shadow-xs"
+                &gt;
+                  &lt;div className="flex justify-between items-center"&gt;
+                    &lt;span className="text-xs font-mono text-stone-400"&gt;Step {step.step}&lt;/span&gt;
+                    &lt;div className="p-1 rounded bg-white border border-stone-200"&gt;
+                      {step.icon}
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1"&gt;
+                    &lt;h3 className="font-serif text-sm font-semibold text-stone-800"&gt;{step.name}&lt;/h3&gt;
+                    &lt;p className="text-[10px] text-stone-500 font-light leading-relaxed"&gt;
+                      {step.excerpt}
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+
+            &lt;div className="text-center font-serif italic text-xs text-stone-400 max-w-xs mx-auto"&gt;
+              \"We reject algorithmic convenience in favor of organic visual friction.\"
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* ==========================================
+            SECTION: CONTACT (Glass Panel Form)
+            ========================================== */}
+        &lt;section 
+          id="section-contact"
+          className="snap-start min-h-[calc(100vh-110px)] flex flex-col justify-center px-6 py-12 relative"
+        &gt;
+          &lt;div className="max-w-xl w-full mx-auto space-y-8"&gt;
+            
+            &lt;div className="text-center space-y-1"&gt;
+              &lt;span className="text-[9px] tracking-[0.4em] text-stone-400 font-mono uppercase block"&gt;Index 06&lt;/span&gt;
+              &lt;h2 className="text-xl md:text-2xl font-serif text-stone-900 font-normal"&gt;Initiate Correspondence&lt;/h2&gt;
+              &lt;div className="w-6 h-[1px] bg-stone-400 mx-auto mt-2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Glass-like Correspondence Box */}
+            &lt;div className="bg-white/40 backdrop-blur-md border border-stone-300/40 rounded-xl p-6 shadow-sm"&gt;
+              {contactSubmitted ? (
+                &lt;div className="text-center py-8 space-y-3 animate-fade-down"&gt;
+                  &lt;div className="w-10 h-10 bg-stone-900 text-[#fbf9f6] rounded-full flex items-center justify-center mx-auto border border-stone-800"&gt;
+                    &lt;Check size={16} /&gt;
+                  &lt;/div&gt;
+                  &lt;h3 className="font-serif text-base text-stone-900"&gt;Form Transmitted Successfully&lt;/h3&gt;
+                  &lt;p className="text-xs text-stone-500 max-w-xs mx-auto leading-relaxed"&gt;
+                    Letters are reviewed at sunset. You will receive a secure response inside forty-eight hours.
+                  &lt;/p&gt;
+                  &lt;button 
+                    onClick={() =&gt; setContactSubmitted(false)}
+                    className="px-4 py-1.5 border border-stone-400 hover:bg-stone-100 text-[8px] font-mono tracking-widest uppercase rounded-sm"
+                  &gt;
+                    Transmit another line
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              ) : (
+                &lt;form onSubmit={handleContactSubmit} className="space-y-4"&gt;
+                  
+                  &lt;div className="space-y-1 text-center"&gt;
+                    &lt;label className="text-[8px] uppercase tracking-widest font-mono text-stone-400"&gt;Your Full Name&lt;/label&gt;
+                    &lt;input 
+                      type="text" 
+                      required
+                      value={contactForm.name}
+                      onChange={(e) =&gt; setContactForm({ ...contactForm, name: e.target.value })}
+                      placeholder="e.g. Henrik Lindqvist" 
+                      className="w-full max-w-md mx-auto block px-3 py-1.5 bg-white/40 border border-stone-300/40 text-xs rounded-sm focus:outline-none focus:ring-1 focus:ring-stone-400 text-center font-mono"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1 text-center"&gt;
+                    &lt;label className="text-[8px] uppercase tracking-widest font-mono text-stone-400"&gt;Electronic Address&lt;/label&gt;
+                    &lt;input 
+                      type="email" 
+                      required
+                      value={contactForm.email}
+                      onChange={(e) =&gt; setContactForm({ ...contactForm, email: e.target.value })}
+                      placeholder="e.g. henrik@lindqvist.se" 
+                      className="w-full max-w-md mx-auto block px-3 py-1.5 bg-white/40 border border-stone-300/40 text-xs rounded-sm focus:outline-none focus:ring-1 focus:ring-stone-400 text-center font-mono"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="space-y-1 text-center"&gt;
+                    &lt;label className="text-[8px] uppercase tracking-widest font-mono text-stone-400"&gt;Query Specifications&lt;/label&gt;
+                    &lt;textarea 
+                      required
+                      rows={3}
+                      value={contactForm.message}
+                      onChange={(e) =&gt; setContactForm({ ...contactForm, message: e.target.value })}
+                      placeholder="Explain your space, timeline, or product hopes..." 
+                      className="w-full max-w-md mx-auto block px-3 py-1.5 bg-white/40 border border-stone-300/40 text-xs rounded-sm focus:outline-none focus:ring-1 focus:ring-stone-400 text-center resize-none font-mono"
+                    /&gt;
+                  &lt;/div&gt;
+
+                  &lt;div className="text-center pt-2"&gt;
+                    &lt;button 
+                      type="submit"
+                      className="px-6 py-2 bg-stone-900 hover:bg-stone-950 text-white text-[9px] font-mono tracking-widest uppercase rounded-sm shadow-sm transition-all"
+                    &gt;
+                      Transmit Details
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/form&gt;
+              )}
+            &lt;/div&gt;
+
+            {/* Studio Coordinates */}
+            &lt;div className="space-y-3 text-center text-xs text-stone-500 font-mono"&gt;
+              &lt;div className="flex flex-col items-center gap-1"&gt;
+                &lt;MapPin size={12} className="text-stone-400" /&gt;
+                &lt;span className="font-semibold text-stone-800"&gt;Berlin Studio Coordinates&lt;/span&gt;
+                &lt;span className="text-[10px] text-stone-400"&gt;Zossener Str. 11, Berlin, Germany&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div className="flex flex-col items-center gap-1"&gt;
+                &lt;Mail size={12} className="text-stone-400" /&gt;
+                &lt;span className="font-semibold text-stone-800"&gt;Direct Inquiries&lt;/span&gt;
+                &lt;span className="text-[10px] text-stone-400"&gt;angel@angelberger.studio&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+      &lt;/main&gt;
+
+      {/* ==========================================
+          MODAL: STAGE 3 EXPANDED POLAROID
+          ========================================== */}
+      {selectedPolaroid &amp;&amp; (
+        &lt;div className="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm flex items-center justify-center p-4"&gt;
+          &lt;div className="bg-white p-4 pb-8 rounded shadow-2xl max-w-xs w-full mx-auto relative animate-scale-up border border-stone-300"&gt;
+            
+            &lt;button 
+              onClick={() =&gt; setSelectedPolaroid(null)}
+              className="absolute top-2 right-2 p-1 text-stone-400 hover:text-stone-800 transition-colors"
+              aria-label="Close Polaroid"
+            &gt;
+              &lt;X size={16} /&gt;
+            &lt;/button&gt;
+
+            &lt;div className="aspect-square w-full bg-stone-50 overflow-hidden shadow-inner rounded-xs mb-3"&gt;
+              &lt;img 
+                src={selectedPolaroid.image} 
+                alt={selectedPolaroid.title} 
+                className="w-full h-full object-cover filter grayscale-[5%]" 
+              /&gt;
+            &lt;/div&gt;
+
+            &lt;div className="text-center space-y-2"&gt;
+              &lt;h3 className="font-serif italic text-base text-stone-800"&gt;{selectedPolaroid.title}&lt;/h3&gt;
+              &lt;div className="text-[8px] font-mono text-stone-400 uppercase"&gt;
+                {selectedPolaroid.location} • {selectedPolaroid.date}
+              &lt;/div&gt;
+              &lt;div className="w-8 h-[1px] bg-stone-200 mx-auto" /&gt;
+              &lt;p className="text-[11px] text-stone-600 font-serif leading-relaxed px-1"&gt;
+                {selectedPolaroid.body}
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+      {/* ==========================================
+          MODAL: PRODUCT QUICK SPEC VIEW
+          ========================================== */}
+      {selectedProduct &amp;&amp; (
+        &lt;div className="fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-sm flex items-center justify-center p-4"&gt;
+          &lt;div className="bg-white rounded-lg p-5 max-w-sm w-full relative animate-scale-up shadow-2xl border border-stone-200"&gt;
+            &lt;button 
+              onClick={() =&gt; setSelectedProduct(null)}
+              className="absolute top-3 right-3 p-1 text-stone-400 hover:text-stone-800"
+            &gt;
+              &lt;X size={16} /&gt;
+            &lt;/button&gt;
+
+            &lt;div className="space-y-3"&gt;
+              &lt;div className="aspect-square bg-stone-50 overflow-hidden rounded shadow-inner"&gt;
+                &lt;img src={selectedProduct.image} alt={selectedProduct.title} className="w-full h-full object-cover" /&gt;
+              &lt;/div&gt;
+              &lt;div className="space-y-1"&gt;
+                &lt;span className="text-[8px] font-mono text-stone-400 uppercase"&gt;{selectedProduct.category}&lt;/span&gt;
+                &lt;h3 className="font-serif text-base text-stone-800 font-semibold"&gt;{selectedProduct.title}&lt;/h3&gt;
+                &lt;p className="text-xs text-stone-500 font-light leading-relaxed"&gt;{selectedProduct.description}&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div className="p-2.5 bg-stone-50 rounded text-[10px] font-mono text-stone-500"&gt;
+                {selectedProduct.details}
+              &lt;/div&gt;
+              &lt;div className="flex gap-2"&gt;
+                &lt;button
+                  onClick={() =&gt; {
+                    addToCart(selectedProduct);
+                    setSelectedProduct(null);
+                  }}
+                  className="flex-1 py-1.5 bg-stone-950 text-[#fbf9f6] text-[9px] font-mono uppercase tracking-widest rounded-sm"
+                &gt;
+                  Acquire
+                &lt;/button&gt;
+                &lt;button
+                  onClick={() =&gt; setSelectedProduct(null)}
+                  className="px-3 py-1.5 border border-stone-200 text-stone-600 text-[9px] font-mono uppercase"
+                &gt;
+                  Back
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+      {/* ==========================================
+          SLIDE-OUT BASKET DRAWER
+          ========================================== */}
+      {isCartOpen &amp;&amp; (
+        &lt;div className="fixed inset-0 z-50 overflow-hidden"&gt;
+          &lt;div 
+            onClick={() =&gt; setIsCartOpen(false)} 
+            className="absolute inset-0 bg-stone-950/40 backdrop-blur-xs transition-opacity"
+          /&gt;
+
+          &lt;div className="absolute inset-y-0 right-0 max-w-xs w-full bg-[#fbf9f6]/95 backdrop-blur-md shadow-2xl flex flex-col justify-between border-l border-stone-300/40"&gt;
+            
+            &lt;div className="p-5 border-b border-stone-200 flex items-center justify-between"&gt;
+              &lt;h3 className="font-serif text-sm text-stone-800"&gt;Your Acquisitions&lt;/h3&gt;
+              &lt;button onClick={() =&gt; setIsCartOpen(false)} className="text-stone-400 hover:text-stone-800"&gt;
+                &lt;X size={16} /&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;div className="flex-1 overflow-y-auto p-5 space-y-4"&gt;
+              {cart.length === 0 ? (
+                &lt;div className="text-center py-20 space-y-3"&gt;
+                  &lt;span className="text-stone-300 block text-3xl"&gt;🪹&lt;/span&gt;
+                  &lt;p className="text-xs text-stone-400 font-mono tracking-wider"&gt;Empty Collection Drawer&lt;/p&gt;
+                &lt;/div&gt;
+              ) : (
+                cart.map((item) =&gt; (
+                  &lt;div key={item.id} className="flex gap-3 border-b border-stone-200/20 pb-3 last:border-0"&gt;
+                    &lt;img src={item.image} alt={item.title} className="w-12 h-12 object-cover rounded shadow-xs shrink-0" /&gt;
+                    &lt;div className="flex-1 min-w-0 space-y-0.5"&gt;
+                      &lt;h4 className="font-serif text-xs text-stone-800 truncate"&gt;{item.title}&lt;/h4&gt;
+                      &lt;p className="text-[10px] font-mono text-stone-500"&gt;${item.price} x {item.quantity}&lt;/p&gt;
+                      &lt;button 
+                        onClick={() =&gt; removeFromCart(item.id)}
+                        className="text-[8px] font-mono text-stone-400 hover:text-rose-700 tracking-widest uppercase"
+                      &gt;
+                        Remove
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                ))
+              )}
+            &lt;/div&gt;
+
+            {cart.length &gt; 0 &amp;&amp; (
+              &lt;div className="p-5 border-t border-stone-200 space-y-3 bg-white/50"&gt;
+                &lt;div className="flex justify-between text-xs font-mono font-medium text-stone-800"&gt;
+                  &lt;span&gt;Subtotal:&lt;/span&gt;
+                  &lt;span&gt;${cartTotal}&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button 
+                  onClick={handleCheckout}
+                  className="w-full py-2 bg-stone-900 hover:bg-stone-950 text-white text-[9px] font-mono tracking-widest uppercase rounded-sm shadow-sm"
+                &gt;
+                  Proceed to Secure Checkout
+                &lt;/button&gt;
+              &lt;/div&gt;
+            )}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+      {/* ==========================================
+          SAFE TRANSITION STEP OVERLAY
+          ========================================== */}
+      {checkoutStep &amp;&amp; (
+        &lt;div className="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-md flex items-center justify-center p-4"&gt;
+          &lt;div className="bg-white/95 border border-stone-300 p-5 max-w-xs w-full text-center rounded-lg shadow-2xl space-y-3"&gt;
+            {checkoutStep === 'checking-out' ? (
+              &lt;div className="space-y-3 py-4"&gt;
+                &lt;div className="animate-spin rounded-full h-6 w-6 border-b-2 border-stone-800 mx-auto" /&gt;
+                &lt;p className="text-[9px] font-mono tracking-widest text-stone-400 uppercase"&gt;Contacting secure transactional gate...&lt;/p&gt;
+              &lt;/div&gt;
+            ) : (
+              &lt;div className="space-y-3 py-2"&gt;
+                &lt;div className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center mx-auto border border-stone-200"&gt;
+                  &lt;Check size={16} className="text-emerald-700" /&gt;
+                &lt;/div&gt;
+                &lt;h3 className="font-serif text-base text-stone-800"&gt;Order Manifest Created&lt;/h3&gt;
+                &lt;p className="text-xs text-stone-500 leading-relaxed"&gt;
+                  A custom checkout ticket has been dispatched. Angel Berger will verify piece availability shortly.
+                &lt;/p&gt;
+                &lt;button
+                  onClick={() =&gt; {
+                    setCheckoutStep(null);
+                    setIsCartOpen(false);
+                  }}
+                  className="px-4 py-1.5 bg-stone-900 text-white text-[9px] font-mono tracking-widest uppercase rounded-sm"
+                &gt;
+                  Confirm &amp; Return
+                &lt;/button&gt;
+              &lt;/div&gt;
+            )}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+    &lt;/div&gt;
+  );
+}</pre>
+</main>
+</body>
+</html>

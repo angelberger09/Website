@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Berger | A Diverse Creative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#030206',
+                        violetdark: '#0b0914',
+                        studio: {
+                            100: '#f5f3ff',
+                            200: '#ddd6fe',
+                            400: '#a78bfa',
+                            600: '#7c3aed',
+                            800: '#5b21b6',
+                        },
+                        pastel: {
+                            blue: '#bae6fd',
+                            green: '#bbf7d0',
+                            beige: '#f5f5f4',
+                            mauve: '#f472b6',
+                            rose: '#fda4af'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Setup & Snap Points */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #030206;
+            color: #e2e8f0;
+            overflow: hidden; 
+        }
+
+        #scroll-container {
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+        #scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Tactile Constraints & Margins */
+        .content-wrapper {
+            max-width: 58rem;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .content-wrapper {
+                padding: 4rem 3rem;
+            }
+        }
+
+        /* Fixed Tactile Paper Overlay - Multi-pass organic visual feel */
+        .paper-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2; /* Above moving stars, below actual content elements */
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.055;
+            mix-blend-mode: overlay;
+        }
+
+        /* Violet Studio Depth Gradient */
+        .bg-gradient-base {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(circle at 50% 30%, #151126 0%, #06050b 70%, #020104 100%);
+        }
+
+        /* Analog Button & Control Styling */
+        .analog-control {
+            background: rgba(18, 15, 30, 0.45);
+            border: 1px solid rgba(167, 139, 250, 0.15);
+            border-bottom: 2px solid rgba(8, 6, 15, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            color: #94a3b8;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            position: relative;
+        }
+        
+        .analog-control:hover {
+            color: #f5f3ff;
+            background: rgba(30, 25, 50, 0.6);
+            border-color: rgba(167, 139, 250, 0.35);
+            box-shadow: 0 6px 16px rgba(167, 139, 250, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .analog-control:active, .analog-control.active {
+            background: rgba(10, 8, 18, 0.8);
+            border-bottom: 1px solid rgba(8, 6, 15, 0.9);
+            border-top: 2px solid rgba(0, 0, 0, 0.9);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7), 0 1px 1px rgba(255, 255, 255, 0.02);
+            transform: translateY(1px);
+            color: #ddd6fe;
+        }
+
+        /* Tactile Navigation Indicator LED */
+        .nav-btn .indicator-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: transparent;
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn.active .indicator-dot {
+            background-color: #a78bfa;
+            box-shadow: 0 0 6px #7c3aed, 0 0 12px #a78bfa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        /* Interactive Home Hero Frame */
+        .hero-img-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+            background: #040307;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            /* Default: At Rest */
+            filter: grayscale(80%) blur(4px) contrast(80%) brightness(0.4);
+            transform: scale(1.04);
+            transition: filter 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, filter;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(3, 2, 6, 1) 0%, rgba(3, 2, 6, 0.75) 45%, rgba(3, 2, 6, 0.1) 100%);
+            z-index: 2;
+            transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        /* Home Interactive Resolve Hover States */
+        #home:hover .hero-img {
+            filter: grayscale(0%) blur(0px) contrast(105%) brightness(0.75);
+            transform: scale(1.01);
+        }
+
+        #home:hover .hero-gradient {
+            opacity: 0.5; /* Let detail/warmth seep through */
+        }
+
+        /* Home Scroll Resolve State Fallback */
+        #home.is-visible .hero-img {
+            filter: grayscale(40%) blur(1px) contrast(95%) brightness(0.6);
+        }
+        #home.is-visible:hover .hero-img {
+            filter: grayscale(0%) blur(0px) contrast(105%) brightness(0.75);
+        }
+
+        /* Typographic Slide Animatic Style */
+        @keyframes subtleSlideUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .animate-title {
+            animation: subtleSlideUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-subtitle {
+            animation: subtleSlideUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        /* Polaroid Elements */
+        .polaroid {
+            background: #fafaf9;
+            padding: 0.75rem 0.75rem 3.25rem 0.75rem;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.65), inset 0 0 6px rgba(0,0,0,0.06);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            position: relative;
+        }
+        .polaroid-img {
+            background: #0f0d14;
+            width: 100%;
+            object-fit: cover;
+            filter: sepia(18%) contrast(105%) brightness(95%);
+            transition: filter 0.4s ease;
+        }
+        .polaroid-label {
+            position: absolute;
+            bottom: 1.1rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #1c1917;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            opacity: 0.85;
+        }
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0.5deg) !important;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.8);
+            z-index: 20;
+            cursor: pointer;
+        }
+        .polaroid:hover .polaroid-img {
+            filter: sepia(0%) contrast(100%) brightness(100%);
+        }
+
+        /* Visual Steps / Process Flow Connection Line */
+        .process-line {
+            position: absolute;
+            top: 2rem;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(167, 139, 250, 0.25) 20%, rgba(167, 139, 250, 0.25) 80%, transparent);
+            z-index: 0;
+        }
+
+        /* Animatic Fade Reveals (Establish -> Reveal -> Resolve) */
+        .reveal-node {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .is-visible .reveal-node {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Lightbox Container */
+        #modal-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+        #modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .expanded-polaroid {
+            transform: scale(0.92) translateY(15px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 460px;
+            width: 90%;
+        }
+        #modal-overlay.active .expanded-polaroid {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Glass Panel contact styling */
+        .glass-panel {
+            background: rgba(11, 9, 20, 0.45);
+            border: 1px solid rgba(167, 139, 250, 0.08);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(16px);
+        }
+        .analog-input {
+            background: rgba(4, 3, 7, 0.5);
+            border: 1px solid rgba(167, 139, 250, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.7);
+            color: #f1f5f9;
+            transition: all 0.3s ease;
+        }
+        .analog-input:focus {
+            outline: none;
+            border-color: rgba(167, 139, 250, 0.35);
+            background: rgba(11, 9, 20, 0.7);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-studio-800 selection:text-white font-sans text-gray-300">
+
+    <!-- Ambient Layered Environment -->
+    <div class="bg-gradient-base"></div>
+    <canvas id="starfield" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+    <div class="paper-overlay"></div>
+
+    <!-- Quiet Page Navigation -->
+    <nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-2 overflow-x-auto max-w-[95%] sm:max-w-xl md:max-w-2xl flex justify-center">
+        <div class="flex gap-2 sm:gap-3 items-center">
+            <button onclick="scrollToSection('home')" class="nav-btn analog-control px-4 py-2.5 rounded-sm active" data-target="home">
+                Home <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('gallery')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="gallery">
+                Gallery <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('blog')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="blog">
+                Blog <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('services')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="services">
+                Services <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('products')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="products">
+                Products <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('process')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="process">
+                Process <span class="indicator-dot"></span>
+            </button>
+            <button onclick="scrollToSection('contact')" class="nav-btn analog-control px-4 py-2.5 rounded-sm" data-target="contact">
+                Contact <span class="indicator-dot"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Guided Scroll Layout -->
+    <main id="scroll-container">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="h-screen w-full flex items-center justify-center cursor-crosshair section-observer">
+            <div class="hero-img-wrapper">
+                <img id="hero-img-el" src="https://images.unsplash.com/photo-1598928506311-c55dedbfc181?q=80&w=2070&auto=format&fit=crop" alt="Angel Berger Atelier" class="hero-img" />
+            </div>
+            <div class="hero-gradient"></div>
+            
+            <div class="relative z-10 text-center flex flex-col items-center pointer-events-none px-6">
+                <h1 class="animate-title text-5xl sm:text-7xl md:text-8xl font-serif font-light text-white tracking-[0.14em] drop-shadow-2xl mb-4 leading-none">
+                    ANGEL BERGER
+                </h1>
+                <p class="animate-subtitle text-xs sm:text-sm md:text-base font-mono text-studio-200 tracking-[0.4em] uppercase">
+                    A Diverse Creative
+                </p>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="min-h-screen w-full flex items-center py-24 section-observer">
+            <div class="content-wrapper">
+                <header class="mb-16 text-center reveal-node">
+                    <span class="text-xs font-mono tracking-[0.4em] text-studio-400 uppercase mb-3 block">Selected Frames</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-light text-white">Visual Portfolio</h2>
+                </header>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-8 px-6 sm:px-0 items-center">
+                    <!-- Polaroid 1 (Square) -->
+                    <div class="polaroid reveal-node delay-100 rotate-[-2.5deg] md:-translate-y-4" onclick="openModal('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1200&auto=format&fit=crop', 'Spatial Study 01', 'An exploration of light bouncing off brutalist structural elements, composed in a quiet atelier space.')">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop" alt="Spatial Study 01" class="polaroid-img aspect-square" loading="lazy">
+                        <div class="polaroid-label">SPATIAL 01</div>
+                    </div>
+                    <!-- Polaroid 2 (Portrait Film) -->
+                    <div class="polaroid reveal-node delay-200 rotate-[3deg] md:translate-y-6" onclick="openModal('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200&auto=format&fit=crop', 'Form & Light', 'Raw ceramic textures catching morning warmth. Focus on form, imperfection, and materiality.')">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=600&auto=format&fit=crop" alt="Form & Light" class="polaroid-img aspect-[4/5]" loading="lazy">
+                        <div class="polaroid-label">FORM & LIGHT</div>
+                    </div>
+                    <!-- Polaroid 3 (Landscape 35mm) -->
+                    <div class="polaroid reveal-node delay-300 rotate-[-1.5deg] md:translate-y-2" onclick="openModal('https://images.unsplash.com/photo-1543332164-6e82f355badc?q=80&w=1200&auto=format&fit=crop', 'Void & Structure', 'Minimalist graphic balance. An observation of architecture and sky through a focused lens.')">
+                        <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?q=80&w=600&auto=format&fit=crop" alt="Void & Structure" class="polaroid-img aspect-[4/3]" loading="lazy">
+                        <div class="polaroid-label">VOID 04</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG SECTION -->
+        <section id="blog" class="min-h-screen w-full flex items-center py-24 section-observer">
+            <div class="content-wrapper">
+                <header class="mb-16 text-center md:text-left reveal-node">
+                    <div class="w-10 h-[1px] bg-studio-400 mb-4 mx-auto md:mx-0"></div>
+                    <h2 class="text-4xl font-serif text-white mb-2 font-light">Visual Journal</h2>
+                    <p class="text-studio-400 font-mono text-xs tracking-[0.25em] uppercase">Ideas, methods & process captures</p>
+                </header>
+
+                <div class="flex flex-col gap-16 md:gap-20">
+                    <!-- Article 1 (Image Left, Square) -->
+                    <article class="group cursor-pointer reveal-node delay-100 flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-center" onclick="scrollToSection('contact')">
+                        <div class="w-full md:w-56 h-56 shrink-0 overflow-hidden relative rounded-sm border border-white/5">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=600&auto=format&fit=crop" alt="Drafting" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-studio-800/10 mix-blend-overlay"></div>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <span class="text-[10px] font-mono text-pastel-rose uppercase tracking-widest mb-2 block">Process // 01</span>
+                            <h3 class="text-2xl font-serif text-gray-200 group-hover:text-white transition-colors mb-3">Tactile Digital Objects</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed font-sans mb-4 max-w-md mx-auto md:mx-0">Designing digital spaces with the weight, friction, and visual characteristics of physical art tools.</p>
+                            <span class="text-[10px] font-mono text-studio-400 group-hover:text-white transition-colors uppercase border-b border-transparent group-hover:border-white/40 pb-0.5">Read Capture</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 (Image Right, Portrait) -->
+                    <article class="group cursor-pointer reveal-node delay-200 flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center md:items-center" onclick="scrollToSection('contact')">
+                        <div class="w-full md:w-48 h-64 shrink-0 overflow-hidden relative rounded-sm border border-white/5">
+                            <img src="https://images.unsplash.com/photo-1510172951991-856a654063f9?q=80&w=600&auto=format&fit=crop" alt="Warm lights" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <div class="absolute inset-0 bg-studio-800/10 mix-blend-overlay"></div>
+                        </div>
+                        <div class="flex-1 text-center md:text-right">
+                            <span class="text-[10px] font-mono text-pastel-blue uppercase tracking-widest mb-2 block">Aesthetic // 02</span>
+                            <h3 class="text-2xl font-serif text-gray-200 group-hover:text-white transition-colors mb-3">Designing with Noise</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed font-sans mb-4 max-w-md mx-auto md:ml-auto md:mr-0">Why mathematically perfect digital gradients lack warmth, and how intentional grain introduces emotional connection.</p>
+                            <span class="text-[10px] font-mono text-studio-400 group-hover:text-white transition-colors uppercase border-b border-transparent group-hover:border-white/40 pb-0.5">Read Capture</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="min-h-screen w-full flex items-center py-24 section-observer">
+            <div class="content-wrapper pb-16 md:pb-32"> <!-- Added bottom padding to accommodate stagger -->
+                <header class="mb-16 text-center reveal-node">
+                    <span class="text-xs font-mono tracking-[0.4em] text-studio-400 uppercase mb-3 block">Collaborations</span>
+                    <h2 class="text-4xl font-serif text-white font-light">Creative Capabilities</h2>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-node delay-100">
+                    <!-- Service 1 -->
+                    <div class="analog-control p-8 flex flex-col items-center text-center group rounded-sm">
+                        <div class="w-10 h-10 rounded-full border border-studio-400/20 flex items-center justify-center mb-6 group-hover:border-studio-400 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="text-studio-400"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                        </div>
+                        <h4 class="font-mono text-xs text-white mb-3 tracking-[0.2em] uppercase">ART DIRECTION</h4>
+                        <p class="text-[11px] text-gray-400 font-sans leading-relaxed">Developing tailored creative identities, lighting approaches, and graphic systems for visual projects.</p>
+                    </div>
+                    
+                    <!-- Service 2 (Staggered Down) -->
+                    <div class="analog-control p-8 flex flex-col items-center text-center group rounded-sm md:translate-y-10">
+                        <div class="w-10 h-10 rounded-full border border-studio-400/20 flex items-center justify-center mb-6 group-hover:border-pastel-rose transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="text-pastel-rose"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <h4 class="font-mono text-xs text-white mb-3 tracking-[0.2em] uppercase">BRAND COHERENCE</h4>
+                        <p class="text-[11px] text-gray-400 font-sans leading-relaxed">Crafting typographic systems, logo marks, and packaging templates that translate seamlessly online and physically.</p>
+                    </div>
+
+                    <!-- Service 3 (Staggered Further) -->
+                    <div class="analog-control p-8 flex flex-col items-center text-center group rounded-sm md:translate-y-20">
+                        <div class="w-10 h-10 rounded-full border border-studio-400/20 flex items-center justify-center mb-6 group-hover:border-pastel-blue transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="text-pastel-blue"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <h4 class="font-mono text-xs text-white mb-3 tracking-[0.2em] uppercase">EDITORIAL DESIGN</h4>
+                        <p class="text-[11px] text-gray-400 font-sans leading-relaxed">Designing layouts built around extreme spatial discipline, exquisite typography, and tactile screen pacing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products" class="min-h-screen w-full flex items-center py-24 section-observer">
+            <div class="content-wrapper">
+                <header class="mb-16 flex justify-between items-end border-b border-white/5 pb-4 reveal-node">
+                    <h2 class="text-3xl font-serif font-light text-white">Editions</h2>
+                    <span class="text-[10px] font-mono text-studio-400 uppercase tracking-widest">Tangible Objects</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <!-- Product 1 (Portrait orientation) -->
+                    <div class="group reveal-node delay-100">
+                        <div class="w-full aspect-[3/4] bg-black/40 relative overflow-hidden mb-6 border border-white/5 rounded-sm">
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop" alt="Monograph" class="w-full h-full object-cover opacity-75 group-hover:opacity-95 group-hover:scale-[1.03] transition-all duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-50"></div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-serif text-gray-200 mb-1 group-hover:text-white transition-colors">"Negative Space" Monograph</h3>
+                                <p class="text-[10px] font-mono text-studio-400">Archival publication / Offset lithography</p>
+                            </div>
+                            <button onclick="scrollToSection('contact')" class="analog-control px-4 py-2 text-[10px] rounded-sm shrink-0">Acquire</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 (Landscape orientation) -->
+                    <div class="group reveal-node delay-200">
+                        <div class="w-full aspect-[16/9] bg-black/40 relative overflow-hidden mb-6 border border-white/5 rounded-sm">
+                            <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?q=80&w=800&auto=format&fit=crop" alt="Print" class="w-full h-full object-cover opacity-75 group-hover:opacity-95 group-hover:scale-[1.03] transition-all duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-50"></div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-serif text-gray-200 mb-1 group-hover:text-white transition-colors">Fine Art Print Series 01</h3>
+                                <p class="text-[10px] font-mono text-studio-400">Giclée on 310gsm cotton rag / Signed</p>
+                            </div>
+                            <button onclick="scrollToSection('contact')" class="analog-control px-4 py-2 text-[10px] rounded-sm shrink-0">Acquire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section id="process" class="min-h-screen w-full flex items-center py-24 section-observer">
+            <div class="content-wrapper">
+                <header class="mb-20 text-center reveal-node">
+                    <span class="text-xs font-mono tracking-[0.4em] text-studio-400 uppercase mb-3 block">The Workflow</span>
+                    <h2 class="text-4xl font-serif text-white font-light">Creative Process</h2>
+                </header>
+
+                <div class="relative">
+                    <!-- Connecting Path -->
+                    <div class="hidden md:block process-line"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        <!-- Step 1: Plan -->
+                        <div class="analog-control p-6 flex flex-col items-center text-center rounded-sm group reveal-node delay-100">
+                            <div class="w-8 h-8 rounded-full bg-studio-600/15 border border-studio-400/20 text-studio-200 font-mono text-xs flex items-center justify-center mb-4 group-hover:border-studio-400 group-hover:bg-studio-600/30 transition-all">01</div>
+                            <h4 class="font-mono text-xs text-white mb-2.5 tracking-wider uppercase">PLAN</h4>
+                            <p class="text-[10px] text-gray-400 leading-relaxed">Define the creative direction, visual goal, constraints, and intended feeling.</p>
+                        </div>
+
+                        <!-- Step 2: Randomize -->
+                        <div class="analog-control p-6 flex flex-col items-center text-center rounded-sm group reveal-node delay-200">
+                            <div class="w-8 h-8 rounded-full bg-studio-600/15 border border-studio-400/20 text-studio-200 font-mono text-xs flex items-center justify-center mb-4 group-hover:border-pastel-rose group-hover:bg-studio-600/30 transition-all">02</div>
+                            <h4 class="font-mono text-xs text-white mb-2.5 tracking-wider uppercase">RANDOMIZE</h4>
+                            <p class="text-[10px] text-gray-400 leading-relaxed">Explore unexpected variations, references, colors, compositions, and visual possibilities.</p>
+                        </div>
+
+                        <!-- Step 3: Extract -->
+                        <div class="analog-control p-6 flex flex-col items-center text-center rounded-sm group reveal-node delay-300">
+                            <div class="w-8 h-8 rounded-full bg-studio-600/15 border border-studio-400/20 text-studio-200 font-mono text-xs flex items-center justify-center mb-4 group-hover:border-pastel-blue group-hover:bg-studio-600/30 transition-all">03</div>
+                            <h4 class="font-mono text-xs text-white mb-2.5 tracking-wider uppercase">EXTRACT</h4>
+                            <p class="text-[10px] text-gray-400 leading-relaxed">Identify the strongest patterns, useful ideas, and visual directions from the exploration.</p>
+                        </div>
+
+                        <!-- Step 4: Execute -->
+                        <div class="analog-control p-6 flex flex-col items-center text-center rounded-sm group reveal-node delay-400">
+                            <div class="w-8 h-8 rounded-full bg-studio-600/15 border border-studio-400/20 text-studio-200 font-mono text-xs flex items-center justify-center mb-4 group-hover:border-pastel-green group-hover:bg-studio-600/30 transition-all">04</div>
+                            <h4 class="font-mono text-xs text-white mb-2.5 tracking-wider uppercase">EXECUTE</h4>
+                            <p class="text-[10px] text-gray-400 leading-relaxed">Build the final piece, refine the details, and turn the selected direction into finished work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="min-h-screen w-full flex items-center justify-center py-24 section-observer">
+            <div class="w-full max-w-lg mx-auto px-6 reveal-node">
+                <div class="glass-panel p-8 sm:p-12 relative overflow-hidden rounded-sm">
+                    <!-- Subtle physical corner bracket lines -->
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t border-l border-studio-400/30"></div>
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-studio-400/30"></div>
+                    <div class="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-studio-400/30"></div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-studio-400/30"></div>
+
+                    <header class="text-center mb-10">
+                        <h2 class="text-4xl font-serif text-white mb-3 font-light">Correspondence</h2>
+                        <p class="text-[10px] font-mono text-studio-400 tracking-[0.25em] uppercase">Connect / Commission / Inquire</p>
+                    </header>
+
+                    <form class="space-y-5" onsubmit="event.preventDefault(); showToast();">
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-mono text-studio-400 uppercase tracking-wider block">Identity</label>
+                            <input type="text" required class="analog-input w-full p-3 text-xs font-sans rounded-sm" placeholder="Your Name">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-mono text-studio-400 uppercase tracking-wider block">Coordinates</label>
+                            <input type="email" required class="analog-input w-full p-3 text-xs font-sans rounded-sm" placeholder="your@address.com">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-mono text-studio-400 uppercase tracking-wider block">Transmission</label>
+                            <textarea required rows="3" class="analog-input w-full p-3 text-xs font-sans rounded-sm resize-none" placeholder="Draft your inquiry..."></textarea>
+                        </div>
+                        <div class="pt-2 text-center">
+                            <button type="submit" class="analog-control px-10 py-3.5 w-full rounded-sm">Transmit Signal</button>
+                        </div>
+                    </form>
+
+                    <!-- Success toast mock inside panel -->
+                    <div id="form-success" class="hidden mt-4 text-center p-2.5 border border-studio-400/20 bg-studio-600/10 text-white font-mono text-[10px] uppercase tracking-wider rounded-sm animate-pulse">
+                        Signal Transmitted Successfully
+                    </div>
+
+                    <div class="mt-10 flex justify-center gap-6 border-t border-white/5 pt-8">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="X">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra spacer to allow clear scrolling above the sticky navigation -->
+            <div class="h-24 w-full absolute bottom-0 pointer-events-none"></div>
+        </section>
+    </main>
+
+    <!-- Modal / Expanded Polaroid Visual Frame -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/85 flex items-center justify-center p-4" onclick="closeModal(event)">
+        <div class="expanded-polaroid polaroid relative cursor-default" onclick="event.stopPropagation()">
+            <!-- Clean close button built to fit the analog theme -->
+            <button onclick="closeModal(event)" class="absolute -top-3.5 -right-3.5 analog-control w-9 h-9 rounded-full flex items-center justify-center z-50 p-0 text-white hover:text-pastel-rose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="bg-black/20 p-1 border border-black/5 rounded-sm overflow-hidden mb-4">
+                <img id="modal-img" src="" alt="Expanded Artwork" class="polaroid-img filter-none max-h-[50vh] object-contain w-full bg-dark">
+            </div>
+            <div class="text-center mt-3 px-3 pb-2">
+                <h3 id="modal-title" class="font-serif text-xl text-gray-900 mb-2 font-semibold">Title</h3>
+                <p id="modal-desc" class="font-sans text-[11px] text-gray-600 leading-relaxed max-w-sm mx-auto">Detailed artwork attributes go here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Implementations -->
+    <script>
+        // 1. Dreamy Violet Starfield simulation
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function initStars() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            // Space scaling star count relative to size
+            const count = Math.floor((canvas.width * canvas.height) / 7500); 
+            
+            for(let i = 0; i < count; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.3,
+                    speed: Math.random() * 0.12 + 0.04,
+                    alpha: Math.random() * 0.7 + 0.1,
+                    // Subtle touch of violet studio hues
+                    tint: Math.random() > 0.85 ? '#c084fc' : '#a5b4fc' 
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            stars.forEach(s => {
+                s.y -= s.speed;
+                if (s.y < 0) {
+                    s.y = canvas.height;
+                    s.x = Math.random() * canvas.width;
+                }
+                
+                ctx.fillStyle = s.tint;
+                ctx.globalAlpha = s.alpha;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            
+            ctx.globalAlpha = 1.0;
+            requestAnimationFrame(animateStars);
+        }
+
+        window.addEventListener('resize', initStars);
+        initStars();
+        animateStars();
+
+        // 2. Interactive Parallax workspace effect with mouse position
+        const heroSection = document.getElementById('home');
+        const heroImg = document.getElementById('hero-img-el');
+
+        heroSection.addEventListener('mousemove', (e) => {
+            if(window.innerWidth < 768) return; // Disable complex desktop math on tablets & phones
+            
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+            
+            // Subtly shifts opposite to mouse coordinate space
+            const shiftX = x * -24; 
+            const shiftY = y * -24;
+            
+            heroImg.style.transform = `scale(1.07) translate(${shiftX}px, ${shiftY}px)`;
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+            heroImg.style.transform = `scale(1.04) translate(0px, 0px)`;
+        });
+
+        // 3. guided Scroll Snap Interaction & Nav Syncer
+        const scrollContainer = document.getElementById('scroll-container');
+        const allSections = document.querySelectorAll('section');
+        const navBtns = document.querySelectorAll('.nav-btn');
+
+        function scrollToSection(id) {
+            const target = document.getElementById(id);
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Intersection Observer to drive entry states (Establish -> Reveal -> Resolve)
+        const observerConfig = {
+            root: scrollContainer,
+            threshold: 0.45 
+        };
+
+        const activeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    // Activate Nav Button
+                    navBtns.forEach(btn => {
+                        if(btn.dataset.target === activeId) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+
+                    // Reveal state hook
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerConfig);
+
+        allSections.forEach(section => {
+            activeObserver.observe(section);
+        });
+
+        // 4. Polaroid Modal Expand Scripting
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+
+        function openModal(imgSrc, title, desc) {
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalOverlay.classList.add('active');
+            
+            // Temporary freeze snap scroll container while focusing artwork
+            scrollContainer.style.overflowY = 'hidden'; 
+        }
+
+        function closeModal(e) {
+            if(e) e.stopPropagation();
+            modalOverlay.classList.remove('active');
+            
+            // Resume scroll snapping mechanics
+            setTimeout(() => {
+                scrollContainer.style.overflowY = 'auto';
+            }, 300);
+        }
+
+        // Exit on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // 5. Contact Form mock action
+        function showToast() {
+            const toast = document.getElementById('form-success');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>

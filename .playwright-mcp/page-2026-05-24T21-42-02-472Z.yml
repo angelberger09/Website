@@ -1,0 +1,273 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: IntakeDashboard-V1
+      - generic [ref=e8]: Ready
+    - combobox "Review entry" [ref=e10]:
+      - option "messages/message-01.html" [selected]
+      - option "messages/message-02.html"
+      - option "messages/message-03.html"
+      - option "messages/message-04.html"
+      - option "messages/message-05.html"
+      - option "messages/message-06.html"
+      - option "messages/message-07.html"
+      - option "messages/message-08.html"
+      - option "messages/message-09.html"
+      - option "messages/message-10.html"
+      - option "messages/message-11.html"
+      - option "messages/message-12.html"
+      - option "messages/message-13.html"
+      - option "messages/message-14.html"
+      - option "messages/message-15.html"
+      - option "messages/message-16.html"
+      - option "messages/message-17.html"
+      - option "messages/message.html"
+      - option "downloads/masked_layers_lilacs_mountains/layer_demo.html"
+      - option "downloads/window_walker.html"
+    - generic [ref=e11]:
+      - generic [ref=e12]: 127.0.0.1:3011
+      - button "Open selected preview" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+      - button "Refresh entries" [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+  - generic [ref=e23]:
+    - region "Sandbox preview" [ref=e24]:
+      - heading "Play (Sandbox Preview)" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - iframe [ref=e27]:
+          - generic [active] [ref=f19e1]:
+            - heading "A. BERGER" [level=1] [ref=f19e4]
+            - generic [ref=f19e7]:
+              - generic [ref=f19e8]: INIT
+              - generic [ref=f19e10]: TERM
+            - banner [ref=f19e11]:
+              - generic [ref=f19e12]: A. BERGER
+              - navigation [ref=f19e13]:
+                - button "HOME" [ref=f19e14] [cursor=pointer]
+                - button "GALLERY" [ref=f19e15] [cursor=pointer]
+                - button "BLOG" [ref=f19e16] [cursor=pointer]
+                - button "SERVICES" [ref=f19e17] [cursor=pointer]
+                - button "PRODUCTS" [ref=f19e18] [cursor=pointer]
+                - button "PROCESS" [ref=f19e19] [cursor=pointer]
+                - button "CONTACT" [ref=f19e20] [cursor=pointer]
+            - generic [ref=f19e21]:
+              - generic [ref=f19e23]:
+                - generic [ref=f19e24]:
+                  - heading "VISUAL ARCHITECT" [level=2] [ref=f19e26]
+                  - heading "Angel Berger" [level=1] [ref=f19e28]
+                  - paragraph [ref=f19e30]: A Diverse Creative / Studio Exhibition
+                - generic [ref=f19e31]:
+                  - img "Atelier Study Workspace" [ref=f19e32]
+                  - generic:
+                    - generic: EXPLORE FRAME
+                  - generic:
+                    - generic: ATELIER — 01
+                    - heading "Spatial & Curatorial Order" [level=3]
+              - generic [ref=f19e34]:
+                - generic [ref=f19e35]:
+                  - generic [ref=f19e36]:
+                    - text: COLLECTION 2026
+                    - heading "STUDIO WORK" [level=2] [ref=f19e37]
+                  - paragraph [ref=f19e39]: An exploration of pure form, raw earth structures, and organic linear surfaces captured across mediums.
+                - generic [ref=f19e40]:
+                  - generic [ref=f19e41]:
+                    - img "Earthen Vessel" [ref=f19e43]
+                    - paragraph [ref=f19e44]: ORGANIC FORM
+                    - generic [ref=f19e45]: Sculpture Study
+                  - generic [ref=f19e46]:
+                    - img "Architecture" [ref=f19e48]
+                    - paragraph [ref=f19e49]: SPATIAL ORDER
+                    - generic [ref=f19e50]: Brutalist Space
+                  - generic [ref=f19e51]:
+                    - img "Abstract Paint" [ref=f19e53]
+                    - paragraph [ref=f19e54]: ABSTRACT CORE
+                    - generic [ref=f19e55]: Canvas Study
+                  - generic [ref=f19e56]:
+                    - img "Nature texture" [ref=f19e58]
+                    - paragraph [ref=f19e59]: DRIFTING SURFACE
+                    - generic [ref=f19e60]: Elemental Micro
+              - generic [ref=f19e61]:
+                - generic [ref=f19e62]:
+                  - generic [ref=f19e63]:
+                    - text: REFLECTIONS
+                    - heading "THE JOURNAL" [level=2] [ref=f19e64]
+                  - paragraph [ref=f19e66]: A conceptual space dedicated to spatial architecture, visual order, and modern curations.
+                - generic [ref=f19e67]:
+                  - generic [ref=f19e68]:
+                    - img "Article 1" [ref=f19e70]
+                    - generic [ref=f19e71]:
+                      - generic [ref=f19e72]:
+                        - generic [ref=f19e73]:
+                          - generic [ref=f19e74]: CREATIVE THEORY
+                          - generic [ref=f19e75]: — May 18, 2026
+                        - 'heading "On Restraint: Designing Through Absence" [level=3] [ref=f19e76]'
+                        - paragraph [ref=f19e77]: An exploration of negative space, structural scale, and why leaving parts of a canvas blank represents spatial design authority.
+                      - generic [ref=f19e78]: READ ESSAY [↗]
+                  - generic [ref=f19e79]:
+                    - img "Article 2" [ref=f19e81]
+                    - generic [ref=f19e82]:
+                      - generic [ref=f19e83]:
+                        - generic [ref=f19e84]:
+                          - generic [ref=f19e85]: STUDIO ARCHIVE
+                          - generic [ref=f19e86]: — April 02, 2026
+                        - 'heading "Chasing Photons: Studies of Soft Refraction" [level=3] [ref=f19e87]'
+                        - paragraph [ref=f19e88]: Analyzing light curves falling against physical tactile interfaces and methods of replicating the atmospheric warmth of natural light inside WebGL canvases.
+                      - generic [ref=f19e89]: READ ESSAY [↗]
+              - generic [ref=f19e90]:
+                - generic [ref=f19e91]:
+                  - generic [ref=f19e92]:
+                    - text: OFFERINGS
+                    - heading "CAPABILITIES" [level=2] [ref=f19e93]
+                  - paragraph [ref=f19e95]: Bespoke dynamic solutions tailored for visual consistency, structural design, and branding languages.
+                - generic [ref=f19e96]:
+                  - generic [ref=f19e97]:
+                    - generic [ref=f19e98]:
+                      - img [ref=f19e100]
+                      - heading "Creative Direction" [level=3] [ref=f19e102]
+                      - paragraph [ref=f19e103]: Defining structural branding languages, photographic directives, and cohesive product vision for high-end boutique agencies.
+                    - generic [ref=f19e104]: MODULE 01
+                  - generic [ref=f19e105]:
+                    - generic [ref=f19e106]:
+                      - img [ref=f19e108]
+                      - heading "Curatorial Spatial" [level=3] [ref=f19e110]
+                      - paragraph [ref=f19e111]: Weaving tactile spatial layouts, materials discovery, and exhibition structures together with environmental variables.
+                    - generic [ref=f19e112]: MODULE 02
+                  - generic [ref=f19e113]:
+                    - generic [ref=f19e114]:
+                      - img [ref=f19e116]
+                      - heading "Visual Crafting" [level=3] [ref=f19e118]
+                      - paragraph [ref=f19e119]: Producing limited edition physical assets, bespoke ceramics, high-contrast imagery, and functional minimalist objects.
+                    - generic [ref=f19e120]: MODULE 03
+              - generic [ref=f19e121]:
+                - generic [ref=f19e122]:
+                  - generic [ref=f19e123]:
+                    - text: EDITIONS
+                    - heading "OBJECTS" [level=2] [ref=f19e124]
+                  - paragraph [ref=f19e126]: Limited physical iterations crafted for long-term collection value and tactile presence.
+                - generic [ref=f19e127]:
+                  - generic [ref=f19e128]:
+                    - generic [ref=f19e129]:
+                      - img "Crafted Ceramic Plate" [ref=f19e130]
+                      - generic [ref=f19e131]: EDITION OF 12
+                    - generic [ref=f19e132]:
+                      - generic [ref=f19e133]:
+                        - generic [ref=f19e134]:
+                          - heading "Anorthite Plate" [level=3] [ref=f19e135]
+                          - generic [ref=f19e136]: $340
+                        - paragraph [ref=f19e137]: Bespoke dynamic earthenware, shaped from deep volcanic aggregate under structural firing parameters. Highly raw textures.
+                      - button "Inquire Availability" [ref=f19e138] [cursor=pointer]
+                  - generic [ref=f19e139]:
+                    - generic [ref=f19e140]:
+                      - img "Archival Print" [ref=f19e141]
+                      - generic [ref=f19e142]: SIGNED PRINT
+                    - generic [ref=f19e143]:
+                      - generic [ref=f19e144]:
+                        - generic [ref=f19e145]:
+                          - heading "Tension Frame" [level=3] [ref=f19e146]
+                          - generic [ref=f19e147]: $190
+                        - paragraph [ref=f19e148]: Museum-quality giclée print on structured heavy archival bone paper, hand-signed in deep charcoal by the artist's studio.
+                      - button "Inquire Availability" [ref=f19e149] [cursor=pointer]
+              - generic [ref=f19e150]:
+                - generic [ref=f19e151]:
+                  - generic [ref=f19e152]:
+                    - text: WORKFLOW
+                    - heading "PROCESS" [level=2] [ref=f19e153]
+                  - paragraph [ref=f19e155]: A structured, recursive process that translates conceptual ideas into physical systems.
+                - generic [ref=f19e156]:
+                  - generic [ref=f19e158]:
+                    - generic [ref=f19e159]: "01"
+                    - generic [ref=f19e160]:
+                      - heading "Plan" [level=3] [ref=f19e161]
+                      - paragraph [ref=f19e162]: Define conceptual goals, constraints, and visual rules.
+                  - generic [ref=f19e163]:
+                    - generic [ref=f19e164]: "02"
+                    - generic [ref=f19e165]:
+                      - heading "Randomize" [level=3] [ref=f19e166]
+                      - paragraph [ref=f19e167]: Explore variations and unexpected raw visual variables.
+                  - generic [ref=f19e168]:
+                    - generic [ref=f19e169]: "03"
+                    - generic [ref=f19e170]:
+                      - heading "Extract" [level=3] [ref=f19e171]
+                      - paragraph [ref=f19e172]: Identify structural keys and core aesthetic layouts.
+                  - generic [ref=f19e173]:
+                    - generic [ref=f19e174]: "04"
+                    - generic [ref=f19e175]:
+                      - heading "Execute" [level=3] [ref=f19e176]
+                      - paragraph [ref=f19e177]: Assemble raw mediums into meticulously structured collections.
+              - generic [ref=f19e178]:
+                - generic [ref=f19e179]:
+                  - generic [ref=f19e180]:
+                    - text: CONNECT
+                    - heading "INQUIRE" [level=2] [ref=f19e181]
+                  - generic [ref=f19e183]:
+                    - link "INSTAGRAM ↗" [ref=f19e184]:
+                      - /url: "#"
+                      - text: INSTAGRAM
+                      - generic [ref=f19e185]: ↗
+                    - link "PINBOARD ↗" [ref=f19e186]:
+                      - /url: "#"
+                      - text: PINBOARD
+                      - generic [ref=f19e187]: ↗
+                    - link "ARCHIVE ↗" [ref=f19e188]:
+                      - /url: "#"
+                      - text: ARCHIVE
+                      - generic [ref=f19e189]: ↗
+                  - generic [ref=f19e190]:
+                    - text: © 2026 ANGEL BERGER.
+                    - text: ALL SYSTEM MOTION SECURED.
+                - generic [ref=f19e192]:
+                  - generic [ref=f19e193]:
+                    - generic [ref=f19e194]: IDENTIFICATION / NAME
+                    - textbox "e.g. Jean Dupont" [ref=f19e195]
+                  - generic [ref=f19e196]:
+                    - generic [ref=f19e197]: COMMUNICATION VECTOR / EMAIL
+                    - textbox "e.g. jean@dupont.com" [ref=f19e198]
+                  - generic [ref=f19e199]:
+                    - generic [ref=f19e200]: NATURE OF INQUIRY
+                    - textbox "Details of curation project..." [ref=f19e201]
+                  - button "SEND TRANSMISSION" [ref=f19e202] [cursor=pointer]
+            - generic:
+              - generic:
+                - button "CLOSE [X]"
+                - generic:
+                  - generic:
+                    - img "Expanded work"
+                  - heading [level=3]
+                  - paragraph
+        - generic [ref=e28]: No HTML entries found in ReviewTargets.
+      - generic "Preview controls" [ref=e29]:
+        - generic [ref=e30]:
+          - button "Zoom out" [ref=e31] [cursor=pointer]: "-"
+          - generic [ref=e32]: 100%
+          - button "Zoom in" [ref=e33] [cursor=pointer]: +
+        - button "Reset" [ref=e34] [cursor=pointer]
+    - region "Review and feedback" [ref=e35]:
+      - heading "Review & Feedback" [level=2] [ref=e36]
+      - generic [ref=e37]:
+        - heading "Message 01" [level=1] [ref=e38]
+        - generic [ref=e40]: HTML
+        - generic [ref=e42]:
+          - heading "Notes /" [level=3] [ref=e43]:
+            - text: Notes
+            - generic [ref=e44]: /
+          - generic [ref=e45]: Reviewing ReviewTargets/messages/message-01.html. Use comments below to capture what should be approved or changed.
+        - generic [ref=e46]:
+          - heading "Feedback" [level=3] [ref=e47]
+          - list [ref=e48]:
+            - listitem [ref=e49]: Review the visual hierarchy and first-screen clarity
+            - listitem [ref=e50]: Check interaction behavior inside the sandbox preview
+            - listitem [ref=e51]: Capture specific changes in the comments field
+        - generic [ref=e52]:
+          - generic [ref=e53]: Status
+          - combobox "Status" [ref=e54]:
+            - option "Approved" [selected]
+            - option "Request Changes"
+            - option "Needs Review"
+        - generic [ref=e55]:
+          - generic [ref=e56]: Comments
+          - textbox "Comments" [ref=e57]:
+            - /placeholder: Add a comment...
+        - generic [ref=e58]:
+          - button "Request Changes" [ref=e59] [cursor=pointer]
+          - button "Approve" [ref=e60] [cursor=pointer]
+        - generic [ref=e61]: No packet created yet.

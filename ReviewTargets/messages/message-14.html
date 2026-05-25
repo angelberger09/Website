@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>message-14.html</title>
+<style>
+  :root { color-scheme: dark; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  body { margin: 0; min-height: 100vh; background: #050505; color: #f5f5f5; }
+  main { max-width: 1200px; margin: 0 auto; padding: clamp(16px, 3vw, 40px); }
+  h1 { margin: 0 0 16px; font: 700 clamp(22px, 3vw, 36px)/1.1 system-ui, sans-serif; }
+  p { margin: 0 0 24px; color: #a7a7a7; font: 15px/1.5 system-ui, sans-serif; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: clamp(14px, 2vw, 24px); border: 1px solid #2a2a2a; border-radius: 8px; background: #0b0b0b; line-height: 1.55; font-size: clamp(12px, 1.35vw, 15px); }
+</style>
+</head>
+<body>
+<main>
+<h1>message-14.html</h1>
+<p>React/JSX source imported from message (14).txt. Displayed as source for review because it is not a standalone HTML document.</p>
+<pre>import React, { useState, useEffect, useRef } from 'react';
+
+// Custom Font Injection for Cinematic Typography
+const InjectFonts = () =&gt; {
+  useEffect(() =&gt; {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    return () =&gt; {
+      document.head.removeChild(link);
+    };
+  }, []);
+  return null;
+};
+
+/* ==========================================
+   AMBIENT VFX BACKGROUND (Slow Star Field)
+   ========================================== */
+const StarfieldCanvas = () =&gt; {
+  const canvasRef = useRef(null);
+
+  useEffect(() =&gt; {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const handleResize = () =&gt; {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Simple, slow-moving star field
+    const stars = Array.from({ length: 150 }, () =&gt; ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 1.3 + 0.2,
+      speed: Math.random() * 0.08 + 0.02,
+      opacity: Math.random() * 0.6 + 0.2
+    }));
+
+    const animate = () =&gt; {
+      // Deep elegant charcoal indigo background
+      ctx.fillStyle = '#080711';
+      ctx.fillRect(0, 0, width, height);
+
+      stars.forEach((star) =&gt; {
+        star.y -= star.speed;
+        
+        if (star.y &lt; 0) {
+          star.y = height;
+          star.x = Math.random() * width;
+        }
+
+        ctx.fillStyle = `rgba(224, 231, 255, ${star.opacity})`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () =&gt; {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return &lt;canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full pointer-events-none z-0" /&gt;;
+};
+
+/* ==========================================
+   PAPER TEXTURE POST-PROCESS (Placed at z-2)
+   ========================================== */
+const PaperTexture = () =&gt; (
+  &lt;div 
+    className="fixed inset-0 pointer-events-none z-2 opacity-[0.11] mix-blend-screen"
+    style={{ 
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+      backgroundRepeat: 'repeat'
+    }} 
+  /&gt;
+);
+
+/* ==========================================
+   TACTILE TILT CARD COMPONENT
+   ========================================== */
+const TiltCard = ({ children, className = "", onClick, rotationOffset = 0 }) =&gt; {
+  const cardRef = useRef(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0, scale: 1 });
+
+  const handleMouseMove = (e) =&gt; {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+    
+    const rotateX = -(yc - y) / 14;
+    const rotateY = (xc - x) / 14;
+
+    setTilt({ x: rotateX, y: rotateY, scale: 1.03 });
+  };
+
+  const handleMouseLeave = () =&gt; {
+    setTilt({ x: 0, y: 0, scale: 1 });
+  };
+
+  return (
+    &lt;div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+      className={`interactive-card transition-all duration-300 ease-out cursor-pointer ${className}`}
+      style={{
+        transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${tilt.scale}) rotateZ(${rotationOffset}deg)`,
+        transformStyle: 'preserve-3d'
+      }}
+    &gt;
+      &lt;div style={{ transform: 'translateZ(12px)' }} className="h-full w-full"&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+/* ==========================================
+   INTERACTIVE HERO FRAME WITH PARALLAX &amp; COLOR FADE
+   ========================================== */
+const InteractiveHeroFrame = ({ name, subtitle, animaticClass, onExplore }) =&gt; {
+  const frameRef = useRef(null);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e) =&gt; {
+    const frame = frameRef.current;
+    if (!frame) return;
+    const rect = frame.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    setParallax({
+      x: (x / rect.width) * 12,
+      y: (y / rect.height) * 12
+    });
+  };
+
+  const handleMouseLeave = () =&gt; {
+    setParallax({ x: 0, y: 0 });
+    setIsHovered(false);
+  };
+
+  const handleMouseEnter = () =&gt; {
+    setIsHovered(true);
+  };
+
+  return (
+    &lt;div 
+      ref={frameRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-full max-w-4xl h-[420px] md:h-[500px] rounded-sm overflow-hidden border border-white/10 group cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+    &gt;
+      {/* Background Image: Atelier studio setup */}
+      &lt;img 
+        src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" 
+        alt="Creative Studio Space" 
+        className="absolute inset-0 w-[110%] h-[110%] object-cover transition-all duration-1000 ease-out"
+        style={{
+          transform: `translate3d(calc(-5% + ${parallax.x}px), calc(-5% + ${parallax.y}px), 0)`,
+          filter: isHovered ? 'grayscale(0) blur(0px) contrast(1.05)' : 'grayscale(0.7) blur(3px) contrast(0.9)'
+        }}
+      /&gt;
+
+      {/* Dark gradient vignette block (at rest: stronger, hover: warm transparency fade) */}
+      &lt;div 
+        className="absolute inset-0 bg-gradient-to-t from-[#080711] via-[#080711]/75 to-transparent transition-all duration-700 ease-out"
+        style={{ opacity: isHovered ? 0.4 : 0.85 }}
+      /&gt;
+
+      {/* Internal layout lines for analog framing feel */}
+      &lt;div className="absolute inset-0 border border-white/5 pointer-events-none z-10 m-3" /&gt;
+
+      {/* Centered Composition */}
+      &lt;div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 z-20 pointer-events-none"&gt;
+        
+        &lt;div className="overflow-hidden mb-2"&gt;
+          &lt;span className={animaticClass(
+            "block text-[10px] tracking-[0.4em] uppercase text-violet-300 font-mono transition-all duration-1000 delay-100",
+            "translate-y-full opacity-0",
+            "translate-y-0 opacity-100",
+            "translate-y-0 opacity-100"
+          )}&gt;
+            Studio Portfolio
+          &lt;/span&gt;
+        &lt;/div&gt;
+
+        {/* Brand Name Header */}
+        &lt;div className="overflow-hidden mb-1"&gt;
+          &lt;h1 className={animaticClass(
+            "text-5xl sm:text-7xl md:text-8xl font-bold font-syne tracking-tight text-white transition-all duration-1000 ease-out",
+            "translate-y-full opacity-0 blur-md",
+            "translate-y-0 opacity-100 blur-none",
+            "translate-y-0 opacity-100 -translate-y-1"
+          )}&gt;
+            {name}
+          &lt;/h1&gt;
+        &lt;/div&gt;
+
+        {/* Core Subtitle Description */}
+        &lt;div className="overflow-hidden mb-8"&gt;
+          &lt;span className={animaticClass(
+            "block text-xs sm:text-sm uppercase tracking-[0.35em] text-slate-300 font-syne transition-all duration-1000 delay-300",
+            "translate-y-full opacity-0",
+            "translate-y-0 opacity-100",
+            "translate-y-0 opacity-100"
+          )}&gt;
+            {subtitle}
+          &lt;/span&gt;
+        &lt;/div&gt;
+
+        {/* Tactile Navigation Activator */}
+        &lt;button
+          onClick={onExplore}
+          className="pointer-events-auto group/btn px-6 py-3 border border-white/15 hover:border-violet-400/40 bg-black/50 hover:bg-[#0d0c1b]/80 rounded-sm text-[10px] font-mono tracking-widest uppercase text-slate-300 hover:text-white transition-all duration-300"
+        &gt;
+          Explore Work
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div className="absolute bottom-4 right-6 z-20 text-[9px] font-mono text-slate-600 tracking-wider"&gt;
+        GRID_LOC // X: {parallax.x.toFixed(1)} / Y: {parallax.y.toFixed(1)}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+/* ==========================================
+   MAIN COMPONENT / COORDINATOR
+   ========================================== */
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  const [stage, setStage] = useState('establish'); 
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeGalleryItem, setActiveGalleryItem] = useState(null);
+  const [activeBlogItem, setActiveBlogItem] = useState(null);
+
+  const mainScrollContainerRef = useRef(null);
+
+  // Handle Page Navigation with Cinematic Transition
+  const navigateTo = (pageId) =&gt; {
+    if (pageId === currentPage) return;
+    setIsTransitioning(true);
+    setStage('establish');
+    
+    setTimeout(() =&gt; {
+      setCurrentPage(pageId);
+      setIsTransitioning(false);
+      
+      if (mainScrollContainerRef.current) {
+        mainScrollContainerRef.current.scrollTo({ top: 0 });
+      }
+
+      setTimeout(() =&gt; setStage('reveal'), 150);
+      setTimeout(() =&gt; setStage('resolve'), 900);
+    }, 400);
+  };
+
+  useEffect(() =&gt; {
+    const timer1 = setTimeout(() =&gt; setStage('reveal'), 200);
+    const timer2 = setTimeout(() =&gt; setStage('resolve'), 1000);
+    return () =&gt; {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
+  const animaticClass = (base, establishStyle, revealStyle, resolveStyle) =&gt; {
+    if (stage === 'establish') return `${base} ${establishStyle}`;
+    if (stage === 'reveal') return `${base} ${revealStyle}`;
+    return `${base} ${resolveStyle}`;
+  };
+
+  // Content Previews
+  const blogPosts = [
+    {
+      id: 1,
+      title: "Procedural Texturing on Paper Layers",
+      category: "VFX &amp; RESEARCH",
+      excerpt: "Simulating high-fidelity fiber textures within WebGL to produce printed organic realism digitally.",
+      date: "June 2026",
+      img: "https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&amp;fit=crop&amp;w=600&amp;q=80",
+      content: `In computer-generated design, absolute mathematical lines often trigger user detachment. By layering procedural organic noise maps directly above visual outputs, we can mimic tactile paper pulp and fibers. This research explores WebGL-based implementation protocols that maintain fluid performance while injecting rich, physical realism.`
+    },
+    {
+      id: 2,
+      title: "The Soundscape of Silence",
+      category: "ACOUSTIC",
+      excerpt: "Designing modular audio modules that react dynamically to user scrolling vectors.",
+      date: "April 2026",
+      img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&amp;fit=crop&amp;w=600&amp;q=80",
+      content: `True silence is rarely empty. Designing user interfaces with micro-synthesizer audio nodes creates sensory engagement. By tying granular white noise modulations directly to scrolling velocities, we create a living environment that responds to interaction depth.`
+    },
+    {
+      id: 3,
+      title: "Parametric Folding Sequences",
+      category: "GEOMETRY",
+      excerpt: "An exploration of folded visual assets, structural geometry, and mathematical origami algorithms.",
+      date: "March 2026",
+      img: "https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&amp;fit=crop&amp;w=600&amp;q=80",
+      content: `Folded geometry structures allow developers to build interfaces that interact like organic matter. Using coordinate transforms based on physical origami patterns, we construct digital spaces that scale and shift gracefully under physical constraints.`
+    }
+  ];
+
+  const galleryItems = [
+    { id: 1, title: "Prismatic Wave", rot: -1, img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&amp;fit=crop&amp;w=600&amp;q=80" },
+    { id: 2, title: "Tactile Fiber", rot: 2, img: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" },
+    { id: 3, title: "Neural Array", rot: -2, img: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&amp;fit=crop&amp;w=600&amp;q=80" },
+    { id: 4, title: "Light Dispersion", rot: 1, img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=600&amp;q=80" },
+    { id: 5, title: "Fluid Marble", rot: -1, img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&amp;fit=crop&amp;w=600&amp;q=80" },
+    { id: 6, title: "Atmosphere Noise", rot: 2, img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" }
+  ];
+
+  const services = [
+    {
+      id: "s1",
+      title: "Interactive Web Architecture",
+      desc: "Creating polished digital systems, immersive responsive web flows, and bespoke micro-interactions.",
+      img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+    },
+    {
+      id: "s2",
+      title: "Visual System Engineering",
+      desc: "Architecting custom graphics assets, organic design styles, and procedural lighting layers.",
+      img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+    },
+    {
+      id: "s3",
+      title: "Generative Audio Scoring",
+      desc: "Developing self-evolving acoustic spaces, ambient sound triggers, and sensory sound scoring.",
+      img: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+    }
+  ];
+
+  const products = [
+    { id: "p1", name: "PRISM: Vol 01", desc: "Premium preset profiles simulating complex, high-dispal glass refractions.", img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&amp;fit=crop&amp;w=500&amp;q=80" },
+    { id: "p2", name: "CORTEX: Asset Suite", desc: "A toolkit containing 24 complex organic math-generated mesh geometries.", img: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&amp;fit=crop&amp;w=500&amp;q=80" },
+    { id: "p3", name: "HERTZ: Granular Engine", desc: "Custom modular instrument building generative background sound environments.", img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&amp;fit=crop&amp;w=500&amp;q=80" }
+  ];
+
+  const handleScrollToContent = () =&gt; {
+    const contentRail = document.getElementById('home-content-rail');
+    if (contentRail) {
+      contentRail.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    &lt;div className="h-screen bg-[#080711] text-slate-200 font-sans selection:bg-white/20 selection:text-white overflow-hidden relative"&gt;
+      &lt;InjectFonts /&gt;
+      &lt;StarfieldCanvas /&gt;
+      &lt;PaperTexture /&gt;
+
+      {/* ==========================================
+         NAVIGATION / PAGE BAR (z-40)
+         ========================================== */}
+      &lt;header className="fixed top-0 left-0 w-full z-40 px-6 pt-8 transition-all duration-300 pointer-events-none"&gt;
+        &lt;nav className="max-w-4xl mx-auto flex items-center justify-between pointer-events-auto"&gt;
+          &lt;button 
+            onClick={() =&gt; navigateTo('home')} 
+            className="flex items-center group focus:outline-none"
+            aria-label="Navigate Home"
+          &gt;
+            &lt;span className="text-xs font-semibold tracking-[0.2em] uppercase font-syne text-slate-300 group-hover:text-white transition-colors duration-300"&gt;
+              A. Berger
+            &lt;/span&gt;
+          &lt;/button&gt;
+          
+          &lt;div className="flex items-center space-x-3 sm:space-x-5"&gt;
+            {['Home', 'Blog', 'Gallery', 'Services', 'Products', 'Process', 'Contact'].map((page) =&gt; {
+              const id = page.toLowerCase();
+              const isActive = currentPage === id;
+              return (
+                &lt;button
+                  key={id}
+                  onClick={() =&gt; navigateTo(id)}
+                  className={`relative text-[10px] tracking-widest uppercase font-syne transition-all duration-300 pb-1 ${
+                    isActive 
+                      ? 'text-white' 
+                      : 'text-slate-500 hover:text-slate-300'
+                  }`}
+                &gt;
+                  {page}
+                  {isActive &amp;&amp; (
+                    &lt;span className="absolute bottom-0 left-0 w-full h-[1px] bg-indigo-400 opacity-80" /&gt;
+                  )}
+                &lt;/button&gt;
+              );
+            })}
+          &lt;/div&gt;
+        &lt;/nav&gt;
+      &lt;/header&gt;
+
+      {/* ==========================================
+         SCROLL-SNAPPING MAIN CONTAINER (z-10)
+         ========================================== */}
+      &lt;div 
+        ref={mainScrollContainerRef}
+        className="absolute inset-0 pt-28 pb-12 overflow-y-auto snap-y snap-mandatory scroll-smooth scrollbar-none z-10"
+      &gt;
+        &lt;main className={`px-6 md:px-8 max-w-4xl mx-auto transition-all duration-500 ${
+          isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+        }`}&gt;
+          
+          {/* SECTION 1: HOME PAGE */}
+          {currentPage === 'home' &amp;&amp; (
+            &lt;div className="space-y-16"&gt;
+              
+              {/* Home SNAP Point 1: Wide Hero Frame */}
+              &lt;section className="min-h-[80vh] flex flex-col justify-center items-center snap-center py-6" id="home"&gt;
+                &lt;InteractiveHeroFrame 
+                  name="Angel Berger"
+                  subtitle="A Diverse Creative"
+                  animaticClass={animaticClass}
+                  onExplore={handleScrollToContent}
+                /&gt;
+              &lt;/section&gt;
+
+              {/* Home SNAP Point 2: Visual Capabilities Rail */}
+              &lt;section 
+                id="home-content-rail" 
+                className="min-h-[75vh] flex flex-col justify-center snap-center border-t border-white/5 py-16 scroll-mt-28"
+              &gt;
+                &lt;div className="mb-10 text-center sm:text-left"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Navigation Node&lt;/span&gt;
+                  &lt;h2 className="text-xl font-bold font-syne tracking-widest text-slate-100 uppercase mt-1"&gt;Direct Gateways&lt;/h2&gt;
+                &lt;/div&gt;
+
+                &lt;div className="grid grid-cols-1 sm:grid-cols-3 gap-6"&gt;
+                  &lt;div 
+                    onClick={() =&gt; navigateTo('gallery')}
+                    className="group flex flex-col justify-between p-6 border border-white/10 hover:border-violet-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-sm transition-all cursor-pointer h-52"
+                  &gt;
+                    &lt;div&gt;
+                      &lt;span className="text-[10px] font-mono text-slate-600 group-hover:text-violet-300 transition-colors"&gt;01&lt;/span&gt;
+                      &lt;h3 className="text-sm uppercase tracking-wider font-syne text-slate-200 mt-4 group-hover:text-white"&gt;The Polaroid Gallery&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;span className="text-[10px] font-mono text-slate-500 group-hover:text-slate-300"&gt;Expose Artifacts →&lt;/span&gt;
+                  &lt;/div&gt;
+
+                  &lt;div 
+                    onClick={() =&gt; navigateTo('services')}
+                    className="group flex flex-col justify-between p-6 border border-white/10 hover:border-violet-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-sm transition-all cursor-pointer h-52"
+                  &gt;
+                    &lt;div&gt;
+                      &lt;span className="text-[10px] font-mono text-slate-600 group-hover:text-violet-300 transition-colors"&gt;02&lt;/span&gt;
+                      &lt;h3 className="text-sm uppercase tracking-wider font-syne text-slate-200 mt-4 group-hover:text-white"&gt;Capabilities&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;span className="text-[10px] font-mono text-slate-500 group-hover:text-slate-300"&gt;VFX &amp; Audio →&lt;/span&gt;
+                  &lt;/div&gt;
+
+                  &lt;div 
+                    onClick={() =&gt; navigateTo('blog')}
+                    className="group flex flex-col justify-between p-6 border border-white/10 hover:border-violet-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-sm transition-all cursor-pointer h-52"
+                  &gt;
+                    &lt;div&gt;
+                      &lt;span className="text-[10px] font-mono text-slate-600 group-hover:text-violet-300 transition-colors"&gt;03&lt;/span&gt;
+                      &lt;h3 className="text-sm uppercase tracking-wider font-syne text-slate-200 mt-4 group-hover:text-white"&gt;Written Logs&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;span className="text-[10px] font-mono text-slate-500 group-hover:text-slate-300"&gt;Open Journal →&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/section&gt;
+
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 2: BLOG PAGE */}
+          {currentPage === 'blog' &amp;&amp; (
+            &lt;div className="space-y-12"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-16 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Written Dissections&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;The Journal&lt;/h2&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              {blogPosts.map((post, idx) =&gt; (
+                &lt;section 
+                  key={post.id}
+                  className="min-h-[50vh] flex flex-col justify-center snap-center border-b border-white/10 pb-16 scroll-mt-28"
+                &gt;
+                  &lt;article 
+                    onClick={() =&gt; setActiveBlogItem(post)}
+                    className={animaticClass(
+                      "group cursor-pointer grid grid-cols-1 md:grid-cols-5 gap-8 items-center",
+                      "opacity-0 translate-y-8",
+                      "opacity-100 translate-y-0",
+                      "opacity-100 translate-y-0"
+                    )}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  &gt;
+                    &lt;div className="md:col-span-2 aspect-video md:aspect-square w-full bg-[#121214] border border-white/10 rounded-sm overflow-hidden relative"&gt;
+                      &lt;img 
+                        src={post.img} 
+                        alt={post.title} 
+                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-45 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out" 
+                      /&gt;
+                    &lt;/div&gt;
+
+                    &lt;div className="md:col-span-3 space-y-4"&gt;
+                      &lt;div className="flex items-center space-x-3"&gt;
+                        &lt;span className="text-[9px] font-mono tracking-widest text-violet-300 border border-violet-500/10 px-2 py-0.5 rounded-sm"&gt;{post.category}&lt;/span&gt;
+                        &lt;span className="text-[10px] font-mono text-slate-500"&gt;{post.date}&lt;/span&gt;
+                      &lt;/div&gt;
+                      &lt;h3 className="text-xl md:text-2xl font-syne text-slate-200 group-hover:text-white transition-colors duration-300"&gt;
+                        {post.title}
+                      &lt;/h3&gt;
+                      &lt;p className="text-xs sm:text-sm text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                        {post.excerpt}
+                      &lt;/p&gt;
+                      &lt;span className="inline-block text-[10px] font-mono text-slate-300 border-b border-white/20 pb-0.5 group-hover:border-violet-400 transition-all"&gt;
+                        Read Entry
+                      &lt;/span&gt;
+                    &lt;/div&gt;
+                  &lt;/article&gt;
+                &lt;/section&gt;
+              ))}
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 3: GALLERY PAGE */}
+          {currentPage === 'gallery' &amp;&amp; (
+            &lt;div className="space-y-16"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-16 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Visual Catalog&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;Artifacts&lt;/h2&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              &lt;section className="snap-center max-w-3xl mx-auto scroll-mt-28"&gt;
+                &lt;div className="grid grid-cols-1 sm:grid-cols-2 gap-12"&gt;
+                  {galleryItems.map((item, idx) =&gt; (
+                    &lt;div 
+                      key={item.id} 
+                      className={animaticClass(
+                        "transition-all duration-1000",
+                        "opacity-0 translate-y-12",
+                        "opacity-100 translate-y-0",
+                        "opacity-100 translate-y-0"
+                      )}
+                      style={{ transitionDelay: `${idx * 100}ms` }}
+                    &gt;
+                      &lt;TiltCard 
+                        rotationOffset={item.rot} 
+                        onClick={() =&gt; setActiveGalleryItem(item)}
+                        className="bg-[#0a0a0c] border border-white/10 p-3 rounded-sm shadow-2xl relative z-10 hover:border-violet-500/20 transition-colors"
+                      &gt;
+                        &lt;div className="aspect-square w-full bg-[#121214] relative overflow-hidden group border border-white/5"&gt;
+                          &lt;img 
+                            src={item.img} 
+                            alt={item.title} 
+                            className="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" 
+                          /&gt;
+                        &lt;/div&gt;
+                        &lt;div className="pt-4 pb-2 text-center"&gt;
+                          &lt;h3 className="font-playfair text-lg text-slate-300 group-hover:text-white transition-colors"&gt;{item.title}&lt;/h3&gt;
+                          &lt;span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest mt-1 block"&gt;Catalog ID: #{item.id}&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/TiltCard&gt;
+                    &lt;/div&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 4: SERVICES PAGE */}
+          {currentPage === 'services' &amp;&amp; (
+            &lt;div className="space-y-12"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-16 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Production Capabilities&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;Tactile Services&lt;/h2&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              {services.map((service, idx) =&gt; (
+                &lt;section 
+                  key={service.id}
+                  className="min-h-[45vh] flex flex-col justify-center snap-center border-b border-white/10 pb-12 scroll-mt-28"
+                &gt;
+                  &lt;div 
+                    className={animaticClass(
+                      "p-8 border border-white/10 bg-white/[0.01] hover:bg-white/[0.03] hover:border-violet-500/20 transition-all duration-500 rounded-sm group grid grid-cols-1 md:grid-cols-5 gap-8 items-center",
+                      "opacity-0 translate-y-8",
+                      "opacity-100 translate-y-0",
+                      "opacity-100 translate-y-0"
+                    )}
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  &gt;
+                    &lt;div className="md:col-span-2 aspect-video md:aspect-[4/3] rounded-sm overflow-hidden border border-white/5 bg-slate-900"&gt;
+                      &lt;img src={service.img} alt={service.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" /&gt;
+                    &lt;/div&gt;
+
+                    &lt;div className="md:col-span-3 space-y-4"&gt;
+                      &lt;h3 className="text-xl font-syne text-slate-200 group-hover:text-white transition-colors"&gt;
+                        {service.title}
+                      &lt;/h3&gt;
+                      &lt;p className="text-sm text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                        {service.desc}
+                      &lt;/p&gt;
+                      &lt;button 
+                        onClick={() =&gt; navigateTo('contact')}
+                        className="px-5 py-2.5 border border-white/10 text-[10px] uppercase tracking-widest font-syne text-slate-300 hover:text-white hover:border-white/60 transition-all rounded-sm bg-black/35"
+                      &gt;
+                        Inquire Module
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/section&gt;
+              ))}
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 5: PRODUCTS PAGE */}
+          {currentPage === 'products' &amp;&amp; (
+            &lt;div className="space-y-16"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-16 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Storefront&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;The Asset Vault&lt;/h2&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              &lt;section className="snap-center scroll-mt-28 pb-12"&gt;
+                &lt;div className="grid grid-cols-1 sm:grid-cols-2 gap-8"&gt;
+                  {products.map((product, idx) =&gt; (
+                    &lt;div 
+                      key={product.id}
+                      className={animaticClass(
+                        "group p-6 border border-white/10 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 rounded-sm flex flex-col justify-between h-full hover:border-violet-500/20",
+                        "opacity-0 translate-y-8",
+                        "opacity-100 translate-y-0",
+                        "opacity-100 translate-y-0"
+                      )}
+                      style={{ transitionDelay: `${idx * 150}ms` }}
+                    &gt;
+                      &lt;div&gt;
+                        &lt;div className="aspect-[4/3] w-full bg-[#0a0a0c] border border-white/5 relative overflow-hidden mb-6 flex items-center justify-center"&gt;
+                          &lt;img src={product.img} alt={product.name} className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" /&gt;
+                          &lt;span className="text-[9px] text-slate-300 font-mono tracking-widest uppercase bg-black/60 px-2 py-1 rounded-sm border border-white/5 z-10"&gt;
+                            {product.id.toUpperCase()} MODULE
+                          &lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 className="text-lg font-syne text-slate-200 mb-2 group-hover:text-white transition-colors"&gt;{product.name}&lt;/h3&gt;
+                        &lt;p className="text-xs sm:text-sm text-slate-400 font-plus-jakarta font-light leading-relaxed mb-6"&gt;
+                          {product.desc}
+                        &lt;/p&gt;
+                      &lt;/div&gt;
+                      &lt;button className="w-full py-3 border border-white/15 text-[10px] uppercase tracking-widest font-syne text-slate-300 hover:text-white hover:border-white/60 transition-all rounded-sm bg-black/40"&gt;
+                        Acquire License
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 6: PROCESS PAGE */}
+          {currentPage === 'process' &amp;&amp; (
+            &lt;div className="space-y-16"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-16 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Tactile Engine&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;Creative Process&lt;/h2&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              {/* Loop Timeline View with connecting pathways */}
+              &lt;section className="snap-center scroll-mt-28 py-6"&gt;
+                &lt;div className="relative grid grid-cols-1 md:grid-cols-4 gap-8"&gt;
+                  
+                  {/* Step 1: Plan */}
+                  &lt;div className="relative flex flex-col items-center text-center p-6 bg-white/[0.01] border border-white/10 rounded-sm hover:border-violet-500/20 transition-all group"&gt;
+                    &lt;div className="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500/10 border border-indigo-400/30 text-xs font-mono text-indigo-300 mb-4 group-hover:scale-110 transition-transform"&gt;
+                      01
+                    &lt;/div&gt;
+                    &lt;h3 className="text-base font-syne font-bold text-white mb-2"&gt;Plan&lt;/h3&gt;
+                    &lt;p className="text-xs text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                      Define creative direction, visual goals, constraints, and intended sensory feeling.
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                  {/* Step 2: Randomize */}
+                  &lt;div className="relative flex flex-col items-center text-center p-6 bg-white/[0.01] border border-white/10 rounded-sm hover:border-purple-500/20 transition-all group"&gt;
+                    &lt;div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-400/30 text-xs font-mono text-purple-300 mb-4 group-hover:scale-110 transition-transform"&gt;
+                      02
+                    &lt;/div&gt;
+                    &lt;h3 className="text-base font-syne font-bold text-white mb-2"&gt;Randomize&lt;/h3&gt;
+                    &lt;p className="text-xs text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                      Explore unexpected variations, references, colors, compositions, and visual possibilities.
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                  {/* Step 3: Extract */}
+                  &lt;div className="relative flex flex-col items-center text-center p-6 bg-white/[0.01] border border-white/10 rounded-sm hover:border-fuchsia-500/20 transition-all group"&gt;
+                    &lt;div className="w-10 h-10 flex items-center justify-center rounded-full bg-fuchsia-500/10 border border-fuchsia-400/30 text-xs font-mono text-fuchsia-300 mb-4 group-hover:scale-110 transition-transform"&gt;
+                      03
+                    &lt;/div&gt;
+                    &lt;h3 className="text-base font-syne font-bold text-white mb-2"&gt;Extract&lt;/h3&gt;
+                    &lt;p className="text-xs text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                      Identify the strongest patterns, useful ideas, and visual directions from exploration.
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                  {/* Step 4: Execute */}
+                  &lt;div className="relative flex flex-col items-center text-center p-6 bg-white/[0.01] border border-white/10 rounded-sm hover:border-rose-500/20 transition-all group"&gt;
+                    &lt;div className="w-10 h-10 flex items-center justify-center rounded-full bg-rose-500/10 border border-rose-400/30 text-xs font-mono text-rose-300 mb-4 group-hover:scale-110 transition-transform"&gt;
+                      04
+                    &lt;/div&gt;
+                    &lt;h3 className="text-base font-syne font-bold text-white mb-2"&gt;Execute&lt;/h3&gt;
+                    &lt;p className="text-xs text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+                      Build the final piece, refine the details, and turn selected direction into finished work.
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+
+                &lt;/div&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
+          )}
+
+          {/* SECTION 7: CONTACT PAGE */}
+          {currentPage === 'contact' &amp;&amp; (
+            &lt;div className="space-y-12"&gt;
+              &lt;section className="snap-start py-4"&gt;
+                &lt;header className="mb-12 text-center"&gt;
+                  &lt;span className="text-[10px] font-mono tracking-[0.3em] uppercase text-violet-400"&gt;Interactive Node&lt;/span&gt;
+                  &lt;h2 className="text-3xl font-bold font-syne tracking-tight mt-1"&gt;Initiate Signal&lt;/h2&gt;
+                  &lt;p className="text-xs sm:text-sm text-slate-400 font-plus-jakarta font-light mt-4 max-w-md mx-auto leading-relaxed"&gt;
+                    Align your parameters with mine, and let’s construct something unforgettable.
+                  &lt;/p&gt;
+                &lt;/header&gt;
+              &lt;/section&gt;
+
+              &lt;section className="min-h-[50vh] flex flex-col justify-center snap-center pb-12 scroll-mt-28"&gt;
+                &lt;div className="w-full max-w-md mx-auto p-8 border border-white/10 bg-white/[0.01] hover:border-violet-500/20 transition-colors rounded-sm relative"&gt;
+                  &lt;form onSubmit={(e) =&gt; e.preventDefault()} className="space-y-6 text-left"&gt;
+                    &lt;div&gt;
+                      &lt;label className="block text-[9px] font-mono uppercase text-slate-500 tracking-widest mb-2"&gt;Identity&lt;/label&gt;
+                      &lt;input 
+                        type="text" 
+                        placeholder="Rachel Foster"
+                        className="w-full bg-transparent border-b border-white/15 pb-2 text-xs text-slate-200 font-plus-jakarta focus:outline-none focus:border-white/60 transition-colors placeholder:text-slate-700"
+                      /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                      &lt;label className="block text-[9px] font-mono uppercase text-slate-500 tracking-widest mb-2"&gt;Transmission Link (Email)&lt;/label&gt;
+                      &lt;input 
+                        type="email" 
+                        placeholder="rachel@foster-mesh.io"
+                        className="w-full bg-transparent border-b border-white/15 pb-2 text-xs text-slate-200 font-plus-jakarta focus:outline-none focus:border-white/60 transition-colors placeholder:text-slate-700"
+                      /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                      &lt;label className="block text-[9px] font-mono uppercase text-slate-500 tracking-widest mb-2"&gt;Coordinates / Intent&lt;/label&gt;
+                      &lt;textarea 
+                        rows={3}
+                        placeholder="Project parameters..."
+                        className="w-full bg-transparent border-b border-white/15 pb-2 text-xs text-slate-200 font-plus-jakarta focus:outline-none focus:border-white/60 transition-colors resize-none placeholder:text-slate-700"
+                      /&gt;
+                    &lt;/div&gt;
+                    &lt;button 
+                      type="submit" 
+                      className="w-full py-4 border border-white/15 text-[10px] uppercase tracking-widest font-syne text-slate-300 hover:text-white hover:border-white/60 transition-all rounded-sm mt-4 bg-black/40"
+                    &gt;
+                      Transmit Signal
+                    &lt;/button&gt;
+                  &lt;/form&gt;
+                &lt;/div&gt;
+
+                &lt;div className="flex items-center justify-center space-x-6 mt-12"&gt;
+                  {['Twitter', 'Instagram', 'Github'].map((social) =&gt; (
+                    &lt;a
+                      key={social}
+                      href="#"
+                      onClick={(e) =&gt; e.preventDefault()}
+                      className="text-[10px] font-mono tracking-widest uppercase text-slate-500 hover:text-slate-300 transition-colors"
+                    &gt;
+                      {social}
+                    &lt;/a&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
+          )}
+
+          {/* FOOTER */}
+          &lt;footer className="py-16 text-center text-[10px] tracking-widest uppercase font-mono text-slate-600 relative snap-end"&gt;
+            &lt;p&gt;© 2026 Angel Berger. SYSTEM IN FINAL RESOLVE.&lt;/p&gt;
+          &lt;/footer&gt;
+
+        &lt;/main&gt;
+      &lt;/div&gt;
+
+      {/* ==========================================
+         ANALOG MODALS (z-50)
+         ========================================== */}
+      {/* Expanded Polaroid Modal */}
+      {activeGalleryItem &amp;&amp; (
+        &lt;div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-500"
+          onClick={() =&gt; setActiveGalleryItem(null)}
+        &gt;
+          &lt;div 
+            className="bg-[#0a0a0c] border border-white/20 p-6 rounded-sm max-w-md w-full shadow-2xl relative"
+            onClick={(e) =&gt; e.stopPropagation()}
+          &gt;
+            &lt;div className="aspect-square w-full bg-[#121214] border border-white/10 relative mb-6 overflow-hidden"&gt;
+               &lt;img src={activeGalleryItem.img} alt={activeGalleryItem.title} className="w-full h-full object-cover" /&gt;
+            &lt;/div&gt;
+            
+            &lt;h3 className="font-playfair text-2xl text-slate-200 mb-2"&gt;{activeGalleryItem.title}&lt;/h3&gt;
+            &lt;span className="text-[10px] font-mono text-slate-500 block mb-4"&gt;CATALOG ENTRY: #{activeGalleryItem.id}&lt;/span&gt;
+            &lt;p className="text-xs sm:text-sm text-slate-400 font-plus-jakarta font-light leading-relaxed"&gt;
+              This digital design was captured and processed under physical constraints. Body text elements are secondary to the raw physical footprint of the artifact.
+            &lt;/p&gt;
+            
+            &lt;button 
+              onClick={() =&gt; setActiveGalleryItem(null)}
+              className="mt-8 w-full py-3 border border-white/20 text-[10px] uppercase tracking-widest font-syne text-slate-300 hover:text-white hover:border-white/60 transition-all rounded-sm bg-black/40"
+            &gt;
+              Close Artifact
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+
+      {/* Expanded Blog Modal */}
+      {activeBlogItem &amp;&amp; (
+        &lt;div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-500"
+          onClick={() =&gt; setActiveBlogItem(null)}
+        &gt;
+          &lt;div 
+            className="bg-[#0a0a0c] border border-white/20 p-8 rounded-sm max-w-2xl w-full max-h-[80vh] overflow-y-auto scrollbar-none shadow-2xl relative"
+            onClick={(e) =&gt; e.stopPropagation()}
+          &gt;
+            &lt;div className="flex items-center space-x-4 mb-8 pb-4 border-b border-white/10"&gt;
+              &lt;span className="text-[10px] font-mono tracking-widest text-slate-500 uppercase"&gt;{activeBlogItem.category}&lt;/span&gt;
+              &lt;span className="w-1 h-1 rounded-full bg-white/20" /&gt;
+              &lt;span className="text-[10px] font-mono text-slate-500"&gt;{activeBlogItem.date}&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div className="aspect-[21/9] w-full rounded-sm overflow-hidden border border-white/10 bg-slate-950 mb-6"&gt;
+              &lt;img src={activeBlogItem.img} alt={activeBlogItem.title} className="w-full h-full object-cover" /&gt;
+            &lt;/div&gt;
+
+            &lt;h3 className="text-2xl sm:text-3xl font-bold font-syne text-slate-200 mb-6"&gt;
+              {activeBlogItem.title}
+            &lt;/h3&gt;
+            
+            &lt;div className="text-xs sm:text-sm text-slate-300 font-plus-jakarta font-light leading-relaxed space-y-4"&gt;
+              &lt;p&gt;{activeBlogItem.content}&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;button 
+              onClick={() =&gt; setActiveBlogItem(null)}
+              className="mt-8 px-6 py-2 border border-white/20 text-[10px] uppercase tracking-widest font-syne text-slate-300 hover:text-white hover:border-white/60 transition-all rounded-sm bg-black/40"
+            &gt;
+              Close Journal
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}</pre>
+</main>
+</body>
+</html>

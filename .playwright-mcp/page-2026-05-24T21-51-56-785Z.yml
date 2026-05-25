@@ -1,0 +1,196 @@
+- generic [active] [ref=e1]:
+  - heading "A. BERGER" [level=1] [ref=e4]
+  - banner [ref=e7]:
+    - generic [ref=e8]: A. BERGER
+    - navigation [ref=e9]:
+      - button "HOME" [ref=e10] [cursor=pointer]
+      - button "GALLERY" [ref=e11] [cursor=pointer]
+      - button "BLOG" [ref=e12] [cursor=pointer]
+      - button "SERVICES" [ref=e13] [cursor=pointer]
+      - button "PRODUCTS" [ref=e14] [cursor=pointer]
+      - button "PROCESS" [ref=e15] [cursor=pointer]
+      - button "CONTACT" [ref=e16] [cursor=pointer]
+  - generic [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "VISUAL ARCHITECT" [level=2] [ref=e22]
+        - heading "Angel Berger" [level=1] [ref=e24]
+        - paragraph [ref=e26]: A Diverse Creative / Studio Exhibition
+      - generic [ref=e27]:
+        - img "Atelier Study Workspace" [ref=e28]
+        - generic:
+          - generic: EXPLORE FRAME
+        - generic:
+          - generic: ATELIER — 01
+          - heading "Spatial & Curatorial Order" [level=3]
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - text: COLLECTION 2026
+          - heading "STUDIO WORK" [level=2] [ref=e33]
+        - paragraph [ref=e35]: An exploration of pure form, raw earth structures, and organic linear surfaces captured across mediums.
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img "Earthen Vessel" [ref=e39]
+          - paragraph [ref=e40]: ORGANIC FORM
+          - generic [ref=e41]: Sculpture Study
+        - generic [ref=e42]:
+          - img "Architecture" [ref=e44]
+          - paragraph [ref=e45]: SPATIAL ORDER
+          - generic [ref=e46]: Brutalist Space
+        - generic [ref=e47]:
+          - img "Abstract Paint" [ref=e49]
+          - paragraph [ref=e50]: ABSTRACT CORE
+          - generic [ref=e51]: Canvas Study
+        - generic [ref=e52]:
+          - img "Nature texture" [ref=e54]
+          - paragraph [ref=e55]: DRIFTING SURFACE
+          - generic [ref=e56]: Elemental Micro
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - text: REFLECTIONS
+          - heading "THE JOURNAL" [level=2] [ref=e60]
+        - paragraph [ref=e62]: A conceptual space dedicated to spatial architecture, visual order, and modern curations.
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - img "Article 1" [ref=e66]
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - generic [ref=e70]: CREATIVE THEORY
+                - generic [ref=e71]: — May 18, 2026
+              - 'heading "On Restraint: Designing Through Absence" [level=3] [ref=e72]'
+              - paragraph [ref=e73]: An exploration of negative space, structural scale, and why leaving parts of a canvas blank represents spatial design authority.
+            - generic [ref=e74]: READ ESSAY [↗]
+        - generic [ref=e75]:
+          - img "Article 2" [ref=e77]
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]: STUDIO ARCHIVE
+                - generic [ref=e82]: — April 02, 2026
+              - 'heading "Chasing Photons: Studies of Soft Refraction" [level=3] [ref=e83]'
+              - paragraph [ref=e84]: Analyzing light curves falling against physical tactile interfaces and methods of replicating the atmospheric warmth of natural light inside WebGL canvases.
+            - generic [ref=e85]: READ ESSAY [↗]
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - text: OFFERINGS
+          - heading "CAPABILITIES" [level=2] [ref=e89]
+        - paragraph [ref=e91]: Bespoke dynamic solutions tailored for visual consistency, structural design, and branding languages.
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - img [ref=e96]
+            - heading "Creative Direction" [level=3] [ref=e98]
+            - paragraph [ref=e99]: Defining structural branding languages, photographic directives, and cohesive product vision for high-end boutique agencies.
+          - generic [ref=e100]: MODULE 01
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - img [ref=e104]
+            - heading "Curatorial Spatial" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Weaving tactile spatial layouts, materials discovery, and exhibition structures together with environmental variables.
+          - generic [ref=e108]: MODULE 02
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - img [ref=e112]
+            - heading "Visual Crafting" [level=3] [ref=e114]
+            - paragraph [ref=e115]: Producing limited edition physical assets, bespoke ceramics, high-contrast imagery, and functional minimalist objects.
+          - generic [ref=e116]: MODULE 03
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - text: EDITIONS
+          - heading "OBJECTS" [level=2] [ref=e120]
+        - paragraph [ref=e122]: Limited physical iterations crafted for long-term collection value and tactile presence.
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - img "Crafted Ceramic Plate" [ref=e126]
+            - generic [ref=e127]: EDITION OF 12
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - generic [ref=e130]:
+                - heading "Anorthite Plate" [level=3] [ref=e131]
+                - generic [ref=e132]: $340
+              - paragraph [ref=e133]: Bespoke dynamic earthenware, shaped from deep volcanic aggregate under structural firing parameters. Highly raw textures.
+            - button "Inquire Availability" [ref=e134] [cursor=pointer]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - img "Archival Print" [ref=e137]
+            - generic [ref=e138]: SIGNED PRINT
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - heading "Tension Frame" [level=3] [ref=e142]
+                - generic [ref=e143]: $190
+              - paragraph [ref=e144]: Museum-quality giclée print on structured heavy archival bone paper, hand-signed in deep charcoal by the artist's studio.
+            - button "Inquire Availability" [ref=e145] [cursor=pointer]
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - text: WORKFLOW
+          - heading "PROCESS" [level=2] [ref=e149]
+        - paragraph [ref=e151]: A structured, recursive process that translates conceptual ideas into physical systems.
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: "01"
+          - generic [ref=e156]:
+            - heading "Plan" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Define conceptual goals, constraints, and visual rules.
+        - generic [ref=e159]:
+          - generic [ref=e160]: "02"
+          - generic [ref=e161]:
+            - heading "Randomize" [level=3] [ref=e162]
+            - paragraph [ref=e163]: Explore variations and unexpected raw visual variables.
+        - generic [ref=e164]:
+          - generic [ref=e165]: "03"
+          - generic [ref=e166]:
+            - heading "Extract" [level=3] [ref=e167]
+            - paragraph [ref=e168]: Identify structural keys and core aesthetic layouts.
+        - generic [ref=e169]:
+          - generic [ref=e170]: "04"
+          - generic [ref=e171]:
+            - heading "Execute" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Assemble raw mediums into meticulously structured collections.
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - text: CONNECT
+          - heading "INQUIRE" [level=2] [ref=e177]
+        - generic [ref=e179]:
+          - link "INSTAGRAM ↗" [ref=e180]:
+            - /url: "#"
+            - text: INSTAGRAM
+            - generic [ref=e181]: ↗
+          - link "PINBOARD ↗" [ref=e182]:
+            - /url: "#"
+            - text: PINBOARD
+            - generic [ref=e183]: ↗
+          - link "ARCHIVE ↗" [ref=e184]:
+            - /url: "#"
+            - text: ARCHIVE
+            - generic [ref=e185]: ↗
+        - generic [ref=e186]:
+          - text: © 2026 ANGEL BERGER.
+          - text: ALL SYSTEM MOTION SECURED.
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]: IDENTIFICATION / NAME
+          - textbox "e.g. Jean Dupont" [ref=e191]
+        - generic [ref=e192]:
+          - generic [ref=e193]: COMMUNICATION VECTOR / EMAIL
+          - textbox "e.g. jean@dupont.com" [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e196]: NATURE OF INQUIRY
+          - textbox "Details of curation project..." [ref=e197]
+        - button "SEND TRANSMISSION" [ref=e198] [cursor=pointer]
+  - generic:
+    - generic:
+      - button "CLOSE [X]"
+      - generic:
+        - generic:
+          - img "Expanded work"
+        - heading [level=3]
+        - paragraph

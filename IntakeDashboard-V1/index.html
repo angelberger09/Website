@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IntakeDashboard-V1</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000000'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234ADE80'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #000000;
+        --panel: #050505;
+        --line: #2a2a2a;
+        --line-soft: #171717;
+        --text: #f5f5f5;
+        --muted: #9a9a9a;
+        --green: #4ade80;
+        --green-strong: #22c55e;
+        --danger: #ff8d8d;
+        --control: #070707;
+        --topbar-h: clamp(56px, 7vh, 72px);
+        --pane-pad-x: clamp(16px, 2.85vw, 44px);
+        --pane-pad-y: clamp(16px, 2.75vh, 28px);
+        --gap: clamp(12px, 2.1vh, 22px);
+        --review-gap: clamp(18px, 5.3vh, 54px);
+        --control-h: clamp(40px, 4.7vh, 48px);
+        font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      button, select, textarea {
+        font: inherit;
+      }
+
+      .app {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: var(--topbar-h) minmax(0, 1fr);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+          #000;
+        background-size: 80px 80px;
+      }
+
+      .topbar {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) minmax(240px, clamp(320px, 24.4vw, 374px)) minmax(220px, 1fr);
+        align-items: center;
+        gap: clamp(12px, 1.2vw, 18px);
+        padding: 0 clamp(14px, 1.3vw, 20px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.94);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: clamp(10px, 1.2vw, 18px);
+        min-width: 0;
+      }
+
+      .brand-title {
+        font-size: clamp(14px, 1.12vw, 17px);
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: clamp(6px, 0.55vw, 8px);
+        color: var(--green);
+        font-size: clamp(14px, 1.05vw, 16px);
+        white-space: nowrap;
+      }
+
+      .status-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      .entry-picker {
+        display: grid;
+      }
+
+      select {
+        width: 100%;
+        min-height: clamp(40px, 4.4vh, 45px);
+        color: var(--text);
+        background: #030303;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0 clamp(34px, 2.8vw, 42px) 0 clamp(14px, 1.2vw, 18px);
+        font-size: clamp(14px, 1.12vw, 17px);
+      }
+
+      #decision {
+        color: var(--green);
+      }
+
+      .top-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(10px, 1.45vw, 22px);
+        color: var(--text);
+      }
+
+      .host {
+        font-size: clamp(14px, 1.12vw, 17px);
+        letter-spacing: 0.02em;
+      }
+
+      .icon-button {
+        display: grid;
+        place-items: center;
+        width: clamp(30px, 2.25vw, 34px);
+        height: clamp(30px, 2.25vw, 34px);
+        border: 0;
+        color: var(--text);
+        background: transparent;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .icon-button:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      .preview-pane,
+      .review-pane {
+        min-width: 0;
+        min-height: 0;
+        padding: var(--pane-pad-y) clamp(16px, 1.6vw, 24px);
+      }
+
+      .preview-pane {
+        position: relative;
+        border-right: 1px solid var(--line);
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .review-pane {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: var(--review-gap);
+        padding-left: var(--pane-pad-x);
+        padding-right: var(--pane-pad-x);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .section-label {
+        margin: 0;
+        font-size: clamp(12px, 0.92vw, 14px);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .preview-head {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(12px, 1.4vw, 20px);
+        pointer-events: none;
+      }
+
+      .preview-head .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        background: rgba(0, 0, 0, 0.65);
+        padding: 6px 12px;
+        border-radius: 6px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .aspect-picker {
+        display: grid;
+        gap: 8px;
+        min-width: min(100%, 320px);
+      }
+
+      .aspect-picker label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .aspect-picker select {
+        min-height: clamp(40px, 4.4vh, 45px);
+      }
+
+      .preview-head .aspect-picker {
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .preview-head .aspect-picker label {
+        display: none;
+      }
+
+      .preview-head .aspect-picker select {
+        min-height: 32px;
+        height: 32px;
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text);
+        border-radius: 6px;
+        padding: 0 28px 0 12px;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s ease;
+      }
+
+      .preview-head .aspect-picker select:hover {
+        background: rgba(20, 20, 20, 0.85);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .preview-frame-wrap {
+        position: relative;
+        min-height: 0;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        background: #000;
+        display: grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .preview-stage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background: #000;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+        overflow: hidden;
+      }
+
+      .preview-frame {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        max-width: 100%;
+        max-height: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      .empty-state {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        min-height: 0;
+        color: var(--muted);
+        border: 1px dashed var(--line);
+      }
+
+      .review-card {
+        width: min(100%, 630px);
+      }
+
+      .review-title {
+        margin: clamp(16px, 5.9vh, 60px) 0 clamp(12px, 1.8vh, 18px);
+        font-size: clamp(34px, 3.72vw, 57px);
+        line-height: 0.95;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: clamp(8px, 0.78vw, 12px);
+        margin-bottom: clamp(22px, 4.3vh, 44px);
+        padding: clamp(6px, 0.78vh, 8px) clamp(10px, 0.85vw, 13px);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.055);
+        color: var(--text);
+        font-size: clamp(12px, 0.92vw, 14px);
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .tag-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .review-block {
+        margin-bottom: clamp(20px, 3.3vh, 34px);
+      }
+
+      .review-block h3 {
+        margin: 0 0 14px;
+        font-size: clamp(17px, 1.3vw, 20px);
+        font-weight: 500;
+      }
+
+      .edit-mark {
+        display: inline-block;
+        margin-left: 10px;
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      .review-copy,
+      .feedback-list {
+        color: var(--text);
+        font-size: clamp(14px, 1.05vw, 16px);
+        line-height: clamp(1.55, 1.86vw, 1.9);
+      }
+
+      .review-copy {
+        max-width: 620px;
+      }
+
+      .feedback-list {
+        margin: 0;
+        padding-left: 24px;
+      }
+
+      .field {
+        display: grid;
+        gap: clamp(8px, 1.17vh, 12px);
+        margin-bottom: clamp(18px, 2.9vh, 30px);
+      }
+
+      .field label {
+        color: var(--text);
+        font-size: clamp(17px, 1.3vw, 20px);
+        line-height: 1;
+      }
+
+      textarea {
+        min-height: clamp(86px, 9.4vh, 96px);
+        resize: vertical;
+        padding: clamp(12px, 1.05vw, 16px);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--text);
+        background: rgba(0, 0, 0, 0.82);
+        line-height: 1.5;
+      }
+
+      textarea::placeholder {
+        color: #8d8d8d;
+      }
+
+      .action-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(14px, 1.95vw, 30px);
+      }
+
+      .review-button {
+        min-height: clamp(42px, 4.5vh, 46px);
+        border-radius: 6px;
+        border: 0;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .request-button {
+        color: var(--text);
+        background: linear-gradient(180deg, #1c1c1c, #111);
+      }
+
+      .approve-button {
+        color: #06120a;
+        background: linear-gradient(180deg, #55e27a, #38d365);
+      }
+
+      .review-button:disabled,
+      select:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+      }
+
+      .output {
+        margin-top: 18px;
+        min-height: 44px;
+        color: var(--muted);
+        line-height: 1.5;
+        word-break: break-word;
+      }
+
+      .packet-link {
+        color: var(--green);
+      }
+
+      @media (max-width: 980px) {
+        .app {
+          height: auto;
+          min-height: 100dvh;
+          grid-template-rows: auto 1fr;
+          overflow: visible;
+        }
+
+        .topbar {
+          grid-template-columns: 1fr;
+          padding: clamp(12px, 4vw, 16px);
+        }
+
+        .top-actions {
+          justify-content: space-between;
+        }
+
+        .workspace {
+          grid-template-columns: 1fr;
+          overflow: visible;
+        }
+
+        .preview-pane {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .review-pane {
+          padding: clamp(18px, 6vw, 28px) clamp(16px, 6vw, 24px) clamp(32px, 10vw, 44px);
+          gap: clamp(16px, 5vw, 22px);
+          overflow: visible;
+        }
+
+        .preview-frame,
+        .preview-frame-wrap,
+        .empty-state {
+          height: clamp(360px, 58vh, 460px);
+          min-height: 0;
+        }
+
+        .review-title {
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-title">IntakeDashboard-V1</div>
+          <div class="status" id="status"><span class="status-dot"></span><span>Ready</span></div>
+        </div>
+
+        <div class="entry-picker">
+          <select id="entrySelect" aria-label="Review entry"></select>
+        </div>
+
+        <div class="top-actions">
+          <div class="host">127.0.0.1:3011</div>
+          <button class="icon-button" id="openPreview" title="Open selected preview" aria-label="Open selected preview">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg>
+          </button>
+          <button class="icon-button" id="refreshEntries" title="Refresh entries" aria-label="Refresh entries">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <section class="preview-pane" aria-label="Sandbox preview">
+          <div class="preview-head">
+            <h2 class="section-label">Play (Sandbox Preview)</h2>
+            <div class="aspect-picker">
+              <label for="previewAspect">Preview Aspect Ratio</label>
+              <select id="previewAspect" aria-label="Preview aspect ratio">
+                <option value="16:9">Desktop Monitor 16:9</option>
+                <option value="16:10">Laptop 16:10</option>
+                <option value="21:9">Ultrawide 21:9</option>
+                <option value="32:9">Super Ultrawide 32:9</option>
+                <option value="4:3">Classic Display 4:3</option>
+                <option value="3:2">Widescreen 3:2</option>
+                <option value="1:1">Square 1:1</option>
+                <option value="3:4">Tablet Portrait 3:4</option>
+                <option value="4:5">Social Portrait 4:5</option>
+                <option value="9:16">Mobile Portrait 9:16</option>
+                <option value="10:16">Tall Phone 10:16</option>
+                <option value="2.39:1">Cinema 2.39:1</option>
+              </select>
+            </div>
+          </div>
+          <div class="preview-frame-wrap">
+            <div class="preview-stage" id="previewStage">
+              <iframe
+                id="preview"
+                class="preview-frame"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
+                title="Website preview"
+              ></iframe>
+              <div class="empty-state" id="emptyState" hidden>No HTML entries found in ReviewTargets.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="review-pane" aria-label="Review and feedback">
+          <h2 class="section-label">Review & Feedback</h2>
+
+          <div class="review-card">
+            <h1 class="review-title" id="reviewTitle">No Entry Selected</h1>
+            <div class="tag"><span id="entryType">HTML</span><span class="tag-dot"></span></div>
+
+            <div class="review-block">
+              <h3>Notes <span class="edit-mark">/</span></h3>
+              <div class="review-copy" id="entryMeta">Scanning ReviewTargets...</div>
+            </div>
+
+            <div class="review-block">
+              <h3>Feedback</h3>
+              <ul class="feedback-list">
+                <li>Review the visual hierarchy and first-screen clarity</li>
+                <li>Check interaction behavior inside the sandbox preview</li>
+                <li>Capture specific changes in the comments field</li>
+              </ul>
+            </div>
+
+            <div class="field">
+              <label for="decision">Status</label>
+              <select id="decision">
+                <option value="Approved">Approved</option>
+                <option value="Request Changes">Request Changes</option>
+                <option value="Needs Review">Needs Review</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="review">Comments</label>
+              <textarea id="review" placeholder="Add a comment..."></textarea>
+            </div>
+
+            <div class="action-row">
+              <button class="review-button request-button" id="requestChanges">Request Changes</button>
+              <button class="review-button approve-button" id="approve">Approve</button>
+            </div>
+
+            <div class="output" id="output">No packet created yet.</div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const status = document.getElementById("status");
+      const output = document.getElementById("output");
+      const preview = document.getElementById("preview");
+      const entrySelect = document.getElementById("entrySelect");
+      const refreshEntries = document.getElementById("refreshEntries");
+      const entryMeta = document.getElementById("entryMeta");
+      const reviewTitle = document.getElementById("reviewTitle");
+      const entryType = document.getElementById("entryType");
+      const emptyState = document.getElementById("emptyState");
+      const previewAspect = document.getElementById("previewAspect");
+      const previewStage = document.getElementById("previewStage");
+      const decision = document.getElementById("decision");
+      const approve = document.getElementById("approve");
+      const requestChanges = document.getElementById("requestChanges");
+      const openPreview = document.getElementById("openPreview");
+
+      let selectedEntry = "";
+      const aspectRatios = new Map([
+        ["16:9", { w: 1920, h: 1080 }],
+        ["16:10", { w: 1440, h: 900 }],
+        ["21:9", { w: 2560, h: 1080 }],
+        ["32:9", { w: 3840, h: 1080 }],
+        ["4:3", { w: 1024, h: 768 }],
+        ["3:2", { w: 1440, h: 960 }],
+        ["1:1", { w: 1080, h: 1080 }],
+        ["3:4", { w: 768, h: 1024 }],
+        ["4:5", { w: 1080, h: 1350 }],
+        ["9:16", { w: 390, h: 844 }],
+        ["10:16", { w: 800, h: 1280 }],
+        ["2.39:1", { w: 2560, h: 1071 }],
+      ]);
+      const reviewProfiles = {
+        "index.html": {
+          title: "A4. Sand Ripples",
+          type: "Elemental",
+          notes: "Strong composition and texture. Consider increasing contrast slightly to match the obsidian's tonal weight.",
+          feedback: [
+            "Excellent use of negative space",
+            "Typography scale works well",
+            "Consider alt text for accessibility",
+          ],
+        },
+        "artifact-study.html": {
+          title: "Artifact Study",
+          type: "Archive",
+          notes: "Material set is visually consistent. Check image contrast and spacing before promoting this direction.",
+          feedback: [
+            "Strong visual motif",
+            "Clear artifact labeling",
+            "Review mobile crop behavior",
+          ],
+        },
+      };
+
+      function setStatus(message, tone = "good") {
+        status.innerHTML = `<span class="status-dot"></span><span>${message}</span>`;
+        status.style.color = tone === "bad" ? "var(--danger)" : "var(--green)";
+      }
+
+      function titleFromEntry(entry) {
+        if (!entry) return "No Entry Selected";
+        const name = entry.split("/").pop().replace(/\.html$/i, "");
+        return name
+          .split(/[-_ ]+/)
+          .filter(Boolean)
+          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+          .join(" ");
+      }
+
+      function renderReviewProfile(entry) {
+        const profile = reviewProfiles[entry] || {
+          title: titleFromEntry(entry),
+          type: "HTML",
+          notes: `Reviewing ReviewTargets/${entry}. Use comments below to capture what should be approved or changed.`,
+          feedback: [
+            "Review the visual hierarchy and first-screen clarity",
+            "Check interaction behavior inside the sandbox preview",
+            "Capture specific changes in the comments field",
+          ],
+        };
+
+        reviewTitle.textContent = profile.title;
+        entryType.textContent = profile.type;
+        entryMeta.textContent = profile.notes;
+        document.querySelector(".feedback-list").innerHTML = profile.feedback
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+      }
+
+      function fitPreviewStage() {
+        const aspectObj = aspectRatios.get(previewAspect?.value || "16:9") || { w: 1920, h: 1080 };
+        if (!previewStage || !previewStage.parentElement) return;
+
+        const shell = previewStage.parentElement;
+        const style = window.getComputedStyle(shell);
+        const padX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+        const padY = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+
+        const shellWidth = shell.clientWidth - padX;
+        const shellHeight = shell.clientHeight - padY;
+        if (shellWidth <= 0 || shellHeight <= 0) return;
+
+        const targetW = aspectObj.w;
+        const targetH = aspectObj.h;
+        const scale = Math.min(shellWidth / targetW, shellHeight / targetH);
+
+        previewStage.style.width = `${targetW}px`;
+        previewStage.style.height = `${targetH}px`;
+        previewStage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      }
+
+      function setEntry(entry) {
+        selectedEntry = entry || "";
+        const hasEntry = Boolean(selectedEntry);
+        preview.hidden = !hasEntry;
+        emptyState.hidden = hasEntry;
+        approve.disabled = !hasEntry;
+        requestChanges.disabled = !hasEntry;
+        openPreview.disabled = !hasEntry;
+
+        if (!hasEntry) {
+          preview.removeAttribute("src");
+          entryMeta.textContent = "No HTML entries found in ReviewTargets.";
+          reviewTitle.textContent = "No Entry Selected";
+          entryType.textContent = "HTML";
+          return;
+        }
+
+        const previewUrl = `/preview?entry=${encodeURIComponent(selectedEntry)}`;
+        preview.src = previewUrl;
+        renderReviewProfile(selectedEntry);
+        fitPreviewStage();
+      }
+
+      async function loadEntries() {
+        setStatus("Scanning...");
+        entrySelect.disabled = true;
+        refreshEntries.disabled = true;
+
+        try {
+          const res = await fetch("/api/entries", { cache: "no-store" });
+          const data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.error || "Failed to scan entries.");
+
+          entrySelect.innerHTML = "";
+          data.entries.forEach((entry) => {
+            const option = document.createElement("option");
+            option.value = entry.path;
+            option.textContent = entry.label;
+            entrySelect.appendChild(option);
+          });
+
+          entrySelect.disabled = data.entries.length === 0;
+          setEntry(data.entries[0]?.path || "");
+          setStatus("Ready");
+        } catch (error) {
+          setStatus("Error", "bad");
+          entryMeta.textContent = error.message || String(error);
+          setEntry("");
+        } finally {
+          refreshEntries.disabled = false;
+        }
+      }
+
+      async function submitReview(nextDecision) {
+        const comments = document.getElementById("review").value.trimEnd();
+        const statusLabel = nextDecision || decision.value;
+        const review = [`Status: ${statusLabel}`, "", comments].join("\n").trimEnd();
+
+        setStatus("Saving...");
+        approve.disabled = true;
+        requestChanges.disabled = true;
+        output.textContent = "Writing intake packet...";
+
+        try {
+          const res = await fetch("/api/intake", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              entry: selectedEntry,
+              review,
+            }),
+          });
+
+          const data = await res.json();
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || "Failed to create intake packet.");
+          }
+
+          setStatus("Saved");
+          output.innerHTML = `Packet created for ReviewTargets/${data.entry}:<br><a class="packet-link" href="file://${data.packetDir}">${data.packetDir}</a>`;
+        } catch (error) {
+          setStatus("Error", "bad");
+          output.textContent = error.message || String(error);
+        } finally {
+          approve.disabled = !selectedEntry;
+          requestChanges.disabled = !selectedEntry;
+        }
+      }
+
+      entrySelect.addEventListener("change", () => setEntry(entrySelect.value));
+      refreshEntries.addEventListener("click", loadEntries);
+      approve.addEventListener("click", () => {
+        decision.value = "Approved";
+        submitReview("Approved");
+      });
+      requestChanges.addEventListener("click", () => {
+        decision.value = "Request Changes";
+        submitReview("Request Changes");
+      });
+      openPreview.addEventListener("click", () => {
+        if (selectedEntry) window.open(`/preview?entry=${encodeURIComponent(selectedEntry)}`, "_blank", "noopener");
+      });
+      previewAspect.addEventListener("change", fitPreviewStage);
+      window.addEventListener("resize", fitPreviewStage);
+      new ResizeObserver(fitPreviewStage).observe(previewStage.parentElement);
+
+      fitPreviewStage();
+      loadEntries();
+    </script>
+  </body>
+</html>

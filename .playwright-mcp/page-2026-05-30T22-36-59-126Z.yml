@@ -1,0 +1,96 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - link "A. BERGER home" [ref=e5] [cursor=pointer]:
+        - /url: ./
+        - generic [ref=e6]: AB
+        - generic [ref=e7]:
+          - generic [ref=e8]: A. BERGER
+          - generic [ref=e9]: Angel Berger archive
+      - navigation "Primary" [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: ./
+        - link "Physical" [ref=e12] [cursor=pointer]:
+          - /url: ./physical/
+        - link "Digital" [ref=e13] [cursor=pointer]:
+          - /url: ./digital/
+        - link "Journal" [ref=e14] [cursor=pointer]:
+          - /url: ./journal/
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: ./contact/
+      - generic "Site status" [ref=e16]:
+        - generic [ref=e18]: Open to inquiries
+    - main [ref=e19]:
+      - region "A. BERGER" [ref=e20]:
+        - figure [ref=e21]:
+          - img "A. BERGER banner" [ref=e22]
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: Portfolio / archive
+          - heading "A. BERGER" [level=1] [ref=e25]
+          - paragraph [ref=e26]: Physical work, digital work, journal notes, and direct inquiry in one clear place.
+      - region "Short identity statement" [ref=e27]:
+        - heading "Short identity statement" [level=2] [ref=e29]
+        - paragraph [ref=e30]: "Angel Berger’s site is built around the split the repo keeps repeating: physical pieces, screen work, process notes, and a direct way in."
+        - paragraph [ref=e31]: The tone stays plain and readable. The layout stays framed but not fussy. Nothing here is trying to act like a services agency or a marketplace.
+      - region "Physical work" [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - paragraph [ref=e35]: Physical preview
+            - heading "Physical work" [level=2] [ref=e36]
+          - paragraph [ref=e37]: Objects, prints, textile edges, and small material pieces.
+        - link "Physical preview Physical work Objects, prints, textile edges, and quiet material pieces with straightened hover motion and clear labels. Go to Physical" [ref=e39] [cursor=pointer]:
+          - /url: ./physical/
+          - figure [ref=e40]:
+            - img "Physical work" [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]: Physical preview
+            - generic [ref=e44]: Physical work
+            - generic [ref=e45]: Objects, prints, textile edges, and quiet material pieces with straightened hover motion and clear labels.
+            - generic [ref=e46]: Go to Physical
+      - region "Digital work" [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - paragraph [ref=e50]: Digital preview
+            - heading "Digital work" [level=2] [ref=e51]
+          - paragraph [ref=e52]: Motion, identity systems, and screen pieces with clear exits.
+        - link "Digital preview Digital work Motion loops, archives, identity systems, and screen pieces that stay readable first. Go to Digital" [ref=e54] [cursor=pointer]:
+          - /url: ./digital/
+          - figure [ref=e55]:
+            - img "Digital work" [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Digital preview
+            - generic [ref=e59]: Digital work
+            - generic [ref=e60]: Motion loops, archives, identity systems, and screen pieces that stay readable first.
+            - generic [ref=e61]: Go to Digital
+      - region "Journal / notes" [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: Journal preview
+            - heading "Journal / notes" [level=2] [ref=e66]
+          - paragraph [ref=e67]: Loose notes, favorite materials, and process fragments.
+        - link "Journal preview Journal / notes Loose notes, favorite materials, and process fragments that stay plain instead of academic. Go to Journal" [ref=e69] [cursor=pointer]:
+          - /url: ./journal/
+          - figure [ref=e70]:
+            - img "Journal / notes" [ref=e71]
+          - generic [ref=e72]:
+            - generic [ref=e73]: Journal preview
+            - generic [ref=e74]: Journal / notes
+            - generic [ref=e75]: Loose notes, favorite materials, and process fragments that stay plain instead of academic.
+            - generic [ref=e76]: Go to Journal
+      - region "Start a direct inquiry" [ref=e77]:
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Contact path
+          - heading "Start a direct inquiry" [level=2] [ref=e81]
+        - paragraph [ref=e82]: Send a note if you want to ask about physical work, digital work, or a future collaboration.
+        - generic [ref=e83]:
+          - link "Send email" [ref=e84] [cursor=pointer]:
+            - /url: mailto:hello@angelberger.studio
+          - link "Open contact page" [ref=e85] [cursor=pointer]:
+            - /url: ./contact/
+    - contentinfo [ref=e86]:
+      - generic [ref=e87]: A. BERGER
+      - generic [ref=e88]: Open to inquiries
+      - link "hello@angelberger.studio" [ref=e90] [cursor=pointer]:
+        - /url: mailto:hello@angelberger.studio

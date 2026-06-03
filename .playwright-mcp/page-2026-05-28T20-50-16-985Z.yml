@@ -1,0 +1,17 @@
+- main [ref=e2]:
+  - link "Back to Yarn" [ref=e3] [cursor=pointer]:
+    - /url: ./collection.html?line=yarn
+  - article [ref=e4]:
+    - img "Soft Cotton Skein Set" [ref=e6]
+    - generic [ref=e7]:
+      - heading "Soft Cotton Skein Set" [level=1] [ref=e8]
+      - generic [ref=e9]:
+        - generic [ref=e10]: $18.00
+        - generic [ref=e11]: ★★★★½ 4.8
+        - generic [ref=e12]: Ships today
+      - paragraph [ref=e13]: A compact yarn bundle for clean craft work, color sampling, and small-batch handmade items.
+      - list [ref=e14]:
+        - listitem [ref=e15]: Five skeins
+        - listitem [ref=e16]: Soft cotton blend
+        - listitem [ref=e17]: Good for crochet and weaving
+      - button "Add to cart" [ref=e19] [cursor=pointer]

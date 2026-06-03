@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A. Berger - Studio Split</title>
+    <meta
+      name="description"
+      content="A playful studio site split between physical and digital work, with polaroid cards, looser language, and clear navigation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050506;
+        --bg-soft: #0e0e12;
+        --panel: rgba(12, 12, 16, 0.76);
+        --panel-strong: rgba(18, 18, 24, 0.92);
+        --line: rgba(255, 255, 255, 0.1);
+        --line-strong: rgba(255, 255, 255, 0.18);
+        --text: #f7f3ee;
+        --muted: rgba(247, 243, 238, 0.7);
+        --muted-2: rgba(247, 243, 238, 0.46);
+        --accent: #f1b45f;
+        --accent-2: #9fe8c5;
+        --accent-3: #ff8eab;
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        --shadow-soft: 0 14px 36px rgba(0, 0, 0, 0.3);
+        --radius: 18px;
+        --radius-sm: 12px;
+        --nav-h: 72px;
+        font-family: "Space Grotesk", system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 50% 42%, rgba(241, 180, 95, 0.16), transparent 23%),
+          radial-gradient(circle at 50% 54%, rgba(159, 232, 197, 0.1), transparent 30%),
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent 45%),
+          linear-gradient(180deg, #070708 0%, #040405 100%);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.66) 100%),
+          radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.045), transparent 38%);
+        z-index: 0;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.14;
+        mix-blend-mode: screen;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+        z-index: 1;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .shell {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        display: grid;
+        grid-template-columns: minmax(160px, 1fr) auto minmax(160px, 1fr);
+        align-items: center;
+        gap: 16px;
+        min-height: var(--nav-h);
+        padding: 12px clamp(16px, 2.5vw, 28px);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 58%),
+          linear-gradient(180deg, rgba(12, 12, 16, 0.94), rgba(7, 7, 10, 0.88));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 56%),
+          linear-gradient(180deg, rgba(241, 180, 95, 0.18), rgba(241, 180, 95, 0.04));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          0 12px 24px rgba(0, 0, 0, 0.25);
+        color: var(--accent);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+
+      .brand-copy {
+        min-width: 0;
+      }
+
+      .brand-title {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(16px, 1.5vw, 20px);
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-subtitle {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        min-width: 0;
+      }
+
+      .nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        padding: 0 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 56%),
+          linear-gradient(180deg, rgba(18, 18, 22, 0.94), rgba(7, 7, 10, 0.92));
+        color: var(--text);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.06),
+          0 12px 22px rgba(0, 0, 0, 0.22);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: transform 0.22s ease, border-color 0.22s ease, filter 0.22s ease;
+      }
+
+      .nav a:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.2);
+        filter: brightness(1.12);
+      }
+
+      .nav a:focus-visible,
+      .chip:focus-visible,
+      .tile:focus-visible,
+      .close-button:focus-visible,
+      .cta:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .topbar-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 36px;
+        padding: 0 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 60%),
+          linear-gradient(180deg, rgba(18, 18, 22, 0.92), rgba(7, 7, 10, 0.9));
+        color: var(--muted);
+        font-size: 12px;
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.06em;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.06),
+          0 12px 22px rgba(0, 0, 0, 0.2);
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent-2);
+        box-shadow: 0 0 10px rgba(159, 232, 197, 0.8);
+      }
+
+      .hero {
+        min-height: calc(100vh - var(--nav-h));
+        padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 36px) clamp(40px, 6vw, 72px);
+        display: grid;
+        align-content: center;
+        gap: clamp(28px, 4.5vw, 52px);
+      }
+
+      .hero-grid {
+        width: min(1160px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: clamp(20px, 3vw, 34px);
+        align-items: center;
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 18px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--accent-2);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(56px, 10vw, 124px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      .hero-title span {
+        display: block;
+      }
+
+      .hero-title .accent {
+        color: var(--accent);
+      }
+
+      .hero-text {
+        margin: 0;
+        max-width: 60ch;
+        color: var(--muted);
+        font-size: clamp(16px, 1.45vw, 19px);
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip,
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 60%),
+          linear-gradient(180deg, rgba(20, 20, 26, 0.96), rgba(8, 8, 12, 0.9));
+        color: var(--text);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 18px 28px rgba(0, 0, 0, 0.28);
+        cursor: pointer;
+        transition: transform 0.22s ease, filter 0.22s ease, border-color 0.22s ease;
+      }
+
+      .chip:hover,
+      .cta:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.24);
+        filter: brightness(1.1);
+      }
+
+      .chip small,
+      .cta small {
+        color: var(--muted);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero-card {
+        min-height: 380px;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 56%),
+          linear-gradient(180deg, rgba(20, 20, 24, 0.94), rgba(8, 8, 12, 0.96));
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+        padding: 18px;
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background:
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 32%),
+          radial-gradient(circle at 12% 20%, rgba(241, 180, 95, 0.16), transparent 18%),
+          radial-gradient(circle at 78% 78%, rgba(159, 232, 197, 0.12), transparent 18%);
+      }
+
+      .hero-card-content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+      }
+
+      .hero-stamp {
+        justify-self: start;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 62%),
+          linear-gradient(180deg, rgba(18, 18, 24, 0.96), rgba(8, 8, 12, 0.94));
+        color: var(--muted);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .hero-surface {
+        display: grid;
+        align-content: center;
+        gap: 12px;
+        padding: 8px 6px 16px;
+      }
+
+      .hero-surface h2 {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(24px, 3.6vw, 40px);
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-surface p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .mini-card {
+        min-height: 92px;
+        padding: 12px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.09), transparent 56%),
+          linear-gradient(180deg, rgba(25, 25, 30, 0.94), rgba(10, 10, 14, 0.92));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      .mini-card strong {
+        display: block;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 18px;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .mini-card span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .content {
+        width: min(1200px, 100%);
+        margin: 0 auto;
+        padding: 0 clamp(16px, 3vw, 36px) clamp(72px, 8vw, 96px);
+        display: grid;
+        gap: clamp(34px, 6vw, 56px);
+      }
+
+      .section-shell {
+        display: grid;
+        gap: 18px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .section-title {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(28px, 4.1vw, 52px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .section-note {
+        margin: 0;
+        max-width: 54ch;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-2);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .section-label::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: currentColor;
+        box-shadow: 0 0 12px rgba(159, 232, 197, 0.55);
+      }
+
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .tile {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 270px;
+        padding: 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 58%),
+          linear-gradient(180deg, rgba(245, 243, 239, 0.98), rgba(234, 230, 224, 0.98));
+        color: #18171b;
+        box-shadow:
+          0 18px 38px rgba(0, 0, 0, 0.32),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        transform: rotate(var(--tilt, 0deg)) translateY(0);
+        transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+        cursor: pointer;
+        overflow: hidden;
+        text-align: left;
+      }
+
+      .tile:hover {
+        transform: rotate(0deg) translateY(-6px) scale(1.01);
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.38),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        filter: brightness(1.03);
+      }
+
+      .tile::after {
+        content: "";
+        position: absolute;
+        inset: auto 16px 14px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(24, 23, 27, 0.18), transparent);
+      }
+
+      .tile-top {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .tile-type {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(24, 23, 27, 0.08);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(24, 23, 27, 0.72);
+      }
+
+      .tile-price {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: rgba(24, 23, 27, 0.58);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .tile-title {
+        margin: 18px 0 8px;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 29px;
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+      }
+
+      .tile-copy {
+        margin: 0;
+        color: rgba(24, 23, 27, 0.76);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .tile-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 20px;
+        color: rgba(24, 23, 27, 0.64);
+        font-size: 12px;
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .tile-foot span:last-child {
+        color: rgba(24, 23, 27, 0.4);
+      }
+
+      .split-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .editorial {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 16px;
+      }
+
+      .note-card,
+      .contact-card {
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 58%),
+          linear-gradient(180deg, rgba(19, 19, 24, 0.96), rgba(9, 9, 12, 0.94));
+        box-shadow: var(--shadow-soft);
+      }
+
+      .note-card {
+        padding: 22px;
+      }
+
+      .note-card h3,
+      .contact-card h3 {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 28px;
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      .note-card p,
+      .contact-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .note-list {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        color: var(--text);
+      }
+
+      .note-list li {
+        margin-bottom: 10px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .contact-card {
+        padding: 22px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .contact-bar {
+        display: grid;
+        gap: 12px;
+      }
+
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .textarea {
+        min-height: 150px;
+        resize: vertical;
+        width: 100%;
+        padding: 16px 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 62%),
+          linear-gradient(180deg, rgba(15, 15, 19, 0.96), rgba(8, 8, 11, 0.96));
+        color: var(--text);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          0 12px 24px rgba(0, 0, 0, 0.24);
+      }
+
+      .textarea::placeholder {
+        color: rgba(247, 243, 238, 0.42);
+      }
+
+      .footer {
+        width: min(1200px, 100%);
+        margin: 0 auto;
+        padding: 0 clamp(16px, 3vw, 36px) 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: var(--muted-2);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.64);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .modal[hidden] {
+        display: none;
+      }
+
+      .modal-panel {
+        width: min(720px, 100%);
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 56%),
+          linear-gradient(180deg, rgba(19, 19, 24, 0.98), rgba(9, 9, 12, 0.98));
+        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.55);
+        padding: 20px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .modal-kicker {
+        margin: 0 0 8px;
+        color: var(--accent-2);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .modal-title {
+        margin: 0;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(30px, 5vw, 46px);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+      }
+
+      .close-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 60%),
+          linear-gradient(180deg, rgba(20, 20, 26, 0.96), rgba(8, 8, 12, 0.92));
+        color: var(--text);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+      }
+
+      .modal-body {
+        display: grid;
+        gap: 14px;
+      }
+
+      .modal-body p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .meta {
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .meta span {
+        display: block;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted-2);
+        margin-bottom: 8px;
+      }
+
+      .meta strong {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1020px) {
+        .hero-grid,
+        .editorial {
+          grid-template-columns: 1fr;
+        }
+
+        .tile-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mini-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 14px 16px;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .topbar-right {
+          justify-content: flex-start;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 32px;
+        }
+
+        .hero-title {
+          font-size: clamp(48px, 18vw, 82px);
+        }
+
+        .tile-grid,
+        .split-grid,
+        .mini-grid,
+        .meta-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tile {
+          min-height: 250px;
+        }
+
+        .content {
+          gap: 28px;
+          padding-bottom: 52px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand" aria-label="A. Berger">
+          <div class="brand-mark">AB</div>
+          <div class="brand-copy">
+            <p class="brand-title">A. BERGER</p>
+            <p class="brand-subtitle">studio split</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#physical">Physical</a>
+          <a href="#digital">Digital</a>
+          <a href="#journal">Journal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="topbar-right">
+          <div class="status"><span class="status-dot"></span><span>Open archive</span></div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">A brighter split between objects and screens</p>
+              <h1 class="hero-title">
+                <span>ANGEL</span>
+                <span class="accent">BERGER</span>
+              </h1>
+              <p class="hero-text">
+                This is a studio page for things that can be held and things that only exist on a screen.
+                The language stays loose, the nav stays visible, and the cards stay a little tilted until
+                you hover them straight.
+              </p>
+              <div class="hero-actions">
+                <a class="cta" href="#physical"><small>Jump</small> Physical work</a>
+                <a class="cta" href="#digital"><small>Jump</small> Digital work</a>
+                <button class="chip" type="button" data-open="sunroom"><small>Open</small> Studio note</button>
+              </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Studio highlights">
+              <div class="hero-card-content">
+                <div class="hero-stamp">Quietly open. Slightly loud.</div>
+                <div class="hero-surface">
+                  <h2>Physical things. Digital things. Soft edges, clear exits.</h2>
+                  <p>
+                    The page keeps the split obvious: tactile pieces on one side, screen pieces on the
+                    other, with polaroid cards, price tags, short summaries, and enough room to breathe.
+                  </p>
+                </div>
+                <div class="mini-grid" aria-label="Studio tags">
+                  <div class="mini-card">
+                    <strong>Objects</strong>
+                    <span>Paper, clay, prints, and little studio artifacts.</span>
+                  </div>
+                  <div class="mini-card">
+                    <strong>Screens</strong>
+                    <span>Interfaces, motion bits, archives, and layouts.</span>
+                  </div>
+                  <div class="mini-card">
+                    <strong>Notes</strong>
+                    <span>Looser language, brighter hover, less rigidity.</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="content" aria-label="Main studio content">
+          <section class="section-shell" id="physical">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Physical</p>
+                <h2 class="section-title">things with weight</h2>
+              </div>
+              <p class="section-note">
+                The physical side is softer, brighter, and a little more collected. Cards use a paper-like
+                finish, a small price tag, and a summary that stays readable.
+              </p>
+            </div>
+
+            <div class="tile-grid">
+              <button class="tile" type="button" data-card="paper" style="--tilt:-2deg">
+                <div class="tile-top">
+                  <span class="tile-type">Print</span>
+                  <span class="tile-price">$180</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Paper Fold</h3>
+                  <p class="tile-copy">A framed print with a folded edge and a warm matte tone. Feels like a note you keep.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Edition 12</span>
+                  <span>Soft surface</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="clay" style="--tilt:1.5deg">
+                <div class="tile-top">
+                  <span class="tile-type">Object</span>
+                  <span class="tile-price">$240</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Clay Study</h3>
+                  <p class="tile-copy">A small vessel with an uneven lip and a hand-finished glaze. Quiet, tactile, honest.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>One-off</span>
+                  <span>Hand made</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="lamp" style="--tilt:-1deg">
+                <div class="tile-top">
+                  <span class="tile-type">Light</span>
+                  <span class="tile-price">$320</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Glow Lamp</h3>
+                  <p class="tile-copy">A soft lamp piece for corners that need a small pool of light instead of a full blast.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Studio build</span>
+                  <span>Warm cast</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="cloth" style="--tilt:2deg">
+                <div class="tile-top">
+                  <span class="tile-type">Textile</span>
+                  <span class="tile-price">$140</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Cloth Edge</h3>
+                  <p class="tile-copy">A stitched sample with a faded palette and a little movement in the hem.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Small batch</span>
+                  <span>Easy care</span>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <section class="section-shell" id="digital">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Digital</p>
+                <h2 class="section-title">things with motion</h2>
+              </div>
+              <p class="section-note">
+                The digital side keeps the same warmth but leans into motion, interface rhythm, and little
+                systems that feel easy to use.
+              </p>
+            </div>
+
+            <div class="tile-grid">
+              <button class="tile" type="button" data-card="motion" style="--tilt:1.8deg">
+                <div class="tile-top">
+                  <span class="tile-type">Motion</span>
+                  <span class="tile-price">$120</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Pulse Pack</h3>
+                  <p class="tile-copy">Short motion loops for banners, openers, and screens that need to breathe a little.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Six clips</span>
+                  <span>Loop ready</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="identity" style="--tilt:-1.2deg">
+                <div class="tile-top">
+                  <span class="tile-type">Identity</span>
+                  <span class="tile-price">$260</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Soft Grid</h3>
+                  <p class="tile-copy">A loose identity system with type, spacing, color, and a few rules that stay kind.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Mini system</span>
+                  <span>Readable first</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="archive" style="--tilt:2deg">
+                <div class="tile-top">
+                  <span class="tile-type">Archive</span>
+                  <span class="tile-price">$90</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Index Room</h3>
+                  <p class="tile-copy">A digital archive with a centered layout, light motion, and clear entry points.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Browseable</span>
+                  <span>Low friction</span>
+                </div>
+              </button>
+
+              <button class="tile" type="button" data-card="interface" style="--tilt:-2deg">
+                <div class="tile-top">
+                  <span class="tile-type">Interface</span>
+                  <span class="tile-price">$210</span>
+                </div>
+                <div>
+                  <h3 class="tile-title">Frame Notes</h3>
+                  <p class="tile-copy">A set of screen panels with neat spacing, bright hover, and easy exits.</p>
+                </div>
+                <div class="tile-foot">
+                  <span>Panel set</span>
+                  <span>No trap</span>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <section class="section-shell" id="journal">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Journal</p>
+                <h2 class="section-title">loose notes, not a report</h2>
+              </div>
+              <p class="section-note">
+                This is where the language stays relaxed. The section is meant to feel like a clean note
+                card instead of a proof deck.
+              </p>
+            </div>
+
+            <div class="editorial">
+              <article class="note-card">
+                <h3>Craft journal</h3>
+                <p>
+                  A short running note about what the studio likes right now: brightening on hover for
+                  articles, polaroid cards that straighten when you touch them, and plain words for
+                  materials instead of formal categories.
+                </p>
+                <ul class="note-list">
+                  <li>Favorite materials: paper, clay, glass, cloth.</li>
+                  <li>Favorite screens: soft motion, clean grids, clear exits.</li>
+                  <li>Favorite tone: playful, readable, lightly imperfect.</li>
+                </ul>
+              </article>
+
+              <article class="note-card">
+                <h3>Why this split works</h3>
+                <p>
+                  The page keeps the physical and digital paths separate, so the browsing logic is easy to
+                  follow. Nothing is hidden behind a weird modal unless the modal can close immediately.
+                </p>
+                <div class="contact-row" style="margin-top: 18px;">
+                  <a class="chip" href="#physical"><small>Go</small> physical</a>
+                  <a class="chip" href="#digital"><small>Go</small> digital</a>
+                  <button class="chip" type="button" data-open="journal"><small>Open</small> extended note</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-shell" id="contact">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Contact</p>
+                <h2 class="section-title">leave a note</h2>
+              </div>
+              <p class="section-note">
+                The contact area stays light and obvious. No heavy form stack, just a place to write a short
+                message and move on.
+              </p>
+            </div>
+
+            <div class="contact-card">
+              <p>
+                Want a print, a screen thing, or a new split built for your project? Write a short note and
+                keep it plain. The site likes a direct ask.
+              </p>
+              <textarea class="textarea" placeholder="Tell me what you need, what feels too rigid, and what should stay loose."></textarea>
+              <div class="contact-row">
+                <a class="cta" href="mailto:hello@angelberger.studio"><small>Send</small> email</a>
+                <button class="chip" type="button" data-open="contact"><small>Open</small> contact tips</button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Physical + digital split</span>
+        <span>Hover brighten on text and articles</span>
+        <span>Polaroid cards stay readable</span>
+      </footer>
+    </div>
+
+    <div class="modal" id="modal" hidden aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <div>
+            <p class="modal-kicker" id="modal-kicker">Studio note</p>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+          </div>
+          <button class="close-button" type="button" id="closeModal" aria-label="Close detail panel">×</button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-copy"></p>
+          <div class="meta-grid" id="modal-meta"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("modal");
+      const closeModal = document.getElementById("closeModal");
+      const modalTitle = document.getElementById("modal-title");
+      const modalKicker = document.getElementById("modal-kicker");
+      const modalCopy = document.getElementById("modal-copy");
+      const modalMeta = document.getElementById("modal-meta");
+
+      const cards = {
+        paper: {
+          kicker: "Physical / Print",
+          title: "Paper Fold",
+          copy: "A framed print with a folded edge and a warm matte tone. It feels like a note worth keeping on the wall.",
+          meta: [
+            ["Price", "$180"],
+            ["Edition", "12 copies"],
+            ["Finish", "Matte paper"],
+          ],
+        },
+        clay: {
+          kicker: "Physical / Object",
+          title: "Clay Study",
+          copy: "A small vessel with an uneven lip and a hand-finished glaze. Quiet, tactile, and easy to read in a room.",
+          meta: [
+            ["Price", "$240"],
+            ["Edition", "One-off"],
+            ["Material", "Clay"],
+          ],
+        },
+        lamp: {
+          kicker: "Physical / Light",
+          title: "Glow Lamp",
+          copy: "A soft lamp piece for corners that need a smaller glow instead of a full blast. Built for atmosphere first.",
+          meta: [
+            ["Price", "$320"],
+            ["Edition", "Studio build"],
+            ["Tone", "Warm light"],
+          ],
+        },
+        cloth: {
+          kicker: "Physical / Textile",
+          title: "Cloth Edge",
+          copy: "A stitched sample with a faded palette and a little movement in the hem. More sample than product, which is the point.",
+          meta: [
+            ["Price", "$140"],
+            ["Edition", "Small batch"],
+            ["Material", "Cloth"],
+          ],
+        },
+        motion: {
+          kicker: "Digital / Motion",
+          title: "Pulse Pack",
+          copy: "Short motion loops for banners, openers, and screens that need a little rhythm without getting loud.",
+          meta: [
+            ["Price", "$120"],
+            ["Format", "Six clips"],
+            ["Use", "Loop ready"],
+          ],
+        },
+        identity: {
+          kicker: "Digital / Identity",
+          title: "Soft Grid",
+          copy: "A loose identity system with type, spacing, color, and a few rules that stay kind when the layout changes.",
+          meta: [
+            ["Price", "$260"],
+            ["Format", "Mini system"],
+            ["Focus", "Readable first"],
+          ],
+        },
+        archive: {
+          kicker: "Digital / Archive",
+          title: "Index Room",
+          copy: "A digital archive with a centered layout, light motion, and clear entry points. It stays open and easy to browse.",
+          meta: [
+            ["Price", "$90"],
+            ["Format", "Browseable"],
+            ["Style", "Low friction"],
+          ],
+        },
+        interface: {
+          kicker: "Digital / Interface",
+          title: "Frame Notes",
+          copy: "A set of screen panels with neat spacing, bright hover, and exits that are obvious instead of hidden.",
+          meta: [
+            ["Price", "$210"],
+            ["Format", "Panel set"],
+            ["Guardrail", "No trap"],
+          ],
+        },
+        sunroom: {
+          kicker: "Studio note",
+          title: "The tone in one sentence",
+          copy: "Playful, readable, and a little tactile. The page should feel more like a good studio shelf than a formal case study.",
+          meta: [
+            ["Goal", "Loose, bright language"],
+            ["Keep", "Physical / digital split"],
+            ["Avoid", "Rigid or academic tone"],
+          ],
+        },
+        journal: {
+          kicker: "Extended note",
+          title: "Why the journal stays loose",
+          copy: "The journal is here to keep the language casual. It should read like a working note, not a proof deck or a polished thesis.",
+          meta: [
+            ["Copy", "Short and plain"],
+            ["Motion", "Hover brighten"],
+            ["Shape", "Card-first"],
+          ],
+        },
+        contact: {
+          kicker: "Contact tips",
+          title: "How to send a useful note",
+          copy: "Say what you need, what should stay loose, and what needs to be clearer. Direct works best here.",
+          meta: [
+            ["Best", "Short message"],
+            ["Tone", "Plain language"],
+            ["Result", "Faster reply"],
+          ],
+        },
+      };
+
+      const openButtons = document.querySelectorAll("[data-card], [data-open]");
+
+      function openModal(key) {
+        const data = cards[key];
+        if (!data || !modal) return;
+
+        modalKicker.textContent = data.kicker;
+        modalTitle.textContent = data.title;
+        modalCopy.textContent = data.copy;
+        modalMeta.innerHTML = data.meta
+          .map(([label, value]) => `<div class="meta"><span>${label}</span><strong>${value}</strong></div>`)
+          .join("");
+
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        closeModal.focus();
+      }
+
+      function hideModal() {
+        if (!modal) return;
+        modal.hidden = true;
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      openButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.card || button.dataset.open;
+          openModal(key);
+        });
+      });
+
+      closeModal.addEventListener("click", hideModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) hideModal();
+      });
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) hideModal();
+      });
+
+      let raf = 0;
+      document.addEventListener("pointermove", (event) => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const x = (event.clientX / window.innerWidth - 0.5) * 16;
+          const y = (event.clientY / window.innerHeight - 0.5) * 16;
+          document.documentElement.style.setProperty("--parallax-x", `${x}px`);
+          document.documentElement.style.setProperty("--parallax-y", `${y}px`);
+          document.body.style.backgroundPosition = `${50 + x * 0.2}% ${50 + y * 0.2}%`;
+        });
+      });
+    </script>
+  </body>
+</html>

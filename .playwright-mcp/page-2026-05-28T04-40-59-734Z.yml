@@ -1,0 +1,82 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: M
+      - heading "Market-V1" [level=1] [ref=e7]
+  - main [ref=e8]:
+    - region "Product feed" [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Featured picks" [level=2] [ref=e11]
+        - paragraph [ref=e12]: 24 results available, 5 shown
+      - generic [ref=e13]:
+        - link "Crochet Loop Kit Crochet Crochet Loop Kit $189.99 ★★★★½ 4.8 Ships today Textile kit with yarn, hook, and pattern cards for handmade loops." [ref=e14] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-001
+          - generic [ref=e15]:
+            - img "Crochet Loop Kit" [ref=e16]
+            - generic [ref=e17]: Crochet
+          - generic [ref=e18]:
+            - generic [ref=e19]:
+              - heading "Crochet Loop Kit" [level=3] [ref=e21]
+              - generic [ref=e22]: Open
+            - generic [ref=e23]:
+              - generic [ref=e24]: $189.99
+              - generic [ref=e25]: ★★★★½ 4.8
+              - generic [ref=e26]: Ships today
+            - paragraph [ref=e27]: Textile kit with yarn, hook, and pattern cards for handmade loops.
+        - link "UV Resin Studio Set UV Resin UV Resin Studio Set $129.00 ★★★★½ 4.6 Arrives in 2 days Resin craft set with pigments, molds, and finishing tools." [ref=e28] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-002
+          - generic [ref=e29]:
+            - img "UV Resin Studio Set" [ref=e30]
+            - generic [ref=e31]: UV Resin
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - heading "UV Resin Studio Set" [level=3] [ref=e35]
+              - generic [ref=e36]: Open
+            - generic [ref=e37]:
+              - generic [ref=e38]: $129.00
+              - generic [ref=e39]: ★★★★½ 4.6
+              - generic [ref=e40]: Arrives in 2 days
+            - paragraph [ref=e41]: Resin craft set with pigments, molds, and finishing tools.
+        - link "Graphic Design Desk Stack Graphic design Graphic Design Desk Stack $74.50 ★★★★½ 4.7 Free delivery Desk kit with swatches, pencils, and layout tools for visual work." [ref=e42] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-003
+          - generic [ref=e43]:
+            - img "Graphic Design Desk Stack" [ref=e44]
+            - generic [ref=e45]: Graphic design
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "Graphic Design Desk Stack" [level=3] [ref=e49]
+              - generic [ref=e50]: Open
+            - generic [ref=e51]:
+              - generic [ref=e52]: $74.50
+              - generic [ref=e53]: ★★★★½ 4.7
+              - generic [ref=e54]: Free delivery
+            - paragraph [ref=e55]: Desk kit with swatches, pencils, and layout tools for visual work.
+        - link "Paper Mache Object Kit Paper mache Paper Mache Object Kit $219.00 ★★★★½ 4.9 Prime delivery tomorrow Paper-form kit with shaping tools and texture materials for sculpted surfaces." [ref=e56] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-004
+          - generic [ref=e57]:
+            - img "Paper Mache Object Kit" [ref=e58]
+            - generic [ref=e59]: Paper mache
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - heading "Paper Mache Object Kit" [level=3] [ref=e63]
+              - generic [ref=e64]: Open
+            - generic [ref=e65]:
+              - generic [ref=e66]: $219.00
+              - generic [ref=e67]: ★★★★½ 4.9
+              - generic [ref=e68]: Prime delivery tomorrow
+            - paragraph [ref=e69]: Paper-form kit with shaping tools and texture materials for sculpted surfaces.
+        - link "Origami Wall Art Origami art Origami Wall Art $32.00 ★★★★½ 4.5 Ships today Wall-mounted folded paper artwork with sculptural depth." [ref=e70] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-005
+          - generic [ref=e71]:
+            - img "Origami Wall Art" [ref=e72]
+            - generic [ref=e73]: Origami art
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - heading "Origami Wall Art" [level=3] [ref=e77]
+              - generic [ref=e78]: Open
+            - generic [ref=e79]:
+              - generic [ref=e80]: $32.00
+              - generic [ref=e81]: ★★★★½ 4.5
+              - generic [ref=e82]: Ships today
+            - paragraph [ref=e83]: Wall-mounted folded paper artwork with sculptural depth.
+      - button "Load next batch" [ref=e85] [cursor=pointer]

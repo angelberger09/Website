@@ -1,0 +1,162 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: M
+      - heading "Market-V1" [level=1] [ref=e7]
+    - generic "Search products" [ref=e8]:
+      - generic [ref=e9]: Search
+      - searchbox "Search products" [ref=e10]
+  - main [ref=e11]:
+    - region "Product feed" [ref=e12]:
+      - group [ref=e14]:
+        - generic "Filters and sort" [ref=e15] [cursor=pointer]
+        - option "Featured" [selected]
+        - 'option "Price: low to high"'
+        - 'option "Price: high to low"'
+        - option "Customer rating"
+        - option "Newest"
+      - generic [ref=e16]:
+        - heading "Featured picks" [level=2] [ref=e17]
+        - paragraph [ref=e18]: 24 results available, 10 shown
+      - generic [ref=e19]:
+        - link "Crochet Loop Kit Crochet Crochet Loop Kit $189.99 ★★★★½ 4.8 Ships today Textile kit with yarn, hook, and pattern cards for handmade loops." [ref=e20] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-001
+          - generic [ref=e21]:
+            - img "Crochet Loop Kit" [ref=e22]
+            - generic [ref=e23]: Crochet
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - heading "Crochet Loop Kit" [level=3] [ref=e27]
+              - generic [ref=e28]: Open
+            - generic [ref=e29]:
+              - generic [ref=e30]: $189.99
+              - generic [ref=e31]: ★★★★½ 4.8
+              - generic [ref=e32]: Ships today
+            - paragraph [ref=e33]: Textile kit with yarn, hook, and pattern cards for handmade loops.
+        - link "UV Resin Studio Set UV Resin UV Resin Studio Set $129.00 ★★★★½ 4.6 Arrives in 2 days Resin craft set with pigments, molds, and finishing tools." [ref=e34] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-002
+          - generic [ref=e35]:
+            - img "UV Resin Studio Set" [ref=e36]
+            - generic [ref=e37]: UV Resin
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - heading "UV Resin Studio Set" [level=3] [ref=e41]
+              - generic [ref=e42]: Open
+            - generic [ref=e43]:
+              - generic [ref=e44]: $129.00
+              - generic [ref=e45]: ★★★★½ 4.6
+              - generic [ref=e46]: Arrives in 2 days
+            - paragraph [ref=e47]: Resin craft set with pigments, molds, and finishing tools.
+        - link "Graphic Design Desk Stack Graphic design Graphic Design Desk Stack $74.50 ★★★★½ 4.7 Free delivery Desk kit with swatches, pencils, and layout tools for visual work." [ref=e48] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-003
+          - generic [ref=e49]:
+            - img "Graphic Design Desk Stack" [ref=e50]
+            - generic [ref=e51]: Graphic design
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - heading "Graphic Design Desk Stack" [level=3] [ref=e55]
+              - generic [ref=e56]: Open
+            - generic [ref=e57]:
+              - generic [ref=e58]: $74.50
+              - generic [ref=e59]: ★★★★½ 4.7
+              - generic [ref=e60]: Free delivery
+            - paragraph [ref=e61]: Desk kit with swatches, pencils, and layout tools for visual work.
+        - link "Paper Mache Object Kit Paper mache Paper Mache Object Kit $219.00 ★★★★½ 4.9 Prime delivery tomorrow Paper-form kit with shaping tools and texture materials for sculpted surfaces." [ref=e62] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-004
+          - generic [ref=e63]:
+            - img "Paper Mache Object Kit" [ref=e64]
+            - generic [ref=e65]: Paper mache
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - heading "Paper Mache Object Kit" [level=3] [ref=e69]
+              - generic [ref=e70]: Open
+            - generic [ref=e71]:
+              - generic [ref=e72]: $219.00
+              - generic [ref=e73]: ★★★★½ 4.9
+              - generic [ref=e74]: Prime delivery tomorrow
+            - paragraph [ref=e75]: Paper-form kit with shaping tools and texture materials for sculpted surfaces.
+        - link "Origami Wall Art Origami art Origami Wall Art $32.00 ★★★★½ 4.5 Ships today Wall-mounted folded paper artwork with sculptural depth." [ref=e76] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-005
+          - generic [ref=e77]:
+            - img "Origami Wall Art" [ref=e78]
+            - generic [ref=e79]: Origami art
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - heading "Origami Wall Art" [level=3] [ref=e83]
+              - generic [ref=e84]: Open
+            - generic [ref=e85]:
+              - generic [ref=e86]: $32.00
+              - generic [ref=e87]: ★★★★½ 4.5
+              - generic [ref=e88]: Ships today
+            - paragraph [ref=e89]: Wall-mounted folded paper artwork with sculptural depth.
+        - link "Velvet Track Chair Room anchor Velvet Track Chair $246.00 ★★★★ 4.4 Scheduled delivery Soft-backed chair with a compact footprint and stable base." [ref=e90] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-006
+          - generic [ref=e91]:
+            - img "Velvet Track Chair" [ref=e92]
+            - generic [ref=e93]: Room anchor
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - heading "Velvet Track Chair" [level=3] [ref=e97]
+              - generic [ref=e98]: Open
+            - generic [ref=e99]:
+              - generic [ref=e100]: $246.00
+              - generic [ref=e101]: ★★★★ 4.4
+              - generic [ref=e102]: Scheduled delivery
+            - paragraph [ref=e103]: Soft-backed chair with a compact footprint and stable base.
+        - link "Pulse Desk Speaker Desk detail Pulse Desk Speaker $98.00 ★★★★½ 4.6 Free delivery Slim stereo speaker with a clean front mesh and rich low end." [ref=e104] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-007
+          - generic [ref=e105]:
+            - img "Pulse Desk Speaker" [ref=e106]
+            - generic [ref=e107]: Desk detail
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - heading "Pulse Desk Speaker" [level=3] [ref=e111]
+              - generic [ref=e112]: Open
+            - generic [ref=e113]:
+              - generic [ref=e114]: $98.00
+              - generic [ref=e115]: ★★★★½ 4.6
+              - generic [ref=e116]: Free delivery
+            - paragraph [ref=e117]: Slim stereo speaker with a clean front mesh and rich low end.
+        - link "Frame Light Panel Task glow Frame Light Panel $59.50 ★★★★ 4.3 Arrives in 3 days Clip-on LED panel that softens shadows for working after dark." [ref=e118] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-008
+          - generic [ref=e119]:
+            - img "Frame Light Panel" [ref=e120]
+            - generic [ref=e121]: Task glow
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - heading "Frame Light Panel" [level=3] [ref=e125]
+              - generic [ref=e126]: Open
+            - generic [ref=e127]:
+              - generic [ref=e128]: $59.50
+              - generic [ref=e129]: ★★★★ 4.3
+              - generic [ref=e130]: Arrives in 3 days
+            - paragraph [ref=e131]: Clip-on LED panel that softens shadows for working after dark.
+        - link "Boreal Sleep Mask Rest mode Boreal Sleep Mask $24.00 ★★★★½ 4.8 Ships today Breathable sleep mask with a soft bridge and blackout fit." [ref=e132] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-009
+          - generic [ref=e133]:
+            - img "Boreal Sleep Mask" [ref=e134]
+            - generic [ref=e135]: Rest mode
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - heading "Boreal Sleep Mask" [level=3] [ref=e139]
+              - generic [ref=e140]: Open
+            - generic [ref=e141]:
+              - generic [ref=e142]: $24.00
+              - generic [ref=e143]: ★★★★½ 4.8
+              - generic [ref=e144]: Ships today
+            - paragraph [ref=e145]: Breathable sleep mask with a soft bridge and blackout fit.
+        - link "Orbit Carry Pack Carry-on ready Orbit Carry Pack $144.00 ★★★★½ 4.7 Prime delivery tomorrow Structured pack with a padded sleeve and quick-access pockets." [ref=e146] [cursor=pointer]:
+          - /url: ./product.html?id=mkt-010
+          - generic [ref=e147]:
+            - img "Orbit Carry Pack" [ref=e148]
+            - generic [ref=e149]: Carry-on ready
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "Orbit Carry Pack" [level=3] [ref=e153]
+              - generic [ref=e154]: Open
+            - generic [ref=e155]:
+              - generic [ref=e156]: $144.00
+              - generic [ref=e157]: ★★★★½ 4.7
+              - generic [ref=e158]: Prime delivery tomorrow
+            - paragraph [ref=e159]: Structured pack with a padded sleeve and quick-access pockets.
+      - button "Load next batch" [ref=e161] [cursor=pointer]

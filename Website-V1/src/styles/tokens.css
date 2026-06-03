@@ -1,0 +1,93 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0908;
+  --bg-soft: #120f0d;
+  --surface: rgba(18, 14, 12, 0.82);
+  --surface-strong: rgba(24, 18, 15, 0.94);
+  --surface-soft: rgba(20, 16, 14, 0.74);
+  --surface-muted: rgba(255, 255, 255, 0.04);
+  --line: rgba(255, 240, 223, 0.08);
+  --line-strong: rgba(241, 180, 95, 0.2);
+  --text: #f4ecdf;
+  --text-soft: rgba(244, 236, 223, 0.74);
+  --text-dim: rgba(244, 236, 223, 0.52);
+  --paper: #f6efe1;
+  --ink: #0d0908;
+  --accent: #f1b45f;
+  --accent-2: #7eb39a;
+  --accent-3: #cf7d78;
+  --page-wash: #100d0b;
+  --page-wash-2: #1a1511;
+  --page-wash-3: #2b2018;
+  --particle-a: rgba(241, 180, 95, 0.12);
+  --particle-b: rgba(126, 179, 154, 0.1);
+  --band-a: rgba(255, 255, 255, 0.03);
+  --band-b: rgba(241, 180, 95, 0.05);
+  --shadow-lg: 0 28px 62px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 16px 30px rgba(0, 0, 0, 0.22);
+  --shadow-sm: 0 8px 14px rgba(0, 0, 0, 0.16);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --max: 1200px;
+  --header-h: 76px;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.page-home {
+  --page-wash: #100d0b;
+  --page-wash-2: #1d1612;
+  --page-wash-3: #33251a;
+  --particle-a: rgba(241, 180, 95, 0.12);
+  --particle-b: rgba(126, 179, 154, 0.1);
+  --band-a: rgba(255, 255, 255, 0.04);
+  --band-b: rgba(241, 180, 95, 0.05);
+}
+
+.page-physical {
+  --page-wash: #0f0c0a;
+  --page-wash-2: #1f1814;
+  --page-wash-3: #35261a;
+  --particle-a: rgba(201, 139, 82, 0.12);
+  --particle-b: rgba(126, 179, 154, 0.1);
+  --band-a: rgba(255, 255, 255, 0.04);
+  --band-b: rgba(201, 139, 82, 0.05);
+}
+
+.page-digital {
+  --page-wash: #091014;
+  --page-wash-2: #13212a;
+  --page-wash-3: #263844;
+  --particle-a: rgba(92, 176, 218, 0.12);
+  --particle-b: rgba(141, 224, 208, 0.1);
+  --band-a: rgba(255, 255, 255, 0.04);
+  --band-b: rgba(92, 176, 218, 0.05);
+}
+
+.page-journal {
+  --page-wash: #100d0f;
+  --page-wash-2: #1e171b;
+  --page-wash-3: #352431;
+  --particle-a: rgba(207, 142, 160, 0.12);
+  --particle-b: rgba(142, 123, 180, 0.1);
+  --band-a: rgba(255, 255, 255, 0.04);
+  --band-b: rgba(207, 142, 160, 0.05);
+}
+
+.page-contact {
+  --page-wash: #0f0b09;
+  --page-wash-2: #1d1712;
+  --page-wash-3: #322317;
+  --particle-a: rgba(213, 139, 93, 0.12);
+  --particle-b: rgba(130, 159, 114, 0.1);
+  --band-a: rgba(255, 255, 255, 0.04);
+  --band-b: rgba(213, 139, 93, 0.05);
+}

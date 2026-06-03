@@ -1,0 +1,53 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: M
+      - heading "Market-V1" [level=1] [ref=e7]
+  - main [ref=e8]:
+    - region "Product feed" [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Product pages" [level=2] [ref=e11]
+        - paragraph [ref=e12]: 3 pages
+      - generic [ref=e13]:
+        - link "Yarn Product page Yarn $18.00 ★★★★½ 4.7 5 offerings Browse five yarn offerings." [ref=e14] [cursor=pointer]:
+          - /url: ./collection.html?line=yarn
+          - generic [ref=e15]:
+            - img "Yarn" [ref=e16]
+            - generic [ref=e17]: Product page
+          - generic [ref=e18]:
+            - generic [ref=e19]:
+              - heading "Yarn" [level=3] [ref=e21]
+              - generic [ref=e22]: Open
+            - generic [ref=e23]:
+              - generic [ref=e24]: $18.00
+              - generic [ref=e25]: ★★★★½ 4.7
+              - generic [ref=e26]: 5 offerings
+            - paragraph [ref=e27]: Browse five yarn offerings.
+        - link "Digital Art Product page Digital Art $45.00 ★★★★½ 4.7 5 offerings Browse five digital art offerings." [ref=e28] [cursor=pointer]:
+          - /url: ./collection.html?line=digital-art
+          - generic [ref=e29]:
+            - img "Digital Art" [ref=e30]
+            - generic [ref=e31]: Product page
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - heading "Digital Art" [level=3] [ref=e35]
+              - generic [ref=e36]: Open
+            - generic [ref=e37]:
+              - generic [ref=e38]: $45.00
+              - generic [ref=e39]: ★★★★½ 4.7
+              - generic [ref=e40]: 5 offerings
+            - paragraph [ref=e41]: Browse five digital art offerings.
+        - link "Wall and Desk Art Product page Wall and Desk Art $72.00 ★★★★½ 4.7 5 offerings Browse five wall and desk art offerings." [ref=e42] [cursor=pointer]:
+          - /url: ./collection.html?line=wall-desk-art
+          - generic [ref=e43]:
+            - img "Wall and Desk Art" [ref=e44]
+            - generic [ref=e45]: Product page
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "Wall and Desk Art" [level=3] [ref=e49]
+              - generic [ref=e50]: Open
+            - generic [ref=e51]:
+              - generic [ref=e52]: $72.00
+              - generic [ref=e53]: ★★★★½ 4.7
+              - generic [ref=e54]: 5 offerings
+            - paragraph [ref=e55]: Browse five wall and desk art offerings.

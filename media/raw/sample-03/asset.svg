@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Accent placeholder image">
+  <defs>
+    <radialGradient id="g3" cx="40%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#ffe8a3"/>
+      <stop offset="50%" stop-color="#ce7bd3"/>
+      <stop offset="100%" stop-color="#3a1f57"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#g3)"/>
+  <path d="M210 760 C370 540 520 980 690 700 C800 520 950 470 1040 610" fill="none" stroke="#fff8ea" stroke-width="34" stroke-linecap="round" opacity="0.62"/>
+  <circle cx="860" cy="330" r="132" fill="#fff8ea" opacity="0.18"/>
+  <circle cx="340" cy="920" r="96" fill="#fff8ea" opacity="0.14"/>
+</svg>

@@ -1,0 +1,4 @@
+[     342ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3011/favicon.ico:0
+[ 3906561ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:3011/preview-assets/messages/#physical-goods:0
+[ 3909153ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:3011/preview-assets/messages/#digital-goods:0
+[ 3911905ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:3011/preview-assets/messages/#top:0

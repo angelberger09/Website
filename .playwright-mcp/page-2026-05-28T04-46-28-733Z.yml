@@ -1,0 +1,82 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Market-V1" [ref=e4] [cursor=pointer]:
+      - /url: ./
+      - generic [ref=e5]: M
+      - heading "Market-V1" [level=1] [ref=e7]
+  - main [ref=e8]:
+    - region "Collection offerings" [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Digital Art" [level=2] [ref=e11]
+        - paragraph [ref=e12]: 5 offerings
+      - generic [ref=e13]:
+        - link "Custom Social Avatar Avatar Custom Social Avatar $45.00 ★★★★½ 4.8 Digital delivery A custom digital avatar for profile images, communities, and creator pages." [ref=e14] [cursor=pointer]:
+          - /url: ./product.html?id=digital-001
+          - generic [ref=e15]:
+            - img "Custom Social Avatar" [ref=e16]
+            - generic [ref=e17]: Avatar
+          - generic [ref=e18]:
+            - generic [ref=e19]:
+              - heading "Custom Social Avatar" [level=3] [ref=e21]
+              - generic [ref=e22]: Open
+            - generic [ref=e23]:
+              - generic [ref=e24]: $45.00
+              - generic [ref=e25]: ★★★★½ 4.8
+              - generic [ref=e26]: Digital delivery
+            - paragraph [ref=e27]: A custom digital avatar for profile images, communities, and creator pages.
+        - link "Printable Character Poster Poster Printable Character Poster $64.00 ★★★★½ 4.7 Digital delivery A high-resolution illustrated poster file for printing at home or locally." [ref=e28] [cursor=pointer]:
+          - /url: ./product.html?id=digital-002
+          - generic [ref=e29]:
+            - img "Printable Character Poster" [ref=e30]
+            - generic [ref=e31]: Poster
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - heading "Printable Character Poster" [level=3] [ref=e35]
+              - generic [ref=e36]: Open
+            - generic [ref=e37]:
+              - generic [ref=e38]: $64.00
+              - generic [ref=e39]: ★★★★½ 4.7
+              - generic [ref=e40]: Digital delivery
+            - paragraph [ref=e41]: A high-resolution illustrated poster file for printing at home or locally.
+        - link "Brand Icon Pack Icons Brand Icon Pack $78.00 ★★★★½ 4.6 Digital delivery Five custom digital icons for brands, apps, and small shops." [ref=e42] [cursor=pointer]:
+          - /url: ./product.html?id=digital-003
+          - generic [ref=e43]:
+            - img "Brand Icon Pack" [ref=e44]
+            - generic [ref=e45]: Icons
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "Brand Icon Pack" [level=3] [ref=e49]
+              - generic [ref=e50]: Open
+            - generic [ref=e51]:
+              - generic [ref=e52]: $78.00
+              - generic [ref=e53]: ★★★★½ 4.6
+              - generic [ref=e54]: Digital delivery
+            - paragraph [ref=e55]: Five custom digital icons for brands, apps, and small shops.
+        - link "Album Cover Concept Cover Album Cover Concept $95.00 ★★★★½ 4.9 Digital delivery A square digital cover concept for music, podcasts, or visual campaigns." [ref=e56] [cursor=pointer]:
+          - /url: ./product.html?id=digital-004
+          - generic [ref=e57]:
+            - img "Album Cover Concept" [ref=e58]
+            - generic [ref=e59]: Cover
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - heading "Album Cover Concept" [level=3] [ref=e63]
+              - generic [ref=e64]: Open
+            - generic [ref=e65]:
+              - generic [ref=e66]: $95.00
+              - generic [ref=e67]: ★★★★½ 4.9
+              - generic [ref=e68]: Digital delivery
+            - paragraph [ref=e69]: A square digital cover concept for music, podcasts, or visual campaigns.
+        - link "Animated Sticker Set Stickers Animated Sticker Set $58.00 ★★★★½ 4.5 Digital delivery A five-piece digital sticker set for streams, chats, and creator posts." [ref=e70] [cursor=pointer]:
+          - /url: ./product.html?id=digital-005
+          - generic [ref=e71]:
+            - img "Animated Sticker Set" [ref=e72]
+            - generic [ref=e73]: Stickers
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - heading "Animated Sticker Set" [level=3] [ref=e77]
+              - generic [ref=e78]: Open
+            - generic [ref=e79]:
+              - generic [ref=e80]: $58.00
+              - generic [ref=e81]: ★★★★½ 4.5
+              - generic [ref=e82]: Digital delivery
+            - paragraph [ref=e83]: A five-piece digital sticker set for streams, chats, and creator posts.

@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - link "Angel Berger home" [ref=e5] [cursor=pointer]:
+        - /url: ./
+        - text: Angel Berger
+      - button "Open page selector" [ref=e6] [cursor=pointer]:
+        - generic [ref=e11]: Menu
+    - main [ref=e12]:
+      - region "A. BERGER" [ref=e13]:
+        - figure [ref=e14]:
+          - img "A. BERGER banner" [ref=e15]
+        - heading "A. BERGER" [level=1] [ref=e17]
+      - region "Physical work" [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - paragraph [ref=e21]: Physical preview
+            - heading "Physical work" [level=2] [ref=e22]
+          - paragraph [ref=e23]: Objects, prints, textile edges, and small material pieces.
+        - link "Physical preview Physical work Objects, prints, textile edges, and quiet material pieces with straightened hover motion and clear labels. Go to Physical" [ref=e25] [cursor=pointer]:
+          - /url: ./physical/
+          - figure [ref=e26]:
+            - img "Physical work" [ref=e27]
+          - generic [ref=e28]:
+            - generic [ref=e29]: Physical preview
+            - generic [ref=e30]: Physical work
+            - generic [ref=e31]: Objects, prints, textile edges, and quiet material pieces with straightened hover motion and clear labels.
+            - generic [ref=e32]: Go to Physical
+      - region "Digital work" [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Digital preview
+            - heading "Digital work" [level=2] [ref=e37]
+          - paragraph [ref=e38]: Motion, identity systems, and screen pieces with clear exits.
+        - link "Digital preview Digital work Motion loops, archives, identity systems, and screen pieces that stay readable first. Go to Digital" [ref=e40] [cursor=pointer]:
+          - /url: ./digital/
+          - figure [ref=e41]:
+            - img "Digital work" [ref=e42]
+          - generic [ref=e43]:
+            - generic [ref=e44]: Digital preview
+            - generic [ref=e45]: Digital work
+            - generic [ref=e46]: Motion loops, archives, identity systems, and screen pieces that stay readable first.
+            - generic [ref=e47]: Go to Digital
+      - region "Journal / notes" [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: Journal preview
+            - heading "Journal / notes" [level=2] [ref=e52]
+          - paragraph [ref=e53]: Loose notes, favorite materials, and process fragments.
+        - link "Journal preview Journal / notes Loose notes, favorite materials, and process fragments that stay plain instead of academic. Go to Journal" [ref=e55] [cursor=pointer]:
+          - /url: ./journal/
+          - figure [ref=e56]:
+            - img "Journal / notes" [ref=e57]
+          - generic [ref=e58]:
+            - generic [ref=e59]: Journal preview
+            - generic [ref=e60]: Journal / notes
+            - generic [ref=e61]: Loose notes, favorite materials, and process fragments that stay plain instead of academic.
+            - generic [ref=e62]: Go to Journal
+      - region "Start a direct inquiry" [ref=e63]:
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: Contact path
+          - heading "Start a direct inquiry" [level=2] [ref=e67]
+        - paragraph [ref=e68]: Send a note if you want to ask about physical work, digital work, or a future collaboration.
+        - generic [ref=e69]:
+          - link "Send email" [ref=e70] [cursor=pointer]:
+            - /url: mailto:angelberger09@gmaill.com
+          - link "Open contact page" [ref=e71] [cursor=pointer]:
+            - /url: ./contact/
+    - contentinfo [ref=e72]:
+      - generic [ref=e73]: A. BERGER
+      - generic [ref=e74]: Open to inquiries
+      - link "angelberger09@gmaill.com" [ref=e76] [cursor=pointer]:
+        - /url: mailto:angelberger09@gmaill.com

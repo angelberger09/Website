@@ -1,0 +1,96 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - link "A. BERGER home" [ref=e5] [cursor=pointer]:
+        - /url: ../
+        - generic [ref=e6]: AB
+        - generic [ref=e7]:
+          - generic [ref=e8]: A. BERGER
+          - generic [ref=e9]: Angel Berger archive
+      - navigation "Primary" [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: ../
+        - link "Physical" [ref=e12] [cursor=pointer]:
+          - /url: ../physical/
+        - link "Digital" [ref=e13] [cursor=pointer]:
+          - /url: ../digital/
+        - link "Journal" [ref=e14] [cursor=pointer]:
+          - /url: ./
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: ../contact/
+      - generic "Site status" [ref=e16]:
+        - generic [ref=e18]: Open to inquiries
+    - main [ref=e19]:
+      - region "Loose notes, process fragments, and favorite materials" [ref=e20]:
+        - paragraph [ref=e21]: Journal / notes
+        - heading "Loose notes, process fragments, and favorite materials" [level=1] [ref=e22]
+        - paragraph [ref=e23]: This page keeps the language loose. It should feel like notes from the studio, not a formal essay or a case study.
+      - region "Why this split works" [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: Featured note
+            - heading "Why this split works" [level=2] [ref=e28]
+          - paragraph [ref=e29]: Physical things. Digital things. Soft edges, clear exits.
+        - article [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: Studio note
+            - generic [ref=e33]: Working note
+          - heading "Why this split works" [level=3] [ref=e34]
+          - paragraph [ref=e35]: Physical things. Digital things. Soft edges, clear exits.
+          - generic [ref=e36]:
+            - generic [ref=e37]: Archive note
+            - button "Open note" [ref=e38] [cursor=pointer]
+      - region "More notes and materials" [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - paragraph [ref=e42]: Archive entries
+            - heading "More notes and materials" [level=2] [ref=e43]
+          - paragraph [ref=e44]: Short, plain entries with enough detail to keep them useful.
+        - list [ref=e45]:
+          - listitem [ref=e46]:
+            - article [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: Studio note
+                - generic [ref=e50]: Working note
+              - heading "Why this split works" [level=3] [ref=e51]
+              - paragraph [ref=e52]: Physical things. Digital things. Soft edges, clear exits.
+              - button "Open note" [ref=e54] [cursor=pointer]
+          - listitem [ref=e55]:
+            - article [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: Process note
+                - generic [ref=e59]: Loose note
+              - heading "Craft journal" [level=3] [ref=e60]
+              - paragraph [ref=e61]: Loose notes, not a report.
+              - button "Open note" [ref=e63] [cursor=pointer]
+          - listitem [ref=e64]:
+            - article [ref=e65]:
+              - generic [ref=e66]:
+                - generic [ref=e67]: Readability note
+                - generic [ref=e68]: Working note
+              - heading "Frame notes" [level=3] [ref=e69]
+              - paragraph [ref=e70]: Hover brighten belongs on reading surfaces, not every tile.
+              - button "Open note" [ref=e72] [cursor=pointer]
+          - listitem [ref=e73]:
+            - article [ref=e74]:
+              - generic [ref=e75]:
+                - generic [ref=e76]: Material note
+                - generic [ref=e77]: Open note
+              - heading "Favorite materials" [level=3] [ref=e78]
+              - paragraph [ref=e79]: Paper, clay, cloth, light.
+              - button "Open note" [ref=e81] [cursor=pointer]
+      - region "Ask about notes or process" [ref=e82]:
+        - generic [ref=e84]:
+          - paragraph [ref=e85]: Inquiry path
+          - heading "Ask about notes or process" [level=2] [ref=e86]
+        - link "Send email" [ref=e87] [cursor=pointer]:
+          - /url: mailto:hello@angelberger.studio?subject=Journal%20notes%20inquiry
+        - link "Go to contact" [ref=e88] [cursor=pointer]:
+          - /url: ../contact/
+    - contentinfo [ref=e89]:
+      - generic [ref=e90]: A. BERGER
+      - generic [ref=e91]: Journal / notes
+      - link "hello@angelberger.studio" [ref=e93] [cursor=pointer]:
+        - /url: mailto:hello@angelberger.studio

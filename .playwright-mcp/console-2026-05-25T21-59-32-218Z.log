@@ -1,0 +1,4 @@
+[     212ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ about:blank:0
+[     345ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://10.0.0.227:3011/api/draft?entry=messages%2Fmessage-01.html:0
+[     437ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ http://10.0.0.227:3011/preview?entry=messages%2Fmessage-01.html:0
+[     451ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63

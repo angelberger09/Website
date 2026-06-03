@@ -33,7 +33,11 @@
         margin: 0;
         min-height: 100vh;
         overflow-x: hidden;
-        background: var(--bg);
+        background:
+          radial-gradient(circle at 50% 38%, rgba(74, 222, 128, 0.12), transparent 26%),
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.045), transparent 42%),
+          radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.07), rgba(0, 0, 0, 0) 54%),
+          #000;
         color: var(--text);
       }
 
@@ -61,7 +65,10 @@
         gap: clamp(12px, 1.2vw, 18px);
         padding: 0 clamp(14px, 1.3vw, 20px);
         border-bottom: 1px solid var(--line);
-        background: rgba(0, 0, 0, 0.94);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0) 52%),
+          linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(4, 4, 4, 0.96));
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
       }
 
       .brand {
@@ -101,11 +108,16 @@
         width: 100%;
         min-height: clamp(40px, 4.4vh, 45px);
         color: var(--text);
-        background: #030303;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 60%),
+          linear-gradient(180deg, rgba(12, 12, 12, 0.96), rgba(4, 4, 4, 0.98));
         border: 1px solid var(--line);
         border-radius: 6px;
         padding: 0 clamp(34px, 2.8vw, 42px) 0 clamp(14px, 1.2vw, 18px);
         font-size: clamp(14px, 1.12vw, 17px);
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
       #decision {
@@ -130,22 +142,37 @@
         place-items: center;
         width: clamp(30px, 2.25vw, 34px);
         height: clamp(30px, 2.25vw, 34px);
-        border: 0;
+        border: 1px solid rgba(255, 255, 255, 0.08);
         color: var(--text);
-        background: transparent;
+        background:
+          radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.01) 56%),
+          linear-gradient(180deg, rgba(18, 18, 18, 0.95), rgba(6, 6, 6, 0.96));
         cursor: pointer;
         border-radius: 4px;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
       .icon-button:hover {
-        background: rgba(255, 255, 255, 0.08);
+        background:
+          radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02) 60%),
+          linear-gradient(180deg, rgba(24, 24, 24, 0.98), rgba(8, 8, 8, 0.98));
+      }
+
+      .doc-status {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
       }
 
       .workspace {
         display: grid;
-        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.45fr) minmax(420px, 0.85fr);
         min-height: 0;
         overflow: hidden;
+        height: 100%;
       }
 
       .preview-pane,
@@ -157,19 +184,20 @@
 
       .preview-pane {
         position: relative;
-        border-right: 1px solid var(--line);
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
         height: 100%;
         overflow: hidden;
+        padding: 5px;
       }
 
       .review-pane {
         display: grid;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: minmax(0, 1fr);
         gap: var(--review-gap);
-        padding-left: var(--pane-pad-x);
-        padding-right: var(--pane-pad-x);
+        padding: 5px;
         overflow-y: auto;
         overflow-x: hidden;
+        height: 100%;
       }
 
       .section-label {
@@ -199,12 +227,15 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.45);
-        background: rgba(0, 0, 0, 0.65);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02) 60%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.56));
         padding: 6px 12px;
         border-radius: 6px;
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
       }
 
       .aspect-picker {
@@ -240,7 +271,9 @@
       .preview-head .aspect-picker select {
         min-height: 32px;
         height: 32px;
-        background: rgba(10, 10, 10, 0.7);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 60%),
+          linear-gradient(180deg, rgba(18, 18, 18, 0.95), rgba(4, 4, 4, 0.98));
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -250,12 +283,16 @@
         font-size: 12px;
         font-weight: 500;
         cursor: pointer;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        box-shadow:
+          0 12px 28px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
         transition: all 0.2s ease;
       }
 
       .preview-head .aspect-picker select:hover {
-        background: rgba(20, 20, 20, 0.85);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 60%),
+          linear-gradient(180deg, rgba(24, 24, 24, 0.98), rgba(8, 8, 8, 0.98));
         border-color: rgba(255, 255, 255, 0.25);
       }
 
@@ -266,7 +303,10 @@
         border: 0;
         border-radius: 0;
         overflow: hidden;
-        background: #000;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(74, 222, 128, 0.08), transparent 28%),
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03), transparent 52%),
+          #000;
         display: grid;
         place-items: center;
         padding: 0;
@@ -276,12 +316,16 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;
-        height: 100%;
+        width: auto;
+        height: auto;
         transform: translate(-50%, -50%);
         background: #000;
         box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
         overflow: hidden;
+        border-radius: 12px;
+        box-shadow:
+          0 24px 64px rgba(0, 0, 0, 0.55),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
       }
 
       .preview-frame {
@@ -305,12 +349,17 @@
       }
 
       .review-card {
-        width: min(100%, 630px);
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr);
+        gap: clamp(10px, 1.2vh, 14px);
       }
 
       .review-title {
-        margin: clamp(16px, 5.9vh, 60px) 0 clamp(12px, 1.8vh, 18px);
-        font-size: clamp(34px, 3.72vw, 57px);
+        margin: 0;
+        font-size: clamp(28px, 2.9vw, 44px);
         line-height: 0.95;
         font-weight: 900;
         letter-spacing: 0;
@@ -320,7 +369,7 @@
         display: inline-flex;
         align-items: center;
         gap: clamp(8px, 0.78vw, 12px);
-        margin-bottom: clamp(22px, 4.3vh, 44px);
+        margin-top: clamp(10px, 1.5vh, 14px);
         padding: clamp(6px, 0.78vh, 8px) clamp(10px, 0.85vw, 13px);
         border-radius: 6px;
         background: rgba(255, 255, 255, 0.055);
@@ -338,20 +387,174 @@
       }
 
       .review-block {
-        margin-bottom: clamp(20px, 3.3vh, 34px);
+        display: grid;
+        gap: 12px;
+      }
+
+      .reference-block {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      .review-block-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
 
       .review-block h3 {
-        margin: 0 0 14px;
-        font-size: clamp(17px, 1.3vw, 20px);
-        font-weight: 500;
+        margin: 0;
+        font-size: clamp(15px, 1.1vw, 18px);
+        font-weight: 700;
       }
 
-      .edit-mark {
-        display: inline-block;
-        margin-left: 10px;
+      .attach-button,
+      .save-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: clamp(42px, 4.8vh, 48px);
+        padding: 0 clamp(16px, 1.8vw, 22px);
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        cursor: pointer;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      }
+
+      .attach-button {
         color: var(--text);
-        font-size: 20px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .save-button {
+        color: #06120a;
+        background: linear-gradient(180deg, #68ef8a, #37d364);
+        border-color: transparent;
+        min-width: min(100%, 220px);
+      }
+
+      .attach-button:hover,
+      .save-button:hover {
+        transform: translateY(-1px);
+      }
+
+      .review-panel-note {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .attachment-gallery {
+        display: grid;
+        gap: 12px;
+      }
+
+      .attachment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+      }
+
+      .attachment-card {
+        display: grid;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .attachment-thumb {
+        aspect-ratio: 4 / 3;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #060606;
+        border: 1px solid var(--line-soft);
+      }
+
+      .attachment-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .attachment-name {
+        font-size: 12px;
+        color: var(--text);
+        line-height: 1.35;
+        word-break: break-word;
+      }
+
+      .attachment-note {
+        width: 100%;
+        min-height: 74px;
+        resize: vertical;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--text);
+        background: rgba(0, 0, 0, 0.82);
+        line-height: 1.45;
+      }
+
+      .attachment-note::placeholder {
+        color: #8d8d8d;
+      }
+
+      .empty-gallery {
+        padding: 16px;
+        border: 1px dashed var(--line);
+        border-radius: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .reference-editor {
+        width: 100%;
+        min-height: 0;
+        flex: 1;
+        overflow: auto;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        color: var(--text);
+        background: transparent;
+        line-height: 1.55;
+        outline: none;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .reference-editor::placeholder {
+        color: #8d8d8d;
+      }
+
+      .reference-editor:empty::before {
+        content: attr(data-placeholder);
+        color: #8d8d8d;
+        pointer-events: none;
+      }
+
+      .reference-editor h1,
+      .reference-editor h2,
+      .reference-editor h3,
+      .reference-editor p {
+        margin: 0 0 0.85em;
+      }
+
+      .reference-editor img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0.85em 0;
+        border-radius: 8px;
       }
 
       .review-copy,
@@ -370,76 +573,193 @@
         padding-left: 24px;
       }
 
-      .field {
+      .reference-chips {
+        display: inline-flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .reference-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .workspace {
         display: grid;
-        gap: clamp(8px, 1.17vh, 12px);
-        margin-bottom: clamp(18px, 2.9vh, 30px);
+        grid-template-columns: minmax(0, 1.45fr) minmax(420px, 0.85fr);
+        min-height: 0;
+        overflow: hidden;
+        height: 100%;
       }
 
-      .field label {
+      .preview-pane,
+      .review-pane {
+        min-width: 0;
+        min-height: 0;
+        padding: clamp(14px, 1.8vw, 24px);
+      }
+
+      .preview-pane {
+        position: relative;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.01);
+        height: 100%;
+      }
+
+      .review-pane {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr);
+        gap: clamp(12px, 2vh, 18px);
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .section-label {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .preview-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: clamp(12px, 1.8vh, 16px);
+      }
+
+      .aspect-picker {
+        display: grid;
+        gap: 6px;
+        min-width: min(100%, 320px);
+      }
+
+      .aspect-picker label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .aspect-picker select {
+        min-height: 40px;
+      }
+
+      .preview-frame-wrap {
+        position: relative;
+        height: calc(100% - 56px);
+        min-height: 320px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(74, 222, 128, 0.08), transparent 28%),
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03), transparent 52%),
+          #000;
+        display: grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .preview-stage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        background: #000;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow:
+          0 24px 64px rgba(0, 0, 0, 0.55),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      .preview-frame {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        max-width: 100%;
+        max-height: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      .empty-state {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        min-height: 0;
+        color: var(--muted);
+        border: 1px dashed var(--line);
+        background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border-radius: 12px;
+      }
+
+      .review-card {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .review-block {
+        display: grid;
+        gap: 12px;
+      }
+
+      .reference-block {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        height: 100%;
+      }
+
+      .reference-editor {
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        flex: 1;
+        overflow: auto;
+        padding: 18px 18px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
         color: var(--text);
-        font-size: clamp(17px, 1.3vw, 20px);
-        line-height: 1;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01) 60%),
+          linear-gradient(180deg, rgba(14, 14, 14, 0.9), rgba(4, 4, 4, 0.96));
+        line-height: 1.65;
+        outline: none;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 16px;
+        resize: none;
+        box-shadow:
+          0 18px 40px rgba(0, 0, 0, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
-      textarea {
-        min-height: clamp(86px, 9.4vh, 96px);
-        resize: vertical;
-        padding: clamp(12px, 1.05vw, 16px);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        color: var(--text);
-        background: rgba(0, 0, 0, 0.82);
-        line-height: 1.5;
-      }
-
-      textarea::placeholder {
+      .reference-editor::placeholder {
         color: #8d8d8d;
       }
 
-      .action-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(14px, 1.95vw, 30px);
-      }
-
-      .review-button {
-        min-height: clamp(42px, 4.5vh, 46px);
-        border-radius: 6px;
-        border: 0;
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .request-button {
-        color: var(--text);
-        background: linear-gradient(180deg, #1c1c1c, #111);
-      }
-
-      .approve-button {
-        color: #06120a;
-        background: linear-gradient(180deg, #55e27a, #38d365);
-      }
-
-      .review-button:disabled,
-      select:disabled {
-        opacity: 0.55;
-        cursor: not-allowed;
-      }
-
-      .output {
-        margin-top: 18px;
-        min-height: 44px;
-        color: var(--muted);
-        line-height: 1.5;
-        word-break: break-word;
-      }
-
-      .packet-link {
-        color: var(--green);
-      }
-
-      @media (max-width: 980px) {
+      @media (max-width: 760px) {
         .app {
           height: auto;
           min-height: 100dvh;
@@ -455,7 +775,6 @@
         .top-actions {
           justify-content: space-between;
         }
-
         .workspace {
           grid-template-columns: 1fr;
           overflow: visible;
@@ -463,24 +782,15 @@
 
         .preview-pane {
           border-right: 0;
-          border-bottom: 1px solid var(--line);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .review-pane {
-          padding: clamp(18px, 6vw, 28px) clamp(16px, 6vw, 24px) clamp(32px, 10vw, 44px);
-          gap: clamp(16px, 5vw, 22px);
           overflow: visible;
         }
 
-        .preview-frame,
-        .preview-frame-wrap,
-        .empty-state {
-          height: clamp(360px, 58vh, 460px);
-          min-height: 0;
-        }
-
-        .review-title {
-          margin-top: 12px;
+        .preview-frame-wrap {
+          min-height: 320px;
         }
       }
     </style>
@@ -498,10 +808,8 @@
         </div>
 
         <div class="top-actions">
-          <div class="host">127.0.0.1:3011</div>
-          <button class="icon-button" id="openPreview" title="Open selected preview" aria-label="Open selected preview">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg>
-          </button>
+          <div class="host" id="hostLabel">127.0.0.1:3011</div>
+          <div class="doc-status" id="autosaveStatus">Saved</div>
           <button class="icon-button" id="refreshEntries" title="Refresh entries" aria-label="Refresh entries">
             <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
           </button>
@@ -513,8 +821,8 @@
           <div class="preview-head">
             <h2 class="section-label">Play (Sandbox Preview)</h2>
             <div class="aspect-picker">
-              <label for="previewAspect">Preview Aspect Ratio</label>
-              <select id="previewAspect" aria-label="Preview aspect ratio">
+              <label for="previewAspect">Device Aspect Ratio</label>
+              <select id="previewAspect" aria-label="Device aspect ratio">
                 <option value="16:9">Desktop Monitor 16:9</option>
                 <option value="16:10">Laptop 16:10</option>
                 <option value="21:9">Ultrawide 21:9</option>
@@ -538,52 +846,21 @@
                 sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
                 title="Website preview"
               ></iframe>
-              <div class="empty-state" id="emptyState" hidden>No HTML entries found in ReviewTargets.</div>
+              <div class="empty-state" id="emptyState" hidden>No review entries found in ReviewTargets.</div>
             </div>
           </div>
         </section>
 
         <section class="review-pane" aria-label="Review and feedback">
-          <h2 class="section-label">Review & Feedback</h2>
-
           <div class="review-card">
-            <h1 class="review-title" id="reviewTitle">No Entry Selected</h1>
-            <div class="tag"><span id="entryType">HTML</span><span class="tag-dot"></span></div>
-
-            <div class="review-block">
-              <h3>Notes <span class="edit-mark">/</span></h3>
-              <div class="review-copy" id="entryMeta">Scanning ReviewTargets...</div>
+            <div class="review-block reference-block">
+              <textarea
+                id="referenceBody"
+                class="reference-editor"
+                placeholder="Write the review here. It is one multiline document with live autosave."
+                aria-label="Review document"
+              ></textarea>
             </div>
-
-            <div class="review-block">
-              <h3>Feedback</h3>
-              <ul class="feedback-list">
-                <li>Review the visual hierarchy and first-screen clarity</li>
-                <li>Check interaction behavior inside the sandbox preview</li>
-                <li>Capture specific changes in the comments field</li>
-              </ul>
-            </div>
-
-            <div class="field">
-              <label for="decision">Status</label>
-              <select id="decision">
-                <option value="Approved">Approved</option>
-                <option value="Request Changes">Request Changes</option>
-                <option value="Needs Review">Needs Review</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="review">Comments</label>
-              <textarea id="review" placeholder="Add a comment..."></textarea>
-            </div>
-
-            <div class="action-row">
-              <button class="review-button request-button" id="requestChanges">Request Changes</button>
-              <button class="review-button approve-button" id="approve">Approve</button>
-            </div>
-
-            <div class="output" id="output">No packet created yet.</div>
           </div>
         </section>
       </section>
@@ -591,22 +868,23 @@
 
     <script>
       const status = document.getElementById("status");
-      const output = document.getElementById("output");
       const preview = document.getElementById("preview");
       const entrySelect = document.getElementById("entrySelect");
       const refreshEntries = document.getElementById("refreshEntries");
-      const entryMeta = document.getElementById("entryMeta");
-      const reviewTitle = document.getElementById("reviewTitle");
-      const entryType = document.getElementById("entryType");
+      const autosaveStatus = document.getElementById("autosaveStatus");
+      const referenceBody = document.getElementById("referenceBody");
       const emptyState = document.getElementById("emptyState");
       const previewAspect = document.getElementById("previewAspect");
       const previewStage = document.getElementById("previewStage");
-      const decision = document.getElementById("decision");
-      const approve = document.getElementById("approve");
-      const requestChanges = document.getElementById("requestChanges");
-      const openPreview = document.getElementById("openPreview");
+      const hostLabel = document.getElementById("hostLabel");
+
+      if (hostLabel) hostLabel.textContent = window.location.host;
 
       let selectedEntry = "";
+      let dirty = false;
+      let autosaveTimer = null;
+      let saveInFlight = false;
+      let lastSavedText = "";
       const aspectRatios = new Map([
         ["16:9", { w: 1920, h: 1080 }],
         ["16:10", { w: 1440, h: 900 }],
@@ -621,28 +899,7 @@
         ["10:16", { w: 800, h: 1280 }],
         ["2.39:1", { w: 2560, h: 1071 }],
       ]);
-      const reviewProfiles = {
-        "index.html": {
-          title: "A4. Sand Ripples",
-          type: "Elemental",
-          notes: "Strong composition and texture. Consider increasing contrast slightly to match the obsidian's tonal weight.",
-          feedback: [
-            "Excellent use of negative space",
-            "Typography scale works well",
-            "Consider alt text for accessibility",
-          ],
-        },
-        "artifact-study.html": {
-          title: "Artifact Study",
-          type: "Archive",
-          notes: "Material set is visually consistent. Check image contrast and spacing before promoting this direction.",
-          feedback: [
-            "Strong visual motif",
-            "Clear artifact labeling",
-            "Review mobile crop behavior",
-          ],
-        },
-      };
+      const defaultPreviewAspect = "16:9";
 
       function setStatus(message, tone = "good") {
         status.innerHTML = `<span class="status-dot"></span><span>${message}</span>`;
@@ -651,7 +908,13 @@
 
       function titleFromEntry(entry) {
         if (!entry) return "No Entry Selected";
-        const name = entry.split("/").pop().replace(/\.html$/i, "");
+        const normalized = String(entry).replace(/[\\/]+$/, "");
+        let name = normalized.split("/").pop() || normalized;
+        if (normalized.toLowerCase().endsWith("/index.html")) {
+          name = normalized.slice(0, -"index.html".length - 1).split("/").pop() || "index";
+        } else {
+          name = name.replace(/\.html$/i, "");
+        }
         return name
           .split(/[-_ ]+/)
           .filter(Boolean)
@@ -659,28 +922,31 @@
           .join(" ");
       }
 
-      function renderReviewProfile(entry) {
-        const profile = reviewProfiles[entry] || {
-          title: titleFromEntry(entry),
-          type: "HTML",
-          notes: `Reviewing ReviewTargets/${entry}. Use comments below to capture what should be approved or changed.`,
-          feedback: [
-            "Review the visual hierarchy and first-screen clarity",
-            "Check interaction behavior inside the sandbox preview",
-            "Capture specific changes in the comments field",
-          ],
-        };
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
 
-        reviewTitle.textContent = profile.title;
-        entryType.textContent = profile.type;
-        entryMeta.textContent = profile.notes;
-        document.querySelector(".feedback-list").innerHTML = profile.feedback
-          .map((item) => `<li>${item}</li>`)
-          .join("");
+      function resetReferenceDraft(entry) {
+        if (referenceBody) {
+          referenceBody.value = "";
+        }
+      }
+
+      function normalizeDraftText(value) {
+        const raw = String(value || "");
+        if (!/[<][a-z!/]/i.test(raw)) return raw.replace(/\r\n/g, "\n");
+        const doc = new DOMParser().parseFromString(raw, "text/html");
+        return (doc.body?.innerText || doc.body?.textContent || raw).replace(/\r\n/g, "\n").trimEnd();
       }
 
       function fitPreviewStage() {
-        const aspectObj = aspectRatios.get(previewAspect?.value || "16:9") || { w: 1920, h: 1080 };
+        const aspectKey = previewAspect?.value || defaultPreviewAspect;
+        const aspectObj = aspectRatios.get(aspectKey) || aspectRatios.get(defaultPreviewAspect) || { w: 1920, h: 1080 };
         if (!previewStage || !previewStage.parentElement) return;
 
         const shell = previewStage.parentElement;
@@ -692,36 +958,118 @@
         const shellHeight = shell.clientHeight - padY;
         if (shellWidth <= 0 || shellHeight <= 0) return;
 
-        const targetW = aspectObj.w;
-        const targetH = aspectObj.h;
-        const scale = Math.min(shellWidth / targetW, shellHeight / targetH);
+        const ratio = aspectObj.w / aspectObj.h;
+        let targetW = shellWidth;
+        let targetH = targetW / ratio;
+        if (targetH > shellHeight) {
+          targetH = shellHeight;
+          targetW = targetH * ratio;
+        }
 
-        previewStage.style.width = `${targetW}px`;
-        previewStage.style.height = `${targetH}px`;
-        previewStage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        previewStage.style.width = `${Math.floor(targetW)}px`;
+        previewStage.style.height = `${Math.floor(targetH)}px`;
+        previewStage.style.transform = "translate(-50%, -50%)";
+      }
+
+      function setAutosaveStatus(message, tone = "good") {
+        if (!autosaveStatus) return;
+        autosaveStatus.textContent = message;
+        autosaveStatus.style.color = tone === "bad" ? "var(--danger)" : "var(--green)";
+      }
+
+      function scheduleAutosave() {
+        dirty = true;
+        setAutosaveStatus("Unsaved");
+        if (autosaveTimer) window.clearTimeout(autosaveTimer);
+        autosaveTimer = window.setTimeout(() => {
+          autosaveTimer = null;
+          void autosaveNow();
+        }, 700);
+      }
+
+      async function autosaveNow() {
+        if (!selectedEntry || saveInFlight || !dirty) return;
+        const text = referenceBody ? referenceBody.value : "";
+        if (!text || text === lastSavedText) {
+          dirty = false;
+          setAutosaveStatus("Saved");
+          return;
+        }
+
+        saveInFlight = true;
+        setAutosaveStatus("Saving...");
+
+        try {
+          const res = await fetch("/api/autosave", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              entry: selectedEntry,
+              title: titleFromEntry(selectedEntry),
+              referenceMd: text,
+            }),
+          });
+          const data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.error || "Failed to autosave packet.");
+
+          if (referenceBody && typeof data.referenceMd === "string") {
+            referenceBody.value = normalizeDraftText(data.referenceMd);
+          }
+
+          lastSavedText = referenceBody ? referenceBody.value : text;
+          dirty = false;
+          setAutosaveStatus("Saved");
+        } catch (error) {
+          setAutosaveStatus("Save failed", "bad");
+        } finally {
+          saveInFlight = false;
+        }
+      }
+
+      async function loadDraft(entry) {
+        const res = await fetch(`/api/draft?entry=${encodeURIComponent(entry)}`, { cache: "no-store" });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || "Failed to load draft.");
+        return data.draft;
       }
 
       function setEntry(entry) {
         selectedEntry = entry || "";
         const hasEntry = Boolean(selectedEntry);
         preview.hidden = !hasEntry;
-        emptyState.hidden = hasEntry;
-        approve.disabled = !hasEntry;
-        requestChanges.disabled = !hasEntry;
-        openPreview.disabled = !hasEntry;
+        if (emptyState) emptyState.hidden = hasEntry;
 
         if (!hasEntry) {
           preview.removeAttribute("src");
-          entryMeta.textContent = "No HTML entries found in ReviewTargets.";
-          reviewTitle.textContent = "No Entry Selected";
-          entryType.textContent = "HTML";
+          if (referenceBody) referenceBody.value = "";
+          lastSavedText = "";
+          dirty = false;
+          setAutosaveStatus("Ready");
           return;
         }
 
         const previewUrl = `/preview?entry=${encodeURIComponent(selectedEntry)}`;
         preview.src = previewUrl;
-        renderReviewProfile(selectedEntry);
-        fitPreviewStage();
+        setAutosaveStatus("Loading...");
+        void (async () => {
+          try {
+            const draft = await loadDraft(selectedEntry);
+            if (referenceBody) {
+              referenceBody.value = draft?.referenceMd ? normalizeDraftText(draft.referenceMd) : "";
+              if (!referenceBody.value) resetReferenceDraft(selectedEntry);
+              lastSavedText = referenceBody.value;
+              dirty = false;
+              setAutosaveStatus("Saved");
+            }
+          } catch {
+            resetReferenceDraft(selectedEntry);
+            lastSavedText = referenceBody ? referenceBody.value : "";
+            dirty = false;
+            setAutosaveStatus("Ready");
+          } finally {
+            fitPreviewStage();
+          }
+        })();
       }
 
       async function loadEntries() {
@@ -747,65 +1095,35 @@
           setStatus("Ready");
         } catch (error) {
           setStatus("Error", "bad");
-          entryMeta.textContent = error.message || String(error);
           setEntry("");
         } finally {
           refreshEntries.disabled = false;
         }
       }
 
-      async function submitReview(nextDecision) {
-        const comments = document.getElementById("review").value.trimEnd();
-        const statusLabel = nextDecision || decision.value;
-        const review = [`Status: ${statusLabel}`, "", comments].join("\n").trimEnd();
-
-        setStatus("Saving...");
-        approve.disabled = true;
-        requestChanges.disabled = true;
-        output.textContent = "Writing intake packet...";
-
-        try {
-          const res = await fetch("/api/intake", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-              entry: selectedEntry,
-              review,
-            }),
-          });
-
-          const data = await res.json();
-          if (!res.ok || !data.ok) {
-            throw new Error(data.error || "Failed to create intake packet.");
-          }
-
-          setStatus("Saved");
-          output.innerHTML = `Packet created for ReviewTargets/${data.entry}:<br><a class="packet-link" href="file://${data.packetDir}">${data.packetDir}</a>`;
-        } catch (error) {
-          setStatus("Error", "bad");
-          output.textContent = error.message || String(error);
-        } finally {
-          approve.disabled = !selectedEntry;
-          requestChanges.disabled = !selectedEntry;
-        }
-      }
-
       entrySelect.addEventListener("change", () => setEntry(entrySelect.value));
       refreshEntries.addEventListener("click", loadEntries);
-      approve.addEventListener("click", () => {
-        decision.value = "Approved";
-        submitReview("Approved");
-      });
-      requestChanges.addEventListener("click", () => {
-        decision.value = "Request Changes";
-        submitReview("Request Changes");
-      });
-      openPreview.addEventListener("click", () => {
-        if (selectedEntry) window.open(`/preview?entry=${encodeURIComponent(selectedEntry)}`, "_blank", "noopener");
+      referenceBody.addEventListener("input", () => {
+        scheduleAutosave();
       });
       previewAspect.addEventListener("change", fitPreviewStage);
+      previewAspect.addEventListener("change", () => {
+        localStorage.setItem("previewAspect", previewAspect.value);
+      });
       window.addEventListener("resize", fitPreviewStage);
       new ResizeObserver(fitPreviewStage).observe(previewStage.parentElement);
+
+      window.addEventListener("beforeunload", (event) => {
+        if (!dirty) return;
+        event.preventDefault();
+        event.returnValue = "";
+      });
+
+      {
+        const savedAspect = localStorage.getItem("previewAspect");
+        const nextAspect = savedAspect && aspectRatios.has(savedAspect) ? savedAspect : defaultPreviewAspect;
+        previewAspect.value = nextAspect;
+      }
 
       fitPreviewStage();
       loadEntries();

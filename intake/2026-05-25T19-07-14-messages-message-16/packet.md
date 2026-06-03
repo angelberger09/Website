@@ -1,12 +1,14 @@
 # messages/message-16
 
 - Created: 2026-05-25T19:07:14.095Z
-- Workflow: Entry / Play / Review
+- Workflow: Attach / Save
 - Code input: ReviewTargets
-- Review input: dashboard
+- Reference input: dashboard
 - Selected entry: ReviewTargets/messages/message-16.html
 - Code: [code.html](code.html)
-- Review document: [review.md](review.md)
+- Reference document: [reference.md](reference.md)
+- Attached references:
+  - None
 
 ## Observations
 

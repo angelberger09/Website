@@ -1,0 +1,82 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Market-V1" [ref=e4] [cursor=pointer]:
+      - /url: ./
+      - generic [ref=e5]: M
+      - heading "Market-V1" [level=1] [ref=e7]
+  - main [ref=e8]:
+    - region "Collection offerings" [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Yarn" [level=2] [ref=e11]
+        - paragraph [ref=e12]: 5 offerings
+      - generic [ref=e13]:
+        - link "Soft Cotton Skein Set Cotton Soft Cotton Skein Set $18.00 ★★★★½ 4.8 Ships today Five soft cotton skeins for crochet, weaving, and small handmade goods." [ref=e14] [cursor=pointer]:
+          - /url: ./product.html?id=yarn-001
+          - generic [ref=e15]:
+            - img "Soft Cotton Skein Set" [ref=e16]
+            - generic [ref=e17]: Cotton
+          - generic [ref=e18]:
+            - generic [ref=e19]:
+              - heading "Soft Cotton Skein Set" [level=3] [ref=e21]
+              - generic [ref=e22]: Open
+            - generic [ref=e23]:
+              - generic [ref=e24]: $18.00
+              - generic [ref=e25]: ★★★★½ 4.8
+              - generic [ref=e26]: Ships today
+            - paragraph [ref=e27]: Five soft cotton skeins for crochet, weaving, and small handmade goods.
+        - link "Chunky Wool Bundle Chunky Chunky Wool Bundle $32.00 ★★★★½ 4.7 Arrives in 2 days Thicker wool yarn for blankets, scarves, and sculptural textile pieces." [ref=e28] [cursor=pointer]:
+          - /url: ./product.html?id=yarn-002
+          - generic [ref=e29]:
+            - img "Chunky Wool Bundle" [ref=e30]
+            - generic [ref=e31]: Chunky
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - heading "Chunky Wool Bundle" [level=3] [ref=e35]
+              - generic [ref=e36]: Open
+            - generic [ref=e37]:
+              - generic [ref=e38]: $32.00
+              - generic [ref=e39]: ★★★★½ 4.7
+              - generic [ref=e40]: Arrives in 2 days
+            - paragraph [ref=e41]: Thicker wool yarn for blankets, scarves, and sculptural textile pieces.
+        - link "Natural Dye Mini Pack Natural dye Natural Dye Mini Pack $24.00 ★★★★½ 4.6 Free delivery Small naturally dyed yarn balls for color studies and sample work." [ref=e42] [cursor=pointer]:
+          - /url: ./product.html?id=yarn-003
+          - generic [ref=e43]:
+            - img "Natural Dye Mini Pack" [ref=e44]
+            - generic [ref=e45]: Natural dye
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "Natural Dye Mini Pack" [level=3] [ref=e49]
+              - generic [ref=e50]: Open
+            - generic [ref=e51]:
+              - generic [ref=e52]: $24.00
+              - generic [ref=e53]: ★★★★½ 4.6
+              - generic [ref=e54]: Free delivery
+            - paragraph [ref=e55]: Small naturally dyed yarn balls for color studies and sample work.
+        - link "Crochet Starter Kit Starter Crochet Starter Kit $28.00 ★★★★½ 4.9 Ships today Yarn, hook, and pattern cards for quick beginner crochet projects." [ref=e56] [cursor=pointer]:
+          - /url: ./product.html?id=yarn-004
+          - generic [ref=e57]:
+            - img "Crochet Starter Kit" [ref=e58]
+            - generic [ref=e59]: Starter
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - heading "Crochet Starter Kit" [level=3] [ref=e63]
+              - generic [ref=e64]: Open
+            - generic [ref=e65]:
+              - generic [ref=e66]: $28.00
+              - generic [ref=e67]: ★★★★½ 4.9
+              - generic [ref=e68]: Ships today
+            - paragraph [ref=e69]: Yarn, hook, and pattern cards for quick beginner crochet projects.
+        - link "Textile Color Library Palette Textile Color Library $42.00 ★★★★½ 4.5 Arrives in 3 days A broader yarn palette for planning collections and textile layouts." [ref=e70] [cursor=pointer]:
+          - /url: ./product.html?id=yarn-005
+          - generic [ref=e71]:
+            - img "Textile Color Library" [ref=e72]
+            - generic [ref=e73]: Palette
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - heading "Textile Color Library" [level=3] [ref=e77]
+              - generic [ref=e78]: Open
+            - generic [ref=e79]:
+              - generic [ref=e80]: $42.00
+              - generic [ref=e81]: ★★★★½ 4.5
+              - generic [ref=e82]: Arrives in 3 days
+            - paragraph [ref=e83]: A broader yarn palette for planning collections and textile layouts.

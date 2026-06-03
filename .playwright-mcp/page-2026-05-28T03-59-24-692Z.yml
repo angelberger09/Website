@@ -1,0 +1,165 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: M
+      - generic [ref=e6]:
+        - paragraph [ref=e7]: Marketplace shell
+        - heading "Market-V1" [level=1] [ref=e8]
+    - generic "Search products" [ref=e9]:
+      - generic [ref=e10]: Search
+      - searchbox "Search products" [ref=e11]
+    - generic "Primary actions" [ref=e12]:
+      - button "Browse" [ref=e13] [cursor=pointer]
+      - button "Cart 0" [ref=e14] [cursor=pointer]
+      - button "Sign in" [ref=e15] [cursor=pointer]
+  - main [ref=e16]:
+    - region "Product feed" [ref=e17]:
+      - generic [ref=e18]:
+        - generic "Categories" [ref=e19]:
+          - button "All" [pressed] [ref=e20] [cursor=pointer]
+          - button "Craft" [ref=e21] [cursor=pointer]
+          - button "Design" [ref=e22] [cursor=pointer]
+          - button "Paper" [ref=e23] [cursor=pointer]
+          - button "Art" [ref=e24] [cursor=pointer]
+          - button "Home" [ref=e25] [cursor=pointer]
+          - button "Audio" [ref=e26] [cursor=pointer]
+          - button "Office" [ref=e27] [cursor=pointer]
+          - button "Wellness" [ref=e28] [cursor=pointer]
+          - button "Travel" [ref=e29] [cursor=pointer]
+          - button "Kitchen" [ref=e30] [cursor=pointer]
+          - button "Outdoor" [ref=e31] [cursor=pointer]
+          - button "Kids" [ref=e32] [cursor=pointer]
+        - group [ref=e33]:
+          - generic "Filters and sort" [ref=e34] [cursor=pointer]
+          - option "Featured" [selected]
+          - 'option "Price: low to high"'
+          - 'option "Price: high to low"'
+          - option "Customer rating"
+          - option "Newest"
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: Infinite catalog
+          - heading "Featured picks" [level=2] [ref=e38]
+        - paragraph [ref=e39]: 24 results available, 5 shown
+      - generic [ref=e40]:
+        - article [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]:
+            - img "Crochet Loop Kit" [ref=e43]
+            - generic [ref=e44]: Crochet
+          - generic [ref=e45]:
+            - button "Craft Crochet Loop Kit" [ref=e46]:
+              - generic [ref=e47]:
+                - paragraph [ref=e48]: Craft
+                - heading "Crochet Loop Kit" [level=3] [ref=e49]
+              - generic [ref=e50]: Expand
+            - generic [ref=e51]:
+              - generic [ref=e52]: $189.99
+              - generic [ref=e53]: ★★★★½ 4.8
+              - generic [ref=e54]: Ships today
+            - paragraph [ref=e55]: Textile kit with yarn, hook, and pattern cards for handmade loops.
+            - generic [ref=e56]:
+              - button "Add to cart" [ref=e57]
+              - button "Save" [ref=e58]
+            - generic [ref=e59]:
+              - paragraph [ref=e60]: A tactile crochet starter set that keeps the materials visible and easy to reach, with a soft palette and a handcraft-first presentation.
+              - list [ref=e61]:
+                - listitem [ref=e62]: Yarn pack included
+                - listitem [ref=e63]: Pattern cards
+                - listitem [ref=e64]: Beginner-friendly
+        - article [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]:
+            - img "UV Resin Studio Set" [ref=e67]
+            - generic [ref=e68]: UV Resin
+          - generic [ref=e69]:
+            - button "Craft UV Resin Studio Set" [ref=e70]:
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: Craft
+                - heading "UV Resin Studio Set" [level=3] [ref=e73]
+              - generic [ref=e74]: Expand
+            - generic [ref=e75]:
+              - generic [ref=e76]: $129.00
+              - generic [ref=e77]: ★★★★½ 4.6
+              - generic [ref=e78]: Arrives in 2 days
+            - paragraph [ref=e79]: Resin craft set with pigments, molds, and finishing tools.
+            - generic [ref=e80]:
+              - button "Add to cart" [ref=e81]
+              - button "Save" [ref=e82]
+            - generic [ref=e83]:
+              - paragraph [ref=e84]: A bright UV resin kit for layered pours, glossy finishes, and small desktop projects that read as translucent objects in the feed.
+              - list [ref=e85]:
+                - listitem [ref=e86]: Pigment set
+                - listitem [ref=e87]: Reusable molds
+                - listitem [ref=e88]: Curing wand
+        - article [ref=e89] [cursor=pointer]:
+          - generic [ref=e90]:
+            - img "Graphic Design Desk Stack" [ref=e91]
+            - generic [ref=e92]: Graphic design
+          - generic [ref=e93]:
+            - button "Design Graphic Design Desk Stack" [ref=e94]:
+              - generic [ref=e95]:
+                - paragraph [ref=e96]: Design
+                - heading "Graphic Design Desk Stack" [level=3] [ref=e97]
+              - generic [ref=e98]: Expand
+            - generic [ref=e99]:
+              - generic [ref=e100]: $74.50
+              - generic [ref=e101]: ★★★★½ 4.7
+              - generic [ref=e102]: Free delivery
+            - paragraph [ref=e103]: Desk kit with swatches, pencils, and layout tools for visual work.
+            - generic [ref=e104]:
+              - button "Add to cart" [ref=e105]
+              - button "Save" [ref=e106]
+            - generic [ref=e107]:
+              - paragraph [ref=e108]: Built for layout, color, and branding work, the set keeps design tools arranged as a clean, highly legible object composition.
+              - list [ref=e109]:
+                - listitem [ref=e110]: Color swatches
+                - listitem [ref=e111]: Layout tools
+                - listitem [ref=e112]: Desktop organizer
+        - article [ref=e113] [cursor=pointer]:
+          - generic [ref=e114]:
+            - img "Paper Mache Object Kit" [ref=e115]
+            - generic [ref=e116]: Paper mache
+          - generic [ref=e117]:
+            - button "Paper Paper Mache Object Kit" [ref=e118]:
+              - generic [ref=e119]:
+                - paragraph [ref=e120]: Paper
+                - heading "Paper Mache Object Kit" [level=3] [ref=e121]
+              - generic [ref=e122]: Expand
+            - generic [ref=e123]:
+              - generic [ref=e124]: $219.00
+              - generic [ref=e125]: ★★★★½ 4.9
+              - generic [ref=e126]: Prime delivery tomorrow
+            - paragraph [ref=e127]: Paper-form kit with shaping tools and texture materials for sculpted surfaces.
+            - generic [ref=e128]:
+              - button "Add to cart" [ref=e129]
+              - button "Save" [ref=e130]
+            - generic [ref=e131]:
+              - paragraph [ref=e132]: A paper mache set for layered forms and display objects, framed like a studio object with clear texture and volume.
+              - list [ref=e133]:
+                - listitem [ref=e134]: Shaping forms
+                - listitem [ref=e135]: Texture paste
+                - listitem [ref=e136]: Display-ready
+        - article [ref=e137] [cursor=pointer]:
+          - generic [ref=e138]:
+            - img "Origami Wall Art" [ref=e139]
+            - generic [ref=e140]: Origami art
+          - generic [ref=e141]:
+            - button "Art Origami Wall Art" [ref=e142]:
+              - generic [ref=e143]:
+                - paragraph [ref=e144]: Art
+                - heading "Origami Wall Art" [level=3] [ref=e145]
+              - generic [ref=e146]: Expand
+            - generic [ref=e147]:
+              - generic [ref=e148]: $32.00
+              - generic [ref=e149]: ★★★★½ 4.5
+              - generic [ref=e150]: Ships today
+            - paragraph [ref=e151]: Wall-mounted folded paper artwork with sculptural depth.
+            - generic [ref=e152]:
+              - button "Add to cart" [ref=e153]
+              - button "Save" [ref=e154]
+            - generic [ref=e155]:
+              - paragraph [ref=e156]: A geometric origami wall piece that reads like a hanging object, with sharp folds and an airy composition designed to feel dimensional.
+              - list [ref=e157]:
+                - listitem [ref=e158]: Wall mount ready
+                - listitem [ref=e159]: Folded geometry
+                - listitem [ref=e160]: Lightweight frame
+      - button "Load next batch" [ref=e162] [cursor=pointer]

@@ -1,0 +1,5 @@
+[ 9543803ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/src/data/content.js?t=1780190161845:0
+[ 9789644ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/src/styles/layout.css?t=1780190408215:0
+[ 9789645ms] [ERROR] [hmr] Failed to reload /src/styles/layout.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:4173/@vite/client:175
+[ 9951241ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:4173/src/styles/components.css?t=1780190569826:0
+[ 9951245ms] [ERROR] [hmr] Failed to reload /src/styles/components.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:4173/@vite/client:175

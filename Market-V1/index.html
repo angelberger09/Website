@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Market-V1</title>
+    <meta
+      name="description"
+      content="Market-V1 is a floating marketplace shell with infinite scroll and MVVM structure."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070f16'/%3E%3Cpath d='M8 22h16V10H8z' fill='%2378d2ff'/%3E%3Cpath d='M11 13h10v2H11zm0 4h7v2h-7z' fill='%2306111a'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./assets/css/main.css?v=5" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">M</div>
+          <div>
+            <h1>Market-V1</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="main gallery-shell">
+        <section class="feed-panel" aria-label="Product feed">
+          <div class="feed-head">
+            <h2 id="feedTitle">Product pages</h2>
+            <p class="feed-meta" id="feedMeta">3 pages</p>
+          </div>
+
+          <div class="feed gallery-grid" id="productFeed" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/js/home.js?v=3"></script>
+  </body>
+</html>

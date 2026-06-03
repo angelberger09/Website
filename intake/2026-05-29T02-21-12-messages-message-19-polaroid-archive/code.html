@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A. Berger - Polaroid Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root { --ink:#111111;--paper:#f2f7ff;--accent:#facc15;--pop:#38bdf8; color-scheme: dark; font-family: "Space Grotesk", system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; color: var(--paper); background: var(--ink); overflow-x: hidden; }
+      a { color: inherit; text-decoration: none; }
+      button, textarea { font: inherit; }
+      .site { min-height: 100vh; background: linear-gradient(180deg, color-mix(in srgb, var(--ink), black 8%), var(--ink)); }
+      .topbar { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; min-height: 68px; padding: 12px clamp(16px, 4vw, 36px); background: linear-gradient(180deg, rgba(0,0,0,.82), rgba(0,0,0,.58)); border-bottom: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(14px); box-shadow: 0 16px 36px rgba(0,0,0,.35); }
+      .brand { font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; font-weight: 800; }
+      .nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+      .nav a, .tag, .close, .send { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.2); background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.16), rgba(255,255,255,.03)); color: var(--paper); box-shadow: 0 10px 22px rgba(0,0,0,.25); }
+      .nav a { padding: 0 12px; font: 600 12px "IBM Plex Mono", monospace; text-transform: uppercase; }
+      .loop-id { justify-self: end; color: color-mix(in srgb, var(--paper), transparent 28%); font: 600 12px "IBM Plex Mono", monospace; }
+      .hero { min-height: 86vh; display: grid; align-content: end; padding: 0 clamp(18px, 5vw, 56px) 42px; position: relative; isolation: isolate; }
+      .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.7)), url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1800&q=80") center / cover; }
+      .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 38%; z-index: -1; background: linear-gradient(180deg, transparent, var(--ink)); }
+      .hero-inner { width: min(1120px, 100%); display: grid; gap: 18px; }
+      .kicker { color: var(--accent); font: 600 13px "IBM Plex Mono", monospace; text-transform: uppercase; }
+      h1 { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(54px, 12vw, 132px); line-height: .9; letter-spacing: 0; max-width: 9ch; }
+      .lead { margin: 0; max-width: 62ch; color: color-mix(in srgb, var(--paper), transparent 20%); font-size: clamp(17px, 2vw, 22px); line-height: 1.55; }
+      .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+      .tag { padding: 0 12px; border-radius: 8px; font: 600 12px "IBM Plex Mono", monospace; }
+      .section { padding: clamp(44px, 8vw, 92px) clamp(18px, 5vw, 56px); }
+      .section-inner { width: min(1120px, 100%); margin: 0 auto; display: grid; gap: 24px; }
+      .section-head { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: end; }
+      h2 { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(34px, 6vw, 68px); line-height: .95; letter-spacing: 0; }
+      .section-note { margin: 0; max-width: 56ch; color: color-mix(in srgb, var(--paper), transparent 27%); line-height: 1.65; }
+      .work-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+      .work-card { min-height: 248px; display: grid; align-content: space-between; gap: 18px; padding: 16px; border: 1px solid rgba(0,0,0,.18); border-radius: 8px; background: var(--paper); color: #111; text-align: left; cursor: pointer; transform: rotate(var(--tilt)); transition: transform .24s ease, box-shadow .24s ease, filter .24s ease; box-shadow: 0 18px 36px rgba(0,0,0,.28); }
+      .work-card:hover { transform: rotate(0deg) translateY(-5px); box-shadow: 0 26px 48px rgba(0,0,0,.34); }
+      .work-card strong { font-family: "Bricolage Grotesque", sans-serif; font-size: 28px; line-height: 1; letter-spacing: 0; }
+      .work-card span { color: rgba(17,17,17,.68); line-height: 1.45; }
+      .work-price { justify-self: end; font: 600 12px "IBM Plex Mono", monospace; }
+      .journal { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+      .article { padding: 22px; border-left: 3px solid var(--accent); background: rgba(255,255,255,.06); box-shadow: 0 16px 34px rgba(0,0,0,.2); transition: filter .22s ease, background .22s ease; }
+      .article:hover { filter: brightness(1.14); background: rgba(255,255,255,.09); }
+      .article h3 { margin: 0 0 12px; font-family: "Bricolage Grotesque", sans-serif; font-size: 30px; letter-spacing: 0; }
+      .article p { margin: 0; color: color-mix(in srgb, var(--paper), transparent 20%); line-height: 1.7; }
+      .contact { display: grid; gap: 14px; padding-bottom: 84px; }
+      textarea { width: min(720px, 100%); min-height: 132px; resize: vertical; padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,.22); color: var(--paper); background: rgba(0,0,0,.24); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 24px rgba(0,0,0,.22); }
+      .send { width: fit-content; padding: 0 16px; border-radius: 8px; cursor: pointer; }
+      .modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 18px; background: rgba(0,0,0,.68); backdrop-filter: blur(12px); }
+      .modal[hidden] { display: none; }
+      .panel { width: min(680px, 100%); padding: 22px; border-radius: 8px; border: 1px solid rgba(255,255,255,.2); background: color-mix(in srgb, var(--ink), black 10%); box-shadow: 0 32px 80px rgba(0,0,0,.55); }
+      .panel-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+      .panel h3 { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-size: 42px; line-height: 1; letter-spacing: 0; }
+      .panel p { color: color-mix(in srgb, var(--paper), transparent 22%); line-height: 1.7; }
+      .close { min-width: 40px; border-radius: 8px; cursor: pointer; }
+      @media (max-width: 920px) { .topbar { grid-template-columns: 1fr; } .loop-id { justify-self: start; } .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .journal { grid-template-columns: 1fr; } }
+      @media (max-width: 620px) { .work-grid { grid-template-columns: 1fr; } .hero { min-height: 78vh; } .nav { justify-content: start; } }
+    </style>
+  </head>
+  <body>
+    <div class="site">
+      <header class="topbar">
+        <a class="brand" href="#top">A. BERGER</a>
+        <nav class="nav" aria-label="Primary"><a href="#pinned-work">Pinned Work</a><a href="#screen-work">Screen Work</a><a href="#open-notes">Open Notes</a></nav>
+        <div class="loop-id">message-19 / polaroid-archive</div>
+      </header>
+      <main id="top">
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="kicker">tilted cards with exits</div>
+            <h1>Polaroid Archive</h1>
+            <p class="lead">A full-site archive built around tilted photographs, quick captions, and expanded views that always close cleanly.</p>
+            <div class="tags">
+              <span class="tag">Goal: new Angel Berger website variants</span>
+              <span class="tag">49 feedback notes used</span>
+              <span class="tag">full variant</span>
+            </div>
+          </div>
+        </section>
+        <section class="section" id="pinned-work">
+          <div class="section-inner">
+            <div class="section-head">
+              <h2>Pinned Work</h2>
+              <p class="section-note">This variant keeps copy plain, controls visible, and each card readable before adding motion or personality.</p>
+            </div>
+            <div class="work-grid">
+          <button class="work-card" type="button" data-card="0" style="--tilt:-2deg">
+            <span class="work-price">$140</span>
+            <strong>Room Study</strong>
+            <span>A photo-led card for atmosphere, color, and object placement.</span>
+          </button>
+          <button class="work-card" type="button" data-card="1" style="--tilt:1.4deg">
+            <span class="work-price">$88</span>
+            <strong>Blue Proof</strong>
+            <span>A printed study with a crisp border and a short caption.</span>
+          </button>
+          <button class="work-card" type="button" data-card="2" style="--tilt:-0.8deg">
+            <span class="work-price">$150</span>
+            <strong>Hover Deck</strong>
+            <span>A screen set with gentle brightening on article-style surfaces.</span>
+          </button>
+          <button class="work-card" type="button" data-card="3" style="--tilt:2deg">
+            <span class="work-price">$75</span>
+            <strong>Index Stack</strong>
+            <span>A browseable stack of captions, scans, and small references.</span>
+          </button></div>
+          </div>
+        </section>
+        <section class="section" id="screen-work">
+          <div class="section-inner journal">
+            <article class="article">
+              <h3>Archive Captions</h3>
+              <p>The good part is the tilt and the little straighten-up moment. The hard rule is that every expanded card has a visible close button and Escape support.</p>
+            </article>
+            <article class="article">
+              <h3>Screen Work</h3>
+              <p>Digital pieces stay separate from physical pieces so the browsing path is obvious. Hover brightening is reserved for reading surfaces and notes.</p>
+            </article>
+          </div>
+        </section>
+        <section class="section" id="open-notes">
+          <div class="section-inner contact">
+            <h2>Open Notes</h2>
+            <p class="section-note">Write down what feels close, what feels stiff, and what should become the next selected direction.</p>
+            <textarea placeholder="Leave review notes for this variant."></textarea>
+            <button class="send" type="button" data-open="contact">Open review prompt</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal" id="modal" hidden>
+      <div class="panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="panel-head">
+          <h3 id="modalTitle">Variant note</h3>
+          <button class="close" type="button" id="closeModal" aria-label="Close">x</button>
+        </div>
+        <p id="modalText">This expanded view has a visible close button, outside click close, and Escape support.</p>
+      </div>
+    </div>
+    <script>
+      const modal = document.getElementById("modal");
+      const closeModal = document.getElementById("closeModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalText = document.getElementById("modalText");
+      const details = [{"name":"Room Study","price":"$140","copy":"A photo-led card for atmosphere, color, and object placement."},{"name":"Blue Proof","price":"$88","copy":"A printed study with a crisp border and a short caption."},{"name":"Hover Deck","price":"$150","copy":"A screen set with gentle brightening on article-style surfaces."},{"name":"Index Stack","price":"$75","copy":"A browseable stack of captions, scans, and small references."}];
+      document.querySelectorAll("[data-card]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = details[Number(button.dataset.card)];
+          modalTitle.textContent = item.name + " " + item.price;
+          modalText.textContent = item.copy + " Close this panel with the button, outside click, or Escape.";
+          modal.hidden = false;
+          closeModal.focus();
+        });
+      });
+      document.querySelectorAll("[data-open]").forEach((button) => {
+        button.addEventListener("click", () => {
+          modalTitle.textContent = "Review this variant";
+          modalText.textContent = "Check nav visibility, tone, section clarity, product readability, and whether any motion or vignette treatment gets in the way.";
+          modal.hidden = false;
+          closeModal.focus();
+        });
+      });
+      function hideModal() { modal.hidden = true; }
+      closeModal.addEventListener("click", hideModal);
+      modal.addEventListener("click", (event) => { if (event.target === modal) hideModal(); });
+      window.addEventListener("keydown", (event) => { if (event.key === "Escape") hideModal(); });
+      window.addEventListener("pointermove", (event) => {
+        const x = (event.clientX / window.innerWidth - .5) * 10;
+        const y = (event.clientY / window.innerHeight - .5) * 10;
+        document.querySelector(".hero").style.backgroundPosition = `${50 + x * .1}% ${50 + y * .1}%`;
+      });
+    </script>
+  </body>
+</html>

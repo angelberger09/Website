@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angel Berger — Diverse Creative</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts for Editorial Aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Syne:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            signature: ['La Belle Aurore', 'cursive'],
+          },
+          colors: {
+            creme: '#fdfbf7',
+            ink: '#0c0b10',
+            bronze: '#c5a880',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scroll Snapping & Interaction Rules */
+    .snap-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+      scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+    .snap-container::-webkit-scrollbar {
+      display: none; /* Hide scrollbar Chrome/Safari */
+    }
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+    }
+
+    /* Tactile Paper Post-Process Overlay */
+    .paper-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.055;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Analog Debossed Toggle Style */
+    .analog-btn {
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+    .analog-btn:hover {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    .analog-btn:active, .analog-btn.active {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(197, 168, 128, 0.5); /* Bronze tone */
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(197, 168, 128, 0.2);
+      transform: translateY(1px);
+    }
+
+    /* Floating Navigation Notch Indicator */
+    .notch-line {
+      position: relative;
+    }
+    .notch-line::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -6px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #c5a880;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .notch-line.active::after {
+      opacity: 1;
+    }
+
+    /* Fade-in animation systems for stages */
+    .anim-scene-init {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .visible .anim-scene-init {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom styles for Hero atelier framing */
+    .hero-glow::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(197, 168, 128, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="h-full bg-ink text-creme font-sans overflow-hidden antialiased selection:bg-bronze selection:text-ink">
+
+  <!-- Fixed Paper Post-Process Overlay -->
+  <div class="paper-overlay"></div>
+
+  <!-- Background Animated Star Field Canvas -->
+  <canvas id="starsCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Side Analog Dial Notch Scale (Right aligned progress marker) -->
+  <div class="fixed right-6 md:right-12 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-6 z-50">
+    <div class="text-[9px] tracking-[0.25em] font-syne text-bronze uppercase transform rotate-90 origin-center translate-y-8 mb-6">SCENE DIAL</div>
+    <div class="flex flex-col items-center gap-4 border-l border-white/10 pl-3">
+      <a href="#home" data-target="home" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">01 / HOME</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+      <a href="#gallery" data-target="gallery" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">02 / GALLERY</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+      <a href="#blog" data-target="blog" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">03 / BLOG</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+      <a href="#services" data-target="services" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">04 / SERVICES</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+      <a href="#products" data-target="products" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">05 / PRODUCTS</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+      <a href="#contact" data-target="contact" class="side-indicator group flex items-center gap-3 cursor-pointer py-1">
+        <span class="text-[10px] font-syne opacity-30 group-hover:opacity-100 transition-opacity">06 / CONTACT</span>
+        <span class="w-2 h-2 rounded-full border border-white/30 group-[.active]:bg-bronze group-[.active]:border-bronze transition-all"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Minimal Page Navigation Header -->
+  <header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-12 py-6 z-50">
+    <div class="flex items-center gap-3">
+      <!-- Tactile Branding Tag -->
+      <a href="#home" class="font-syne text-sm font-semibold tracking-[0.3em] uppercase transition-opacity hover:opacity-80">
+        A. BERGER <span class="text-xs font-light text-bronze/80 ml-1">/ STUDIO</span>
+      </a>
+    </div>
+
+    <!-- Minimal Page Bar -->
+    <nav class="hidden lg:flex items-center gap-1 bg-black/45 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/10">
+      <a href="#home" data-target="home" class="nav-btn analog-btn active text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">HOME</a>
+      <a href="#gallery" data-target="gallery" class="nav-btn analog-btn text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">GALLERY</a>
+      <a href="#blog" data-target="blog" class="nav-btn analog-btn text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">BLOG</a>
+      <a href="#services" data-target="services" class="nav-btn analog-btn text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">SERVICES</a>
+      <a href="#products" data-target="products" class="nav-btn analog-btn text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">PRODUCTS</a>
+      <a href="#contact" data-target="contact" class="nav-btn analog-btn text-[11px] font-syne font-medium tracking-widest uppercase px-4 py-2 rounded-full text-white/70 hover:text-white">CONTACT</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Tactile style) -->
+    <button id="mobileMenuToggle" class="lg:hidden p-3 border border-white/10 rounded-lg bg-black/30 backdrop-blur-sm active:scale-95 transition-all text-creme relative" aria-label="Toggle menu">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-ink/95 backdrop-blur-lg flex flex-col justify-center items-center gap-6 transition-all duration-500 transform translate-y-full opacity-0 lg:hidden">
+    <button id="mobileMenuClose" class="absolute top-6 right-6 p-3 border border-white/10 rounded-lg active:scale-95 transition-all text-creme/60 hover:text-creme" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <a href="#home" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">HOME</a>
+    <a href="#gallery" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">GALLERY</a>
+    <a href="#blog" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">BLOG</a>
+    <a href="#services" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">SERVICES</a>
+    <a href="#products" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">PRODUCTS</a>
+    <a href="#contact" class="mobile-nav-link text-2xl font-syne tracking-widest text-white/60 hover:text-white transition-all">CONTACT</a>
+  </div>
+
+  <!-- Scroll-Snapping Stage Container -->
+  <main id="scrollContainer" class="snap-container relative z-10 w-full">
+
+    <!-- 01 / HOME SECTION -->
+    <section id="home" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12 hero-glow">
+      <div class="max-w-4xl w-full text-center flex flex-col items-center justify-center anim-scene-init select-none mt-12">
+        
+        <!-- Header Animatic text -->
+        <div class="overflow-hidden mb-3">
+          <p id="creativeSubtitle" class="text-xs md:text-sm tracking-[0.45em] uppercase font-syne text-bronze transition-all duration-1000 transform translate-y-full opacity-0">
+            A Diverse Creative
+          </p>
+        </div>
+
+        <div class="overflow-hidden mb-8">
+          <h1 id="creativeName" class="text-4xl sm:text-6xl md:text-7xl font-light tracking-[0.25em] font-serif uppercase transition-all duration-1000 transform translate-y-full">
+            Angel Berger
+          </h1>
+        </div>
+
+        <!-- Wide Interactive Hero Frame -->
+        <div class="group relative w-full h-[45vh] max-h-[460px] min-h-[280px] overflow-hidden rounded-xl border border-white/10 shadow-2xl transition-all duration-1000 ease-out cursor-crosshair">
+          <!-- Vignette Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 z-10 pointer-events-none transition-opacity duration-1000 group-hover:opacity-40"></div>
+          
+          <!-- Core Image system: rest slightly blurred, partially grayscale -> warm and detailed on hover with parallax -->
+          <img 
+            id="heroImage"
+            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1500" 
+            alt="Angel Berger Atelier Studio" 
+            class="absolute inset-0 w-full h-full object-cover filter grayscale sepia-[15%] blur-[1.5px] contrast-[95%] scale-105 transition-all duration-[1200ms] ease-out group-hover:scale-100 group-hover:filter-none group-hover:blur-0"
+          />
+
+          <!-- Live Ambient Atelier Label -->
+          <div class="absolute top-6 left-6 z-20 flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full bg-black/45 backdrop-blur-md text-[9px] font-syne tracking-widest uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            ATELIER CAMERA 01
+          </div>
+
+          <!-- Bottom Text Details Revealed on Hover -->
+          <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 z-20 flex flex-col md:flex-row md:items-end justify-between gap-4 text-left transition-all duration-700">
+            <div class="transform group-hover:translate-x-2 transition-transform duration-700">
+              <span class="text-xs font-syne text-bronze uppercase tracking-[0.2em] block mb-1">Visual Curation</span>
+              <h2 class="text-2xl md:text-3xl font-serif text-white font-medium tracking-wider">A. BERGER ARCHIVE</h2>
+            </div>
+            <div class="text-xs text-white/40 group-hover:text-white/80 font-mono transition-colors duration-700 text-left md:text-right max-w-xs leading-relaxed">
+              [LAT 44.4° N / LON 11.3° E] — A tactile studio capturing organic physical narratives, quiet lighting curation, and spatial sculpture.
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator hint -->
+        <div class="mt-8 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 cursor-pointer" onclick="scrollToSection('gallery')">
+          <span class="text-[10px] tracking-[0.3em] uppercase font-syne">Descend Portfolio</span>
+          <svg class="w-4 h-4 animate-bounce text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 02 / GALLERY SECTION -->
+    <section id="gallery" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12 bg-black/20">
+      <div class="max-w-4xl w-full flex flex-col justify-center anim-scene-init">
+        
+        <!-- Header -->
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-xs font-syne text-bronze uppercase tracking-[0.3em]">Exhibition</span>
+          <h2 class="text-3xl font-serif font-light tracking-widest mt-1">VISUAL SELECTIONS</h2>
+        </div>
+
+        <!-- Polaroid Tiles Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          
+          <!-- Polaroid Tile 1 -->
+          <div onclick="openPolaroid('clay', 'TERRACOTTA VESSEL C-01', 'Sculpture & Tactile study', 'Crafted by hand, focusing on negative spatial balance and the natural matte texture of Siena raw earth terracotta clay. Created in the spring atelier.', 'https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80')" 
+               class="group bg-creme p-3 pb-8 md:p-4 md:pb-12 shadow-xl border border-[#e2dfd9] rotate-[-2deg] hover:rotate-0 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 cursor-pointer">
+            <div class="relative w-full aspect-square bg-[#eceae5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=600&q=80" alt="Clay Vessel" class="w-full h-full object-cover filter contrast-[95%] brightness-[98%]" />
+            </div>
+            <div class="mt-3 text-center">
+              <span class="font-signature text-ink text-lg leading-none md:text-xl block">terracotta study</span>
+            </div>
+          </div>
+
+          <!-- Polaroid Tile 2 -->
+          <div onclick="openPolaroid('space', 'ATELIER CHAIR SELECTION', 'Spatial furniture design', 'A dialogue between bent structural tubing and warm saddle-grade hide. Positioned to observe shadow path migration throughout daylight hours.', 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80')" 
+               class="group bg-creme p-3 pb-8 md:p-4 md:pb-12 shadow-xl border border-[#e2dfd9] rotate-[1.5deg] hover:rotate-0 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 cursor-pointer">
+            <div class="relative w-full aspect-square bg-[#eceae5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=600&q=80" alt="Chair" class="w-full h-full object-cover filter contrast-[95%] brightness-[98%]" />
+            </div>
+            <div class="mt-3 text-center">
+              <span class="font-signature text-ink text-lg leading-none md:text-xl block">interior curve</span>
+            </div>
+          </div>
+
+          <!-- Polaroid Tile 3 -->
+          <div onclick="openPolaroid('light', 'SHADOW PLAY III', 'Curation & Lighting study', 'An exploration of soft afternoon high-contrast beams slicing through architecture. Captured on archival film medium.', 'https://images.unsplash.com/photo-1507643179773-3e9b74000224?auto=format&fit=crop&w=800&q=80')" 
+               class="group bg-creme p-3 pb-8 md:p-4 md:pb-12 shadow-xl border border-[#e2dfd9] rotate-[-1deg] hover:rotate-0 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 cursor-pointer">
+            <div class="relative w-full aspect-square bg-[#eceae5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507643179773-3e9b74000224?auto=format&fit=crop&w=600&q=80" alt="Light Study" class="w-full h-full object-cover filter contrast-[95%] brightness-[98%]" />
+            </div>
+            <div class="mt-3 text-center">
+              <span class="font-signature text-ink text-lg leading-none md:text-xl block">shadow play</span>
+            </div>
+          </div>
+
+          <!-- Polaroid Tile 4 -->
+          <div onclick="openPolaroid('fabric', 'ORGANIC WEAVE STUDY', 'Tactile materiality', 'Macro study focusing on the raw imperfections of unprocessed unbleached linen fabric against hand-woven wool. Material curation sample.', 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80')" 
+               class="group bg-creme p-3 pb-8 md:p-4 md:pb-12 shadow-xl border border-[#e2dfd9] rotate-[2.5deg] hover:rotate-0 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 cursor-pointer">
+            <div class="relative w-full aspect-square bg-[#eceae5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Linen Weave" class="w-full h-full object-cover filter contrast-[95%] brightness-[98%]" />
+            </div>
+            <div class="mt-3 text-center">
+              <span class="font-signature text-ink text-lg leading-none md:text-xl block">tactile linen</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-xs text-white/40 italic mt-8 text-center">[Click individual prints to inspect tactile archive files]</p>
+      </div>
+    </section>
+
+    <!-- 03 / BLOG SECTION -->
+    <section id="blog" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12">
+      <div class="max-w-4xl w-full flex flex-col justify-center anim-scene-init">
+        
+        <!-- Header -->
+        <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-2">
+          <div>
+            <span class="text-xs font-syne text-bronze uppercase tracking-[0.3em]">Thoughts & Notes</span>
+            <h2 class="text-3xl font-serif font-light tracking-widest mt-1">EDITORIAL JOURNAL</h2>
+          </div>
+          <p class="text-xs text-white/50 font-mono tracking-wider">ENTRIES — ISSUE III</p>
+        </div>
+
+        <!-- Editorial Journal List Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Article 1 -->
+          <article class="group relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/45 hover:bg-white/[0.05] transition-all duration-300 flex flex-col">
+            <div class="h-44 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Space" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[9px] font-syne tracking-widest text-bronze uppercase">
+                SPATIAL CONCEPT
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-white/40 block mb-2">OCTOBER 14, 2026</span>
+                <h3 class="text-lg font-syne font-medium tracking-wide leading-snug group-hover:text-bronze transition-colors">
+                  The Architecture of Sacred Quietness
+                </h3>
+                <p class="text-xs text-white/60 line-clamp-2 leading-relaxed mt-2 font-light">
+                  An inquiry into structures that prioritize tactile rest over decorative clutter. Analyzing silence as a construction material.
+                </p>
+              </div>
+              <button onclick="readArticle('quietness')" class="mt-4 inline-flex items-center gap-2 text-xs font-syne tracking-wider text-bronze hover:text-white transition-colors">
+                READ LOG ENTRY <span class="font-sans">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="group relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/45 hover:bg-white/[0.05] transition-all duration-300 flex flex-col">
+            <div class="h-44 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Linen Curation" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[9px] font-syne tracking-widest text-bronze uppercase">
+                CURATION
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-white/40 block mb-2">SEPTEMBER 28, 2025</span>
+                <h3 class="text-lg font-syne font-medium tracking-wide leading-snug group-hover:text-bronze transition-colors">
+                  Organic Textures & Curation Rituals
+                </h3>
+                <p class="text-xs text-white/60 line-clamp-2 leading-relaxed mt-2 font-light">
+                  How pairing coarse, hand-built stoneware with pristine modern glass creates an emotional tension within living archives.
+                </p>
+              </div>
+              <button onclick="readArticle('textures')" class="mt-4 inline-flex items-center gap-2 text-xs font-syne tracking-wider text-bronze hover:text-white transition-colors">
+                READ LOG ENTRY <span class="font-sans">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="group relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/45 hover:bg-white/[0.05] transition-all duration-300 flex flex-col">
+            <div class="h-44 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Shadow studio" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[9px] font-syne tracking-widest text-bronze uppercase">
+                PHOTOGRAPHY
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-white/40 block mb-2">AUGUST 03, 2025</span>
+                <h3 class="text-lg font-syne font-medium tracking-wide leading-snug group-hover:text-bronze transition-colors">
+                  A Study in Ambient Dust Motess
+                </h3>
+                <p class="text-xs text-white/60 line-clamp-2 leading-relaxed mt-2 font-light">
+                  Capturing fleeting moments where warm rays ignite suspended microscopic textures. A love letter to slow analog focal play.
+                </p>
+              </div>
+              <button onclick="readArticle('light')" class="mt-4 inline-flex items-center gap-2 text-xs font-syne tracking-wider text-bronze hover:text-white transition-colors">
+                READ LOG ENTRY <span class="font-sans">→</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / SERVICES SECTION -->
+    <section id="services" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12 bg-black/20">
+      <div class="max-w-4xl w-full flex flex-col justify-center anim-scene-init">
+        
+        <!-- Header -->
+        <div class="mb-10 text-center">
+          <span class="text-xs font-syne text-bronze uppercase tracking-[0.3em]">Capabilities & Engagement</span>
+          <h2 class="text-3xl font-serif font-light tracking-widest mt-1">CREATIVE DISCIPLINES</h2>
+        </div>
+
+        <!-- Tactile Capabilities Modules -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Service 1 -->
+          <div class="group relative p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-bronze/50 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between min-h-[250px] cursor-pointer" onclick="toggleService('direction')">
+            <div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs font-mono text-bronze">DISCIPLINE 01</span>
+                <!-- Abstract Blueprint Circle Icon -->
+                <svg class="w-8 h-8 text-white/20 group-hover:text-bronze group-hover:rotate-45 transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 3v18m9-9H3m12-9a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-syne tracking-wide font-medium mb-3">Creative Art Direction</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-light">
+                Sculpting cohesive visual philosophies across photo campaigns, editorial books, and tangible campaigns. Championing physical imperfection.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-syne text-white/40">VIEW SPECS</span>
+              <span class="text-xs text-bronze group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="group relative p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-bronze/50 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between min-h-[250px] cursor-pointer" onclick="toggleService('spatial')">
+            <div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs font-mono text-bronze">DISCIPLINE 02</span>
+                <!-- Abstract Architectural Blueprint Line -->
+                <svg class="w-8 h-8 text-white/20 group-hover:text-bronze group-hover:rotate-90 transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 4h16v16H4V4zm4 4h8v8H8V8z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-syne tracking-wide font-medium mb-3">Spatial Concept Curation</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-light">
+                Formulating organic layouts for galleries, ateliers, and quiet residential spaces. Deep collaboration on material grain & natural illumination.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-syne text-white/40">VIEW SPECS</span>
+              <span class="text-xs text-bronze group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="group relative p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-bronze/50 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between min-h-[250px] cursor-pointer" onclick="toggleService('archeology')">
+            <div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs font-mono text-bronze">DISCIPLINE 03</span>
+                <!-- Abstract Geometric Triangle -->
+                <svg class="w-8 h-8 text-white/20 group-hover:text-bronze group-hover:-scale-x-100 transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 3L2 21h20L12 3z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-syne tracking-wide font-medium mb-3">Tactile Brand Archeology</h3>
+              <p class="text-xs text-white/60 leading-relaxed font-light">
+                Uncovering authentic material histories to formulate brand packaging, typography weight, and physical collateral designed to age gracefully.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-syne text-white/40">VIEW SPECS</span>
+              <span class="text-xs text-bronze group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / PRODUCTS SECTION -->
+    <section id="products" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12">
+      <div class="max-w-4xl w-full flex flex-col justify-center anim-scene-init">
+        
+        <!-- Header -->
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-xs font-syne text-bronze uppercase tracking-[0.3em]">Tangible Editions</span>
+          <h2 class="text-3xl font-serif font-light tracking-widest mt-1">STUDIO OBJECTS</h2>
+        </div>
+
+        <!-- Product Cards Showcase -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Product Item 1 -->
+          <div class="group bg-white/[0.02] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/30 transition-all duration-300">
+            <div class="aspect-square w-full bg-[#1c1824] overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80" alt="Sconce Light" class="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700" />
+              <div class="absolute top-3 right-3 px-2 py-1 bg-black/75 backdrop-blur-sm rounded text-[9px] font-mono tracking-widest text-bronze">
+                LTD ED. 15
+              </div>
+            </div>
+            <div class="p-5">
+              <span class="text-[9px] font-syne tracking-[0.2em] text-bronze uppercase">Brass Curation</span>
+              <h3 class="text-lg font-syne tracking-wide font-medium mt-1">No. 1 Ambient Wall Sconce</h3>
+              <p class="text-xs text-white/50 font-light mt-2 leading-relaxed">Solid unlacquered raw brass, machined with micro-tolerances. Designed to tarnish beautifully alongside atmospheric moisture.</p>
+              <div class="mt-5 flex items-center justify-between pt-4 border-t border-white/10">
+                <span class="font-mono text-sm text-bronze">$340</span>
+                <button onclick="requestPurchase('No. 1 Ambient Wall Sconce')" class="analog-btn text-[10px] font-syne tracking-widest uppercase px-4 py-2 rounded border border-white/25 text-white bg-transparent">
+                  ACQUIRE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Item 2 -->
+          <div class="group bg-white/[0.02] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/30 transition-all duration-300">
+            <div class="aspect-square w-full bg-[#1c1824] overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=600&q=80" alt="Clay Vessel C" class="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700" />
+              <div class="absolute top-3 right-3 px-2 py-1 bg-black/75 backdrop-blur-sm rounded text-[9px] font-mono tracking-widest text-bronze">
+                UNIQUE PIECE
+              </div>
+            </div>
+            <div class="p-5">
+              <span class="text-[9px] font-syne tracking-[0.2em] text-bronze uppercase">Siena Earth</span>
+              <h3 class="text-lg font-syne tracking-wide font-medium mt-1">Stoneware Vessel C-01</h3>
+              <p class="text-xs text-white/50 font-light mt-2 leading-relaxed">Hand-built ceramic vessel. Textured organic fire grain markings. Accompanied by a signed certification card.</p>
+              <div class="mt-5 flex items-center justify-between pt-4 border-t border-white/10">
+                <span class="font-mono text-sm text-bronze">$490</span>
+                <button onclick="requestPurchase('Stoneware Vessel C-01')" class="analog-btn text-[10px] font-syne tracking-widest uppercase px-4 py-2 rounded border border-white/25 text-white bg-transparent">
+                  ACQUIRE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Item 3 -->
+          <div class="group bg-white/[0.02] border border-white/10 rounded-xl overflow-hidden hover:border-bronze/30 transition-all duration-300">
+            <div class="aspect-square w-full bg-[#1c1824] overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80" alt="Print Studio Archive" class="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700" />
+              <div class="absolute top-3 right-3 px-2 py-1 bg-black/75 backdrop-blur-sm rounded text-[9px] font-mono tracking-widest text-bronze">
+                OPEN EDITION
+              </div>
+            </div>
+            <div class="p-5">
+              <span class="text-[9px] font-syne tracking-[0.2em] text-bronze uppercase">Studio Print</span>
+              <h3 class="text-lg font-syne tracking-wide font-medium mt-1">Creative Curation Catalog</h3>
+              <p class="text-xs text-white/50 font-light mt-2 leading-relaxed">Raw edge lay-flat catalog featuring high-fidelity plates of tactical designs, poetry selections, and spatial blue prints.</p>
+              <div class="mt-5 flex items-center justify-between pt-4 border-t border-white/10">
+                <span class="font-mono text-sm text-bronze">$45</span>
+                <button onclick="requestPurchase('Creative Curation Catalog')" class="analog-btn text-[10px] font-syne tracking-widest uppercase px-4 py-2 rounded border border-white/25 text-white bg-transparent">
+                  ACQUIRE
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / CONTACT SECTION -->
+    <section id="contact" class="snap-section w-full h-screen flex flex-col justify-center items-center px-4 md:px-12 bg-black/20">
+      <div class="max-w-xl w-full flex flex-col justify-center anim-scene-init relative z-10">
+        
+        <!-- Header -->
+        <div class="mb-8 text-center">
+          <span class="text-xs font-syne text-bronze uppercase tracking-[0.3em]">Communication Portal</span>
+          <h2 class="text-3xl font-serif font-light tracking-widest mt-1">INITIATE COLLABORATION</h2>
+          <p class="text-xs text-white/40 font-mono mt-2">[EST. REPLIES WITHIN 48 HOURS]</p>
+        </div>
+
+        <!-- Glass-like Form Panel -->
+        <div class="bg-white/[0.02] border border-white/10 p-6 md:p-8 rounded-2xl backdrop-blur-xl shadow-2xl relative">
+          
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-[10px] font-syne tracking-widest uppercase text-bronze mb-1">PROSPECT / IDENTITY</label>
+              <input 
+                type="text" 
+                required 
+                placeholder="YOUR NAME" 
+                class="w-full bg-black/30 border border-white/10 focus:border-bronze/50 focus:ring-0 rounded-lg px-4 py-2.5 text-xs tracking-wider text-white placeholder-white/30 focus:outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label class="block text-[10px] font-syne tracking-widest uppercase text-bronze mb-1">DIGITAL COURIER / EMAIL</label>
+              <input 
+                type="email" 
+                required 
+                placeholder="ADDRESS@COMPANY.COM" 
+                class="w-full bg-black/30 border border-white/10 focus:border-bronze/50 focus:ring-0 rounded-lg px-4 py-2.5 text-xs tracking-wider text-white placeholder-white/30 focus:outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label class="block text-[10px] font-syne tracking-widest uppercase text-bronze mb-1">DISCIPLINE OF INTEREST</label>
+              <select class="w-full bg-black/30 border border-white/10 focus:border-bronze/50 focus:ring-0 rounded-lg px-3 py-2.5 text-xs tracking-wider text-white focus:outline-none transition-all cursor-pointer">
+                <option value="direction" class="bg-ink">CREATIVE ART DIRECTION</option>
+                <option value="spatial" class="bg-ink">SPATIAL CONCEPT CURATION</option>
+                <option value="archeology" class="bg-ink">TACTILE BRAND ARCHEOLOGY</option>
+                <option value="product" class="bg-ink">PRODUCT ACQUISITION</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[10px] font-syne tracking-widest uppercase text-bronze mb-1">PROJECT SCOPE NARRATIVE</label>
+              <textarea 
+                required 
+                rows="3" 
+                placeholder="TELL ME ABOUT YOUR VISUAL ASPIRATIONS..." 
+                class="w-full bg-black/30 border border-white/10 focus:border-bronze/50 focus:ring-0 rounded-lg px-4 py-2.5 text-xs tracking-wider text-white placeholder-white/30 focus:outline-none transition-all resize-none"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 mt-2 rounded-lg bg-white/10 hover:bg-white/20 active:scale-[0.98] text-xs font-syne tracking-[0.25em] text-white border border-white/20 transition-all font-semibold uppercase flex justify-center items-center gap-2 shadow-inner">
+              DISPATCH SIGNAL
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+            </button>
+          </form>
+
+        </div>
+
+        <!-- Social Connections & Aesthetic Footing -->
+        <div class="mt-8 flex justify-between items-center px-4 text-xs text-white/40">
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-bronze transition-colors">INSTAGRAM</a>
+            <span>/</span>
+            <a href="#" class="hover:text-bronze transition-colors">PINTEREST</a>
+            <span>/</span>
+            <a href="#" class="hover:text-bronze transition-colors">READYMAG</a>
+          </div>
+          <p class="font-mono text-[9px] tracking-widest">© 2026 A. BERGER</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODALS & LIGHTBOXES ==================== -->
+
+  <!-- Polaroid Zoom Modal -->
+  <div id="polaroidModal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] hidden flex-col justify-center items-center p-4">
+    <div class="max-w-md w-full relative group">
+      <!-- Polaroid Framing Paper Card -->
+      <div class="bg-creme p-5 pb-16 shadow-2xl border border-[#e2dfd9] rounded-sm transform rotate-1 scale-95 opacity-0 transition-all duration-500 flex flex-col" id="polaroidCard">
+        <div class="relative w-full aspect-square bg-[#eceae5] overflow-hidden rounded-xs">
+          <img id="polaroidZoomImg" src="" alt="Exploration Target" class="w-full h-full object-cover filter contrast-[98%] brightness-[96%]" />
+        </div>
+        
+        <!-- Handwriting text detail -->
+        <div class="mt-4 text-center">
+          <p id="polaroidCaption" class="font-signature text-ink text-2xl tracking-wide">Vessel Study</p>
+        </div>
+
+        <!-- Bottom detailed context details -->
+        <div class="mt-4 border-t border-[#e2dfd9] pt-3 px-1 text-left text-[11px] text-ink/75 font-sans leading-relaxed">
+          <p id="polaroidCategory" class="font-syne font-semibold tracking-wider text-bronze uppercase mb-1">LIGHT STUDY</p>
+          <p id="polaroidText" class="font-light">Uncovering light reflections in the early morning corner.</p>
+        </div>
+      </div>
+
+      <!-- Close controls outside -->
+      <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <button onclick="closePolaroid()" class="analog-btn flex items-center gap-2 text-xs font-syne tracking-[0.2em] uppercase text-white bg-black/50 border border-white/20 px-6 py-2.5 rounded-full backdrop-blur-sm">
+          [X] RETURN TO ARCHIVE
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Blog Entry Modal -->
+  <div id="blogModal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] hidden flex-col justify-center items-center p-4">
+    <div class="max-w-xl w-full bg-[#110f17] border border-white/10 rounded-2xl overflow-hidden p-6 md:p-8 relative transform scale-95 opacity-0 transition-all duration-500" id="blogContent">
+      <span id="blogModalCategory" class="text-xs font-syne text-bronze uppercase tracking-widest">SPATIAL CONCEPT</span>
+      <h3 id="blogModalTitle" class="text-2xl md:text-3xl font-serif font-light tracking-wide mt-2">The Architecture of Silence</h3>
+      <p id="blogModalDate" class="text-[10px] font-mono text-white/30 mt-1 mb-6 uppercase">OCTOBER 14, 2026 — BY ANGEL BERGER</p>
+      
+      <div class="h-44 w-full rounded-xl overflow-hidden mb-6 relative">
+        <img id="blogModalImg" src="" class="w-full h-full object-cover filter brightness-90" alt="Journal landscape" />
+      </div>
+
+      <div id="blogModalText" class="text-xs md:text-sm text-white/80 leading-relaxed space-y-4 max-h-[220px] overflow-y-auto pr-2 font-light">
+        <!-- Dyn contents -->
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-white/10 flex justify-end">
+        <button onclick="closeBlogModal()" class="analog-btn text-xs font-syne tracking-widest uppercase px-5 py-2.5 rounded border border-white/20 text-white">
+          CLOSE ENTRY
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Specs Dialog -->
+  <div id="serviceModal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] hidden flex-col justify-center items-center p-4">
+    <div class="max-w-md w-full bg-[#110f17] border border-white/10 rounded-2xl p-6 relative transform scale-95 opacity-0 transition-all duration-500" id="serviceContent">
+      <div class="flex justify-between items-center mb-6">
+        <span id="serviceModalLabel" class="text-xs font-mono text-bronze">SPECIFICATION</span>
+        <button onclick="closeServiceModal()" class="text-white/40 hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      
+      <h3 id="serviceModalTitle" class="text-2xl font-syne font-medium tracking-wide text-white mb-2">Service Spec Title</h3>
+      <p id="serviceModalDesc" class="text-xs text-white/60 mb-6 font-light leading-relaxed">Service subtitle description goes here.</p>
+      
+      <div class="space-y-4">
+        <h4 class="text-[10px] font-syne tracking-[0.2em] text-bronze uppercase font-bold border-b border-white/10 pb-1">ENGAGEMENT PHASES</h4>
+        <div id="serviceModalPhases" class="text-xs space-y-3 font-mono">
+          <!-- Dynamic phases -->
+        </div>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-white/10 flex justify-end">
+        <button onclick="closeServiceModal()" class="analog-btn text-xs font-syne tracking-widest uppercase px-5 py-2.5 rounded border border-white/20 text-white">
+          CONFIRM DETAILS
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Purchase Contact Trigger Confirmation Toast -->
+  <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-creme text-ink border border-white/20 px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 z-[200] transform translate-y-20 opacity-0 transition-all duration-500">
+    <div class="w-2 h-2 rounded-full bg-bronze animate-ping"></div>
+    <div>
+      <p id="toastTitle" class="text-xs font-syne tracking-widest uppercase font-bold text-ink">PURCHASE SIGNAL REGISTERED</p>
+      <p id="toastDesc" class="text-[10px] text-ink/70 font-sans mt-0.5">I will correspond via your registered address within 24 hours.</p>
+    </div>
+  </div>
+
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Star Background System
+    const canvas = document.getElementById('starsCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let stars = [];
+    const starsCount = 45;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    }
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < starsCount; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.3,
+          alpha: Math.random() * 0.8 + 0.2,
+          speed: Math.random() * 0.05 + 0.02,
+          flickerSpeed: Math.random() * 0.02 + 0.005,
+          flickerDir: Math.random() > 0.5 ? 1 : -1
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      stars.forEach(star => {
+        // Move stars horizontally and gently drift downwards
+        star.x -= star.speed;
+        star.y += star.speed * 0.3;
+        
+        // Flicker intensity animation
+        star.alpha += star.flickerSpeed * star.flickerDir;
+        if (star.alpha >= 1) {
+          star.alpha = 1;
+          star.flickerDir = -1;
+        } else if (star.alpha <= 0.2) {
+          star.alpha = 0.2;
+          star.flickerDir = 1;
+        }
+
+        // Reset positions gracefully when they leave boundary frames
+        if (star.x < 0) star.x = canvas.width;
+        if (star.y > canvas.height) star.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(253, 251, 247, ${star.alpha})`; // Warm white star glow
+        ctx.fill();
+      });
+
+      requestAnimationFrame(drawStars);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      drawStars();
+      triggerEntranceAnimation();
+    });
+
+    // Animate Landing Page Scenes (Establish, Reveal, Resolve)
+    function triggerEntranceAnimation() {
+      setTimeout(() => {
+        const subtitle = document.getElementById('creativeSubtitle');
+        subtitle.classList.remove('translate-y-full', 'opacity-0');
+        subtitle.classList.add('translate-y-0', 'opacity-100');
+      }, 350);
+
+      setTimeout(() => {
+        const nameEl = document.getElementById('creativeName');
+        nameEl.classList.remove('translate-y-full');
+        nameEl.classList.add('translate-y-0');
+      }, 700);
+
+      // Make initial sections visible
+      const sections = document.querySelectorAll('.anim-scene-init');
+      sections.forEach(sec => {
+        sec.parentElement.classList.add('visible');
+      });
+    }
+
+    // Scroll Observer for Side Scale & Minimal Top Bar Toggle Updates
+    const scrollContainer = document.getElementById('scrollContainer');
+    const sections = document.querySelectorAll('section');
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const sideIndicators = document.querySelectorAll('.side-indicator');
+
+    const observerOptions = {
+      root: scrollContainer,
+      threshold: 0.45,
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const activeId = entry.target.id;
+          
+          // Animate section items as scroll reveals
+          entry.target.classList.add('visible');
+          const sceneInitEl = entry.target.querySelector('.anim-scene-init');
+          if (sceneInitEl) {
+            sceneInitEl.style.opacity = '1';
+            sceneInitEl.style.transform = 'translateY(0)';
+          }
+
+          // Update minimal top navigation buttons
+          navButtons.forEach(btn => {
+            if (btn.getAttribute('data-target') === activeId) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+
+          // Update side dial indicators
+          sideIndicators.forEach(indicator => {
+            if (indicator.getAttribute('data-target') === activeId) {
+              indicator.classList.add('active');
+            } else {
+              indicator.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+
+    // Smooth scroll snap actions helper
+    function scrollToSection(targetId) {
+      const targetSec = document.getElementById(targetId);
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Connect top level links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+        
+        // Hide mobile menu on link select
+        document.getElementById('mobileMenu').classList.add('translate-y-full', 'opacity-0');
+      });
+    });
+
+    // Mobile Menu Toggling
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-y-full', 'opacity-0');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-y-full', 'opacity-0');
+    });
+
+
+    // ==================== GALLEY LIGHTBOX CONTROLLER ====================
+    const polaroidModal = document.getElementById('polaroidModal');
+    const polaroidCard = document.getElementById('polaroidCard');
+    const polaroidZoomImg = document.getElementById('polaroidZoomImg');
+    const polaroidCaption = document.getElementById('polaroidCaption');
+    const polaroidCategory = document.getElementById('polaroidCategory');
+    const polaroidText = document.getElementById('polaroidText');
+
+    function openPolaroid(id, title, category, description, imageUrl) {
+      polaroidZoomImg.src = imageUrl;
+      polaroidCaption.textContent = title.toLowerCase();
+      polaroidCategory.textContent = category;
+      polaroidText.textContent = description;
+
+      polaroidModal.classList.remove('hidden');
+      polaroidModal.classList.add('flex');
+
+      setTimeout(() => {
+        polaroidCard.classList.remove('scale-95', 'opacity-0');
+        polaroidCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function closePolaroid() {
+      polaroidCard.classList.remove('scale-100', 'opacity-100');
+      polaroidCard.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        polaroidModal.classList.add('hidden');
+        polaroidModal.classList.remove('flex');
+      }, 300);
+    }
+
+
+    // ==================== BLOG MODAL CONTROLLER ====================
+    const blogModal = document.getElementById('blogModal');
+    const blogContent = document.getElementById('blogContent');
+    const blogModalImg = document.getElementById('blogModalImg');
+    const blogModalCategory = document.getElementById('blogModalCategory');
+    const blogModalTitle = document.getElementById('blogModalTitle');
+    const blogModalDate = document.getElementById('blogModalDate');
+    const blogModalText = document.getElementById('blogModalText');
+
+    const articlesData = {
+      quietness: {
+        category: 'SPATIAL CONCEPT',
+        title: 'The Architecture of Sacred Quietness',
+        date: 'OCTOBER 14, 2026 — BY ANGEL BERGER',
+        img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+        text: `
+          <p>Silence is more than a simple absence of sound. It is a presence that must be crafted thoughtfully. To build spaces of authentic quietness requires a dedication to local materiality and intentional spatial pausing points.</p>
+          <p>In my recent spatial exploration, I focused on textured, unfinished surfaces like raw lime wash, hand-cut stone, and unbleached cedar beams. These materials absorb echoes, soft-focus incoming rays, and construct deep visceral boundaries against urban speedways.</p>
+          <p>By eliminating high-frequency reflective metal trims and focusing on continuous deep recessed wall angles, we discover that the natural path of light bends gracefully, creating meditative shadow pools that stabilize our focus.</p>
+        `
+      },
+      textures: {
+        category: 'CURATION',
+        title: 'Organic Textures & Curation Rituals',
+        date: 'SEPTEMBER 28, 2025 — BY ANGEL BERGER',
+        img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+        text: `
+          <p>The core tension of any curated object grouping lies in structural contrast. A pristine hand-blown glass carafe placed alongside a cracked raw siena clay vessel creates an instantly compelling tactile story.</p>
+          <p>We see the human story in the rough, uneven clay surface, while the smooth transparent glass displays pure geometric math. The physical proximity of both elements elevates the story of each.</p>
+          <p>When designing material experiences for brands, we strive to construct physical collateral that holds this narrative tension—combining precise modern typography grids with hand-torn raw cotton card stock.</p>
+        `
+      },
+      light: {
+        category: 'PHOTOGRAPHY',
+        title: 'A Study in Ambient Dust Motess',
+        date: 'AUGUST 03, 2025 — BY ANGEL BERGER',
+        img: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+        text: `
+          <p>There exists a brief interval at 4:30 PM where the angle of sunbeams creates an atmospheric sculpture. When captured with slow analog film, individual floating dust particles act as micro-prisms of light.</p>
+          <p>This series captures the quiet stillness of unoccupied spaces, recording how passing beams paint shifting patterns onto physical boundaries over hours.</p>
+          <p>By using manual focal depths, we allow specific structural parts to softly feather into warm blurs, prioritizing atmosphere over clinical detail.</p>
+        `
+      }
+    };
+
+    function readArticle(id) {
+      const data = articlesData[id];
+      if (!data) return;
+
+      blogModalCategory.textContent = data.category;
+      blogModalTitle.textContent = data.title;
+      blogModalDate.textContent = data.date;
+      blogModalImg.src = data.img;
+      blogModalText.innerHTML = data.text;
+
+      blogModal.classList.remove('hidden');
+      blogModal.classList.add('flex');
+
+      setTimeout(() => {
+        blogContent.classList.remove('scale-95', 'opacity-0');
+        blogContent.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function closeBlogModal() {
+      blogContent.classList.remove('scale-100', 'opacity-100');
+      blogContent.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        blogModal.classList.add('hidden');
+        blogModal.classList.remove('flex');
+      }, 300);
+    }
+
+
+    // ==================== SERVICES SPECS CONTROLLER ====================
+    const serviceModal = document.getElementById('serviceModal');
+    const serviceContent = document.getElementById('serviceContent');
+    const serviceModalTitle = document.getElementById('serviceModalTitle');
+    const serviceModalDesc = document.getElementById('serviceModalDesc');
+    const serviceModalPhases = document.getElementById('serviceModalPhases');
+
+    const serviceSpecs = {
+      direction: {
+        title: 'Creative Art Direction',
+        desc: 'Forging holistic tactile visual philosophies for publications, campaigns, and exhibitions.',
+        phases: [
+          'Phase 01: Visual Archeology & Mood Board Formulation',
+          'Phase 02: Material Curation & Color Spectrum Selection',
+          'Phase 03: On-site Direction & Lighting Choreography',
+          'Phase 04: Print Plates Calibration & Final Polish'
+        ]
+      },
+      spatial: {
+        title: 'Spatial Concept Curation',
+        desc: 'Interiors, furniture layout, and residential meditations prioritizing sacred quietness.',
+        phases: [
+          'Phase 01: Spatial Geometry & Flow Assessment',
+          'Phase 02: Ambient Lighting Mapping & Ray Analysis',
+          'Phase 03: Furniture Sculpture Curation & Sourcing',
+          'Phase 04: Tactile Styling & Placement Audit'
+        ]
+      },
+      archeology: {
+        title: 'Tactile Brand Archeology',
+        desc: 'Formulating physical products and packaging structures designed to capture genuine heritage.',
+        phases: [
+          'Phase 01: Historical Context & Craft Assessment',
+          'Phase 02: Raw Material Sourcing & Weight Audits',
+          'Phase 03: Custom Diecut & Analog Stamp Prototyping',
+          'Phase 04: Fine-grain Print Implementation'
+        ]
+      }
+    };
+
+    function toggleService(id) {
+      const spec = serviceSpecs[id];
+      if (!spec) return;
+
+      serviceModalTitle.textContent = spec.title;
+      serviceModalDesc.textContent = spec.desc;
+      
+      serviceModalPhases.innerHTML = spec.phases.map(phase => `
+        <div class="flex items-start gap-3 border-b border-white/5 py-2">
+          <span class="text-bronze">✔</span>
+          <span class="text-white/80">${phase}</span>
+        </div>
+      `).join('');
+
+      serviceModal.classList.remove('hidden');
+      serviceModal.classList.add('flex');
+
+      setTimeout(() => {
+        serviceContent.classList.remove('scale-95', 'opacity-0');
+        serviceContent.classList.add('scale-100', 'opacity-100');
+      }, 50);
+    }
+
+    function closeServiceModal() {
+      serviceContent.classList.remove('scale-100', 'opacity-100');
+      serviceContent.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        serviceModal.classList.add('hidden');
+        serviceModal.classList.remove('flex');
+      }, 300);
+    }
+
+
+    // ==================== NOTIFICATIONS & FORM ====================
+    function showToast(title, desc) {
+      const toast = document.getElementById('toastNotification');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastDesc = document.getElementById('toastDesc');
+
+      toastTitle.textContent = title;
+      toastDesc.textContent = desc;
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 4500);
+    }
+
+    function requestPurchase(productName) {
+      showToast('ACQUISITION REQUEST SENT', `Regarding: ${productName}. I will correspond via email with transaction specs.`);
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      // Reset form controls
+      event.target.reset();
+
+      showToast('COMMUNICATION SIGNAL RECEIVED', 'Your visual narrative is cataloged. I will reply within 48 hours.');
+    }
+
+    // Parallax & Interactive Movement tracking on Home image
+    const heroImage = document.getElementById('heroImage');
+    const heroContainer = heroImage.parentElement;
+
+    heroContainer.addEventListener('mousemove', (e) => {
+      const { left, top, width, height } = heroContainer.getBoundingClientRect();
+      const x = (e.clientX - left) / width - 0.5; // -0.5 to 0.5 range
+      const y = (e.clientY - top) / height - 0.5;
+
+      // Subtle parallax movement
+      heroImage.style.transform = `scale(1.05) translate(${x * 12}px, ${y * 12}px)`;
+    });
+
+    heroContainer.addEventListener('mouseleave', () => {
+      heroImage.style.transform = `scale(1.05) translate(0px, 0px)`;
+    });
+  </script>
+</body>
+</html>

@@ -1,12 +1,14 @@
 # index
 
 - Created: 2026-05-24T21:26:42.622Z
-- Workflow: Entry / Play / Review
+- Workflow: Attach / Save
 - Code input: ReviewTargets
-- Review input: dashboard
+- Reference input: dashboard
 - Selected entry: ReviewTargets/index.html
 - Code: [code.html](code.html)
-- Review document: [review.md](review.md)
+- Reference document: [reference.md](reference.md)
+- Attached references:
+  - None
 
 ## Observations
 

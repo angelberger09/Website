@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Berger — Diverse Creative</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (Serif), Syne (Display), Space Mono (Analog Labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&family=Syne:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                        mono: ['Space Mono', 'monospace'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scroll snap styling */
+        .snap-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .snap-section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Paper texture overlay */
+        .paper-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 40;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.038'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
+
+        /* Starfield background positioning */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Ambient background gradient */
+        .bg-gradient-ambient {
+            background: radial-gradient(circle at 50% 50%, #1a1525 0%, #0d0b11 100%);
+        }
+
+        /* Soft vignette over the page */
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(13, 11, 17, 0.8) 100%);
+        }
+
+        /* Three-Stage Animation Sequencer */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUpTitle {
+            0% { transform: translateY(60px); opacity: 0; }
+            50% { transform: translateY(20px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.97); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .anim-stage-1 {
+            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .anim-stage-2 {
+            animation: slideUpTitle 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        .anim-stage-3 {
+            animation: scaleUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+
+        /* Tactile Analog Button Styles */
+        .analog-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.05),
+                        0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .analog-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+        }
+        .analog-btn:active {
+            transform: translateY(1px);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4),
+                        0 0 0 rgba(0,0,0,0);
+        }
+
+        /* Custom Amber Dot Indicator (Active light) */
+        .amber-indicator {
+            width: 4px;
+            height: 4px;
+            background-color: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b, 0 0 16px #fbbf24;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Image Parallax Hover Properties */
+        .hero-img-container {
+            perspective: 1000px;
+        }
+        .hero-img-frame {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease, contrast 0.8s ease;
+        }
+
+        /* Polaroid layout tilt variations */
+        .polaroid-1 { transform: rotate(-1.5deg); }
+        .polaroid-2 { transform: rotate(1deg); }
+        .polaroid-3 { transform: rotate(-0.5deg); }
+        .polaroid-4 { transform: rotate(2deg); }
+
+        /* Custom Scrollbar styled minimal */
+        .custom-scroll-bar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .custom-scroll-bar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .custom-scroll-bar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 9px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-ambient text-neutral-100 font-sans min-h-screen overflow-hidden antialiased selection:bg-amber-500/20 selection:text-amber-200">
+
+    <!-- Paper Post-Process Overlay -->
+    <div class="paper-overlay"></div>
+
+    <!-- Starfield Backdrop -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Ambient Darkening Vignette -->
+    <div class="vignette"></div>
+
+    <!-- MAIN IMMERSIVE VIEWPORT WRAPPER (Scroll Snapping) -->
+    <main class="snap-container no-scrollbar relative z-20 w-full h-screen" id="main-scroll-container">
+
+        <!-- ================= HOME SECTION ================= -->
+        <section id="home" class="snap-section w-full flex flex-col justify-between items-center py-8 px-6 md:px-12 z-10">
+            <!-- Space Filler for layout balance -->
+            <div></div>
+
+            <!-- Main Home Title and Studio Hero Frame -->
+            <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center mt-4">
+                <div class="mb-4">
+                    <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-400 anim-stage-1">STUDIO WORKSPACE</p>
+                </div>
+
+                <!-- Studio Interactive Hero Frame -->
+                <div class="relative w-full aspect-[21/10] md:aspect-[21/9] rounded-sm overflow-hidden border border-neutral-800/60 bg-neutral-900 group shadow-2xl anim-stage-3" id="hero-interactive-container">
+                    <!-- Image Wrapper with filters applied -->
+                    <div class="absolute inset-0 w-full h-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600" 
+                             alt="Atelier workspace interior" 
+                             id="hero-parallax-img"
+                             class="hero-img-frame absolute w-[108%] h-[108%] -left-[4%] -top-[4%] object-cover scale-[1.03] opacity-60 blur-[3px] grayscale-[65%] contrast-[85%]" />
+                    </div>
+                    
+                    <!-- Gradient dark screen over image -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/70 mix-blend-multiply transition-all duration-700 group-hover:from-black/50 group-hover:via-transparent group-hover:to-black/30 pointer-events-none"></div>
+
+                    <!-- Overlay Centered Name -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 px-4">
+                        <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter text-white select-none anim-stage-2" style="font-stretch: 110%;">
+                            ANGEL BERGER
+                        </h1>
+                        <p class="font-serif italic text-base sm:text-lg md:text-xl text-neutral-300 mt-2 tracking-wide select-none transition-all duration-500 group-hover:text-amber-100">
+                            A Diverse Creative
+                        </p>
+                    </div>
+
+                    <!-- Ambient Soft Corner Lights for UI Depth -->
+                    <div class="absolute top-3 left-4 font-mono text-[9px] tracking-widest text-neutral-400/70 select-none">SYSTEM ACTIVE</div>
+                    <div class="absolute bottom-3 right-4 font-mono text-[9px] tracking-widest text-amber-500/80 flex items-center gap-1.5 select-none">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> INTERACTIVE PARALLAX
+                    </div>
+                </div>
+
+                <!-- Mini Brand Statement -->
+                <p class="mt-8 text-neutral-400 max-w-lg text-sm md:text-base font-serif leading-relaxed italic anim-stage-3">
+                    “An inquiry into space, tactile craft, and editorial atmosphere. Formulating visuals through analogue frameworks and soft minimalist mediums.”
+                </p>
+            </div>
+
+            <!-- Bottom scroll indicator and coordination labels -->
+            <div class="flex flex-col items-center gap-2 select-none anim-stage-3">
+                <span class="font-mono text-[9px] tracking-[0.25em] text-neutral-500 uppercase">EXPLORE PORTFOLIO</span>
+                <button onclick="scrollToSection('gallery')" class="text-neutral-500 hover:text-white transition-colors duration-300 focus:outline-none" aria-label="Scroll down">
+                    <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <section id="gallery" class="snap-section w-full flex flex-col justify-between py-12 px-6 md:px-12 bg-neutral-950/20">
+            <!-- Header layout -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-end border-b border-neutral-800/50 pb-4">
+                <div>
+                    <span class="font-mono text-[10px] tracking-widest text-amber-500/80 uppercase">VOLUME I</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mt-1">VISUAL INQUIRY</h2>
+                </div>
+                <span class="font-mono text-xs text-neutral-500">GALLERY / 01</span>
+            </div>
+
+            <!-- Polaroid Grid Container -->
+            <div class="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-auto pt-6 pb-2">
+                
+                <!-- Polaroid Item 1 -->
+                <div onclick="openPolaroid('Terracotta Study', 'Abstract terracotta study detailing geometric balances, natural earth pigments, and shadows playing over organic shapes.', 'https://images.unsplash.com/photo-1501472312651-726afd116ff1?q=80&w=800')" 
+                     class="polaroid-1 bg-neutral-100 p-3.5 pb-8 shadow-xl cursor-pointer hover:scale-[1.03] hover:-translate-y-2 hover:rotate-0 transition-all duration-300 border border-neutral-300/40 select-none group flex flex-col justify-between">
+                    <div class="aspect-square w-full bg-neutral-200 overflow-hidden relative border border-neutral-300/60">
+                        <img src="https://images.unsplash.com/photo-1501472312651-726afd116ff1?q=80&w=600" alt="Terracotta study" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10 mix-blend-overlay"></div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-serif italic text-neutral-800 text-sm font-semibold tracking-wide">Terracotta Study</p>
+                        <span class="font-mono text-[8.5px] text-neutral-400 block mt-0.5">CASE 104</span>
+                    </div>
+                </div>
+
+                <!-- Polaroid Item 2 -->
+                <div onclick="openPolaroid('Liquid Architecture', 'Capturing physical reflections of dynamic chrome-painted shapes designed for sculptural architectural pieces.', 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800')" 
+                     class="polaroid-2 bg-neutral-100 p-3.5 pb-8 shadow-xl cursor-pointer hover:scale-[1.03] hover:-translate-y-2 hover:rotate-0 transition-all duration-300 border border-neutral-300/40 select-none group flex flex-col justify-between">
+                    <div class="aspect-square w-full bg-neutral-200 overflow-hidden relative border border-neutral-300/60">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=600" alt="Liquid architecture design" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10 mix-blend-overlay"></div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-serif italic text-neutral-800 text-sm font-semibold tracking-wide">Liquid Architecture</p>
+                        <span class="font-mono text-[8.5px] text-neutral-400 block mt-0.5">CASE 108</span>
+                    </div>
+                </div>
+
+                <!-- Polaroid Item 3 -->
+                <div onclick="openPolaroid('Floral Sculptures', 'Soft floral silhouettes curated and set in hand-cast plaster, balancing fragile natural textures against solid chalk-white plaster.', 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=800')" 
+                     class="polaroid-3 bg-neutral-100 p-3.5 pb-8 shadow-xl cursor-pointer hover:scale-[1.03] hover:-translate-y-2 hover:rotate-0 transition-all duration-300 border border-neutral-300/40 select-none group flex flex-col justify-between">
+                    <div class="aspect-square w-full bg-neutral-200 overflow-hidden relative border border-neutral-300/60">
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=600" alt="Floral sculpture display" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10 mix-blend-overlay"></div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-serif italic text-neutral-800 text-sm font-semibold tracking-wide">Floral Sculptures</p>
+                        <span class="font-mono text-[8.5px] text-neutral-400 block mt-0.5">CASE 112</span>
+                    </div>
+                </div>
+
+                <!-- Polaroid Item 4 -->
+                <div onclick="openPolaroid('Form & Clay No. 4', 'Explorations in physical earthworks: raw, unglazed wabi-sabi clay bottles formed manually on the wheel.', 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800')" 
+                     class="polaroid-4 bg-neutral-100 p-3.5 pb-8 shadow-xl cursor-pointer hover:scale-[1.03] hover:-translate-y-2 hover:rotate-0 transition-all duration-300 border border-neutral-300/40 select-none group flex flex-col justify-between">
+                    <div class="aspect-square w-full bg-neutral-200 overflow-hidden relative border border-neutral-300/60">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600" alt="Form and clay pottery craft" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10 mix-blend-overlay"></div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-serif italic text-neutral-800 text-sm font-semibold tracking-wide">Form & Clay No. 4</p>
+                        <span class="font-mono text-[8.5px] text-neutral-400 block mt-0.5">CASE 119</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section Note -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-neutral-500 select-none">
+                <span class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-amber-500"></span> CLICK POLAROID TILES TO EXPAND AND READ CASE NOTES</span>
+                <span>BER_STUDIO // MCXXVI</span>
+            </div>
+        </section>
+
+
+        <!-- ================= BLOG SECTION ================= -->
+        <section id="blog" class="snap-section w-full flex flex-col justify-between py-12 px-6 md:px-12 bg-neutral-950/45">
+            <!-- Header layout -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-end border-b border-neutral-800/50 pb-4">
+                <div>
+                    <span class="font-mono text-[10px] tracking-widest text-amber-500/80 uppercase">EDITORIAL DIARY</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mt-1">CRAFT JOURNAL</h2>
+                </div>
+                <span class="font-mono text-xs text-neutral-500">ARCHIVE / 02</span>
+            </div>
+
+            <!-- Blog Grid Content -->
+            <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-auto pt-4">
+                
+                <!-- Editorial Tile 1 -->
+                <article class="flex flex-col gap-4 group">
+                    <div class="relative w-full aspect-[16/10] overflow-hidden rounded-sm border border-neutral-800/70 bg-neutral-900">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000" alt="Journal entry background" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:opacity-90 grayscale-[40%] group-hover:grayscale-0" />
+                        <span class="absolute top-3 left-3 px-2 py-0.5 bg-black/75 text-[9px] font-mono tracking-wider border border-neutral-800/80 text-amber-400">PROCESS JOURNAL</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <span class="font-mono text-[10px] text-neutral-500">MAY 18, 2026 // ENTRY #092</span>
+                        <h3 class="font-serif text-xl font-medium tracking-tight group-hover:text-amber-100 transition-colors duration-300">
+                            The Balance of Analogue Friction
+                        </h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed font-sans mt-1">
+                            An essay exploring why modern visual designers crave physical canvas resistance, organic grain structures, and slow-process film cameras in the post-digital age.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Editorial Tile 2 -->
+                <article class="flex flex-col gap-4 group">
+                    <div class="relative w-full aspect-[16/10] overflow-hidden rounded-sm border border-neutral-800/70 bg-neutral-900">
+                        <img src="https://images.unsplash.com/photo-1452421820064-e70a9ef8a8a4?q=80&w=1000" alt="Curation design background" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:opacity-90 grayscale-[40%] group-hover:grayscale-0" />
+                        <span class="absolute top-3 left-3 px-2 py-0.5 bg-black/75 text-[9px] font-mono tracking-wider border border-neutral-800/80 text-amber-400">CURATION</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <span class="font-mono text-[10px] text-neutral-500">APR 29, 2026 // ENTRY #089</span>
+                        <h3 class="font-serif text-xl font-medium tracking-tight group-hover:text-amber-100 transition-colors duration-300">
+                            Objects that Hold Room Light
+                        </h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed font-sans mt-1">
+                            How minimalist furniture, raw plaster moldings, and matte stoneware capture shadows throughout the day. Translating natural movement into brand identities.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Bottom Section Note -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-neutral-500 select-none">
+                <span>REACTIONARY THOUGHTS ON SPACE AND DISCIPLINE</span>
+                <span>VOL_I_JOURNALS</span>
+            </div>
+        </section>
+
+
+        <!-- ================= SERVICES SECTION ================= -->
+        <section id="services" class="snap-section w-full flex flex-col justify-between py-12 px-6 md:px-12 bg-neutral-950/20">
+            <!-- Header layout -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-end border-b border-neutral-800/50 pb-4">
+                <div>
+                    <span class="font-mono text-[10px] tracking-widest text-amber-500/80 uppercase">CORE CAPABILITIES</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mt-1">CREATIVE DISCIPLINES</h2>
+                </div>
+                <span class="font-mono text-xs text-neutral-500">CAPABILITIES / 03</span>
+            </div>
+
+            <!-- Visual Modules Container -->
+            <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 my-auto pt-4">
+
+                <!-- Service Module 1 -->
+                <div class="group bg-neutral-900/25 border border-neutral-800/50 rounded-sm p-6 relative overflow-hidden transition-all duration-300 hover:border-neutral-700/70 shadow-lg">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-amber-500/10 transition-all duration-500"></div>
+                    <span class="font-mono text-[10px] text-neutral-500">01 / CONCEPT CREATIVE</span>
+                    <h3 class="font-serif text-2xl font-semibold text-neutral-200 mt-2 group-hover:text-white">Art Direction & Identity</h3>
+                    <div class="w-12 h-[1px] bg-neutral-800 my-4 group-hover:w-20 transition-all duration-500"></div>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-sans">
+                        Defining spatial frameworks, visual guidelines, and high-fidelity brand systems that convey warmth, depth, and structural discipline across tactile formats.
+                    </p>
+                    <div class="flex items-center gap-1.5 font-mono text-[9px] text-amber-500/80">
+                        <span class="amber-indicator"></span> MONOCHROMATIC GRAPHICS // PHOTOGRAPHY
+                    </div>
+                </div>
+
+                <!-- Service Module 2 -->
+                <div class="group bg-neutral-900/25 border border-neutral-800/50 rounded-sm p-6 relative overflow-hidden transition-all duration-300 hover:border-neutral-700/70 shadow-lg">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-amber-500/10 transition-all duration-500"></div>
+                    <span class="font-mono text-[10px] text-neutral-500">02 / SPATIAL DESIGN</span>
+                    <h3 class="font-serif text-2xl font-semibold text-neutral-200 mt-2 group-hover:text-white">Editorial Curation</h3>
+                    <div class="w-12 h-[1px] bg-neutral-800 my-4 group-hover:w-20 transition-all duration-500"></div>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-sans">
+                        Meticulously designing still-life frames, physical exhibitions, interior placements, and sculptural environments. Curating room atmospheres.
+                    </p>
+                    <div class="flex items-center gap-1.5 font-mono text-[9px] text-amber-500/80">
+                        <span class="amber-indicator"></span> SCULPTURAL DISPLAY // WORKSPACES
+                    </div>
+                </div>
+
+                <!-- Service Module 3 -->
+                <div class="group bg-neutral-900/25 border border-neutral-800/50 rounded-sm p-6 relative overflow-hidden transition-all duration-300 hover:border-neutral-700/70 shadow-lg">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-amber-500/10 transition-all duration-500"></div>
+                    <span class="font-mono text-[10px] text-neutral-500">03 / OBJECT DESIGN</span>
+                    <h3 class="font-serif text-2xl font-semibold text-neutral-200 mt-2 group-hover:text-white">Analogue Physical Craft</h3>
+                    <div class="w-12 h-[1px] bg-neutral-800 my-4 group-hover:w-20 transition-all duration-500"></div>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-sans">
+                        Experimentations in tactile ceramic works, textured custom book printing, wax casting, and raw physical mediums. Uniting clay, paper, and fire.
+                    </p>
+                    <div class="flex items-center gap-1.5 font-mono text-[9px] text-amber-500/80">
+                        <span class="amber-indicator"></span> CERAMICS // ART PRINTS // CLAY
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section Note -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-neutral-500 select-none">
+                <span>AVAILABLE FOR DIRECT COMMISSIONS & BRAND CONSULTATIONS</span>
+                <span>GLOBAL WORKSPACE CAPABILITIES</span>
+            </div>
+        </section>
+
+
+        <!-- ================= PRODUCTS SECTION ================= -->
+        <section id="products" class="snap-section w-full flex flex-col justify-between py-12 px-6 md:px-12 bg-neutral-950/45">
+            <!-- Header layout -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-end border-b border-neutral-800/50 pb-4">
+                <div>
+                    <span class="font-mono text-[10px] tracking-widest text-amber-500/80 uppercase">TACTILE ARTIFACTS</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mt-1">SELECT PRODUCTS</h2>
+                </div>
+                <span class="font-mono text-xs text-neutral-500">STUDIO PRINTED / 04</span>
+            </div>
+
+            <!-- Product Cards -->
+            <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-auto pt-4">
+                
+                <!-- Product Card 1 -->
+                <div class="flex items-center gap-6 p-4 bg-neutral-900/15 border border-neutral-800/40 rounded-sm relative group hover:border-neutral-700/65 transition-all duration-300">
+                    <div class="w-1/3 aspect-[4/5] bg-neutral-800 overflow-hidden relative rounded-sm border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800" alt="L'Atelier Monograph Print Book" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10"></div>
+                    </div>
+                    <div class="w-2/3 flex flex-col justify-between h-full py-1">
+                        <div>
+                            <span class="font-mono text-[9px] text-amber-500/80 tracking-widest">EDITION OF 100</span>
+                            <h3 class="font-serif text-xl font-semibold text-neutral-200 mt-1">L’Atelier Monograph</h3>
+                            <p class="text-neutral-400 text-xs mt-1 leading-relaxed font-sans">
+                                A linen-bound 140-page printed visual diary showcasing five years of sculptural projects, process sketches, and text-based studies.
+                            </p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="font-mono text-sm font-semibold">$54.00 USD</span>
+                            <button onclick="handleProductInquiry('L\'Atelier Monograph')" class="analog-btn font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-sm flex items-center gap-1.5 text-neutral-300 hover:text-white uppercase">
+                                INQUIRE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="flex items-center gap-6 p-4 bg-neutral-900/15 border border-neutral-800/40 rounded-sm relative group hover:border-neutral-700/65 transition-all duration-300">
+                    <div class="w-1/3 aspect-[4/5] bg-neutral-800 overflow-hidden relative rounded-sm border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800" alt="Chamber hand-poured candle object" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" />
+                        <div class="absolute inset-0 bg-neutral-900/10"></div>
+                    </div>
+                    <div class="w-2/3 flex flex-col justify-between h-full py-1">
+                        <div>
+                            <span class="font-mono text-[9px] text-amber-500/80 tracking-widest">SMALL BATCH</span>
+                            <h3 class="font-serif text-xl font-semibold text-neutral-200 mt-1">Chamber Candle No. 3</h3>
+                            <p class="text-neutral-400 text-xs mt-1 leading-relaxed font-sans">
+                                Hand-poured amber wax encased in an artisanal, coarse black clay vessel. Smoked cypress, cedar bark, and dry paper scent profiles.
+                            </p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="font-mono text-sm font-semibold">$38.00 USD</span>
+                            <button onclick="handleProductInquiry('Chamber Candle No. 3')" class="analog-btn font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-sm flex items-center gap-1.5 text-neutral-300 hover:text-white uppercase">
+                                INQUIRE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section Note -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-neutral-500 select-none">
+                <span>HAND-FINISHED GOODS SHIPPED DIRECTLY FROM THE ATELIER</span>
+                <span>LIMITED RUNS ONLY</span>
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="snap-section w-full flex flex-col justify-between py-12 px-6 md:px-12 bg-neutral-950/20">
+            <!-- Header layout -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-end border-b border-neutral-800/50 pb-4">
+                <div>
+                    <span class="font-mono text-[10px] tracking-widest text-amber-500/80 uppercase">CORRESPONDENCE</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mt-1">GET IN TOUCH</h2>
+                </div>
+                <span class="font-mono text-xs text-neutral-500">COORDINATES / 05</span>
+            </div>
+
+            <!-- Contact Panel Content -->
+            <div class="w-full max-w-md mx-auto my-auto pt-4 relative">
+                <!-- Custom feedback overlay on form submission -->
+                <div id="form-success-overlay" class="absolute inset-0 bg-neutral-900/90 border border-neutral-800 rounded-sm backdrop-blur-md flex flex-col justify-center items-center p-8 text-center transition-all duration-500 opacity-0 pointer-events-none z-30">
+                    <div class="w-10 h-10 rounded-full border border-amber-500/50 flex items-center justify-center mb-4 bg-amber-500/10">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    </div>
+                    <p class="font-mono text-xs text-amber-400 uppercase tracking-widest">TRANSMISSION RECEIVED</p>
+                    <h4 class="font-serif text-2xl font-bold text-neutral-100 mt-2">Message Catalogued</h4>
+                    <p class="text-neutral-400 text-sm leading-relaxed mt-2 max-w-xs">
+                        Thank you for reaching out, Angel. The correspondence was saved and we will get back to you shortly.
+                    </p>
+                    <button onclick="resetContactForm()" class="analog-btn font-mono text-[9px] tracking-widest py-1.5 px-4 mt-6 text-neutral-400 uppercase">
+                        SEND ANOTHER
+                    </button>
+                </div>
+
+                <!-- Glass form Card -->
+                <div class="bg-neutral-900/40 border border-neutral-800/80 rounded-sm p-6 shadow-2xl relative">
+                    <!-- Form Title -->
+                    <p class="font-mono text-[9px] text-neutral-500 tracking-wider mb-4 uppercase">DIGITAL CORRESPONDENCE PORT</p>
+                    
+                    <form id="contact-form" class="space-y-4" onsubmit="submitContactForm(event)">
+                        <!-- Name Field -->
+                        <div>
+                            <label class="block font-mono text-[9px] tracking-widest text-neutral-400 mb-1.5 uppercase" for="name">SENDER NAME</label>
+                            <input class="w-full bg-neutral-950/60 border border-neutral-800/80 rounded-sm py-2 px-3 text-neutral-200 text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors duration-200 font-sans" 
+                                   type="text" id="name" required placeholder="e.g. Eleanor Vance">
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <label class="block font-mono text-[9px] tracking-widest text-neutral-400 mb-1.5 uppercase" for="email">SENDER EMAIL</label>
+                            <input class="w-full bg-neutral-950/60 border border-neutral-800/80 rounded-sm py-2 px-3 text-neutral-200 text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors duration-200 font-sans" 
+                                   type="email" id="email" required placeholder="e.g. eleanor@atelier.com">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label class="block font-mono text-[9px] tracking-widest text-neutral-400 mb-1.5 uppercase" for="message">MESSAGE / INQUIRY BODY</label>
+                            <textarea class="w-full h-24 bg-neutral-950/60 border border-neutral-800/80 rounded-sm py-2 px-3 text-neutral-200 text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors duration-200 font-sans resize-none" 
+                                      id="message" required placeholder="Write details about your project or product inquiry..."></textarea>
+                        </div>
+
+                        <!-- Tactile Submit Button -->
+                        <button type="submit" class="w-full border border-neutral-800 hover:border-neutral-700 bg-neutral-900/60 hover:bg-neutral-900/90 text-neutral-200 hover:text-white py-2.5 px-4 rounded-sm font-mono text-[11px] tracking-[0.2em] font-bold uppercase transition-all duration-300 shadow-lg active:translate-y-[1px] flex items-center justify-center gap-2">
+                            TRANSMIT MESSAGE
+                        </button>
+                    </form>
+
+                    <!-- Fast Contact coordinates inside panel -->
+                    <div class="mt-6 pt-5 border-t border-neutral-800/80 flex justify-between items-center text-[10px] font-mono text-neutral-400">
+                        <a href="mailto:angel@bergercreative.studio" class="hover:text-amber-400 transition-colors">angel@berger.studio</a>
+                        <div class="flex gap-4">
+                            <a href="#" class="hover:text-amber-400 transition-colors">INSTAGRAM</a>
+                            <a href="#" class="hover:text-amber-400 transition-colors">INDEX</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section Note -->
+            <div class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-neutral-500 select-none">
+                <span>ESTABLISHED IN MANCHESTER, NH</span>
+                <span>© 2026 ANGEL BERGER. ALL RIGHTS RESERVED</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FIXED BOTTOM ANALOG NAVIGATION ================= -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center bg-black/60 backdrop-blur-md border border-neutral-800/90 rounded-full px-2 py-1.5 shadow-2xl max-w-[92vw] overflow-x-auto no-scrollbar">
+        <!-- Home Button -->
+        <button onclick="scrollToSection('home')" data-section="home" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            HOME
+        </button>
+
+        <div class="h-3 w-[1px] bg-neutral-800/70 mx-1"></div>
+
+        <!-- Gallery Button -->
+        <button onclick="scrollToSection('gallery')" data-section="gallery" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            GALLERY
+        </button>
+
+        <div class="h-3 w-[1px] bg-neutral-800/70 mx-1"></div>
+
+        <!-- Blog Button -->
+        <button onclick="scrollToSection('blog')" data-section="blog" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            BLOG
+        </button>
+
+        <div class="h-3 w-[1px] bg-neutral-800/70 mx-1"></div>
+
+        <!-- Services Button -->
+        <button onclick="scrollToSection('services')" data-section="services" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            SERVICES
+        </button>
+
+        <div class="h-3 w-[1px] bg-neutral-800/70 mx-1"></div>
+
+        <!-- Products Button -->
+        <button onclick="scrollToSection('products')" data-section="products" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            PRODUCTS
+        </button>
+
+        <div class="h-3 w-[1px] bg-neutral-800/70 mx-1"></div>
+
+        <!-- Contact Button -->
+        <button onclick="scrollToSection('contact')" data-section="contact" class="nav-item flex items-center gap-1.5 px-3 py-1.5 text-neutral-400 hover:text-white rounded-full font-mono text-[10px] tracking-wider transition-all duration-300 ease-out select-none font-medium whitespace-nowrap">
+            <span class="indicator invisible w-1.5 h-1.5 rounded-full bg-amber-500 shadow-md"></span>
+            CONTACT
+        </button>
+    </nav>
+
+
+    <!-- ================= FIXED BRAND CORNER LABELS ================= -->
+    <header class="fixed top-6 left-6 z-30 pointer-events-none select-none anim-stage-1">
+        <span class="font-mono text-xs font-bold tracking-[0.25em] text-neutral-100">A. BERGER</span>
+    </header>
+
+    <div class="fixed top-6 right-6 z-30 pointer-events-none select-none text-right font-mono text-[10px] text-neutral-400 tracking-wider hidden sm:block anim-stage-1">
+        <div>DIVERSE CREATIVE PORTFOLIO</div>
+        <div class="text-neutral-500 text-[9px] mt-0.5">MCXXVI // VOL. I</div>
+    </div>
+
+
+    <!-- ================= EXPANDED POLAROID PORTFOLIO DETAIL OVERLAY ================= -->
+    <div id="polaroid-overlay" class="fixed inset-0 z-50 bg-neutral-950/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500 flex items-center justify-center p-4">
+        <!-- Close trigger background -->
+        <div class="absolute inset-0" onclick="closePolaroid()"></div>
+
+        <!-- Polaroid Expanded Wrapper Card -->
+        <div class="bg-neutral-100 p-4 md:p-6 pb-12 shadow-2xl rounded-xs max-w-md w-full scale-95 transition-transform duration-500 relative flex flex-col justify-between border border-neutral-300/40 select-none" id="polaroid-expanded-card">
+            
+            <!-- Close Tactile button -->
+            <button onclick="closePolaroid()" class="absolute top-4 right-4 bg-neutral-950 text-white hover:bg-neutral-800 transition-colors duration-200 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none shadow-md" aria-label="Close Case Notes">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Square Image container -->
+            <div class="aspect-square w-full bg-neutral-200 overflow-hidden relative border border-neutral-300">
+                <img id="polaroid-expanded-img" src="" alt="Expanded case view" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-neutral-900/5 mix-blend-overlay"></div>
+            </div>
+
+            <!-- Notes Section Inside Polaroid Border -->
+            <div class="mt-6">
+                <div class="flex items-center justify-between border-b border-neutral-200 pb-1.5 mb-2.5">
+                    <span class="font-mono text-[10px] text-amber-600 font-bold tracking-widest">ATELIER ARCHIVE CASE NOTE</span>
+                    <span class="font-mono text-[9px] text-neutral-400 uppercase">BERGER_091</span>
+                </div>
+                <h3 id="polaroid-expanded-title" class="font-serif text-2xl font-bold italic text-neutral-800 tracking-tight"></h3>
+                <p id="polaroid-expanded-desc" class="text-neutral-500 text-xs sm:text-sm leading-relaxed font-serif mt-2"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= NOTIFICATION PORT ================= -->
+    <div id="notification-bar" class="fixed top-8 left-1/2 -translate-x-1/2 z-50 bg-amber-500/90 border border-amber-400 text-neutral-950 px-4 py-2 rounded-sm shadow-2xl font-mono text-xs tracking-wider flex items-center gap-3 transition-all duration-300 transform -translate-y-24 opacity-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-neutral-950 animate-ping"></span>
+        <span id="notification-text">MESSAGE TRANSMITTED</span>
+        <button onclick="hideNotification()" class="text-neutral-950/70 hover:text-neutral-950 font-bold text-xs pl-2">×</button>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // Setup state variables
+        let stars = [];
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        const scrollContainer = document.getElementById('main-scroll-container');
+        const sections = document.querySelectorAll('.snap-section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        // Starfield parameters
+        const STAR_COUNT = 100;
+        const SPEED_X = 0.04;
+        const SPEED_Y = -0.12; // Slow upward drift
+
+        // Handle load & resize
+        window.addEventListener('load', () => {
+            resizeCanvas();
+            initStars();
+            animateStarfield();
+            updateNavigationState();
+        });
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+        });
+
+        // Resize Canvas to fit screen dimensions
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Initialize drifting star particles
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < STAR_COUNT; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.3 + 0.3,
+                    alpha: Math.random() * 0.7 + 0.1,
+                    twinkleSpeed: Math.random() * 0.01 + 0.002,
+                    twinkleDir: Math.random() > 0.5 ? 1 : -1
+                });
+            }
+        }
+
+        // Run continuous slow drifting background render
+        function animateStarfield() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < stars.length; i++) {
+                let star = stars[i];
+                
+                // Twinkle stars organically
+                star.alpha += star.twinkleSpeed * star.twinkleDir;
+                if (star.alpha > 0.85) {
+                    star.twinkleDir = -1;
+                } else if (star.alpha < 0.15) {
+                    star.twinkleDir = 1;
+                }
+
+                // Apply Slow Drift
+                star.x += SPEED_X;
+                star.y += SPEED_Y;
+
+                // Reset stars wrapping past boundaries
+                if (star.y < -10) {
+                    star.y = canvas.height + 10;
+                    star.x = Math.random() * canvas.width;
+                }
+                if (star.x > canvas.width + 10) {
+                    star.x = -10;
+                    star.y = Math.random() * canvas.height;
+                }
+
+                // Render Star Particle
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(245, 158, 11, ${star.alpha})`; // Elegant soft amber star glow
+                ctx.fill();
+            }
+            requestAnimationFrame(animateStarfield);
+        }
+
+        // Section Scroll To Logic
+        function scrollToSection(sectionId) {
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Intersection Observer to naturally track current scroll snaps
+        const observerOptions = {
+            root: scrollContainer,
+            threshold: 0.5 // Track when 50% of the section is visible in snap-container
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentSectionId = entry.target.id;
+                    updateActiveNavItem(currentSectionId);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Set Nav Indicator DOT & Highlight
+        function updateActiveNavItem(activeSectionId) {
+            navItems.forEach(item => {
+                const itemSection = item.getAttribute('data-section');
+                const indicator = item.querySelector('.indicator');
+
+                if (itemSection === activeSectionId) {
+                    // Make Active Design Highlight
+                    item.classList.remove('text-neutral-400');
+                    item.classList.add('text-white', 'bg-neutral-900/50', 'border', 'border-neutral-800/60');
+                    if (indicator) {
+                        indicator.classList.remove('invisible');
+                        indicator.classList.add('amber-indicator');
+                    }
+                } else {
+                    // Make Inactive Design Styling
+                    item.classList.add('text-neutral-400');
+                    item.classList.remove('text-white', 'bg-neutral-900/50', 'border', 'border-neutral-800/60');
+                    if (indicator) {
+                        indicator.classList.add('invisible');
+                        indicator.classList.remove('amber-indicator');
+                    }
+                }
+            });
+        }
+
+        // Fallback Navigation Listener on scroll
+        function updateNavigationState() {
+            let scrollPosition = scrollContainer.scrollTop;
+            let containerHeight = scrollContainer.clientHeight;
+            let currentSectionIndex = Math.round(scrollPosition / containerHeight);
+            
+            if (sections[currentSectionIndex]) {
+                updateActiveNavItem(sections[currentSectionIndex].id);
+            }
+        }
+        scrollContainer.addEventListener('scroll', updateNavigationState);
+
+
+        // ================= HERO WORKSPACE INTERACTIVE PARALLAX / CONTRAST SYSTEM =================
+        const heroInteractiveContainer = document.getElementById('hero-interactive-container');
+        const heroParallaxImg = document.getElementById('hero-parallax-img');
+
+        if (heroInteractiveContainer && heroParallaxImg) {
+            heroInteractiveContainer.addEventListener('mousemove', (e) => {
+                const rect = heroInteractiveContainer.getBoundingClientRect();
+                // Map mouse coordinates to -0.5 to 0.5 layout grid offsets
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                // Shift Image Parallax and Loss of Grayscale (Hover state parameters)
+                heroParallaxImg.style.transform = `translate(${x * 20}px, ${y * 20}px) scale(1.06)`;
+                heroParallaxImg.style.filter = "blur(0px) grayscale(10%) contrast(110%)";
+                heroParallaxImg.style.opacity = "0.85";
+            });
+
+            heroInteractiveContainer.addEventListener('mouseleave', () => {
+                // Reset to rest state values
+                heroParallaxImg.style.transform = "translate(0, 0) scale(1.03)";
+                heroParallaxImg.style.filter = "blur(3px) grayscale(65%) contrast(85%)";
+                heroParallaxImg.style.opacity = "0.6";
+            });
+        }
+
+
+        // ================= POLAROID OVERLAY MODAL INTERACTIONS =================
+        const polaroidOverlay = document.getElementById('polaroid-overlay');
+        const polaroidCard = document.getElementById('polaroid-expanded-card');
+        const polaroidTitle = document.getElementById('polaroid-expanded-title');
+        const polaroidDesc = document.getElementById('polaroid-expanded-desc');
+        const polaroidImg = document.getElementById('polaroid-expanded-img');
+
+        function openPolaroid(title, description, imgUrl) {
+            if (polaroidOverlay && polaroidCard) {
+                // Assign Text and Image Content
+                polaroidTitle.textContent = title;
+                polaroidDesc.textContent = description;
+                polaroidImg.src = imgUrl;
+
+                // Display Animation Overlay
+                polaroidOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                polaroidCard.classList.remove('scale-95');
+                polaroidCard.classList.add('scale-100');
+            }
+        }
+
+        function closePolaroid() {
+            if (polaroidOverlay && polaroidCard) {
+                polaroidOverlay.classList.add('opacity-0', 'pointer-events-none');
+                polaroidCard.classList.remove('scale-100');
+                polaroidCard.classList.add('scale-95');
+            }
+        }
+
+
+        // ================= PRODUCT ORDER INQUIRIES =================
+        function handleProductInquiry(productName) {
+            // Populate contact fields dynamically
+            const messageArea = document.getElementById('message');
+            if (messageArea) {
+                messageArea.value = `Hello Angel, I am interested in ordering/inquiring about your limited artifact: "${productName}". Please advise on shipping coordinates and final availability details. Thank you!`;
+            }
+            // Smoothly move the container view to Contact
+            scrollToSection('contact');
+            
+            // Highlight Inquiry Area
+            showNotification(`INQUIRY LOADED FOR ${productName.toUpperCase()}`);
+        }
+
+
+        // ================= CONTACT FORM SIMULATOR =================
+        const formSuccessOverlay = document.getElementById('form-success-overlay');
+        const contactForm = document.getElementById('contact-form');
+
+        function submitContactForm(event) {
+            event.preventDefault(); // Stay on page
+            
+            if (formSuccessOverlay) {
+                // Save sender name
+                const nameVal = document.getElementById('name').value;
+                
+                // Slide open the visual feedback frame inside panel
+                formSuccessOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                
+                // Reset inputs inside
+                contactForm.reset();
+            }
+        }
+
+        function resetContactForm() {
+            if (formSuccessOverlay) {
+                formSuccessOverlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+
+        // ================= CUSTOM MONOSPACE NOTIFICATION UTILITY =================
+        const notificationBar = document.getElementById('notification-bar');
+        const notificationText = document.getElementById('notification-text');
+        let notificationTimeout;
+
+        function showNotification(text) {
+            if (notificationBar && notificationText) {
+                clearTimeout(notificationTimeout);
+                notificationText.textContent = text;
+                notificationBar.classList.remove('opacity-0', '-translate-y-24');
+                notificationBar.classList.add('opacity-100', 'translate-y-0');
+
+                // Hide after 5 seconds automatically
+                notificationTimeout = setTimeout(() => {
+                    hideNotification();
+                }, 5000);
+            }
+        }
+
+        function hideNotification() {
+            if (notificationBar) {
+                notificationBar.classList.add('opacity-0', '-translate-y-24');
+                notificationBar.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+    </script>
+</body>
+</html>

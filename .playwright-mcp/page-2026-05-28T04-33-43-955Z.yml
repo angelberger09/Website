@@ -1,0 +1,150 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: M
+      - generic [ref=e6]:
+        - paragraph [ref=e7]: Marketplace shell
+        - heading "Market-V1" [level=1] [ref=e8]
+    - generic "Search products" [ref=e9]:
+      - generic [ref=e10]: Search
+      - searchbox "Search products" [ref=e11]
+    - generic "Primary actions" [ref=e12]:
+      - button "Browse" [ref=e13] [cursor=pointer]
+      - button "Cart 0" [ref=e14] [cursor=pointer]
+      - button "Sign in" [ref=e15] [cursor=pointer]
+  - main [ref=e16]:
+    - region "Product feed" [ref=e17]:
+      - group [ref=e19]:
+        - generic "Filters and sort" [ref=e20] [cursor=pointer]
+        - option "Featured" [selected]
+        - 'option "Price: low to high"'
+        - 'option "Price: high to low"'
+        - option "Customer rating"
+        - option "Newest"
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Infinite catalog
+          - heading "Featured picks" [level=2] [ref=e24]
+        - paragraph [ref=e25]: 24 results available, 5 shown
+      - generic [ref=e26]:
+        - article [ref=e27] [cursor=pointer]:
+          - generic [ref=e28]:
+            - img "Crochet Loop Kit" [ref=e29]
+            - generic [ref=e30]: Crochet
+          - generic [ref=e31]:
+            - button "Craft Crochet Loop Kit" [ref=e32]:
+              - generic [ref=e33]:
+                - paragraph [ref=e34]: Craft
+                - heading "Crochet Loop Kit" [level=3] [ref=e35]
+              - generic [ref=e36]: Expand
+            - generic [ref=e37]:
+              - generic [ref=e38]: $189.99
+              - generic [ref=e39]: ★★★★½ 4.8
+              - generic [ref=e40]: Ships today
+            - paragraph [ref=e41]: Textile kit with yarn, hook, and pattern cards for handmade loops.
+            - generic [ref=e42]:
+              - button "Add to cart" [ref=e43]
+              - button "Save" [ref=e44]
+            - generic [ref=e45]:
+              - paragraph [ref=e46]: A tactile crochet starter set that keeps the materials visible and easy to reach, with a soft palette and a handcraft-first presentation.
+              - list [ref=e47]:
+                - listitem [ref=e48]: Yarn pack included
+                - listitem [ref=e49]: Pattern cards
+                - listitem [ref=e50]: Beginner-friendly
+        - article [ref=e51] [cursor=pointer]:
+          - generic [ref=e52]:
+            - img "UV Resin Studio Set" [ref=e53]
+            - generic [ref=e54]: UV Resin
+          - generic [ref=e55]:
+            - button "Craft UV Resin Studio Set" [ref=e56]:
+              - generic [ref=e57]:
+                - paragraph [ref=e58]: Craft
+                - heading "UV Resin Studio Set" [level=3] [ref=e59]
+              - generic [ref=e60]: Expand
+            - generic [ref=e61]:
+              - generic [ref=e62]: $129.00
+              - generic [ref=e63]: ★★★★½ 4.6
+              - generic [ref=e64]: Arrives in 2 days
+            - paragraph [ref=e65]: Resin craft set with pigments, molds, and finishing tools.
+            - generic [ref=e66]:
+              - button "Add to cart" [ref=e67]
+              - button "Save" [ref=e68]
+            - generic [ref=e69]:
+              - paragraph [ref=e70]: A bright UV resin kit for layered pours, glossy finishes, and small desktop projects that read as translucent objects in the feed.
+              - list [ref=e71]:
+                - listitem [ref=e72]: Pigment set
+                - listitem [ref=e73]: Reusable molds
+                - listitem [ref=e74]: Curing wand
+        - article [ref=e75] [cursor=pointer]:
+          - generic [ref=e76]:
+            - img "Graphic Design Desk Stack" [ref=e77]
+            - generic [ref=e78]: Graphic design
+          - generic [ref=e79]:
+            - button "Design Graphic Design Desk Stack" [ref=e80]:
+              - generic [ref=e81]:
+                - paragraph [ref=e82]: Design
+                - heading "Graphic Design Desk Stack" [level=3] [ref=e83]
+              - generic [ref=e84]: Expand
+            - generic [ref=e85]:
+              - generic [ref=e86]: $74.50
+              - generic [ref=e87]: ★★★★½ 4.7
+              - generic [ref=e88]: Free delivery
+            - paragraph [ref=e89]: Desk kit with swatches, pencils, and layout tools for visual work.
+            - generic [ref=e90]:
+              - button "Add to cart" [ref=e91]
+              - button "Save" [ref=e92]
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: Built for layout, color, and branding work, the set keeps design tools arranged as a clean, highly legible object composition.
+              - list [ref=e95]:
+                - listitem [ref=e96]: Color swatches
+                - listitem [ref=e97]: Layout tools
+                - listitem [ref=e98]: Desktop organizer
+        - article [ref=e99] [cursor=pointer]:
+          - generic [ref=e100]:
+            - img "Paper Mache Object Kit" [ref=e101]
+            - generic [ref=e102]: Paper mache
+          - generic [ref=e103]:
+            - button "Paper Paper Mache Object Kit" [ref=e104]:
+              - generic [ref=e105]:
+                - paragraph [ref=e106]: Paper
+                - heading "Paper Mache Object Kit" [level=3] [ref=e107]
+              - generic [ref=e108]: Expand
+            - generic [ref=e109]:
+              - generic [ref=e110]: $219.00
+              - generic [ref=e111]: ★★★★½ 4.9
+              - generic [ref=e112]: Prime delivery tomorrow
+            - paragraph [ref=e113]: Paper-form kit with shaping tools and texture materials for sculpted surfaces.
+            - generic [ref=e114]:
+              - button "Add to cart" [ref=e115]
+              - button "Save" [ref=e116]
+            - generic [ref=e117]:
+              - paragraph [ref=e118]: A paper mache set for layered forms and display objects, framed like a studio object with clear texture and volume.
+              - list [ref=e119]:
+                - listitem [ref=e120]: Shaping forms
+                - listitem [ref=e121]: Texture paste
+                - listitem [ref=e122]: Display-ready
+        - article [ref=e123] [cursor=pointer]:
+          - generic [ref=e124]:
+            - img "Origami Wall Art" [ref=e125]
+            - generic [ref=e126]: Origami art
+          - generic [ref=e127]:
+            - button "Art Origami Wall Art" [ref=e128]:
+              - generic [ref=e129]:
+                - paragraph [ref=e130]: Art
+                - heading "Origami Wall Art" [level=3] [ref=e131]
+              - generic [ref=e132]: Expand
+            - generic [ref=e133]:
+              - generic [ref=e134]: $32.00
+              - generic [ref=e135]: ★★★★½ 4.5
+              - generic [ref=e136]: Ships today
+            - paragraph [ref=e137]: Wall-mounted folded paper artwork with sculptural depth.
+            - generic [ref=e138]:
+              - button "Add to cart" [ref=e139]
+              - button "Save" [ref=e140]
+            - generic [ref=e141]:
+              - paragraph [ref=e142]: A geometric origami wall piece that reads like a hanging object, with sharp folds and an airy composition designed to feel dimensional.
+              - list [ref=e143]:
+                - listitem [ref=e144]: Wall mount ready
+                - listitem [ref=e145]: Folded geometry
+                - listitem [ref=e146]: Lightweight frame
+      - button "Load next batch" [ref=e148] [cursor=pointer]

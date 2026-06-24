@@ -319,3 +319,48 @@ The top header should read as layered paper, not generic soft glass. Use texture
 ### Implementation boundary
 
 Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.
+
+## FEEDBACK-009 — Polaroid frames should become content cards
+
+Timestamp: 2026-06-24 19:41 ET  
+Status: converted to active lesson  
+Source: Screenshot review of current Website homepage polaroid/card treatment
+
+### Validation
+
+- Validation source used: screenshot plus current repo source for the homepage hero, page cards, and polaroid frame assets. Live fetch was unavailable during this pass, so repo source and screenshot matching were used.
+- Screenshot status: appears to be a current Website homepage screenshot showing the hero polaroid stack and surrounding card/content layers.
+- Matched semantic items: PAGE-001, COMP-003, COMP-004, DESIGN-010, DESIGN-017, ASSET-006, ASSET-007, METRIC-020.
+
+### Public-safe summary
+
+The polaroid picture motif should not only sit behind content as decorative atmosphere. When the frame appears in the page/card system, the middle should be filled with meaningful content and the polaroid should function as a card surface.
+
+### Extracted signal
+
+Turn polaroid frames into content-bearing cards: fill the inner photo area with readable page text, preview art, route cues, or portfolio/store material so the material motif becomes useful structure instead of background decoration.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-003 Scroll Title Sequence
+- COMP-004 Studio Page Cards
+- COMP-008 Filled Page Sections
+- DESIGN-010 Tactile Polaroid Depth
+- DESIGN-017 Polaroid Frame Core Motif
+- DESIGN-021 Content-Bearing Polaroid Cards
+- ASSET-006 Torn Polaroid Frame
+- ASSET-007 Dark Polaroid Backing
+- METRIC-020 Content-Bearing Polaroids
+
+### Created or updated lessons
+
+- LESSON-021 Make polaroid frames carry content
+
+### Reference note
+
+- `.agent/references/2026-06-24-polaroid-content-card-reference.md`
+
+### Implementation boundary
+
+Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.

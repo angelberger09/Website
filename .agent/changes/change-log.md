@@ -241,3 +241,41 @@ The current header is closer to direct navigation, but it still includes unwante
 - DESIGN-016
 - INT-010
 - METRIC-014
+
+## 2026-06-24 02:05 ET — Filled Website pages
+
+### Changed
+
+- Added shared site content in `app/site-data.js`.
+- Added shared site chrome in `app/site-chrome.jsx`.
+- Moved the header, atmosphere layer, and footer into `app/layout.jsx` so all pages share the Website shell.
+- Rebuilt the homepage to link to real About, Notes, Portfolio, and Store pages.
+- Added filled pages for About, Notes, Notes Post Reader, Portfolio, and Store.
+- Kept Blog and Blog Post as compatibility routes that reuse the Notes reader.
+- Updated global and typography styles for direct navigation and filled page layouts.
+- Updated public memory, pages matrix, semantic index, components matrix, and relationship map.
+
+### Why
+
+The `.agent` docs listed About, Notes, Portfolio, and Store as meaningful Website pages. This pass turns those planned routes into active filled pages while keeping the Blog repo as the public writing source.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-001
+- COMP-002
+- COMP-004
+- COMP-005
+- COMP-006
+- COMP-007
+- DESIGN-006
+- DESIGN-015
+- DESIGN-016
+- DESIGN-017
+- DATA-003

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="768" height="768" fill="none">
+  <defs>
+    <filter id="paperNoise" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="5" seed="14" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.98 0 0 0 0 0.92 0 0 0 0 0.80 0 0 0 .24 0" result="paper"/>
+      <feBlend in="SourceGraphic" in2="paper" mode="multiply"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <mask id="outerTear">
+      <rect width="768" height="768" fill="black"/>
+      <path fill="white" d="M102 35 L154 31 L219 35 L284 30 L350 34 L418 31 L487 35 L553 30 L619 35 L671 33 L675 92 L672 151 L677 216 L672 282 L676 348 L672 416 L677 487 L672 554 L675 622 L671 705 L610 709 L548 704 L482 709 L418 705 L351 710 L285 705 L219 709 L154 704 L101 708 L94 641 L99 580 L94 516 L99 449 L94 386 L99 319 L95 252 L100 185 L96 116 Z"/>
+    </mask>
+    <mask id="frameCut">
+      <rect width="768" height="768" fill="black"/>
+      <path fill="white" d="M102 35 L154 31 L219 35 L284 30 L350 34 L418 31 L487 35 L553 30 L619 35 L671 33 L675 92 L672 151 L677 216 L672 282 L676 348 L672 416 L677 487 L672 554 L675 622 L671 705 L610 709 L548 704 L482 709 L418 705 L351 710 L285 705 L219 709 L154 704 L101 708 L94 641 L99 580 L94 516 L99 449 L94 386 L99 319 L95 252 L100 185 L96 116 Z"/>
+      <path fill="black" d="M150 103 L211 99 L276 103 L342 99 L410 102 L474 99 L540 103 L616 101 L621 158 L617 218 L621 281 L617 344 L621 405 L618 482 L552 486 L486 482 L421 486 L352 482 L286 486 L218 482 L150 485 L146 421 L150 357 L146 291 L151 227 L146 163 Z"/>
+    </mask>
+    <linearGradient id="paper" x1="110" y1="45" x2="670" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff9e8"/>
+      <stop offset="0.46" stop-color="#f4e7ca"/>
+      <stop offset="1" stop-color="#fff3d8"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="96" y1="35" x2="680" y2="708" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.48" stop-color="#a6895b" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#6b5437" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#softShadow)">
+    <rect width="768" height="768" fill="transparent"/>
+    <g mask="url(#frameCut)">
+      <path d="M102 35 L154 31 L219 35 L284 30 L350 34 L418 31 L487 35 L553 30 L619 35 L671 33 L675 92 L672 151 L677 216 L672 282 L676 348 L672 416 L677 487 L672 554 L675 622 L671 705 L610 709 L548 704 L482 709 L418 705 L351 710 L285 705 L219 709 L154 704 L101 708 L94 641 L99 580 L94 516 L99 449 L94 386 L99 319 L95 252 L100 185 L96 116 Z" fill="url(#paper)" filter="url(#paperNoise)"/>
+      <path d="M105 43 L670 36 L674 704 L101 708 Z" fill="url(#edge)" opacity="0.42"/>
+      <path d="M105 38 C190 50 250 32 336 42 C430 51 524 29 669 38" stroke="#fffdf4" stroke-width="5" opacity="0.48"/>
+      <path d="M99 704 C190 690 252 716 340 704 C440 691 540 719 671 704" stroke="#6f5638" stroke-width="4" opacity="0.22"/>
+      <path d="M612 598 C638 626 656 650 666 698" stroke="#8b7352" stroke-width="2" opacity="0.28"/>
+      <path d="M105 653 C124 676 142 690 170 704" stroke="#7e684c" stroke-width="2" opacity="0.24"/>
+    </g>
+    <path mask="url(#outerTear)" d="M150 103 L211 99 L276 103 L342 99 L410 102 L474 99 L540 103 L616 101 L621 158 L617 218 L621 281 L617 344 L621 405 L618 482 L552 486 L486 482 L421 486 L352 482 L286 486 L218 482 L150 485 L146 421 L150 357 L146 291 L151 227 L146 163 Z" stroke="#2b211c" stroke-width="5" opacity="0.3"/>
+  </g>
+</svg>

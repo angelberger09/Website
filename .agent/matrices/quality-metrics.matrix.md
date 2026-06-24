@@ -8,3 +8,6 @@
 | METRIC-004 | Public memory is safe | `.agent/` contains distilled project facts only | Check files for private/raw conversation details | active | LESSON-004 |
 | METRIC-005 | Sources are traceable | Every linked public source has a matrix row | Review content-sources matrix | active | LESSON-004 |
 | METRIC-006 | Changes are explainable | Meaningful changes include why and related lessons | Review change log after edits | active | LESSON-001 |
+| METRIC-007 | Alive But Not Busy | Homepage has atmosphere/motion without visual clutter | Review background, motion, hover states, and reduced-motion behavior | proposed | LESSON-006 |
+| METRIC-008 | Flat But Tactile | Depth feels like graphic material, not heavy realistic 3D | Check for polaroid-like gloss/scratches/distortion while preserving flat style | proposed | LESSON-010 |
+| METRIC-009 | Borders Are Not Primary Structure | Layout separation works without hard outlines | Remove or reduce borders and verify hierarchy remains clear | proposed | LESSON-008 |

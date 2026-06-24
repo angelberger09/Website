@@ -21,3 +21,4 @@ These rules should shape current Website work.
 - Dock the hero title to the left, reduce the scroll length, and use subtle scroll-linked rotation for motion with intent.
 - Make the Pages menu default-open on desktop, expand left from the Pages control, and remove its separate dropdown border/background treatment.
 - Make hero typography feel like art lettering: softer weight, gentler spacing, handmade display character, and a paper-list structure instead of a heavy poster treatment.
+- Use direct navigation labels without edge numbers, extra helper text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.

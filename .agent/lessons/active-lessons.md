@@ -17,3 +17,4 @@ These rules should shape current Website work.
 - Prefer gradients and fade-offs over hard borders.
 - Give every animation a clear visual purpose.
 - Explore tactile 2.5D depth: polaroid-like gloss, tiny scratches, and subtle distortion while staying flat and performant.
+- Make the floating header feel edge-attached, as if it is emerging from offscreen above the page, while keeping all controls readable and accessible.

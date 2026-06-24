@@ -1,23 +1,23 @@
 const publicBlogLinks = [
   {
-    label: "Blog home",
-    href: "https://angelberger09.github.io/Blog/",
-    description: "The standalone public Astro blog."
+    label: "Blog repo",
+    href: "https://github.com/angelberger09/Blog",
+    description: "Working public source repo while GitHub Pages is not serving /Blog yet."
   },
   {
-    label: "Posts index",
-    href: "https://angelberger09.github.io/Blog/posts/",
-    description: "Human-readable post archive from the Blog repo."
+    label: "Posts data source",
+    href: "https://github.com/angelberger09/Blog/blob/main/src/data/posts.json",
+    description: "The committed post index that the Astro site uses to build posts.json."
   },
   {
-    label: "posts.json feed",
-    href: "https://angelberger09.github.io/Blog/posts.json",
-    description: "Machine-readable feed the main website can use as its embedded notes source."
+    label: "Raw posts data",
+    href: "https://raw.githubusercontent.com/angelberger09/Blog/main/src/data/posts.json",
+    description: "A working raw JSON URL the main website can read before Pages is live."
   },
   {
-    label: "Example post content",
-    href: "https://angelberger09.github.io/Blog/posts/learning-to-think-like-a-developer/content.md",
-    description: "Markdown content endpoint for the embedded reader."
+    label: "Example markdown source",
+    href: "https://github.com/angelberger09/Blog/tree/main/posts/learning-to-think-like-a-developer",
+    description: "The example post folder with profile.json and content.md."
   }
 ];
 
@@ -38,10 +38,10 @@ export default function HomePage() {
 
       <section className="link-card" aria-labelledby="blog-links-title">
         <p className="eyebrow inline">Public Blog feed</p>
-        <h2 id="blog-links-title">Embedded blog source links</h2>
+        <h2 id="blog-links-title">Working blog source links</h2>
         <p>
-          These are the public Blog repo endpoints this website should read from
-          when we build the full embedded Notes viewer.
+          The GitHub Pages URL for /Blog is currently returning 404, so this site
+          now points to working public GitHub and raw data links until Pages is enabled.
         </p>
         <div className="link-grid">
           {publicBlogLinks.map((link) => (

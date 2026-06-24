@@ -1,8 +1,9 @@
 import "./globals.css";
+import "./hero.css";
 
 export const metadata = {
   title: "Soft Strange Studio",
-  description: "Cozy art, soft strange creatures, and tiny comfort objects by Angel Berger.",
+  description: "A public studio homepage for Angel Berger.",
 };
 
 export default function RootLayout({ children }) {

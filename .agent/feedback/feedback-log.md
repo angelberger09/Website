@@ -230,3 +230,45 @@ Source validation is part of feedback intake, not an optional later step.
 ### Implementation boundary
 
 Store feedback in `.agent/` first. Let a later implementation run apply it unless Angel explicitly asks for the Website to change now.
+
+## FEEDBACK-007 — About page needs stronger paper material
+
+Timestamp: 2026-06-24 19:38 ET  
+Status: converted to active lesson  
+Source: Screenshot review of current Website About page
+
+### Validation source
+
+The screenshot maps to the active `/Website/about/` route and current repo source. It shows the shared Website header, About page hero copy, shared detail cards, and the polaroid stack from `app/site-chrome.jsx` and `app/about/page.jsx`.
+
+### Public-safe summary
+
+The page is warm, soft, and layered, but it does not feel papery enough yet. Future visual work should make the full page system read more like handmade paper/collage rather than soft translucent UI with a separate polaroid motif.
+
+### Extracted signal
+
+Paper should be the primary material read. Use visible fiber, torn or uneven edges, cutout/scanned imperfections, layered sheet shadows, collage overlaps, and tactile paper depth across backgrounds, cards, hero stacks, and shared page sections.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- PAGE-002 About
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- COMP-008 Filled Page Sections
+- DESIGN-010 Tactile Polaroid Depth
+- DESIGN-017 Polaroid Frame Core Motif
+- DESIGN-019 Paper Material Authenticity
+- METRIC-018 Paper Material Reads First
+
+### Created lesson
+
+- LESSON-019 Make paper material feel primary
+
+### Reference note
+
+- `.agent/references/2026-06-24-about-paper-material-reference.md`
+
+### Implementation boundary
+
+Feedback-only pass: public Website source files should stay unchanged until a later implementation run applies the lesson.

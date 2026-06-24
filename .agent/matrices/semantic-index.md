@@ -4,21 +4,21 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 
 | ID | Type | Name | Location | Purpose | Related Lesson | Status |
 |---|---|---|---|---|---|---|
-| PAGE-001 | Page | Homepage | `app/page.jsx` | Main public studio entry with filled page doors and next-step continuity | LESSON-001, LESSON-002, LESSON-015, LESSON-018 | active |
-| PAGE-002 | Page | About | `app/about/page.jsx` | Public studio orientation page with continuation paths | LESSON-001, LESSON-002, LESSON-004, LESSON-018 | active |
-| PAGE-003 | Page | Notes | `app/notes/page.jsx`, `app/notes/NotesPageClient.jsx` | Website-owned published notes index using Blog as source with studio-route continuity | LESSON-002, LESSON-004, LESSON-018 | active |
+| PAGE-001 | Page | Homepage | `app/page.jsx` | Main public studio entry with filled page doors and next-step continuity | LESSON-001, LESSON-002, LESSON-015, LESSON-018, LESSON-019 | active |
+| PAGE-002 | Page | About | `app/about/page.jsx` | Public studio orientation page with continuation paths | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019 | active |
+| PAGE-003 | Page | Notes | `app/notes/page.jsx`, `app/notes/NotesPageClient.jsx` | Website-owned published notes index using Blog as source with studio-route continuity | LESSON-002, LESSON-004, LESSON-018, LESSON-019 | active |
 | PAGE-003A | Page | Notes Post Reader | `app/notes/post/page.jsx`, `app/notes/post/PostReaderClient.jsx` | Website-owned individual note reader | LESSON-002, LESSON-004 | active |
-| PAGE-003B | Page | Blog Compatibility Routes | `app/blog/page.jsx`, `app/blog/post/page.jsx` | Preserve existing Blog route links while reusing Notes reader | LESSON-002, LESSON-004, LESSON-018 | active |
-| PAGE-004 | Page | Portfolio | `app/portfolio/page.jsx` | First public work/project archive with related route continuity | LESSON-001, LESSON-002, LESSON-018 | active |
-| PAGE-005 | Page | Store | `app/store/page.jsx` | Future shop/product lane doorway with honest readiness and related route continuity | LESSON-001, LESSON-002, LESSON-004, LESSON-018 | active |
+| PAGE-003B | Page | Blog Compatibility Routes | `app/blog/page.jsx`, `app/blog/post/page.jsx` | Preserve existing Blog route links while reusing Notes reader | LESSON-002, LESSON-004, LESSON-018, LESSON-019 | active |
+| PAGE-004 | Page | Portfolio | `app/portfolio/page.jsx` | First public work/project archive with related route continuity | LESSON-001, LESSON-002, LESSON-018, LESSON-019 | active |
+| PAGE-005 | Page | Store | `app/store/page.jsx` | Future shop/product lane doorway with honest readiness and related route continuity | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019 | active |
 | COMP-001 | Component | Floating Header | `app/site-chrome.jsx`, `app/globals.css` | Persistent personal identity and direct navigation | LESSON-002, LESSON-011, LESSON-015 | active |
 | COMP-002 | Component | Direct Studio Navigation | `app/site-chrome.jsx`, `app/globals.css`, `app/typography.css` | Compact access to top-level Website pages | LESSON-003, LESSON-013, LESSON-015 | active |
-| COMP-003 | Component | Scroll Title Sequence | `app/page.jsx`, `app/globals.css`, `app/hero.css`, `app/typography.css` | Left-docked rotating paper-list arrival title with polaroid material stack | LESSON-012, LESSON-014, LESSON-016 | active |
-| COMP-004 | Component | Studio Page Cards | `app/page.jsx`, `app/globals.css` | Human-facing links to current public pages | LESSON-002, LESSON-015, LESSON-018 | active |
-| COMP-005 | Component | Shared Site Chrome | `app/site-chrome.jsx`, `app/layout.jsx` | Header, atmosphere, footer, page intro, and detail card primitives | LESSON-001, LESSON-002, LESSON-015 | active |
+| COMP-003 | Component | Scroll Title Sequence | `app/page.jsx`, `app/globals.css`, `app/hero.css`, `app/typography.css` | Left-docked rotating paper-list arrival title with polaroid material stack | LESSON-012, LESSON-014, LESSON-016, LESSON-019 | active |
+| COMP-004 | Component | Studio Page Cards | `app/page.jsx`, `app/globals.css` | Human-facing links to current public pages | LESSON-002, LESSON-015, LESSON-018, LESSON-019 | active |
+| COMP-005 | Component | Shared Site Chrome | `app/site-chrome.jsx`, `app/layout.jsx` | Header, atmosphere, footer, page intro, and detail card primitives | LESSON-001, LESSON-002, LESSON-015, LESSON-019 | active |
 | COMP-006 | Component | Notes Reader Client | `app/notes/NotesPageClient.jsx` | Loads published Blog posts into Website-owned Notes page | LESSON-002, LESSON-004, LESSON-018 | active |
 | COMP-007 | Component | Post Reader Client | `app/notes/post/PostReaderClient.jsx` | Loads public Blog post profile and Markdown into Website reader | LESSON-002, LESSON-004 | active |
-| COMP-008 | Component | Filled Page Sections | `app/site-data.js`, route files | Route-specific sections that make each top-level page useful before connected repos have full data | LESSON-001, LESSON-002, LESSON-018 | active |
+| COMP-008 | Component | Filled Page Sections | `app/site-data.js`, route files | Route-specific sections that make each top-level page useful before connected repos have full data | LESSON-001, LESSON-002, LESSON-018, LESSON-019 | active |
 | COMP-009 | Component | Next Step Band | `app/next-step-band.jsx`, `app/page-continuity.js`, route files | Reusable page-to-page continuity pattern for filled Website rooms | LESSON-002, LESSON-018 | active |
 | DATA-001 | Content Source | Blog Home URL | Blog repo Pages URL | Standalone public notes site | LESSON-004 | active |
 | DATA-002 | Content Source | Posts Index URL | Blog repo Pages URL | Readable public post archive | LESSON-004 | active |
@@ -34,21 +34,22 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | DESIGN-007 | Design Pattern | Gradient Fade-Off Structure | `app/globals.css` | Replace hard borders with soft separation | LESSON-008 | active |
 | DESIGN-008 | Design Pattern | Flat Cel-Shaded Atmosphere | `app/globals.css` | Add graphic depth without realistic 3D | LESSON-007 | active |
 | DESIGN-009 | Design Pattern | Animated Background Texture | `app/site-chrome.jsx`, `app/globals.css`, `app/hero.css` | Make pages feel alive without clutter | LESSON-006 | active |
-| DESIGN-010 | Design Pattern | Tactile Polaroid Depth | `public/atmosphere/*`, `app/globals.css`, `app/hero.css` | Gloss, scratches, torn paper, and subtle depth over content | LESSON-010, LESSON-016 | active |
+| DESIGN-010 | Design Pattern | Tactile Polaroid Depth | `public/atmosphere/*`, `app/globals.css`, `app/hero.css` | Gloss, scratches, torn paper, and subtle depth over content | LESSON-010, LESSON-016, LESSON-019 | active |
 | DESIGN-011 | Design Pattern | Offscreen Top Emergence | `app/globals.css` | Make the header feel tucked into or entering from above the viewport | LESSON-011 | active |
 | DESIGN-012 | Design Pattern | Unboxed Left-Expanding Menu | `app/site-chrome.jsx`, `app/globals.css`, `app/typography.css` | Direct links sit in the header without a dropdown panel | LESSON-013 | active |
 | DESIGN-013 | Design Pattern | Art Lettering Typography | `app/hero.css`, `app/typography.css` | Hero type feels printed, drawn, playful, and studio-made | LESSON-014 | active |
-| DESIGN-014 | Design Pattern | Paper List Hero Lockup | `app/page.jsx`, `app/hero.css` | Welcome title reads like a tactile paper note or list | LESSON-014 | active |
+| DESIGN-014 | Design Pattern | Paper List Hero Lockup | `app/page.jsx`, `app/hero.css` | Welcome title reads like a tactile paper note or list | LESSON-014, LESSON-019 | active |
 | DESIGN-015 | Design Pattern | Direct Unnumbered Navigation | `app/site-chrome.jsx`, `app/globals.css` | Header nav uses plain labels without decorative markers | LESSON-015 | active |
 | DESIGN-016 | Design Pattern | Soft/Sharp Balance | `app/globals.css`, `app/typography.css` | Add definition so the site does not feel overly soft | LESSON-015 | active |
-| DESIGN-017 | Design Pattern | Polaroid Frame Core Motif | `app/page.jsx`, `app/site-chrome.jsx`, `app/hero.css`, `public/atmosphere/*` | Dark backing plus cream torn frame used as reusable material structure | LESSON-016 | active |
+| DESIGN-017 | Design Pattern | Polaroid Frame Core Motif | `app/page.jsx`, `app/site-chrome.jsx`, `app/hero.css`, `public/atmosphere/*` | Dark backing plus cream torn frame used as reusable material structure | LESSON-016, LESSON-019 | active |
 | DESIGN-018 | Design Pattern | Visitor Continuity Bands | `app/next-step-band.jsx`, `app/page-continuity.js` | Keep filled pages connected with quiet next-step guidance | LESSON-002, LESSON-018 | active |
-| ASSET-001 | Asset | Grain Noise | `public/atmosphere/grain-noise.svg` | Subtle paper/film texture | LESSON-006 | active |
-| ASSET-002 | Asset | Dust Specks | `public/atmosphere/dust-specks.svg` | Photo-surface dust and imperfections | LESSON-010 | active |
+| DESIGN-019 | Design Pattern | Paper Material Authenticity | `app/globals.css`, `app/site-chrome.jsx`, `public/atmosphere/*` | Make shared surfaces read as handmade paper/collage before translucent UI | LESSON-019 | active |
+| ASSET-001 | Asset | Grain Noise | `public/atmosphere/grain-noise.svg` | Subtle paper/film texture | LESSON-006, LESSON-010, LESSON-019 | active |
+| ASSET-002 | Asset | Dust Specks | `public/atmosphere/dust-specks.svg` | Photo-surface dust and imperfections | LESSON-010, LESSON-019 | active |
 | ASSET-003 | Asset | Fine Scratches | `public/atmosphere/fine-scratches.svg` | Hairline glossy-surface scratches | LESSON-010 | active |
 | ASSET-004 | Asset | Soft Scratches | `public/atmosphere/soft-scratches.svg` | Larger glass/photo scuffs | LESSON-010 | active |
-| ASSET-005 | Asset | Gloss Sweep | `public/atmosphere/gloss-sweep.svg` | Diagonal glossy light sweep | LESSON-009 | active |
-| ASSET-006 | Asset | Torn Polaroid Frame | `public/atmosphere/polaroid-frame-alpha.svg` | Alpha-ready cream torn photo frame for website layering | LESSON-016 | active |
+| ASSET-005 | Asset | Gloss Sweep | `public/atmosphere/gloss-sweep.svg` | Diagonal glossy light sweep | LESSON-009, LESSON-010 | active |
+| ASSET-006 | Asset | Torn Polaroid Frame | `public/atmosphere/polaroid-frame-alpha.svg` | Alpha-ready cream torn photo frame for website layering | LESSON-016, LESSON-019 | active |
 | ASSET-007 | Asset | Dark Polaroid Backing | `public/atmosphere/polaroid-backing-alpha.svg` | Alpha-ready charcoal backing plate for depth below the frame | LESSON-016 | active |
 | INT-009 | Interaction | Scroll-Rotating Hero Lockup | `app/hero.css` | Title rotates subtly during hero scroll | LESSON-012 | active |
 | INT-010 | Interaction | Direct Header Navigation | `app/site-chrome.jsx`, `app/globals.css` | Page links are visible without a dropdown or Pages trigger | LESSON-013, LESSON-015 | active |
@@ -61,7 +62,9 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | METRIC-013 | Metric | Artsy Not Poster-Heavy | `.agent/matrices/quality-metrics.matrix.md` | Check hero type feels handmade and readable | LESSON-014 | active |
 | METRIC-014 | Metric | Direct Nav With Contrast | `.agent/matrices/quality-metrics.matrix.md` | Check direct nav has no numbers, no helper text, no Pages button, and better contrast | LESSON-015 | active |
 | METRIC-015 | Metric | Polaroid Motif Feels Core | `.agent/matrices/quality-metrics.matrix.md` | Check frame/backing stack feels integrated, not pasted on | LESSON-016 | active |
-| METRIC-016 | Metric | Filled Page Continuity | `.agent/matrices/quality-metrics.matrix.md` | Check each major page gives useful next routes without clutter | LESSON-018 | active |
+| METRIC-016 | Metric | Feedback Source Validated | `.agent/matrices/quality-metrics.matrix.md` | Check feedback records include validation source and implementation boundary | LESSON-017 | active |
+| METRIC-017 | Metric | Filled Page Continuity | `.agent/matrices/quality-metrics.matrix.md` | Check each major page gives useful next routes without clutter | LESSON-018 | active |
+| METRIC-018 | Metric | Paper Material Reads First | `.agent/matrices/quality-metrics.matrix.md` | Check shared surfaces read as paper/collage before translucent UI | LESSON-019 | active |
 | DEC-006 | Decision | Motion Library Evaluation | `.agent/matrices/decisions.matrix.md` | Decide whether anime.js is needed | LESSON-009 | proposed |
 | LESSON-001 | Lesson | Make Homepage Feel Authored | `.agent/lessons/*` | Avoid demo-shell feeling | METRIC-001 | active |
 | LESSON-002 | Lesson | Use Human-Facing Copy | `.agent/lessons/*` | Translate technical structure into friendly language | METRIC-002 | active |
@@ -81,3 +84,4 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | LESSON-016 | Lesson | Use Polaroid Frame Stacks As A Core Material Motif | `.agent/lessons/*` | Layer dark backing and cream torn frame as reusable visual structure | METRIC-015 | active |
 | LESSON-017 | Lesson | Validate Feedback Against The Actual Website | `.agent/lessons/*` | Source-check visual/current-site feedback before storing or applying it | METRIC-004 | active |
 | LESSON-018 | Lesson | Fill Public Pages As Useful Rooms | `.agent/lessons/*` | Make filled pages useful, honest, and connected instead of placeholders | METRIC-016 | active |
+| LESSON-019 | Lesson | Make Paper Material Feel Primary | `.agent/lessons/*` | Make shared surfaces read as handmade paper/collage before soft translucent UI | METRIC-018 | active |

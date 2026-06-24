@@ -15,3 +15,7 @@ COMP-001 and COMP-002 are now also shaped by LESSON-011. The next header pass sh
 ## Addendum — 2026-06-23 23:40 ET
 
 COMP-002 is now also shaped by LESSON-013. The next Pages menu pass should default-open on desktop, expand left from the Pages control, and remove the separate dropdown panel background/border while preserving focus states and mobile usability.
+
+## Addendum — 2026-06-23 23:50 ET
+
+COMP-002 is now also shaped by LESSON-015. The next direct-nav pass should remove edge numbers, extra helper text, and the redundant `Pages` button, then add more contrast and definition so the header does not feel overly soft.

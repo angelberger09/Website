@@ -215,3 +215,29 @@ The current Pages menu opens downward into a large separate panel. The next menu
 - DESIGN-012
 - INT-010
 - METRIC-012
+
+## 2026-06-23 23:50 ET — Direct nav simplification feedback
+
+### Changed
+
+- Added a public-safe feedback record for the direct nav screenshot.
+- Added LESSON-015 for removing nav edge numbers, extra helper text, and the redundant `Pages` button.
+- Added DESIGN-015 Direct Unnumbered Navigation.
+- Added DESIGN-016 Soft/Sharp Balance.
+- Added METRIC-014 Direct Nav With Contrast.
+- Added a reference note and encoded compressed screenshot reference in `.agent/references/`.
+- Updated active lessons, lesson log, feedback log, design language, quality metrics, feedback lessons, components, interactions, memory, and semantic index.
+
+### Why
+
+The current header is closer to direct navigation, but it still includes unwanted edge numbers, extra text treatment, and a separate `Pages` button. The next pass should show only direct labels and add more contrast so the interface does not feel overly soft.
+
+### Related items
+
+- FEEDBACK-005
+- LESSON-015
+- COMP-002
+- DESIGN-015
+- DESIGN-016
+- INT-010
+- METRIC-014

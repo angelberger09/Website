@@ -21,11 +21,13 @@ This file stores distilled, public-safe memory for the Website repo.
 
 The site should feel like a calm studio landing page first. Technical structure can exist underneath, but the visible homepage should prioritize clarity, warmth, and orientation.
 
-The current visual direction is less framed UI and more living flat atmosphere: fewer hard borders, more gradients and fade-offs, subtle intentional motion, and tactile 2.5D depth that feels like a glossy photo surface with small surface marks and light-bending overlay effects.
+The current visual direction is less framed UI and more living paper-collage atmosphere: fewer hard borders, more gradients and fade-offs, subtle intentional motion, tactile 2.5D depth, visible paper fiber, torn/cut edges, scanned imperfections, surface marks, and layered paper shadows. Gloss and polaroid effects should support the paper feeling, not replace it.
 
 The floating header should feel physically connected to the top edge of the viewport while remaining readable across the live top-level pages.
 
 Direct navigation should stay visible without a redundant `Pages` button, edge numbers, or extra helper text. Add enough contrast and hierarchy that the header feels clear, not overly soft.
+
+Paper material should be visible across the shared page system, not isolated to one decorative polaroid stack. Cards, page heroes, background layers, and filled sections should read as handmade paper/collage pieces before they read as generic translucent UI panels.
 
 Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
 

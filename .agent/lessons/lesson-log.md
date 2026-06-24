@@ -145,3 +145,17 @@ The floating header should feel edge-attached, as if it is entering from above t
 ### Future rule
 
 Use top-edge attachment, clipping, negative offset, or a tucked surface effect to create the offscreen-entry feeling, while keeping the identity text, Pages button, focus states, and click targets fully usable.
+
+## LESSON-012 — Make the Pages menu open left and stay visually unboxed
+
+Timestamp: 2026-06-23 23:40 ET  
+Context: Screenshot review of the current Pages menu dropdown  
+Status: active
+
+### Lesson
+
+The Pages menu should be default-open on desktop, expand left from the Pages control, and avoid a separate dropdown card treatment.
+
+### Future rule
+
+Render the Pages links as part of the header line rather than a panel below it. Remove the separate menu background and border, preserve readable labels and visible focus states, and add a mobile fallback if horizontal space is limited.

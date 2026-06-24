@@ -130,3 +130,40 @@ The current header reads as a complete floating pill inside the page. The next h
 - DESIGN-011
 - INT-008
 - METRIC-010
+
+## 2026-06-23 23:45 ET — Atmosphere assets and border/card alignment pass
+
+### Changed
+
+- Added five reusable atmosphere assets to `public/atmosphere/`.
+- Added a homepage atmosphere layer using grain, dust, scratches, and gloss overlays.
+- Reduced hard borders on the header, folder menu, homepage cards, reader cards, and source links.
+- Rebuilt card separation with gradients, material layers, soft shadows, and inset highlights.
+- Improved page-card alignment with equal-height cards, consistent rows, and bottom-aligned descriptions.
+- Added `.agent/matrices/assets.matrix.md` and semantic index rows for ASSET-001 through ASSET-005.
+
+### Why
+
+The site needed to apply the feedback lessons directly: less hard framed UI, more tactile atmosphere, visible material depth, and cleaner card alignment without relying on borders.
+
+### Related items
+
+- ASSET-001
+- ASSET-002
+- ASSET-003
+- ASSET-004
+- ASSET-005
+- PAGE-001
+- COMP-001
+- COMP-002
+- COMP-004
+- DESIGN-007
+- DESIGN-009
+- DESIGN-010
+- LESSON-005
+- LESSON-006
+- LESSON-008
+- LESSON-010
+- METRIC-007
+- METRIC-008
+- METRIC-009

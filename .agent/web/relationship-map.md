@@ -11,7 +11,7 @@
 - Uses the atmosphere asset system through `app/globals.css`.
 - Links to DATA-001, DATA-002, DATA-003, DATA-004.
 - Shaped by LESSON-001, LESSON-002, LESSON-003.
-- Current visual direction is shaped by LESSON-005 through LESSON-013.
+- Current visual direction is shaped by LESSON-005 through LESSON-015.
 
 ## Floating Header
 
@@ -22,6 +22,7 @@
 - Current styling reduces hard border reliance per LESSON-005 and LESSON-008.
 - Current styling uses gloss/material layering from ASSET-005.
 - Future placement should follow LESSON-011 and DESIGN-011 so the header feels attached to or emerging from the top edge.
+- Future contrast should follow LESSON-015 and DESIGN-016 so the header does not feel overly soft.
 
 ## Folder Pages Menu
 
@@ -29,6 +30,7 @@
 - Lives inside the floating header.
 - Current behavior is a dropdown panel.
 - Future behavior should follow LESSON-013, DESIGN-012, and INT-010: open by default, expand left from the Pages control, and remove the separate menu panel border/background.
+- Latest correction from LESSON-015: once direct links are visible, remove the `Pages` trigger itself, remove edge numbers, and remove extra helper text.
 
 ## Scroll Title Sequence
 
@@ -71,10 +73,12 @@
 - DESIGN-010 Tactile Polaroid Depth adds gloss/surface marks/light-bending overlays.
 - DESIGN-011 Offscreen Top Emergence makes the header feel physically attached to the viewport edge.
 - DESIGN-012 Unboxed Left-Expanding Menu makes navigation feel integrated into the header instead of a dropdown card.
+- DESIGN-015 Direct Unnumbered Navigation removes edge numbers, helper text, and redundant trigger controls.
+- DESIGN-016 Soft/Sharp Balance adds contrast and clarity where the UI has become too soft.
 - INT-006 and INT-007 are proposed interactions for mouse-reactive atmosphere and tactile overlay response.
 - INT-008 is a proposed interaction/placement behavior for top-edge header entry.
-- INT-010 is a proposed desktop navigation behavior for default-open leftward menu reveal.
-- Metrics: METRIC-007, METRIC-008, METRIC-009, METRIC-010, METRIC-012.
+- INT-010 is a proposed desktop navigation behavior for direct default-open nav.
+- Metrics: METRIC-007, METRIC-008, METRIC-009, METRIC-010, METRIC-012, METRIC-014.
 
 ## Reference Images
 
@@ -82,6 +86,8 @@
 - The encoded compressed screenshot reference lives in `.agent/references/2026-06-23-header-offscreen-top-reference.jpg.base64`.
 - Left-expanding menu feedback reference lives in `.agent/references/2026-06-23-menu-left-open-transparent-reference.md`.
 - The encoded compressed screenshot reference lives in `.agent/references/2026-06-23-menu-left-open-transparent-reference.jpg.base64`.
+- Direct nav simplification reference lives in `.agent/references/2026-06-23-nav-direct-unboxed-reference.md`.
+- The encoded compressed screenshot reference lives in `.agent/references/2026-06-23-nav-direct-unboxed-reference.jpg.base64`.
 
 ## Public Memory System
 

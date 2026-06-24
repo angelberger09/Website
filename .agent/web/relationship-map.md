@@ -26,3 +26,9 @@
 - DESIGN-015 removes the old Pages trigger and numbered nav treatment.
 - DESIGN-017 keeps the polaroid frame/backing motif available across the site.
 - DESIGN-018 treats each top-level route as a filled public room with useful content and honest readiness states.
+- DESIGN-019 pushes the shared visual language toward paper/collage material authenticity across page heroes, cards, backgrounds, and filled sections.
+
+## Feedback relationships
+
+- FEEDBACK-007 maps the current About page screenshot to PAGE-002, COMP-005, COMP-008, DESIGN-019, METRIC-018, and LESSON-019.
+- LESSON-019 should influence future implementation across all top-level routes because the paper/collage material system is shared, not page-specific.

@@ -1,0 +1,10 @@
+# Design Language Matrix
+
+| Design ID | Token or Pattern | Meaning | Current Use | Lesson Source | Do | Avoid |
+|---|---|---|---|---|---|---|
+| DESIGN-001 | Warm Cream Background | Soft studio atmosphere | `body`, `.home-page` | LESSON-001 | Keep page calm and warm | Harsh white or dark technical shell |
+| DESIGN-002 | Large Editorial Type | Authored identity | Scroll title and section heading | LESSON-001 | Let type create the arrival moment | Overfilling with explanatory copy |
+| DESIGN-003 | Rounded Minimal Cards | Gentle structure | Page destination cards | LESSON-003 | Use cards as quiet doors | Dense dashboard cards |
+| DESIGN-004 | Floating Header | Persistent personal anchor | Top header | LESSON-002 | Keep `Angel Berger` visible | Replacing identity with repo language |
+| DESIGN-005 | Sage Accent | Soft active marker | pills and folder mark | LESSON-001 | Use sparingly | Too many competing accents |
+| DESIGN-006 | Human-Facing Copy | Friendly orientation | homepage text and card descriptions | LESSON-002 | Say notes, archive, pages, doors | viewer shell, endpoints, deployment test |

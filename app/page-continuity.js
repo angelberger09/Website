@@ -59,6 +59,26 @@ export const pageContinuity = {
       }
     ]
   },
+  notePost: {
+    eyebrow: "After reading",
+    title: "Each note can lead back into the studio map.",
+    description:
+      "The individual reader should feel like a room inside the same Website, not a dead-end article view. After a note, visitors can return to the notes table of contents or follow the writing into related public work.",
+    steps: [
+      {
+        title: "Return to notes",
+        eyebrow: "Notes",
+        href: "/Website/notes/",
+        description: "Go back to the published notes index and choose another piece."
+      },
+      {
+        title: "Follow into projects",
+        eyebrow: "Portfolio",
+        href: "/Website/portfolio/",
+        description: "Move from the writing surface into the public project archive and studio systems."
+      }
+    ]
+  },
   portfolio: {
     eyebrow: "Archive path",
     title: "Each project lane can become a deeper public room.",

@@ -33,6 +33,8 @@ Paper material should be visible across the shared page system, not isolated to 
 
 When polaroid/photo frames are used as cards, the transparent middle should carry meaningful readable content. Use the frame and backing as a content surface for route labels, page information, preview art, project material, or product lane cues rather than leaving the polaroid as empty background decoration.
 
+Shared card surfaces should not default to soft rounded UI panels. Treat page cards, detail cards, wide cards, reader cards, source links, pathway rows, and next-step bands as content-bearing paper/polaroid pieces with cut or uneven edge cues, layered backing shadows, texture, and visible sheet depth.
+
 Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
 
 Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes.

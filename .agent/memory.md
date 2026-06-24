@@ -16,6 +16,8 @@ This file stores distilled, public-safe memory for the Website repo.
 
 The site should feel like a calm studio landing page first. Technical structure can exist underneath, but the visible homepage should prioritize clarity, warmth, and orientation.
 
+The next visual direction is less framed UI and more living flat atmosphere: fewer hard borders, more gradients and fade-offs, subtle intentional motion, and tactile 2.5D depth that feels like a glossy photo surface with small surface marks and light-bending overlay effects.
+
 ## Do not store here
 
 - raw conversation logs

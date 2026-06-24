@@ -5,7 +5,7 @@
 | DESIGN-001 | Warm Cream Background | Soft studio atmosphere | `body`, `.home-page` | LESSON-001 | Keep page calm and warm | Harsh white or dark technical shell |
 | DESIGN-002 | Large Editorial Type | Authored identity | Scroll title and section heading | LESSON-001 | Let type create the arrival moment | Overfilling with explanatory copy |
 | DESIGN-003 | Rounded Minimal Cards | Gentle structure | Page destination cards | LESSON-003 | Use cards as quiet doors | Dense dashboard cards |
-| DESIGN-004 | Floating Header | Persistent personal anchor | Top header | LESSON-002 | Keep `Angel Berger` visible | Replacing identity with repo language |
+| DESIGN-004 | Floating Header | Persistent personal anchor | Top header | LESSON-002, LESSON-020 | Keep `Angel Berger` visible and make the surface feel like paper over the page | Replacing identity with repo language or making the header read as generic glass UI |
 | DESIGN-005 | Sage Accent | Soft active marker | pills and folder mark | LESSON-001 | Use sparingly | Too many competing accents |
 | DESIGN-006 | Human-Facing Copy | Friendly orientation | homepage text and card descriptions | LESSON-002 | Say notes, archive, pages, doors | viewer shell, endpoints, deployment test |
 | DESIGN-007 | Gradient Fade-Off Structure | Structure without hard boxes | proposed homepage panels/cards | LESSON-008 | Use soft fade-offs and color fields | Relying on outlines for every separation |
@@ -19,3 +19,4 @@
 | DESIGN-015 | Direct Unnumbered Navigation | Header nav is clear and immediate | proposed header nav revision | LESSON-015 | Use plain destination labels only | Edge numbers, helper labels, metadata, or redundant triggers |
 | DESIGN-016 | Soft/Sharp Balance | Brand remains gentle but not mushy | proposed visual refinement | LESSON-015 | Add contrast, firmness, and hierarchy where interaction needs clarity | Making every surface equally soft, hazy, or low-contrast |
 | DESIGN-019 | Paper Material Authenticity | Whole page system reads as handmade paper/collage | shared page heroes, cards, backgrounds, filled sections, and polaroid motifs | LESSON-019 | Show fiber, torn/cut edges, layered paper shadows, scanned imperfections, and collage overlaps while preserving readability | Generic translucent glass panels, isolated paper motifs, or softness that hides material character |
+| DESIGN-020 | Paper Header Surface | Top bar reads as a paper strip laid over the page | shared floating header | LESSON-020 | Use paper texture, slight edge irregularity, existing material assets or shader-like CSS, and a visible soft drop shadow | Smooth glass capsule, overly blurred nav bar, hidden focus states, or shadow so faint the header floats without contact |

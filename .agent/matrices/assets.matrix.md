@@ -7,8 +7,8 @@
 | ASSET-003 | `public/atmosphere/fine-scratches.svg` | Adds hairline glossy-surface scratches | Homepage atmosphere, page cards | LESSON-010 | active |
 | ASSET-004 | `public/atmosphere/soft-scratches.svg` | Adds larger glass/photo scuffs for tactile depth | Reader panels, cards, atmosphere | LESSON-010 | active |
 | ASSET-005 | `public/atmosphere/gloss-sweep.svg` | Adds a diagonal glossy light sweep for photo/polaroid material feel | Header, atmosphere, page cards | LESSON-009, LESSON-010, LESSON-020 | active |
-| ASSET-006 | `public/atmosphere/polaroid-frame-alpha.svg` | Torn cream polaroid/photo frame with transparent clipping area | Hero polaroid stack, potential header paper mask/reference | LESSON-010, LESSON-014, LESSON-019, LESSON-020 | active |
-| ASSET-007 | `public/atmosphere/polaroid-backing-alpha.svg` | Dark charcoal torn-paper backing plate for depth behind the frame | Hero polaroid stack | LESSON-010, LESSON-014 | active |
+| ASSET-006 | `public/atmosphere/polaroid-frame-alpha.svg` | Torn cream polaroid/photo frame with transparent clipping area that should become a filled card center when used as a content component | Hero polaroid stack, potential header paper mask/reference, content-bearing card surfaces | LESSON-010, LESSON-014, LESSON-019, LESSON-020, LESSON-021 | active |
+| ASSET-007 | `public/atmosphere/polaroid-backing-alpha.svg` | Dark charcoal torn-paper backing plate for depth behind the frame and content-filled card centers | Hero polaroid stack, content-bearing card surfaces | LESSON-010, LESSON-014, LESSON-021 | active |
 
 ## Use rule
 
@@ -19,3 +19,5 @@ Polaroid assets should be layered as a core material motif: dark backing below, 
 Paper/collage authenticity should be evaluated before adding more gloss or softness. Existing grain, dust, and torn-frame assets should be strengthened or supplemented in future implementation when surfaces still read as generic translucent UI rather than paper.
 
 For the shared header, prefer reusing existing paper/material assets before adding new ones. Grain, gloss, and torn-frame alpha cues can be combined with CSS masks, pseudo-elements, or shader-like gradients to make the top bar read as paper over the page with a visible soft shadow.
+
+When a polaroid frame is used as a card, the transparent center should not stay empty. Fill the inner area with readable route text, preview art, project/product material, or other meaningful page content so the frame acts as a card rather than background decoration.

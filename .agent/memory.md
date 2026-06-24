@@ -18,6 +18,8 @@ The site should feel like a calm studio landing page first. Technical structure 
 
 The next visual direction is less framed UI and more living flat atmosphere: fewer hard borders, more gradients and fade-offs, subtle intentional motion, and tactile 2.5D depth that feels like a glossy photo surface with small surface marks and light-bending overlay effects.
 
+The floating header should feel more physically connected to the top edge of the viewport. Future header revisions should make it appear tucked into, clipped by, or emerging from above the screen while keeping all navigation controls readable and accessible.
+
 ## Do not store here
 
 - raw conversation logs

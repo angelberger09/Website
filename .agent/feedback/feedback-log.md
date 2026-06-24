@@ -202,3 +202,31 @@ Do not keep the old `Pages` trigger once the links are visible. The nav should b
 - keep only direct destination labels such as Notes, Sample, Source, Home
 - reduce excess softness by increasing contrast, using firmer text weight/spacing, or sharpening the material edge
 - keep mobile behavior simple and accessible
+
+## FEEDBACK-006 — Validate feedback against the actual Website before acting
+
+Timestamp: 2026-06-24 19:17 ET  
+Status: converted to active lesson  
+Source: Workflow feedback about screenshots and current-site validation
+
+### Public-safe summary
+
+Future feedback intake should check whether screenshots and visible-site comments belong to the actual Website before creating lessons or implementation targets. Feedback storage should update `.agent/` only unless implementation is explicitly requested.
+
+### Extracted signal
+
+Source validation is part of feedback intake, not an optional later step.
+
+### Affected semantic items
+
+- PROC-001 Live Website Validation Protocol
+- LESSON-017 Validate feedback against the actual Website
+- METRIC-016 Feedback Source Validated
+
+### Created lesson
+
+- LESSON-017 Validate feedback against the actual Website
+
+### Implementation boundary
+
+Store feedback in `.agent/` first. Let a later implementation run apply it unless Angel explicitly asks for the Website to change now.

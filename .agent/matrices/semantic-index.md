@@ -6,7 +6,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 |---|---|---|---|---|---|---|
 | PAGE-001 | Page | Homepage | `app/page.jsx` | Main public studio entry | LESSON-001 | active |
 | COMP-001 | Component | Floating Header | `app/page.jsx`, `app/globals.css` | Persistent personal identity and navigation | LESSON-002 | active |
-| COMP-002 | Component | Folder Pages Menu | `app/page.jsx`, `app/globals.css` | Compact navigation to current page destinations | LESSON-003 | active |
+| COMP-002 | Component | Folder Pages Menu | `app/page.jsx`, `app/globals.css` | Compact navigation to current page destinations | LESSON-003, LESSON-013 | active |
 | COMP-003 | Component | Scroll Title Sequence | `app/page.jsx`, `app/globals.css`, `app/hero.css` | Left-docked rotating arrival title | LESSON-012 | active |
 | COMP-004 | Component | Studio Page Cards | `app/page.jsx`, `app/globals.css` | Human-facing links to current public pages | LESSON-002 | active |
 | DATA-001 | Content Source | Blog Home URL | Blog repo Pages URL | Standalone public notes site | LESSON-004 | active |
@@ -23,16 +23,22 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | DESIGN-008 | Design Pattern | Flat Cel-Shaded Atmosphere | `app/globals.css` | Add graphic depth without realistic 3D | LESSON-007 | active |
 | DESIGN-009 | Design Pattern | Animated Background Texture | `app/page.jsx`, `app/globals.css`, `app/hero.css` | Make homepage feel alive without clutter | LESSON-006 | active |
 | DESIGN-010 | Design Pattern | Tactile Polaroid Depth | `public/atmosphere/*`, `app/globals.css` | Gloss, scratches, and subtle distortion over content | LESSON-010 | active |
+| DESIGN-011 | Design Pattern | Offscreen Top Emergence | future CSS | Make the header feel tucked into or entering from above the viewport | LESSON-011 | proposed |
+| DESIGN-012 | Design Pattern | Unboxed Left-Expanding Menu | future CSS | Make Pages links expand left without a separate dropdown panel | LESSON-013 | proposed |
 | ASSET-001 | Asset | Grain Noise | `public/atmosphere/grain-noise.svg` | Subtle paper/film texture | LESSON-006 | active |
 | ASSET-002 | Asset | Dust Specks | `public/atmosphere/dust-specks.svg` | Photo-surface dust and imperfections | LESSON-010 | active |
 | ASSET-003 | Asset | Fine Scratches | `public/atmosphere/fine-scratches.svg` | Hairline glossy-surface scratches | LESSON-010 | active |
 | ASSET-004 | Asset | Soft Scratches | `public/atmosphere/soft-scratches.svg` | Larger glass/photo scuffs | LESSON-010 | active |
 | ASSET-005 | Asset | Gloss Sweep | `public/atmosphere/gloss-sweep.svg` | Diagonal glossy light sweep | LESSON-009 | active |
 | INT-006 | Interaction | Mouse-Reactive Background | future component | Background responds gently to pointer movement | LESSON-006 | proposed |
+| INT-008 | Interaction | Top Edge Entry | future CSS/animation | Header visually enters from the top edge without blocking controls | LESSON-011 | proposed |
 | INT-009 | Interaction | Scroll-Rotating Hero Lockup | `app/hero.css` | Title rotates subtly during hero scroll | LESSON-012 | active |
+| INT-010 | Interaction | Leftward Default-Open Menu Reveal | future CSS/HTML | Pages menu starts open and reveals links left of the Pages control | LESSON-013 | proposed |
 | METRIC-007 | Metric | Alive But Not Busy | `.agent/matrices/quality-metrics.matrix.md` | Check atmospheric motion quality | LESSON-006 | active |
 | METRIC-008 | Metric | Flat But Tactile | `.agent/matrices/quality-metrics.matrix.md` | Check 2.5D depth stays graphic and performant | LESSON-010 | active |
+| METRIC-010 | Metric | Offscreen But Usable | `.agent/matrices/quality-metrics.matrix.md` | Check top-edge header effect preserves access and readability | LESSON-011 | active |
 | METRIC-011 | Metric | Quick Hero Read | `.agent/matrices/quality-metrics.matrix.md` | Check title reads quickly with reduced scroll | LESSON-012 | active |
+| METRIC-012 | Metric | Open Left Without Panel | `.agent/matrices/quality-metrics.matrix.md` | Check menu opens left by default without separate border/background | LESSON-013 | active |
 | DEC-006 | Decision | Motion Library Evaluation | `.agent/matrices/decisions.matrix.md` | Decide whether anime.js is needed | LESSON-009 | proposed |
 | LESSON-001 | Lesson | Make Homepage Feel Authored | `.agent/lessons/*` | Avoid demo-shell feeling | METRIC-001 | active |
 | LESSON-002 | Lesson | Use Human-Facing Copy | `.agent/lessons/*` | Translate technical structure into friendly language | METRIC-002 | active |
@@ -44,8 +50,6 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | LESSON-008 | Lesson | Prefer Gradients Over Borders | `.agent/lessons/*` | Use fade-offs before outlines | METRIC-007 | active |
 | LESSON-009 | Lesson | Animation Should Have Intent | `.agent/lessons/*` | Motion must have a purpose | METRIC-007 | active |
 | LESSON-010 | Lesson | Add Tactile 2.5D Depth | `.agent/lessons/*` | Use polaroid-like gloss and distortion | METRIC-008 | active |
-| DESIGN-011 | Design Pattern | Offscreen Top Emergence | future CSS | Make the header feel tucked into or entering from above the viewport | LESSON-011 | proposed |
-| INT-008 | Interaction | Top Edge Entry | future CSS/animation | Header visually enters from the top edge without blocking controls | LESSON-011 | proposed |
-| METRIC-010 | Metric | Offscreen But Usable | `.agent/matrices/quality-metrics.matrix.md` | Check top-edge header effect preserves access and readability | LESSON-011 | active |
 | LESSON-011 | Lesson | Make Header Emerge From Offscreen Top | `.agent/lessons/*` | Use top-edge attachment without hiding controls | METRIC-010 | active |
 | LESSON-012 | Lesson | Dock Hero Type And Reduce Scroll Length | `.agent/lessons/*` | Use left-docked compact hero title with scroll rotation | METRIC-011 | active |
+| LESSON-013 | Lesson | Make Pages Menu Open Left And Stay Visually Unboxed | `.agent/lessons/*` | Use horizontal default-open reveal without dropdown panel | METRIC-012 | active |

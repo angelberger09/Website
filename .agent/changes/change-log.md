@@ -103,3 +103,30 @@ The current homepage is clear but feels too static, empty, and framed. The next 
 - METRIC-008
 - METRIC-009
 - DEC-006
+
+## 2026-06-23 23:30 ET — Header offscreen top emergence feedback
+
+### Changed
+
+- Added a public-safe feedback record for the header placement screenshot.
+- Added LESSON-011 for making the header feel like it emerges from offscreen above the page.
+- Added DESIGN-011 Offscreen Top Emergence.
+- Added INT-008 Top Edge Entry.
+- Added METRIC-010 Offscreen But Usable.
+- Added a reference note and encoded compressed screenshot reference in `.agent/references/`.
+- Updated active lessons, feedback lesson mapping, design language, components, memory, semantic index, and relationship map.
+
+### Why
+
+The current header reads as a complete floating pill inside the page. The next header direction should use the viewport top edge as part of the composition so the header feels tucked, entering, or emerging from above while still remaining fully usable.
+
+### Related items
+
+- FEEDBACK-003
+- LESSON-011
+- COMP-001
+- COMP-002
+- DESIGN-004
+- DESIGN-011
+- INT-008
+- METRIC-010

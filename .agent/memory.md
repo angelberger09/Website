@@ -13,6 +13,8 @@ This file stores distilled, public-safe memory for the Website repo.
 - Public content should be structured so the main Website can eventually pull from Blog, Portfolio, and Store repos.
 - The `.agent/` folder is a public project-memory layer, not a place for private notes.
 - All top-level Website pages should be meaningfully filled even before every connected repo has live data; use honest preparation states instead of empty placeholders or fake listings.
+- Screenshot, visual, and current-site feedback should be validated against the live/current Website before it is turned into a lesson or implementation target.
+- Feedback-only passes should update `.agent/` memory and leave public Website source unchanged unless implementation is explicitly requested.
 
 ## Active direction
 

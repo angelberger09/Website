@@ -146,7 +146,7 @@ The floating header should feel edge-attached, as if it is entering from above t
 
 Use top-edge attachment, clipping, negative offset, or a tucked surface effect to create the offscreen-entry feeling, while keeping the identity text, Pages button, focus states, and click targets fully usable.
 
-## LESSON-012 — Make the Pages menu open left and stay visually unboxed
+## LESSON-013 — Make the Pages menu open left and stay visually unboxed
 
 Timestamp: 2026-06-23 23:40 ET  
 Context: Screenshot review of the current Pages menu dropdown  

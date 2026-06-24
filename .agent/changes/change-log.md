@@ -279,3 +279,24 @@ The `.agent` docs listed About, Notes, Portfolio, and Store as meaningful Websit
 - DESIGN-016
 - DESIGN-017
 - DATA-003
+
+## 2026-06-24 19:17 ET — Live website validation protocol
+
+### Changed
+
+- Added `.agent/feedback/live-website-validation.md` as the source-check protocol for visual/current-site feedback.
+- Updated root and `.agent` read orders so future work checks this protocol before regular feedback intake.
+- Updated feedback README, intake protocol, and feedback-to-lesson workflow with the feedback-only implementation boundary.
+- Added FEEDBACK-006, LESSON-017, and METRIC-016 for source validation.
+- Updated public project memory and active lessons with the validation rule.
+
+### Why
+
+Future feedback should not be guessed from a pasted image or applied to the wrong thing. The assistant should check whether the note belongs to the live/current Website, store the reusable lesson in `.agent`, and leave public Website code unchanged unless implementation is explicitly requested.
+
+### Related items
+
+- FEEDBACK-006
+- LESSON-017
+- METRIC-016
+- PROC-001

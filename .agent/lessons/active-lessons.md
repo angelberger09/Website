@@ -18,3 +18,4 @@ These rules should shape current Website work.
 - Give every animation a clear visual purpose.
 - Explore tactile 2.5D depth: polaroid-like gloss, tiny scratches, and subtle distortion while staying flat and performant.
 - Make the floating header feel edge-attached, as if it is emerging from offscreen above the page, while keeping all controls readable and accessible.
+- Dock the hero title to the left, reduce the scroll length, and use subtle scroll-linked rotation for motion with intent.

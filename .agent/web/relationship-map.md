@@ -10,7 +10,7 @@
 - Uses COMP-004 Studio Page Cards.
 - Links to DATA-001, DATA-002, DATA-003, DATA-004.
 - Shaped by LESSON-001, LESSON-002, LESSON-003.
-- Next visual direction is shaped by LESSON-005 through LESSON-010.
+- Next visual direction is shaped by LESSON-005 through LESSON-011.
 
 ## Floating Header
 
@@ -19,6 +19,7 @@
 - Contains the folder menu.
 - Styled by DESIGN-004.
 - Future styling should reduce hard border reliance per LESSON-005 and LESSON-008.
+- Future placement should follow LESSON-011 and DESIGN-011 so the header feels attached to or emerging from the top edge.
 
 ## Scroll Title Sequence
 
@@ -48,8 +49,15 @@
 - DESIGN-008 Flat Cel-Shaded Atmosphere adds graphic depth.
 - DESIGN-009 Animated Background Texture makes the page feel alive.
 - DESIGN-010 Tactile Polaroid Depth adds gloss/surface marks/light-bending overlays.
+- DESIGN-011 Offscreen Top Emergence makes the header feel physically attached to the viewport edge.
 - INT-006 and INT-007 are proposed interactions for mouse-reactive atmosphere and tactile overlay response.
-- Metrics: METRIC-007, METRIC-008, METRIC-009.
+- INT-008 is a proposed interaction/placement behavior for top-edge header entry.
+- Metrics: METRIC-007, METRIC-008, METRIC-009, METRIC-010.
+
+## Reference Images
+
+- Header top-edge feedback reference lives in `.agent/references/2026-06-23-header-offscreen-top-reference.md`.
+- The encoded compressed screenshot reference lives in `.agent/references/2026-06-23-header-offscreen-top-reference.jpg.base64`.
 
 ## Public Memory System
 

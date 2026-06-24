@@ -45,3 +45,22 @@ Future site work needs a public-safe memory layer for intent, feedback lessons, 
 - LESSON-004
 - METRIC-004
 - METRIC-006
+
+## 2026-06-24 — Feedback-to-lesson workflow
+
+### Changed
+
+- Added `.agent/feedback/` documentation.
+- Added intake, extraction, public-safety, workflow, inbox, and examples files.
+- Updated root `agent.md` to route future feedback through the workflow.
+- Updated `.agent/start-here.md`, `.agent/README.md`, and active lessons.
+
+### Why
+
+Small feedback points should be easy to convert into public-safe reusable lessons without storing raw private context.
+
+### Related items
+
+- LESSON-004
+- METRIC-004
+- METRIC-006

@@ -1,3 +1,5 @@
+import { pageContinuity } from "./page-continuity";
+import { NextStepBand } from "./next-step-band";
 import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
 import { DetailCard } from "./site-chrome";
 
@@ -76,6 +78,10 @@ export default function HomePage() {
             </DetailCard>
           ))}
         </div>
+      </section>
+
+      <section className="studio-pages studio-pages--compact" aria-label="Where to go next">
+        <NextStepBand {...pageContinuity.home} />
       </section>
     </main>
   );

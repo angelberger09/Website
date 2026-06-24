@@ -272,3 +272,50 @@ Paper should be the primary material read. Use visible fiber, torn or uneven edg
 ### Implementation boundary
 
 Feedback-only pass: public Website source files should stay unchanged until a later implementation run applies the lesson.
+
+## FEEDBACK-008 — Top bar should feel like paper over the page
+
+Timestamp: 2026-06-24 19:41 ET  
+Status: converted to active lesson  
+Source: Screenshot review of current Website About page top header
+
+### Validation
+
+- Validation source used: screenshot plus current repo source for the shared header component and CSS.
+- Screenshot status: current Website screenshot of `/Website/about/`.
+- Matched semantic items: PAGE-002, COMP-001, COMP-002, DESIGN-004, DESIGN-011, DESIGN-015, DESIGN-019, ASSET-001, ASSET-005, ASSET-006, METRIC-019.
+
+### Public-safe summary
+
+The shared top bar is the right navigation structure, but its surface should feel more like a paper strip laid over the top of the page. It needs stronger tactile paper material, a clearer drop shadow, and either existing asset-based texture or shader-like CSS treatment.
+
+### Extracted signal
+
+The top header should read as layered paper, not generic soft glass. Use texture assets, paper-mask/torn-edge cues, subtle grain or scratches, and a visible soft shadow to make it feel physically placed over the page while preserving readable direct nav links.
+
+### Affected semantic items
+
+- PAGE-002 About
+- COMP-001 Floating Header
+- COMP-002 Direct Studio Navigation
+- DESIGN-004 Floating Header
+- DESIGN-011 Offscreen Top Emergence
+- DESIGN-015 Direct Unnumbered Navigation
+- DESIGN-019 Paper Material Authenticity
+- DESIGN-020 Paper Header Surface
+- ASSET-001 Grain Noise
+- ASSET-005 Gloss Sweep
+- ASSET-006 Torn Polaroid Frame
+- METRIC-019 Paper Header Surface
+
+### Created or updated lessons
+
+- LESSON-020 Make the top bar feel like layered paper
+
+### Reference note
+
+- `.agent/references/2026-06-24-paper-header-surface-reference.md`
+
+### Implementation boundary
+
+Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.

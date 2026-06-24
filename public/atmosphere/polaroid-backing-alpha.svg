@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="768" height="768" fill="none">
+  <defs>
+    <filter id="charcoalNoise" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="6" seed="32" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.17 0 0 0 .42 0" result="paper"/>
+      <feBlend in="SourceGraphic" in2="paper" mode="screen"/>
+    </filter>
+    <filter id="heavyShadow" x="-22%" y="-22%" width="144%" height="144%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+    <linearGradient id="charcoal" x1="118" y1="42" x2="646" y2="698" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2b2b29"/>
+      <stop offset="0.52" stop-color="#1f201e"/>
+      <stop offset="1" stop-color="#141512"/>
+    </linearGradient>
+    <linearGradient id="edgeDark" x1="105" y1="40" x2="660" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4a4a45" stop-opacity="0.44"/>
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.46"/>
+    </linearGradient>
+    <mask id="backingTear">
+      <rect width="768" height="768" fill="black"/>
+      <path fill="white" d="M91 33 L150 29 L216 34 L280 29 L348 34 L416 30 L485 34 L552 29 L620 35 L683 34 L688 93 L683 156 L690 222 L684 286 L688 350 L683 418 L689 486 L684 552 L689 623 L681 715 L616 720 L550 714 L482 720 L416 714 L349 721 L284 715 L216 720 L150 714 L91 718 L84 646 L90 584 L84 517 L90 450 L84 386 L90 318 L85 252 L90 185 L85 116 Z"/>
+    </mask>
+  </defs>
+  <g filter="url(#heavyShadow)">
+    <g mask="url(#backingTear)">
+      <path d="M91 33 L150 29 L216 34 L280 29 L348 34 L416 30 L485 34 L552 29 L620 35 L683 34 L688 93 L683 156 L690 222 L684 286 L688 350 L683 418 L689 486 L684 552 L689 623 L681 715 L616 720 L550 714 L482 720 L416 714 L349 721 L284 715 L216 720 L150 714 L91 718 L84 646 L90 584 L84 517 L90 450 L84 386 L90 318 L85 252 L90 185 L85 116 Z" fill="url(#charcoal)" filter="url(#charcoalNoise)"/>
+      <path d="M91 33 L150 29 L216 34 L280 29 L348 34 L416 30 L485 34 L552 29 L620 35 L683 34 L688 93 L683 156 L690 222 L684 286 L688 350 L683 418 L689 486 L684 552 L689 623 L681 715 L616 720 L550 714 L482 720 L416 714 L349 721 L284 715 L216 720 L150 714 L91 718 L84 646 L90 584 L84 517 L90 450 L84 386 L90 318 L85 252 L90 185 L85 116 Z" fill="url(#edgeDark)" opacity="0.7"/>
+      <path d="M97 38 C194 50 258 30 354 42 C448 53 548 28 680 39" stroke="#5b5b55" stroke-width="5" opacity="0.35"/>
+      <path d="M91 714 C180 697 252 728 350 715 C452 699 548 728 679 714" stroke="#090909" stroke-width="5" opacity="0.55"/>
+      <path d="M620 606 C646 635 666 658 678 710" stroke="#44443e" stroke-width="2.5" opacity="0.45"/>
+      <path d="M94 660 C118 685 140 702 174 716" stroke="#464640" stroke-width="2.5" opacity="0.38"/>
+      <path d="M102 42 L683 35 L689 715 L91 718 Z" stroke="#000000" stroke-width="2" opacity="0.22"/>
+    </g>
+  </g>
+</svg>

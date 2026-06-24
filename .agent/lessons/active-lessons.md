@@ -20,3 +20,4 @@ These rules should shape current Website work.
 - Make the floating header feel edge-attached, as if it is emerging from offscreen above the page, while keeping all controls readable and accessible.
 - Dock the hero title to the left, reduce the scroll length, and use subtle scroll-linked rotation for motion with intent.
 - Make the Pages menu default-open on desktop, expand left from the Pages control, and remove its separate dropdown border/background treatment.
+- Make hero typography feel like art lettering: softer weight, gentler spacing, handmade display character, and a paper-list structure instead of a heavy poster treatment.

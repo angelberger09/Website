@@ -11,6 +11,7 @@ It stores:
 - public data-source maps
 - quality metrics
 - feedback intake workflows
+- live/current Website validation rules
 - change history
 - reusable templates
 
@@ -23,16 +24,24 @@ Only store public-safe distilled lessons here. Do not store raw private conversa
 1. Read `../agent.md` and `.agent/start-here.md` before editing.
 2. Use `.agent/matrices/semantic-index.md` to understand meaningful site items.
 3. Apply active lessons from `.agent/lessons/active-lessons.md`.
-4. For feedback, use `.agent/feedback/README.md` and the intake/extraction workflow.
-5. After changes, update the change log, matrices, memory, and relationship maps as needed.
+4. For screenshot, visual, or current-site feedback, validate against `.agent/feedback/live-website-validation.md` first.
+5. For feedback, use `.agent/feedback/README.md` and the intake/extraction workflow.
+6. After changes, update the change log, matrices, memory, and relationship maps as needed.
 
 ## Feedback workflow
 
 Small feedback points should be transformed into reusable public-safe lessons when they affect future work.
 
+When feedback includes a screenshot or refers to visible Website behavior, validate whether it belongs to the current Website before turning it into a lesson.
+
 Read these files in order:
 
-1. `.agent/feedback/intake-protocol.md`
-2. `.agent/feedback/extraction-rubric.md`
-3. `.agent/feedback/public-safety-filter.md`
-4. `.agent/feedback/feedback-to-lesson-workflow.md`
+1. `.agent/feedback/live-website-validation.md`
+2. `.agent/feedback/intake-protocol.md`
+3. `.agent/feedback/extraction-rubric.md`
+4. `.agent/feedback/public-safety-filter.md`
+5. `.agent/feedback/feedback-to-lesson-workflow.md`
+
+## Feedback-only guardrail
+
+If Angel asks to add, save, or store feedback, update `.agent/` only unless Angel explicitly asks to implement the change on the public Website in the same pass.

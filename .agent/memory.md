@@ -31,6 +31,8 @@ Direct navigation should stay visible without a redundant `Pages` button, edge n
 
 Paper material should be visible across the shared page system, not isolated to one decorative polaroid stack. Cards, page heroes, background layers, and filled sections should read as handmade paper/collage pieces before they read as generic translucent UI panels.
 
+When polaroid/photo frames are used as cards, the transparent middle should carry meaningful readable content. Use the frame and backing as a content surface for route labels, page information, preview art, project material, or product lane cues rather than leaving the polaroid as empty background decoration.
+
 Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
 
 Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes.

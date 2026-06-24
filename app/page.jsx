@@ -2,30 +2,30 @@ const studioPages = [
   {
     label: "01",
     title: "Studio notes",
-    menuTitle: "Blog Viewer",
+    menuTitle: "Notes",
     href: "./blog/",
-    description: "Read Blog repo posts inside the main Website shell."
+    description: "Read public notes inside the main Website shell."
   },
   {
     label: "02",
-    title: "Example post reader",
-    menuTitle: "Post Reader",
+    title: "Sample note",
+    menuTitle: "Sample",
     href: "./blog/post/?slug=learning-to-think-like-a-developer",
-    description: "Open one Blog profile and Markdown file in the Website reader."
+    description: "Open one note as a full reader experience."
   },
   {
     label: "03",
-    title: "Blog data source",
-    menuTitle: "Data Source",
+    title: "Notes source",
+    menuTitle: "Source",
     href: "./blog/",
-    description: "The Blog repo owns the profiles and Markdown; the Website renders them."
+    description: "The Blog repo stays as the public source; this site renders the reader."
   },
   {
     label: "04",
-    title: "Main Website shell",
-    menuTitle: "Website Shell",
+    title: "Home base",
+    menuTitle: "Home",
     href: "./",
-    description: "The Website repo owns the visible route, layout, and reader UI."
+    description: "The Website repo owns the visible route, layout, and studio feel."
   }
 ];
 
@@ -37,11 +37,7 @@ export default function HomePage() {
           Angel Berger
         </a>
 
-        <details className="folder-menu">
-          <summary aria-label="Open pages menu">
-            <span className="folder-mark" aria-hidden="true">▰</span>
-            <span>Pages</span>
-          </summary>
+        <div className="folder-menu" aria-label="Studio pages">
           <nav className="folder-panel" aria-label="Studio pages">
             {studioPages.map((page) => (
               <a href={page.href} key={page.href}>
@@ -50,7 +46,11 @@ export default function HomePage() {
               </a>
             ))}
           </nav>
-        </details>
+          <span className="pages-chip" aria-hidden="true">
+            <span className="folder-mark">▰</span>
+            <span>Pages</span>
+          </span>
+        </div>
       </header>
 
       <div className="atmosphere-layer" aria-hidden="true">
@@ -63,10 +63,13 @@ export default function HomePage() {
       <main id="top" className="home-page">
         <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
           <div className="title-lockup">
-            <p className="title-line title-line--welcome">Welcome</p>
-            <p className="title-line title-line--to">To</p>
-            <p className="title-line title-line--studio">Soft Strange Studio</p>
-            <span>Angel Berger’s minimal public studio home.</span>
+            <p className="title-kicker">Soft Strange Studio</p>
+            <ul className="title-list" aria-label="Welcome to Soft Strange Studio">
+              <li><span className="title-line title-line--welcome">Welcome</span></li>
+              <li><span className="title-line title-line--to">To</span></li>
+              <li><span className="title-line title-line--studio">Soft Strange Studio</span></li>
+            </ul>
+            <p className="title-note">Angel Berger’s minimal public studio home.</p>
           </div>
         </section>
 

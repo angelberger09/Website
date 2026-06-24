@@ -25,6 +25,8 @@ The current visual direction is less framed UI and more living paper-collage atm
 
 The floating header should feel physically connected to the top edge of the viewport while remaining readable across the live top-level pages.
 
+The floating header should also read as a tactile paper strip laid over the page, using existing atmosphere/polaroid material assets or shader-like CSS where helpful, with a visible soft drop shadow so it feels physically layered rather than glassy or weightless.
+
 Direct navigation should stay visible without a redundant `Pages` button, edge numbers, or extra helper text. Add enough contrast and hierarchy that the header feels clear, not overly soft.
 
 Paper material should be visible across the shared page system, not isolated to one decorative polaroid stack. Cards, page heroes, background layers, and filled sections should read as handmade paper/collage pieces before they read as generic translucent UI panels.

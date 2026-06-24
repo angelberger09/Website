@@ -50,16 +50,16 @@ a {
 .floating-header {
   position: fixed;
   z-index: 20;
-  top: 1rem;
+  top: -0.35rem;
   left: 50%;
   display: flex;
-  width: min(74rem, 92vw);
+  width: min(78rem, 94vw);
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   transform: translateX(-50%);
   border: 0;
-  border-radius: 999px;
+  border-radius: 0 0 1.45rem 1.45rem;
   background:
     linear-gradient(115deg, rgba(255, 250, 242, 0.94), rgba(255, 250, 242, 0.72)),
     var(--gloss-image);
@@ -69,7 +69,7 @@ a {
     0 1.2rem 3.5rem rgba(47, 38, 35, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
     inset 0 -1px 0 rgba(47, 38, 35, 0.05);
-  padding: 0.55rem 0.65rem 0.55rem 1.05rem;
+  padding: 1.12rem 0.8rem 0.62rem 1.15rem;
   backdrop-filter: blur(16px) saturate(1.15);
 }
 
@@ -208,8 +208,7 @@ a {
 }
 
 .home-page,
-.site-shell,
-.floating-header {
+.site-shell {
   position: relative;
 }
 
@@ -542,8 +541,9 @@ p {
   }
 
   .floating-header {
-    top: 0.75rem;
+    top: -0.45rem;
     width: 96vw;
+    padding-top: 1rem;
   }
 
   .identity-link {

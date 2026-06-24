@@ -356,3 +356,33 @@ The current top bar has the right direct navigation structure, but it should fee
 - ASSET-005
 - ASSET-006
 - METRIC-019
+
+## 2026-06-24 19:41 ET — Polaroid content card feedback
+
+### Changed
+
+- Added FEEDBACK-009 for the current homepage polaroid/card screenshot.
+- Added LESSON-021 for making polaroid frames carry content.
+- Added DESIGN-021 Content-Bearing Polaroid Cards.
+- Added METRIC-020 Content-Bearing Polaroids.
+- Added a public-safe reference note for the screenshot direction.
+- Updated active lessons, lesson log, feedback log, quality metrics, design language, components matrix, assets matrix, semantic index, and public memory.
+
+### Why
+
+The polaroid motif should not sit only behind content as decoration when it is being used as a card language. The next implementation run should fill the polaroid center with readable route content, preview art, page information, project material, or product-lane cues so the frame functions as a real card surface. Public Website source files were intentionally not changed in this feedback-only pass.
+
+### Related items
+
+- FEEDBACK-009
+- LESSON-021
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-010
+- DESIGN-017
+- DESIGN-021
+- ASSET-006
+- ASSET-007
+- METRIC-020

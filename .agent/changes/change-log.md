@@ -190,3 +190,28 @@ The screenshot showed that the new atmosphere was visible, but the header still 
 - INT-008
 - LESSON-011
 - METRIC-010
+
+## 2026-06-23 23:40 ET — Left-expanding open menu feedback
+
+### Changed
+
+- Added a public-safe feedback record for the Pages menu screenshot.
+- Added LESSON-013 for making the Pages menu open by default, expand left, and stay visually unboxed.
+- Added DESIGN-012 Unboxed Left-Expanding Menu.
+- Added INT-010 Leftward Default-Open Menu Reveal.
+- Added METRIC-012 Open Left Without Panel.
+- Added a reference note and encoded compressed screenshot reference in `.agent/references/`.
+- Updated active lessons, feedback lesson mapping, design language, components, interactions, memory, semantic index, and relationship map.
+
+### Why
+
+The current Pages menu opens downward into a large separate panel. The next menu direction should integrate the links into the header line, default open on desktop, expand left from the Pages control, and avoid separate border/background treatment.
+
+### Related items
+
+- FEEDBACK-004
+- LESSON-013
+- COMP-002
+- DESIGN-012
+- INT-010
+- METRIC-012

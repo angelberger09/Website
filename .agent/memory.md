@@ -20,6 +20,8 @@ The next visual direction is less framed UI and more living flat atmosphere: few
 
 The floating header should feel more physically connected to the top edge of the viewport. Future header revisions should make it appear tucked into, clipped by, or emerging from above the screen while keeping all navigation controls readable and accessible.
 
+The Pages menu should become a default-open desktop navigation reveal that expands left from the Pages control. It should not rely on a separate dropdown panel, border, or background unless a mobile fallback requires it.
+
 ## Do not store here
 
 - raw conversation logs

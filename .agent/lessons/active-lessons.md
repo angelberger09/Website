@@ -23,7 +23,8 @@ These rules should shape current Website work.
 - Dock the hero title to the left, reduce the scroll length, and use subtle scroll-linked rotation for motion with intent.
 - Make the Pages menu default-open on desktop, expand left from the Pages control, and remove its separate dropdown border/background treatment.
 - Make hero typography feel like art lettering: softer weight, gentler spacing, handmade display character, and a paper-list structure instead of a heavy poster treatment.
-- Use direct navigation labels without edge numbers, extra helper text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.
+- Use direct navigation labels without edge numbers, extra text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.
 - Treat the torn polaroid frame and dark backing as a core material motif: dark layer below, cream frame above, alpha-ready, slightly rotated, and integrated with grain/gloss/scratch atmosphere.
+- Make the top header feel more like a tactile paper strip or paper tab laid over the page, using existing texture/material assets or shader-like CSS plus a visible soft drop shadow.
 - Fill every public Website page as a useful visitor room; use honest readiness states instead of empty placeholders, fake content, or raw repo/feed language.
 - Make the paper/collage material read as paper first: visible fiber, torn or uneven edges, layered sheets, collage shadows, scanned imperfections, and tactile paper depth should be stronger than generic soft glass/card UI.

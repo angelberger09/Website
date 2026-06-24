@@ -22,7 +22,7 @@ The header should use direct page labels without edge numbers or extra visible h
 - Keep direct page labels only.
 - Increase contrast and structure.
 - Preserve accessibility, focus states, and mobile fallback behavior.
-- Use this as a reference for FEEDBACK-005 and LESSON-014.
+- Use this as a reference for FEEDBACK-005 and LESSON-015.
 
 ## Encoded reference image
 

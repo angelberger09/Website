@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { INDEX_URLS, notesSupportCards } from "../site-data";
+import { INDEX_URLS, notesReaderStates, notesSupportCards } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
 async function fetchPostsIndex() {
@@ -15,7 +15,7 @@ async function fetchPostsIndex() {
     } catch {}
   }
 
-  throw new Error("Could not load the public notes index.");
+  throw new Error("The public notes source could not be reached right now.");
 }
 
 export default function NotesPageClient({ routeBase = "/Website/notes", routeLabel = "Notes" }) {
@@ -49,9 +49,18 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           of a raw feed.
         </p>
 
-        {state.status === "loading" && <p>Loading public notes...</p>}
-        {state.status === "error" && <p>{state.error}</p>}
-        {state.status === "ready" && state.posts.length === 0 && <p>No published notes are available yet.</p>}
+        {state.status === "loading" && (
+          <p className="reader-state">Gathering the public notes index inside the studio shell...</p>
+        )}
+        {state.status === "error" && (
+          <p className="reader-state reader-state--error">{state.error}</p>
+        )}
+        {state.status === "ready" && state.posts.length === 0 && (
+          <p className="reader-state">No published notes are available yet. This page is ready for them when they arrive.</p>
+        )}
+        {state.status === "ready" && state.posts.length > 0 && (
+          <p className="source-note">Showing {state.posts.length} published note{state.posts.length === 1 ? "" : "s"} from the public Blog source.</p>
+        )}
 
         <div className="post-list">
           {state.posts.map((post) => (
@@ -59,6 +68,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
               <span>{post.title}</span>
               <small>{post.category} · {post.date}</small>
               <small>{post.excerpt}</small>
+              <em>Open note</em>
             </a>
           ))}
         </div>
@@ -70,6 +80,18 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             <p>{card.description}</p>
           </DetailCard>
         ))}
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="notes-states-title">
+        <p className="eyebrow">Reader behavior</p>
+        <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
+        <div className="content-grid content-grid--small embedded-grid">
+          {notesReaderStates.map((readerState) => (
+            <DetailCard eyebrow={readerState.eyebrow} title={readerState.title} key={readerState.title}>
+              <p>{readerState.description}</p>
+            </DetailCard>
+          ))}
+        </div>
       </section>
     </main>
   );

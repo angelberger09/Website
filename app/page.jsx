@@ -1,7 +1,7 @@
 const studioPages = [
   {
     label: "01",
-    title: "Still Here Notes",
+    title: "Studio notes",
     menuTitle: "Blog Viewer",
     href: "./blog/",
     description: "Read Blog repo posts inside the main Website shell."
@@ -62,14 +62,10 @@ export default function HomePage() {
 
       <main id="top" className="home-page">
         <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
-          <div className="title-panel">
-            <p>Welcome</p>
-          </div>
-          <div className="title-panel title-panel--small">
-            <p>To</p>
-          </div>
-          <div className="title-panel title-panel--final">
-            <p>Soft Strange Studio</p>
+          <div className="title-lockup">
+            <p className="title-line title-line--welcome">Welcome</p>
+            <p className="title-line title-line--to">To</p>
+            <p className="title-line title-line--studio">Soft Strange Studio</p>
             <span>Angel Berger’s minimal public studio home.</span>
           </div>
         </section>

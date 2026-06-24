@@ -10,19 +10,19 @@ The current direct navigation still includes small edge numbers, extra text trea
 
 ## Extracted signal
 
-Do not treat the successful menu reveal as an excuse to keep the old `Pages` trigger. If links are visible, the `Pages` button should be removed. The nav should be simpler, sharper, and less padded with decorative metadata.
+Do not keep the old `Pages` trigger once the links are visible. The nav should be simpler, sharper, and less padded with decorative metadata.
 
 ## Affected semantic items
 
 - COMP-002 Folder Pages Menu
 - DESIGN-012 Unboxed Left-Expanding Menu
-- DESIGN-013 Direct Unnumbered Navigation
-- DESIGN-014 Soft/Sharp Balance
+- DESIGN-015 Direct Unnumbered Navigation
+- DESIGN-016 Soft/Sharp Balance
 - INT-010 Leftward Default-Open Menu Reveal
 
 ## Created lesson
 
-- LESSON-014 Use direct nav labels without extra markers
+- LESSON-015 Use direct nav labels without extra markers
 
 ## Reference image
 

@@ -2,20 +2,14 @@
 
 | Component ID | Name | Used In | Purpose | Behavior | Visual Rules | Related Lessons | Risks | Status |
 |---|---|---|---|---|---|---|---|---|
-| COMP-001 | Floating Header | PAGE-001 | Keep personal identity and navigation visible | Fixed at top while scrolling | Soft cream, rounded pill, subtle shadow | LESSON-001, LESSON-002 | Could cover content on small screens | active |
-| COMP-002 | Folder Pages Menu | PAGE-001 | Provide compact access to current pages | Native `details` dropdown with four links | Small folder cue, right aligned panel | LESSON-003 | Needs ongoing accessibility review | active |
-| COMP-003 | Scroll Title Sequence | PAGE-001 | Create authored arrival moment | Full-height panels: Welcome, To, Soft Strange Studio | Oversized type, centered, minimal copy | LESSON-001 | Could feel too long if future content grows | active |
-| COMP-004 | Studio Page Cards | PAGE-001 | Present destinations as friendly doors | Grid of four linked cards | Rounded, minimal, label + title + description | LESSON-002, LESSON-003 | Links depend on Blog Pages being live | active |
-| COMP-005 | Future Blog Preview Card | PAGE-003 | Preview latest posts from Blog feed | TBD | Match page-card language | LESSON-002 | Needs feed validation | planned |
+| COMP-001 | Floating Header | All pages through `app/layout.jsx` | Keep personal identity and navigation visible | Fixed at top while scrolling | Top-attached cream material tab with direct links | LESSON-001, LESSON-002, LESSON-011, LESSON-015 | Could crowd small screens if too many routes are added | active |
+| COMP-002 | Direct Studio Navigation | All pages through `app/site-chrome.jsx` | Provide compact access to current Website pages | Direct visible links; no `Pages` trigger, edge numbers, or helper text | Unboxed links with stronger contrast | LESSON-003, LESSON-013, LESSON-015 | Needs ongoing responsive review | active |
+| COMP-003 | Scroll Title Sequence | PAGE-001 | Create authored arrival moment | Left-docked sticky title with subtle scroll rotation | Art-lettering style with polaroid material stack | LESSON-012, LESSON-014, LESSON-016 | Motion must remain purposeful | active |
+| COMP-004 | Studio Page Cards | PAGE-001 | Present destinations as friendly doors | Grid of four linked cards | Rounded material cards with eyebrow, title, and description | LESSON-002, LESSON-003, LESSON-015 | Must stay synced with page routes | active |
+| COMP-005 | Shared Site Chrome | All pages | Keep the page system visually cohesive | Header, atmosphere layer, footer, page intro, detail card | Reusable cream/polaroid/gloss material language | LESSON-001, LESSON-002, LESSON-010, LESSON-015, LESSON-016 | Shared changes affect every route | active |
+| COMP-006 | Notes Reader Client | PAGE-003, PAGE-003B | Preview published posts from Blog feed | Fetches public posts index with fallback URLs | Wide reader card plus post cards | LESSON-002, LESSON-004 | Needs feed validation and clear error states | active |
+| COMP-007 | Post Reader Client | PAGE-003A, PAGE-003B | Render a single published note inside Website | Reads slug, fetches public profile and Markdown with fallbacks | Reader card with category/date tags | LESSON-002, LESSON-004 | Markdown rendering should remain simple | active |
 
-## Addendum — 2026-06-23 23:30 ET
+## Addendum — 2026-06-24 02:05 ET
 
-COMP-001 and COMP-002 are now also shaped by LESSON-011. The next header pass should make the header feel edge-attached or emerging from offscreen above the page while keeping the identity and Pages menu accessible.
-
-## Addendum — 2026-06-23 23:40 ET
-
-COMP-002 is now also shaped by LESSON-013. The next Pages menu pass should default-open on desktop, expand left from the Pages control, and remove the separate dropdown panel background/border while preserving focus states and mobile usability.
-
-## Addendum — 2026-06-23 23:50 ET
-
-COMP-002 is now also shaped by LESSON-015. The next direct-nav pass should remove edge numbers, extra helper text, and the redundant `Pages` button, then add more contrast and definition so the header does not feel overly soft.
+The main Website pages are now filled out as active routes. COMP-001 and COMP-002 moved into shared site chrome so the direct navigation and atmosphere persist across Home, About, Notes, Portfolio, Store, and Blog compatibility routes.

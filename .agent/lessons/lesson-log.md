@@ -131,3 +131,17 @@ The visual language should feel flat and graphic, but not empty. Add tactile dep
 ### Future rule
 
 Use 2.5D material illusion: glossy, layered, slightly imperfect surfaces that still read as designed flat art rather than realistic 3D.
+
+## LESSON-011 — Make the header emerge from offscreen top
+
+Timestamp: 2026-06-23 23:30 ET  
+Context: Screenshot review of current floating header  
+Status: active
+
+### Lesson
+
+The floating header should feel edge-attached, as if it is entering from above the viewport, instead of sitting fully inside the page as a complete centered pill.
+
+### Future rule
+
+Use top-edge attachment, clipping, negative offset, or a tucked surface effect to create the offscreen-entry feeling, while keeping the identity text, Pages button, focus states, and click targets fully usable.

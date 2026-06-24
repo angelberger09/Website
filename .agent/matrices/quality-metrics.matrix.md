@@ -13,3 +13,4 @@
 | METRIC-009 | Borders Are Not Primary Structure | Layout separation works without hard outlines | Remove or reduce borders and verify hierarchy remains clear | proposed | LESSON-008 |
 | METRIC-010 | Offscreen But Usable | Header feels like it enters from above while controls remain reachable | Check top offset, clipping, focus rings, click targets, and mobile readability | active | LESSON-011 |
 | METRIC-011 | Quick Hero Read | Full studio title is readable without three full screens of scrolling | Review first scroll distance, left docking, and scroll-linked rotation | active | LESSON-012 |
+| METRIC-012 | Open Left Without Panel | Pages links are visible by default and expand left without a separate dropdown panel | Review desktop header, menu direction, panel background, border, focus states, and mobile fallback | active | LESSON-013 |

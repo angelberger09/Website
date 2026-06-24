@@ -40,7 +40,7 @@ Move from static bordered UI toward a living flat studio atmosphere.
 
 - LESSON-005 Reduce static bordered structure
 - LESSON-006 Add animated atmosphere
-- LESSON-007 Keep everything flat
+- LESSON-007 Keep everything graphically flat
 - LESSON-008 Prefer gradients over borders
 - LESSON-009 Animation should have intent
 
@@ -51,3 +51,39 @@ Move from static bordered UI toward a living flat studio atmosphere.
 - CSS-based cel-shaded atmosphere
 - gradient fade-offs instead of hard bordered panels
 - reduced or removed border radius where gradients can carry the shape
+
+## FEEDBACK-002 — Add tactile polaroid-like depth
+
+Timestamp: 2026-06-23 23:10 ET  
+Status: converted to active lesson  
+Source: Follow-up homepage visual feedback
+
+### Public-safe summary
+
+The visual direction should not be empty-flat. It should keep a graphic/flat art language while adding tactile depth, like a polaroid/photo surface with gloss, subtle scratches, and transparent distortion over the content behind it.
+
+### Extracted signal
+
+Use 2.5D material illusion: flat graphic surfaces with photo-like depth, gloss overlays, scratches, and refraction-style distortion, without becoming heavy realistic 3D.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-003 Scroll Title Sequence
+- COMP-004 Studio Page Cards
+- DESIGN-007 Gradient Fade-Off Structure
+- DESIGN-008 Flat Cel-Shaded Atmosphere
+- DESIGN-010 Tactile Polaroid Depth
+
+### Created lesson
+
+- LESSON-010 Add tactile 2.5D depth without losing flat art direction
+
+### Implementation ideas to evaluate
+
+- glossy overlay layers
+- subtle scratch/noise textures
+- translucent polaroid/photo-panel surfaces
+- CSS gradients and blend modes
+- light distortion over background content
+- flat cel-shaded highlights instead of realistic 3D rendering

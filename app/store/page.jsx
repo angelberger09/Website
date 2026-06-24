@@ -1,3 +1,5 @@
+import { pageContinuity } from "../page-continuity";
+import { NextStepBand } from "../next-step-band";
 import { storePromises, storeSections } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -9,10 +11,10 @@ export const metadata = {
 export default function StorePage() {
   return (
     <main id="top" className="site-shell page-layout">
-      <PageIntro eyebrow="Store" title="A calm doorway for future shop pieces.">
+      <PageIntro eyebrow="Store" title="A calm doorway for future studio pieces.">
         <p>
-          The store page is filled out as a public placeholder with real product
-          lanes, not empty filler. When listings are ready, this page can point
+          The store page is filled out as a public readiness page with real lanes,
+          not empty filler. When public links are ready, this page can point
           visitors toward them without breaking the studio atmosphere.
         </p>
       </PageIntro>
@@ -34,9 +36,9 @@ export default function StorePage() {
         <p className="eyebrow">Store promise</p>
         <h1 id="store-promise-title">Prepared, honest, and easy to update.</h1>
         <p>
-          This page should be useful before the shop is live and trustworthy after
-          it launches. It names the intended lanes, keeps availability clear, and
-          leaves room for direct public links when they exist.
+          This page should be useful before public links exist and trustworthy after
+          they launch. It names the intended lanes, keeps availability clear, and
+          leaves room for direct public paths when they exist.
         </p>
         <div className="content-grid content-grid--small embedded-grid">
           {storePromises.map((promise) => (
@@ -46,6 +48,8 @@ export default function StorePage() {
           ))}
         </div>
       </section>
+
+      <NextStepBand {...pageContinuity.store} />
     </main>
   );
 }

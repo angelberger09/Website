@@ -173,3 +173,17 @@ The direct header nav should not include decorative edge numbers, extra helper t
 ### Future rule
 
 Use direct destination labels only. Remove numeric markers, redundant trigger buttons, and extra visible metadata from the desktop nav. Balance softness with sharper hierarchy, firmer contrast, and clearer structure.
+
+## LESSON-017 — Validate feedback against the actual Website
+
+Timestamp: 2026-06-24 19:17 ET  
+Context: Feedback workflow correction for screenshots and current-site notes  
+Status: active
+
+### Lesson
+
+Screenshot, visual, and current-site feedback should be checked against the live/current Website before the assistant decides what page, component, design pattern, interaction, asset, or lesson it applies to.
+
+### Future rule
+
+Source-check the visible site first, store the reusable public-safe lesson second, and keep feedback-only passes inside `.agent/` unless implementation is explicitly requested.

@@ -18,13 +18,13 @@ Use polaroid/photo-frame material as a reusable styling system: a darker backing
 - COMP-003 Scroll Title Sequence
 - DESIGN-010 Tactile Polaroid Depth
 - DESIGN-014 Paper List Hero Lockup
-- DESIGN-015 Polaroid Frame Core Motif
+- DESIGN-017 Polaroid Frame Core Motif
 - ASSET-006 Polaroid Frame
 - ASSET-007 Polaroid Backing
 
 ## Created lesson
 
-- LESSON-015 Use polaroid frame stacks as a core material motif
+- LESSON-016 Use polaroid frame stacks as a core material motif
 
 ## Implementation ideas
 

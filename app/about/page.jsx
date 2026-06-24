@@ -1,3 +1,5 @@
+import { pageContinuity } from "../page-continuity";
+import { NextStepBand } from "../next-step-band";
 import { aboutPathways, aboutPrinciples, aboutSections } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -54,6 +56,8 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <NextStepBand {...pageContinuity.about} />
     </main>
   );
 }

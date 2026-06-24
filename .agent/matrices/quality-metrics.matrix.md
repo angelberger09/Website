@@ -16,3 +16,4 @@
 | METRIC-012 | Open Left Without Panel | Pages links are visible by default and expand left without a separate dropdown panel | Review desktop header, menu direction, panel background, border, focus states, and mobile fallback | active | LESSON-013 |
 | METRIC-013 | Artsy Not Poster-Heavy | Hero type feels handmade, soft, and readable rather than overly heavy or rigid | Review type weight, letter spacing, line-height, ink color, and paper-list structure | active | LESSON-014 |
 | METRIC-014 | Direct Nav With Contrast | Header nav uses labels only and has enough definition | Check for no numbers, no helper text, no Pages trigger, and stronger contrast than the current too-soft pass | active | LESSON-015 |
+| METRIC-015 | Polaroid Motif Feels Core | Frame/backing stack feels integrated with the hero, not pasted on | Review layering, opacity, offset, readability, and whether the asset can repeat in future components | active | LESSON-016 |

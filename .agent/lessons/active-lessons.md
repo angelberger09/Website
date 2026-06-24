@@ -11,6 +11,8 @@ These rules should shape current Website work.
 - Update the relationship map when pages, components, or data sources connect in new ways.
 - When Angel gives small feedback points, extract the reusable project signal and store only the public-safe lesson.
 - Put unclear feedback in the feedback inbox instead of inventing a lesson.
+- Validate visual/current-site notes against the live Website and repo source before mapping them to lessons.
+- Stored feedback should update project memory first; public site code changes need an explicit implementation request.
 - Reduce static bordered structure; use gradients, fades, spacing, and material layers instead.
 - Add subtle animated atmosphere so the homepage feels alive without becoming busy.
 - Keep the art direction graphically flat even when adding depth.

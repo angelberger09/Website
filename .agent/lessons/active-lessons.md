@@ -23,3 +23,4 @@ These rules should shape current Website work.
 - Make hero typography feel like art lettering: softer weight, gentler spacing, handmade display character, and a paper-list structure instead of a heavy poster treatment.
 - Use direct navigation labels without edge numbers, extra helper text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.
 - Treat the torn polaroid frame and dark backing as a core material motif: dark layer below, cream frame above, alpha-ready, slightly rotated, and integrated with grain/gloss/scratch atmosphere.
+- Fill every public Website page as a useful visitor room; use honest readiness states instead of empty placeholders, fake content, or raw repo/feed language.

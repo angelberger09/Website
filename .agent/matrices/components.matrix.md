@@ -7,3 +7,7 @@
 | COMP-003 | Scroll Title Sequence | PAGE-001 | Create authored arrival moment | Full-height panels: Welcome, To, Soft Strange Studio | Oversized type, centered, minimal copy | LESSON-001 | Could feel too long if future content grows | active |
 | COMP-004 | Studio Page Cards | PAGE-001 | Present destinations as friendly doors | Grid of four linked cards | Rounded, minimal, label + title + description | LESSON-002, LESSON-003 | Links depend on Blog Pages being live | active |
 | COMP-005 | Future Blog Preview Card | PAGE-003 | Preview latest posts from Blog feed | TBD | Match page-card language | LESSON-002 | Needs feed validation | planned |
+
+## Addendum — 2026-06-23 23:30 ET
+
+COMP-001 and COMP-002 are now also shaped by LESSON-011. The next header pass should make the header feel edge-attached or emerging from offscreen above the page while keeping the identity and Pages menu accessible.

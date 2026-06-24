@@ -10,6 +10,7 @@ Before making design, content, data, architecture, or lesson-memory changes, rea
 4. `.agent/matrices/semantic-index.md`
 5. `.agent/lessons/active-lessons.md`
 6. `.agent/feedback/README.md`
+7. `.agent/feedback/live-website-validation.md`
 
 ## Purpose
 
@@ -22,12 +23,15 @@ Use the `.agent/` folder as public project memory. It stores distilled, public-s
 - Update `.agent/changes/change-log.md` after meaningful changes.
 - Update semantic matrices when pages, components, data sources, interactions, or design patterns change.
 - Store only public-safe distilled lessons. Do not store raw private conversation details.
+- Validate screenshot or visual feedback against the live/current Website before deciding what it applies to.
 
 ## Feedback-to-lesson rule
 
-When Angel gives small feedback points and asks for them to be stored, use `.agent/feedback/intake-protocol.md`, `.agent/feedback/extraction-rubric.md`, and `.agent/feedback/feedback-to-lesson-workflow.md`.
+When Angel gives small feedback points and asks for them to be stored, use `.agent/feedback/live-website-validation.md`, `.agent/feedback/intake-protocol.md`, `.agent/feedback/extraction-rubric.md`, and `.agent/feedback/feedback-to-lesson-workflow.md`.
 
-The assistant should extract the reusable project signal, filter it for public safety, map it to semantic items, update the relevant lesson/matrix/memory files, and summarize what was stored.
+The assistant should check whether the feedback or screenshot belongs to the current Website, extract the reusable project signal, filter it for public safety, map it to semantic items, update the relevant lesson/matrix/memory files, and summarize what was stored.
+
+Feedback-only passes should update `.agent/` files only. Do not change the public Website in the same pass unless Angel explicitly asks for implementation.
 
 ## Current north star
 

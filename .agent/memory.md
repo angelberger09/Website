@@ -22,6 +22,8 @@ The floating header should feel more physically connected to the top edge of the
 
 The Pages menu should become a default-open desktop navigation reveal that expands left from the Pages control. It should not rely on a separate dropdown panel, border, or background unless a mobile fallback requires it.
 
+Latest nav direction: when direct links are visible, remove the `Pages` button. Do not use edge numbers or extra helper text in the header nav. Add more contrast and firmer hierarchy so the site does not feel overly soft.
+
 ## Do not store here
 
 - raw conversation logs

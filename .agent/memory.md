@@ -10,6 +10,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The personal header identity is `Angel Berger`.
 - The current top-level page destinations are About, Notes, Portfolio, and Store.
 - The Notes page renders published public Blog repo content inside the Website shell.
+- Individual Notes/Blog post routes should remain connected to the wider studio path after reading, not behave like dead-end article views.
 - Public content should be structured so the main Website can eventually pull from Blog, Portfolio, and Store repos.
 - The `.agent/` folder is a public project-memory layer, not a place for private notes.
 - All top-level Website pages should be meaningfully filled even before every connected repo has live data; use honest preparation states instead of empty placeholders or fake listings.
@@ -39,13 +40,14 @@ Page intro titles should be supportive subtitles rather than hero headlines. Acr
 
 Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
 
-Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes.
+Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes, including after individual note reading.
 
 ## Filled page structure
 
 - `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path.
 - `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio.
 - `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, and routes visitors toward portfolio or home.
+- `/Website/notes/post/?slug=...` renders individual public notes inside the Website reader and offers post-specific next-step continuity back to notes or onward to portfolio.
 - `/Website/portfolio/` gives the first public project/archive cards, archive lanes, a publishing rhythm, and related routes into notes or store.
 - `/Website/store/` gives future product lanes without inventing live listings, states the trust rules for future shop links, and routes visitors back into portfolio or about.
 - `/Website/blog/` remains a compatibility route for the Notes reader.

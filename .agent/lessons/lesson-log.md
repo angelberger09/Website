@@ -187,3 +187,17 @@ Screenshot, visual, and current-site feedback should be checked against the live
 ### Future rule
 
 Source-check the visible site first, store the reusable public-safe lesson second, and keep feedback-only passes inside `.agent/` unless implementation is explicitly requested.
+
+## LESSON-019 — Make paper material feel primary
+
+Timestamp: 2026-06-24 19:38 ET  
+Context: Screenshot review of current About page material treatment  
+Status: active
+
+### Lesson
+
+The Website should read as handmade paper/collage before it reads as soft translucent UI. Tactile depth should come from paper fiber, torn or uneven edges, layered sheet shadows, scanned imperfections, and cutout overlaps across the shared page system.
+
+### Future rule
+
+When adding or refining atmosphere, cards, hero stacks, or page sections, make the paper material visible enough that the page feels papery without sacrificing readability, contrast, or calm structure. Gloss and gradients should support the paper feeling instead of replacing it.

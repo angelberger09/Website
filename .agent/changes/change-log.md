@@ -167,3 +167,26 @@ The site needed to apply the feedback lessons directly: less hard framed UI, mor
 - METRIC-007
 - METRIC-008
 - METRIC-009
+
+## 2026-06-23 23:55 ET — Header edge attachment fix
+
+### Changed
+
+- Fixed the header CSS so `.floating-header` remains `position: fixed` instead of being overwritten by a later grouped selector.
+- Moved the header slightly offscreen at the top edge.
+- Changed the header from a complete floating pill to a top-attached material tab with rounded lower corners.
+- Preserved readable controls and mobile behavior.
+
+### Why
+
+The screenshot showed that the new atmosphere was visible, but the header still read like a complete pill floating inside the page. This pass applies LESSON-011 more directly while keeping the site usable.
+
+### Related items
+
+- COMP-001
+- COMP-002
+- DESIGN-004
+- DESIGN-011
+- INT-008
+- LESSON-011
+- METRIC-010

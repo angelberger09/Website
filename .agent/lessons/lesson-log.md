@@ -215,3 +215,17 @@ The shared top bar should feel like a tactile paper strip or paper tab laid over
 ### Future rule
 
 When refining the shared header, preserve direct navigation readability and top-edge attachment, but make the surface read as paper first: textured cream layer, subtle uneven edge or paper mask, tactile shadow below, and restrained material effects that do not hide focus states or reduce contrast.
+
+## LESSON-021 — Make polaroid frames carry content
+
+Timestamp: 2026-06-24 19:41 ET  
+Context: Screenshot review of homepage polaroid/card treatment  
+Status: active
+
+### Lesson
+
+Polaroid/photo frames should not stay as empty decorative layers behind the page. When the polaroid motif appears in the content system, the inner photo area should be filled with useful page content, artwork, preview material, or route information so the frame becomes a real card surface.
+
+### Future rule
+
+When refining homepage doors, detail cards, or portfolio/store previews, use the cream frame and dark backing as a readable content container: fill the center, preserve hierarchy and contrast, and avoid leaving polaroid assets as background-only decoration unless they are clearly secondary atmosphere.

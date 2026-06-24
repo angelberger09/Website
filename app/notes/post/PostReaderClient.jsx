@@ -174,7 +174,7 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
         ))}
       </section>
 
-      <NextStepBand {...pageContinuity.notes} />
+      <NextStepBand {...pageContinuity.notePost} />
     </main>
   );
 }

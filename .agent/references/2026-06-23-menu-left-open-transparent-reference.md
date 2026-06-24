@@ -20,7 +20,7 @@ The Pages menu should be open by default, expand left from the Pages control, an
 - Expand the link group to the left of the Pages control.
 - Remove the separate menu panel background and border.
 - Preserve readable labels, keyboard navigation, focus states, and mobile behavior.
-- Use this as a reference for FEEDBACK-004, LESSON-012, DESIGN-012, and INT-009.
+- Use this as a reference for FEEDBACK-004, LESSON-013, DESIGN-012, and INT-010.
 
 ## Encoded reference image
 

@@ -10,6 +10,7 @@ It stores:
 - design and copy rules
 - public data-source maps
 - quality metrics
+- feedback intake workflows
 - change history
 - reusable templates
 
@@ -22,4 +23,16 @@ Only store public-safe distilled lessons here. Do not store raw private conversa
 1. Read `../agent.md` and `.agent/start-here.md` before editing.
 2. Use `.agent/matrices/semantic-index.md` to understand meaningful site items.
 3. Apply active lessons from `.agent/lessons/active-lessons.md`.
-4. After changes, update the change log, matrices, memory, and relationship maps as needed.
+4. For feedback, use `.agent/feedback/README.md` and the intake/extraction workflow.
+5. After changes, update the change log, matrices, memory, and relationship maps as needed.
+
+## Feedback workflow
+
+Small feedback points should be transformed into reusable public-safe lessons when they affect future work.
+
+Read these files in order:
+
+1. `.agent/feedback/intake-protocol.md`
+2. `.agent/feedback/extraction-rubric.md`
+3. `.agent/feedback/public-safety-filter.md`
+4. `.agent/feedback/feedback-to-lesson-workflow.md`

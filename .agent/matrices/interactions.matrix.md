@@ -9,3 +9,5 @@
 | INT-005 | Future Embedded Reader | Select a post inside Website | Render markdown from Blog feed | Needs keyboard and reduced-motion review | LESSON-004 | planned |
 | INT-006 | Mouse-Reactive Background | Pointer moves across homepage | Atmospheric layer responds subtly to pointer location | Must not block content; should respect reduced motion | LESSON-006, LESSON-009 | proposed |
 | INT-007 | Gloss/Scratch Overlay Response | Scroll or hover over tactile surface | Gloss/scratch layer creates subtle physical depth | Should remain readable and not impair contrast | LESSON-010 | proposed |
+| INT-008 | Top Edge Entry | Page load and scroll | Header feels attached to the top viewport edge | Header controls must remain reachable and readable | LESSON-011 | active |
+| INT-009 | Scroll-Rotating Hero Lockup | User scrolls through hero | Left-docked title rotates subtly while staying readable | Reduced-motion users should receive the static lockup | LESSON-012 | active |

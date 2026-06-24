@@ -11,4 +11,4 @@
 | INT-007 | Gloss/Scratch Overlay Response | Scroll or hover over tactile surface | Gloss/scratch layer creates subtle physical depth | Should remain readable and not impair contrast | LESSON-010 | proposed |
 | INT-008 | Top Edge Entry | Page load and scroll | Header feels attached to the top viewport edge | Header controls must remain reachable and readable | LESSON-011 | active |
 | INT-009 | Scroll-Rotating Hero Lockup | User scrolls through hero | Left-docked title rotates subtly while staying readable | Reduced-motion users should receive the static lockup | LESSON-012 | active |
-| INT-010 | Leftward Default-Open Menu Reveal | Desktop header load and focus | Pages links are already visible and extend left from the Pages control | Keep focus states visible without relying on a panel background; provide mobile fallback | LESSON-013 | proposed |
+| INT-010 | Direct Default-Open Navigation | Desktop header load and focus | Direct page links are already visible with no separate Pages trigger | Keep focus states visible; provide mobile fallback if a compact trigger is required | LESSON-013, LESSON-015 | proposed |

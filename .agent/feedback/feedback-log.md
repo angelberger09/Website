@@ -364,3 +364,57 @@ Turn polaroid frames into content-bearing cards: fill the inner photo area with 
 ### Implementation boundary
 
 Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.
+
+## FEEDBACK-010 — Shared cards should feel like paper pieces
+
+Timestamp: 2026-06-24 19:44 ET  
+Status: converted to active lesson  
+Source: Screenshot review of current Website About page card section
+
+### Validation
+
+- Validation source used: screenshot plus current repo source for `/Website/about/`, `app/page-continuity.js`, `app/next-step-band.jsx`, and shared card CSS in `app/globals.css`.
+- Screenshot status: current Website screenshot of `/Website/about/` showing the About continuity band and link rows.
+- Matched semantic items: PAGE-002, COMP-004, COMP-005, COMP-008, COMP-009, DESIGN-003, DESIGN-017, DESIGN-019, DESIGN-022, METRIC-018, METRIC-021.
+
+### Public-safe summary
+
+Several shared Website card surfaces currently feel too rounded and card-like. Future visual passes should make these surfaces feel like paper pieces using the same polaroid/collage language rather than generic rounded panels.
+
+### Extracted signal
+
+Shared cards, wide cards, pathway rows, detail cards, reader cards, and continuity bands should read as cut paper or polaroid surfaces: less uniformly rounded, more uneven/torn/cut edges, layered sheet construction, visible paper texture, slight rotation or offset where appropriate, and shadows that make them feel physically placed on the page.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- PAGE-002 About
+- PAGE-003 Notes
+- PAGE-003A Notes Post Reader
+- PAGE-003B Blog Compatibility Routes
+- PAGE-004 Portfolio
+- PAGE-005 Store
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- COMP-006 Notes Reader Client
+- COMP-007 Post Reader Client
+- COMP-008 Filled Page Sections
+- COMP-009 Next Step Band
+- DESIGN-003 Rounded Minimal Cards
+- DESIGN-017 Polaroid Frame Core Motif
+- DESIGN-019 Paper Material Authenticity
+- DESIGN-022 Paper Piece Card Surfaces
+- METRIC-018 Paper Material Reads First
+- METRIC-021 Paper Cards Not UI Cards
+
+### Created or updated lessons
+
+- LESSON-022 Make shared cards read as paper pieces
+
+### Reference note
+
+- `.agent/references/2026-06-24-paper-piece-cards-reference.md`
+
+### Implementation boundary
+
+Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.

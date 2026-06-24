@@ -11,3 +11,7 @@
 ## Addendum — 2026-06-23 23:30 ET
 
 COMP-001 and COMP-002 are now also shaped by LESSON-011. The next header pass should make the header feel edge-attached or emerging from offscreen above the page while keeping the identity and Pages menu accessible.
+
+## Addendum — 2026-06-23 23:40 ET
+
+COMP-002 is now also shaped by LESSON-013. The next Pages menu pass should default-open on desktop, expand left from the Pages control, and remove the separate dropdown panel background/border while preserving focus states and mobile usability.

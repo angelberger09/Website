@@ -19,10 +19,15 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | DESIGN-004 | Design Pattern | Floating Header | `app/globals.css` | Persistent personal anchor | LESSON-002 | active |
 | DESIGN-005 | Design Pattern | Sage Accent | `app/globals.css` | Soft active marker | LESSON-001 | active |
 | DESIGN-006 | Design Pattern | Human-Facing Copy | `app/page.jsx` | Friendly orientation language | LESSON-002 | active |
-| DESIGN-007 | Design Pattern | Gradient Fade-Off Structure | future CSS | Replace hard borders with soft separation | LESSON-008 | proposed |
-| DESIGN-008 | Design Pattern | Flat Cel-Shaded Atmosphere | future CSS | Add graphic depth without realistic 3D | LESSON-007 | proposed |
-| DESIGN-009 | Design Pattern | Animated Background Texture | future component/CSS | Make homepage feel alive without clutter | LESSON-006 | proposed |
-| DESIGN-010 | Design Pattern | Tactile Polaroid Depth | future component/CSS | Gloss, scratches, and subtle distortion over content | LESSON-010 | proposed |
+| DESIGN-007 | Design Pattern | Gradient Fade-Off Structure | `app/globals.css` | Replace hard borders with soft separation | LESSON-008 | active |
+| DESIGN-008 | Design Pattern | Flat Cel-Shaded Atmosphere | `app/globals.css` | Add graphic depth without realistic 3D | LESSON-007 | active |
+| DESIGN-009 | Design Pattern | Animated Background Texture | `app/page.jsx`, `app/globals.css` | Make homepage feel alive without clutter | LESSON-006 | active |
+| DESIGN-010 | Design Pattern | Tactile Polaroid Depth | `public/atmosphere/*`, `app/globals.css` | Gloss, scratches, and subtle distortion over content | LESSON-010 | active |
+| ASSET-001 | Asset | Grain Noise | `public/atmosphere/grain-noise.svg` | Subtle paper/film texture | LESSON-006 | active |
+| ASSET-002 | Asset | Dust Specks | `public/atmosphere/dust-specks.svg` | Photo-surface dust and imperfections | LESSON-010 | active |
+| ASSET-003 | Asset | Fine Scratches | `public/atmosphere/fine-scratches.svg` | Hairline glossy-surface scratches | LESSON-010 | active |
+| ASSET-004 | Asset | Soft Scratches | `public/atmosphere/soft-scratches.svg` | Larger glass/photo scuffs | LESSON-010 | active |
+| ASSET-005 | Asset | Gloss Sweep | `public/atmosphere/gloss-sweep.svg` | Diagonal glossy light sweep | LESSON-009 | active |
 | INT-006 | Interaction | Mouse-Reactive Background | future component | Background responds gently to pointer movement | LESSON-006 | proposed |
 | METRIC-007 | Metric | Alive But Not Busy | `.agent/matrices/quality-metrics.matrix.md` | Check atmospheric motion quality | LESSON-006 | active |
 | METRIC-008 | Metric | Flat But Tactile | `.agent/matrices/quality-metrics.matrix.md` | Check 2.5D depth stays graphic and performant | LESSON-010 | active |

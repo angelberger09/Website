@@ -159,3 +159,17 @@ The Pages menu should be default-open on desktop, expand left from the Pages con
 ### Future rule
 
 Render the Pages links as part of the header line rather than a panel below it. Remove the separate menu background and border, preserve readable labels and visible focus states, and add a mobile fallback if horizontal space is limited.
+
+## LESSON-014 — Use direct nav labels without extra markers
+
+Timestamp: 2026-06-23 23:50 ET  
+Context: Screenshot review of direct header navigation  
+Status: active
+
+### Lesson
+
+The direct header nav should not include decorative edge numbers, extra helper text, or a separate `Pages` button when links are already visible. The visual language also needs more contrast and definition because the current pass feels too soft.
+
+### Future rule
+
+Use direct destination labels only. Remove numeric markers, redundant trigger buttons, and extra visible metadata from the desktop nav. Balance softness with sharper hierarchy, firmer contrast, and clearer structure.

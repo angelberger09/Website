@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { pageContinuity } from "../page-continuity";
+import { NextStepBand } from "../next-step-band";
 import { INDEX_URLS, notesReaderStates, notesSupportCards } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -93,6 +95,8 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           ))}
         </div>
       </section>
+
+      <NextStepBand {...pageContinuity.notes} />
     </main>
   );
 }

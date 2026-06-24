@@ -30,3 +30,4 @@ These rules should shape current Website work.
 - Make the paper/collage material read as paper first: visible fiber, torn or uneven edges, layered sheets, collage shadows, scanned imperfections, and tactile paper depth should be stronger than generic soft glass/card UI.
 - Use polaroid/photo frames as content-bearing card surfaces, not only background décor: the transparent middle should hold readable page content, artwork, or route information when the motif is used as a card.
 - Keep page intro titles short, thin, slightly smaller, and supportive; each major page title should be 2–5 words and stay on one line instead of behaving like hero text.
+- Make shared card surfaces feel like individual paper/polaroid pieces rather than rounded UI cards: reduce uniform radius, add cut or torn edge cues, use layered backing shadows, and keep content inside the paper surface.

@@ -15,6 +15,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - All top-level Website pages should be meaningfully filled even before every connected repo has live data; use honest preparation states instead of empty placeholders or fake listings.
 - Screenshot, visual, and current-site feedback should be validated against the live/current Website before it is turned into a lesson or implementation target.
 - Feedback-only passes should update `.agent/` memory and leave public Website source unchanged unless implementation is explicitly requested.
+- Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 
 ## Active direction
 
@@ -28,13 +29,15 @@ Direct navigation should stay visible without a redundant `Pages` button, edge n
 
 Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
 
+Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes.
+
 ## Filled page structure
 
-- `/Website/` explains the public studio shape, highlights the filled front room, and links to the four main doors.
-- `/Website/about/` explains the public studio shape, working principles, and next-path choices.
-- `/Website/notes/` loads published notes from the Blog repo and explains reader behavior for loading, error, empty, and published states.
-- `/Website/portfolio/` gives the first public project/archive cards, archive lanes, and a publishing rhythm for future case studies.
-- `/Website/store/` gives future product lanes without inventing live listings and states the trust rules for future shop links.
+- `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path.
+- `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio.
+- `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, and routes visitors toward portfolio or home.
+- `/Website/portfolio/` gives the first public project/archive cards, archive lanes, a publishing rhythm, and related routes into notes or store.
+- `/Website/store/` gives future product lanes without inventing live listings, states the trust rules for future shop links, and routes visitors back into portfolio or about.
 - `/Website/blog/` remains a compatibility route for the Notes reader.
 
 ## Do not store here

@@ -12,3 +12,4 @@
 | DESIGN-008 | Flat Cel-Shaded Atmosphere | Graphic depth without heavy 3D | proposed background/shading | LESSON-007 | Use flat highlights and shade shapes | Realistic rendering or glossy skeuomorphism |
 | DESIGN-009 | Animated Background Texture | Subtle life and motion | proposed background layer | LESSON-006 | Keep motion calm and intentional | Random busy particles |
 | DESIGN-010 | Tactile Polaroid Depth | Physical-photo surface feel | proposed cards/hero layers | LESSON-010 | Use gloss, scratches, slight distortion, and layered transparency | Heavy realistic 3D or over-rendered effects |
+| DESIGN-011 | Offscreen Top Emergence | Header feels physically attached to the viewport edge | proposed floating header revision | LESSON-011 | Let the header tuck into or emerge from the top edge while preserving access | Fully hiding controls, clipping focus states, or making navigation feel broken |

@@ -1,6 +1,8 @@
 # Change Log
 
-## 2026-06-24 — Minimal studio homepage
+This log uses local project time in `America/New_York`.
+
+## 2026-06-23 22:40 ET — Minimal studio homepage
 
 ### Changed
 
@@ -25,7 +27,7 @@ The homepage needed to feel like a real minimal public studio homepage instead o
 - LESSON-002
 - LESSON-003
 
-## 2026-06-24 — Public agent memory system
+## 2026-06-23 22:55 ET — Public agent memory system
 
 ### Changed
 
@@ -46,7 +48,7 @@ Future site work needs a public-safe memory layer for intent, feedback lessons, 
 - METRIC-004
 - METRIC-006
 
-## 2026-06-24 — Feedback-to-lesson workflow
+## 2026-06-23 23:03 ET — Feedback-to-lesson workflow
 
 ### Changed
 
@@ -64,3 +66,40 @@ Small feedback points should be easy to convert into public-safe reusable lesson
 - LESSON-004
 - METRIC-004
 - METRIC-006
+
+## 2026-06-23 23:10 ET — Visual atmosphere and tactile depth feedback
+
+### Changed
+
+- Added timestamped `.agent/feedback/feedback-log.md` entry for static-structure feedback.
+- Added timestamped feedback entry for tactile polaroid/photo-like depth.
+- Added LESSON-005 through LESSON-010 to lesson log and active lessons.
+- Added proposed design items for gradient fade-offs, flat cel-shaded atmosphere, animated texture, and tactile polaroid depth.
+- Added proposed interaction items for mouse-reactive background and gloss/scratch overlay response.
+- Added metrics for alive-but-not-busy, flat-but-tactile, and borders-not-primary-structure.
+- Added DEC-006 to evaluate anime.js before implementation.
+
+### Why
+
+The current homepage is clear but feels too static, empty, and framed. The next direction should reduce hard borders, add intentional motion, and create tactile 2.5D material depth while staying flat and performant.
+
+### Related items
+
+- FEEDBACK-001
+- FEEDBACK-002
+- LESSON-005
+- LESSON-006
+- LESSON-007
+- LESSON-008
+- LESSON-009
+- LESSON-010
+- DESIGN-007
+- DESIGN-008
+- DESIGN-009
+- DESIGN-010
+- INT-006
+- INT-007
+- METRIC-007
+- METRIC-008
+- METRIC-009
+- DEC-006

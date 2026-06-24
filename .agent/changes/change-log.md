@@ -300,3 +300,30 @@ Future feedback should not be guessed from a pasted image or applied to the wron
 - LESSON-017
 - METRIC-016
 - PROC-001
+
+## 2026-06-24 19:38 ET — About page paper material feedback
+
+### Changed
+
+- Added FEEDBACK-007 for the current About page screenshot saying the page is not papery enough.
+- Added LESSON-019 to make paper/collage material read as the primary surface language.
+- Added DESIGN-019 Paper Material Authenticity.
+- Added METRIC-018 Paper Material Reads First.
+- Added a public-safe reference note for the screenshot.
+- Updated active lessons, lesson log, feedback lessons, quality metrics, design language, pages matrix, components matrix, semantic index, relationship map, and public memory.
+
+### Why
+
+The About page is warm and layered, but it still reads too much like soft translucent UI with an isolated polaroid motif. The next implementation run should make shared Website surfaces feel more like paper and collage through visible fiber, torn or cut edges, layered sheet shadows, scanned imperfections, and paper-first material hierarchy.
+
+### Related items
+
+- FEEDBACK-007
+- LESSON-019
+- PAGE-001
+- PAGE-002
+- COMP-004
+- COMP-005
+- COMP-008
+- DESIGN-019
+- METRIC-018

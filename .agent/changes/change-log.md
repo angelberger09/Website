@@ -327,3 +327,32 @@ The About page is warm and layered, but it still reads too much like soft transl
 - COMP-008
 - DESIGN-019
 - METRIC-018
+
+## 2026-06-24 19:41 ET — Paper top bar feedback
+
+### Changed
+
+- Added FEEDBACK-008 for the current About page top bar screenshot.
+- Added LESSON-020 for making the shared top bar feel like layered paper over the page.
+- Added DESIGN-020 Paper Header Surface.
+- Added METRIC-019 Paper Header Surface.
+- Added a public-safe reference note without storing the raw browser screenshot.
+- Updated active lessons, lesson log, feedback lessons, quality metrics, design language, components matrix, assets matrix, semantic index, and public memory.
+
+### Why
+
+The current top bar has the right direct navigation structure, but it should feel more like a tactile paper strip laid over the page. The next implementation run should use existing atmosphere or polaroid assets, or a shader-like CSS paper treatment, plus a visible soft drop shadow while keeping labels readable and focus states accessible. Public Website source files were intentionally not changed in this feedback-only pass.
+
+### Related items
+
+- FEEDBACK-008
+- LESSON-020
+- PAGE-002
+- COMP-001
+- COMP-002
+- DESIGN-004
+- DESIGN-020
+- ASSET-001
+- ASSET-005
+- ASSET-006
+- METRIC-019

@@ -1,31 +1,31 @@
 const studioPages = [
   {
     label: "01",
-    title: "Blog home",
-    menuTitle: "Blog Home",
-    href: "https://angelberger09.github.io/Blog/",
-    description: "The standalone public notes site."
+    title: "Still Here Notes",
+    menuTitle: "Blog Viewer",
+    href: "./blog/",
+    description: "Read Blog repo posts inside the main Website shell."
   },
   {
     label: "02",
-    title: "Posts index",
-    menuTitle: "Posts Index",
-    href: "https://angelberger09.github.io/Blog/posts/",
-    description: "A readable archive of published entries."
+    title: "Example post reader",
+    menuTitle: "Post Reader",
+    href: "./blog/post/?slug=learning-to-think-like-a-developer",
+    description: "Open one Blog profile and Markdown file in the Website reader."
   },
   {
     label: "03",
-    title: "JSON feed",
-    menuTitle: "JSON Feed",
-    href: "https://angelberger09.github.io/Blog/posts.json",
-    description: "Structured post data for the main site."
+    title: "Blog data source",
+    menuTitle: "Data Source",
+    href: "./blog/",
+    description: "The Blog repo owns the profiles and Markdown; the Website renders them."
   },
   {
     label: "04",
-    title: "Example post",
-    menuTitle: "Example Post",
-    href: "https://angelberger09.github.io/Blog/posts/learning-to-think-like-a-developer/",
-    description: "One complete entry in the public notes format."
+    title: "Main Website shell",
+    menuTitle: "Website Shell",
+    href: "./",
+    description: "The Website repo owns the visible route, layout, and reader UI."
   }
 ];
 
@@ -69,11 +69,11 @@ export default function HomePage() {
 
         <section className="studio-pages" aria-labelledby="studio-pages-title">
           <div className="section-intro">
-            <p className="eyebrow">Studio pages</p>
-            <h1 id="studio-pages-title">Four quiet doors for now.</h1>
+            <p className="eyebrow">Website-owned routes</p>
+            <h1 id="studio-pages-title">The main Website holds the viewer.</h1>
             <p>
-              Read the notes, browse the archive, inspect the feed, or open a sample
-              post while the fuller studio site takes shape.
+              Visitors read notes at the Website blog route. The separate Blog repo stays
+              as the public JSON and Markdown source.
             </p>
           </div>
 

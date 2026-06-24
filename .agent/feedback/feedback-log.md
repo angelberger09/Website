@@ -87,3 +87,42 @@ Use 2.5D material illusion: flat graphic surfaces with photo-like depth, gloss o
 - CSS gradients and blend modes
 - light distortion over background content
 - flat cel-shaded highlights instead of realistic 3D rendering
+
+## FEEDBACK-003 — Header should emerge from offscreen top
+
+Timestamp: 2026-06-23 23:30 ET  
+Status: converted to active lesson  
+Source: Screenshot review of current Website header
+
+### Public-safe summary
+
+The current floating header reads as a complete rounded pill placed inside the viewport. Future header work should make the bar feel like it is entering from the top edge or partially tucked beyond the visible screen.
+
+### Extracted signal
+
+Use the viewport edge as an active design surface. The header can feel clipped, tucked, or pulled in from above while staying usable.
+
+### Affected semantic items
+
+- COMP-001 Floating Header
+- COMP-002 Folder Pages Menu
+- DESIGN-004 Floating Header
+- DESIGN-011 Offscreen Top Emergence
+- INT-008 Top Edge Entry
+
+### Created lesson
+
+- LESSON-011 Make the header emerge from offscreen top
+
+### Reference image
+
+- `.agent/references/2026-06-23-header-offscreen-top-reference.md`
+- `.agent/references/2026-06-23-header-offscreen-top-reference.jpg.base64`
+
+### Implementation ideas to evaluate
+
+- negative top offset
+- mask or clip the top edge of the header surface
+- retain readable identity text and a fully reachable Pages button
+- keep keyboard focus rings visible
+- avoid hiding controls purely for style

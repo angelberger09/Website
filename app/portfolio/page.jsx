@@ -1,3 +1,5 @@
+import { pageContinuity } from "../page-continuity";
+import { NextStepBand } from "../next-step-band";
 import { portfolioLanes, portfolioPieces, portfolioProcess } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -34,7 +36,7 @@ export default function PortfolioPage() {
         <p className="eyebrow">Archive lanes</p>
         <h1 id="portfolio-lanes-title">The work can grow in clear public lanes.</h1>
         <p>
-          Portfolio items do not need to become full case studies all at once. The
+          Portfolio items do not need to become full records all at once. The
           page can hold active systems now, then deepen each lane when public images,
           writeups, or source data are ready.
         </p>
@@ -54,6 +56,8 @@ export default function PortfolioPage() {
           {portfolioProcess.map((step) => <li key={step}>{step}</li>)}
         </ol>
       </section>
+
+      <NextStepBand {...pageContinuity.portfolio} />
     </main>
   );
 }

@@ -16,11 +16,11 @@ Use horizontal, edge-aware navigation reveal instead of a dropdown card. The Pag
 
 - COMP-002 Folder Pages Menu
 - DESIGN-012 Unboxed Left-Expanding Menu
-- INT-009 Leftward Default-Open Menu Reveal
+- INT-010 Leftward Default-Open Menu Reveal
 
 ## Created lesson
 
-- LESSON-012 Make the Pages menu open left and stay visually unboxed
+- LESSON-013 Make the Pages menu open left and stay visually unboxed
 
 ## Reference image
 

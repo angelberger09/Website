@@ -26,3 +26,4 @@ These rules should shape current Website work.
 - Use direct navigation labels without edge numbers, extra helper text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.
 - Treat the torn polaroid frame and dark backing as a core material motif: dark layer below, cream frame above, alpha-ready, slightly rotated, and integrated with grain/gloss/scratch atmosphere.
 - Fill every public Website page as a useful visitor room; use honest readiness states instead of empty placeholders, fake content, or raw repo/feed language.
+- Make the paper/collage material read as paper first: visible fiber, torn or uneven edges, layered sheets, collage shadows, scanned imperfections, and tactile paper depth should be stronger than generic soft glass/card UI.

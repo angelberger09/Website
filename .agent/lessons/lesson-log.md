@@ -229,3 +229,17 @@ Polaroid/photo frames should not stay as empty decorative layers behind the page
 ### Future rule
 
 When refining homepage doors, detail cards, or portfolio/store previews, use the cream frame and dark backing as a readable content container: fill the center, preserve hierarchy and contrast, and avoid leaving polaroid assets as background-only decoration unless they are clearly secondary atmosphere.
+
+## LESSON-022 — Make shared cards read as paper pieces
+
+Timestamp: 2026-06-24 19:44 ET  
+Context: Screenshot review of current About page card and next-step surfaces  
+Status: active
+
+### Lesson
+
+Shared card surfaces should not feel like generic rounded UI panels. They should read as individual handmade paper or polaroid pieces placed on the page, with content inside the material surface instead of a soft translucent card shell.
+
+### Future rule
+
+When refining `.page-card`, `.detail-card`, `.source-link`, `.link-card`, `.reader-card`, `.pathway-link`, or continuity bands, reduce the uniform rounded-card feeling and use paper-piece cues: cut or torn edges, uneven shapes, layered backing shadows, subtle texture, content-bearing centers, and restrained polaroid framing while preserving readability and accessible focus states.

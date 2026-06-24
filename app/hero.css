@@ -1,54 +1,141 @@
 .scroll-title {
   display: flex;
-  min-height: 132svh;
+  min-height: 112svh;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: clamp(8rem, 16vh, 11rem) max(1.25rem, 7vw) 9rem;
+  padding: clamp(7.2rem, 14vh, 9rem) max(1.25rem, 7vw) 5.5rem;
 }
 
 .title-lockup {
   position: sticky;
-  top: clamp(7rem, 17vh, 10rem);
-  width: min(100%, 72rem);
-  transform: rotate(-3deg);
+  top: clamp(6.6rem, 15vh, 8.5rem);
+  width: min(100%, 64rem);
+  padding: clamp(1.25rem, 3.4vw, 2.65rem);
+  transform: rotate(-2.5deg);
   transform-origin: left center;
   animation: title-scroll-rotate linear both;
   animation-timeline: view();
-  animation-range: entry 0% exit 85%;
+  animation-range: entry 0% exit 80%;
   text-align: left;
+  isolation: isolate;
+}
+
+.title-lockup::before,
+.title-lockup::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.title-lockup::before {
+  border-radius: 1.4rem 2.1rem 1.7rem 1.1rem;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 242, 0.84), rgba(255, 247, 235, 0.56) 58%, rgba(216, 197, 236, 0.12)),
+    var(--grain-image),
+    var(--soft-scratch-image);
+  background-size: cover, 34rem 34rem, 72rem 72rem;
+  box-shadow:
+    0 1.3rem 3.8rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.04);
+  transform: rotate(0.4deg);
+}
+
+.title-lockup::after {
+  inset: 0.55rem -0.25rem -0.45rem 0.35rem;
+  border-radius: 1.2rem 1.8rem 1.55rem 1rem;
+  background:
+    linear-gradient(155deg, rgba(255, 176, 143, 0.16), transparent 44%),
+    var(--gloss-image);
+  background-size: cover, 120% 120%;
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  transform: rotate(-1.15deg);
+}
+
+.title-kicker {
+  margin: 0 0 0.95rem;
+  color: rgba(111, 98, 93, 0.78);
+  font-family: var(--font-body);
+  font-size: clamp(0.74rem, 1.4vw, 0.94rem);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.title-list {
+  display: grid;
+  gap: clamp(0.15rem, 1vw, 0.55rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(0.95rem, 2vw, 1.45rem) minmax(0, 1fr);
+  align-items: baseline;
+  gap: clamp(0.65rem, 1.8vw, 1.25rem);
+}
+
+.title-list li::before {
+  width: clamp(0.52rem, 1vw, 0.78rem);
+  height: clamp(0.52rem, 1vw, 0.78rem);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 250, 242, 0.9), transparent 42%),
+    linear-gradient(135deg, rgba(185, 201, 175, 0.95), rgba(255, 176, 143, 0.5));
+  box-shadow:
+    0 0.35rem 1rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  content: "";
+  transform: translateY(-0.15em);
+}
+
+.title-list li:nth-child(2) {
+  transform: rotate(-0.75deg) translateX(clamp(0.1rem, 1vw, 0.65rem));
+}
+
+.title-list li:nth-child(3) {
+  transform: rotate(0.55deg) translateX(clamp(0.15rem, 1.4vw, 0.95rem));
 }
 
 .title-line {
   display: block;
   margin: 0;
   max-width: 10ch;
-  text-shadow: 0 1.4rem 4rem rgba(47, 38, 35, 0.12);
-  font-size: clamp(3.6rem, 14vw, 12.5rem);
-  font-weight: 900;
-  line-height: 0.78;
-  letter-spacing: -0.095em;
+  color: #3a2d2a;
+  text-shadow: 0 1rem 2.8rem rgba(47, 38, 35, 0.1);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11.5vw, 9.8rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
 }
 
 .title-line--to {
-  padding-left: clamp(0.2rem, 1.6vw, 1.3rem);
-  font-size: clamp(2.9rem, 10vw, 8.5rem);
+  font-size: clamp(2.45rem, 8vw, 6.6rem);
 }
 
 .title-line--studio {
-  max-width: 9.6ch;
+  max-width: 10.8ch;
 }
 
-.title-lockup span {
-  display: inline-flex;
+.title-note {
   width: min(100%, 31rem);
-  margin-top: 1.6rem;
+  margin: 1.35rem 0 0 clamp(1.6rem, 3.8vw, 2.65rem);
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.8vw, 1.18rem);
+  font-weight: 600;
   line-height: 1.65;
 }
 
 .studio-pages {
-  padding-top: 3.75rem;
+  padding-top: 3.15rem;
 }
 
 @keyframes title-scroll-rotate {
@@ -57,11 +144,11 @@
   }
 
   45% {
-    transform: rotate(1.25deg) translate3d(1.6vw, -0.6rem, 0);
+    transform: rotate(1.1deg) translate3d(1.35vw, -0.45rem, 0);
   }
 
   100% {
-    transform: rotate(-1.5deg) translate3d(0.4vw, 0.2rem, 0);
+    transform: rotate(-1.1deg) translate3d(0.35vw, 0.1rem, 0);
   }
 }
 
@@ -73,19 +160,24 @@
 
 @media (max-width: 760px) {
   .scroll-title {
-    min-height: 116svh;
-    padding: 7.5rem 1rem 5rem;
+    min-height: 104svh;
+    padding: 7rem 1rem 4.25rem;
   }
 
   .title-lockup {
-    top: 7rem;
+    top: 6.7rem;
+    padding: 1.1rem;
   }
 
   .title-line {
-    font-size: clamp(3.1rem, 20vw, 7.5rem);
+    font-size: clamp(2.85rem, 18vw, 6.6rem);
   }
 
   .title-line--to {
-    font-size: clamp(2.4rem, 14vw, 5.5rem);
+    font-size: clamp(2.25rem, 12vw, 4.7rem);
+  }
+
+  .title-note {
+    margin-left: 1.55rem;
   }
 }

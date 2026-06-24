@@ -11,3 +11,9 @@ These rules should shape current Website work.
 - Update the relationship map when pages, components, or data sources connect in new ways.
 - When Angel gives small feedback points, extract the reusable project signal and store only the public-safe lesson.
 - Put unclear feedback in the feedback inbox instead of inventing a lesson.
+- Reduce static bordered structure; use gradients, fades, spacing, and material layers instead.
+- Add subtle animated atmosphere so the homepage feels alive without becoming busy.
+- Keep the art direction graphically flat even when adding depth.
+- Prefer gradients and fade-offs over hard borders.
+- Give every animation a clear visual purpose.
+- Explore tactile 2.5D depth: polaroid-like gloss, tiny scratches, and subtle distortion while staying flat and performant.

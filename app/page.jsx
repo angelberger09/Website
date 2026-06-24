@@ -53,6 +53,13 @@ export default function HomePage() {
         </details>
       </header>
 
+      <div className="atmosphere-layer" aria-hidden="true">
+        <span className="atmosphere-layer__grain" />
+        <span className="atmosphere-layer__dust" />
+        <span className="atmosphere-layer__scratches" />
+        <span className="atmosphere-layer__gloss" />
+      </div>
+
       <main id="top" className="home-page">
         <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
           <div className="title-panel">

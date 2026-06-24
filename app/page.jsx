@@ -1,4 +1,4 @@
-import { homepageCards, studioPillars } from "./site-data";
+import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
 import { DetailCard } from "./site-chrome";
 
 export default function HomePage() {
@@ -15,6 +15,28 @@ export default function HomePage() {
             <li><span className="title-line title-line--studio">Soft Strange Studio</span></li>
           </ul>
           <p className="title-note">A soft public studio for notes, art, creature work, and gentle project paths.</p>
+        </div>
+      </section>
+
+      <section className="studio-pages studio-pages--intro" aria-labelledby="studio-front-room-title">
+        <div className="split-feature">
+          <div>
+            <p className="eyebrow">Front room</p>
+            <h1 id="studio-front-room-title">A calm place to enter the work.</h1>
+          </div>
+          <p>
+            Soft Strange Studio now has a filled public shape: a welcome, a clear
+            map, a notes reader, a first archive, and a store doorway that is honest
+            about what is still being prepared.
+          </p>
+        </div>
+
+        <div className="content-grid content-grid--small">
+          {homepageHighlights.map((highlight) => (
+            <DetailCard eyebrow={highlight.eyebrow} title={highlight.title} key={highlight.title}>
+              <p>{highlight.description}</p>
+            </DetailCard>
+          ))}
         </div>
       </section>
 
@@ -35,6 +57,7 @@ export default function HomePage() {
               <span className="page-card__label">{page.eyebrow}</span>
               <h2>{page.title}</h2>
               <p>{page.description}</p>
+              <span className="page-card__cue">Enter {page.title}</span>
             </a>
           ))}
         </div>

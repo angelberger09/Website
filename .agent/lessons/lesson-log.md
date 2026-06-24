@@ -201,3 +201,17 @@ The Website should read as handmade paper/collage before it reads as soft transl
 ### Future rule
 
 When adding or refining atmosphere, cards, hero stacks, or page sections, make the paper material visible enough that the page feels papery without sacrificing readability, contrast, or calm structure. Gloss and gradients should support the paper feeling instead of replacing it.
+
+## LESSON-020 — Make the top bar feel like layered paper
+
+Timestamp: 2026-06-24 19:41 ET  
+Context: Screenshot review of current top header bar on the About page  
+Status: active
+
+### Lesson
+
+The shared top bar should feel like a tactile paper strip or paper tab laid over the top of the page, not a smooth glassy UI capsule. Its material treatment should use existing texture assets or shader-like CSS to create paper grain, slight edge irregularity, and a visible soft drop shadow.
+
+### Future rule
+
+When refining the shared header, preserve direct navigation readability and top-edge attachment, but make the surface read as paper first: textured cream layer, subtle uneven edge or paper mask, tactile shadow below, and restrained material effects that do not hide focus states or reduce contrast.

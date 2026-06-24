@@ -6,7 +6,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 |---|---|---|---|---|---|---|
 | PAGE-001 | Page | Homepage | `app/page.jsx` | Main public studio entry | LESSON-001 | active |
 | COMP-001 | Component | Floating Header | `app/page.jsx`, `app/globals.css` | Persistent personal identity and navigation | LESSON-002 | active |
-| COMP-002 | Component | Folder Pages Menu | `app/page.jsx`, `app/globals.css`, `app/typography.css` | Compact navigation to current page destinations | LESSON-003, LESSON-013 | active |
+| COMP-002 | Component | Folder Pages Menu | `app/page.jsx`, `app/globals.css`, `app/typography.css` | Compact navigation to current page destinations | LESSON-003, LESSON-013, LESSON-015 | active |
 | COMP-003 | Component | Scroll Title Sequence | `app/page.jsx`, `app/globals.css`, `app/hero.css`, `app/typography.css` | Left-docked rotating paper-list arrival title | LESSON-012, LESSON-014 | active |
 | COMP-004 | Component | Studio Page Cards | `app/page.jsx`, `app/globals.css` | Human-facing links to current public pages | LESSON-002 | active |
 | DATA-001 | Content Source | Blog Home URL | Blog repo Pages URL | Standalone public notes site | LESSON-004 | active |
@@ -27,6 +27,8 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | DESIGN-012 | Design Pattern | Unboxed Left-Expanding Menu | `app/page.jsx`, `app/typography.css` | Make Pages links expand left without a separate dropdown panel | LESSON-013 | active |
 | DESIGN-013 | Design Pattern | Art Lettering Typography | `app/hero.css`, `app/typography.css` | Hero type feels printed, drawn, playful, and studio-made | LESSON-014 | active |
 | DESIGN-014 | Design Pattern | Paper List Hero Lockup | `app/page.jsx`, `app/hero.css` | Welcome title reads like a tactile paper note or list | LESSON-014 | active |
+| DESIGN-015 | Design Pattern | Direct Unnumbered Navigation | future header nav revision | Header nav uses plain labels without decorative markers | LESSON-015 | proposed |
+| DESIGN-016 | Design Pattern | Soft/Sharp Balance | future visual refinement | Add definition so the site does not feel overly soft | LESSON-015 | proposed |
 | ASSET-001 | Asset | Grain Noise | `public/atmosphere/grain-noise.svg` | Subtle paper/film texture | LESSON-006 | active |
 | ASSET-002 | Asset | Dust Specks | `public/atmosphere/dust-specks.svg` | Photo-surface dust and imperfections | LESSON-010 | active |
 | ASSET-003 | Asset | Fine Scratches | `public/atmosphere/fine-scratches.svg` | Hairline glossy-surface scratches | LESSON-010 | active |
@@ -42,6 +44,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | METRIC-011 | Metric | Quick Hero Read | `.agent/matrices/quality-metrics.matrix.md` | Check title reads quickly with reduced scroll | LESSON-012 | active |
 | METRIC-012 | Metric | Open Left Without Panel | `.agent/matrices/quality-metrics.matrix.md` | Check menu opens left by default without separate border/background | LESSON-013 | active |
 | METRIC-013 | Metric | Artsy Not Poster-Heavy | `.agent/matrices/quality-metrics.matrix.md` | Check hero type feels handmade and readable | LESSON-014 | active |
+| METRIC-014 | Metric | Direct Nav With Contrast | `.agent/matrices/quality-metrics.matrix.md` | Check direct nav has no numbers, no helper text, no Pages button, and better contrast | LESSON-015 | active |
 | DEC-006 | Decision | Motion Library Evaluation | `.agent/matrices/decisions.matrix.md` | Decide whether anime.js is needed | LESSON-009 | proposed |
 | LESSON-001 | Lesson | Make Homepage Feel Authored | `.agent/lessons/*` | Avoid demo-shell feeling | METRIC-001 | active |
 | LESSON-002 | Lesson | Use Human-Facing Copy | `.agent/lessons/*` | Translate technical structure into friendly language | METRIC-002 | active |
@@ -57,3 +60,4 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | LESSON-012 | Lesson | Dock Hero Type And Reduce Scroll Length | `.agent/lessons/*` | Use left-docked compact hero title with scroll rotation | METRIC-011 | active |
 | LESSON-013 | Lesson | Make Pages Menu Open Left And Stay Visually Unboxed | `.agent/lessons/*` | Use horizontal default-open reveal without dropdown panel | METRIC-012 | active |
 | LESSON-014 | Lesson | Make Hero Typography Feel Like Art Lettering | `.agent/lessons/*` | Use softer handmade paper-list display type | METRIC-013 | active |
+| LESSON-015 | Lesson | Use Direct Nav Labels Without Extra Markers | `.agent/lessons/*` | Remove nav numbers, helper text, redundant Pages button, and excessive softness | METRIC-014 | active |

@@ -8,9 +8,10 @@
 - Uses COMP-002 Folder Pages Menu.
 - Uses COMP-003 Scroll Title Sequence.
 - Uses COMP-004 Studio Page Cards.
+- Uses the atmosphere asset system through `app/globals.css`.
 - Links to DATA-001, DATA-002, DATA-003, DATA-004.
 - Shaped by LESSON-001, LESSON-002, LESSON-003.
-- Next visual direction is shaped by LESSON-005 through LESSON-011.
+- Current visual direction is shaped by LESSON-005 through LESSON-011.
 
 ## Floating Header
 
@@ -18,22 +19,34 @@
 - Anchors the site to `Angel Berger`.
 - Contains the folder menu.
 - Styled by DESIGN-004.
-- Future styling should reduce hard border reliance per LESSON-005 and LESSON-008.
+- Current styling reduces hard border reliance per LESSON-005 and LESSON-008.
+- Current styling uses gloss/material layering from ASSET-005.
 - Future placement should follow LESSON-011 and DESIGN-011 so the header feels attached to or emerging from the top edge.
 
 ## Scroll Title Sequence
 
 - ID: COMP-003
 - Current purpose is the main arrival moment.
-- Future direction may add subtle atmospheric background motion via DESIGN-009 and INT-006.
+- Background atmosphere now uses ASSET-001 through ASSET-005.
 - Motion must follow LESSON-009.
 
 ## Studio Page Cards
 
 - ID: COMP-004
 - Current purpose is to present four public page destinations.
-- Future direction may shift from bordered cards to gradient/photo-like material panels.
-- Related future patterns: DESIGN-007, DESIGN-010, INT-007.
+- Current styling uses gradient/photo-like material panels instead of hard borders.
+- Card alignment uses equal-height grid behavior and bottom-aligned descriptions.
+- Related patterns: DESIGN-007, DESIGN-010.
+- Related assets: ASSET-001, ASSET-003, ASSET-005.
+
+## Atmosphere Assets
+
+- ASSET-001 Grain Noise supports subtle paper/film texture.
+- ASSET-002 Dust Specks supports photo-surface imperfections.
+- ASSET-003 Fine Scratches supports hairline glossy-surface marks.
+- ASSET-004 Soft Scratches supports larger glass/photo scuffs.
+- ASSET-005 Gloss Sweep supports diagonal light reflections and tactile material depth.
+- Asset registry lives in `.agent/matrices/assets.matrix.md`.
 
 ## Blog Feed
 

@@ -37,3 +37,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | LESSON-008 | Lesson | Prefer Gradients Over Borders | `.agent/lessons/*` | Use fade-offs before outlines | METRIC-007 | active |
 | LESSON-009 | Lesson | Animation Should Have Intent | `.agent/lessons/*` | Motion must have a purpose | METRIC-007 | active |
 | LESSON-010 | Lesson | Add Tactile 2.5D Depth | `.agent/lessons/*` | Use polaroid-like gloss and distortion | METRIC-008 | active |
+| DESIGN-011 | Design Pattern | Offscreen Top Emergence | future CSS | Make the header feel tucked into or entering from above the viewport | LESSON-011 | proposed |
+| INT-008 | Interaction | Top Edge Entry | future CSS/animation | Header visually enters from the top edge without blocking controls | LESSON-011 | proposed |
+| METRIC-010 | Metric | Offscreen But Usable | `.agent/matrices/quality-metrics.matrix.md` | Check top-edge header effect preserves access and readability | LESSON-011 | active |
+| LESSON-011 | Lesson | Make Header Emerge From Offscreen Top | `.agent/lessons/*` | Use top-edge attachment without hiding controls | METRIC-010 | active |

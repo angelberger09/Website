@@ -12,3 +12,4 @@
 | METRIC-008 | Flat But Tactile | Depth feels like graphic material, not heavy realistic 3D | Check for polaroid-like gloss/scratches/distortion while preserving flat style | proposed | LESSON-010 |
 | METRIC-009 | Borders Are Not Primary Structure | Layout separation works without hard outlines | Remove or reduce borders and verify hierarchy remains clear | proposed | LESSON-008 |
 | METRIC-010 | Offscreen But Usable | Header feels like it enters from above while controls remain reachable | Check top offset, clipping, focus rings, click targets, and mobile readability | active | LESSON-011 |
+| METRIC-011 | Quick Hero Read | Full studio title is readable without three full screens of scrolling | Review first scroll distance, left docking, and scroll-linked rotation | active | LESSON-012 |

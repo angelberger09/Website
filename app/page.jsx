@@ -1,5 +1,6 @@
 import { pageContinuity } from "./page-continuity";
 import { NextStepBand } from "./next-step-band";
+import { homepageRoomMarkers } from "./homepage-room-markers";
 import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
 import { DetailCard } from "./site-chrome";
 
@@ -37,6 +38,25 @@ export default function HomePage() {
           {homepageHighlights.map((highlight) => (
             <DetailCard eyebrow={highlight.eyebrow} title={highlight.title} key={highlight.title}>
               <p>{highlight.description}</p>
+            </DetailCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="studio-pages studio-pages--compact" aria-labelledby="studio-room-status-title">
+        <div className="section-intro">
+          <p className="eyebrow">Current rooms</p>
+          <h1 id="studio-room-status-title">What is ready now, and what is still preparing.</h1>
+          <p>
+            The front page now gives a quick status read before visitors choose a door,
+            so the filled site feels honest without flattening every page into the same promise.
+          </p>
+        </div>
+
+        <div className="content-grid content-grid--small">
+          {homepageRoomMarkers.map((room) => (
+            <DetailCard eyebrow={room.eyebrow} title={room.title} status={room.status} key={room.title}>
+              <p>{room.description}</p>
             </DetailCard>
           ))}
         </div>

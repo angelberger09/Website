@@ -1,6 +1,6 @@
 :root {
-  --font-display: "Grandstander", "Trebuchet MS", ui-rounded, system-ui, sans-serif;
-  --font-body: "Quicksand", "Avenir Next", ui-rounded, system-ui, sans-serif;
+  --font-display: "Marker Felt", "Chalkboard SE", "Trebuchet MS", ui-rounded, system-ui, sans-serif;
+  --font-body: "Avenir Next", "Quicksand", ui-rounded, system-ui, sans-serif;
   --ink-soft: #3a2d2a;
 }
 

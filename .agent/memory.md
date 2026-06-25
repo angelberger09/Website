@@ -24,7 +24,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 - The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
 - The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
-- Shared card-like surfaces now use cut-paper silhouettes and edge shadows in `app/paper-card-pass.css` so they read less like rounded UI cards and more like lifted torn paper pieces.
+- Shared card-like surfaces now use stronger, visibly irregular cut-paper silhouettes and edge shadows in `app/paper-card-pass.css` so they read less like rounded UI cards and more like lifted torn paper pieces.
 - The homepage hero polaroid stack now carries a small readable studio-room preview through `app/page.jsx` and `app/hero-polaroid-card-pass.module.css`, so the frame is no longer only decorative.
 
 ## Active direction

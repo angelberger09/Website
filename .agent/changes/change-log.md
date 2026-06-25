@@ -259,133 +259,127 @@ The current header is closer to direct navigation, but it still includes unwante
 
 The `.agent` docs listed About, Notes, Portfolio, and Store as meaningful Website pages. This pass turns those planned routes into active filled pages while keeping the Blog repo as the public writing source.
 
+## 2026-06-24 19:10 ET — Filled page depth pass
+
+### Changed
+
+- Added richer homepage highlight cards.
+- Added About principles and pathway cards.
+- Added Notes support and reader-state cards.
+- Added Portfolio lanes and publishing rhythm.
+- Added Store trust promises.
+- Updated shared data in `app/site-data.js`.
+- Updated public memory, semantic index, pages matrix, components matrix, and relationship map.
+
+### Why
+
+The top-level Website pages were filled, but several still read as first-pass pages. This pass makes every major page more useful while keeping future Blog, Portfolio, and Store repo data optional and honest.
+
 ### Related items
 
 - PAGE-001
 - PAGE-002
 - PAGE-003
-- PAGE-003A
-- PAGE-003B
 - PAGE-004
 - PAGE-005
-- COMP-001
-- COMP-002
+- COMP-008
+- LESSON-018
+
+## 2026-06-24 19:19 ET — Filled page continuity bands
+
+### Changed
+
+- Added `app/page-continuity.js` with shared next-step language for each major Website page.
+- Added reusable `app/next-step-band.jsx`.
+- Added next-step bands to Home, About, Notes, Portfolio, and Store.
+- Updated public memory, semantic index, pages matrix, components matrix, and relationship map.
+
+### Why
+
+The pages now have more content, but they should not feel like isolated filled cards. This pass adds quiet, reusable continuity so visitors can move through the Website as a connected studio path.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-004
+- PAGE-005
+- COMP-009
+- DATA-005
+- DESIGN-018
+- INT-011
+- LESSON-018
+
+## 2026-06-24 19:33 ET — Homepage room markers
+
+### Changed
+
+- Added `app/homepage-room-markers.js` with room-level visitor promises.
+- Added a homepage `Current rooms` section that explains how About, Notes, Portfolio, and Store are already filled.
+- Updated the change log with this entry.
+
+### Why
+
+The homepage already had page doors and next-step continuity. This pass makes the filled-room status visible before visitors choose a route, helping the site feel complete without redoing the route pages.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-004
+- PAGE-005
 - COMP-004
-- COMP-005
+- COMP-008
+- LESSON-018
+
+## 2026-06-24 19:50 ET — Notes reader depth pass
+
+### Changed
+
+- Added latest-note emphasis and newest-first sorting to the notes index.
+- Added fuller reader states for loading, unavailable source, empty public archive, and published posts.
+- Added support-card and continuation sections to the individual note reader.
+- Updated pages matrix, components matrix, relationship map, and a dedicated change entry file.
+
+### Why
+
+The Notes route already loaded Blog content, but it needed to feel like a complete Website-owned reader rather than a raw feed preview. This pass gives both the index and individual note route clearer orientation, state handling, and continuity.
+
+### Related items
+
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
 - COMP-006
 - COMP-007
-- DESIGN-006
-- DESIGN-015
-- DESIGN-016
-- DESIGN-017
 - DATA-003
+- DATA-005
+- LESSON-002
+- LESSON-004
+- LESSON-018
 
-## 2026-06-24 19:17 ET — Live website validation protocol
-
-### Changed
-
-- Added `.agent/feedback/live-website-validation.md` as the source-check protocol for visual/current-site feedback.
-- Updated root and `.agent` read orders so future work checks this protocol before regular feedback intake.
-- Updated feedback README, intake protocol, and feedback-to-lesson workflow with the feedback-only implementation boundary.
-- Added FEEDBACK-006, LESSON-017, and METRIC-016 for source validation.
-- Updated public project memory and active lessons with the validation rule.
-
-### Why
-
-Future feedback should not be guessed from a pasted image or applied to the wrong thing. The assistant should check whether the note belongs to the live/current Website, store the reusable lesson in `.agent`, and leave public Website code unchanged unless implementation is explicitly requested.
-
-### Related items
-
-- FEEDBACK-006
-- LESSON-017
-- METRIC-016
-- PROC-001
-
-## 2026-06-24 19:38 ET — About page paper material feedback
+## 2026-06-24 19:57 ET — Note reader continuity target
 
 ### Changed
 
-- Added FEEDBACK-007 for the current About page screenshot saying the page is not papery enough.
-- Added LESSON-019 to make paper/collage material read as the primary surface language.
-- Added DESIGN-019 Paper Material Authenticity.
-- Added METRIC-018 Paper Material Reads First.
-- Added a public-safe reference note for the screenshot.
-- Updated active lessons, lesson log, feedback lessons, quality metrics, design language, pages matrix, components matrix, semantic index, relationship map, and public memory.
+- Added an individual note reader continuity target to `app/page-continuity.js`.
+- Updated `app/notes/post/PostReaderClient.jsx` to use the note-reader-specific target.
+- Updated public memory and added a dedicated change entry file.
 
 ### Why
 
-The About page is warm and layered, but it still reads too much like soft translucent UI with an isolated polaroid motif. The next implementation run should make shared Website surfaces feel more like paper and collage through visible fiber, torn or cut edges, layered sheet shadows, scanned imperfections, and paper-first material hierarchy.
+The post reader had continuity after reading, but it reused the broader Notes index target. This pass gives individual notes their own next-step language so the route feels less generic and more like a completed reading room.
 
 ### Related items
 
-- FEEDBACK-007
-- LESSON-019
-- PAGE-001
-- PAGE-002
-- COMP-004
-- COMP-005
-- COMP-008
-- DESIGN-019
-- METRIC-018
-
-## 2026-06-24 19:41 ET — Paper top bar feedback
-
-### Changed
-
-- Added FEEDBACK-008 for the current About page top bar screenshot.
-- Added LESSON-020 for making the shared top bar feel like layered paper over the page.
-- Added DESIGN-020 Paper Header Surface.
-- Added METRIC-019 Paper Header Surface.
-- Added a public-safe reference note without storing the raw browser screenshot.
-- Updated active lessons, lesson log, feedback lessons, quality metrics, design language, components matrix, assets matrix, semantic index, and public memory.
-
-### Why
-
-The current top bar has the right direct navigation structure, but it should feel more like a tactile paper strip laid over the page. The next implementation run should use existing atmosphere or polaroid assets, or a shader-like CSS paper treatment, plus a visible soft drop shadow while keeping labels readable and focus states accessible. Public Website source files were intentionally not changed in this feedback-only pass.
-
-### Related items
-
-- FEEDBACK-008
-- LESSON-020
-- PAGE-002
-- COMP-001
-- COMP-002
-- DESIGN-004
-- DESIGN-020
-- ASSET-001
-- ASSET-005
-- ASSET-006
-- METRIC-019
-
-## 2026-06-24 19:41 ET — Polaroid content card feedback
-
-### Changed
-
-- Added FEEDBACK-009 for the current homepage polaroid/card screenshot.
-- Added LESSON-021 for making polaroid frames carry content.
-- Added DESIGN-021 Content-Bearing Polaroid Cards.
-- Added METRIC-020 Content-Bearing Polaroids.
-- Added a public-safe reference note for the screenshot direction.
-- Updated active lessons, lesson log, feedback log, quality metrics, design language, components matrix, assets matrix, semantic index, and public memory.
-
-### Why
-
-The polaroid motif should not sit only behind content as decoration when it is being used as a card language. The next implementation run should fill the polaroid center with readable route content, preview art, page information, project material, or product-lane cues so the frame functions as a real card surface. Public Website source files were intentionally not changed in this feedback-only pass.
-
-### Related items
-
-- FEEDBACK-009
-- LESSON-021
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-010
-- DESIGN-017
-- DESIGN-021
-- ASSET-006
-- ASSET-007
-- METRIC-020
+- PAGE-003A
+- PAGE-003B
+- COMP-007
+- COMP-009
+- DATA-005
+- LESSON-018
 
 ## 2026-06-24 20:09 ET — Portfolio archive readiness lanes
 
@@ -425,6 +419,28 @@ The Store page already names future product lanes and promises not to fake inven
 - PAGE-005
 - COMP-008
 - DATA-007
+- LESSON-002
+- LESSON-004
+- LESSON-018
+
+## 2026-06-24 20:41 ET — Store feed contract pass
+
+### Changed
+
+- Added Store feed contract fields and rules to `app/store-readiness.js`.
+- Added a Future feed shape section to `app/store/page.jsx`.
+- Updated public memory, semantic index, content sources matrix, pages matrix, components matrix, and relationship map for the Store feed contract.
+
+### Why
+
+The Store page had readiness gates but the future Store repo data path was still only a placeholder. This pass defines the public-safe field shape the Website should expect later, without marking the future feed active or inventing live inventory.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DATA-007
+- DATA-008
 - LESSON-002
 - LESSON-004
 - LESSON-018

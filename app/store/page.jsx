@@ -1,6 +1,11 @@
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
-import { storeAvailabilityStates, storeReadinessChecklist } from "../store-readiness";
+import {
+  storeAvailabilityStates,
+  storeFeedFields,
+  storeFeedRules,
+  storeReadinessChecklist
+} from "../store-readiness";
 import { storePromises, storeSections } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -64,6 +69,27 @@ export default function StorePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="store-feed-title">
+        <p className="eyebrow">Future feed shape</p>
+        <h1 id="store-feed-title">The Store repo needs calm, public fields.</h1>
+        <p>
+          When a Store feed exists, the Website should receive only the public facts
+          needed to make honest product cards. This contract keeps raw planning out
+          of the site while making the future data handoff easier.
+        </p>
+        <div className="pathway-list" aria-label="Future Store feed fields">
+          {storeFeedFields.map((field) => (
+            <div className="pathway-link" key={field.label}>
+              <span>{field.label}</span>
+              <p>{field.description}</p>
+            </div>
+          ))}
+        </div>
+        <ul className="detail-list">
+          {storeFeedRules.map((rule) => <li key={rule}>{rule}</li>)}
+        </ul>
       </section>
 
       <section className="link-card wide-card" aria-labelledby="store-promise-title">

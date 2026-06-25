@@ -9,6 +9,7 @@
 | DATA-005 | Portfolio Feed | `angelberger09/Portfolio` | TBD | JSON feed | future PAGE-004 | future |
 | DATA-006 | Store Feed | `angelberger09/Store` | TBD | JSON feed | future PAGE-005 | future |
 | DATA-007 | Store Readiness Data | `angelberger09/Website` | `app/store-readiness.js` | JS data | PAGE-005 | active |
+| DATA-008 | Store Feed Contract | `angelberger09/Website` | `app/store-readiness.js` | JS data contract | PAGE-005, future Store feed | active |
 
 ## Fallback rule
 
@@ -17,3 +18,7 @@ If GitHub Pages is not available for a source repo, link to the public GitHub re
 ## Readiness rule
 
 Local Website readiness data can keep a page useful before a connected source repo has a public feed. Do not mark future Portfolio or Store feeds active until those repos expose public data paths.
+
+## Feed contract rule
+
+Future connected feeds should expose only public-safe fields that the Website needs to render calm visitor-facing cards. Raw planning, private drafts, and unavailable buying paths stay out of feed-shaped data.

@@ -1,13 +1,17 @@
 export function NextStepBand({ eyebrow, title, description, steps = [] }) {
   return (
-    <section className="link-card wide-card" aria-labelledby="continuity-title">
-      <p className="eyebrow">{eyebrow}</p>
-      <h1 id="continuity-title">{title}</h1>
-      <p>{description}</p>
-      <div className="pathway-list">
-        {steps.map((item) => (
-          <a className="pathway-link" href={item.href} key={item.title}>
-            <span>{item.eyebrow} — {item.title}</span>
+    <section className="continuity-paper-trail" aria-labelledby="continuity-title">
+      <div className="continuity-paper-trail__copy">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1 id="continuity-title">{title}</h1>
+        <p>{description}</p>
+      </div>
+      <div className="continuity-paper-trail__steps" aria-label="Suggested next rooms">
+        {steps.map((item, index) => (
+          <a className="continuity-paper-step" href={item.href} key={item.title}>
+            <span className="continuity-paper-step__pin">0{index + 1}</span>
+            <span className="continuity-paper-step__eyebrow">{item.eyebrow}</span>
+            <strong>{item.title}</strong>
             <small>{item.description}</small>
           </a>
         ))}

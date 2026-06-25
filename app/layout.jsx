@@ -32,6 +32,7 @@ import './store-path-photo-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-reader-photo-strip-pass.css';
+import './notes-path-photo-board-pass.css';
 import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
 import './notes-post-path-shelf-pass.css';

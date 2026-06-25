@@ -28,6 +28,7 @@ import './store-availability-status-pass.css';
 import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
 import './store-checklist-collage-pass.css';
+import './store-path-photo-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-reader-photo-strip-pass.css';

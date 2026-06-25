@@ -199,29 +199,344 @@
   color: rgba(59, 45, 32, 0.68);
 }
 
+.portfolio-paper-board {
+  position: relative;
+  display: grid;
+  gap: clamp(1.1rem, 2.6vw, 1.9rem);
+  padding: clamp(1.25rem, 3.2vw, 2.4rem);
+  isolation: isolate;
+}
+
+.portfolio-paper-board::before {
+  position: absolute;
+  inset: 0.15rem -0.2rem 0.45rem 0.1rem;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.52), transparent 22%),
+    radial-gradient(circle at 88% 76%, rgba(185, 201, 175, 0.2), transparent 28%),
+    linear-gradient(134deg, rgba(255, 250, 235, 0.82), rgba(234, 213, 178, 0.46)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, cover, 230px 230px;
+  box-shadow: 0 22px 54px rgba(83, 61, 37, 0.13), inset 0 0 0 1px rgba(105, 82, 50, 0.07);
+  clip-path: polygon(1% 2%, 98% 0, 100% 86%, 97% 98%, 58% 100%, 4% 96%, 0 15%);
+}
+
+.portfolio-paper-board::after {
+  position: absolute;
+  top: 0.15rem;
+  left: clamp(1.2rem, 7vw, 6rem);
+  width: clamp(5.4rem, 11vw, 8.8rem);
+  height: 1.45rem;
+  z-index: -1;
+  content: "";
+  background: rgba(242, 218, 169, 0.62);
+  box-shadow: 0 8px 20px rgba(82, 59, 35, 0.11);
+  transform: rotate(-2.6deg);
+  clip-path: polygon(3% 8%, 98% 0, 100% 82%, 12% 100%, 0 72%);
+}
+
+.portfolio-board-heading--compact h1 {
+  max-width: 15em;
+  font-size: clamp(1.85rem, 4vw, 3.75rem);
+}
+
+.portfolio-readiness-notes,
+.portfolio-lane-strip,
+.portfolio-feed-ledger,
+.portfolio-state-stack,
+.portfolio-process-ribbon {
+  position: relative;
+  z-index: 0;
+}
+
+.portfolio-readiness-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.portfolio-readiness-note,
+.portfolio-state-note,
+.portfolio-feed-card,
+.portfolio-rule-tapes p,
+.portfolio-process-ribbon li {
+  position: relative;
+  background:
+    linear-gradient(148deg, rgba(255, 252, 241, 0.96), rgba(239, 224, 190, 0.86)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 170px 170px;
+  box-shadow: 0 15px 28px rgba(82, 59, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(3% 1%, 96% 0, 100% 90%, 93% 100%, 5% 96%, 0 12%);
+}
+
+.portfolio-readiness-note {
+  display: grid;
+  gap: 0.72rem;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  transform: rotate(var(--readiness-tilt, -0.8deg));
+}
+
+.portfolio-readiness-note:nth-child(2) {
+  --readiness-tilt: 1deg;
+  margin-top: clamp(0.7rem, 2vw, 1.4rem);
+}
+
+.portfolio-readiness-note:nth-child(3) {
+  --readiness-tilt: -0.35deg;
+  margin-top: clamp(0.25rem, 1vw, 0.7rem);
+}
+
+.portfolio-note-tape {
+  position: absolute;
+  top: -0.48rem;
+  right: 1.1rem;
+  width: 4.8rem;
+  height: 1.12rem;
+  background: rgba(241, 219, 171, 0.68);
+  box-shadow: 0 7px 16px rgba(74, 53, 30, 0.1);
+  transform: rotate(3deg);
+  clip-path: polygon(4% 8%, 97% 0, 100% 86%, 10% 100%, 0 74%);
+}
+
+.portfolio-readiness-note h2,
+.portfolio-lane-piece h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.portfolio-readiness-note p,
+.portfolio-lane-piece p,
+.portfolio-feed-card p,
+.portfolio-state-note p,
+.portfolio-rule-tapes p,
+.portfolio-process-ribbon p {
+  margin: 0;
+  color: rgba(59, 45, 32, 0.72);
+}
+
+.portfolio-note-label,
+.portfolio-feed-card span,
+.portfolio-state-note span,
+.portfolio-process-ribbon span {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  padding: 0.32rem 0.52rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(59, 45, 32, 0.72);
+  background: rgba(255, 248, 225, 0.84);
+  box-shadow: 0 8px 16px rgba(91, 68, 41, 0.08);
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 90%);
+}
+
+.portfolio-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-chip-list li {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.3rem 0.48rem;
+  font-size: 0.78rem;
+  color: rgba(59, 45, 32, 0.68);
+  background: rgba(255, 248, 225, 0.76);
+  clip-path: polygon(3% 6%, 97% 0, 100% 86%, 94% 100%, 0 94%);
+}
+
+.portfolio-lane-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2.2vw, 1.35rem);
+}
+
+.portfolio-lane-piece {
+  display: grid;
+  grid-template-rows: minmax(9rem, 0.84fr) auto;
+  padding: 0.72rem;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 241, 0.96), rgba(238, 223, 192, 0.88)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 190px 190px, 180px 180px;
+  box-shadow: 0 18px 34px rgba(82, 59, 35, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(2% 3%, 97% 0, 100% 93%, 91% 100%, 4% 96%, 0 12%);
+  transform: rotate(var(--lane-tilt, -0.7deg));
+}
+
+.portfolio-lane-piece:nth-child(2) {
+  --lane-tilt: 0.9deg;
+  margin-top: clamp(0.7rem, 2vw, 1.5rem);
+}
+
+.portfolio-lane-piece:nth-child(3) {
+  --lane-tilt: -0.25deg;
+}
+
+.portfolio-lane-piece__image {
+  display: grid;
+  align-items: end;
+  min-height: clamp(8.4rem, 18vw, 12rem);
+  padding: 0.85rem;
+  background:
+    radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.78), transparent 21%),
+    radial-gradient(circle at 80% 68%, rgba(216, 197, 236, 0.34), transparent 25%),
+    linear-gradient(135deg, rgba(61, 48, 39, 0.88), rgba(144, 128, 96, 0.52) 54%, rgba(236, 216, 174, 0.78));
+  color: rgba(255, 250, 235, 0.9);
+  box-shadow: inset 0 -24px 40px rgba(47, 35, 25, 0.24);
+  clip-path: polygon(2% 4%, 97% 0, 100% 90%, 94% 100%, 0 96%);
+}
+
+.portfolio-lane-piece__image span {
+  width: fit-content;
+  padding: 0.36rem 0.52rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(41, 31, 23, 0.42);
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 90%);
+}
+
+.portfolio-lane-piece__copy {
+  display: grid;
+  gap: 0.68rem;
+  padding: 0.95rem 0.18rem 0.15rem;
+}
+
+.portfolio-feed-ledger {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(8.4rem, 1fr));
+  gap: 0.62rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.1rem 0.9rem;
+  scroll-snap-type: x proximity;
+}
+
+.portfolio-feed-card {
+  display: grid;
+  gap: 0.56rem;
+  min-width: 8.4rem;
+  padding: 0.9rem;
+  scroll-snap-align: start;
+}
+
+.portfolio-feed-card:nth-child(even) {
+  transform: translateY(0.45rem) rotate(0.65deg);
+}
+
+.portfolio-feed-card:nth-child(odd) {
+  transform: rotate(-0.45deg);
+}
+
+.portfolio-rule-tapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.56rem;
+}
+
+.portfolio-rule-tapes p {
+  width: fit-content;
+  max-width: min(100%, 24rem);
+  padding: 0.58rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.portfolio-state-stack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.portfolio-state-note {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.85rem;
+  transform: rotate(var(--state-tilt, -0.55deg));
+}
+
+.portfolio-state-note:nth-child(2n) {
+  --state-tilt: 0.7deg;
+  margin-top: 0.55rem;
+}
+
+.portfolio-process-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.portfolio-process-ribbon li {
+  display: grid;
+  gap: 0.62rem;
+  padding: 0.9rem;
+  transform: rotate(var(--process-tilt, -0.45deg));
+}
+
+.portfolio-process-ribbon li:nth-child(2n) {
+  --process-tilt: 0.55deg;
+  margin-top: 0.7rem;
+}
+
 @media (max-width: 1050px) {
-  .portfolio-piece-collage {
+  .portfolio-piece-collage,
+  .portfolio-readiness-notes,
+  .portfolio-lane-strip,
+  .portfolio-state-stack,
+  .portfolio-process-ribbon {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 680px) {
-  .portfolio-archive-board {
+  .portfolio-archive-board,
+  .portfolio-paper-board {
     padding: 1.25rem;
   }
 
-  .portfolio-piece-collage {
+  .portfolio-piece-collage,
+  .portfolio-readiness-notes,
+  .portfolio-lane-strip,
+  .portfolio-state-stack,
+  .portfolio-process-ribbon {
     grid-template-columns: 1fr;
   }
 
   .portfolio-piece-card,
   .portfolio-piece-card:nth-child(even),
-  .portfolio-piece-card:nth-child(3n) {
+  .portfolio-piece-card:nth-child(3n),
+  .portfolio-readiness-note,
+  .portfolio-readiness-note:nth-child(2),
+  .portfolio-readiness-note:nth-child(3),
+  .portfolio-lane-piece,
+  .portfolio-lane-piece:nth-child(2),
+  .portfolio-lane-piece:nth-child(3),
+  .portfolio-state-note,
+  .portfolio-state-note:nth-child(2n),
+  .portfolio-process-ribbon li,
+  .portfolio-process-ribbon li:nth-child(2n) {
     margin-top: 0;
     transform: none;
   }
 
-  .portfolio-board-heading h1 {
+  .portfolio-board-heading h1,
+  .portfolio-board-heading--compact h1 {
     font-size: clamp(2rem, 14vw, 3.4rem);
+  }
+
+  .portfolio-feed-ledger {
+    grid-template-columns: repeat(7, minmax(11rem, 1fr));
   }
 }

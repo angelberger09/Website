@@ -9,8 +9,11 @@ export default function HomePage() {
     <main id="top" className="home-page">
       <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
         <div className="title-lockup">
-          <span className="hero-polaroid hero-polaroid--back" aria-hidden="true" />
-          <span className="hero-polaroid hero-polaroid--frame" aria-hidden="true" />
+          <aside className="hero-polaroid-card" aria-label="Studio card preview">
+            <span className="hero-polaroid-card__label">Open rooms</span>
+            <strong>Notes, archive, store</strong>
+            <span>Four calm doors, already framed for visitors.</span>
+          </aside>
           <p className="title-kicker">Soft Strange Studio</p>
           <ul className="title-list" aria-label="Welcome to Soft Strange Studio">
             <li><span className="title-line title-line--welcome">Welcome</span></li>

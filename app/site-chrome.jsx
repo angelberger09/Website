@@ -64,11 +64,18 @@ export function SiteHeader() {
 
 export function StudioFooter() {
   return (
-    <footer className="studio-footer" aria-label="Site footer">
-      <p>Soft Strange Studio</p>
-      <nav aria-label="Footer pages">
-        {siteNavPages.map((page) => (
-          <a href={page.href} key={page.href}>{page.title}</a>
+    <footer className="studio-footer studio-footer--paper" aria-label="Site footer">
+      <div className="studio-footer__mark">
+        <span className="studio-footer__pin" aria-hidden="true" />
+        <p>Soft Strange Studio</p>
+        <small>Public rooms, gently connected.</small>
+      </div>
+      <nav className="studio-footer__trail" aria-label="Footer pages">
+        {siteNavPages.map((page, index) => (
+          <a href={page.href} key={page.href}>
+            <span>0{index + 1}</span>
+            {page.title}
+          </a>
         ))}
       </nav>
     </footer>

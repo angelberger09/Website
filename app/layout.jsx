@@ -35,6 +35,7 @@ import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-reader-photo-strip-pass.css';
 import './notes-path-photo-board-pass.css';
+import './notes-support-photo-slips-pass.css';
 import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
 import './notes-post-path-shelf-pass.css';
@@ -60,5 +61,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <html lang='en'><body><SiteHeader /><AtmosphereLayer />{children}<StudioFooter /></body></html>;
+  return (
+    <html lang="en">
+      <body>
+        <SiteHeader />
+        <AtmosphereLayer />
+        {children}
+        <StudioFooter />
+      </body>
+    </html>
+  );
 }

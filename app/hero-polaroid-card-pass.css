@@ -1,0 +1,67 @@
+.hero-polaroid-card {
+  position: absolute;
+  top: clamp(1.4rem, 3vw, 2.4rem);
+  left: clamp(14rem, 44vw, 32rem);
+  z-index: -1;
+  display: grid;
+  width: clamp(15.5rem, 32vw, 28rem);
+  aspect-ratio: 1;
+  align-content: end;
+  gap: 0.35rem;
+  padding: clamp(3.25rem, 6.5vw, 5.2rem) clamp(2.1rem, 4.5vw, 4.1rem) clamp(3.75rem, 7vw, 5.8rem);
+  color: rgba(58, 45, 42, 0.86);
+  background-image: url("/Website/atmosphere/polaroid-frame-alpha.svg"), url("/Website/atmosphere/polaroid-backing-alpha.svg");
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  filter: drop-shadow(0 1.1rem 2.1rem rgba(47, 38, 35, 0.14));
+  transform: rotate(2.5deg);
+}
+
+.hero-polaroid-card__label {
+  width: max-content;
+  max-width: 100%;
+  padding: 0.24rem 0.46rem;
+  color: rgba(111, 98, 93, 0.86);
+  background: rgba(255, 250, 242, 0.7);
+  font-family: var(--font-body);
+  font-size: clamp(0.58rem, 1vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-polaroid-card strong {
+  max-width: 13ch;
+  color: #3a2d2a;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 2.4rem);
+  font-weight: 750;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.hero-polaroid-card span:last-child {
+  max-width: 18ch;
+  color: rgba(86, 70, 65, 0.76);
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.2vw, 0.9rem);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .hero-polaroid-card {
+    top: 2rem;
+    left: auto;
+    right: -5.5rem;
+    width: clamp(13.5rem, 54vw, 21rem);
+    padding: 3.1rem 2.05rem 3.7rem;
+    opacity: 0.72;
+  }
+
+  .hero-polaroid-card span,
+  .hero-polaroid-card strong {
+    display: none;
+  }
+}

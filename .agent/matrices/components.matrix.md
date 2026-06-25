@@ -103,3 +103,7 @@ COMP-006 now includes Notes support/state photo slips: `app/notes-support-photo-
 ## Addendum — 2026-06-25 16:39 ET
 
 COMP-006 now includes Notes source-readiness receipt/photo cards: `app/notes/NotesPageClient.jsx` renders `notes-source-receipt` and `notes-fallback-receipt` structures, while `app/notes-source-receipts-pass.css` turns the Blog shelf contract and fallback rules into visible paper/photo slips without changing source data or implying private note art.
+
+## Addendum — 2026-06-25 19:31 ET
+
+COMP-008 now includes Store checklist photo centers: `app/store/page.jsx` renders `store-checklist-note__visual` inside each launch checklist note, while `app/store-checklist-collage-pass.css` turns each public-safe readiness item into an honest abstract paper/photo card with a clipped label and separate requirement fragments instead of a text-only checklist note.

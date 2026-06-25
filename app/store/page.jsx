@@ -58,12 +58,12 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="store-states-title">
+      <section className="link-card wide-card store-availability-card" aria-labelledby="store-states-title">
         <p className="eyebrow">Availability states</p>
         <h1 id="store-states-title">The shop path can open in gentle stages.</h1>
-        <div className="pathway-list" aria-label="Store availability states">
+        <div className="pathway-list store-snippet-list" aria-label="Store availability states">
           {storeAvailabilityStates.map((state) => (
-            <div className="pathway-link" key={state.label}>
+            <div className="pathway-link store-state-snippet" key={state.label}>
               <span>{state.label}</span>
               <p>{state.description}</p>
             </div>

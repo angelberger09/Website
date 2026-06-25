@@ -1,7 +1,7 @@
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
 import { aboutPathways, aboutPrinciples, aboutSections } from "../site-data";
-import { DetailCard, PageIntro } from "../site-chrome";
+import { PageIntro } from "../site-chrome";
 
 export const metadata = {
   title: "About · Soft Strange Studio",
@@ -19,12 +19,26 @@ export default function AboutPage() {
         </p>
       </PageIntro>
 
-      <section className="content-grid about-card-grid" aria-label="About Soft Strange Studio">
-        {aboutSections.map((section) => (
-          <DetailCard eyebrow={section.eyebrow} title={section.title} key={section.title}>
-            <p>{section.description}</p>
-          </DetailCard>
-        ))}
+      <section className="about-opening-board" aria-label="About Soft Strange Studio">
+        <div className="about-opening-copy">
+          <p className="eyebrow">Studio shape</p>
+          <h1>A public room with soft edges.</h1>
+          <p>
+            The first About section should orient visitors without reverting to a
+            generic card grid. These pieces keep the existing studio copy but place
+            it as a small paper map: front door, tone, scope, and movement.
+          </p>
+        </div>
+        <div className="about-room-map" aria-label="Soft Strange Studio orientation notes">
+          {aboutSections.map((section, index) => (
+            <article className="about-room-piece" key={section.title}>
+              <span className="about-room-piece__index">0{index + 1}</span>
+              <span className="about-room-piece__eyebrow">{section.eyebrow}</span>
+              <h2>{section.title}</h2>
+              <p>{section.description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="about-paper-board about-principles-board" aria-labelledby="about-principles-title">

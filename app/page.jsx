@@ -2,7 +2,7 @@ import cardStyles from "./hero-polaroid-card-pass.module.css";
 import { pageContinuity } from "./page-continuity";
 import { NextStepBand } from "./next-step-band";
 import { homepageRoomMarkers } from "./homepage-room-markers";
-import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
+import { homepageCards, homepageHighlights, homepageStudioChecks, studioPillars } from "./site-data";
 
 export default function HomePage() {
   const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
@@ -115,6 +115,29 @@ export default function HomePage() {
               <span>{pillar.eyebrow}</span>
               <h2>{pillar.title}</h2>
               <p>{pillar.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
+        <div className="home-studio-checks__intro">
+          <p className="eyebrow">Studio checks</p>
+          <h1 id="studio-checks-title">What every room should keep doing.</h1>
+          <p>
+            These small notes make the current review targets visible on the page:
+            paper should lead, copy should stay human, and unfinished work should
+            stay honest without looking empty.
+          </p>
+        </div>
+
+        <div className="home-check-rail" aria-label="Current studio quality checks">
+          {homepageStudioChecks.map((check) => (
+            <article className="home-check-note" key={check.title}>
+              <span className="home-check-note__eyebrow">{check.eyebrow}</span>
+              <h2>{check.title}</h2>
+              <p>{check.description}</p>
+              <small>{check.note}</small>
             </article>
           ))}
         </div>

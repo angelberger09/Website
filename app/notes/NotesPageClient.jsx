@@ -139,9 +139,11 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
               <p className="eyebrow">{item.eyebrow}</p>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-              <ul className="detail-list">
-                {item.details.map((detail) => <li key={detail}>{detail}</li>)}
-              </ul>
+              <div className="notes-source-detail-strip" aria-label={`${item.title} requirements`}>
+                {item.details.map((detail) => (
+                  <span className="notes-source-detail-slip" key={detail}>{detail}</span>
+                ))}
+              </div>
             </article>
           ))}
         </div>

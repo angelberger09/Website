@@ -186,6 +186,12 @@ export default function StorePage() {
           {storeReadinessChecklist.map((item, index) => (
             <article className="store-checklist-note" key={item.title}>
               <span className="store-checklist-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <div className="store-checklist-note__visual" aria-hidden="true">
+                <b>{item.eyebrow}</b>
+                <i />
+                <i />
+                <i />
+              </div>
               <div>
                 <span className="store-checklist-note__eyebrow">{item.eyebrow}</span>
                 <h2>{item.title}</h2>

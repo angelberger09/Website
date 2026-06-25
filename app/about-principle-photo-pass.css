@@ -1,0 +1,114 @@
+/* About principle photo pass. Gives the working-principle notes honest abstract paper/photo centers so the section is less text-only without inventing real photos or private material. */
+
+.about-principles-board .about-principle-note {
+  grid-template-rows: auto auto auto 1fr;
+  min-height: 19rem;
+}
+
+.about-principle-note__photo {
+  position: relative;
+  display: grid;
+  align-content: end;
+  width: min(100%, 15rem);
+  min-height: 7.2rem;
+  margin: 0 0 0.3rem;
+  padding: 0.82rem;
+  overflow: hidden;
+  color: rgba(47, 38, 35, 0.9);
+  background:
+    radial-gradient(circle at 22% 26%, rgba(255, 176, 143, 0.6), transparent 26%),
+    radial-gradient(circle at 76% 22%, rgba(216, 197, 236, 0.58), transparent 28%),
+    linear-gradient(136deg, rgba(255, 252, 246, 0.96), rgba(244, 225, 200, 0.62) 58%, rgba(185, 201, 175, 0.34)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 18rem 18rem, 34rem 34rem;
+  clip-path: polygon(2% 5%, 24% 2%, 54% 4%, 78% 1%, 98% 5%, 96% 42%, 99% 95%, 72% 98%, 38% 96%, 3% 99%, 5% 60%);
+  box-shadow:
+    0.16rem 0.24rem 0 rgba(47, 38, 35, 0.12),
+    0.52rem 0.72rem 1.1rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transform: rotate(-1deg);
+}
+
+.about-principle-note:nth-child(2) .about-principle-note__photo {
+  justify-self: center;
+  transform: rotate(1.2deg);
+}
+
+.about-principle-note:nth-child(3) .about-principle-note__photo {
+  justify-self: end;
+  transform: rotate(-0.4deg);
+}
+
+.about-principle-note__photo::before,
+.about-principle-note__photo::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.about-principle-note__photo::before {
+  inset: 0.74rem 0.82rem 1rem;
+  background:
+    linear-gradient(112deg, transparent 0 28%, rgba(255, 255, 255, 0.42) 29% 40%, transparent 42% 100%),
+    repeating-linear-gradient(90deg, rgba(47, 38, 35, 0.05) 0 1px, transparent 1px 15px);
+  clip-path: polygon(2% 4%, 48% 1%, 98% 5%, 96% 97%, 48% 94%, 3% 98%);
+  opacity: 0.72;
+}
+
+.about-principle-note__photo::after {
+  right: 0.72rem;
+  bottom: 0.72rem;
+  width: 3.8rem;
+  height: 1.15rem;
+  background:
+    linear-gradient(120deg, rgba(255, 250, 242, 0.78), rgba(185, 201, 175, 0.58)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(4% 12%, 34% 0, 68% 10%, 97% 2%, 94% 88%, 62% 100%, 10% 90%);
+  box-shadow: 0 0.24rem 0.45rem rgba(47, 38, 35, 0.12);
+  transform: rotate(2.4deg);
+}
+
+.about-principle-note__photo b,
+.about-principle-note__photo em {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.about-principle-note__photo b {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+}
+
+.about-principle-note__photo em {
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.38rem;
+  padding: 0.26rem 0.45rem;
+  background: rgba(255, 250, 242, 0.64);
+  clip-path: polygon(2% 12%, 40% 0, 98% 9%, 94% 90%, 54% 100%, 4% 91%);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 820px) {
+  .about-principles-board .about-principle-note {
+    min-height: 0;
+  }
+
+  .about-principle-note__photo,
+  .about-principle-note:nth-child(2) .about-principle-note__photo,
+  .about-principle-note:nth-child(3) .about-principle-note__photo {
+    justify-self: start;
+    width: min(100%, 18rem);
+    transform: none;
+  }
+}

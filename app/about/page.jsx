@@ -15,6 +15,21 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
 
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
+const aboutPrincipleFrames = [
+  {
+    mark: "Soft",
+    detail: "human first"
+  },
+  {
+    mark: "Safe",
+    detail: "public only"
+  },
+  {
+    mark: "Open",
+    detail: "clear paths"
+  }
+];
+
 const aboutPathwayFrames = [
   {
     label: "Writing shelf",
@@ -102,13 +117,20 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="about-principles-collage" aria-label="Soft Strange Studio working principles">
-          {aboutPrinciples.map((principle) => (
-            <article className="about-principle-note" key={principle.title}>
-              <span>{principle.eyebrow}</span>
-              <h2>{principle.title}</h2>
-              <p>{principle.description}</p>
-            </article>
-          ))}
+          {aboutPrinciples.map((principle, index) => {
+            const frame = aboutPrincipleFrames[index] ?? aboutPrincipleFrames[0];
+            return (
+              <article className="about-principle-note" key={principle.title}>
+                <span className="about-principle-note__photo" aria-hidden="true">
+                  <b>{frame.mark}</b>
+                  <em>{frame.detail}</em>
+                </span>
+                <span>{principle.eyebrow}</span>
+                <h2>{principle.title}</h2>
+                <p>{principle.description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

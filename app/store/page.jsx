@@ -120,23 +120,26 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section className="store-editorial-section store-feed-contract-section" aria-labelledby="store-feed-title">
-        <p className="eyebrow">Future feed shape</p>
-        <h1 id="store-feed-title">The Store repo needs calm, public fields.</h1>
-        <p>
-          When a Store feed exists, the Website should receive only the public facts
-          needed to make honest product cards. This contract keeps raw planning out
-          of the site while making the future data handoff easier.
-        </p>
-        <div className="pathway-list store-feed-field-snippets" aria-label="Future Store feed fields">
-          {storeFeedFields.map((field) => (
-            <div className="pathway-link store-feed-field-snippet" key={field.label}>
-              <span>{field.label}</span>
+      <section className="store-editorial-section store-feed-contract-section store-feed-ledger-board" aria-labelledby="store-feed-title">
+        <div className="store-feed-ledger-board__intro">
+          <p className="eyebrow">Future feed shape</p>
+          <h1 id="store-feed-title">The Store repo needs calm, public fields.</h1>
+          <p>
+            When a Store feed exists, the Website should receive only the public facts
+            needed to make honest product cards. This contract keeps raw planning out
+            of the site while making the future data handoff easier.
+          </p>
+        </div>
+        <div className="store-feed-ledger-grid" aria-label="Future Store feed fields">
+          {storeFeedFields.map((field, index) => (
+            <article className="store-feed-ledger-card" key={field.label}>
+              <span className="store-feed-ledger-card__tab" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span className="store-feed-ledger-card__label">{field.label}</span>
               <p>{field.description}</p>
-            </div>
+            </article>
           ))}
         </div>
-        <ul className="detail-list store-feed-rule-notes">
+        <ul className="store-feed-rule-tape" aria-label="Future Store feed rules">
           {storeFeedRules.map((rule) => <li key={rule}>{rule}</li>)}
         </ul>
       </section>

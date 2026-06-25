@@ -9,6 +9,37 @@ const pageIntroTitleStyle = {
   whiteSpace: "nowrap"
 };
 
+const pageIntroVisuals = {
+  "Soft public studio": {
+    label: "About",
+    title: "Studio map",
+    note: "Principles, pathways, and public-safe memory."
+  },
+  "Studio notes room": {
+    label: "Notes",
+    title: "Reader light",
+    note: "Published writing gathered into one calm room."
+  },
+  "First public archive": {
+    label: "Archive",
+    title: "Work lanes",
+    note: "Ready pieces, preparing records, offstage drafts."
+  },
+  "Future studio pieces": {
+    label: "Store",
+    title: "Availability path",
+    note: "Prepared lanes before public shop links open."
+  }
+};
+
+function getPageIntroVisual(title, eyebrow) {
+  return pageIntroVisuals[title] || {
+    label: eyebrow,
+    title,
+    note: "A route-specific studio card inside the paper frame."
+  };
+}
+
 export function AtmosphereLayer() {
   return (
     <div className="atmosphere-layer" aria-hidden="true">
@@ -54,6 +85,8 @@ export function StudioFooter() {
 }
 
 export function PageIntro({ eyebrow, title, children }) {
+  const visual = getPageIntroVisual(title, eyebrow);
+
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
@@ -65,6 +98,11 @@ export function PageIntro({ eyebrow, title, children }) {
       </div>
       <div className="page-hero__stack" aria-hidden="true">
         <span className="hero-polaroid hero-polaroid--back" />
+        <div className="page-hero__photo-card">
+          <span>{visual.label}</span>
+          <strong>{visual.title}</strong>
+          <small>{visual.note}</small>
+        </div>
         <span className="hero-polaroid hero-polaroid--frame" />
       </div>
     </section>

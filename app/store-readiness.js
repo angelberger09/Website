@@ -64,5 +64,5 @@ export const storeFeedFields = [
 export const storeFeedRules = [
   "Keep unavailable items in preparing or previewing until a real public listing exists.",
   "Use public-safe summaries and previews only; private drafts and raw product planning stay offstage.",
-  "Let the Website translate Store repo data into calm studio cards instead of exposing raw feed language."
+  "Let the Website translate future store source material into calm studio cards instead of exposing behind-the-scenes source language."
 ];

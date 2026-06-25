@@ -9,7 +9,7 @@ export const siteNavPages = [
     title: "Notes",
     eyebrow: "Still Here Notes",
     href: "/Website/notes/",
-    description: "Read public notes inside the Website shell while the Blog repo stays the source of the writing."
+    description: "Read public notes in the studio reader while the writing source stays quietly organized."
   },
   {
     title: "Portfolio",
@@ -34,9 +34,9 @@ export const homepageHighlights = [
     description: "The Website now gives every visitor a complete place to land: orientation, writing, work, and shop paths all live inside the same calm shell."
   },
   {
-    title: "Connected but not raw",
-    eyebrow: "Repo rhythm",
-    description: "Blog, Portfolio, and Store can keep their own source material, while this site translates that structure into pages that feel warm and readable."
+    title: "Connected, still warm",
+    eyebrow: "Source rhythm",
+    description: "Writing, work, and store material can keep their own backstage structure, while this site translates that structure into pages that feel warm and readable."
   },
   {
     title: "Soft, tactile, direct",
@@ -57,9 +57,9 @@ export const studioPillars = [
     description: "The site holds gentle creature work, tactile paper/photo layers, and flat illustrative atmosphere."
   },
   {
-    title: "Small doors, not raw feeds",
+    title: "Small doors, not raw systems",
     eyebrow: "Structure",
-    description: "Connected repos can provide data, but visitors should meet pages, readers, cards, and warm orientation first."
+    description: "Source spaces can provide structured material, but visitors should meet pages, readers, cards, and warm orientation first."
   },
   {
     title: "Ready to grow slowly",
@@ -131,16 +131,16 @@ export const portfolioPieces = [
   {
     title: "Soft Strange Studio website",
     eyebrow: "Website system",
-    description: "The public studio shell: a Next static site with a shared header, tactile atmosphere, and Website-owned pages for notes, work, and future shop paths.",
+    description: "The public studio shell: shared paper chrome, tactile atmosphere, and visitor-ready rooms for notes, work, and future shop paths.",
     status: "Active",
     details: ["Shared studio chrome", "Filled top-level pages", "Public-safe project memory"]
   },
   {
     title: "Still Here Notes reader",
     eyebrow: "Writing system",
-    description: "A Website reader that pulls published post profiles and Markdown from the public Blog repo while keeping the reading experience inside the studio site.",
+    description: "A studio reader that gathers published note profiles and writing files from the public writing source while keeping the reading experience inside the studio site.",
     status: "Active",
-    details: ["Published-post index", "Individual note route", "Blog compatibility paths"]
+    details: ["Published-note index", "Individual note route", "Blog compatibility paths"]
   },
   {
     title: "Polaroid atmosphere layer",
@@ -253,12 +253,12 @@ export const notesSupportCards = [
   {
     title: "Source stays public-safe",
     eyebrow: "Memory rule",
-    description: "The Website can render public notes, but private drafts and vulnerable raw context do not belong in the public repo."
+    description: "The Website can render public notes, but private drafts and vulnerable raw context do not belong in the public studio source."
   },
   {
     title: "Reader stays here",
-    eyebrow: "Website-owned",
-    description: "The Blog repo provides the writing files; the Website owns the route, atmosphere, layout, and reading experience."
+    eyebrow: "Studio path",
+    description: "The public writing source provides the note files; the Website carries the route, atmosphere, layout, and reading experience."
   },
   {
     title: "Posts stay approachable",
@@ -270,18 +270,18 @@ export const notesSupportCards = [
 export const notesReaderStates = [
   {
     title: "Loading",
-    eyebrow: "When fetching",
+    eyebrow: "When gathering",
     description: "Use plain language so the wait feels intentional, not broken."
   },
   {
     title: "Unavailable",
-    eyebrow: "If source fails",
+    eyebrow: "If source pauses",
     description: "Explain that the public notes source could not be reached instead of sending visitors to raw URLs."
   },
   {
     title: "Published only",
-    eyebrow: "Filter rule",
-    description: "Render only posts marked as published in the Blog index."
+    eyebrow: "Public rule",
+    description: "Render only notes marked as published in the public writing index."
   }
 ];
 

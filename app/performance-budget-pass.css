@@ -40,6 +40,7 @@ body::before,
 .home-hero-contact-sheet,
 .about-opening-board,
 .about-paper-board,
+.about-contact-sheet-board,
 .portfolio-archive-board,
 .portfolio-gallery-board,
 .portfolio-paper-board,
@@ -97,6 +98,7 @@ body::before,
 .about-room-piece,
 .about-principle-note,
 .about-pathway-note,
+.about-contact-card,
 .portfolio-piece-card,
 .portfolio-gallery-card,
 .portfolio-readiness-note,
@@ -151,6 +153,7 @@ body::before,
 .about-room-piece,
 .about-principle-note,
 .about-pathway-note,
+.about-contact-card,
 .portfolio-piece-card,
 .portfolio-gallery-card,
 .portfolio-readiness-note,
@@ -222,6 +225,7 @@ body::before,
 .home-hero-route-slip:nth-child(2n + 1),
 .about-room-piece:nth-child(2n),
 .about-room-piece:nth-child(2n + 1),
+.about-contact-card,
 .portfolio-piece-card,
 .portfolio-gallery-card,
 .portfolio-gallery-card:nth-child(2n),
@@ -257,6 +261,7 @@ body::before,
 .home-door-card:focus,
 .home-hero-route-slip:hover,
 .home-hero-route-slip:focus,
+.about-contact-card:focus-within,
 .store-gallery-card:focus-within,
 .portfolio-gallery-card:focus-within,
 .notes-gallery-card:focus-within,
@@ -281,6 +286,8 @@ body::before,
 .about-room-piece__eyebrow,
 .about-principle-note span,
 .about-pathway-note span,
+.about-contact-card__image span,
+.about-contact-card__copy small,
 .portfolio-note-label,
 .portfolio-piece-card__meta span,
 .portfolio-piece-card__meta small,
@@ -333,6 +340,7 @@ body::before,
 
 .home-door-card__image,
 .home-hero-route-slip__preview,
+.about-contact-card__image,
 .portfolio-piece-card__image,
 .portfolio-gallery-card__image,
 .portfolio-lane-piece__image,
@@ -356,67 +364,4 @@ body::before,
 .page-hero__photo-card {
   filter: none;
   will-change: auto;
-}
-
-.store-gallery-card__pieces i,
-.store-shot-card__staged-pieces span {
-  background-image: linear-gradient(135deg, rgba(255, 252, 246, 0.36), rgba(255, 247, 235, 0.1));
-  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.18), 0.12rem 0.18rem 0.36rem rgba(47, 38, 35, 0.1);
-}
-
-.title-lockup::before,
-.title-lockup::after,
-.home-paper-field::after,
-.home-room-status::after,
-.home-door-section::after {
-  animation-duration: 18s;
-}
-
-.studio-footer__trail a:nth-child(2n),
-.studio-footer__trail a:nth-child(2n + 1) {
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .page-hero__stack .hero-polaroid--back,
-  .page-hero__stack .hero-polaroid--frame,
-  .page-hero__photo-card {
-    transform: none;
-  }
-}
-
-@media (max-width: 760px) {
-  .site-shell,
-  .home-page,
-  .studio-pages,
-  .page-layout,
-  .readable-shell,
-  .content-grid,
-  .page-grid,
-  .post-list,
-  .home-hero-contact-sheet,
-  .about-opening-board,
-  .about-paper-board,
-  .portfolio-archive-board,
-  .portfolio-gallery-board,
-  .portfolio-paper-board,
-  .store-editorial-section,
-  .store-visual-board,
-  .store-paper-field-grid,
-  .store-gallery-board,
-  .store-lane-collage,
-  .store-promise-board,
-  .store-checklist-collage,
-  .store-feed-ledger-board,
-  .notes-reader-board,
-  .notes-gallery-board,
-  .notes-source-board,
-  .notes-state-board,
-  .notes-post-desk,
-  .notes-post-support-board,
-  .continuity-paper-trail,
-  .studio-footer--paper {
-    content-visibility: visible;
-    contain-intrinsic-size: auto;
-  }
 }

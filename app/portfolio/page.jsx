@@ -2,7 +2,7 @@ import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
 import { portfolioFeedFields, portfolioFeedRules, portfolioRecordStates } from "../portfolio-feed-contract";
 import { portfolioLanes, portfolioPieces, portfolioProcess, portfolioReadiness } from "../site-data";
-import { DetailCard, PageIntro } from "../site-chrome";
+import { PageIntro } from "../site-chrome";
 
 export const metadata = {
   title: "Portfolio · Soft Strange Studio",
@@ -55,84 +55,109 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="portfolio-readiness-title">
-        <p className="eyebrow">Archive readiness</p>
-        <h1 id="portfolio-readiness-title">Public work gets a clear holding pattern.</h1>
-        <p>
-          The portfolio can show what is real now without rushing unfinished material
-          into public view. These lanes make it easier to decide what belongs on the
-          page, what needs a little more framing, and what should stay offstage.
-        </p>
-        <div className="content-grid content-grid--small embedded-grid">
-          {portfolioReadiness.map((item) => (
-            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
+      <section className="portfolio-readiness-board portfolio-paper-board" aria-labelledby="portfolio-readiness-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Archive readiness</p>
+          <h1 id="portfolio-readiness-title">Public work gets a clear holding pattern.</h1>
+          <p>
+            The portfolio can show what is real now without rushing unfinished material
+            into public view. These lanes make it easier to decide what belongs on the
+            page, what needs a little more framing, and what should stay offstage.
+          </p>
+        </div>
+        <div className="portfolio-readiness-notes">
+          {portfolioReadiness.map((item, index) => (
+            <article className="portfolio-readiness-note" data-readiness-index={index + 1} key={item.title}>
+              <span className="portfolio-note-tape" aria-hidden="true" />
+              <p className="portfolio-note-label">{item.eyebrow}</p>
+              <h2>{item.title}</h2>
               <p>{item.description}</p>
               {item.details && (
-                <ul className="detail-list">
+                <ul className="portfolio-chip-list">
                   {item.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
               )}
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="portfolio-lanes-title">
-        <p className="eyebrow">Archive lanes</p>
-        <h1 id="portfolio-lanes-title">The work can grow in clear public lanes.</h1>
-        <p>
-          Portfolio items do not need to become full records all at once. The
-          page can hold active systems now, then deepen each lane when public images,
-          writeups, or source data are ready.
-        </p>
-        <div className="content-grid content-grid--small embedded-grid">
-          {portfolioLanes.map((lane) => (
-            <DetailCard eyebrow={lane.eyebrow} title={lane.title} key={lane.title}>
-              <p>{lane.description}</p>
-            </DetailCard>
+      <section className="portfolio-lane-board portfolio-paper-board" aria-labelledby="portfolio-lanes-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Archive lanes</p>
+          <h1 id="portfolio-lanes-title">The work can grow in clear public lanes.</h1>
+          <p>
+            Portfolio items do not need to become full records all at once. The
+            page can hold active systems now, then deepen each lane when public images,
+            writeups, or source data are ready.
+          </p>
+        </div>
+        <div className="portfolio-lane-strip">
+          {portfolioLanes.map((lane, index) => (
+            <article className="portfolio-lane-piece" data-lane-index={index + 1} key={lane.title}>
+              <div className="portfolio-lane-piece__image" aria-hidden="true">
+                <span>{lane.eyebrow}</span>
+              </div>
+              <div className="portfolio-lane-piece__copy">
+                <p className="portfolio-note-label">{lane.eyebrow}</p>
+                <h2>{lane.title}</h2>
+                <p>{lane.description}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="portfolio-feed-title">
-        <p className="eyebrow">Future feed shape</p>
-        <h1 id="portfolio-feed-title">The Portfolio repo needs public archive fields.</h1>
-        <p>
-          When a Portfolio feed exists, the Website should receive only the safe,
-          visitor-facing facts needed to make calm project cards and deeper routes.
-          This keeps raw drafts offstage while making the future archive easier to grow.
-        </p>
-        <div className="pathway-list" aria-label="Future Portfolio feed fields">
+      <section className="portfolio-feed-board portfolio-paper-board" aria-labelledby="portfolio-feed-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Future feed shape</p>
+          <h1 id="portfolio-feed-title">The Portfolio repo needs public archive fields.</h1>
+          <p>
+            When a Portfolio feed exists, the Website should receive only the safe,
+            visitor-facing facts needed to make calm project cards and deeper routes.
+            This keeps raw drafts offstage while making the future archive easier to grow.
+          </p>
+        </div>
+        <div className="portfolio-feed-ledger" aria-label="Future Portfolio feed fields">
           {portfolioFeedFields.map((field) => (
-            <div className="pathway-link" key={field.label}>
+            <article className="portfolio-feed-card" key={field.label}>
               <span>{field.label}</span>
               <p>{field.description}</p>
-            </div>
+            </article>
           ))}
         </div>
-        <ul className="detail-list">
-          {portfolioFeedRules.map((rule) => <li key={rule}>{rule}</li>)}
-        </ul>
+        <div className="portfolio-rule-tapes" aria-label="Future Portfolio feed rules">
+          {portfolioFeedRules.map((rule) => <p key={rule}>{rule}</p>)}
+        </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="portfolio-states-title">
-        <p className="eyebrow">Record states</p>
-        <h1 id="portfolio-states-title">Archive records can open in stages.</h1>
-        <div className="pathway-list" aria-label="Portfolio record states">
-          {portfolioRecordStates.map((state) => (
-            <div className="pathway-link" key={state.label}>
+      <section className="portfolio-state-board portfolio-paper-board" aria-labelledby="portfolio-states-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Record states</p>
+          <h1 id="portfolio-states-title">Archive records can open in stages.</h1>
+        </div>
+        <div className="portfolio-state-stack" aria-label="Portfolio record states">
+          {portfolioRecordStates.map((state, index) => (
+            <article className="portfolio-state-note" data-state-index={index + 1} key={state.label}>
               <span>{state.label}</span>
               <p>{state.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="portfolio-process-title">
-        <p className="eyebrow">Publishing rhythm</p>
-        <h1 id="portfolio-process-title">A simple path from signal to public project.</h1>
-        <ol className="process-list">
-          {portfolioProcess.map((step) => <li key={step}>{step}</li>)}
+      <section className="portfolio-process-board portfolio-paper-board" aria-labelledby="portfolio-process-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Publishing rhythm</p>
+          <h1 id="portfolio-process-title">A simple path from signal to public project.</h1>
+        </div>
+        <ol className="portfolio-process-ribbon">
+          {portfolioProcess.map((step, index) => (
+            <li data-step-index={index + 1} key={step}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <p>{step}</p>
+            </li>
+          ))}
         </ol>
       </section>
 

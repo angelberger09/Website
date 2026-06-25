@@ -1,0 +1,82 @@
+/* Stronger FEEDBACK-011 pass: make the shared header read as layered paper tabs, not smooth UI pills. Loaded after the earlier paper header passes. */
+.floating-header {
+  clip-path: polygon(0.7% 0, 16% 1.8%, 34% 0.4%, 55% 1.4%, 74% 0.2%, 99.1% 0.8%, 98.4% 72%, 96.9% 96.5%, 78% 98.3%, 58% 96.8%, 33% 99%, 12% 96.6%, 1.1% 98%, 2.4% 64%);
+  background:
+    linear-gradient(103deg, rgba(255, 252, 246, 0.99), rgba(255, 247, 235, 0.93) 48%, rgba(245, 224, 198, 0.64)),
+    linear-gradient(180deg, rgba(47, 38, 35, 0.05), transparent 24%, transparent 70%, rgba(47, 38, 35, 0.1)),
+    var(--grain-image),
+    var(--dust-image),
+    var(--fine-scratch-image);
+  background-size: cover, cover, 18rem 18rem, 32rem 32rem, 44rem 44rem;
+  background-position: center, center, 10% 18%, 52% 22%, 66% 36%;
+  box-shadow:
+    0 0.32rem 0 rgba(255, 255, 255, 0.5) inset,
+    0 0.78rem 0 rgba(47, 38, 35, 0.075),
+    0 1.45rem 2.15rem rgba(47, 38, 35, 0.2),
+    0 3.4rem 5.6rem rgba(47, 38, 35, 0.11);
+}
+
+.identity-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.18rem;
+  padding: 0.5rem 0.82rem 0.42rem;
+  clip-path: polygon(2% 6%, 22% 1%, 54% 4%, 98% 0, 96% 88%, 78% 98%, 45% 94%, 3% 100%);
+  background:
+    linear-gradient(137deg, rgba(255, 250, 242, 0.98), rgba(245, 232, 211, 0.72)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 38rem 38rem;
+  box-shadow:
+    0.12rem 0.22rem 0 rgba(47, 38, 35, 0.08),
+    0.26rem 0.44rem 0.9rem rgba(47, 38, 35, 0.14),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.12);
+}
+
+.folder-panel a {
+  position: relative;
+  border-radius: 0;
+  clip-path: polygon(3% 9%, 25% 1%, 58% 5%, 97% 2%, 94% 88%, 73% 98%, 35% 94%, 4% 100%);
+  background:
+    linear-gradient(142deg, rgba(255, 250, 242, 0.98), rgba(245, 232, 211, 0.68)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 16rem 16rem, 30rem 30rem;
+  box-shadow:
+    0.1rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0.22rem 0.36rem 0.68rem rgba(47, 38, 35, 0.13),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.1);
+}
+
+.folder-panel a:nth-child(2n) {
+  transform: translateY(0.06rem) rotate(0.34deg);
+  clip-path: polygon(2% 5%, 31% 2%, 62% 1%, 98% 5%, 95% 92%, 66% 96%, 32% 99%, 1% 94%);
+}
+
+.folder-panel a:nth-child(2n + 1) {
+  transform: translateY(-0.03rem) rotate(-0.28deg);
+}
+
+.folder-panel a:hover,
+.folder-panel a:focus {
+  background:
+    linear-gradient(135deg, rgba(185, 201, 175, 0.52), rgba(255, 250, 242, 0.88) 52%, rgba(255, 176, 143, 0.3)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 16rem 16rem, 30rem 30rem;
+  outline: 2px solid rgba(47, 38, 35, 0.22);
+  outline-offset: 0.08rem;
+}
+
+@media (max-width: 760px) {
+  .floating-header {
+    clip-path: polygon(0.8% 0, 24% 1.2%, 49% 0.3%, 76% 1.4%, 99% 0.8%, 97.8% 96.2%, 68% 98.4%, 35% 97.3%, 1.2% 99%);
+  }
+
+  .identity-link,
+  .folder-panel a,
+  .folder-panel a:nth-child(2n),
+  .folder-panel a:nth-child(2n + 1) {
+    transform: none;
+  }
+}

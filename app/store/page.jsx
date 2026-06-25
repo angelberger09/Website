@@ -15,6 +15,23 @@ export const metadata = {
 };
 
 const visualStoreLanes = storeSections.slice(0, 3);
+const storeGalleryItems = [
+  ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
+  {
+    kind: "note",
+    eyebrow: "Readiness rule",
+    title: "Preview is not inventory",
+    description:
+      "These pieces can show mood, materials, and public paths without pretending that a product listing already exists."
+  },
+  {
+    kind: "note",
+    eyebrow: "Launch rule",
+    title: "Available means linked",
+    description:
+      "A store item should only move into an available state after the public source, delivery path, and listing context are ready."
+  }
+];
 
 export default function StorePage() {
   return (
@@ -74,6 +91,48 @@ export default function StorePage() {
                 <ul className="store-shot-card__materials" aria-label={`${lane.title} preview material`}>
                   {lane.details.slice(0, 2).map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="store-gallery-board" aria-labelledby="store-gallery-title">
+        <div className="store-gallery-board__intro">
+          <p className="eyebrow">Scrollable preview shelf</p>
+          <h1 id="store-gallery-title">A slower look at what is being prepared.</h1>
+          <p>
+            The shelf turns the existing Store lanes and launch rules into a horizontal
+            paper/photo sequence. It gives the page a more visual path while keeping
+            every card honest about preparation instead of availability.
+          </p>
+        </div>
+        <div className="store-gallery-scroll" aria-label="Scrollable Store preview shelf">
+          {storeGalleryItems.map((item, index) => (
+            <article
+              className={`store-gallery-card${item.kind === "note" ? " store-gallery-card--note" : ""}`}
+              key={`${item.kind}-${item.title}`}
+            >
+              <span className="store-gallery-card__number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {item.kind === "lane" && (
+                <div className="store-gallery-card__image" aria-hidden="true">
+                  <span>{item.eyebrow}</span>
+                  <div className="store-gallery-card__pieces">
+                    {item.details.slice(0, 3).map((detail) => <i key={detail} />)}
+                  </div>
+                </div>
+              )}
+              <div className="store-gallery-card__copy">
+                <p className="eyebrow">{item.eyebrow}</p>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                {item.kind === "lane" && item.details && (
+                  <ul className="store-gallery-card__details" aria-label={`${item.title} staged materials`}>
+                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                )}
               </div>
             </article>
           ))}

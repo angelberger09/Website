@@ -1,0 +1,104 @@
+/* Header paper label pass.
+   Finishes the current shared-header feedback target by making the direct nav labels and identity read as placed paper labels at screenshot scale, without adding a Pages button, numbers, helper copy, or a new header system. */
+
+.floating-header {
+  isolation: isolate;
+}
+
+.floating-header::before {
+  position: absolute;
+  inset: 0.42rem 0.72rem 0.34rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 7%, 19% 2%, 42% 5%, 63% 1%, 98% 6%, 96% 87%, 72% 94%, 43% 90%, 3% 96%);
+  background:
+    linear-gradient(112deg, rgba(255, 255, 255, 0.36), rgba(255, 244, 225, 0.34) 42%, rgba(47, 38, 35, 0.08)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0 0.12rem 0 rgba(255, 255, 255, 0.42) inset,
+    0 0.22rem 0.55rem rgba(47, 38, 35, 0.1);
+  pointer-events: none;
+}
+
+.identity-link,
+.folder-panel__link {
+  letter-spacing: 0.012em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+.identity-link::after {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.18rem;
+  left: 0.7rem;
+  height: 0.14rem;
+  content: "";
+  clip-path: polygon(0 28%, 34% 6%, 100% 21%, 94% 78%, 48% 100%, 4% 84%);
+  background: rgba(47, 38, 35, 0.28);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.folder-menu {
+  position: relative;
+}
+
+.folder-menu::before {
+  position: absolute;
+  inset: 0.18rem -0.22rem 0.12rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(2% 9%, 26% 2%, 51% 7%, 74% 3%, 98% 10%, 95% 86%, 62% 96%, 31% 91%, 4% 98%);
+  background:
+    linear-gradient(116deg, rgba(255, 250, 242, 0.56), rgba(245, 232, 211, 0.3)),
+    var(--dust-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: 0 0.28rem 0.9rem rgba(47, 38, 35, 0.11);
+  pointer-events: none;
+}
+
+.folder-panel__link {
+  min-height: 2.18rem;
+  padding: 0.52rem 0.78rem 0.44rem;
+}
+
+.folder-panel__link::before {
+  position: absolute;
+  top: 0.2rem;
+  right: 18%;
+  left: 18%;
+  height: 0.18rem;
+  content: "";
+  clip-path: polygon(2% 16%, 42% 0, 98% 24%, 96% 78%, 55% 100%, 0 82%);
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.86;
+  pointer-events: none;
+}
+
+.folder-panel__link[aria-current="page"],
+.folder-panel__link--active {
+  padding-inline: 0.86rem;
+  background:
+    linear-gradient(135deg, rgba(255, 176, 143, 0.64), rgba(255, 252, 246, 0.98) 42%, rgba(185, 201, 175, 0.52)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 13rem 13rem, 32rem 32rem;
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.14),
+    0 0.72rem 1.1rem rgba(47, 38, 35, 0.19),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 760px) {
+  .floating-header::before,
+  .folder-menu::before {
+    inset-inline: 0.36rem;
+  }
+
+  .folder-panel__link {
+    min-height: 2.02rem;
+    padding: 0.46rem 0.68rem 0.4rem;
+  }
+}

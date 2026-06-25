@@ -15,6 +15,24 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
 
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
+const aboutPathwayFrames = [
+  {
+    label: "Writing shelf",
+    mark: "Notes",
+    detail: "public words"
+  },
+  {
+    label: "Archive wall",
+    mark: "Work",
+    detail: "public shape"
+  },
+  {
+    label: "Prep table",
+    mark: "Store",
+    detail: "future lanes"
+  }
+];
+
 export default function AboutPage() {
   return (
     <main id="top" className="site-shell page-layout about-paper-room">
@@ -100,12 +118,20 @@ export default function AboutPage() {
           <h1 id="about-pathways-title">Choose the door that matches the mood.</h1>
         </div>
         <div className="about-pathway-collage">
-          {aboutPathways.map((pathway) => (
-            <a className="about-pathway-note" href={pathway.href} key={pathway.href}>
-              <span>{pathway.label}</span>
-              <small>{pathway.description}</small>
-            </a>
-          ))}
+          {aboutPathways.map((pathway, index) => {
+            const frame = aboutPathwayFrames[index] ?? aboutPathwayFrames[0];
+            return (
+              <a className="about-pathway-note" href={pathway.href} key={pathway.href}>
+                <span className="about-pathway-note__photo" aria-hidden="true">
+                  <b>{frame.mark}</b>
+                  <em>{frame.detail}</em>
+                </span>
+                <span className="about-pathway-note__label">{pathway.label}</span>
+                <small>{pathway.description}</small>
+                <i aria-hidden="true">{frame.label}</i>
+              </a>
+            );
+          })}
         </div>
       </section>
 

@@ -1,4 +1,74 @@
-/* Store paper snippet refinement. Loaded after the shared paper passes so the availability section can move one step away from broad UI-panel hierarchy without changing content meaning. */
+/* Store paper snippet refinement. Loaded after the shared paper passes so Store can move away from broad UI-panel hierarchy without changing content meaning. */
+
+.store-editorial-section {
+  position: relative;
+  width: min(100%, 76rem);
+  padding: clamp(0.25rem, 1vw, 0.75rem) 0;
+  isolation: isolate;
+}
+
+.store-editorial-section > .eyebrow,
+.store-editorial-section > h1,
+.store-editorial-section > p:not(.eyebrow) {
+  width: fit-content;
+  max-width: min(100%, 50rem);
+}
+
+.store-editorial-section > .eyebrow,
+.store-editorial-section > h1 {
+  display: block;
+  border-radius: 0;
+  clip-path: polygon(2% 7%, 24% 2%, 58% 4%, 98% 1%, 96% 92%, 72% 98%, 31% 96%, 1% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.74) 58%, rgba(185, 201, 175, 0.22)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 18rem 18rem, 30rem 30rem;
+  box-shadow:
+    0.22rem 0.38rem 0 rgba(47, 38, 35, 0.08),
+    0.42rem 0.72rem 1.35rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.store-editorial-section > .eyebrow {
+  margin-bottom: 0.65rem;
+  padding: 0.38rem 0.7rem 0.34rem;
+  transform: rotate(-0.6deg);
+}
+
+.store-editorial-section > h1 {
+  margin-bottom: clamp(1rem, 2vw, 1.35rem);
+  padding: clamp(0.65rem, 1.6vw, 0.95rem) clamp(0.82rem, 2vw, 1.25rem);
+  transform: rotate(0.28deg);
+}
+
+.store-editorial-section > p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.store-launch-checklist-card::before {
+  position: absolute;
+  inset: 4.8rem -1rem 1.1rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 3%, 18% 1%, 41% 2.4%, 65% 0.8%, 91% 2.1%, 99% 1.4%, 97% 31%, 98.6% 67%, 96.7% 98%, 75% 96.8%, 48% 98.7%, 21% 97.3%, 1.5% 99%, 2.8% 60%);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(216, 197, 236, 0.17), transparent 32%),
+    radial-gradient(circle at 82% 82%, rgba(185, 201, 175, 0.19), transparent 34%),
+    linear-gradient(135deg, rgba(255, 247, 235, 0.52), rgba(255, 252, 246, 0.18)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  filter: drop-shadow(0.26rem 0.62rem 1.6rem rgba(47, 38, 35, 0.12));
+  opacity: 0.86;
+}
+
+.store-paper-field-grid {
+  position: relative;
+  margin-top: clamp(1rem, 2.4vw, 1.7rem);
+}
 
 .store-availability-card > .eyebrow,
 .store-availability-card > h1 {
@@ -35,8 +105,14 @@
 }
 
 @media (max-width: 760px) {
+  .store-editorial-section > .eyebrow,
+  .store-editorial-section > h1,
   .store-availability-card > .eyebrow,
   .store-availability-card > h1 {
     transform: none;
+  }
+
+  .store-launch-checklist-card::before {
+    inset: 5.4rem -0.5rem 0.4rem;
   }
 }

@@ -293,3 +293,28 @@ The active paper/collage lessons were partially satisfied on About: principles a
 - METRIC-025
 - METRIC-028
 - METRIC-029
+
+## 2026-06-25 06:39 ET — Footer direct paper labels
+
+### Changed
+
+- Removed the visible `01`/`02`/`03`/`04` markers from footer route slips in `app/site-chrome.jsx`.
+- Refined `app/footer-paper-trail-pass.css` so footer slips still read as clipped paper pieces using direct destination labels, subtle underscoring, and the existing responsive fallback.
+- Updated `.agent/matrices/components.matrix.md` and added a dedicated change record.
+
+### Why
+
+The footer had already joined the paper/collage system, but its numbered markers reintroduced decorative navigation metadata. The current direct-navigation rule favors clear labels without edge numbers or helper text, so the shared bottom chrome should match that simpler route language while staying visibly papery.
+
+### Related items
+
+- COMP-005
+- COMP-002
+- DESIGN-015
+- DESIGN-016
+- DESIGN-019
+- DESIGN-020
+- LESSON-015
+- LESSON-020
+- METRIC-014
+- METRIC-019

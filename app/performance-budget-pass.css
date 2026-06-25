@@ -1,0 +1,192 @@
+/* Performance budget pass.
+   Loaded last so the site keeps the paper-collage direction without repainting dozens of expensive layers while scrolling. */
+
+:root {
+  --fast-paper-cut: polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%);
+  --fast-paper-shadow: 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.8rem rgba(47, 38, 35, 0.11);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-attachment: scroll;
+  background-image:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.56), rgba(255, 247, 235, 0.18) 48%, rgba(245, 224, 198, 0.24)),
+    radial-gradient(circle at 18% 8%, rgba(255, 176, 143, 0.18), transparent 30rem),
+    radial-gradient(circle at 84% 22%, rgba(216, 197, 236, 0.16), transparent 32rem),
+    var(--grain-image);
+  background-size: cover, auto, auto, 20rem 20rem;
+  background-position: center, center, center, center;
+  background-blend-mode: normal;
+}
+
+body::before,
+.atmosphere-layer,
+.atmosphere-layer span {
+  display: none;
+}
+
+.site-shell,
+.home-page,
+.studio-pages,
+.page-layout,
+.readable-shell,
+.content-grid,
+.page-grid,
+.post-list,
+.store-editorial-section,
+.store-visual-board,
+.store-paper-field-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+.floating-header {
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.86) 58%, rgba(245, 224, 198, 0.46)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  background-blend-mode: normal;
+  box-shadow: 0 0.42rem 0 rgba(47, 38, 35, 0.05), 0 0.9rem 1.7rem rgba(47, 38, 35, 0.16);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.floating-header::before,
+.floating-header::after {
+  display: none;
+}
+
+.page-card,
+.detail-card,
+.source-link,
+.link-card,
+.reader-card,
+.pathway-link,
+.next-step-band,
+.reader-state,
+.store-availability-card,
+.store-state-snippet,
+.store-shot-card,
+.store-launch-checklist-card,
+.store-visual-board::before,
+.store-launch-checklist-card::before {
+  clip-path: var(--fast-paper-cut);
+  border-radius: 0;
+  filter: none;
+  box-shadow: var(--fast-paper-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  background-blend-mode: normal;
+}
+
+.page-card,
+.detail-card,
+.source-link,
+.link-card,
+.reader-card,
+.pathway-link,
+.next-step-band,
+.reader-state,
+.store-availability-card,
+.store-state-snippet,
+.store-shot-card {
+  background-image:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 58%, rgba(245, 224, 198, 0.36)),
+    var(--grain-image);
+  background-size: cover, 24rem 24rem;
+}
+
+.page-card::before,
+.page-card::after,
+.detail-card::before,
+.detail-card::after,
+.source-link::before,
+.source-link::after,
+.link-card::before,
+.link-card::after,
+.reader-card::before,
+.reader-card::after,
+.pathway-link::before,
+.pathway-link::after,
+.next-step-band::before,
+.next-step-band::after,
+.store-availability-card::before,
+.store-availability-card::after,
+.store-shot-card__image::after {
+  display: none;
+}
+
+.page-card:nth-child(2n),
+.detail-card:nth-child(2n),
+.source-link:nth-child(2n),
+.link-card:nth-child(2n),
+.reader-card:nth-child(2n),
+.pathway-link:nth-child(2n),
+.page-card:nth-child(2n + 1),
+.detail-card:nth-child(2n + 1),
+.source-link:nth-child(2n + 1),
+.link-card:nth-child(2n + 1),
+.reader-card:nth-child(2n + 1),
+.pathway-link:nth-child(2n + 1),
+.store-state-snippet:nth-child(1),
+.store-state-snippet:nth-child(2),
+.store-state-snippet:nth-child(3),
+.store-shot-card:nth-child(1),
+.store-shot-card:nth-child(2),
+.store-shot-card:nth-child(3) {
+  transform: none;
+}
+
+.page-card:hover,
+.page-card:focus,
+.source-link:hover,
+.source-link:focus,
+.pathway-link:hover,
+.pathway-link:focus {
+  transform: none;
+  outline: 2px solid rgba(255, 176, 143, 0.48);
+}
+
+.page-card__label,
+.status-pill,
+.tag-row span,
+.store-editorial-section > .eyebrow,
+.store-editorial-section > h1,
+.store-visual-board__copy > .eyebrow,
+.store-visual-board__copy > h1,
+.store-availability-card > .eyebrow,
+.store-availability-card > h1 {
+  clip-path: var(--fast-paper-cut);
+  border-radius: 0;
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07), 0 0.45rem 0.9rem rgba(47, 38, 35, 0.08);
+  background-image: linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76)), var(--grain-image);
+  background-size: cover, 18rem 18rem;
+}
+
+.store-shot-card__image {
+  clip-path: var(--fast-paper-cut);
+  background-image:
+    radial-gradient(circle at 24% 30%, rgba(255, 176, 143, 0.38), transparent 30%),
+    radial-gradient(circle at 72% 72%, rgba(185, 201, 175, 0.36), transparent 34%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.32), rgba(47, 38, 35, 0.12));
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+@media (max-width: 760px) {
+  .site-shell,
+  .home-page,
+  .studio-pages,
+  .page-layout,
+  .readable-shell,
+  .content-grid,
+  .page-grid,
+  .post-list,
+  .store-editorial-section,
+  .store-visual-board,
+  .store-paper-field-grid {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+}

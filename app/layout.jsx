@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./hero.css";
 import "./typography.css";
+import "./paper-card-pass.css";
 import { AtmosphereLayer, SiteHeader, StudioFooter } from "./site-chrome";
 
 export const metadata = {

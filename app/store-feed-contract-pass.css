@@ -1,0 +1,121 @@
+/* Store feed contract paper-field pass. Keeps the future Store data contract truthful while moving it away from a broad nested UI panel. */
+
+.store-feed-contract-section {
+  position: relative;
+  display: grid;
+  width: min(100%, 76rem);
+  gap: clamp(1rem, 2.6vw, 1.7rem);
+  padding-block: clamp(0.4rem, 1vw, 0.85rem) clamp(0.8rem, 2vw, 1.25rem);
+  isolation: isolate;
+}
+
+.store-feed-contract-section::before {
+  position: absolute;
+  inset: 4.5rem -1.15rem -0.55rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 4%, 21% 1.6%, 49% 3%, 73% 0.8%, 98% 2.2%, 96.7% 32%, 98.4% 70%, 96.2% 98%, 71% 96.8%, 43% 99%, 17% 97.4%, 1.4% 98.6%, 2.8% 58%);
+  background:
+    linear-gradient(104deg, rgba(255, 252, 246, 0.2), rgba(255, 247, 235, 0.54) 46%, rgba(185, 201, 175, 0.18)),
+    radial-gradient(circle at 20% 24%, rgba(216, 197, 236, 0.18), transparent 29%),
+    radial-gradient(circle at 82% 74%, rgba(255, 176, 143, 0.13), transparent 30%),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 22rem 22rem, 34rem 34rem;
+  filter: drop-shadow(0.24rem 0.72rem 1.7rem rgba(47, 38, 35, 0.12));
+  opacity: 0.9;
+}
+
+.store-feed-contract-section::after {
+  position: absolute;
+  inset: 6.4rem 0.8rem 1.2rem 2.2rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(0 12%, 22% 8%, 47% 13%, 73% 9%, 100% 15%, 98% 88%, 76% 93%, 49% 88%, 24% 94%, 1% 86%);
+  background:
+    linear-gradient(93deg, transparent 0 18%, rgba(47, 38, 35, 0.055) 19%, transparent 20% 54%, rgba(47, 38, 35, 0.04) 55%, transparent 57%),
+    linear-gradient(178deg, rgba(255, 255, 255, 0.18), rgba(47, 38, 35, 0.04));
+  opacity: 0.62;
+  transform: rotate(-0.35deg);
+  pointer-events: none;
+}
+
+.store-feed-contract-section > p:not(.eyebrow) {
+  max-width: 37rem;
+  padding: 0.72rem 0.95rem;
+  clip-path: polygon(1.5% 5%, 29% 1%, 64% 3%, 98.5% 2%, 96.4% 94%, 75% 97%, 42% 95.5%, 2% 99%);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.58)),
+    var(--grain-image);
+  background-size: cover, 17rem 17rem;
+  box-shadow: 0.22rem 0.36rem 0.85rem rgba(47, 38, 35, 0.09);
+  transform: rotate(-0.22deg);
+}
+
+.store-feed-field-snippets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: clamp(0.72rem, 1.8vw, 1.05rem);
+  margin-top: 0.25rem;
+}
+
+.store-feed-field-snippet {
+  flex: 1 1 min(14rem, 100%);
+  min-width: min(100%, 13rem);
+  max-width: 22rem;
+  border-radius: 0;
+  clip-path: polygon(2% 3%, 25% 0.8%, 56% 2.6%, 98% 1.2%, 96.8% 36%, 99% 96%, 72% 98.4%, 35% 96.8%, 1.5% 99%);
+  background:
+    linear-gradient(146deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.66) 62%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 38rem 38rem;
+  box-shadow:
+    -0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0.34rem 0.62rem 1.15rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+}
+
+.store-feed-field-snippet:nth-child(odd) {
+  transform: rotate(-0.64deg) translateY(0.1rem);
+}
+
+.store-feed-field-snippet:nth-child(even) {
+  transform: rotate(0.52deg) translateY(-0.08rem);
+}
+
+.store-feed-rule-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-feed-rule-notes li {
+  width: fit-content;
+  max-width: min(100%, 24rem);
+  margin: 0;
+  padding: 0.48rem 0.68rem 0.44rem;
+  clip-path: polygon(1% 8%, 27% 2%, 62% 5%, 99% 1%, 97% 91%, 70% 97%, 32% 94%, 1% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.92), rgba(245, 224, 198, 0.48)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.16rem 0.28rem 0.72rem rgba(47, 38, 35, 0.09);
+}
+
+@media (max-width: 760px) {
+  .store-feed-contract-section::before {
+    inset: 5.2rem -0.45rem -0.3rem;
+  }
+
+  .store-feed-contract-section > p:not(.eyebrow),
+  .store-feed-field-snippet,
+  .store-feed-field-snippet:nth-child(odd),
+  .store-feed-field-snippet:nth-child(even) {
+    transform: none;
+  }
+}

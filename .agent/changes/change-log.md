@@ -554,3 +554,36 @@ The Store path photo board was already a useful local next-room section, but the
 - METRIC-017
 - METRIC-021
 - METRIC-029
+
+## 2026-06-25 19:49 ET — Footer studio mark photo center
+
+### Changed
+
+- Added `studio-footer__mark-photo` markup to the shared footer identity in `app/site-chrome.jsx`.
+- Added `app/footer-studio-mark-photo-pass.css` so the footer mark becomes a clipped abstract paper/photo center with a small public-room label.
+- Imported the pass from `app/layout.jsx` after the performance and header passes so the shared bottom chrome remains visibly paper/photo-led.
+- Updated public memory, components matrix, quality metrics, this change log, and a dedicated change record.
+
+### Why
+
+The route slips in the footer already had abstract paper/photo centers, but the studio identity mark beside them remained mostly text-only. Active paper/photo and content-bearing card lessons support making shared chrome surfaces carry meaningful visual structure when it can be done honestly without fake assets.
+
+### Related items
+
+- COMP-005
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-025
+- METRIC-030

@@ -7,6 +7,7 @@ import './header-paper-tabs-pass.css';
 import './root-paper-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-hierarchy-pass.css';
+import './store-feed-contract-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

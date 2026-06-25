@@ -29,8 +29,8 @@ function sortPublishedPosts(posts) {
 
 function sourceLabel(source) {
   if (!source) return "";
-  if (source.includes("github.io")) return "public notes path";
-  return "quiet backup path";
+  if (source.includes("github.io")) return "public writing shelf";
+  return "quiet backup shelf";
 }
 
 export default function NotesPageClient({ routeBase = "/Website/notes", routeLabel = "Notes" }) {
@@ -66,7 +66,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <p>
             Published posts appear here when the public writing shelf is available.
             The shelves can stay organized while visitors get a real page instead
-            of a behind-the-scenes list.
+            of a plain behind-the-scenes list.
           </p>
 
           {state.status === "loading" && (
@@ -161,20 +161,20 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
 
       <section className="notes-source-board" aria-labelledby="notes-source-title">
         <div className="notes-source-board__intro">
-          <p className="eyebrow">Source readiness</p>
-          <h1 id="notes-source-title">The reader knows what each note needs.</h1>
+          <p className="eyebrow">Writing shelf map</p>
+          <h1 id="notes-source-title">Every note has a clear public shape.</h1>
           <p>
-            The Notes room can stay calm even while connected writing shelves change
-            because the expected public writing shape is named here in visitor-facing language.
+            The Notes room can stay calm while the writing shelf changes because the
+            visible note pieces are named here in visitor-facing language.
           </p>
         </div>
-        <div className="notes-source-ledger" aria-label="Public notes readiness requirements">
+        <div className="notes-source-ledger" aria-label="Public notes shelf needs">
           {blogFeedReadiness.map((item) => (
             <article className="notes-source-card" key={item.title}>
               <p className="eyebrow">{item.eyebrow}</p>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-              <div className="notes-source-detail-strip" aria-label={`${item.title} requirements`}>
+              <div className="notes-source-detail-strip" aria-label={`${item.title} shelf notes`}>
                 {item.details.map((detail) => (
                   <span className="notes-source-detail-slip" key={detail}>{detail}</span>
                 ))}
@@ -182,7 +182,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             </article>
           ))}
         </div>
-        <div className="notes-fallback-rules" aria-label="Source fallback rules">
+        <div className="notes-fallback-rules" aria-label="Writing shelf backup rules">
           {sourceFallbackRules.map((rule) => (
             <div className="notes-fallback-rule" key={rule.label}>
               <span>{rule.label}</span>

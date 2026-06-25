@@ -151,14 +151,19 @@ export default function PortfolioPage() {
           {portfolioReadiness.map((item, index) => (
             <article className="portfolio-readiness-note" data-readiness-index={index + 1} key={item.title}>
               <span className="portfolio-note-tape" aria-hidden="true" />
-              <p className="portfolio-note-label">{item.eyebrow}</p>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              {item.details && (
-                <ul className="portfolio-chip-list">
-                  {item.details.map((detail) => <li key={detail}>{detail}</li>)}
-                </ul>
-              )}
+              <div className="portfolio-readiness-note__photo" aria-hidden="true">
+                <span>{item.eyebrow}</span>
+              </div>
+              <div className="portfolio-readiness-note__copy">
+                <p className="portfolio-note-label">{item.eyebrow}</p>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                {item.details && (
+                  <ul className="portfolio-chip-list">
+                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                )}
+              </div>
             </article>
           ))}
         </div>

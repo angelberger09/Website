@@ -36,8 +36,8 @@ export const storeAvailabilityStates = [
 
 export const storeFeedFields = [
   {
-    label: "public id",
-    description: "Stable public identifier used by future studio routes and links."
+    label: "public handle",
+    description: "A stable public name or handle used by future studio routes and links."
   },
   {
     label: "piece name",
@@ -64,5 +64,5 @@ export const storeFeedFields = [
 export const storeFeedRules = [
   "Keep unavailable items in preparing or previewing until a real public listing exists.",
   "Use public-safe summaries and previews only; private drafts and raw product planning stay offstage.",
-  "Let the Website translate future store shelf material into calm studio cards instead of exposing behind-the-scenes source language."
+  "Let the Website translate future store shelf material into calm studio cards instead of exposing behind-the-scenes setup language."
 ];

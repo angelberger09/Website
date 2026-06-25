@@ -28,6 +28,7 @@ import './notes-reader-photo-strip-pass.css';
 import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
 import './notes-post-path-shelf-pass.css';
+import './notes-post-receipt-strip-pass.css';
 import './continuity-paper-trail-pass.css';
 import './page-intro-subtitle-pass.css';
 import './page-intro-photo-card-pass.css';

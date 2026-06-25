@@ -30,33 +30,33 @@ export const storeAvailabilityStates = [
   },
   {
     label: "Available",
-    description: "The listing has a public source, preview material, delivery clarity, and a calm link out from the Website."
+    description: "The listing has a public home, preview material, delivery clarity, and a calm link out from the Website."
   }
 ];
 
 export const storeFeedFields = [
   {
-    label: "slug",
-    description: "Stable public identifier used by Website routes and links."
+    label: "public id",
+    description: "Stable public identifier used by future studio routes and links."
   },
   {
-    label: "title",
+    label: "piece name",
     description: "Human-facing product or product-lane name."
   },
   {
-    label: "status",
-    description: "One of preparing, previewing, or available; never imply a buying path before it exists."
+    label: "availability",
+    description: "Preparing, previewing, or available; never imply a buying path before it exists."
   },
   {
-    label: "summary",
+    label: "short note",
     description: "Short public-safe description that explains what the piece is and why it belongs here."
   },
   {
-    label: "preview",
+    label: "preview place",
     description: "Optional public image, sample, mockup, or page link that honestly shows the piece."
   },
   {
-    label: "delivery",
+    label: "delivery note",
     description: "Format, size, delivery method, or outside storefront note when the listing becomes available."
   }
 ];
@@ -64,5 +64,5 @@ export const storeFeedFields = [
 export const storeFeedRules = [
   "Keep unavailable items in preparing or previewing until a real public listing exists.",
   "Use public-safe summaries and previews only; private drafts and raw product planning stay offstage.",
-  "Let the Website translate future store source material into calm studio cards instead of exposing behind-the-scenes source language."
+  "Let the Website translate future store shelf material into calm studio cards instead of exposing behind-the-scenes source language."
 ];

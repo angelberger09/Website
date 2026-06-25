@@ -1,0 +1,255 @@
+/* Homepage paper-collage pass. */
+
+.home-paper-field,
+.home-room-status,
+.home-door-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-paper-field::before,
+.home-room-status::before,
+.home-door-section::before {
+  position: absolute;
+  inset: clamp(1rem, 3vw, 2rem) 0 clamp(2.5rem, 5vw, 4rem);
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1.2% 3%, 22% 1%, 50% 2.4%, 77% 0.8%, 98% 2.4%, 97% 36%, 99% 72%, 96.8% 98%, 70% 96.5%, 43% 99%, 18% 97.2%, 1.4% 98.3%, 2.8% 58%);
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255, 176, 143, 0.16), transparent 31%),
+    radial-gradient(circle at 78% 22%, rgba(216, 197, 236, 0.17), transparent 34%),
+    radial-gradient(circle at 72% 84%, rgba(185, 201, 175, 0.14), transparent 32%),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.58), rgba(255, 247, 235, 0.2)),
+    var(--grain-image);
+  background-size: cover, cover, cover, cover, 24rem 24rem;
+  box-shadow: 0.2rem 0.72rem 1.7rem rgba(47, 38, 35, 0.09);
+  opacity: 0.9;
+}
+
+.home-section-scrap {
+  width: fit-content;
+  max-width: min(100%, 56rem);
+  clip-path: polygon(1% 4%, 34% 1%, 72% 3%, 99% 1.6%, 97% 93%, 63% 99%, 26% 96%, 1.4% 98%);
+  background: linear-gradient(132deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.68) 62%, rgba(245, 224, 198, 0.26)), var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  box-shadow: 0.14rem 0.22rem 0 rgba(47, 38, 35, 0.07), 0 0.72rem 1.3rem rgba(47, 38, 35, 0.1);
+  padding: clamp(0.92rem, 2vw, 1.35rem) clamp(1rem, 2.4vw, 1.65rem);
+  transform: rotate(-0.18deg);
+}
+
+.home-section-scrap h1 {
+  max-width: 12ch;
+}
+
+.home-note-board,
+.home-room-board,
+.home-door-board,
+.home-pillar-strip {
+  position: relative;
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.home-note-board {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  margin-top: clamp(1.2rem, 3vw, 2rem);
+}
+
+.home-room-board,
+.home-door-board,
+.home-pillar-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(1rem, 2.4vw, 1.8rem);
+}
+
+.home-note-piece,
+.home-room-slip,
+.home-pillar-note,
+.home-door-card {
+  position: relative;
+  display: grid;
+  gap: 0.78rem;
+  align-content: start;
+  min-height: 13rem;
+  padding: clamp(1rem, 2.5vw, 1.45rem);
+  clip-path: polygon(2% 2%, 28% 0.9%, 58% 2.8%, 98% 1.4%, 96.7% 42%, 99% 96%, 72% 98.5%, 34% 96.8%, 1.5% 99%);
+  background: linear-gradient(145deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.72) 58%, rgba(245, 224, 198, 0.34)), var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.8rem 1.55rem rgba(47, 38, 35, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.home-note-piece:nth-child(2),
+.home-room-slip:nth-child(2),
+.home-pillar-note:nth-child(2),
+.home-door-card:nth-child(2n) {
+  transform: rotate(0.55deg) translateY(-0.24rem);
+}
+
+.home-note-piece:nth-child(3),
+.home-room-slip:nth-child(3),
+.home-pillar-note:nth-child(3),
+.home-door-card:nth-child(2n + 1) {
+  transform: rotate(-0.4deg) translateY(0.18rem);
+}
+
+.home-note-piece__pin {
+  position: absolute;
+  top: 0.54rem;
+  left: 50%;
+  width: 3.2rem;
+  height: 0.52rem;
+  background: rgba(255, 176, 143, 0.28);
+  box-shadow: 0 0.16rem 0.38rem rgba(47, 38, 35, 0.1);
+  transform: translateX(-50%) rotate(-1.6deg);
+}
+
+.home-note-piece__eyebrow,
+.home-room-slip__eyebrow,
+.home-door-card__label,
+.home-pillar-note span,
+.home-room-slip__status {
+  width: fit-content;
+  clip-path: polygon(3% 8%, 98% 2%, 95% 92%, 5% 98%);
+  background: linear-gradient(132deg, rgba(185, 201, 175, 0.94), rgba(255, 252, 246, 0.5)), var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  padding: 0.36rem 0.62rem;
+  color: rgba(58, 45, 42, 0.88);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.home-note-piece h2,
+.home-room-slip h2,
+.home-door-card h2,
+.home-pillar-note h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.home-note-piece p,
+.home-room-slip p,
+.home-door-card p,
+.home-pillar-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-note-piece__count,
+.home-door-card__number {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.7rem;
+  color: rgba(47, 38, 35, 0.16);
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  line-height: 1;
+}
+
+.home-room-slip__status {
+  justify-self: end;
+  background: rgba(216, 197, 236, 0.38);
+  font-family: var(--font-hand);
+  font-size: 0.82rem;
+}
+
+.home-door-card {
+  min-height: 28rem;
+  padding: 0.72rem 0.72rem 1rem;
+  text-decoration: none;
+}
+
+.home-door-card:hover,
+.home-door-card:focus {
+  outline: 2px solid rgba(255, 176, 143, 0.5);
+  outline-offset: 0.18rem;
+}
+
+.home-door-card__image {
+  display: grid;
+  min-height: 12.8rem;
+  align-content: end;
+  gap: 0.35rem;
+  overflow: hidden;
+  clip-path: polygon(1.5% 2.5%, 25% 1%, 53% 2.2%, 97% 0.8%, 98.4% 96.6%, 72% 98%, 38% 96.7%, 1% 98.4%);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 176, 143, 0.44), transparent 30%),
+    radial-gradient(circle at 76% 72%, rgba(185, 201, 175, 0.38), transparent 34%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.34), rgba(47, 38, 35, 0.12)),
+    repeating-linear-gradient(96deg, rgba(255, 252, 246, 0.22) 0 1px, transparent 1px 1.15rem);
+  padding: 0.95rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.home-door-card__image span {
+  color: rgba(255, 252, 246, 0.82);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 0.18rem 0.5rem rgba(47, 38, 35, 0.26);
+}
+
+.home-door-card__image strong {
+  max-width: 8ch;
+  color: rgba(255, 252, 246, 0.92);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0.22rem 0.7rem rgba(47, 38, 35, 0.28);
+}
+
+.home-door-card__copy {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+}
+
+.home-door-card__cue {
+  color: rgba(58, 45, 42, 0.88);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .home-note-board,
+  .home-room-board,
+  .home-door-board,
+  .home-pillar-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .home-note-board,
+  .home-room-board,
+  .home-door-board,
+  .home-pillar-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .home-note-piece,
+  .home-room-slip,
+  .home-door-card,
+  .home-pillar-note,
+  .home-note-piece:nth-child(2),
+  .home-note-piece:nth-child(3),
+  .home-room-slip:nth-child(2),
+  .home-room-slip:nth-child(3),
+  .home-pillar-note:nth-child(2),
+  .home-pillar-note:nth-child(3),
+  .home-door-card:nth-child(2n),
+  .home-door-card:nth-child(2n + 1) {
+    transform: none;
+  }
+}

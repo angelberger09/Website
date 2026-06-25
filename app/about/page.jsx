@@ -8,6 +8,11 @@ export const metadata = {
   description: "A public studio introduction for Soft Strange Studio."
 };
 
+const aboutContactSheet = aboutSections.map((section, index) => ({
+  ...section,
+  marker: ["Front room", "Tone", "Edges", "Motion"][index] ?? "Studio"
+}));
+
 export default function AboutPage() {
   return (
     <main id="top" className="site-shell page-layout about-paper-room">
@@ -36,6 +41,31 @@ export default function AboutPage() {
               <span className="about-room-piece__eyebrow">{section.eyebrow}</span>
               <h2>{section.title}</h2>
               <p>{section.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="about-contact-sheet-board" aria-labelledby="about-contact-sheet-title">
+        <div className="about-contact-sheet-heading">
+          <p className="eyebrow">Studio contact sheet</p>
+          <h1 id="about-contact-sheet-title">A few soft frames before the notes.</h1>
+          <p>
+            The About room can show its shape as a small paper-photo sequence, using
+            only the public orientation material already on this page.
+          </p>
+        </div>
+        <div className="about-contact-sheet" aria-label="Soft Strange Studio orientation frames">
+          {aboutContactSheet.map((frame, index) => (
+            <article className="about-contact-card" key={frame.title}>
+              <div className="about-contact-card__image" aria-hidden="true">
+                <span>{frame.marker}</span>
+              </div>
+              <div className="about-contact-card__copy">
+                <small>0{index + 1} · {frame.eyebrow}</small>
+                <h2>{frame.title}</h2>
+                <p>{frame.description}</p>
+              </div>
             </article>
           ))}
         </div>

@@ -1,0 +1,41 @@
+/* Page intro copy slip pass.
+   Turns shared route-intro body copy into a visible paper note so the PageIntro system is fully paper/collage, not just its title and photo card. */
+
+.page-hero__text {
+  display: grid;
+  justify-items: start;
+  gap: 0.65rem;
+}
+
+.page-hero__text p {
+  width: min(100%, 38rem);
+  margin: 0;
+  padding: clamp(0.78rem, 1.8vw, 1.02rem) clamp(0.9rem, 2vw, 1.18rem);
+  color: rgba(58, 45, 42, 0.78);
+  background:
+    linear-gradient(137deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.72) 62%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1% 4%, 24% 1%, 58% 3%, 99% 1%, 97% 95%, 68% 98%, 29% 95%, 2% 98%);
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07),
+    0 0.58rem 1rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  transform: rotate(-0.32deg);
+}
+
+.page-hero__text p:nth-child(2n) {
+  background:
+    linear-gradient(134deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.68) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  transform: rotate(0.28deg);
+}
+
+@media (max-width: 760px) {
+  .page-hero__text p,
+  .page-hero__text p:nth-child(2n) {
+    width: 100%;
+    transform: none;
+  }
+}

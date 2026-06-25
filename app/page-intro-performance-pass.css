@@ -1,0 +1,49 @@
+/* PageIntro performance refinement.
+   Loaded after the main performance budget so shared route intro photo centers keep their paper read without extra decorative repaint work. */
+
+.page-hero__stack .hero-polaroid--back,
+.page-hero__stack .hero-polaroid--frame {
+  filter: none;
+  will-change: auto;
+}
+
+.page-hero__stack .hero-polaroid--back {
+  transform: translate(0.84rem, 1.02rem) rotate(2.2deg) scale(1.02);
+}
+
+.page-hero__stack .hero-polaroid--frame {
+  transform: rotate(0.8deg);
+}
+
+.page-hero__photo-card {
+  clip-path: var(--fast-paper-cut);
+  border-radius: 0;
+  background-image:
+    radial-gradient(circle at 24% 24%, rgba(255, 176, 143, 0.24), transparent 32%),
+    radial-gradient(circle at 78% 70%, rgba(185, 201, 175, 0.24), transparent 34%),
+    var(--fast-paper-background);
+  background-size: cover, cover, cover, 22rem 22rem;
+  box-shadow: var(--fast-paper-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.76);
+  transform: translate(-50%, -53%) rotate(0.36deg);
+  will-change: auto;
+}
+
+.page-hero__photo-card::before,
+.page-hero__photo-card::after {
+  display: none;
+}
+
+.page-hero__photo-card span {
+  clip-path: var(--fast-paper-cut);
+  background-image: linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.68)), var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__stack .hero-polaroid--back,
+  .page-hero__stack .hero-polaroid--frame,
+  .page-hero__photo-card {
+    transform: none;
+  }
+}

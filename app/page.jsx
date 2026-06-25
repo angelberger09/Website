@@ -86,7 +86,11 @@ export default function HomePage() {
 
         <div className="home-room-board" aria-label="Current room states">
           {homepageRoomMarkers.map((room) => (
-            <article className="home-room-slip" key={room.title}>
+            <article className="home-room-slip home-room-slip--with-photo" key={room.title}>
+              <span className="home-room-slip__image" aria-hidden="true">
+                <span>{room.eyebrow}</span>
+                <strong>{room.title}</strong>
+              </span>
               <span className="home-room-slip__status">{room.status}</span>
               <span className="home-room-slip__eyebrow">{room.eyebrow}</span>
               <h2>{room.title}</h2>

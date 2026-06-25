@@ -124,7 +124,7 @@ export default function HomePage() {
       <section className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio shape</p>
-          <h1 id="studio-shape-title">Built to feel authored before technical.</h1>
+          <h1 id="studio-shape-title">Built to feel handmade and clear.</h1>
         </div>
 
         <div className="home-pillar-strip" aria-label="Studio shape principles">
@@ -140,16 +140,16 @@ export default function HomePage() {
 
       <section className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
         <div className="home-studio-checks__intro">
-          <p className="eyebrow">Studio checks</p>
-          <h1 id="studio-checks-title">What every room should keep doing.</h1>
+          <p className="eyebrow">House rules</p>
+          <h1 id="studio-checks-title">What every room should keep close.</h1>
           <p>
-            These small notes make the current review targets visible on the page:
-            paper should lead, copy should stay human, and unfinished work should
-            stay honest without looking empty.
+            These small studio slips keep the public rooms grounded: paper should
+            lead, the language should feel human, and unfinished work should stay
+            honest without looking empty.
           </p>
         </div>
 
-        <div className="home-check-rail" aria-label="Current studio quality checks">
+        <div className="home-check-rail" aria-label="Soft Strange Studio house rules">
           {homepageStudioChecks.map((check) => (
             <article className="home-check-note" key={check.title}>
               <span className="home-check-note__eyebrow">{check.eyebrow}</span>

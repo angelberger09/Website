@@ -36,6 +36,7 @@ import './continuity-thread-pass.css';
 import './page-intro-subtitle-pass.css';
 import './page-intro-photo-card-pass.css';
 import './page-intro-copy-slip-pass.css';
+import './page-intro-room-tags-pass.css';
 import './footer-paper-trail-pass.css';
 import './page-intro-performance-pass.css';
 import './home-entry-contact-sheet-pass.css';

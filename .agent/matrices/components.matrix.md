@@ -6,7 +6,7 @@
 | COMP-002 | Direct Studio Navigation | All pages through `app/site-chrome.jsx`, `app/globals.css`, and `app/paper-header-pass.css` | Provide compact access to current Website pages | Direct visible links; no `Pages` trigger, edge numbers, or helper text | Unboxed links with stronger contrast on a tactile paper header surface; nav labels should avoid pill-like UI chips and feel like small paper tabs/cuts when visually separated | LESSON-003, LESSON-013, LESSON-015, LESSON-020 | Needs ongoing responsive review and accessible focus states over textured material | active |
 | COMP-003 | Scroll Title Sequence | PAGE-001 | Create authored arrival moment | Left-docked sticky title with subtle scroll rotation and a small content-bearing hero polaroid card | Art-lettering style with polaroid material stack; when the frame appears in the hero, the center carries readable studio-room preview content | LESSON-012, LESSON-014, LESSON-016, LESSON-021 | Motion must remain purposeful and frame content must stay readable, especially on small screens | active |
 | COMP-004 | Studio Page Cards | PAGE-001 | Present destinations as friendly doors | Grid of four linked room cards with entry cues | Homepage route doors now use `home-door-board` and `home-door-card` with honest image-like centers, clipped paper surfaces, visible room labels, and accessible links rather than the broad shared `page-card` treatment | LESSON-002, LESSON-003, LESSON-015, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-024, LESSON-025 | Must stay synced with page routes and avoid decorative empty card frames, fake previews, or overly rounded UI cards | active |
-| COMP-005 | Shared Site Chrome | All pages | Keep the page system visually cohesive | Header, atmosphere layer, footer, page intro, detail card, and loaded CSS passes | Reusable cream/paper/polaroid/gloss material language; PageIntro titles should read as short one-line supportive subtitles, PageIntro polaroid/photo centers should hold route-specific visual material instead of blank decorative frame centers, and page-specific passes may replace broad shared panels with custom paper-board compositions when `.agent` supports stronger paper hierarchy. The Homepage and Notes paper passes are now loaded from `app/layout.jsx` alongside About, Portfolio, and Store material passes. | LESSON-001, LESSON-002, LESSON-010, LESSON-015, LESSON-016, LESSON-019, LESSON-020, LESSON-022, LESSON-023, LESSON-025, LESSON-026 | Shared changes affect every route; PageIntro subtitle sizing and photo-center content now both live in `app/site-chrome.jsx`/`app/globals.css` and should not imply fake portfolio/product assets | active |
+| COMP-005 | Shared Site Chrome | All pages | Keep the page system visually cohesive | Header, atmosphere layer, footer, page intro, detail card, and loaded CSS passes | Reusable cream/paper/polaroid/gloss material language; PageIntro titles now use the shared `page-hero__subtitle` class plus `app/page-intro-subtitle-pass.css` so route titles render as small clipped paper subtitle labels instead of inline hero-scale headings; PageIntro polaroid/photo centers should hold route-specific visual material instead of blank decorative frame centers, and page-specific passes may replace broad shared panels with custom paper-board compositions when `.agent` supports stronger paper hierarchy. | LESSON-001, LESSON-002, LESSON-010, LESSON-015, LESSON-016, LESSON-019, LESSON-020, LESSON-022, LESSON-023, LESSON-025, LESSON-026 | Shared changes affect every route; PageIntro subtitle sizing and photo-center content now both live in `app/site-chrome.jsx` / route-specific CSS passes and should not imply fake portfolio/product assets | active |
 | COMP-006 | Notes Reader Client | PAGE-003, PAGE-003B | Preview published posts from Blog feed | Fetches public posts index with fallback URLs, filters published posts, sorts newest first, highlights the latest note, explains reader states, and renders Blog source-readiness rules from `app/source-readiness.js` | Notes now uses `notes-reader-board`, `notes-paper-stack`, `notes-note-card`, `notes-source-board`, and `notes-source-ledger` structures with `app/notes-paper-reader-pass.css` so the index/source sections read as a paper reader board, scrollable note strip, source ledger, and fallback tapes instead of broad generic panels | LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-026 | Needs live feed validation, date parsing tolerance, clear error states, and performance review if the public feed grows large | active |
 | COMP-007 | Post Reader Client | PAGE-003A, PAGE-003B | Render a single published note inside Website | Reads slug, fetches public profile and Markdown with fallbacks, checks public status, handles missing/error states, and adds support/continuity sections | Reader card with category/date tags should feel like a paper reader sheet rather than a rounded app panel | LESSON-002, LESSON-004, LESSON-018, LESSON-022 | Markdown rendering should remain simple and support cards should not distract from reading | active |
 | COMP-008 | Filled Page Sections | PAGE-001, PAGE-002, PAGE-003, PAGE-004, PAGE-005 | Add route-specific depth beyond first-pass cards | Data-driven section arrays render principles, lanes, readiness criteria, details, pathways, Store launch checklist, Store availability states, Store visual preview board, Store scroll gallery shelf, Store feed contract fields, Portfolio readiness/feed/state/process sections, Store promise content, Notes source readiness, and Homepage front-room highlights/status/pillars | Uses material cards, wide cards, lists, soft link rows, stronger paper-collage surface cues, content-filled polaroid treatments, and less uniform rounding; Homepage front-room highlight cards, current-room status, route doors, and studio-shape pillars now use custom paper boards/slips instead of generic `DetailCard` grids, joining About, Notes, Portfolio, and Store route-specific paper/collage structures | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-024, LESSON-025, LESSON-026, FEEDBACK-012, FEEDBACK-015, FEEDBACK-016, FEEDBACK-017, FEEDBACK-018 | Keep content public-safe, readable, honest, and clear about non-live inventory or source readiness; avoid repeated styling churn once a target is already partially satisfied | active |
@@ -76,66 +76,6 @@ COMP-005 now keeps the PageIntro subtitle treatment in a named `pageIntroTitleSt
 
 COMP-001 now applies FEEDBACK-008 / LESSON-020 through `app/paper-card-pass.css` and the dedicated `app/paper-header-pass.css` override imported by `app/layout.jsx`. The shared header keeps the existing fixed top-edge structure but replaces the earlier soft-glass surface with a cream paper layer, existing grain/dust/scratch texture, stronger layered shadow, and subtle uneven lower-edge cue. The intent was to implement stored paper-header feedback without changing navigation structure or adding a competing header system.
 
-## Addendum — 2026-06-24 22:55 ET
+## Addendum — 2026-06-25 05:31 ET
 
-COMP-003 now applies FEEDBACK-009 / LESSON-021 through `app/page.jsx` and `app/hero-polaroid-card-pass.module.css`. The homepage hero polaroid frame now carries a small readable studio-room preview instead of remaining only an `aria-hidden` decorative frame.
-
-## Addendum — 2026-06-24 23:21 ET
-
-COMP-004, COMP-005, COMP-006, COMP-007, COMP-008, and COMP-009 now receive a stronger shared card-edge refinement in `app/paper-card-pass.css`. The pass keeps the existing paper-card system but makes the cut paths, card alternates, small label chips, reader states, shadows, and mobile cut silhouettes visibly more irregular so LESSON-022 and LESSON-024 are less likely to read as a symbolic-only CSS change.
-
-## Addendum — 2026-06-24 23:47 ET
-
-FEEDBACK-011 clarifies that the shared top header itself still needs a stronger paper read. COMP-001 and COMP-002 should be reviewed at screenshot scale: the strip, identity side, and direct nav labels should read as layered paper tabs or cut paper pieces instead of smooth rounded UI pills.
-
-## Addendum — 2026-06-25 00:08 ET
-
-COMP-005 now applies LESSON-025 through shared `PageIntro` route photo-center cards. About, Notes, Portfolio, and Store intro polaroid stacks carry short route-specific text surfaces instead of blank decorative frame centers, while avoiding fake screenshots, fake product imagery, or invented case-study assets.
-
-## Addendum — 2026-06-25 00:21 ET
-
-FEEDBACK-012 through FEEDBACK-018 split Store-page screenshot feedback into separate implementation targets. COMP-008 should treat Store availability and similar filled-page sections as a flatter paper-collage composition: stronger section paper fields, grainier/crinkled root material, text snippets, photo/image surfaces where honest, and availability rows that feel like placed paper strips rather than UI list rows.
-
-## Addendum — 2026-06-25 00:40 ET
-
-COMP-008 source already contains a partial implementation for the Store availability-row target: `app/store/page.jsx` renders availability states as `store-state-snippet` items inside `store-snippet-list`, and `app/paper-card-pass.css` gives the availability card a layered paper field plus staggered cut-paper snippets. Future Store work should visually validate this deployed state before adding another availability-row styling pass.
-
-## Addendum — 2026-06-25 01:20 ET
-
-COMP-008 now applies a narrow FEEDBACK-016 refinement through `app/store-paper-snippet-pass.css`: the Store availability eyebrow and title become clipped paper snippets layered over the existing availability paper field. This keeps the current Store content truthful while moving hierarchy away from one broad UI-panel header.
-
-## Addendum — 2026-06-25 01:39 ET
-
-COMP-008 now applies a narrow FEEDBACK-017 refinement through `app/store/page.jsx` and `app/store-paper-snippet-pass.css`: a Store preview board turns the first three existing Store lanes into honest image-like paper/photo cards. The cards are abstract visual readiness cues, not product photography, live inventory, or invented listings.
-
-## Addendum — 2026-06-25 01:51 ET
-
-COMP-008 now applies a narrow FEEDBACK-015 / METRIC-028 refinement through `app/store/page.jsx` and `app/store-hierarchy-pass.css`: the Store promise section uses the existing `store-editorial-section` pattern with a light paper-field backdrop instead of another broad `link-card wide-card` panel. This should be visually validated before flattening another Store section.
-
-## Addendum — 2026-06-25 02:40 ET
-
-COMP-008 now applies another Store visual-interface refinement through `app/store/page.jsx` and `app/store-lane-collage-pass.css`: the opening Store path section no longer renders as a standard shared `DetailCard` grid. It now uses staggered paper/photo lane pieces with clipped image centers, paper labels, and detail snippets, keeping the existing public-safe lane data while making the first Store content surface visibly less like UI cards.
-
-## Addendum — 2026-06-25 03:39 ET
-
-COMP-008 now applies the paper-collage direction to the About page instead of continuing to stack Store-only passes. `app/about/page.jsx` replaces broad shared `link-card wide-card` panels for principles and pathways with `about-paper-board`, `about-principle-note`, and `about-pathway-note` structures, while `app/about-paper-collage-pass.css` gives those sections taped board backdrops, cut note silhouettes, paper labels, grain, dust, shadows, and responsive single-column fallbacks.
-
-## Addendum — 2026-06-25 03:48 ET
-
-COMP-008 now applies the paper-collage direction to the Portfolio opening archive. `app/portfolio/page.jsx` replaces the first generic `DetailCard` project grid with `portfolio-archive-board`, `portfolio-piece-collage`, and `portfolio-piece-card` structures, while `app/portfolio-paper-archive-pass.css` gives those pieces staged photo centers, paper labels, taped edges, grain, dust, shadows, and responsive two-column/single-column fallbacks without inventing fake project assets.
-
-## Addendum — 2026-06-25 04:08 ET
-
-COMP-006 and COMP-008 now apply the paper-collage direction to the Notes index/source surface. `app/notes/NotesPageClient.jsx` replaces the main `link-card wide-card` notes panel and source-readiness panel with `notes-reader-board`, `notes-paper-stack`, `notes-note-card`, `notes-source-board`, and ledger/fallback structures, while `app/notes-paper-reader-pass.css` gives the latest note, archive notes, Blog contract cards, and fallback rules visible paper/photo-center surfaces with responsive fallbacks.
-
-## Addendum — 2026-06-25 04:30 ET
-
-COMP-008 now applies the Portfolio paper-collage direction beyond the opening archive. `app/portfolio/page.jsx` replaces the remaining broad Portfolio `link-card wide-card`, `DetailCard`, and `pathway-link` support sections with route-specific readiness boards, lane pieces, feed ledger cards, state notes, and process ribbons, while `app/portfolio-paper-archive-pass.css` gives those sections paper-field backdrops, clipped labels, tape, handled rotations, and responsive fallbacks without inventing new projects or assets.
-
-## Addendum — 2026-06-25 04:52 ET
-
-COMP-008 now extends LESSON-026 to the Store page. `app/store/page.jsx` adds a `store-gallery-board` / `store-gallery-scroll` shelf using existing Store lanes plus two explicit readiness-rule notes, and `app/store-gallery-pass.css` gives the shelf native horizontal scroll, paper/photo cards, note cards, clipped labels, staged abstract image centers, and responsive fallbacks without inventing product photography, live inventory, or shop links.
-
-## Addendum — 2026-06-25 05:21 ET
-
-COMP-004 and COMP-008 now apply the paper-collage direction to the homepage front room. `app/page.jsx` replaces generic `DetailCard` grids and the broad shared route-card grid with `home-note-board`, `home-room-board`, `home-door-board`, and `home-pillar-strip`, while `app/home-paper-collage-pass.css` gives the homepage highlights, room statuses, route doors, and studio-shape pillars clipped paper notes, paper-field backdrops, image-like route centers, visible labels, and responsive fallbacks.
+COMP-005 now moves the PageIntro subtitle treatment out of the inline `pageIntroTitleStyle` object and into `app/page-intro-subtitle-pass.css`. This makes the shared route intro visibly read as a small clipped paper subtitle label across the filled pages while preserving the short route title copy.

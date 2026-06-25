@@ -7,7 +7,7 @@ import {
   storeReadinessChecklist
 } from "../store-readiness";
 import { storePromises, storeSections } from "../site-data";
-import { DetailCard, PageIntro } from "../site-chrome";
+import { PageIntro } from "../site-chrome";
 
 export const metadata = {
   title: "Store · Soft Strange Studio",
@@ -72,22 +72,29 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section className="store-editorial-section store-launch-checklist-card" aria-labelledby="store-readiness-title">
-        <p className="eyebrow">Launch checklist</p>
-        <h1 id="store-readiness-title">Nothing moves to available without context.</h1>
-        <p>
-          The store can stay useful before anything is for sale by naming what each
-          future product lane still needs. This keeps the page warm and honest while
-          making the next public product update easier to decide.
-        </p>
-        <div className="content-grid content-grid--small embedded-grid store-paper-field-grid">
-          {storeReadinessChecklist.map((item) => (
-            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
-              <p>{item.description}</p>
-              <ul className="detail-list">
+      <section className="store-editorial-section store-launch-checklist-card store-checklist-collage" aria-labelledby="store-readiness-title">
+        <div className="store-checklist-collage__intro">
+          <p className="eyebrow">Launch checklist</p>
+          <h1 id="store-readiness-title">Nothing moves to available without context.</h1>
+          <p>
+            The store can stay useful before anything is for sale by naming what each
+            future product lane still needs. This keeps the page warm and honest while
+            making the next public product update easier to decide.
+          </p>
+        </div>
+        <div className="store-checklist-note-stack" aria-label="Store launch checklist">
+          {storeReadinessChecklist.map((item, index) => (
+            <article className="store-checklist-note" key={item.title}>
+              <span className="store-checklist-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <span className="store-checklist-note__eyebrow">{item.eyebrow}</span>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
+              <ul className="store-checklist-note__details">
                 {item.details.map((detail) => <li key={detail}>{detail}</li>)}
               </ul>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>

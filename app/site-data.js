@@ -183,6 +183,27 @@ export const portfolioProcess = [
   "Add deeper case-study detail only when the public material is ready."
 ];
 
+export const portfolioReadiness = [
+  {
+    title: "Ready now",
+    eyebrow: "Published cards",
+    description: "Keep visible cards for work that already has a public-safe purpose, status, and visitor-facing description.",
+    details: ["Purpose is clear", "Status is honest", "No private process is exposed"]
+  },
+  {
+    title: "Preparing next",
+    eyebrow: "Future records",
+    description: "Use this lane for projects that need images, source links, or a fuller public writeup before becoming a deeper case study.",
+    details: ["Needs public assets", "Needs short context", "Needs safe source path"]
+  },
+  {
+    title: "Hold offstage",
+    eyebrow: "Private drafts",
+    description: "Keep raw sketches, vulnerable notes, unfinished experiments, and unclear project context out of the public archive until they are distilled.",
+    details: ["No raw drafts", "No private context", "No fake completeness"]
+  }
+];
+
 export const storeSections = [
   {
     title: "Digital downloads",

@@ -32,3 +32,4 @@ These rules should shape current Website work.
 - Keep page intro titles short, thin, slightly smaller, and supportive; each major page title should be 2–5 words and stay on one line instead of behaving like hero text.
 - Make shared card surfaces feel like individual paper/polaroid pieces rather than rounded UI cards: reduce uniform radius, add cut or torn edge cues, use layered backing shadows, and keep content inside the paper surface.
 - Remove rounded-corner card language from shared paper surfaces. Use squared/cut/torn silhouettes, edge shadows, and lifted paper offsets so cards read as physical torn paper rather than rounded digital panels.
+- Apply caution at the boundary, not inside validated in-bounds work: once feedback is public-safe, supported by `.agent`, and inside the current Website scope, implement it visibly and completely across the relevant surface area instead of making symbolic or overly timid changes.

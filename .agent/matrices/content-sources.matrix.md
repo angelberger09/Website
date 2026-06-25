@@ -10,6 +10,7 @@
 | DATA-006 | Store Feed | `angelberger09/Store` | TBD | JSON feed | future PAGE-005 | future |
 | DATA-007 | Store Readiness Data | `angelberger09/Website` | `app/store-readiness.js` | JS data | PAGE-005 | active |
 | DATA-008 | Store Feed Contract | `angelberger09/Website` | `app/store-readiness.js` | JS data contract | PAGE-005, future Store feed | active |
+| DATA-009 | Blog Source Readiness Data | `angelberger09/Website` | `app/source-readiness.js` | JS data contract | PAGE-003, PAGE-003B, DATA-003 | active |
 
 ## Fallback rule
 
@@ -22,3 +23,7 @@ Local Website readiness data can keep a page useful before a connected source re
 ## Feed contract rule
 
 Future connected feeds should expose only public-safe fields that the Website needs to render calm visitor-facing cards. Raw planning, private drafts, and unavailable buying paths stay out of feed-shaped data.
+
+## Blog source contract rule
+
+The Notes reader should name the expected Blog feed shape in the Website before deeper automation depends on it: a public posts array, published-only records, slug/title/date/context fields, and profile plus Markdown files for individual notes.

@@ -28,6 +28,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The homepage hero polaroid stack now carries a small readable studio-room preview through `app/page.jsx` and `app/hero-polaroid-card-pass.module.css`, so the frame is no longer only decorative.
 - Shared `PageIntro` polaroid stacks now carry small route-specific photo-center cards through `app/site-chrome.jsx` and `app/globals.css`, so About, Notes, Portfolio, and Store route intros no longer use empty polaroid centers.
 - The feedback-alignment harness should be boundary-cautious rather than action-timid: once a change is public-safe, supported by `.agent`, and inside the Website scope, the implementation should be complete enough to visibly satisfy the chosen bounded target.
+- Store-page screenshot feedback from 2026-06-25 has been split into separate public-safe feedback records: stronger section backgrounds, grainy root paper, crinkled paper material, flatter hierarchy, text snippets, photo-led content, and availability rows that feel less like UI strips.
 
 ## Active direction
 
@@ -50,6 +51,10 @@ When polaroid/photo frames are used as cards, the transparent middle should carr
 Shared card surfaces should not default to soft rounded UI panels. Treat page cards, detail cards, wide cards, reader cards, source links, pathway rows, and next-step bands as content-bearing paper/polaroid pieces with cut or uneven edge cues, layered backing shadows, texture, and visible sheet depth.
 
 The current shared paper-card pass should remove rounded-corner card language from shared card-like surfaces. Cards should use squared/cut/torn silhouettes, edge shadows, clip-path shapes, layered offsets, and texture so the edges feel physical. Future styling should keep the effect readable and avoid making text surfaces too noisy.
+
+Store and similar filled-page sections should move further away from nested UI panels: stronger paper/collage backgrounds, grainy and lightly crinkled root material, smaller text snippets, and more photo/image-like content surfaces should carry hierarchy when they fit the public-safe content state.
+
+Store availability states should not remain long UI-like rows when the paper system is refined. They should become placed paper strips, staggered snippets, or collage pieces while keeping labels and descriptions readable.
 
 Page intro titles should be supportive subtitles rather than hero headlines. Across the major public pages, keep them 2–5 words, thinner, slightly smaller, and on one line.
 

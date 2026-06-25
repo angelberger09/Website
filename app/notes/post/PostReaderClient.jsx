@@ -7,24 +7,24 @@ import { PAGES_BASE, RAW_BASE } from "../../site-data";
 
 const postReaderSupportCards = [
   {
-    title: "Inside the shell",
+    title: "Inside the studio",
     eyebrow: "Context",
-    description: "The note uses Blog files, but the reading surface stays inside the Website so it still feels like Soft Strange Studio."
+    description: "The note comes from the public writing source, but the reading surface keeps the same soft studio context as the rest of the rooms."
   },
   {
     title: "Published only",
     eyebrow: "Boundary",
-    description: "The reader checks the public profile and does not present draft or unavailable notes as finished public writing."
+    description: "The reader checks the public note profile and does not present drafts or unavailable writing as finished public work."
   },
   {
     title: "Clear way back",
     eyebrow: "Path",
-    description: "Missing, loading, and error states all point visitors back toward the notes index instead of leaving them at a dead end."
+    description: "Missing, loading, and quiet-error states all point visitors back toward the notes index instead of leaving them at a dead end."
   },
   {
     title: "Paper reader sheet",
     eyebrow: "Material",
-    description: "The post card should read like a calm paper sheet in the studio, not a raw Markdown file or technical endpoint."
+    description: "The post surface should read like a calm paper sheet in the studio, not a file viewer or technical endpoint."
   }
 ];
 
@@ -120,8 +120,8 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
           <p className="eyebrow">{contextLabel}</p>
           <h1 id="reader-intro-title">A quiet reading sheet</h1>
           <p>
-            Individual notes stay inside the Website shell so the writing keeps the
-            same soft studio context as the rest of the site.
+            Individual notes open as calm studio sheets so the writing stays connected
+            to the same public room path as the rest of Soft Strange Studio.
           </p>
           <a className="notes-post-back" href={backHref}>{backLabel}</a>
         </div>
@@ -130,7 +130,7 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
           {state.status === "loading" && (
             <div className="notes-post-state">
               <p className="eyebrow inline">Loading</p>
-              <p>Gathering the public note profile and writing file inside the studio reader...</p>
+              <p>Gathering the public note profile and writing sheet inside the studio reader...</p>
             </div>
           )}
 
@@ -167,6 +167,12 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
       </section>
 
       <section className="notes-post-support-board" aria-label="Post reader support">
+        <div className="notes-post-source-slip">
+          <span>Source path</span>
+          <strong>Public writing first</strong>
+          <p>Each reader state keeps the note honest, published, and connected back to the studio notes room.</p>
+        </div>
+
         {postReaderSupportCards.map((card) => (
           <article className="notes-support-note notes-post-support-note" key={card.title}>
             <span className="notes-support-note__pin">{card.eyebrow}</span>

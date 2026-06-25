@@ -27,16 +27,23 @@ export default function StorePage() {
         </p>
       </PageIntro>
 
-      <section className="content-grid" aria-label="Store paths">
-        {storeSections.map((section) => (
-          <DetailCard eyebrow={section.eyebrow} title={section.title} key={section.title}>
-            <p>{section.description}</p>
-            {section.details && (
-              <ul className="detail-list">
-                {section.details.map((detail) => <li key={detail}>{detail}</li>)}
-              </ul>
-            )}
-          </DetailCard>
+      <section className="store-lane-collage" aria-label="Store paths">
+        {storeSections.map((section, index) => (
+          <article className="store-lane-piece" key={section.title}>
+            <div className="store-lane-piece__photo" aria-hidden="true">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <div className="store-lane-piece__copy">
+              <p className="eyebrow">{section.eyebrow}</p>
+              <h2>{section.title}</h2>
+              <p>{section.description}</p>
+              {section.details && (
+                <ul className="store-lane-piece__details">
+                  {section.details.map((detail) => <li key={detail}>{detail}</li>)}
+                </ul>
+              )}
+            </div>
+          </article>
         ))}
       </section>
 

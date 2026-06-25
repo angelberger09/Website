@@ -42,6 +42,24 @@ const portfolioGalleryFrames = [
   }
 ];
 
+const portfolioArchiveTickets = [
+  {
+    eyebrow: "card front",
+    title: "Name the public piece",
+    caption: "Each future card starts with a clear title, short role, and visitor-safe reason it belongs in the room."
+  },
+  {
+    eyebrow: "photo place",
+    title: "Add an honest preview",
+    caption: "The image area can hold abstract route material or real public assets, but never invented screenshots."
+  },
+  {
+    eyebrow: "open path",
+    title: "Point to the next shelf",
+    caption: "When a deeper record is ready, the card can lead to a public path without exposing private drafts."
+  }
+];
+
 export default function PortfolioPage() {
   return (
     <main id="top" className="site-shell page-layout">
@@ -176,8 +194,8 @@ export default function PortfolioPage() {
           <h1 id="portfolio-feed-title">The archive shelf needs public-facing cards.</h1>
           <p>
             When deeper Portfolio material is ready, this page should receive only the safe,
-            visitor-facing facts needed to make calm project cards and studio routes. The
-            raw drafts stay offstage; the public shelf stays warm and legible.
+            visitor-facing facts needed to make calm project cards and studio routes. Unready
+            drafts stay offstage; the public shelf stays warm and legible.
           </p>
         </div>
         <aside className="portfolio-feed-shelf-intro" aria-label="Portfolio archive shelf boundary">
@@ -188,6 +206,15 @@ export default function PortfolioPage() {
             shape, show only safe preview material, and leave private process outside the room.
           </p>
         </aside>
+        <div className="portfolio-archive-ticket-board" aria-label="Future Portfolio archive card path">
+          {portfolioArchiveTickets.map((ticket, index) => (
+            <article className="portfolio-archive-ticket" data-ticket-index={index + 1} key={ticket.title}>
+              <p className="portfolio-note-label">{ticket.eyebrow}</p>
+              <h2>{ticket.title}</h2>
+              <p>{ticket.caption}</p>
+            </article>
+          ))}
+        </div>
         <div className="portfolio-feed-ledger portfolio-feed-ledger--visitor" aria-label="Future Portfolio archive card parts">
           {portfolioFeedFields.map((field) => (
             <article className="portfolio-feed-card" key={field.label}>

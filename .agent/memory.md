@@ -18,6 +18,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Screenshot, visual, and current-site feedback should be validated against the live/current Website before it is turned into a lesson or implementation target.
 - Feedback-only passes should update `.agent/` memory and leave public Website source unchanged unless implementation is explicitly requested.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
+- The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
 
 ## Active direction
 
@@ -36,6 +37,8 @@ Paper material should be visible across the shared page system, not isolated to 
 When polaroid/photo frames are used as cards, the transparent middle should carry meaningful readable content. Use the frame and backing as a content surface for route labels, page information, preview art, project material, or product lane cues rather than leaving the polaroid as empty background decoration.
 
 Shared card surfaces should not default to soft rounded UI panels. Treat page cards, detail cards, wide cards, reader cards, source links, pathway rows, and next-step bands as content-bearing paper/polaroid pieces with cut or uneven edge cues, layered backing shadows, texture, and visible sheet depth.
+
+The current shared paper-card pass uses uneven radii, subtle alternating rotations, paper grain/dust/scratch overlays, inset sheet highlights, and layered backing shadows across the card system. Future styling should keep the effect readable and avoid making text surfaces too noisy.
 
 Page intro titles should be supportive subtitles rather than hero headlines. Across the major public pages, keep them 2–5 words, thinner, slightly smaller, and on one line.
 

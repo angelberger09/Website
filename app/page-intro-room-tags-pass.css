@@ -1,0 +1,53 @@
+/* Page intro room tags pass.
+   Adds a small visible room-status strip to shared PageIntro sections so each route opens with human-facing orientation, not just a title and prose slip. */
+
+.page-hero__room-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.48rem;
+  margin: 0.18rem 0 0.28rem;
+}
+
+.page-hero__room-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.38rem 0.72rem;
+  color: rgba(58, 45, 42, 0.74);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.74) 62%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(3% 6%, 96% 2%, 99% 88%, 4% 96%);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.06),
+    0 0.42rem 0.82rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74);
+}
+
+.page-hero__room-tags span:nth-child(2) {
+  color: rgba(72, 57, 52, 0.68);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.93), rgba(245, 224, 198, 0.56) 58%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(1% 10%, 98% 4%, 96% 96%, 3% 90%);
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-tags {
+    gap: 0.38rem;
+  }
+
+  .page-hero__room-tags span {
+    min-height: 1.82rem;
+    padding: 0.32rem 0.58rem;
+    font-size: 0.68rem;
+  }
+}

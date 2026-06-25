@@ -257,3 +257,17 @@ Major page intro titles should behave as supportive subtitles, not as competing 
 ### Future rule
 
 Keep major `PageIntro` titles 2–5 words, thinner, slightly smaller, and on one line where possible. They should orient visitors beneath the true homepage hero language instead of creating a second hero system on every route.
+
+## LESSON-024 — Use torn-edge card silhouettes instead of rounded corners
+
+Timestamp: 2026-06-24 22:45 ET  
+Context: Shared card edge feedback  
+Status: active
+
+### Lesson
+
+Shared card surfaces should use squared, cut, or slightly uneven torn-paper silhouettes instead of rounded card corners. Edge shadows should make the card feel like lifted paper, not a rounded digital panel.
+
+### Future rule
+
+When refining shared card-like surfaces, remove rounded-corner card language and use cut-paper `clip-path` shapes, edge shadows, layered paper offsets, and texture. Preserve readable content, visible focus states, and calm hierarchy while making the card edge feel physical.

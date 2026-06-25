@@ -1,4 +1,5 @@
 import { siteNavPages } from "./site-data";
+import { HeaderNav } from "./site-header-nav";
 
 const pageIntroVisuals = {
   "Soft public studio": {
@@ -50,13 +51,7 @@ export function SiteHeader() {
       </a>
 
       <div className="folder-menu" aria-label="Studio pages">
-        <nav className="folder-panel" aria-label="Studio pages">
-          {siteNavPages.map((page) => (
-            <a href={page.href} key={page.href}>
-              <span>{page.title}</span>
-            </a>
-          ))}
-        </nav>
+        <HeaderNav />
       </div>
     </header>
   );

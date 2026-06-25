@@ -9,7 +9,7 @@ const postReaderSupportCards = [
   {
     title: "Inside the studio",
     eyebrow: "Context",
-    description: "The note comes from the public writing source, but the reading surface keeps the same soft studio context as the rest of the rooms."
+    description: "The note comes from the public writing shelf, but the reading surface keeps the same soft studio context as the rest of the rooms."
   },
   {
     title: "Published only",
@@ -25,6 +25,24 @@ const postReaderSupportCards = [
     title: "Paper reader sheet",
     eyebrow: "Material",
     description: "The post surface should read like a calm paper sheet in the studio, not a file viewer or technical endpoint."
+  }
+];
+
+const readerPathNotes = [
+  {
+    eyebrow: "Read",
+    title: "Stay with the sheet",
+    description: "The note opens on a lined paper surface so the writing has room before any supporting path appears."
+  },
+  {
+    eyebrow: "Return",
+    title: "Back to Notes",
+    description: "The shelf keeps a visible way back to the public notes room when the reader wants the wider stack."
+  },
+  {
+    eyebrow: "Continue",
+    title: "Follow the studio trail",
+    description: "After the note, the route reconnects to related rooms instead of ending like a loose article page."
   }
 ];
 
@@ -172,9 +190,19 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
         </article>
       </section>
 
+      <section className="notes-post-path-shelf" aria-label="Reader path">
+        {readerPathNotes.map((note) => (
+          <article className="notes-post-path-note" key={note.title}>
+            <span>{note.eyebrow}</span>
+            <h2>{note.title}</h2>
+            <p>{note.description}</p>
+          </article>
+        ))}
+      </section>
+
       <section className="notes-post-support-board" aria-label="Post reader support">
         <div className="notes-post-source-slip">
-          <span>Source path</span>
+          <span>Writing shelf</span>
           <strong>Public writing first</strong>
           <p>Each reader state keeps the note honest, published, and connected back to the studio notes room.</p>
         </div>

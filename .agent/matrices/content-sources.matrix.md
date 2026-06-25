@@ -27,8 +27,12 @@ Future connected feeds should expose only public-safe fields that the Website ne
 
 ## Blog source contract rule
 
-The Notes reader should name the expected Blog feed shape in the Website before deeper automation depends on it: a public posts array, published-only records, slug/title/date/context fields, and profile plus Markdown files for individual notes.
+The Notes reader should name the expected Blog feed shape in the Website before deeper automation depends on it, but the visible labels should stay human-facing: public writing shelf, published notes, readable title/date/context, public profile, note body, and quiet backup path.
 
 ## Portfolio source contract rule
 
-The Portfolio page should name the expected future Portfolio feed shape before deeper archive automation depends on it: public-safe project records with slug, title, status, summary, role, optional preview, optional source, and staged record states.
+The Portfolio page should name the expected future Portfolio feed shape before deeper archive automation depends on it, but the visible ledger labels should stay visitor-facing: public id, project name, public state, short note, studio role, preview place, public path, and staged record states.
+
+## Store source contract rule
+
+The Store page should name the expected future Store feed shape before live shop links exist, but the visible ledger labels should stay visitor-facing: public id, piece name, availability, short note, preview place, and delivery note.

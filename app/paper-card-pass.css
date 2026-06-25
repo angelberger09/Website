@@ -1,5 +1,59 @@
 /* Shared paper-card styling pass. Loaded after the base CSS so the existing filled pages gain stronger paper and collage surface cues without changing each route. */
 
+.floating-header {
+  isolation: isolate;
+  border-radius: 0 0 1.08rem 1.55rem;
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.82) 58%, rgba(245, 224, 198, 0.42)),
+    var(--grain-image),
+    var(--dust-image),
+    var(--fine-scratch-image);
+  background-size: cover, 24rem 24rem, 42rem 42rem, 54rem 54rem;
+  background-position: center, 45% 30%, 52% 40%, 50% 48%;
+  background-blend-mode: normal, multiply, multiply, screen;
+  box-shadow:
+    0 0.38rem 0 rgba(47, 38, 35, 0.05),
+    0 1.15rem 2.9rem rgba(47, 38, 35, 0.2),
+    0 0.25rem 0.9rem rgba(255, 176, 143, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.12);
+  backdrop-filter: none;
+}
+
+.floating-header::before,
+.floating-header::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.floating-header::before {
+  inset: 0.25rem 0.45rem 0.28rem;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), transparent 46%, rgba(47, 38, 35, 0.035));
+  mix-blend-mode: soft-light;
+}
+
+.floating-header::after {
+  right: 0.75rem;
+  bottom: -0.16rem;
+  left: 0.65rem;
+  z-index: -1;
+  height: 0.36rem;
+  border-radius: 999px 55% 999px 45%;
+  background:
+    radial-gradient(ellipse at 18% 100%, rgba(47, 38, 35, 0.14), transparent 58%),
+    radial-gradient(ellipse at 82% 100%, rgba(47, 38, 35, 0.11), transparent 54%);
+  filter: blur(0.2px);
+  opacity: 0.8;
+}
+
+.floating-header > * {
+  position: relative;
+  z-index: 1;
+}
+
 .page-card,
 .detail-card,
 .source-link,

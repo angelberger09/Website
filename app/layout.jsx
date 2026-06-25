@@ -7,6 +7,7 @@ import './header-paper-tabs-pass.css';
 import './root-paper-pass.css';
 import './about-paper-collage-pass.css';
 import './portfolio-paper-archive-pass.css';
+import './portfolio-gallery-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-preview-collage-pass.css';
 import './store-hierarchy-pass.css';

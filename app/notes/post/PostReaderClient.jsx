@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { NextStepBand } from "../../next-step-band";
 import { pageContinuity } from "../../page-continuity";
-import { DetailCard } from "../../site-chrome";
 import { PAGES_BASE, RAW_BASE } from "../../site-data";
 
 const postReaderSupportCards = [
@@ -115,62 +114,65 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
   const html = useMemo(() => markdownToHtml(state.markdown), [state.markdown]);
 
   return (
-    <main id="top" className="site-shell readable-shell">
-      <section className="link-card reader-card" aria-labelledby="reader-intro-title">
-        <p className="eyebrow">{contextLabel}</p>
-        <h1 id="reader-intro-title">A quiet reading sheet</h1>
-        <p>
-          Individual notes stay inside the Website shell so the writing keeps the
-          same soft studio context as the rest of the site.
-        </p>
+    <main id="top" className="site-shell readable-shell notes-post-room">
+      <section className="notes-post-desk" aria-labelledby="reader-intro-title">
+        <div className="notes-post-desk__intro">
+          <p className="eyebrow">{contextLabel}</p>
+          <h1 id="reader-intro-title">A quiet reading sheet</h1>
+          <p>
+            Individual notes stay inside the Website shell so the writing keeps the
+            same soft studio context as the rest of the site.
+          </p>
+          <a className="notes-post-back" href={backHref}>{backLabel}</a>
+        </div>
+
+        <article className="notes-post-sheet">
+          {state.status === "loading" && (
+            <div className="notes-post-state">
+              <p className="eyebrow inline">Loading</p>
+              <p>Gathering the public note profile and writing file inside the studio reader...</p>
+            </div>
+          )}
+
+          {state.status === "missing" && (
+            <div className="notes-post-state">
+              <p className="eyebrow inline">Choose a note</p>
+              <p>{state.error}</p>
+              <a href={backHref}>{backLabel}</a>
+            </div>
+          )}
+
+          {state.status === "error" && (
+            <div className="notes-post-state notes-post-state--error">
+              <p className="eyebrow inline">Reader note</p>
+              <p>{state.error}</p>
+              <a href={backHref}>Return to the notes index</a>
+            </div>
+          )}
+
+          {state.profile && (
+            <>
+              <p className="notes-post-kicker">{state.profile.series || state.profile.category || "Public note"}</p>
+              <h1>{state.profile.title}</h1>
+              <p className="notes-post-subtitle">{state.profile.subtitle || state.profile.excerpt}</p>
+              <div className="tag-row notes-post-tags">
+                {state.profile.category && <span>{state.profile.category}</span>}
+                {state.profile.date && <span>{state.profile.date}</span>}
+                {state.slug && <span>public note</span>}
+              </div>
+              <div className="markdown-body notes-post-markdown" dangerouslySetInnerHTML={{ __html: html }} />
+            </>
+          )}
+        </article>
       </section>
 
-      <article className="link-card reader-card">
-        <p><a href={backHref}>{backLabel}</a></p>
-
-        {state.status === "loading" && (
-          <div className="reader-state">
-            <p className="eyebrow inline">Loading</p>
-            <p>Gathering the public note profile and writing file inside the studio reader...</p>
-          </div>
-        )}
-
-        {state.status === "missing" && (
-          <div className="reader-state">
-            <p className="eyebrow inline">Choose a note</p>
-            <p>{state.error}</p>
-            <a href={backHref}>{backLabel}</a>
-          </div>
-        )}
-
-        {state.status === "error" && (
-          <div className="reader-state reader-state--error">
-            <p className="eyebrow inline">Reader note</p>
-            <p>{state.error}</p>
-            <a href={backHref}>Return to the notes index</a>
-          </div>
-        )}
-
-        {state.profile && (
-          <>
-            <p className="eyebrow inline">{state.profile.series || state.profile.category || "Public note"}</p>
-            <h1>{state.profile.title}</h1>
-            <p>{state.profile.subtitle || state.profile.excerpt}</p>
-            <div className="tag-row">
-              {state.profile.category && <span>{state.profile.category}</span>}
-              {state.profile.date && <span>{state.profile.date}</span>}
-              {state.slug && <span>public note</span>}
-            </div>
-            <div className="markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
-          </>
-        )}
-      </article>
-
-      <section className="content-grid content-grid--small" aria-label="Post reader support">
+      <section className="notes-post-support-board" aria-label="Post reader support">
         {postReaderSupportCards.map((card) => (
-          <DetailCard eyebrow={card.eyebrow} title={card.title} key={card.title}>
+          <article className="notes-support-note notes-post-support-note" key={card.title}>
+            <span className="notes-support-note__pin">{card.eyebrow}</span>
+            <h2>{card.title}</h2>
             <p>{card.description}</p>
-          </DetailCard>
+          </article>
         ))}
       </section>
 

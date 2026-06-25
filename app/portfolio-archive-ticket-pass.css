@@ -1,0 +1,104 @@
+.portfolio-archive-ticket-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.72rem, 1.8vw, 1rem);
+  min-height: 100%;
+  padding: clamp(0.2rem, 0.8vw, 0.45rem);
+}
+
+.portfolio-archive-ticket-board::before {
+  content: "";
+  position: absolute;
+  inset: 0.4rem 0.1rem 0.05rem;
+  z-index: -1;
+  background:
+    linear-gradient(118deg, rgba(255, 250, 235, 0.5), rgba(226, 208, 171, 0.22)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 200px 200px;
+  box-shadow: 0 14px 28px rgba(82, 59, 35, 0.09);
+  clip-path: polygon(1% 5%, 98% 0, 100% 90%, 95% 100%, 3% 96%, 0 16%);
+}
+
+.portfolio-archive-ticket {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.62rem;
+  min-height: clamp(11rem, 20vw, 15rem);
+  padding: clamp(0.9rem, 2vw, 1.2rem);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.54), transparent 22%),
+    linear-gradient(150deg, rgba(255, 252, 241, 0.97), rgba(238, 222, 188, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, 180px 180px;
+  box-shadow: 0 16px 28px rgba(82, 59, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(3% 1%, 96% 0, 100% 88%, 94% 100%, 5% 97%, 0 12%);
+  transform: rotate(var(--portfolio-ticket-tilt, -0.6deg));
+}
+
+.portfolio-archive-ticket::before {
+  content: "";
+  position: absolute;
+  top: -0.38rem;
+  left: 50%;
+  width: 4.9rem;
+  height: 1.05rem;
+  background: rgba(241, 219, 171, 0.68);
+  box-shadow: 0 7px 14px rgba(74, 53, 30, 0.1);
+  transform: translateX(-50%) rotate(-2.5deg);
+  clip-path: polygon(4% 8%, 97% 0, 100% 86%, 10% 100%, 0 74%);
+}
+
+.portfolio-archive-ticket::after {
+  content: attr(data-ticket-index);
+  position: absolute;
+  right: 0.82rem;
+  bottom: 0.72rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: rgba(59, 45, 32, 0.08);
+}
+
+.portfolio-archive-ticket:nth-child(2) {
+  --portfolio-ticket-tilt: 0.75deg;
+  margin-top: clamp(0.75rem, 2vw, 1.35rem);
+}
+
+.portfolio-archive-ticket:nth-child(3) {
+  --portfolio-ticket-tilt: -0.25deg;
+}
+
+.portfolio-archive-ticket h2 {
+  max-width: 9em;
+  margin: 0;
+  font-size: clamp(1.25rem, 2.3vw, 1.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.portfolio-archive-ticket p:last-child {
+  margin: 0;
+  color: rgba(59, 45, 32, 0.72);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket-board,
+.portfolio-feed-board--shelf .portfolio-feed-ledger,
+.portfolio-feed-board--shelf .portfolio-rule-tapes {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .portfolio-archive-ticket-board {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-archive-ticket,
+  .portfolio-archive-ticket:nth-child(2),
+  .portfolio-archive-ticket:nth-child(3) {
+    min-height: auto;
+    margin-top: 0;
+    transform: none;
+  }
+}

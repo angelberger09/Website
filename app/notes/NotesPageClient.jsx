@@ -29,8 +29,8 @@ function sortPublishedPosts(posts) {
 
 function sourceLabel(source) {
   if (!source) return "";
-  if (source.includes("github.io")) return "public Blog feed";
-  return "public Blog fallback";
+  if (source.includes("github.io")) return "public notes path";
+  return "quiet backup path";
 }
 
 export default function NotesPageClient({ routeBase = "/Website/notes", routeLabel = "Notes" }) {
@@ -52,8 +52,8 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
     <main id="top" className="site-shell page-layout notes-room-page">
       <PageIntro eyebrow="Still Here Notes" title="Studio notes room">
         <p>
-          This page is the Website-owned reading door. The Blog repo keeps the
-          published writing files, and this page turns them into a softer reader
+          This page is the studio reading door. The public writing source keeps the
+          note files organized, and this page turns them into a softer reading
           experience inside the Soft Strange Studio shell.
         </p>
       </PageIntro>
@@ -63,13 +63,13 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <p className="eyebrow">{routeLabel}</p>
           <h1 id="notes-title">Read the notes</h1>
           <p>
-            Published posts appear here when the public Blog index is available.
+            Published posts appear here when the public writing source is available.
             The source can stay structured while visitors get a real page instead
-            of a raw feed.
+            of a behind-the-scenes list.
           </p>
 
           {state.status === "loading" && (
-            <p className="reader-state">Gathering the public notes index inside the studio shell...</p>
+            <p className="reader-state">Gathering the public notes inside the studio shell...</p>
           )}
           {state.status === "error" && (
             <div className="reader-state reader-state--error">
@@ -127,13 +127,13 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <section className="notes-source-board" aria-labelledby="notes-source-title">
         <div className="notes-source-board__intro">
           <p className="eyebrow">Source readiness</p>
-          <h1 id="notes-source-title">The reader knows what it needs from Blog.</h1>
+          <h1 id="notes-source-title">The reader knows what each note needs.</h1>
           <p>
-            The Notes room can stay calm even while connected repos change because the
-            expected Blog feed shape is named here in visitor-facing language.
+            The Notes room can stay calm even while connected source spaces change
+            because the expected public writing shape is named here in visitor-facing language.
           </p>
         </div>
-        <div className="notes-source-ledger" aria-label="Blog feed readiness requirements">
+        <div className="notes-source-ledger" aria-label="Public notes readiness requirements">
           {blogFeedReadiness.map((item) => (
             <article className="notes-source-card" key={item.title}>
               <p className="eyebrow">{item.eyebrow}</p>

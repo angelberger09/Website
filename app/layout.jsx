@@ -10,6 +10,7 @@ import './home-highlight-photo-pass.css';
 import './home-intro-copy-slips-pass.css';
 import './about-paper-collage-pass.css';
 import './about-contact-sheet-pass.css';
+import './about-principle-photo-pass.css';
 import './about-text-slip-pass.css';
 import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';

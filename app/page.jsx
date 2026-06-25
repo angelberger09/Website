@@ -23,13 +23,20 @@ export default function HomePage() {
             <li><span className="title-line title-line--studio">Soft Strange Studio</span></li>
           </ul>
           <p className="title-note">A soft public studio for notes, art, creature work, and gentle project paths.</p>
-          <nav className="home-hero-route-strip" aria-label="Start with a studio room">
+          <nav className="home-hero-route-strip home-hero-contact-sheet" aria-label="Start with a studio room">
             <span className="home-hero-route-strip__label">Start here</span>
-            <div className="home-hero-route-strip__links">
+            <div className="home-hero-route-strip__links" role="list">
               {homepageCards.map((page) => (
-                <a className="home-hero-route-slip" href={page.href} key={page.href}>
-                  <span>{page.eyebrow}</span>
-                  <strong>{page.title}</strong>
+                <a className="home-hero-route-slip" href={page.href} key={page.href} role="listitem">
+                  <span className="home-hero-route-slip__preview" aria-hidden="true">
+                    <span>{page.eyebrow}</span>
+                    <strong>{page.title}</strong>
+                  </span>
+                  <span className="home-hero-route-slip__copy">
+                    <span>{page.eyebrow}</span>
+                    <strong>{page.title}</strong>
+                    <small>Open room</small>
+                  </span>
                 </a>
               ))}
             </div>

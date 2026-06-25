@@ -1,39 +1,39 @@
 export const portfolioFeedFields = [
   {
-    label: "slug",
-    description: "Stable public identifier for the project record and any future Website route."
+    label: "public id",
+    description: "Stable public identifier for the project record and any future studio route."
   },
   {
-    label: "title",
+    label: "project name",
     description: "Human-facing project name that can stand on a Portfolio card without internal shorthand."
   },
   {
-    label: "status",
+    label: "public state",
     description: "A calm public state such as active, preparing, archived, or held offstage."
   },
   {
-    label: "summary",
+    label: "short note",
     description: "One short visitor-facing paragraph that explains the work without exposing private process."
   },
   {
-    label: "role",
+    label: "studio role",
     description: "What kind of studio contribution the record shows: system, visual direction, writing, creature work, or product-adjacent archive."
   },
   {
-    label: "preview",
+    label: "preview place",
     description: "Optional public image, route, or asset path that is already safe to show."
   },
   {
-    label: "source",
-    description: "Optional public source link for deeper context, never a private draft or raw planning file."
+    label: "public path",
+    description: "Optional public link for deeper context, never a private draft or raw planning file."
   }
 ];
 
 export const portfolioFeedRules = [
   "Only publish records with a public-safe title, status, and summary.",
   "Do not expose raw drafts, private notes, unfinished sketches, or vulnerable process context.",
-  "Mark records as preparing when they need public assets, source links, or a fuller case-study frame.",
-  "Keep Website copy human-facing even when the future Portfolio repo provides structured data."
+  "Mark records as preparing when they need public assets, public links, or a fuller case-study frame.",
+  "Keep Website copy human-facing even when the future Portfolio shelf provides structured material."
 ];
 
 export const portfolioRecordStates = [

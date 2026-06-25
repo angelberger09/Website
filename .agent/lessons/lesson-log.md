@@ -271,3 +271,31 @@ Shared card surfaces should use squared, cut, or slightly uneven torn-paper silh
 ### Future rule
 
 When refining shared card-like surfaces, remove rounded-corner card language and use cut-paper `clip-path` shapes, edge shadows, layered paper offsets, and texture. Preserve readable content, visible focus states, and calm hierarchy while making the card edge feel physical.
+
+## LESSON-025 — Render photo centers instead of background decals
+
+Timestamp: 2026-06-24 23:49 ET  
+Context: Screenshot feedback on polaroid/photo centers and placeholder shot areas  
+Status: active
+
+### Lesson
+
+Photo and polaroid centers should not remain blank, dark, or decal-like when they are part of the content layout. They should render authored placeholder images, staged shot backgrounds, page previews, or route-specific visual material so the paper/photo system feels finished and professional.
+
+### Future rule
+
+When refining hero polaroids, page cards, gallery tiles, Portfolio previews, or Store previews, fill the image center with composed visual material. Placeholder imagery is allowed when live assets do not exist yet, but it must be honest, route-relevant, brand-aligned, and not imply fake products or completed case studies.
+
+## LESSON-026 — Use alternating scrollable image galleries
+
+Timestamp: 2026-06-24 23:49 ET  
+Context: Screenshot feedback requesting a new gallery direction with internal scrollable images  
+Status: active
+
+### Lesson
+
+The Website should use gallery experiences that feel like a sequence of placed paper/photo pieces, not one static decorative background image. Galleries should alternate image-forward cards with short text/context cards so the visual rhythm feels authored, useful, and alive.
+
+### Future rule
+
+When adding a gallery, prefer accessible native scrolling, visible overflow hints, keyboard/focus support, paper/photo frames, route-specific placeholder imagery, and short captions. Avoid dense carousel chrome, hidden controls, image-only clutter, or background decals pretending to be gallery content.

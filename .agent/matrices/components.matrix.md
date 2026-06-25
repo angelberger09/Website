@@ -2,7 +2,7 @@
 
 | Component ID | Name | Used In | Purpose | Behavior | Visual Rules | Related Lessons | Risks | Status |
 |---|---|---|---|---|---|---|---|---|
-| COMP-001 | Floating Header | All pages through `app/layout.jsx` | Keep personal identity and navigation visible | Fixed at top while scrolling | Top-attached paper material tab with direct links, paper texture, and visible soft drop shadow | LESSON-001, LESSON-002, LESSON-011, LESSON-015, LESSON-020 | Could crowd small screens if too many routes are added or lose readability if paper texture is too strong | active |
+| COMP-001 | Floating Header | All pages through `app/layout.jsx` | Keep personal identity and navigation visible | Fixed at top while scrolling | Top-attached paper material tab with direct links, existing grain/dust/scratch texture, subtle lower-edge irregularity, and visible soft drop shadow from `app/paper-card-pass.css` | LESSON-001, LESSON-002, LESSON-011, LESSON-015, LESSON-020 | Could crowd small screens if too many routes are added or lose readability if paper texture is too strong | active |
 | COMP-002 | Direct Studio Navigation | All pages through `app/site-chrome.jsx` | Provide compact access to current Website pages | Direct visible links; no `Pages` trigger, edge numbers, or helper text | Unboxed links with stronger contrast on a tactile paper header surface | LESSON-003, LESSON-013, LESSON-015, LESSON-020 | Needs ongoing responsive review and accessible focus states over textured material | active |
 | COMP-003 | Scroll Title Sequence | PAGE-001 | Create authored arrival moment | Left-docked sticky title with subtle scroll rotation | Art-lettering style with polaroid material stack that can become a content-bearing surface when used as a card | LESSON-012, LESSON-014, LESSON-016, LESSON-021 | Motion must remain purposeful and frame content must stay readable | active |
 | COMP-004 | Studio Page Cards | PAGE-001 | Present destinations as friendly doors | Grid of four linked cards with entry cues | Card surfaces should feel like individual paper/polaroid pieces, not generic rounded panels; when frames are used, the center holds readable destination content | LESSON-002, LESSON-003, LESSON-015, LESSON-018, LESSON-019, LESSON-021, LESSON-022 | Must stay synced with page routes and avoid decorative empty card frames or overly rounded UI cards | active |
@@ -71,3 +71,7 @@ COMP-005 now applies LESSON-023 and METRIC-022 directly inside `app/site-chrome.
 ## Addendum — 2026-06-24 21:38 ET
 
 COMP-005 now keeps the PageIntro subtitle treatment in a named `pageIntroTitleStyle` object instead of recreating the style literal inside the JSX. This preserves the current visual target while making the shared subtitle rule easier to find and move into CSS during a broader style-system pass.
+
+## Addendum — 2026-06-24 22:20 ET
+
+COMP-001 now applies FEEDBACK-008 / LESSON-020 through `app/paper-card-pass.css`. The shared header keeps the existing fixed top-edge structure but overrides the earlier soft-glass surface with a cream paper layer, existing grain/dust/scratch texture, stronger layered shadow, and subtle uneven lower-edge cue. The intent was to implement stored paper-header feedback without changing navigation structure or adding a competing header system.

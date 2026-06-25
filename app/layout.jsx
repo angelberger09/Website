@@ -26,6 +26,7 @@ import './page-intro-photo-card-pass.css';
 import './footer-paper-trail-pass.css';
 import './performance-budget-pass.css';
 import './page-intro-performance-pass.css';
+import './home-entry-contact-sheet-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

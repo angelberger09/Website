@@ -199,6 +199,58 @@
   filter: drop-shadow(0.3rem 0.44rem 0 rgba(47, 38, 35, 0.1));
 }
 
+.store-availability-card {
+  --paper-cut: polygon(1% 2%, 19% 0.8%, 42% 2.1%, 67% 0.7%, 88% 2.4%, 99% 1.5%, 97.4% 29%, 99% 61%, 96.8% 97.6%, 76% 98.9%, 50% 97.2%, 25% 99.1%, 1.1% 96.8%, 2.2% 63%, 0.9% 34%);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(216, 197, 236, 0.2), transparent 30%),
+    radial-gradient(circle at 82% 78%, rgba(185, 201, 175, 0.2), transparent 34%),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.72) 56%, rgba(245, 224, 198, 0.42)),
+    var(--grain-image),
+    var(--dust-image),
+    var(--fine-scratch-image);
+  background-size: cover, cover, cover, 20rem 20rem, 34rem 34rem, 48rem 48rem;
+}
+
+.store-availability-card::after {
+  background:
+    linear-gradient(105deg, rgba(47, 38, 35, 0.07), transparent 16%, transparent 70%, rgba(255, 255, 255, 0.28)),
+    repeating-linear-gradient(96deg, rgba(47, 38, 35, 0.035) 0 1px, transparent 1px 4.6rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 28%, rgba(47, 38, 35, 0.055));
+  opacity: 0.82;
+}
+
+.store-snippet-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.85rem, 2vw, 1.35rem);
+  margin-top: 1.2rem;
+}
+
+.store-state-snippet {
+  align-content: start;
+  min-height: 100%;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  filter:
+    drop-shadow(-0.18rem 0.2rem 0 rgba(47, 38, 35, 0.08))
+    drop-shadow(0.26rem 0.56rem 1.2rem rgba(47, 38, 35, 0.15));
+}
+
+.store-state-snippet:nth-child(1) {
+  --paper-cut: polygon(2% 4%, 27% 1.2%, 58% 2.8%, 98% 1.4%, 96.4% 38%, 98.2% 97%, 71% 96.4%, 35% 99%, 1% 96.5%);
+  transform: translateY(0.2rem) rotate(-1.2deg);
+}
+
+.store-state-snippet:nth-child(2) {
+  --paper-cut: polygon(1.4% 2%, 24% 3.4%, 53% 0.8%, 97.6% 2.8%, 99% 61%, 96.5% 98%, 66% 96.6%, 31% 98.7%, 2.2% 96%);
+  transform: translateY(-0.1rem) rotate(0.72deg);
+}
+
+.store-state-snippet:nth-child(3) {
+  --paper-cut: polygon(1.2% 3.2%, 34% 0.9%, 68% 2.6%, 98.4% 1%, 97% 42%, 99% 96.5%, 78% 99%, 44% 97.4%, 2% 98.2%);
+  transform: translateY(0.38rem) rotate(-0.56deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-card:nth-child(2n),
   .detail-card:nth-child(2n),
@@ -226,6 +278,16 @@
   .next-step-band {
     --paper-cut: polygon(1% 2.6%, 25% 1%, 51% 2.2%, 76% 0.9%, 98.7% 2%, 97.2% 35%, 98.8% 69%, 97% 97.2%, 69% 98.4%, 36% 97.1%, 1% 98.5%, 2.4% 57%);
     border-radius: 0;
+    transform: none;
+  }
+
+  .store-snippet-list {
+    grid-template-columns: 1fr;
+  }
+
+  .store-state-snippet:nth-child(1),
+  .store-state-snippet:nth-child(2),
+  .store-state-snippet:nth-child(3) {
     transform: none;
   }
 }

@@ -35,8 +35,8 @@ export const homepageHighlights = [
   },
   {
     title: "Connected, still warm",
-    eyebrow: "Source rhythm",
-    description: "Writing, work, and store material can keep their own backstage structure, while this site translates that structure into pages that feel warm and readable."
+    eyebrow: "Back-room rhythm",
+    description: "Writing, work, and store material can keep their own quiet shelves while this site turns them into pages that feel warm and readable."
   },
   {
     title: "Soft, tactile, direct",
@@ -57,9 +57,9 @@ export const studioPillars = [
     description: "The site holds gentle creature work, tactile paper/photo layers, and flat illustrative atmosphere."
   },
   {
-    title: "Small doors, not raw systems",
+    title: "Small doors, not machinery",
     eyebrow: "Structure",
-    description: "Source spaces can provide structured material, but visitors should meet pages, readers, cards, and warm orientation first."
+    description: "Behind-the-scenes shelves can stay organized, but visitors should meet pages, readers, cards, and warm orientation first."
   },
   {
     title: "Ready to grow slowly",
@@ -130,21 +130,21 @@ export const aboutPathways = [
 export const portfolioPieces = [
   {
     title: "Soft Strange Studio website",
-    eyebrow: "Website system",
+    eyebrow: "Studio home",
     description: "The public studio shell: shared paper chrome, tactile atmosphere, and visitor-ready rooms for notes, work, and future shop paths.",
     status: "Active",
-    details: ["Shared studio chrome", "Filled top-level pages", "Public-safe project memory"]
+    details: ["Shared studio rooms", "Filled public pages", "Public-safe memory"]
   },
   {
     title: "Still Here Notes reader",
-    eyebrow: "Writing system",
-    description: "A studio reader that gathers published note profiles and writing files from the public writing source while keeping the reading experience inside the studio site.",
+    eyebrow: "Writing room",
+    description: "A calm reader that gathers published notes from the public writing shelf while keeping the reading experience inside the studio site.",
     status: "Active",
-    details: ["Published-note index", "Individual note route", "Blog compatibility paths"]
+    details: ["Published-note index", "Individual note room", "Older blog doors still work"]
   },
   {
     title: "Polaroid atmosphere layer",
-    eyebrow: "Visual system",
+    eyebrow: "Paper world",
     description: "Reusable grain, dust, scratches, gloss, dark backing, and torn cream frame layers that make the site feel tactile while staying flat and performant.",
     status: "Active",
     details: ["Cream frame motif", "Dark backing depth", "Subtle motion and texture"]
@@ -178,7 +178,7 @@ export const portfolioLanes = [
 
 export const portfolioProcess = [
   "Start with a public-safe project signal.",
-  "Give the work a readable card, route, or source path.",
+  "Give the work a readable card, route, or public doorway.",
   "Keep the copy human-facing and the structure quiet.",
   "Add deeper case-study detail only when the public material is ready."
 ];
@@ -193,8 +193,8 @@ export const portfolioReadiness = [
   {
     title: "Preparing next",
     eyebrow: "Future records",
-    description: "Use this lane for projects that need images, source links, or a fuller public writeup before becoming a deeper case study.",
-    details: ["Needs public assets", "Needs short context", "Needs safe source path"]
+    description: "Use this lane for projects that need images, public links, or a fuller writeup before becoming a deeper case study.",
+    details: ["Needs public assets", "Needs short context", "Needs safe public doorway"]
   },
   {
     title: "Hold offstage",
@@ -251,19 +251,19 @@ export const storePromises = [
 
 export const notesSupportCards = [
   {
-    title: "Source stays public-safe",
+    title: "Public notes stay safe",
     eyebrow: "Memory rule",
-    description: "The Website can render public notes, but private drafts and vulnerable raw context do not belong in the public studio source."
+    description: "The studio can show finished public notes, but private drafts and vulnerable raw context stay offstage."
   },
   {
     title: "Reader stays here",
     eyebrow: "Studio path",
-    description: "The public writing source provides the note files; the Website carries the route, atmosphere, layout, and reading experience."
+    description: "The public writing shelf provides the notes; this room carries the route, atmosphere, layout, and reading experience."
   },
   {
     title: "Posts stay approachable",
     eyebrow: "Reading",
-    description: "The notes index should behave like a calm table of contents, with enough context to choose a piece without exposing backend structure."
+    description: "The notes index should behave like a calm table of contents, with enough context to choose a piece without exposing backstage structure."
   }
 ];
 
@@ -276,7 +276,7 @@ export const notesReaderStates = [
   {
     title: "Unavailable",
     eyebrow: "If source pauses",
-    description: "Explain that the public notes source could not be reached instead of sending visitors to raw URLs."
+    description: "Explain that the public notes shelf could not be reached instead of sending visitors to raw URLs."
   },
   {
     title: "Published only",

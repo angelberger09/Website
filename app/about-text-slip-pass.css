@@ -1,6 +1,9 @@
 /* About text slip pass.
    Keeps the About boards from falling back to plain in-card paragraphs by turning support copy into small clipped paper slips. */
 
+.about-opening-copy > p:not(.eyebrow),
+.about-contact-sheet-heading > p:not(.eyebrow),
+.about-board-heading > p:not(.eyebrow),
 .about-principle-note p,
 .about-pathway-note small {
   display: block;
@@ -20,6 +23,24 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.64);
 }
 
+.about-opening-copy > p:not(.eyebrow),
+.about-contact-sheet-heading > p:not(.eyebrow),
+.about-board-heading > p:not(.eyebrow) {
+  width: min(100%, 34rem);
+  transform: rotate(-0.45deg);
+}
+
+.about-contact-sheet-heading > p:not(.eyebrow) {
+  margin-top: 0.15rem;
+  transform: rotate(0.38deg);
+}
+
+.about-board-heading > p:not(.eyebrow) {
+  margin-top: 0.25rem;
+  transform: rotate(-0.28deg);
+}
+
+.about-opening-copy > p:not(.eyebrow),
 .about-principle-note:nth-child(2) p,
 .about-pathway-note:nth-child(2) small {
   background:
@@ -34,8 +55,12 @@
 }
 
 @media (max-width: 820px) {
+  .about-opening-copy > p:not(.eyebrow),
+  .about-contact-sheet-heading > p:not(.eyebrow),
+  .about-board-heading > p:not(.eyebrow),
   .about-principle-note p,
   .about-pathway-note small {
     width: 100%;
+    transform: none;
   }
 }

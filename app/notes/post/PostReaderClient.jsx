@@ -32,16 +32,19 @@ const readerPathNotes = [
   {
     eyebrow: "Read",
     title: "Stay with the sheet",
+    visualLabel: "quiet sheet",
     description: "The note opens on a lined paper surface so the writing has room before any supporting path appears."
   },
   {
     eyebrow: "Return",
     title: "Back to Notes",
+    visualLabel: "note stack",
     description: "The shelf keeps a visible way back to the public notes room when the reader wants the wider stack."
   },
   {
     eyebrow: "Continue",
     title: "Follow the studio trail",
+    visualLabel: "soft trail",
     description: "After the note, the route reconnects to related rooms instead of ending like a loose article page."
   }
 ];
@@ -219,6 +222,10 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
       <section className="notes-post-path-shelf" aria-label="Reader path">
         {readerPathNotes.map((note) => (
           <article className="notes-post-path-note" key={note.title}>
+            <div className="notes-post-path-note__visual" aria-hidden="true">
+              <i />
+              <strong>{note.visualLabel}</strong>
+            </div>
             <span>{note.eyebrow}</span>
             <h2>{note.title}</h2>
             <p>{note.description}</p>

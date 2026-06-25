@@ -48,21 +48,21 @@ export const homepageHighlights = [
 export const homepageStudioChecks = [
   {
     title: "Paper first",
-    eyebrow: "Material check",
+    eyebrow: "Material rule",
     description: "Pages should read as placed paper, clipped slips, and gentle photo surfaces before they read as app panels.",
-    note: "Review: texture, cut edges, sheet depth"
+    note: "Look for texture, cut edges, sheet depth"
   },
   {
     title: "Human words",
-    eyebrow: "Copy check",
+    eyebrow: "Copy rule",
     description: "Visitors should meet rooms, shelves, paths, and readiness notes instead of backstage source language.",
-    note: "Review: no raw or technical wording"
+    note: "Keep raw or technical wording offstage"
   },
   {
     title: "Honest growth",
-    eyebrow: "Trust check",
+    eyebrow: "Trust rule",
     description: "Portfolio and store material can show readiness without implying fake case studies, fake products, or live listings.",
-    note: "Review: clear status before deeper links"
+    note: "Name the status before deeper links"
   }
 ];
 

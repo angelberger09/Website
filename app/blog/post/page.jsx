@@ -9,8 +9,8 @@ export default function BlogPostPage() {
   return (
     <PostReaderClient
       backHref="/Website/blog/"
-      backLabel="Back to Blog"
-      contextLabel="Still Here Notes"
+      backLabel="Back to Blog path"
+      contextLabel="Blog path reader"
     />
   );
 }

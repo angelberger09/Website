@@ -26,6 +26,7 @@ These rules should shape current Website work.
 - Use direct navigation labels without edge numbers, extra text, or a redundant `Pages` button; increase contrast so the header does not feel overly soft.
 - Treat the torn polaroid frame and dark backing as a core material motif: dark layer below, cream frame above, alpha-ready, slightly rotated, and integrated with grain/gloss/scratch atmosphere.
 - Make the top header feel more like a tactile paper strip or paper tab laid over the page, using existing texture/material assets or shader-like CSS plus a visible soft drop shadow.
+- The whole header system should read as paper at screenshot scale: the strip, identity area, and nav labels should feel like layered paper tabs or cut paper pieces rather than smooth rounded UI pills.
 - Fill every public Website page as a useful visitor room; use honest readiness states instead of empty placeholders, fake content, or raw repo/feed language.
 - Make the paper/collage material read as paper first: visible fiber, torn or uneven edges, layered sheets, collage shadows, scanned imperfections, and tactile paper depth should be stronger than generic soft glass/card UI.
 - Use polaroid/photo frames as content-bearing card surfaces, not only background décor: the transparent middle should hold readable page content, artwork, or route information when the motif is used as a card.

@@ -1,39 +1,39 @@
 export const portfolioFeedFields = [
   {
-    label: "public id",
-    description: "Stable public identifier for the project record and any future studio route."
+    label: "archive key",
+    description: "A stable public handle for the project card and any future studio doorway."
   },
   {
-    label: "project name",
-    description: "Human-facing project name that can stand on a Portfolio card without internal shorthand."
+    label: "public title",
+    description: "The readable project name visitors see first, without internal shorthand."
   },
   {
-    label: "public state",
-    description: "A calm public state such as active, preparing, archived, or held offstage."
+    label: "public stage",
+    description: "A calm state such as active, preparing, archived, or held offstage."
   },
   {
-    label: "short note",
-    description: "One short visitor-facing paragraph that explains the work without exposing private process."
+    label: "gallery note",
+    description: "One short visitor-facing paragraph that explains the work without private process."
   },
   {
-    label: "studio role",
-    description: "What kind of studio contribution the record shows: system, visual direction, writing, creature work, or product-adjacent archive."
+    label: "studio hand",
+    description: "The kind of contribution shown: system, visual direction, writing, creature work, or adjacent archive."
   },
   {
-    label: "preview place",
-    description: "Optional public image, route, or asset path that is already safe to show."
+    label: "preview surface",
+    description: "Optional public image or route-relevant visual material that is already safe to show."
   },
   {
-    label: "public path",
-    description: "Optional public link for deeper context, never a private draft or raw planning file."
+    label: "next doorway",
+    description: "Optional public link for deeper context, never a private draft or planning shelf."
   }
 ];
 
 export const portfolioFeedRules = [
-  "Only publish records with a public-safe title, status, and summary.",
-  "Do not expose raw drafts, private notes, unfinished sketches, or vulnerable process context.",
-  "Mark records as preparing when they need public assets, public links, or a fuller case-study frame.",
-  "Keep Website copy human-facing even when the future Portfolio shelf provides structured material."
+  "Only bring forward pieces with a public-safe title, stage, and short note.",
+  "Keep raw drafts, private notes, unfinished sketches, and vulnerable process offstage.",
+  "Use preparing when a piece still needs public images, public links, or a fuller case-study frame.",
+  "Keep visible copy human-facing even when the future archive shelf provides structured material."
 ];
 
 export const portfolioRecordStates = [

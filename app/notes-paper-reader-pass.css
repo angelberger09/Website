@@ -1,0 +1,287 @@
+/* Notes paper reader pass.
+   Gives the notes index/source sections a visible paper-reader board without inventing posts or changing the Blog contract. */
+
+.notes-reader-board,
+.notes-source-board,
+.notes-state-board {
+  position: relative;
+  display: grid;
+  width: min(100%, 76rem);
+  gap: clamp(1.2rem, 3vw, 2rem);
+  isolation: isolate;
+}
+
+.notes-reader-board {
+  grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
+  align-items: start;
+}
+
+.notes-reader-board::before,
+.notes-source-board::before,
+.notes-state-board::before {
+  position: absolute;
+  inset: -0.8rem -0.9rem -0.75rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 2.4%, 22% 1%, 49% 2.1%, 73% 0.8%, 98.4% 2.6%, 97.2% 38%, 98.6% 72%, 96.8% 98%, 69% 96.7%, 44% 98.8%, 17% 97%, 1.4% 98.4%, 2.8% 56%);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 176, 143, 0.15), transparent 30%),
+    radial-gradient(circle at 82% 74%, rgba(216, 197, 236, 0.18), transparent 34%),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.5), rgba(255, 247, 235, 0.24)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  box-shadow: 0.18rem 0.42rem 0 rgba(47, 38, 35, 0.05), 0 1.2rem 2.2rem rgba(47, 38, 35, 0.1);
+  opacity: 0.92;
+}
+
+.notes-reader-board__copy,
+.notes-source-board__intro {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.notes-reader-board__copy > .eyebrow,
+.notes-reader-board__copy > h1,
+.notes-source-board__intro > .eyebrow,
+.notes-source-board__intro > h1,
+.notes-state-board > .eyebrow,
+.notes-state-board > h1 {
+  width: fit-content;
+  max-width: min(100%, 34rem);
+  margin: 0;
+  clip-path: polygon(2% 7%, 24% 2%, 58% 4%, 98% 1%, 96% 92%, 72% 98%, 31% 96%, 1% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07), 0 0.5rem 1rem rgba(47, 38, 35, 0.09);
+}
+
+.notes-reader-board__copy > .eyebrow,
+.notes-source-board__intro > .eyebrow,
+.notes-state-board > .eyebrow {
+  padding: 0.36rem 0.68rem 0.32rem;
+  transform: rotate(-0.5deg);
+}
+
+.notes-reader-board__copy > h1,
+.notes-source-board__intro > h1,
+.notes-state-board > h1 {
+  padding: clamp(0.65rem, 1.5vw, 0.9rem) clamp(0.8rem, 2vw, 1.2rem);
+  transform: rotate(0.24deg);
+}
+
+.notes-reader-board__copy > p:not(.eyebrow),
+.notes-source-board__intro > p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.notes-source-stamp {
+  width: fit-content;
+  padding: 0.62rem 0.75rem;
+  clip-path: polygon(1% 6%, 98% 1%, 96% 94%, 3% 99%);
+  background: rgba(255, 252, 246, 0.72);
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.notes-paper-stack {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.notes-note-card {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+  min-width: 14rem;
+  padding: clamp(0.95rem, 2vw, 1.2rem);
+  clip-path: polygon(1.5% 2.2%, 26% 0.8%, 58% 2.4%, 98% 1.2%, 96.5% 38%, 98.4% 96.4%, 72% 98.6%, 34% 97.2%, 1% 99%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.74) 58%, rgba(245, 224, 198, 0.35)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  box-shadow: 0.16rem 0.26rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.65rem rgba(47, 38, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.74);
+  color: inherit;
+  text-decoration: none;
+  transform: rotate(-0.45deg);
+}
+
+.notes-note-card::before {
+  position: absolute;
+  inset: 0.65rem 0.75rem auto;
+  height: 4.2rem;
+  content: "";
+  clip-path: polygon(2% 4%, 98% 0, 96% 92%, 4% 100%);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 176, 143, 0.32), transparent 34%),
+    radial-gradient(circle at 76% 66%, rgba(185, 201, 175, 0.34), transparent 36%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.28), rgba(47, 38, 35, 0.1));
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.07);
+  opacity: 0.82;
+}
+
+.notes-note-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-note-card__label {
+  justify-self: start;
+  margin-top: 4.6rem;
+  padding: 0.28rem 0.52rem;
+  clip-path: polygon(2% 12%, 98% 0, 96% 90%, 4% 100%);
+  background: rgba(255, 252, 246, 0.76);
+  color: var(--muted);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notes-note-card strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 0.96;
+}
+
+.notes-note-card small,
+.notes-note-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.notes-note-card em {
+  justify-self: start;
+  color: var(--accent-strong);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.notes-note-card--featured {
+  min-height: 20rem;
+  transform: rotate(0.7deg);
+}
+
+.notes-note-card--featured::before {
+  height: 7rem;
+}
+
+.notes-note-card--featured .notes-note-card__label {
+  margin-top: 7.4rem;
+}
+
+.notes-scroll-strip {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.35rem 0.25rem 0.95rem;
+  scroll-snap-type: x proximity;
+}
+
+.notes-scroll-strip .notes-note-card {
+  flex: 0 0 min(18rem, 84vw);
+  scroll-snap-align: start;
+}
+
+.notes-scroll-strip .notes-note-card:nth-child(2n) {
+  transform: rotate(0.58deg) translateY(0.18rem);
+}
+
+.notes-source-board,
+.notes-state-board {
+  padding-block: 0.6rem;
+}
+
+.notes-source-ledger,
+.notes-state-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+.notes-source-card,
+.notes-fallback-rule {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  padding: clamp(0.9rem, 2vw, 1.12rem);
+  clip-path: polygon(1.4% 2%, 34% 0.8%, 68% 2.2%, 98% 1.2%, 96.8% 96%, 70% 98.8%, 30% 97.4%, 1% 99%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.72) 60%, rgba(245, 224, 198, 0.28)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  box-shadow: 0.12rem 0.22rem 0 rgba(47, 38, 35, 0.07), 0 0.7rem 1.3rem rgba(47, 38, 35, 0.1);
+}
+
+.notes-source-card:nth-child(2) {
+  transform: rotate(-0.42deg) translateY(0.18rem);
+}
+
+.notes-source-card:nth-child(3) {
+  transform: rotate(0.45deg);
+}
+
+.notes-source-card h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.35rem;
+}
+
+.notes-source-card p,
+.notes-fallback-rule p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.notes-source-card .detail-list {
+  margin-top: 0.1rem;
+}
+
+.notes-fallback-rules {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notes-fallback-rule {
+  grid-template-columns: minmax(10rem, 0.46fr) minmax(0, 1fr);
+  align-items: center;
+  padding: 0.78rem 0.92rem;
+}
+
+.notes-fallback-rule span {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.notes-support-strip {
+  display: grid;
+  width: min(100%, 76rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+@media (max-width: 860px) {
+  .notes-reader-board {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-source-ledger,
+  .notes-state-list,
+  .notes-support-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-fallback-rule {
+    grid-template-columns: 1fr;
+  }
+}

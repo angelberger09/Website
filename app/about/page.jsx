@@ -13,6 +13,8 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
   marker: ["Front room", "Tone", "Edges", "Motion"][index] ?? "Studio"
 }));
 
+const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
+
 export default function AboutPage() {
   return (
     <main id="top" className="site-shell page-layout about-paper-room">
@@ -37,7 +39,7 @@ export default function AboutPage() {
         <div className="about-room-map" aria-label="Soft Strange Studio orientation notes">
           {aboutSections.map((section, index) => (
             <article className="about-room-piece" key={section.title}>
-              <span className="about-room-piece__index">0{index + 1}</span>
+              <span className="about-room-piece__path-label">{aboutRoomLabels[index] ?? "Studio note"}</span>
               <span className="about-room-piece__eyebrow">{section.eyebrow}</span>
               <h2>{section.title}</h2>
               <p>{section.description}</p>

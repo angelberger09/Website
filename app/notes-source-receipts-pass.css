@@ -1,0 +1,120 @@
+/* Notes source receipts pass.
+   Turns the Notes source-readiness ledger and fallback rules into visible paper/photo receipt slips while preserving the public Blog shelf contract. */
+
+.notes-source-receipt-ledger {
+  align-items: stretch;
+}
+
+.notes-source-receipt {
+  align-content: start;
+  gap: 0.7rem;
+  min-height: 20rem;
+  padding-top: clamp(1rem, 2vw, 1.15rem);
+}
+
+.notes-source-receipt__photo,
+.notes-fallback-receipt__photo {
+  position: relative;
+  display: grid;
+  min-height: clamp(5.8rem, 13vw, 7.2rem);
+  place-items: end start;
+  overflow: hidden;
+  padding: 0.75rem;
+  clip-path: polygon(2% 5%, 28% 1%, 64% 4%, 98% 1%, 96% 90%, 78% 97%, 36% 94%, 3% 99%);
+  background:
+    radial-gradient(circle at 22% 25%, rgba(255, 176, 143, 0.4), transparent 34%),
+    radial-gradient(circle at 75% 68%, rgba(185, 201, 175, 0.38), transparent 38%),
+    linear-gradient(136deg, rgba(216, 197, 236, 0.32), rgba(255, 252, 246, 0.62) 54%, rgba(47, 38, 35, 0.11)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08), 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07);
+}
+
+.notes-source-receipt__photo span,
+.notes-fallback-receipt__photo span {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.28rem 0.55rem 0.24rem;
+  clip-path: polygon(2% 14%, 98% 0, 96% 88%, 5% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.72)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.07);
+  color: rgba(47, 38, 35, 0.74);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.notes-source-receipt__copy {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.notes-source-receipt__copy > .eyebrow {
+  justify-self: start;
+  margin: 0;
+  padding: 0.28rem 0.52rem 0.24rem;
+  clip-path: polygon(3% 10%, 96% 0, 98% 88%, 5% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.7)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.notes-source-receipt:nth-child(2n) .notes-source-receipt__photo {
+  transform: rotate(-0.52deg) translateY(0.05rem);
+}
+
+.notes-source-receipt:nth-child(2n + 1) .notes-source-receipt__photo {
+  transform: rotate(0.45deg);
+}
+
+.notes-fallback-receipts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.notes-fallback-receipt {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 0.55rem;
+  min-height: 13rem;
+}
+
+.notes-fallback-receipt__photo {
+  min-height: 4.8rem;
+  padding: 0.6rem;
+}
+
+.notes-fallback-receipt__label {
+  width: fit-content;
+  padding: 0.24rem 0.5rem;
+  clip-path: polygon(3% 12%, 97% 0, 94% 90%, 5% 100%);
+  background:
+    linear-gradient(126deg, rgba(255, 176, 143, 0.27), rgba(255, 247, 235, 0.7)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 840px) {
+  .notes-source-receipt-ledger,
+  .notes-fallback-receipts {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-source-receipt,
+  .notes-fallback-receipt {
+    min-height: auto;
+  }
+}

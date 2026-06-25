@@ -15,6 +15,7 @@ import './store-availability-board-pass.css';
 import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
 import './store-checklist-collage-pass.css';
+import './notes-paper-reader-pass.css';
 import './performance-budget-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 

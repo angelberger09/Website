@@ -62,10 +62,18 @@ export default function StorePage() {
             <article className="store-shot-card" key={lane.title}>
               <div className="store-shot-card__image" aria-hidden="true">
                 <span className="store-shot-card__mark">{String(index + 1).padStart(2, "0")}</span>
+                <div className="store-shot-card__staged-pieces">
+                  <span />
+                  <span />
+                  <span />
+                </div>
               </div>
               <div className="store-shot-card__caption">
                 <span>{lane.eyebrow}</span>
                 <p>{lane.title}</p>
+                <ul className="store-shot-card__materials" aria-label={`${lane.title} preview material`}>
+                  {lane.details.slice(0, 2).map((detail) => <li key={detail}>{detail}</li>)}
+                </ul>
               </div>
             </article>
           ))}

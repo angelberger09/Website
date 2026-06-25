@@ -34,6 +34,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 - The shared `NextStepBand` now uses `continuity-paper-trail` / `continuity-paper-step` markup in `app/next-step-band.jsx` plus `app/continuity-paper-trail-pass.css`, replacing the remaining broad `link-card wide-card` / `pathway-link` continuity surface with a visible paper trail used by every major route.
 - The shared footer now uses `studio-footer--paper`, `studio-footer__mark`, and `studio-footer__trail` markup in `app/site-chrome.jsx` plus `app/footer-paper-trail-pass.css`, so the bottom chrome reads as a small paper trail with clipped nav slips instead of a plain text/nav row.
+- The shared footer studio mark now includes a `studio-footer__mark-photo` abstract paper/photo center in `app/site-chrome.jsx` plus `app/footer-studio-mark-photo-pass.css`, so the footer identity is content-bearing like the route slips instead of remaining mostly text-only.
 - The shared header now renders its direct page links through `app/site-header-nav.jsx`, which marks the current room with `aria-current="page"`; `app/header-active-room-pass.css` turns that active route into a stronger paper tab marker without adding a dropdown, route numbers, helper text, or heavy effects.
 - The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
 - The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
@@ -113,6 +114,7 @@ Store growth should use public-readiness gates before adding live commerce links
 - `/Website/blog/` remains a compatibility route for the Notes reader.
 - The shared header now marks the current public room in the direct navigation as a stronger paper tab so visitors can tell which route they are in without adding a separate menu control or explanatory helper copy.
 - The shared footer appears after every route and now uses a clipped paper mark plus placed nav slips so the bottom of each room stays in the paper/collage system instead of ending as a plain text row.
+- The shared footer mark now includes an honest abstract paper/photo center, making the footer identity itself a small content-bearing studio card while the nav slips remain direct labels.
 
 ## Do not store here
 

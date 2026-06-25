@@ -1,0 +1,83 @@
+/* Store promise photo pass. Adds honest abstract photo centers to the Store promise notes without implying live inventory. */
+
+.store-promise-note {
+  min-height: 18rem;
+  padding-top: clamp(7.25rem, 13vw, 8.1rem);
+  overflow: hidden;
+}
+
+.store-promise-note::after {
+  position: absolute;
+  top: 1.18rem;
+  right: 1rem;
+  left: 1rem;
+  height: clamp(4.55rem, 9vw, 5.65rem);
+  z-index: 0;
+  content: "";
+  clip-path: polygon(2% 5%, 28% 1%, 59% 4%, 98% 2%, 96% 86%, 74% 97%, 42% 92%, 4% 98%);
+  background:
+    linear-gradient(118deg, rgba(47, 38, 35, 0.08), transparent 29%),
+    radial-gradient(circle at 28% 32%, rgba(185, 201, 175, 0.5), transparent 30%),
+    radial-gradient(circle at 74% 62%, rgba(216, 197, 236, 0.36), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.92), rgba(245, 224, 198, 0.54)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, cover, 14rem 14rem, 22rem 22rem;
+  box-shadow:
+    0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0.38rem 0.64rem 1.1rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.store-promise-note:nth-child(1)::after {
+  transform: rotate(0.72deg);
+}
+
+.store-promise-note:nth-child(2)::after {
+  transform: rotate(-0.58deg);
+  background:
+    linear-gradient(122deg, rgba(47, 38, 35, 0.075), transparent 32%),
+    radial-gradient(circle at 68% 30%, rgba(245, 224, 198, 0.58), transparent 31%),
+    radial-gradient(circle at 26% 70%, rgba(185, 201, 175, 0.38), transparent 36%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.9), rgba(216, 197, 236, 0.28)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, cover, 14rem 14rem, 22rem 22rem;
+}
+
+.store-promise-note:nth-child(3)::after {
+  transform: rotate(0.38deg);
+  background:
+    linear-gradient(118deg, rgba(47, 38, 35, 0.07), transparent 35%),
+    radial-gradient(circle at 33% 72%, rgba(216, 197, 236, 0.42), transparent 32%),
+    radial-gradient(circle at 78% 34%, rgba(185, 201, 175, 0.44), transparent 33%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.91), rgba(245, 224, 198, 0.5)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, cover, 14rem 14rem, 22rem 22rem;
+}
+
+.store-promise-note > * {
+  position: relative;
+  z-index: 1;
+}
+
+.store-promise-note span {
+  margin-top: 0;
+  background: rgba(255, 252, 246, 0.76);
+  box-shadow: 0.08rem 0.16rem 0.34rem rgba(47, 38, 35, 0.08);
+}
+
+@media (max-width: 680px) {
+  .store-promise-note {
+    min-height: auto;
+    padding-top: 7.15rem;
+  }
+
+  .store-promise-note::after,
+  .store-promise-note:nth-child(1)::after,
+  .store-promise-note:nth-child(2)::after,
+  .store-promise-note:nth-child(3)::after {
+    transform: none;
+  }
+}

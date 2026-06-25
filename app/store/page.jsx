@@ -49,6 +49,7 @@ const storeGalleryItems = [
       "A store item should only move into an available state after the public source, delivery path, and listing context are ready."
   }
 ];
+const storePathCards = pageContinuity.store.steps;
 
 export default function StorePage() {
   return (
@@ -257,6 +258,33 @@ export default function StorePage() {
               <h2>{promise.title}</h2>
               <p>{promise.description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="store-path-photo-board" aria-labelledby="store-path-photo-title">
+        <div className="store-path-photo-board__intro">
+          <p className="eyebrow">Shop path</p>
+          <h1 id="store-path-photo-title">The store still points back to the studio.</h1>
+          <p>
+            Since the shelf is not live inventory, the strongest next steps are the
+            rooms that explain where the pieces come from and what kind of studio is
+            holding them.
+          </p>
+        </div>
+        <div className="store-path-photo-grid" aria-label="Store next room photo cards">
+          {storePathCards.map((step, index) => (
+            <a className="store-path-photo-card" href={step.href} key={step.href}>
+              <div className="store-path-photo-card__image" aria-hidden="true">
+                <b>{step.eyebrow}</b>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <div className="store-path-photo-card__copy">
+                <span>{step.eyebrow}</span>
+                <h2>{step.title}</h2>
+                <p>{step.description}</p>
+              </div>
+            </a>
           ))}
         </div>
       </section>

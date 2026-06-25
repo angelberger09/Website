@@ -1,0 +1,74 @@
+/* Footer studio mark photo pass.
+   Makes the shared footer identity mark a content-bearing paper/photo piece. */
+
+.studio-footer__mark {
+  display: grid;
+  grid-template-columns: minmax(3.15rem, 3.9rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.72rem;
+}
+
+.studio-footer__mark-photo {
+  position: relative;
+  display: grid;
+  min-height: 3.05rem;
+  place-items: center;
+  overflow: hidden;
+  clip-path: polygon(5% 4%, 92% 1%, 99% 18%, 95% 92%, 72% 98%, 9% 94%, 1% 72%);
+  background:
+    radial-gradient(circle at 26% 24%, rgba(255, 252, 246, 0.72), transparent 1.42rem),
+    radial-gradient(circle at 72% 76%, rgba(255, 176, 143, 0.5), transparent 1.8rem),
+    linear-gradient(145deg, rgba(47, 38, 35, 0.86), rgba(111, 86, 75, 0.74));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.2),
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.1);
+}
+
+.studio-footer__mark-photo::before {
+  position: absolute;
+  inset: 0.32rem 0.28rem auto;
+  height: 0.18rem;
+  content: "";
+  clip-path: polygon(1% 24%, 34% 4%, 68% 18%, 98% 0, 96% 76%, 62% 100%, 24% 82%, 0 96%);
+  background: rgba(255, 252, 246, 0.3);
+}
+
+.studio-footer__mark-photo b {
+  color: rgba(255, 252, 246, 0.95);
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 0 rgba(47, 38, 35, 0.3);
+}
+
+.studio-footer__mark-photo em {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.24rem;
+  max-width: calc(100% - 0.5rem);
+  padding: 0.1rem 0.22rem;
+  clip-path: polygon(2% 8%, 98% 2%, 95% 88%, 7% 96%);
+  background: rgba(255, 252, 246, 0.84);
+  color: rgba(58, 45, 42, 0.88);
+  font-size: 0.42rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.studio-footer__mark-copy {
+  display: block;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .studio-footer__mark {
+    grid-template-columns: minmax(2.8rem, 3.3rem) minmax(0, 1fr);
+  }
+
+  .studio-footer__mark-photo {
+    min-height: 2.65rem;
+  }
+}

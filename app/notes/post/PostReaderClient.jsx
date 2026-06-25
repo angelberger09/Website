@@ -123,6 +123,12 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
             Individual notes open as calm studio sheets so the writing stays connected
             to the same public room path as the rest of Soft Strange Studio.
           </p>
+          <div className="notes-post-desk__photo-card" aria-hidden="true">
+            <span className="notes-post-desk__photo-kicker">Reader room</span>
+            <strong>Public note</strong>
+            <i />
+            <small>writing shelf</small>
+          </div>
           <a className="notes-post-back" href={backHref}>{backLabel}</a>
         </div>
 

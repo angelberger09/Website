@@ -1,0 +1,206 @@
+/* Store promise collage pass. Turns the closing promise section into placed paper notes instead of another embedded card grid. */
+
+.store-promise-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(1.1rem, 3vw, 2.15rem);
+  align-items: center;
+  width: min(100%, 76rem);
+  isolation: isolate;
+}
+
+.store-promise-board::before {
+  position: absolute;
+  inset: -0.95rem -1.1rem -0.7rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 4%, 18% 1.5%, 45% 3.4%, 71% 0.9%, 98% 2.6%, 97.4% 34%, 99% 69%, 96% 97%, 73% 96%, 45% 99%, 16% 97.5%, 1.2% 98.6%, 2.2% 58%);
+  background:
+    radial-gradient(circle at 16% 22%, rgba(185, 201, 175, 0.2), transparent 31%),
+    radial-gradient(circle at 82% 70%, rgba(216, 197, 236, 0.18), transparent 34%),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.46), rgba(255, 247, 235, 0.22)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 22rem 22rem, 34rem 34rem;
+  filter: drop-shadow(0.26rem 0.78rem 1.65rem rgba(47, 38, 35, 0.12));
+  opacity: 0.94;
+}
+
+.store-promise-board::after {
+  position: absolute;
+  inset: 2.2rem 0.5rem 1.3rem 42%;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(0 9%, 24% 4%, 50% 9%, 76% 5%, 100% 11%, 98% 87%, 72% 93%, 48% 88%, 22% 95%, 1% 86%);
+  background:
+    linear-gradient(102deg, transparent 0 16%, rgba(47, 38, 35, 0.055) 17%, transparent 18% 52%, rgba(47, 38, 35, 0.04) 53%, transparent 55%),
+    linear-gradient(178deg, rgba(255, 255, 255, 0.22), rgba(47, 38, 35, 0.045));
+  opacity: 0.62;
+  transform: rotate(0.38deg);
+  pointer-events: none;
+}
+
+.store-promise-board__intro {
+  display: grid;
+  align-content: center;
+  gap: 0.85rem;
+}
+
+.store-promise-board__intro > .eyebrow,
+.store-promise-board__intro > h1,
+.store-promise-board__intro > p {
+  width: fit-content;
+}
+
+.store-promise-board__intro > .eyebrow,
+.store-promise-board__intro > h1 {
+  display: block;
+  border-radius: 0;
+  clip-path: polygon(2% 7%, 24% 2%, 58% 4%, 98% 1%, 96% 92%, 72% 98%, 31% 96%, 1% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.74) 58%, rgba(185, 201, 175, 0.22)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 18rem 18rem, 30rem 30rem;
+  box-shadow:
+    0.22rem 0.38rem 0 rgba(47, 38, 35, 0.08),
+    0.42rem 0.72rem 1.35rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.store-promise-board__intro > .eyebrow {
+  margin: 0;
+  padding: 0.38rem 0.7rem 0.34rem;
+  transform: rotate(-0.52deg);
+}
+
+.store-promise-board__intro > h1 {
+  max-width: 28rem;
+  margin: 0;
+  padding: clamp(0.65rem, 1.6vw, 0.95rem) clamp(0.82rem, 2vw, 1.25rem);
+  transform: rotate(0.26deg);
+}
+
+.store-promise-board__intro > p {
+  max-width: 34rem;
+  margin: 0;
+  padding: 0.72rem 0.92rem;
+  clip-path: polygon(1.5% 5%, 29% 1%, 64% 3%, 98.5% 2%, 96.4% 94%, 75% 97%, 42% 95.5%, 2% 99%);
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.72;
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.8), rgba(255, 247, 235, 0.56)),
+    var(--grain-image);
+  background-size: cover, 17rem 17rem;
+  box-shadow: 0.2rem 0.34rem 0.78rem rgba(47, 38, 35, 0.09);
+  transform: rotate(-0.18deg);
+}
+
+.store-promise-note-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.78rem, 2vw, 1.15rem);
+  align-items: stretch;
+}
+
+.store-promise-note {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.52rem;
+  min-height: 13.5rem;
+  padding: clamp(0.9rem, 2vw, 1.15rem);
+  border-radius: 0;
+  clip-path: polygon(2% 3%, 25% 0.8%, 56% 2.6%, 98% 1.2%, 96.8% 36%, 99% 96%, 72% 98.4%, 35% 96.8%, 1.5% 99%);
+  background:
+    linear-gradient(146deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.66) 62%, rgba(245, 224, 198, 0.2)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 38rem 38rem;
+  box-shadow:
+    -0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0.34rem 0.62rem 1.15rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+}
+
+.store-promise-note::before {
+  position: absolute;
+  top: 0.52rem;
+  left: 50%;
+  width: 3.8rem;
+  height: 0.64rem;
+  content: "";
+  clip-path: polygon(2% 12%, 38% 0, 99% 10%, 96% 88%, 58% 100%, 0 82%);
+  background: rgba(255, 252, 246, 0.58);
+  box-shadow: 0 0.18rem 0.42rem rgba(47, 38, 35, 0.1);
+  transform: translateX(-50%) rotate(-1.8deg);
+}
+
+.store-promise-note:nth-child(1) {
+  transform: rotate(-1.1deg) translateY(0.18rem);
+}
+
+.store-promise-note:nth-child(2) {
+  transform: rotate(0.68deg) translateY(-0.24rem);
+}
+
+.store-promise-note:nth-child(3) {
+  transform: rotate(-0.4deg) translateY(0.28rem);
+}
+
+.store-promise-note span {
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0.28rem 0.45rem 0.24rem;
+  clip-path: polygon(1% 8%, 28% 2%, 62% 4%, 99% 1%, 97% 90%, 72% 98%, 32% 94%, 1% 100%);
+  color: var(--muted);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.58);
+}
+
+.store-promise-note h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 0.98;
+}
+
+.store-promise-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 860px) {
+  .store-promise-board {
+    grid-template-columns: 1fr;
+  }
+
+  .store-promise-board::after {
+    inset: auto 0.6rem 1.2rem 0.6rem;
+    height: 45%;
+  }
+}
+
+@media (max-width: 680px) {
+  .store-promise-note-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .store-promise-note,
+  .store-promise-note:nth-child(1),
+  .store-promise-note:nth-child(2),
+  .store-promise-note:nth-child(3),
+  .store-promise-board__intro > .eyebrow,
+  .store-promise-board__intro > h1,
+  .store-promise-board__intro > p {
+    transform: none;
+  }
+}

@@ -40,6 +40,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store promise section now uses `store-promise-board` / `store-promise-note` markup in `app/store/page.jsx` plus `app/store-promise-collage-pass.css`, replacing another generic embedded `DetailCard` grid with taped promise notes inside a paper-field board while preserving the honest no-fake-inventory copy.
 - The Store launch checklist now uses `store-checklist-collage` / `store-checklist-note` markup in `app/store/page.jsx` plus `app/store-checklist-collage-pass.css`, replacing the remaining generic `DetailCard` checklist grid with taped readiness notes while preserving the honest launch requirements.
 - The Store preview board now uses `store-shot-card__staged-pieces` and `store-shot-card__materials` in `app/store/page.jsx` plus `app/store-preview-collage-pass.css`, making existing Store lane data read more like staged paper/photo content while preserving the no-fake-product boundary.
+- The Store future feed contract now uses `store-feed-ledger-board`, `store-feed-ledger-card`, and `store-feed-rule-tape` in `app/store/page.jsx` plus `app/store-feed-contract-pass.css`, replacing the remaining generic field/rule lists with a taped paper ledger board while preserving the public-safe future data contract.
 
 ## Active direction
 

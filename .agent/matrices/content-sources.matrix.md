@@ -9,9 +9,9 @@
 | DATA-005 | Portfolio Feed | `angelberger09/Portfolio` | TBD | JSON feed | future PAGE-004 | future |
 | DATA-006 | Store Feed | `angelberger09/Store` | TBD | JSON feed | future PAGE-005 | future |
 | DATA-007 | Store Readiness Data | `angelberger09/Website` | `app/store-readiness.js` | JS data | PAGE-005 | active |
-| DATA-008 | Store Feed Contract | `angelberger09/Website` | `app/store-readiness.js` | JS data contract | PAGE-005, future Store feed | active |
-| DATA-009 | Blog Source Readiness Data | `angelberger09/Website` | `app/source-readiness.js` | JS data contract | PAGE-003, PAGE-003B, DATA-003 | active |
-| DATA-010 | Portfolio Feed Contract | `angelberger09/Website` | `app/portfolio-feed-contract.js` | JS data contract | PAGE-004, future Portfolio feed | active |
+| DATA-008 | Store Future Shelf Shape | `angelberger09/Website` | `app/store-readiness.js` | Public card-part rules | PAGE-005, future Store shelf | active |
+| DATA-009 | Blog Writing Shelf Shape | `angelberger09/Website` | `app/source-readiness.js` | Public note-shape rules | PAGE-003, PAGE-003B, DATA-003 | active |
+| DATA-010 | Portfolio Future Archive Shelf | `angelberger09/Website` | `app/portfolio-feed-contract.js` | Public archive-card rules | PAGE-004, future Portfolio shelf | active |
 
 ## Fallback rule
 
@@ -27,12 +27,12 @@ Future connected feeds should expose only public-safe fields that the Website ne
 
 ## Blog source contract rule
 
-The Notes reader should name the expected Blog feed shape in the Website before deeper automation depends on it, but the visible labels should stay human-facing: public writing shelf, published notes, readable title/date/context, public profile, note body, and quiet backup path.
+The Notes reader should keep the Blog connection explicit before deeper automation depends on it, but the visible labels should stay human-facing: public writing shelf, published notes, readable title/date/context, public profile, note body, and quiet backup shelf.
 
 ## Portfolio source contract rule
 
-The Portfolio page should name the expected future Portfolio feed shape before deeper archive automation depends on it, but the visible ledger labels should stay visitor-facing: public id, project name, public state, short note, studio role, preview place, public path, and staged record states.
+The Portfolio page should name the expected future archive shelf shape before deeper archive automation depends on it, but the visible ledger labels and section copy should stay visitor-facing: archive shelf, public-facing cards, framed material, card parts, public rhythm, preview surface, and staged record states.
 
 ## Store source contract rule
 
-The Store page should name the expected future Store feed shape before live shop links exist, but the visible ledger labels should stay visitor-facing: public id, piece name, availability, short note, preview place, and delivery note.
+The Store page should name the expected future Store shelf shape before live shop links exist, but the visible ledger labels and section copy should stay visitor-facing: future shelf shape, public handle, piece name, availability, short note, preview place, delivery note, and calm public parts.

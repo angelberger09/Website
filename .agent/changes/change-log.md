@@ -504,3 +504,23 @@ The current `app/paper-card-pass.css` technically removed rounded corners, but i
 - DESIGN-024
 - METRIC-021
 - METRIC-023
+
+## 2026-06-25 01:39 ET — Store visual preview board
+
+### Changed
+
+- Added a `store-visual-board` section to `app/store/page.jsx` using the first three existing Store lanes from `app/site-data.js`.
+- Added `store-shot-card` CSS in `app/store-paper-snippet-pass.css` so the lanes read as abstract image-like paper/photo surfaces with short captions.
+- Updated `.agent/memory.md`, `.agent/matrices/pages.matrix.md`, `.agent/matrices/components.matrix.md`, `.agent/matrices/design-language.matrix.md`, `.agent/matrices/quality-metrics.matrix.md`, and `.agent/matrices/semantic-index.md`.
+
+### Why
+
+`FEEDBACK-017` / `DESIGN-031` / `METRIC-030` asked for photo/image-like surfaces to carry more content structure where honest. The Store page was still mostly text cards and paper strips. This pass adds one public-safe preview board that supports the visual direction without inventing product photography, live listings, or completed inventory.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DESIGN-031
+- FEEDBACK-017
+- METRIC-030

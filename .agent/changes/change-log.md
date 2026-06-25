@@ -318,3 +318,37 @@ The footer had already joined the paper/collage system, but its numbered markers
 - LESSON-020
 - METRIC-014
 - METRIC-019
+
+## 2026-06-25 07:10 ET — Human-facing source copy pass
+
+### Changed
+
+- Humanized Homepage source/door copy in `app/page.jsx` and `app/site-data.js`.
+- Humanized Notes intro, source stamp, source-readiness cards, fallback rules, and support-note copy in `app/notes/NotesPageClient.jsx`, `app/source-readiness.js`, and `app/site-data.js`.
+- Softened Portfolio and Store data-copy strings in `app/site-data.js` and `app/store-readiness.js`.
+- Updated public memory, pages matrix, components matrix, and a dedicated change record.
+
+### Why
+
+The active copy lessons were partially satisfied: the interface was filled and public-safe, but several rendered surfaces still exposed implementation words such as repo, raw feed, and Website-owned. The visible Website needed warmer studio-room language while preserving the same truthful public source contracts.
+
+### Related items
+
+- PAGE-001
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-006
+- COMP-008
+- DATA-003
+- DATA-007
+- DATA-008
+- DATA-009
+- DATA-010
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- METRIC-001
+- METRIC-002
+- METRIC-016

@@ -22,13 +22,14 @@ The receipts use public-safe existing project rules:
 - trust rule: no fake availability,
 - opening path: link directly only when a public path exists.
 
-The Store intro copy was also softened from readiness/filler language into warmer room/preparation language.
+The Store intro copy was also softened from readiness/filler language into warmer room/preparation language. The final performance-budget pass now covers the new receipt rail so the visible paper treatment stays cheap and consistent with newer render-budget rules.
 
 ## Public source files changed
 
 - `app/store/page.jsx`
 - `app/store-entry-receipts-pass.css`
 - `app/layout.jsx`
+- `app/performance-budget-pass.css`
 
 ## Agent files changed afterward
 
@@ -56,6 +57,7 @@ The Store intro copy was also softened from readiness/filler language into warme
 - LESSON-024
 - LESSON-026
 - METRIC-002
+- METRIC-007
 - METRIC-017
 - METRIC-018
 - METRIC-021
@@ -67,4 +69,4 @@ The Store intro copy was also softened from readiness/filler language into warme
 
 ## Future rule
 
-When a route has rich paper/collage content lower on the page, the first post-intro surface should still give visitors an immediate human-facing cue about how to read the room. Use small paper snippets or receipts instead of burying trust rules in broad paragraphs.
+When a route has rich paper/collage content lower on the page, the first post-intro surface should still give visitors an immediate human-facing cue about how to read the room. Use small paper snippets or receipts instead of burying trust rules in broad paragraphs, and fold any new repeated paper pieces into the render budget in the same pass.

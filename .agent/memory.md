@@ -10,6 +10,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The personal header identity is `Angel Berger`.
 - The current top-level page destinations are About, Notes, Portfolio, and Store.
 - The Notes page renders published public Blog repo content inside the Website shell.
+- The Notes page now also includes a source-readiness section that names the Blog feed contract, published-record needs, reader file paths, and fallback behavior in visitor-facing language.
 - Individual Notes/Blog post routes should remain connected to the wider studio path after reading, not behave like dead-end article views.
 - The Portfolio page now includes archive readiness lanes so public work can be marked as ready now, preparing next, or held offstage without exposing raw drafts.
 - The Store page now includes a launch checklist and staged availability states so future products can move from preparing to previewing to available without fake inventory.
@@ -48,6 +49,8 @@ Page fill should turn every route into a useful public room: homepage orientatio
 
 Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes, including after individual note reading.
 
+Notes growth should keep the Blog connection explicit but non-technical: show the feed contract, published-record expectations, reader file needs, and fallback rules as a calm readiness layer rather than exposing raw endpoints to visitors.
+
 Portfolio growth should use public-readiness lanes before adding deeper case studies: show work that is already framed, prepare records that need public assets or source links, and keep raw/private drafts offstage.
 
 Store growth should use public-readiness gates before adding live commerce links: name the product story, provide honest preview material, state delivery/availability clearly, and only mark items available when a public source path exists. The future Store feed should expose stable public fields such as slug, title, status, summary, preview, and delivery so the Website can render calm cards without exposing raw planning.
@@ -56,7 +59,7 @@ Store growth should use public-readiness gates before adding live commerce links
 
 - `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path.
 - `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio.
-- `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, and routes visitors toward portfolio or home.
+- `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, names Blog source-readiness expectations, and routes visitors toward portfolio or home.
 - `/Website/notes/post/?slug=...` renders individual public notes inside the Website reader and offers post-specific next-step continuity back to notes or onward to portfolio.
 - `/Website/portfolio/` gives the first public project/archive cards, archive readiness lanes, archive lanes, a publishing rhythm, and related routes into notes or store.
 - `/Website/store/` gives future product lanes without inventing live listings, states the trust rules for future shop links, adds launch-readiness gates, availability states, a future Store feed contract, and routes visitors back into portfolio or about.

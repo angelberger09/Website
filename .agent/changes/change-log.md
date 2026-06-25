@@ -353,8 +353,6 @@ The active copy lessons were partially satisfied: the interface was filled and p
 - METRIC-002
 - METRIC-016
 
-## 2026-06-25 07:51 ET — Visitor-facing source copy refinement
-
 ### Changed
 
 - Replaced remaining visitor-facing source/mechanics language on the homepage with warmer room/back-room copy.
@@ -525,3 +523,34 @@ The About page had strong paper orientation and contact-sheet sections, but the 
 - METRIC-023
 - METRIC-029
 - METRIC-030
+
+## 2026-06-25 19:40 ET — Store path direct paper cues
+
+### Changed
+
+- Replaced the large decorative numeric marker inside local Store path photo cards with a direct `Open room` paper cue.
+- Added `app/store-path-direct-labels-pass.css` so the cue reads as a clipped paper label rather than oversized display numbering.
+- Imported the pass from `app/layout.jsx` after the Store path photo styling.
+- Updated pages and quality metrics matrices plus this change log.
+
+### Why
+
+The Store path photo board was already a useful local next-room section, but the visual center still used decorative numbers on navigation cards. Current direct-label lessons favor clear destination cues without numeric markers, especially on route/path surfaces. This pass keeps the photo-card structure while making the navigational cue more direct and paper-like.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DESIGN-015
+- DESIGN-016
+- DESIGN-019
+- DESIGN-022
+- DESIGN-030
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- METRIC-014
+- METRIC-017
+- METRIC-021
+- METRIC-029

@@ -78,8 +78,14 @@ export function StudioFooter() {
     <footer className="studio-footer studio-footer--paper" aria-label="Site footer">
       <div className="studio-footer__mark">
         <span className="studio-footer__pin" aria-hidden="true" />
-        <p>Soft Strange Studio</p>
-        <small>Public rooms, gently connected.</small>
+        <span className="studio-footer__mark-photo" aria-hidden="true">
+          <b>SSS</b>
+          <em>public rooms</em>
+        </span>
+        <span className="studio-footer__mark-copy">
+          <p>Soft Strange Studio</p>
+          <small>Public rooms, gently connected.</small>
+        </span>
       </div>
       <FooterNav />
     </footer>

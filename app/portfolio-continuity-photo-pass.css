@@ -1,0 +1,139 @@
+/* Portfolio continuity photo pass.
+   Turns the shared Portfolio next-step trail into a local archive/photo path without changing shared continuity markup. */
+
+body:has(.portfolio-archive-board) .continuity-paper-trail {
+  position: relative;
+  overflow: visible;
+  padding-block: clamp(1.35rem, 3vw, 2.35rem);
+  isolation: isolate;
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail::before {
+  position: absolute;
+  inset: 0.2rem -0.65rem 0.45rem;
+  z-index: -2;
+  content: "";
+  clip-path: polygon(1% 10%, 21% 3%, 53% 6%, 84% 1%, 99% 9%, 97% 88%, 80% 99%, 47% 94%, 14% 100%, 0 90%);
+  background:
+    radial-gradient(circle at 22% 20%, rgba(216, 197, 236, 0.2), transparent 28%),
+    radial-gradient(circle at 80% 78%, rgba(185, 201, 175, 0.2), transparent 30%),
+    linear-gradient(126deg, rgba(255, 252, 246, 0.72), rgba(245, 224, 198, 0.32)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+  box-shadow: 0 1rem 2.25rem rgba(47, 38, 35, 0.1), inset 0 0 0 1px rgba(47, 38, 35, 0.055);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > .eyebrow,
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > h1,
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > p {
+  width: fit-content;
+  max-width: min(100%, 45rem);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.76) 62%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.14rem 0.22rem 0 rgba(47, 38, 35, 0.07), 0 0.58rem 1rem rgba(47, 38, 35, 0.09);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > .eyebrow {
+  padding: 0.32rem 0.62rem 0.28rem;
+  clip-path: polygon(3% 12%, 38% 0, 94% 5%, 99% 82%, 72% 100%, 0 88%);
+  transform: rotate(-0.45deg);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > h1 {
+  padding: clamp(0.58rem, 1.5vw, 0.86rem) clamp(0.82rem, 2vw, 1.2rem);
+  clip-path: polygon(2% 7%, 28% 1%, 61% 4%, 98% 1%, 97% 91%, 74% 98%, 28% 96%, 1% 100%);
+  transform: rotate(0.2deg);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail__copy > p {
+  padding: 0.72rem 0.88rem;
+  clip-path: polygon(1% 8%, 35% 2%, 69% 5%, 99% 0, 96% 92%, 52% 100%, 4% 94%);
+  transform: rotate(-0.15deg);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-trail__steps {
+  align-items: stretch;
+  gap: clamp(0.95rem, 2vw, 1.45rem);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step {
+  grid-template-rows: auto auto auto 1fr;
+  min-height: 19rem;
+  padding-top: clamp(8.4rem, 18vw, 10.6rem);
+  clip-path: polygon(2% 3%, 32% 0, 69% 2%, 99% 1%, 97% 91%, 86% 100%, 6% 97%, 0 15%);
+  background:
+    linear-gradient(154deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.76) 58%, rgba(245, 224, 198, 0.34)),
+    var(--fine-scratch-image),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem, 18rem 18rem;
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step:nth-of-type(2n) {
+  clip-path: polygon(0 7%, 24% 1%, 70% 0, 99% 4%, 96% 98%, 58% 96%, 8% 100%, 2% 85%);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step::before {
+  position: absolute;
+  top: clamp(0.85rem, 2vw, 1.1rem);
+  left: clamp(0.82rem, 2vw, 1.08rem);
+  right: clamp(0.82rem, 2vw, 1.08rem);
+  height: clamp(6.7rem, 13vw, 8.3rem);
+  content: "";
+  clip-path: polygon(1% 4%, 96% 0, 100% 90%, 93% 100%, 0 96%);
+  background:
+    radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.6), transparent 20%),
+    radial-gradient(circle at 76% 72%, rgba(216, 197, 236, 0.34), transparent 29%),
+    linear-gradient(135deg, rgba(55, 43, 35, 0.86), rgba(161, 130, 96, 0.5) 54%, rgba(216, 197, 236, 0.32)),
+    var(--soft-scratch-image),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.2), inset 0 -1.45rem 2.25rem rgba(47, 35, 25, 0.25), 0.16rem 0.24rem 0.55rem rgba(47, 38, 35, 0.12);
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step:nth-of-type(2n)::before {
+  background:
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.58), transparent 22%),
+    radial-gradient(circle at 20% 76%, rgba(185, 201, 175, 0.38), transparent 30%),
+    linear-gradient(142deg, rgba(48, 57, 45, 0.86), rgba(116, 132, 96, 0.5) 55%, rgba(255, 176, 143, 0.32)),
+    var(--soft-scratch-image),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem, 18rem 18rem;
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step::after {
+  position: absolute;
+  top: clamp(1.25rem, 2.6vw, 1.55rem);
+  right: clamp(1.18rem, 2.5vw, 1.55rem);
+  width: 3.25rem;
+  height: 2rem;
+  content: "";
+  clip-path: polygon(0 18%, 48% 0, 100% 16%, 86% 100%, 10% 88%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.33), rgba(255, 252, 246, 0.06)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  opacity: 0.78;
+}
+
+body:has(.portfolio-archive-board) .continuity-paper-step__eyebrow {
+  position: absolute;
+  top: clamp(6.2rem, 12vw, 7.7rem);
+  left: clamp(1.3rem, 2.6vw, 1.65rem);
+  z-index: 1;
+  width: fit-content;
+  max-width: 11rem;
+  padding: 0.34rem 0.55rem 0.3rem;
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 90%);
+  background: rgba(41, 31, 23, 0.46);
+  color: rgba(255, 252, 246, 0.94);
+  text-shadow: 0 0.16rem 0.46rem rgba(47, 38, 35, 0.34);
+}
+
+@media (max-width: 760px) {
+  body:has(.portfolio-archive-board) .continuity-paper-step {
+    min-height: 16.5rem;
+    padding-top: 8rem;
+  }
+}

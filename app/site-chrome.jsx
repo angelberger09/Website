@@ -1,4 +1,5 @@
 import { siteNavPages } from "./site-data";
+import { FooterNav } from "./site-footer-nav";
 import { HeaderNav } from "./site-header-nav";
 
 const pageIntroVisuals = {
@@ -65,13 +66,7 @@ export function StudioFooter() {
         <p>Soft Strange Studio</p>
         <small>Public rooms, gently connected.</small>
       </div>
-      <nav className="studio-footer__trail" aria-label="Footer pages">
-        {siteNavPages.map((page) => (
-          <a href={page.href} key={page.href}>
-            {page.title}
-          </a>
-        ))}
-      </nav>
+      <FooterNav />
     </footer>
   );
 }

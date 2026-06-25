@@ -1,0 +1,88 @@
+/* Homepage room-status photo/card pass.
+   Keeps the current room states honest while making the status row less text-only. */
+
+.home-room-slip--with-photo {
+  grid-template-rows: auto auto auto auto 1fr;
+  min-height: 19rem;
+  padding-top: clamp(0.72rem, 2vw, 1rem);
+}
+
+.home-room-slip__image {
+  position: relative;
+  display: grid;
+  min-height: clamp(7.5rem, 18vw, 10.5rem);
+  align-content: end;
+  gap: 0.28rem;
+  overflow: hidden;
+  clip-path: polygon(2% 2%, 28% 0.8%, 52% 2.4%, 98% 1%, 97% 95%, 72% 98.5%, 38% 96.8%, 1.5% 98.5%);
+  background:
+    radial-gradient(circle at 20% 22%, rgba(255, 176, 143, 0.45), transparent 31%),
+    radial-gradient(circle at 80% 72%, rgba(185, 201, 175, 0.42), transparent 35%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.34), rgba(47, 38, 35, 0.13)),
+    repeating-linear-gradient(104deg, rgba(255, 252, 246, 0.22) 0 1px, transparent 1px 1.05rem),
+    var(--grain-image);
+  background-size: cover, cover, cover, auto, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08), 0 0.45rem 0.85rem rgba(47, 38, 35, 0.09);
+  padding: clamp(0.72rem, 2vw, 0.95rem);
+}
+
+.home-room-slip__image::before {
+  position: absolute;
+  top: 0.58rem;
+  left: 50%;
+  width: clamp(3.2rem, 8vw, 4.8rem);
+  height: 0.46rem;
+  content: "";
+  background: rgba(255, 252, 246, 0.42);
+  box-shadow: 0 0.12rem 0.34rem rgba(47, 38, 35, 0.12);
+  transform: translateX(-50%) rotate(-1.8deg);
+}
+
+.home-room-slip__image::after {
+  position: absolute;
+  inset: 0.45rem;
+  content: "";
+  border: 1px solid rgba(255, 252, 246, 0.28);
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+.home-room-slip__image span,
+.home-room-slip__image strong {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0.2rem 0.58rem rgba(47, 38, 35, 0.28);
+}
+
+.home-room-slip__image span {
+  width: fit-content;
+  color: rgba(255, 252, 246, 0.84);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-room-slip__image strong {
+  max-width: 8ch;
+  color: rgba(255, 252, 246, 0.95);
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.6vw, 2.9rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+}
+
+.home-room-slip--with-photo .home-room-slip__status {
+  justify-self: start;
+  margin-top: -0.2rem;
+}
+
+@media (max-width: 640px) {
+  .home-room-slip--with-photo {
+    min-height: 0;
+  }
+
+  .home-room-slip__image {
+    min-height: 8.25rem;
+  }
+}

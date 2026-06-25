@@ -23,6 +23,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Feedback-only passes should update `.agent/` memory and leave public Website source unchanged unless implementation is explicitly requested.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 - The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
+- The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
 
 ## Active direction
 
@@ -32,7 +33,7 @@ The current visual direction is less framed UI and more living paper-collage atm
 
 The floating header should feel physically connected to the top edge of the viewport while remaining readable across the live top-level pages.
 
-The floating header should also read as a tactile paper strip laid over the page, using existing atmosphere/polaroid material assets or shader-like CSS where helpful, with a visible soft drop shadow so it feels physically layered rather than glassy or weightless.
+The floating header should read as a tactile paper strip laid over the page, using existing atmosphere/polaroid material assets or shader-like CSS where helpful, with a visible soft drop shadow so it feels physically layered rather than glassy or weightless. The current implementation lives in the post-base material pass, so future header refinements should tune that existing paper surface instead of adding unrelated competing header systems.
 
 Direct navigation should stay visible without a redundant `Pages` button, edge numbers, or extra helper text. Add enough contrast and hierarchy that the header feels clear, not overly soft.
 

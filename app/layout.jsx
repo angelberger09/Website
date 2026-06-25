@@ -19,6 +19,7 @@ import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
 import './store-checklist-collage-pass.css';
 import './notes-paper-reader-pass.css';
+import './notes-gallery-pass.css';
 import './notes-post-source-slip-pass.css';
 import './continuity-paper-trail-pass.css';
 import './page-intro-subtitle-pass.css';

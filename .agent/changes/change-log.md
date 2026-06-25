@@ -450,3 +450,42 @@ METRIC-001, METRIC-002, and METRIC-017 were still partially satisfied around hom
 - METRIC-023
 - METRIC-028
 - METRIC-029
+
+## 2026-06-25 09:18 ET — Homepage entry contact sheet
+
+### Changed
+
+- Refined the homepage hero route strip in `app/page.jsx` into a `home-hero-contact-sheet` with mini `home-hero-route-slip__preview` image-like centers for About, Notes, Portfolio, and Store.
+- Added `app/home-entry-contact-sheet-pass.css` for the visible contact-sheet board, route-photo centers, compact labels, and responsive two-column / one-column fallbacks.
+- Imported the pass from `app/layout.jsx` after the performance refinements so the contact sheet stays visible without reintroducing expensive filters, blend modes, or animated overlays.
+- Updated public memory, pages matrix, components matrix, and added a dedicated change record.
+
+### Why
+
+The first-screen route entry was a useful improvement, but it still read mostly as text slips. The active content-bearing polaroid and photo-led structure lessons were only partially satisfied on the homepage hero. This pass makes the route choices visibly image/card-led while staying honest: it uses abstract paper/photo centers from existing route labels, not fake screenshots or fake project/product imagery.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-026
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-028
+- METRIC-030

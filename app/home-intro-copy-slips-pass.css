@@ -1,0 +1,55 @@
+/* Homepage intro copy slips pass.
+   Turns remaining homepage intro/support prose into clipped paper copy slips so the front room no longer drops back to plain body text. */
+
+.home-paper-field__intro > p,
+.home-section-scrap > p,
+.home-studio-checks__intro > p:last-child {
+  width: fit-content;
+  max-width: min(100%, 58ch);
+  margin: 0;
+  padding: clamp(0.72rem, 1.6vw, 0.96rem) clamp(0.86rem, 2vw, 1.14rem);
+  color: rgba(58, 45, 42, 0.76);
+  line-height: 1.58;
+  background:
+    linear-gradient(136deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.78) 62%, rgba(245, 224, 198, 0.3)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1.2% 5%, 31% 1%, 68% 3.2%, 98.4% 1.4%, 96.8% 92%, 62% 98.6%, 28% 95.8%, 1.6% 98%);
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.06),
+    0 0.58rem 1.08rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.home-paper-field__intro > p {
+  justify-self: end;
+  transform: rotate(0.22deg);
+}
+
+.home-section-scrap > p {
+  margin-top: 0.58rem;
+  transform: rotate(-0.18deg);
+}
+
+.home-room-status .home-section-scrap > p,
+.home-door-section .home-section-scrap > p {
+  background:
+    linear-gradient(136deg, rgba(255, 252, 246, 0.95), rgba(245, 224, 198, 0.62) 58%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+}
+
+.home-studio-checks__intro > p:last-child {
+  margin-top: 0.62rem;
+  transform: rotate(0.18deg);
+}
+
+@media (max-width: 760px) {
+  .home-paper-field__intro > p,
+  .home-section-scrap > p,
+  .home-studio-checks__intro > p:last-child {
+    width: 100%;
+    max-width: none;
+    transform: none;
+  }
+}

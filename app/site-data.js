@@ -45,6 +45,27 @@ export const homepageHighlights = [
   }
 ];
 
+export const homepageStudioChecks = [
+  {
+    title: "Paper first",
+    eyebrow: "Material check",
+    description: "Pages should read as placed paper, clipped slips, and gentle photo surfaces before they read as app panels.",
+    note: "Review: texture, cut edges, sheet depth"
+  },
+  {
+    title: "Human words",
+    eyebrow: "Copy check",
+    description: "Visitors should meet rooms, shelves, paths, and readiness notes instead of backstage source language.",
+    note: "Review: no raw or technical wording"
+  },
+  {
+    title: "Honest growth",
+    eyebrow: "Trust check",
+    description: "Portfolio and store material can show readiness without implying fake case studies, fake products, or live listings.",
+    note: "Review: clear status before deeper links"
+  }
+];
+
 export const studioPillars = [
   {
     title: "Notes that stay human",

@@ -1,0 +1,177 @@
+/* Store lane collage pass. Turns the first Store path grid into visible paper/photo pieces instead of a conventional card row. */
+
+.store-lane-collage {
+  position: relative;
+  display: grid;
+  width: min(100%, 76rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.35rem);
+  isolation: isolate;
+}
+
+.store-lane-collage::before {
+  position: absolute;
+  inset: -0.8rem -1rem -0.65rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1% 3%, 18% 1%, 46% 2.6%, 75% 0.8%, 98% 2.4%, 96.8% 35%, 98.6% 70%, 96.4% 98%, 72% 97%, 42% 99%, 16% 97.4%, 1.2% 98.6%, 2.4% 58%);
+  background:
+    radial-gradient(circle at 12% 24%, rgba(255, 176, 143, 0.16), transparent 30%),
+    radial-gradient(circle at 78% 72%, rgba(185, 201, 175, 0.18), transparent 34%),
+    linear-gradient(136deg, rgba(255, 252, 246, 0.34), rgba(255, 247, 235, 0.16)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 24rem 24rem, 34rem 34rem;
+  filter: drop-shadow(0.24rem 0.72rem 1.7rem rgba(47, 38, 35, 0.1));
+  opacity: 0.88;
+}
+
+.store-lane-piece {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(7.8rem, auto) 1fr;
+  gap: 0.76rem;
+  min-height: 25rem;
+  padding: 0.68rem 0.68rem 0.9rem;
+  clip-path: polygon(2% 2%, 23% 0.8%, 56% 2.3%, 98% 1.2%, 96.8% 39%, 99% 96.5%, 73% 98.6%, 35% 97.3%, 1.2% 99%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.7) 58%, rgba(245, 224, 198, 0.34)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 20rem 20rem, 34rem 34rem;
+  filter:
+    drop-shadow(-0.15rem 0.2rem 0 rgba(47, 38, 35, 0.07))
+    drop-shadow(0.42rem 0.78rem 1.5rem rgba(47, 38, 35, 0.15));
+}
+
+.store-lane-piece:nth-child(1) {
+  transform: rotate(-0.82deg) translateY(0.12rem);
+}
+
+.store-lane-piece:nth-child(2) {
+  transform: rotate(0.58deg) translateY(-0.2rem);
+}
+
+.store-lane-piece:nth-child(3) {
+  transform: rotate(-0.38deg) translateY(0.24rem);
+}
+
+.store-lane-piece:nth-child(4) {
+  transform: rotate(0.46deg) translateY(-0.04rem);
+}
+
+.store-lane-piece__photo {
+  position: relative;
+  min-height: 8.5rem;
+  overflow: hidden;
+  clip-path: polygon(1.5% 2.4%, 24% 1%, 52% 2.2%, 97% 0.8%, 98.4% 96.6%, 71% 98%, 38% 96.8%, 1% 98.5%);
+  background:
+    radial-gradient(circle at 26% 28%, rgba(255, 176, 143, 0.42), transparent 28%),
+    radial-gradient(circle at 72% 74%, rgba(185, 201, 175, 0.42), transparent 34%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.36), rgba(47, 38, 35, 0.14)),
+    repeating-linear-gradient(96deg, rgba(255, 252, 246, 0.16) 0 1px, transparent 1px 1.28rem),
+    var(--fine-scratch-image);
+  background-size: cover, cover, cover, auto, 42rem 42rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(47, 38, 35, 0.08),
+    inset 0 -1.2rem 2rem rgba(47, 38, 35, 0.08);
+}
+
+.store-lane-piece__photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(128deg, transparent 0 42%, rgba(255, 255, 255, 0.26) 45%, transparent 52%),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  mix-blend-mode: screen;
+  opacity: 0.72;
+}
+
+.store-lane-piece__photo span {
+  position: absolute;
+  right: 0.68rem;
+  bottom: 0.56rem;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  line-height: 1;
+  color: rgba(255, 252, 246, 0.84);
+  text-shadow: 0 0.18rem 0.55rem rgba(47, 38, 35, 0.24);
+}
+
+.store-lane-piece__copy {
+  display: grid;
+  gap: 0.48rem;
+  align-content: start;
+}
+
+.store-lane-piece__copy .eyebrow {
+  width: fit-content;
+  margin: 0;
+  padding: 0.32rem 0.54rem 0.28rem;
+  clip-path: polygon(2% 8%, 28% 2%, 63% 5%, 98% 1%, 96% 91%, 70% 97%, 32% 94%, 1% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.95), rgba(245, 224, 198, 0.48)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.14rem 0.24rem 0.6rem rgba(47, 38, 35, 0.08);
+}
+
+.store-lane-piece__copy h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.05;
+}
+
+.store-lane-piece__copy p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.store-lane-piece__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-lane-piece__details li {
+  margin: 0;
+  padding: 0.3rem 0.44rem 0.27rem;
+  clip-path: polygon(1% 8%, 27% 2%, 62% 5%, 99% 1%, 97% 91%, 70% 97%, 32% 94%, 1% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.78), rgba(255, 247, 235, 0.42)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(47, 38, 35, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 1080px) {
+  .store-lane-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .store-lane-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .store-lane-piece,
+  .store-lane-piece:nth-child(1),
+  .store-lane-piece:nth-child(2),
+  .store-lane-piece:nth-child(3),
+  .store-lane-piece:nth-child(4) {
+    min-height: auto;
+    transform: none;
+  }
+}

@@ -10,6 +10,7 @@ import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-preview-collage-pass.css';
+import './store-gallery-pass.css';
 import './store-hierarchy-pass.css';
 import './store-feed-contract-pass.css';
 import './store-availability-board-pass.css';
@@ -26,14 +27,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang='en'>
-      <body>
-        <SiteHeader />
-        <AtmosphereLayer />
-        {children}
-        <StudioFooter />
-      </body>
-    </html>
-  );
+  return <html lang='en'><body><SiteHeader /><AtmosphereLayer />{children}<StudioFooter /></body></html>;
 }

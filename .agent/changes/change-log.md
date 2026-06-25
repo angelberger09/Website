@@ -253,7 +253,7 @@ The current header is closer to direct navigation, but it still includes unwante
 - Added filled pages for About, Notes, Notes Post Reader, Portfolio, and Store.
 - Kept Blog and Blog Post as compatibility routes that reuse the Notes reader.
 - Updated global and typography styles for direct navigation and filled page layouts.
-- Updated public memory, pages matrix, semantic index, components matrix, and relationship map.
+- Updated public memory, semantic index, pages matrix, components matrix, and relationship map.
 
 ### Why
 
@@ -523,4 +523,41 @@ The current `app/paper-card-pass.css` technically removed rounded corners, but i
 - COMP-008
 - DESIGN-031
 - FEEDBACK-017
+- METRIC-030
+
+## 2026-06-25 03:48 ET — Portfolio paper archive board
+
+### Changed
+
+- Replaced the opening Portfolio `content-grid` / `DetailCard` project grid in `app/portfolio/page.jsx` with `portfolio-archive-board`, `portfolio-piece-collage`, and `portfolio-piece-card` markup.
+- Added `app/portfolio-paper-archive-pass.css` with a paper field backdrop, staged photo centers, clipped paper labels, taped edges, grain/dust/scratch material, irregular card silhouettes, and responsive two-column/single-column fallbacks.
+- Loaded the new Portfolio paper pass from `app/layout.jsx`.
+- Updated `.agent/memory.md`, `.agent/matrices/pages.matrix.md`, `.agent/matrices/components.matrix.md`, `.agent/matrices/semantic-index.md`, and `.agent/matrices/quality-metrics.matrix.md`.
+- Added `.agent/changes/2026-06-25-portfolio-paper-archive-board.md` as the detailed implementation record.
+
+### Why
+
+The current `.agent` state says filled-page sections should keep moving away from generic rounded UI cards and toward visible paper/collage, photo-like surfaces where honest. Store and About had recent targeted passes, while Portfolio still opened with a generic project-card grid. This pass makes the first Portfolio archive surface visibly papery without inventing fake project assets or private case-study content.
+
+### Related items
+
+- PAGE-004
+- COMP-005
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
 - METRIC-030

@@ -1,97 +1,132 @@
 /* Page intro room tags pass.
-   Adds a small visible room-status strip to shared PageIntro sections so each route opens with human-facing orientation, not just a title and prose slip. */
+   Turns the shared PageIntro room-status strip into clipped paper tickets so each route opens with a visible, human-facing orientation row that still stays within the paper performance budget. */
 
 .page-hero__room-tags {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 0.52rem;
-  margin: 0.26rem 0 0.42rem;
+  gap: 0.58rem;
+  margin: 0.32rem 0 0.54rem;
+  padding: 0.18rem 0 0.1rem;
+}
+
+.page-hero__room-tags::before {
+  content: '';
+  position: absolute;
+  left: 0.24rem;
+  right: 12%;
+  top: 50%;
+  height: 0.24rem;
+  background: linear-gradient(90deg, rgba(150, 121, 92, 0.32), rgba(150, 121, 92, 0.04));
+  clip-path: polygon(0 28%, 100% 0, 97% 78%, 3% 100%);
+  transform: translateY(-50%);
+  opacity: 0.62;
+  pointer-events: none;
 }
 
 .page-hero__room-tags span {
   position: relative;
-  display: inline-grid;
+  display: grid;
   align-content: center;
-  min-height: 2.72rem;
-  min-width: min(100%, 7.4rem);
-  padding: 0.48rem 0.74rem 0.52rem;
-  color: rgba(58, 45, 42, 0.8);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
+  gap: 0.12rem;
+  min-height: 2.92rem;
+  min-width: min(100%, 7.8rem);
+  padding: 0.52rem 0.78rem 0.56rem;
+  color: rgba(58, 45, 42, 0.82);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.075em;
   line-height: 1.08;
   text-transform: uppercase;
   background:
+    linear-gradient(90deg, rgba(87, 108, 75, 0.12) 0 0.42rem, transparent 0.42rem),
     linear-gradient(180deg, rgba(90, 69, 60, 0.12) 0 1px, transparent 1px 0.54rem),
-    linear-gradient(135deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.74) 62%, rgba(185, 201, 175, 0.18)),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.76) 62%, rgba(185, 201, 175, 0.2)),
     var(--grain-image);
-  background-size: 100% 0.54rem, cover, 16rem 16rem;
-  clip-path: polygon(2% 8%, 96% 1%, 99% 88%, 5% 98%);
+  background-size: 100% 100%, 100% 0.54rem, cover, 16rem 16rem;
+  clip-path: polygon(2% 6%, 96% 0, 100% 87%, 7% 99%, 0 72%);
   box-shadow:
-    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.06),
-    0 0.42rem 0.82rem rgba(47, 38, 35, 0.08),
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.06),
+    0 0.5rem 0.92rem rgba(47, 38, 35, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.74);
+  z-index: 1;
 }
 
 .page-hero__room-tags span::before {
   content: '';
   position: absolute;
-  top: -0.14rem;
+  top: -0.15rem;
   left: 50%;
-  width: 2.45rem;
+  width: 2.48rem;
   height: 0.42rem;
-  background: rgba(245, 224, 198, 0.68);
+  background: rgba(245, 224, 198, 0.72);
   transform: translateX(-50%) rotate(-1.2deg);
   clip-path: polygon(4% 18%, 97% 3%, 92% 86%, 0 100%);
   box-shadow: 0 0.14rem 0.32rem rgba(47, 38, 35, 0.08);
 }
 
+.page-hero__room-tags span::after {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  right: 0.7rem;
+  bottom: 0.38rem;
+  height: 1px;
+  background: rgba(90, 69, 60, 0.16);
+}
+
 .page-hero__room-tags small {
   display: block;
-  margin-bottom: 0.18rem;
-  color: rgba(87, 108, 75, 0.76);
-  font-size: 0.56rem;
+  color: rgba(87, 108, 75, 0.78);
+  font-size: 0.55rem;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   line-height: 1;
 }
 
 .page-hero__room-tags span:nth-child(2) {
-  margin-top: 0.22rem;
-  color: rgba(72, 57, 52, 0.72);
+  margin-top: 0.26rem;
+  color: rgba(72, 57, 52, 0.76);
   background:
+    linear-gradient(90deg, rgba(216, 197, 236, 0.13) 0 0.42rem, transparent 0.42rem),
     linear-gradient(180deg, rgba(90, 69, 60, 0.11) 0 1px, transparent 1px 0.54rem),
-    linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.57) 58%, rgba(216, 197, 236, 0.18)),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.95), rgba(245, 224, 198, 0.57) 58%, rgba(216, 197, 236, 0.18)),
     var(--grain-image);
-  background-size: 100% 0.54rem, cover, 16rem 16rem;
+  background-size: 100% 100%, 100% 0.54rem, cover, 16rem 16rem;
   clip-path: polygon(1% 10%, 98% 4%, 96% 96%, 3% 90%);
 }
 
 .page-hero__room-tags span:nth-child(3) {
-  margin-top: -0.04rem;
-  color: rgba(58, 45, 42, 0.74);
+  margin-top: -0.03rem;
+  color: rgba(58, 45, 42, 0.76);
   background:
+    linear-gradient(90deg, rgba(178, 197, 216, 0.13) 0 0.42rem, transparent 0.42rem),
     linear-gradient(180deg, rgba(90, 69, 60, 0.1) 0 1px, transparent 1px 0.54rem),
-    linear-gradient(128deg, rgba(255, 252, 246, 0.95), rgba(238, 232, 214, 0.72) 58%, rgba(178, 197, 216, 0.16)),
+    linear-gradient(128deg, rgba(255, 252, 246, 0.96), rgba(238, 232, 214, 0.72) 58%, rgba(178, 197, 216, 0.16)),
     var(--grain-image);
-  background-size: 100% 0.54rem, cover, 16rem 16rem;
+  background-size: 100% 100%, 100% 0.54rem, cover, 16rem 16rem;
   clip-path: polygon(4% 3%, 99% 9%, 95% 93%, 2% 96%);
 }
 
 @media (max-width: 760px) {
   .page-hero__room-tags {
-    gap: 0.42rem;
+    gap: 0.46rem;
+    margin-top: 0.22rem;
+  }
+
+  .page-hero__room-tags::before {
+    right: 4%;
   }
 
   .page-hero__room-tags span {
-    min-height: 2.34rem;
-    min-width: 6.25rem;
-    padding: 0.42rem 0.62rem 0.46rem;
-    font-size: 0.7rem;
+    min-height: 2.42rem;
+    min-width: 6.35rem;
+    padding: 0.44rem 0.62rem 0.48rem;
+    font-size: 0.68rem;
   }
 
   .page-hero__room-tags small {
-    font-size: 0.52rem;
+    font-size: 0.51rem;
   }
 }

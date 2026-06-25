@@ -1,0 +1,45 @@
+/* Shared PageIntro subtitle pass.
+   Keeps route intro titles supportive instead of letting them behave like second hero headlines. */
+
+.page-hero__copy {
+  display: grid;
+  justify-items: start;
+}
+
+.page-hero__subtitle {
+  display: inline-block;
+  width: fit-content;
+  max-width: min(100%, 22rem);
+  margin: 0 0 clamp(0.9rem, 1.8vw, 1.2rem);
+  padding: clamp(0.42rem, 1vw, 0.62rem) clamp(0.68rem, 1.4vw, 0.95rem) clamp(0.38rem, 1vw, 0.56rem);
+  color: rgba(47, 38, 35, 0.9);
+  font-family: var(--font-display);
+  font-size: clamp(1.38rem, 2.45vw, 2.08rem);
+  font-weight: 520;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  border-radius: 0;
+  clip-path: polygon(1.5% 8%, 24% 2.5%, 56% 4%, 98% 1.5%, 96.5% 92%, 72% 98%, 28% 96.5%, 1% 99%);
+  background:
+    linear-gradient(130deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.78) 62%, rgba(245, 224, 198, 0.32)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.16rem 0.24rem 0 rgba(47, 38, 35, 0.07),
+    0 0.58rem 1rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transform: rotate(-0.22deg);
+}
+
+.page-hero__copy .eyebrow {
+  margin-bottom: 0.62rem;
+}
+
+@media (max-width: 700px) {
+  .page-hero__subtitle {
+    max-width: 100%;
+    font-size: clamp(1.28rem, 7vw, 1.78rem);
+    white-space: normal;
+  }
+}

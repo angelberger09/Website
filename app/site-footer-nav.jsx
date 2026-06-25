@@ -3,6 +3,13 @@
 import { usePathname } from "next/navigation";
 import { siteNavPages } from "./site-data";
 
+const footerPhotoLabels = {
+  About: "Studio",
+  Notes: "Read",
+  Portfolio: "Work",
+  Store: "Shop"
+};
+
 function normalizePath(path) {
   if (!path) return "/Website";
   const cleanPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
@@ -24,6 +31,16 @@ function isActiveRoute(pathname, href) {
   return currentPath === targetPath || currentPath.startsWith(`${targetPath}/`);
 }
 
+function getFooterInitials(title = "Room") {
+  return title
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word.charAt(0))
+    .join("")
+    .toUpperCase();
+}
+
 export function FooterNav() {
   const pathname = usePathname();
 
@@ -39,7 +56,11 @@ export function FooterNav() {
             className={active ? "studio-footer__trail-link studio-footer__trail-link--active" : "studio-footer__trail-link"}
             aria-current={active ? "page" : undefined}
           >
-            {page.title}
+            <span className="studio-footer__trail-photo" aria-hidden="true">
+              <span>{footerPhotoLabels[page.title] ?? "Room"}</span>
+              <strong>{getFooterInitials(page.title)}</strong>
+            </span>
+            <span className="studio-footer__trail-title">{page.title}</span>
           </a>
         );
       })}

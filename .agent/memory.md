@@ -36,6 +36,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store promise section now uses the existing `store-editorial-section` pattern plus `app/store-hierarchy-pass.css`, reducing one remaining broad `link-card wide-card` panel and giving the promise content a flatter paper-field composition tied to FEEDBACK-015 / METRIC-028.
 - The shared header now loads `app/header-paper-tabs-pass.css` after earlier paper header passes so the full strip, identity area, and direct nav labels use stronger cut-paper/tab shapes, heavier texture, and more visible layered shadows tied to FEEDBACK-011 / LESSON-020 / METRIC-019.
 - The Store availability section now uses a dedicated `store-availability-board` / `store-availability-collage` structure in `app/store/page.jsx` and `app/store-availability-board-pass.css`, removing the broad `link-card wide-card` and `pathway-link` inheritance so the availability states read more like taped paper notes on a collage field than repeated UI rows.
+- The Store opening path section now uses `store-lane-collage` / `store-lane-piece` markup in `app/store/page.jsx` and `app/store-lane-collage-pass.css`, replacing the first generic Store `DetailCard` grid with staggered paper/photo lane pieces that keep the existing honest lane data while strengthening FEEDBACK-015 / FEEDBACK-017 / METRIC-030.
 
 ## Active direction
 

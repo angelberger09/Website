@@ -98,9 +98,10 @@
 .store-checklist-note {
   position: relative;
   display: grid;
-  gap: 0.8rem;
-  min-height: 21rem;
-  padding: clamp(1rem, 2vw, 1.25rem);
+  grid-template-rows: auto 1fr auto;
+  gap: 0.82rem;
+  min-height: 24rem;
+  padding: clamp(0.9rem, 2vw, 1.12rem);
   border-radius: 0;
   clip-path: polygon(2% 2.2%, 27% 0.9%, 58% 2.6%, 98% 1.3%, 96.8% 34%, 99% 96.2%, 72% 98.6%, 35% 96.8%, 1.3% 99%);
   background:
@@ -147,20 +148,133 @@
   position: absolute;
   right: 0.72rem;
   top: 0.62rem;
+  z-index: 2;
   font-family: var(--font-display);
   font-size: 1.6rem;
   line-height: 1;
-  color: rgba(47, 38, 35, 0.18);
+  color: rgba(47, 38, 35, 0.2);
+}
+
+.store-checklist-note__visual {
+  position: relative;
+  min-height: clamp(6.1rem, 11vw, 7.6rem);
+  margin: 0.12rem 0.12rem 0.1rem;
+  clip-path: polygon(3% 7%, 28% 2%, 61% 5%, 97% 1%, 95% 82%, 72% 96%, 43% 91%, 5% 98%);
+  background:
+    radial-gradient(circle at 22% 31%, rgba(185, 201, 175, 0.5), transparent 30%),
+    radial-gradient(circle at 76% 70%, rgba(216, 197, 236, 0.36), transparent 34%),
+    linear-gradient(128deg, rgba(255, 252, 246, 0.9), rgba(245, 224, 198, 0.5)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 15rem 15rem, 24rem 24rem;
+  box-shadow:
+    0.18rem 0.32rem 0 rgba(47, 38, 35, 0.08),
+    0.4rem 0.64rem 1.1rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.store-checklist-note__visual::before {
+  position: absolute;
+  inset: 0.65rem;
+  content: "";
+  clip-path: polygon(0 18%, 21% 11%, 42% 20%, 63% 9%, 100% 16%, 94% 82%, 68% 88%, 41% 78%, 10% 91%);
+  background:
+    linear-gradient(90deg, transparent 0 18%, rgba(47, 38, 35, 0.08) 19% 20%, transparent 21% 55%, rgba(47, 38, 35, 0.055) 56% 57%, transparent 58%),
+    linear-gradient(145deg, rgba(47, 38, 35, 0.07), rgba(255, 252, 246, 0.24));
+  opacity: 0.5;
+}
+
+.store-checklist-note__visual b {
+  position: absolute;
+  left: 0.64rem;
+  bottom: 0.54rem;
+  z-index: 1;
+  display: inline-block;
+  max-width: calc(100% - 1.28rem);
+  padding: 0.34rem 0.54rem 0.3rem;
+  clip-path: polygon(2% 12%, 34% 4%, 72% 8%, 98% 2%, 96% 88%, 64% 98%, 28% 93%, 1% 100%);
+  background:
+    linear-gradient(122deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.68)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  box-shadow: 0.12rem 0.22rem 0.45rem rgba(47, 38, 35, 0.11);
+}
+
+.store-checklist-note__visual i {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: rgba(47, 38, 35, 0.16);
+  opacity: 0.5;
+}
+
+.store-checklist-note__visual i:nth-of-type(1) {
+  right: 17%;
+  top: 24%;
+  width: 1.95rem;
+  height: 1.95rem;
+}
+
+.store-checklist-note__visual i:nth-of-type(2) {
+  right: 31%;
+  bottom: 22%;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.store-checklist-note__visual i:nth-of-type(3) {
+  left: 17%;
+  top: 30%;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+.store-checklist-note:nth-child(2) .store-checklist-note__visual {
+  transform: rotate(-0.42deg);
+  background:
+    radial-gradient(circle at 68% 30%, rgba(245, 224, 198, 0.58), transparent 31%),
+    radial-gradient(circle at 26% 72%, rgba(185, 201, 175, 0.38), transparent 36%),
+    linear-gradient(136deg, rgba(255, 252, 246, 0.9), rgba(216, 197, 236, 0.28)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 15rem 15rem, 24rem 24rem;
+}
+
+.store-checklist-note:nth-child(3) .store-checklist-note__visual {
+  transform: rotate(0.36deg);
+  background:
+    radial-gradient(circle at 33% 70%, rgba(216, 197, 236, 0.42), transparent 32%),
+    radial-gradient(circle at 78% 34%, rgba(185, 201, 175, 0.44), transparent 33%),
+    linear-gradient(140deg, rgba(255, 252, 246, 0.91), rgba(245, 224, 198, 0.5)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 15rem 15rem, 24rem 24rem;
 }
 
 .store-checklist-note__eyebrow {
   display: block;
+  width: fit-content;
   margin-bottom: 0.45rem;
+  padding: 0.28rem 0.48rem 0.24rem;
+  clip-path: polygon(2% 10%, 31% 2%, 64% 5%, 99% 1%, 97% 91%, 68% 97%, 31% 94%, 1% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.78), rgba(245, 224, 198, 0.38)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
   color: var(--muted);
   font-family: var(--font-hand);
   font-size: 0.72rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+  box-shadow: 0.1rem 0.18rem 0.42rem rgba(47, 38, 35, 0.08);
 }
 
 .store-checklist-note h2 {
@@ -213,6 +327,8 @@
   .store-checklist-note:nth-child(1),
   .store-checklist-note:nth-child(2),
   .store-checklist-note:nth-child(3),
+  .store-checklist-note:nth-child(2) .store-checklist-note__visual,
+  .store-checklist-note:nth-child(3) .store-checklist-note__visual,
   .store-checklist-collage__intro > .eyebrow,
   .store-checklist-collage__intro > h1,
   .store-checklist-collage__intro > p:not(.eyebrow) {

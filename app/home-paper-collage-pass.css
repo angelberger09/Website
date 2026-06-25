@@ -224,7 +224,18 @@
 
 .home-check-rail {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
   margin-top: clamp(1.1rem, 3vw, 2rem);
+  padding-inline: clamp(0rem, 2vw, 1.2rem);
+}
+
+.home-check-rail::before {
+  position: absolute;
+  inset: clamp(0.9rem, 2vw, 1.4rem) clamp(-0.45rem, -1vw, -0.1rem) auto;
+  height: 0.7rem;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 176, 143, 0.2), rgba(216, 197, 236, 0.22), transparent);
+  opacity: 0.72;
 }
 
 .home-note-piece,
@@ -258,6 +269,44 @@
 .home-check-note:nth-child(3),
 .home-door-card:nth-child(2n + 1) {
   transform: rotate(-0.4deg) translateY(0.18rem);
+}
+
+.home-check-note {
+  min-height: 16.5rem;
+  grid-template-rows: auto auto 1fr auto;
+  clip-path: polygon(3% 1%, 36% 2.2%, 62% 0.6%, 97% 2.8%, 98% 88%, 91% 90%, 86% 96%, 76% 90%, 67% 96%, 58% 90%, 49% 96%, 39% 90%, 30% 96%, 21% 90%, 12% 96%, 3% 90%);
+  background:
+    repeating-linear-gradient(0deg, rgba(47, 38, 35, 0.055) 0 1px, transparent 1px 1.58rem),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.8) 58%, rgba(245, 224, 198, 0.36)),
+    var(--grain-image);
+  background-size: auto, cover, 20rem 20rem;
+}
+
+.home-check-note::before {
+  position: absolute;
+  top: 0.48rem;
+  left: 50%;
+  width: 3.8rem;
+  height: 0.46rem;
+  content: "";
+  background: rgba(255, 176, 143, 0.34);
+  box-shadow: 0 0.12rem 0.34rem rgba(47, 38, 35, 0.1);
+  transform: translateX(-50%) rotate(-1.4deg);
+}
+
+.home-check-note::after {
+  position: absolute;
+  right: 0.82rem;
+  bottom: 0.68rem;
+  content: "SSS";
+  border: 1px solid rgba(47, 38, 35, 0.14);
+  border-radius: 999px;
+  padding: 0.22rem 0.36rem;
+  color: rgba(47, 38, 35, 0.28);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  transform: rotate(-8deg);
 }
 
 .home-note-piece__pin {
@@ -322,6 +371,10 @@
   font-family: var(--font-hand);
   font-size: 0.92rem;
   line-height: 1.25;
+}
+
+.home-check-note small::before {
+  content: "✦ ";
 }
 
 .home-note-piece__count,
@@ -442,6 +495,15 @@
   .home-pillar-strip,
   .home-check-rail {
     grid-template-columns: 1fr;
+  }
+
+  .home-check-rail {
+    padding-inline: 0;
+  }
+
+  .home-check-rail::before,
+  .home-check-note::after {
+    display: none;
   }
 
   .home-hero-route-strip {

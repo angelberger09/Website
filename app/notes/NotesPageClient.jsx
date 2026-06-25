@@ -50,7 +50,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
 
   return (
     <main id="top" className="site-shell page-layout">
-      <PageIntro eyebrow="Still Here Notes" title="Public notes, held inside the studio.">
+      <PageIntro eyebrow="Still Here Notes" title="Studio notes room">
         <p>
           This page is the Website-owned reading door. The Blog repo keeps the
           published writing files, and this page turns them into a softer reader

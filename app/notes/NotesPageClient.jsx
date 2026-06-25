@@ -5,7 +5,7 @@ import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
 import { blogFeedReadiness, sourceFallbackRules } from "../source-readiness";
 import { INDEX_URLS, notesReaderStates, notesSupportCards } from "../site-data";
-import { DetailCard, PageIntro } from "../site-chrome";
+import { PageIntro } from "../site-chrome";
 
 async function fetchPostsIndex() {
   for (const url of INDEX_URLS) {
@@ -114,10 +114,13 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       </section>
 
       <section className="notes-support-strip" aria-label="Notes system details">
-        {notesSupportCards.map((card) => (
-          <DetailCard eyebrow={card.eyebrow} title={card.title} key={card.title}>
+        {notesSupportCards.map((card, index) => (
+          <article className="notes-support-note" key={card.title}>
+            <span className="notes-support-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <p className="eyebrow">{card.eyebrow}</p>
+            <h2>{card.title}</h2>
             <p>{card.description}</p>
-          </DetailCard>
+          </article>
         ))}
       </section>
 
@@ -153,13 +156,17 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       </section>
 
       <section className="notes-state-board" aria-labelledby="notes-states-title">
-        <p className="eyebrow">Reader behavior</p>
-        <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
+        <div className="notes-state-board__intro">
+          <p className="eyebrow">Reader behavior</p>
+          <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
+        </div>
         <div className="notes-state-list">
           {notesReaderStates.map((readerState) => (
-            <DetailCard eyebrow={readerState.eyebrow} title={readerState.title} key={readerState.title}>
+            <article className="notes-state-note" key={readerState.title}>
+              <p className="eyebrow">{readerState.eyebrow}</p>
+              <h2>{readerState.title}</h2>
               <p>{readerState.description}</p>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>

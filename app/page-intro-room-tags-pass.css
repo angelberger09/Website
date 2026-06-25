@@ -4,50 +4,94 @@
 .page-hero__room-tags {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.48rem;
-  margin: 0.18rem 0 0.28rem;
+  align-items: flex-start;
+  gap: 0.52rem;
+  margin: 0.26rem 0 0.42rem;
 }
 
 .page-hero__room-tags span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  padding: 0.38rem 0.72rem;
-  color: rgba(58, 45, 42, 0.74);
-  font-size: 0.74rem;
-  font-weight: 750;
-  letter-spacing: 0.09em;
-  line-height: 1;
+  position: relative;
+  display: inline-grid;
+  align-content: center;
+  min-height: 2.72rem;
+  min-width: min(100%, 7.4rem);
+  padding: 0.48rem 0.74rem 0.52rem;
+  color: rgba(58, 45, 42, 0.8);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  line-height: 1.08;
   text-transform: uppercase;
   background:
-    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.74) 62%, rgba(185, 201, 175, 0.18)),
+    linear-gradient(180deg, rgba(90, 69, 60, 0.12) 0 1px, transparent 1px 0.54rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.74) 62%, rgba(185, 201, 175, 0.18)),
     var(--grain-image);
-  background-size: cover, 16rem 16rem;
-  clip-path: polygon(3% 6%, 96% 2%, 99% 88%, 4% 96%);
+  background-size: 100% 0.54rem, cover, 16rem 16rem;
+  clip-path: polygon(2% 8%, 96% 1%, 99% 88%, 5% 98%);
   box-shadow:
     0.1rem 0.16rem 0 rgba(47, 38, 35, 0.06),
     0 0.42rem 0.82rem rgba(47, 38, 35, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.74);
 }
 
+.page-hero__room-tags span::before {
+  content: '';
+  position: absolute;
+  top: -0.14rem;
+  left: 50%;
+  width: 2.45rem;
+  height: 0.42rem;
+  background: rgba(245, 224, 198, 0.68);
+  transform: translateX(-50%) rotate(-1.2deg);
+  clip-path: polygon(4% 18%, 97% 3%, 92% 86%, 0 100%);
+  box-shadow: 0 0.14rem 0.32rem rgba(47, 38, 35, 0.08);
+}
+
+.page-hero__room-tags small {
+  display: block;
+  margin-bottom: 0.18rem;
+  color: rgba(87, 108, 75, 0.76);
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
 .page-hero__room-tags span:nth-child(2) {
-  color: rgba(72, 57, 52, 0.68);
+  margin-top: 0.22rem;
+  color: rgba(72, 57, 52, 0.72);
   background:
-    linear-gradient(132deg, rgba(255, 252, 246, 0.93), rgba(245, 224, 198, 0.56) 58%, rgba(216, 197, 236, 0.18)),
+    linear-gradient(180deg, rgba(90, 69, 60, 0.11) 0 1px, transparent 1px 0.54rem),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.57) 58%, rgba(216, 197, 236, 0.18)),
     var(--grain-image);
-  background-size: cover, 16rem 16rem;
+  background-size: 100% 0.54rem, cover, 16rem 16rem;
   clip-path: polygon(1% 10%, 98% 4%, 96% 96%, 3% 90%);
+}
+
+.page-hero__room-tags span:nth-child(3) {
+  margin-top: -0.04rem;
+  color: rgba(58, 45, 42, 0.74);
+  background:
+    linear-gradient(180deg, rgba(90, 69, 60, 0.1) 0 1px, transparent 1px 0.54rem),
+    linear-gradient(128deg, rgba(255, 252, 246, 0.95), rgba(238, 232, 214, 0.72) 58%, rgba(178, 197, 216, 0.16)),
+    var(--grain-image);
+  background-size: 100% 0.54rem, cover, 16rem 16rem;
+  clip-path: polygon(4% 3%, 99% 9%, 95% 93%, 2% 96%);
 }
 
 @media (max-width: 760px) {
   .page-hero__room-tags {
-    gap: 0.38rem;
+    gap: 0.42rem;
   }
 
   .page-hero__room-tags span {
-    min-height: 1.82rem;
-    padding: 0.32rem 0.58rem;
-    font-size: 0.68rem;
+    min-height: 2.34rem;
+    min-width: 6.25rem;
+    padding: 0.42rem 0.62rem 0.46rem;
+    font-size: 0.7rem;
+  }
+
+  .page-hero__room-tags small {
+    font-size: 0.52rem;
   }
 }

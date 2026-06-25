@@ -65,6 +65,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | INT-011 | Interaction | Route Continuity Links | `app/next-step-band.jsx`, `app/page-continuity.js` | Each filled page offers two calm related next routes | LESSON-002, LESSON-018, LESSON-022 | active |
 | METRIC-007 | Metric | Alive But Not Busy | `.agent/matrices/quality-metrics.matrix.md` | Check atmospheric motion quality | LESSON-006 | active |
 | METRIC-008 | Metric | Flat But Tactile | `.agent/matrices/quality-metrics.matrix.md` | Check 2.5D depth stays graphic and performant | LESSON-010 | active |
+| METRIC-009 | Metric | Borders Are Not Primary Structure | `.agent/matrices/quality-metrics.matrix.md` | Check gradients, material layers, shadows, and card separation carry structure before borders are added | LESSON-008 | active |
 | METRIC-010 | Metric | Offscreen But Usable | `.agent/matrices/quality-metrics.matrix.md` | Check top-edge header effect preserves access and readability | LESSON-011 | active |
 | METRIC-011 | Metric | Quick Hero Read | `.agent/matrices/quality-metrics.matrix.md` | Check title reads quickly with reduced scroll | LESSON-012 | active |
 | METRIC-012 | Metric | Open Left Without Panel | `.agent/matrices/quality-metrics.matrix.md` | Check menu opens left by default without separate border/background | LESSON-013 | active |

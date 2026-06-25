@@ -37,6 +37,16 @@ function notePhotoLabel(post) {
   return post.category || post.series || "note";
 }
 
+function sourceVisualLabel(item) {
+  const firstDetail = item.details?.[0];
+  return firstDetail || item.eyebrow || "shelf";
+}
+
+function fallbackVisualLabel(rule) {
+  const firstWords = rule.label.split(" ").slice(0, 2).join(" ");
+  return firstWords || "path";
+}
+
 function buildNotesPathCards(featuredPost, routeBase) {
   return [
     {
@@ -207,12 +217,17 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             visible note pieces are named here in visitor-facing language.
           </p>
         </div>
-        <div className="notes-source-ledger" aria-label="Public notes shelf needs">
+        <div className="notes-source-ledger notes-source-receipt-ledger" aria-label="Public notes shelf needs">
           {blogFeedReadiness.map((item) => (
-            <article className="notes-source-card" key={item.title}>
-              <p className="eyebrow">{item.eyebrow}</p>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
+            <article className="notes-source-card notes-source-receipt" key={item.title}>
+              <span className="notes-source-receipt__photo" aria-hidden="true">
+                <span>{sourceVisualLabel(item)}</span>
+              </span>
+              <div className="notes-source-receipt__copy">
+                <p className="eyebrow">{item.eyebrow}</p>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
               <div className="notes-source-detail-strip" aria-label={`${item.title} shelf notes`}>
                 {item.details.map((detail) => (
                   <span className="notes-source-detail-slip" key={detail}>{detail}</span>
@@ -221,10 +236,13 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             </article>
           ))}
         </div>
-        <div className="notes-fallback-rules" aria-label="Writing shelf backup rules">
+        <div className="notes-fallback-rules notes-fallback-receipts" aria-label="Writing shelf backup rules">
           {sourceFallbackRules.map((rule) => (
-            <div className="notes-fallback-rule" key={rule.label}>
-              <span>{rule.label}</span>
+            <div className="notes-fallback-rule notes-fallback-receipt" key={rule.label}>
+              <span className="notes-fallback-receipt__photo" aria-hidden="true">
+                <span>{fallbackVisualLabel(rule)}</span>
+              </span>
+              <span className="notes-fallback-receipt__label">{rule.label}</span>
               <p>{rule.description}</p>
             </div>
           ))}

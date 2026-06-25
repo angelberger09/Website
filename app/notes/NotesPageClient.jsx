@@ -37,6 +37,34 @@ function notePhotoLabel(post) {
   return post.category || post.series || "note";
 }
 
+function buildNotesPathCards(featuredPost, routeBase) {
+  return [
+    {
+      eyebrow: "read next",
+      title: featuredPost ? "Open the latest note" : "Wait for the shelf",
+      description: featuredPost
+        ? "Step straight from the room into the newest public note without losing the studio path."
+        : "The reader path is ready for the next public note when the writing shelf opens.",
+      href: featuredPost ? `${routeBase}/post/?slug=${featuredPost.slug}` : routeBase,
+      visual: featuredPost ? notePhotoLabel(featuredPost) : "note"
+    },
+    {
+      eyebrow: "next room",
+      title: "Visit the archive",
+      description: "Move from writing into public work and project systems that are framed for visitors.",
+      href: "/Website/portfolio/",
+      visual: "archive"
+    },
+    {
+      eyebrow: "soft path",
+      title: "Return to the front room",
+      description: "Go back to the main studio doorway when you want the full room map again.",
+      href: "/Website/",
+      visual: "home"
+    }
+  ];
+}
+
 export default function NotesPageClient({ routeBase = "/Website/notes", routeLabel = "Notes" }) {
   const [state, setState] = useState({ status: "loading", posts: [], source: "", error: null });
 
@@ -52,6 +80,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
   const featuredPost = useMemo(() => state.posts[0], [state.posts]);
   const archivePosts = useMemo(() => state.posts.slice(1), [state.posts]);
   const galleryPosts = useMemo(() => state.posts.slice(0, 6), [state.posts]);
+  const notesPathCards = useMemo(() => buildNotesPathCards(featuredPost, routeBase), [featuredPost, routeBase]);
 
   return (
     <main id="top" className="site-shell page-layout notes-room-page">
@@ -214,6 +243,32 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
               <h2>{readerState.title}</h2>
               <p>{readerState.description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="notes-path-photo-board" aria-labelledby="notes-path-title">
+        <div className="notes-path-photo-board__intro">
+          <p className="eyebrow">After the shelf</p>
+          <h1 id="notes-path-title">Keep a reader path visible.</h1>
+          <p>
+            Notes should not end as a list of entries. These paper/photo route cards
+            keep the reading room connected to the latest note, the public archive,
+            and the front studio door.
+          </p>
+        </div>
+        <div className="notes-path-photo-strip" aria-label="Notes room next paths">
+          {notesPathCards.map((card, index) => (
+            <a className="notes-path-photo-card" href={card.href} data-path-index={index + 1} key={card.title}>
+              <span className="notes-path-photo-card__image" aria-hidden="true">
+                <span>{card.visual}</span>
+              </span>
+              <span className="notes-path-photo-card__copy">
+                <small>{card.eyebrow}</small>
+                <strong>{card.title}</strong>
+                <span>{card.description}</span>
+              </span>
+            </a>
           ))}
         </div>
       </section>

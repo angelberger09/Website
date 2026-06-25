@@ -1,0 +1,114 @@
+.portfolio-state-photo-board,
+.portfolio-process-photo-board {
+  overflow: hidden;
+}
+
+.portfolio-state-photo-board::before,
+.portfolio-process-photo-board::before {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.58), transparent 22%),
+    radial-gradient(circle at 88% 82%, rgba(170, 188, 153, 0.22), transparent 30%),
+    linear-gradient(128deg, rgba(255, 250, 235, 0.88), rgba(230, 211, 176, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg'),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, cover, cover, 220px 220px, 260px 260px;
+}
+
+.portfolio-state-photo,
+.portfolio-process-photo-ribbon li {
+  padding: 0.66rem;
+  gap: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 241, 0.97), rgba(239, 224, 190, 0.9)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 190px 190px, 170px 170px;
+  box-shadow: 0 17px 31px rgba(82, 59, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(2% 3%, 97% 0, 100% 92%, 92% 100%, 4% 97%, 0 13%);
+}
+
+.portfolio-state-photo::before,
+.portfolio-process-photo-ribbon li::before {
+  content: "";
+  position: absolute;
+  top: -0.42rem;
+  right: 1rem;
+  width: 4.9rem;
+  height: 1.1rem;
+  background: rgba(241, 219, 171, 0.7);
+  box-shadow: 0 7px 15px rgba(74, 53, 30, 0.11);
+  transform: rotate(3deg);
+  clip-path: polygon(4% 8%, 97% 0, 100% 84%, 10% 100%, 0 74%);
+}
+
+.portfolio-state-photo:nth-child(2n)::before,
+.portfolio-process-photo-ribbon li:nth-child(2n)::before {
+  right: auto;
+  left: 0.85rem;
+  transform: rotate(-3deg);
+}
+
+.portfolio-state-photo__image,
+.portfolio-process-ribbon__image {
+  display: grid;
+  min-height: clamp(6.8rem, 13vw, 9.2rem);
+  align-items: end;
+  padding: 0.74rem;
+  color: rgba(255, 250, 235, 0.94);
+  background:
+    radial-gradient(circle at 23% 22%, rgba(255, 255, 255, 0.78), transparent 20%),
+    radial-gradient(circle at 78% 70%, rgba(177, 194, 156, 0.35), transparent 28%),
+    linear-gradient(138deg, rgba(54, 44, 36, 0.9), rgba(136, 119, 89, 0.6) 56%, rgba(235, 214, 171, 0.78)),
+    url('/Website/atmosphere/soft-scratches.svg');
+  background-size: cover, cover, cover, 210px 210px;
+  box-shadow: inset 0 -22px 38px rgba(47, 35, 25, 0.25);
+  clip-path: polygon(2% 4%, 97% 0, 100% 90%, 94% 100%, 0 96%);
+}
+
+.portfolio-process-ribbon li:nth-child(2n) .portfolio-process-ribbon__image,
+.portfolio-state-photo:nth-child(2n) .portfolio-state-photo__image {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.72), transparent 20%),
+    radial-gradient(circle at 22% 72%, rgba(215, 196, 233, 0.32), transparent 26%),
+    linear-gradient(140deg, rgba(61, 48, 39, 0.9), rgba(135, 118, 92, 0.58) 54%, rgba(230, 208, 168, 0.78)),
+    url('/Website/atmosphere/soft-scratches.svg');
+}
+
+.portfolio-state-photo__image span,
+.portfolio-process-ribbon__image span {
+  width: fit-content;
+  max-width: 11rem;
+  padding: 0.34rem 0.52rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(41, 31, 23, 0.45);
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 90%);
+}
+
+.portfolio-state-photo__copy,
+.portfolio-process-ribbon__copy {
+  display: grid;
+  gap: 0.56rem;
+  padding: 0.82rem 0.16rem 0.12rem;
+}
+
+.portfolio-state-photo__copy span,
+.portfolio-process-ribbon__copy span {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .portfolio-state-photo,
+  .portfolio-process-photo-ribbon li,
+  .portfolio-state-photo:nth-child(2n),
+  .portfolio-process-photo-ribbon li:nth-child(2n) {
+    margin-top: 0;
+    transform: none;
+  }
+
+  .portfolio-state-photo__image,
+  .portfolio-process-ribbon__image {
+    min-height: 7.2rem;
+  }
+}

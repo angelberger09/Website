@@ -4,6 +4,7 @@
 :root {
   --fast-paper-cut: polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%);
   --fast-paper-shadow: 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.8rem rgba(47, 38, 35, 0.11);
+  --fast-paper-background: linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 58%, rgba(245, 224, 198, 0.36)), var(--grain-image);
 }
 
 html {
@@ -38,7 +39,14 @@ body::before,
 .post-list,
 .store-editorial-section,
 .store-visual-board,
-.store-paper-field-grid {
+.store-paper-field-grid,
+.notes-reader-board,
+.notes-source-board,
+.notes-state-board,
+.notes-post-desk,
+.notes-post-support-board,
+.continuity-paper-trail,
+.studio-footer--paper {
   content-visibility: auto;
   contain-intrinsic-size: 1px 900px;
 }
@@ -67,6 +75,20 @@ body::before,
 .pathway-link,
 .next-step-band,
 .reader-state,
+.home-note-piece,
+.home-room-slip,
+.home-pillar-note,
+.home-door-card,
+.notes-note-card,
+.notes-source-card,
+.notes-fallback-rule,
+.notes-state-note,
+.notes-support-note,
+.notes-post-sheet,
+.notes-post-state,
+.continuity-paper-step,
+.studio-footer__mark,
+.studio-footer__trail a,
 .store-availability-card,
 .store-state-snippet,
 .store-shot-card,
@@ -88,12 +110,24 @@ body::before,
 .pathway-link,
 .next-step-band,
 .reader-state,
+.home-note-piece,
+.home-room-slip,
+.home-pillar-note,
+.home-door-card,
+.notes-note-card,
+.notes-source-card,
+.notes-fallback-rule,
+.notes-state-note,
+.notes-support-note,
+.notes-post-sheet,
+.notes-post-state,
+.continuity-paper-step,
+.studio-footer__mark,
+.studio-footer__trail a,
 .store-availability-card,
 .store-state-snippet,
 .store-shot-card {
-  background-image:
-    linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 58%, rgba(245, 224, 198, 0.36)),
-    var(--grain-image);
+  background-image: var(--fast-paper-background);
   background-size: cover, 24rem 24rem;
 }
 
@@ -151,6 +185,19 @@ body::before,
 .page-card__label,
 .status-pill,
 .tag-row span,
+.home-note-piece__eyebrow,
+.home-room-slip__eyebrow,
+.home-door-card__label,
+.home-pillar-note span,
+.home-room-slip__status,
+.notes-note-card__label,
+.notes-source-stamp,
+.notes-post-back,
+.notes-post-kicker,
+.notes-post-tags span,
+.notes-support-note__pin,
+.continuity-paper-step__pin,
+.studio-footer__trail a span,
 .store-editorial-section > .eyebrow,
 .store-editorial-section > h1,
 .store-visual-board__copy > .eyebrow,
@@ -164,6 +211,9 @@ body::before,
   background-size: cover, 18rem 18rem;
 }
 
+.home-door-card__image,
+.notes-note-card::before,
+.notes-post-sheet::before,
 .store-shot-card__image {
   clip-path: var(--fast-paper-cut);
   background-image:
@@ -172,6 +222,19 @@ body::before,
     linear-gradient(135deg, rgba(216, 197, 236, 0.32), rgba(47, 38, 35, 0.12));
   background-size: cover;
   box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.title-lockup::before,
+.title-lockup::after,
+.home-paper-field::after,
+.home-room-status::after,
+.home-door-section::after {
+  animation-duration: 18s;
+}
+
+.studio-footer__trail a:nth-child(2n),
+.studio-footer__trail a:nth-child(2n + 1) {
+  transform: none;
 }
 
 @media (max-width: 760px) {
@@ -185,7 +248,14 @@ body::before,
   .post-list,
   .store-editorial-section,
   .store-visual-board,
-  .store-paper-field-grid {
+  .store-paper-field-grid,
+  .notes-reader-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-post-desk,
+  .notes-post-support-board,
+  .continuity-paper-trail,
+  .studio-footer--paper {
     content-visibility: visible;
     contain-intrinsic-size: auto;
   }

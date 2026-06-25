@@ -259,88 +259,34 @@ The current header is closer to direct navigation, but it still includes unwante
 
 The `.agent` docs listed About, Notes, Portfolio, and Store as meaningful Website pages. This pass turns those planned routes into active filled pages while keeping the Blog repo as the public writing source.
 
-## 2026-06-25 05:21 ET — Homepage paper front room
+## 2026-06-25 05:49 ET — About opening paper room map
 
 ### Changed
 
-- Replaced homepage generic `DetailCard` grids for front-room highlights, room statuses, and studio-shape pillars with homepage-specific paper-note boards in `app/page.jsx`.
-- Replaced the broad shared `page-card` route grid with `home-door-board` / `home-door-card` route doors that include image-like content centers and clipped paper labels.
-- Added `app/home-paper-collage-pass.css` for paper-field backdrops, clipped note silhouettes, taped/pinned highlight pieces, staggered room slips, route-door image centers, and responsive fallbacks.
-- Loaded the homepage paper pass from `app/layout.jsx`.
-- Updated public memory, pages matrix, components matrix, and a dedicated change record.
+- Replaced the first About `DetailCard` grid in `app/about/page.jsx` with `about-opening-board`, `about-room-map`, and `about-room-piece` markup.
+- Expanded `app/about-paper-collage-pass.css` so the existing About orientation copy renders as a taped paper room-map collage with clipped labels, visible paper backing, and responsive one-column fallback.
+- Updated public memory, semantic index, pages matrix, components matrix, and quality metrics to record that About no longer opens with a generic shared card grid.
+- Added `.agent/changes/2026-06-25-about-opening-room-map.md` as the dedicated change record.
 
 ### Why
 
-Current `.agent` state says filled-page sections should move away from generic UI panels and toward visible paper/collage rooms. About, Notes, Portfolio, and Store had route-specific paper passes, while the homepage still used broad shared card grids for several of its most visible front-door sections.
+The active paper/collage lessons were partially satisfied on About: principles and pathways used custom paper boards, but the first visible content section still fell back to generic `DetailCard` cards. The route needed to open with a clearly visible paper-room treatment without inventing new private content.
 
 ### Related items
 
-- PAGE-001
-- COMP-004
+- PAGE-002
 - COMP-005
 - COMP-008
 - DESIGN-019
-- DESIGN-021
 - DESIGN-022
 - DESIGN-024
 - DESIGN-026
 - DESIGN-029
 - DESIGN-030
-- DESIGN-031
-- LESSON-001
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-021
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-018
-- METRIC-020
-- METRIC-021
-- METRIC-023
-- METRIC-024
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-25 05:41 ET — Continuity paper trail
-
-### Changed
-
-- Replaced the reusable `NextStepBand` broad `link-card wide-card` / `pathway-link` markup with `continuity-paper-trail`, `continuity-paper-trail__copy`, and staggered `continuity-paper-step` links in `app/next-step-band.jsx`.
-- Added `app/continuity-paper-trail-pass.css` for the paper-field backdrop, copy sheet, taped step notes, clipped labels, responsive fallbacks, and accessible hover/focus states.
-- Loaded the continuity pass from `app/layout.jsx` before the performance budget override.
-- Updated public memory, pages matrix, components matrix, design-language matrix, quality metrics matrix, and a dedicated change record.
-
-### Why
-
-Current `.agent` state says filled pages should feel connected through calm next-step paths while shared card-like surfaces should not remain rounded or generic UI panels. The reusable continuity band still inherited broad shared panel/link-row classes, so every route ended with a less-paper-like interface surface.
-
-### Related items
-
-- PAGE-001
-- PAGE-002
-- PAGE-003
-- PAGE-003A
-- PAGE-003B
-- PAGE-004
-- PAGE-005
-- COMP-005
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-026
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
 - LESSON-018
 - LESSON-019
 - LESSON-022
 - LESSON-024
-- METRIC-017
 - METRIC-018
 - METRIC-021
 - METRIC-023

@@ -11,6 +11,7 @@
 | DATA-007 | Store Readiness Data | `angelberger09/Website` | `app/store-readiness.js` | JS data | PAGE-005 | active |
 | DATA-008 | Store Feed Contract | `angelberger09/Website` | `app/store-readiness.js` | JS data contract | PAGE-005, future Store feed | active |
 | DATA-009 | Blog Source Readiness Data | `angelberger09/Website` | `app/source-readiness.js` | JS data contract | PAGE-003, PAGE-003B, DATA-003 | active |
+| DATA-010 | Portfolio Feed Contract | `angelberger09/Website` | `app/portfolio-feed-contract.js` | JS data contract | PAGE-004, future Portfolio feed | active |
 
 ## Fallback rule
 
@@ -27,3 +28,7 @@ Future connected feeds should expose only public-safe fields that the Website ne
 ## Blog source contract rule
 
 The Notes reader should name the expected Blog feed shape in the Website before deeper automation depends on it: a public posts array, published-only records, slug/title/date/context fields, and profile plus Markdown files for individual notes.
+
+## Portfolio source contract rule
+
+The Portfolio page should name the expected future Portfolio feed shape before deeper archive automation depends on it: public-safe project records with slug, title, status, summary, role, optional preview, optional source, and staged record states.

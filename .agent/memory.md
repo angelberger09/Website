@@ -41,6 +41,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store launch checklist now uses `store-checklist-collage` / `store-checklist-note` markup in `app/store/page.jsx` plus `app/store-checklist-collage-pass.css`, replacing the remaining generic `DetailCard` checklist grid with taped readiness notes while preserving the honest launch requirements.
 - The Store preview board now uses `store-shot-card__staged-pieces` and `store-shot-card__materials` in `app/store/page.jsx` plus `app/store-preview-collage-pass.css`, making existing Store lane data read more like staged paper/photo content while preserving the no-fake-product boundary.
 - The Store future feed contract now uses `store-feed-ledger-board`, `store-feed-ledger-card`, and `store-feed-rule-tape` in `app/store/page.jsx` plus `app/store-feed-contract-pass.css`, replacing the remaining generic field/rule lists with a taped paper ledger board while preserving the public-safe future data contract.
+- The About page now uses `about-paper-board`, `about-principle-note`, and `about-pathway-note` markup in `app/about/page.jsx` plus `app/about-paper-collage-pass.css`, replacing broad shared `link-card wide-card` panels for principles and pathways with visible taped paper-note boards.
 
 ## Active direction
 
@@ -83,7 +84,7 @@ Store growth should use public-readiness gates before adding live commerce links
 ## Filled page structure
 
 - `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path.
-- `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio.
+- `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio. Its principles and pathways now render as taped paper-note boards instead of broad shared UI panels.
 - `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, names Blog source-readiness expectations, and routes visitors toward portfolio or home.
 - `/Website/notes/post/?slug=...` renders individual public notes inside the Website reader and offers post-specific next-step continuity back to notes or onward to portfolio.
 - `/Website/portfolio/` gives the first public project/archive cards, archive readiness lanes, archive lanes, a future Portfolio feed contract, staged record states, a publishing rhythm, and related routes into notes or store.

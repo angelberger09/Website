@@ -1,0 +1,96 @@
+/* Notes post photo card pass.
+   Gives the individual note reader intro an honest image-like paper card without inventing note imagery. */
+
+.notes-post-desk__photo-card {
+  position: relative;
+  display: grid;
+  gap: 0.42rem;
+  width: min(100%, 18rem);
+  min-height: 12.5rem;
+  align-content: end;
+  justify-items: start;
+  margin-block: 0.35rem 0.15rem;
+  padding: 1rem;
+  overflow: hidden;
+  clip-path: polygon(1% 2%, 98% 0, 96% 37%, 99% 71%, 96% 99%, 31% 97%, 2% 99%, 4% 62%);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 176, 143, 0.42), transparent 32%),
+    radial-gradient(circle at 72% 72%, rgba(185, 201, 175, 0.36), transparent 34%),
+    linear-gradient(138deg, rgba(216, 197, 236, 0.34), rgba(255, 247, 235, 0.68) 52%, rgba(47, 38, 35, 0.1)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 20rem 20rem;
+  box-shadow: 0.18rem 0.3rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.55rem rgba(47, 38, 35, 0.12), inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+  transform: rotate(-0.6deg);
+}
+
+.notes-post-desk__photo-card::before,
+.notes-post-desk__photo-card::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.notes-post-desk__photo-card::before {
+  inset: 0.72rem 0.82rem auto;
+  height: 3.8rem;
+  clip-path: polygon(2% 9%, 98% 0, 96% 86%, 5% 100%);
+  background: rgba(255, 252, 246, 0.36);
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.06);
+}
+
+.notes-post-desk__photo-card::after {
+  right: 1rem;
+  bottom: 1rem;
+  width: 4.6rem;
+  height: 3.2rem;
+  clip-path: polygon(5% 0, 98% 7%, 92% 95%, 0 88%);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.86), rgba(255, 247, 235, 0.58)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  opacity: 0.9;
+}
+
+.notes-post-desk__photo-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-desk__photo-kicker,
+.notes-post-desk__photo-card small {
+  width: fit-content;
+  padding: 0.26rem 0.46rem 0.22rem;
+  clip-path: polygon(3% 13%, 98% 0, 94% 88%, 5% 100%);
+  background: rgba(255, 252, 246, 0.78);
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notes-post-desk__photo-card strong {
+  width: min-content;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 0.86;
+}
+
+.notes-post-desk__photo-card i {
+  width: 5.5rem;
+  height: 0.42rem;
+  clip-path: polygon(1% 18%, 99% 0, 96% 88%, 4% 100%);
+  background: rgba(47, 38, 35, 0.16);
+}
+
+.notes-post-desk__photo-card small {
+  transform: rotate(0.8deg);
+}
+
+@media (max-width: 980px) {
+  .notes-post-desk__photo-card {
+    width: min(100%, 22rem);
+  }
+}

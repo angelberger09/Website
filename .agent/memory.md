@@ -38,6 +38,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store availability section now uses a dedicated `store-availability-board` / `store-availability-collage` structure in `app/store/page.jsx` and `app/store-availability-board-pass.css`, removing the broad `link-card wide-card` and `pathway-link` inheritance so the availability states read more like taped paper notes on a collage field than repeated UI rows.
 - The Store opening path section now uses `store-lane-collage` / `store-lane-piece` markup in `app/store/page.jsx` and `app/store-lane-collage-pass.css`, replacing the first generic Store `DetailCard` grid with staggered paper/photo lane pieces that keep the existing honest lane data while strengthening FEEDBACK-015 / FEEDBACK-017 / METRIC-030.
 - The Store promise section now uses `store-promise-board` / `store-promise-note` markup in `app/store/page.jsx` plus `app/store-promise-collage-pass.css`, replacing another generic embedded `DetailCard` grid with taped promise notes inside a paper-field board while preserving the honest no-fake-inventory copy.
+- The Store launch checklist now uses `store-checklist-collage` / `store-checklist-note` markup in `app/store/page.jsx` plus `app/store-checklist-collage-pass.css`, replacing the remaining generic `DetailCard` checklist grid with taped readiness notes while preserving the honest launch requirements.
 
 ## Active direction
 

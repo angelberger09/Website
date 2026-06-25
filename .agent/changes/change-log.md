@@ -385,3 +385,28 @@ METRIC-001 and METRIC-002 were still partially satisfied. The rendered interface
 - METRIC-001
 - METRIC-002
 - METRIC-016
+
+## 2026-06-25 08:11 ET — Compact PageIntro subtitle labels
+
+### Changed
+
+- Refined `app/page-intro-subtitle-pass.css` so shared route intro titles render as smaller uppercase paper labels with a short underline mark, narrower max width, and one-line mobile preservation.
+- Updated the quality metric record for METRIC-022.
+- Added a dedicated change record for the pass.
+
+### Why
+
+LESSON-023 / METRIC-022 remained partially satisfied: PageIntro titles were already on a named subtitle class, but the visual treatment could still read too close to a route headline. The shared route intro needed a stronger cross-page correction so About, Notes, Portfolio, Store, and Blog compatibility pages clearly treat their titles as supportive subtitle labels under the true homepage hero system.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- DESIGN-006
+- DESIGN-023
+- LESSON-023
+- METRIC-022

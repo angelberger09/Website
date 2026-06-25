@@ -12,7 +12,7 @@ export const metadata = {
 export default function PortfolioPage() {
   return (
     <main id="top" className="site-shell page-layout">
-      <PageIntro eyebrow="Portfolio" title="A first archive of public work and systems.">
+      <PageIntro eyebrow="Portfolio" title="First public archive">
         <p>
           The portfolio starts as a clean set of project doors. As more public
           work becomes ready, this page can grow into a fuller archive without

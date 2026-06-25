@@ -114,7 +114,7 @@ The current homepage is clear but feels too static, empty, and framed. The next 
 - Added INT-008 Top Edge Entry.
 - Added METRIC-010 Offscreen But Usable.
 - Added a reference note and encoded compressed screenshot reference in `.agent/references/`.
-- Updated active lessons, feedback lesson mapping, design language, components, memory, semantic index, and relationship map.
+- Updated active lessons, feedback lesson mapping, design language, components, interactions, memory, semantic index, and relationship map.
 
 ### Why
 
@@ -259,305 +259,47 @@ The current header is closer to direct navigation, but it still includes unwante
 
 The `.agent` docs listed About, Notes, Portfolio, and Store as meaningful Website pages. This pass turns those planned routes into active filled pages while keeping the Blog repo as the public writing source.
 
-## 2026-06-24 19:10 ET — Filled page depth pass
+## 2026-06-25 05:21 ET — Homepage paper front room
 
 ### Changed
 
-- Added richer homepage highlight cards.
-- Added About principles and pathway cards.
-- Added Notes support and reader-state cards.
-- Added Portfolio lanes and publishing rhythm.
-- Added Store trust promises.
-- Updated shared data in `app/site-data.js`.
-- Updated public memory, semantic index, pages matrix, components matrix, and relationship map.
+- Replaced homepage generic `DetailCard` grids for front-room highlights, room statuses, and studio-shape pillars with homepage-specific paper-note boards in `app/page.jsx`.
+- Replaced the broad shared `page-card` route grid with `home-door-board` / `home-door-card` route doors that include image-like content centers and clipped paper labels.
+- Added `app/home-paper-collage-pass.css` for paper-field backdrops, clipped note silhouettes, taped/pinned highlight pieces, staggered room slips, route-door image centers, and responsive fallbacks.
+- Loaded the homepage paper pass from `app/layout.jsx`.
+- Updated public memory, pages matrix, components matrix, and a dedicated change record.
 
 ### Why
 
-The top-level Website pages were filled, but several still read as first-pass pages. This pass makes every major page more useful while keeping future Blog, Portfolio, and Store repo data optional and honest.
+Current `.agent` state says filled-page sections should move away from generic UI panels and toward visible paper/collage rooms. About, Notes, Portfolio, and Store had route-specific paper passes, while the homepage still used broad shared card grids for several of its most visible front-door sections.
 
 ### Related items
 
 - PAGE-001
-- PAGE-002
-- PAGE-003
-- PAGE-004
-- PAGE-005
-- COMP-008
-- LESSON-018
-
-## 2026-06-24 19:19 ET — Filled page continuity bands
-
-### Changed
-
-- Added `app/page-continuity.js` with shared next-step language for each major Website page.
-- Added reusable `app/next-step-band.jsx`.
-- Added next-step bands to Home, About, Notes, Portfolio, and Store.
-- Updated public memory, semantic index, pages matrix, components matrix, and relationship map.
-
-### Why
-
-The pages now have more content, but they should not feel like isolated filled cards. This pass adds quiet, reusable continuity so visitors can move through the Website as a connected studio path.
-
-### Related items
-
-- PAGE-001
-- PAGE-002
-- PAGE-003
-- PAGE-004
-- PAGE-005
-- COMP-009
-- DATA-005
-- DESIGN-018
-- INT-011
-- LESSON-018
-
-## 2026-06-24 19:33 ET — Homepage room markers
-
-### Changed
-
-- Added `app/homepage-room-markers.js` with room-level visitor promises.
-- Added a homepage `Current rooms` section that explains how About, Notes, Portfolio, and Store are already filled.
-- Updated the change log with this entry.
-
-### Why
-
-The homepage already had page doors and next-step continuity. This pass makes the filled-room status visible before visitors choose a route, helping the site feel complete without redoing the route pages.
-
-### Related items
-
-- PAGE-001
-- PAGE-002
-- PAGE-003
-- PAGE-004
-- PAGE-005
 - COMP-004
-- COMP-008
-- LESSON-018
-
-## 2026-06-24 19:50 ET — Notes reader depth pass
-
-### Changed
-
-- Added latest-note emphasis and newest-first sorting to the notes index.
-- Added fuller reader states for loading, unavailable source, empty public archive, and published posts.
-- Added support-card and continuation sections to the individual note reader.
-- Updated pages matrix, components matrix, relationship map, and a dedicated change entry file.
-
-### Why
-
-The Notes route already loaded Blog content, but it needed to feel like a complete Website-owned reader rather than a raw feed preview. This pass gives both the index and individual note route clearer orientation, state handling, and continuity.
-
-### Related items
-
-- PAGE-003
-- PAGE-003A
-- PAGE-003B
-- COMP-006
-- COMP-007
-- DATA-003
-- DATA-005
-- LESSON-002
-- LESSON-004
-- LESSON-018
-
-## 2026-06-24 19:57 ET — Note reader continuity target
-
-### Changed
-
-- Added an individual note reader continuity target to `app/page-continuity.js`.
-- Updated `app/notes/post/PostReaderClient.jsx` to use the note-reader-specific target.
-- Updated public memory and added a dedicated change entry file.
-
-### Why
-
-The post reader had continuity after reading, but it reused the broader Notes index target. This pass gives individual notes their own next-step language so the route feels less generic and more like a completed reading room.
-
-### Related items
-
-- PAGE-003A
-- PAGE-003B
-- COMP-007
-- COMP-009
-- DATA-005
-- LESSON-018
-
-## 2026-06-24 20:09 ET — Portfolio archive readiness lanes
-
-### Changed
-
-- Added `portfolioReadiness` data in `app/site-data.js`.
-- Added an Archive readiness section to `app/portfolio/page.jsx`.
-- Updated public memory, pages matrix, components matrix, and relationship map for the Portfolio readiness pass.
-
-### Why
-
-The Portfolio page already had public project cards and archive lanes. This pass makes the page clearer for future growth by naming how work moves from ready cards to preparing records without inventing complete case studies too early.
-
-### Related items
-
-- PAGE-004
-- COMP-008
-- DATA-006
-- LESSON-002
-- LESSON-004
-- LESSON-018
-
-## 2026-06-24 20:28 ET — Store launch readiness gates
-
-### Changed
-
-- Added `app/store-readiness.js` with a public-safe product readiness checklist and staged availability states.
-- Added Store launch checklist and availability-state sections to `app/store/page.jsx`.
-- Updated public memory, semantic index, content sources matrix, pages matrix, components matrix, and relationship map for the Store readiness pass.
-
-### Why
-
-The Store page already names future product lanes and promises not to fake inventory. This pass makes the next Store growth step clearer by defining what a product needs before it moves from preparing to previewing or available, without pretending any live listings exist.
-
-### Related items
-
-- PAGE-005
-- COMP-008
-- DATA-007
-- LESSON-002
-- LESSON-004
-- LESSON-018
-
-## 2026-06-24 20:41 ET — Store feed contract pass
-
-### Changed
-
-- Added Store feed contract fields and rules to `app/store-readiness.js`.
-- Added a Future feed shape section to `app/store/page.jsx`.
-- Updated public memory, semantic index, content sources matrix, pages matrix, components matrix, and relationship map for the Store feed contract.
-
-### Why
-
-The Store page had readiness gates but the future Store repo data path was still only a placeholder. This pass defines the public-safe field shape the Website should expect later, without marking the future feed active or inventing live inventory.
-
-### Related items
-
-- PAGE-005
-- COMP-008
-- DATA-007
-- DATA-008
-- LESSON-002
-- LESSON-004
-- LESSON-018
-
-## 2026-06-24 22:20 ET — Paper header surface implementation
-
-### Changed
-
-- Applied `FEEDBACK-008` / `LESSON-020` in `app/paper-card-pass.css` so the shared floating header now gets a cream paper surface, existing grain/dust/scratch texture, stronger layered shadow, `backdrop-filter: none`, and a subtle lower-edge paper cue.
-- Updated `.agent/memory.md` to record that the shared header now has a first paper-surface implementation and that future header refinements should tune the existing material pass rather than adding a competing header system.
-- Updated `.agent/matrices/components.matrix.md`, `.agent/matrices/design-language.matrix.md`, `.agent/matrices/quality-metrics.matrix.md`, and `.agent/matrices/semantic-index.md` to connect the implementation to `COMP-001`, `DESIGN-020`, `METRIC-019`, and `LESSON-020`.
-- Added `.agent/changes/2026-06-24-paper-header-surface-implementation.md` as the detailed implementation record.
-
-### Why
-
-The stored feedback said the top bar should feel like a tactile paper strip laid over the page rather than a smooth glassy UI capsule. This pass intentionally implemented that feedback while preserving the current direct navigation structure.
-
-### Related items
-
-- FEEDBACK-008
-- LESSON-020
-- COMP-001
-- COMP-002
-- COMP-005
-- DESIGN-004
-- DESIGN-011
-- DESIGN-019
-- DESIGN-020
-- ASSET-001
-- ASSET-002
-- ASSET-003
-- METRIC-019
-
-## 2026-06-24 23:21 ET — Stronger shared paper card edge pass
-
-### Changed
-
-- Refined `app/paper-card-pass.css` so shared card-like surfaces use more visibly irregular cut-paper `clip-path` silhouettes instead of near-rectangular cuts.
-- Strengthened the layered paper shadows and texture density on `.page-card`, `.detail-card`, `.source-link`, `.link-card`, `.reader-card`, `.pathway-link`, and `.next-step-band`.
-- Added the stronger torn/cut treatment to alternating `.link-card`, `.reader-card`, and `.pathway-link` instances so non-homepage surfaces do not stay visually too uniform.
-- Made `.page-card__label`, `.status-pill`, `.tag-row span`, and `.reader-state` use more irregular cut silhouettes instead of pill-like shapes.
-- Updated `.agent/memory.md`, `.agent/matrices/components.matrix.md`, and `.agent/matrices/quality-metrics.matrix.md` for the refinement.
-
-### Why
-
-The current `app/paper-card-pass.css` technically removed rounded corners, but its cut paths were subtle enough that shared cards could still read as soft UI panels. This pass keeps the existing bounded paper-card system and makes the edge treatment visibly stronger without introducing a new component pattern.
-
-### Related items
-
-- FEEDBACK-010
-- FEEDBACK-011
-- LESSON-022
-- LESSON-024
-- COMP-004
-- COMP-005
-- COMP-006
-- COMP-007
-- COMP-008
-- COMP-009
-- DESIGN-022
-- DESIGN-024
-- METRIC-021
-- METRIC-023
-
-## 2026-06-25 01:39 ET — Store visual preview board
-
-### Changed
-
-- Added a `store-visual-board` section to `app/store/page.jsx` using the first three existing Store lanes from `app/site-data.js`.
-- Added `store-shot-card` CSS in `app/store-paper-snippet-pass.css` so the lanes read as abstract image-like paper/photo surfaces with short captions.
-- Updated `.agent/memory.md`, `.agent/matrices/pages.matrix.md`, `.agent/matrices/components.matrix.md`, `.agent/matrices/design-language.matrix.md`, `.agent/matrices/quality-metrics.matrix.md`, and `.agent/matrices/semantic-index.md`.
-
-### Why
-
-`FEEDBACK-017` / `DESIGN-031` / `METRIC-030` asked for photo/image-like surfaces to carry more content structure where honest. The Store page was still mostly text cards and paper strips. This pass adds one public-safe preview board that supports the visual direction without inventing product photography, live listings, or completed inventory.
-
-### Related items
-
-- PAGE-005
-- COMP-008
-- DESIGN-031
-- FEEDBACK-017
-- METRIC-030
-
-## 2026-06-25 03:48 ET — Portfolio paper archive board
-
-### Changed
-
-- Replaced the opening Portfolio `content-grid` / `DetailCard` project grid in `app/portfolio/page.jsx` with `portfolio-archive-board`, `portfolio-piece-collage`, and `portfolio-piece-card` markup.
-- Added `app/portfolio-paper-archive-pass.css` with a paper field backdrop, staged photo centers, clipped paper labels, taped edges, grain/dust/scratch material, irregular card silhouettes, and responsive two-column/single-column fallbacks.
-- Loaded the new Portfolio paper pass from `app/layout.jsx`.
-- Updated `.agent/memory.md`, `.agent/matrices/pages.matrix.md`, `.agent/matrices/components.matrix.md`, `.agent/matrices/semantic-index.md`, and `.agent/matrices/quality-metrics.matrix.md`.
-- Added `.agent/changes/2026-06-25-portfolio-paper-archive-board.md` as the detailed implementation record.
-
-### Why
-
-The current `.agent` state says filled-page sections should keep moving away from generic rounded UI cards and toward visible paper/collage, photo-like surfaces where honest. Store and About had recent targeted passes, while Portfolio still opened with a generic project-card grid. This pass makes the first Portfolio archive surface visibly papery without inventing fake project assets or private case-study content.
-
-### Related items
-
-- PAGE-004
 - COMP-005
 - COMP-008
 - DESIGN-019
+- DESIGN-021
 - DESIGN-022
 - DESIGN-024
 - DESIGN-026
 - DESIGN-029
 - DESIGN-030
 - DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
 - LESSON-019
+- LESSON-021
 - LESSON-022
 - LESSON-024
 - LESSON-025
 - METRIC-018
+- METRIC-020
 - METRIC-021
 - METRIC-023
-- METRIC-025
+- METRIC-024
 - METRIC-028
+- METRIC-029
 - METRIC-030

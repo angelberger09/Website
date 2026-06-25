@@ -60,21 +60,32 @@
 }
 
 .studio-footer__trail a {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
   min-height: 2.45rem;
-  padding: 0.58rem 0.74rem 0.54rem;
+  padding: 0.62rem 0.86rem 0.58rem;
   clip-path: polygon(3% 8%, 30% 2%, 75% 5%, 98% 2%, 96% 88%, 66% 98%, 28% 95%, 2% 98%);
-  background: linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.64) 62%, rgba(216, 197, 236, 0.18)), var(--grain-image);
+  background: linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.66) 62%, rgba(216, 197, 236, 0.18)), var(--grain-image);
   background-size: cover, 14rem 14rem;
   box-shadow: 0.1rem 0.18rem 0 rgba(47, 38, 35, 0.065), 0 0.42rem 0.82rem rgba(47, 38, 35, 0.09);
-  color: rgba(58, 45, 42, 0.92);
-  font-size: 0.72rem;
+  color: rgba(58, 45, 42, 0.94);
+  font-size: 0.74rem;
   font-weight: 950;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.studio-footer__trail a::after {
+  position: absolute;
+  right: 0.62rem;
+  bottom: 0.42rem;
+  left: 0.62rem;
+  height: 0.08rem;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 176, 143, 0.52), transparent);
+  opacity: 0.74;
 }
 
 .studio-footer__trail a:nth-child(2n) {
@@ -83,12 +94,6 @@
 
 .studio-footer__trail a:nth-child(2n + 1) {
   transform: rotate(-0.32deg) translateY(0.06rem);
-}
-
-.studio-footer__trail a span {
-  color: rgba(111, 98, 93, 0.78);
-  font-family: var(--font-hand);
-  font-size: 0.7rem;
 }
 
 .studio-footer__trail a:hover,

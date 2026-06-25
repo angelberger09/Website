@@ -418,3 +418,48 @@ Shared cards, wide cards, pathway rows, detail cards, reader cards, and continui
 ### Implementation boundary
 
 Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.
+
+## FEEDBACK-011 — Header still needs a stronger paper read
+
+Timestamp: 2026-06-24 23:47 ET  
+Status: logged; updates active lesson  
+Source: Screenshot review of current live Website About page header
+
+### Validation
+
+- Validation source used: screenshot showing `/Website/about/` plus current repo source for `app/site-chrome.jsx` and `app/paper-header-pass.css`.
+- Screenshot status: current Website screenshot of `/Website/about/` showing the shared top header and direct navigation.
+- Matched semantic items: PAGE-002, COMP-001, COMP-002, DESIGN-004, DESIGN-011, DESIGN-015, DESIGN-019, DESIGN-020, ASSET-001, ASSET-002, ASSET-003, METRIC-019.
+
+### Public-safe summary
+
+The shared header should feel papery too. The current direction is right, but the top strip and navigation chips still read too smooth, soft, and UI-like at screenshot scale.
+
+### Extracted signal
+
+The whole header system should visibly read as paper, not only have a subtle paper texture. Future header refinements should make the strip, identity area, and navigation labels feel like layered paper tabs or cut paper pieces with more visible grain, uneven/cut lower edges, tactile shadow, and non-pill silhouettes while preserving direct nav clarity.
+
+### Affected semantic items
+
+- PAGE-002 About
+- COMP-001 Floating Header
+- COMP-002 Direct Studio Navigation
+- COMP-005 Shared Site Chrome
+- DESIGN-004 Floating Header
+- DESIGN-011 Offscreen Top Emergence
+- DESIGN-015 Direct Unnumbered Navigation
+- DESIGN-019 Paper Material Authenticity
+- DESIGN-020 Paper Header Surface
+- METRIC-019 Paper Header Surface
+
+### Created or updated lessons
+
+- LESSON-020 Make the top bar feel like layered paper
+
+### Reference note
+
+- `.agent/references/2026-06-24-header-paper-refinement-reference.md`
+
+### Implementation boundary
+
+Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.

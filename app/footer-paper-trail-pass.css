@@ -1,0 +1,109 @@
+/* Shared footer paper trail pass. */
+
+.studio-footer--paper {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.55fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.9rem, 2.4vw, 1.8rem);
+  margin-top: clamp(0.6rem, 2vw, 1.4rem);
+  padding: clamp(0.85rem, 2vw, 1.25rem) clamp(0.8rem, 2.6vw, 1.5rem);
+  color: var(--ink);
+  isolation: isolate;
+}
+
+.studio-footer--paper::before {
+  position: absolute;
+  inset: -0.25rem -0.55rem -0.35rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(1.2% 5%, 19% 1.8%, 48% 3%, 76% 1.4%, 98% 4%, 97% 54%, 99% 94%, 68% 97%, 38% 95.5%, 2% 98%);
+  background: linear-gradient(136deg, rgba(255, 252, 246, 0.72), rgba(255, 247, 235, 0.34)), var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: 0.16rem 0.44rem 0 rgba(47, 38, 35, 0.055), 0 0.8rem 1.75rem rgba(47, 38, 35, 0.11);
+}
+
+.studio-footer__mark {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.78rem 1rem 0.82rem;
+  clip-path: polygon(2% 6%, 34% 1%, 76% 3%, 98% 2%, 96% 92%, 66% 98%, 26% 96%, 1% 99%);
+  background: linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.7) 62%, rgba(245, 224, 198, 0.28)), var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07), 0 0.55rem 1.05rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-0.28deg);
+}
+
+.studio-footer__mark p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.studio-footer__mark small {
+  display: block;
+  margin-top: 0.28rem;
+  color: var(--muted);
+  font-family: var(--font-hand);
+  font-size: 0.86rem;
+}
+
+.studio-footer__trail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(0.48rem, 1.2vw, 0.75rem);
+}
+
+.studio-footer__trail a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.45rem;
+  padding: 0.58rem 0.74rem 0.54rem;
+  clip-path: polygon(3% 8%, 30% 2%, 75% 5%, 98% 2%, 96% 88%, 66% 98%, 28% 95%, 2% 98%);
+  background: linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.64) 62%, rgba(216, 197, 236, 0.18)), var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.1rem 0.18rem 0 rgba(47, 38, 35, 0.065), 0 0.42rem 0.82rem rgba(47, 38, 35, 0.09);
+  color: rgba(58, 45, 42, 0.92);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.studio-footer__trail a:nth-child(2n) {
+  transform: rotate(0.45deg) translateY(-0.08rem);
+}
+
+.studio-footer__trail a:nth-child(2n + 1) {
+  transform: rotate(-0.32deg) translateY(0.06rem);
+}
+
+.studio-footer__trail a span {
+  color: rgba(111, 98, 93, 0.78);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+}
+
+.studio-footer__trail a:hover,
+.studio-footer__trail a:focus {
+  outline: 2px solid rgba(255, 176, 143, 0.48);
+  outline-offset: 0.18rem;
+}
+
+@media (max-width: 760px) {
+  .studio-footer--paper {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .studio-footer__trail {
+    justify-content: flex-start;
+  }
+}

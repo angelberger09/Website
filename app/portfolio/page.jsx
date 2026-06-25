@@ -1,6 +1,6 @@
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
-import { portfolioLanes, portfolioPieces, portfolioProcess } from "../site-data";
+import { portfolioLanes, portfolioPieces, portfolioProcess, portfolioReadiness } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
 export const metadata = {
@@ -30,6 +30,28 @@ export default function PortfolioPage() {
             )}
           </DetailCard>
         ))}
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="portfolio-readiness-title">
+        <p className="eyebrow">Archive readiness</p>
+        <h1 id="portfolio-readiness-title">Public work gets a clear holding pattern.</h1>
+        <p>
+          The portfolio can show what is real now without rushing unfinished material
+          into public view. These lanes make it easier to decide what belongs on the
+          page, what needs a little more framing, and what should stay offstage.
+        </p>
+        <div className="content-grid content-grid--small embedded-grid">
+          {portfolioReadiness.map((item) => (
+            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
+              <p>{item.description}</p>
+              {item.details && (
+                <ul className="detail-list">
+                  {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                </ul>
+              )}
+            </DetailCard>
+          ))}
+        </div>
       </section>
 
       <section className="link-card wide-card" aria-labelledby="portfolio-lanes-title">

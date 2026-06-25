@@ -31,6 +31,7 @@ import './store-availability-board-pass.css';
 import './store-availability-status-pass.css';
 import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
+import './store-promise-photo-pass.css';
 import './store-checklist-collage-pass.css';
 import './store-path-photo-pass.css';
 import './notes-paper-reader-pass.css';

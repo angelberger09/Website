@@ -130,6 +130,24 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
   }, []);
 
   const html = useMemo(() => markdownToHtml(state.markdown), [state.markdown]);
+  const postMetaSlips = useMemo(() => {
+    if (!state.profile) return [];
+
+    return [
+      {
+        label: "Shelf mark",
+        value: state.profile.series || state.profile.category || "Public note"
+      },
+      {
+        label: "Placed",
+        value: state.profile.date || "Published shelf"
+      },
+      {
+        label: "Reader path",
+        value: state.slug ? "Open note" : "Notes room"
+      }
+    ];
+  }, [state.profile, state.slug]);
 
   return (
     <main id="top" className="site-shell readable-shell notes-post-room">
@@ -183,6 +201,14 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
                 {state.profile.category && <span>{state.profile.category}</span>}
                 {state.profile.date && <span>{state.profile.date}</span>}
                 {state.slug && <span>public note</span>}
+              </div>
+              <div className="notes-post-receipt-strip" aria-label="Note reader details">
+                {postMetaSlips.map((slip) => (
+                  <div className="notes-post-receipt-slip" key={slip.label}>
+                    <span>{slip.label}</span>
+                    <strong>{slip.value}</strong>
+                  </div>
+                ))}
               </div>
               <div className="markdown-body notes-post-markdown" dangerouslySetInnerHTML={{ __html: html }} />
             </>

@@ -1,4 +1,4 @@
-/* Store feed contract paper-field pass. Keeps the future Store data contract truthful while moving it away from a broad nested UI panel. */
+/* Store feed contract paper-ledger pass. Keeps the future Store data contract truthful while turning the section into visible taped paper structure. */
 
 .store-feed-contract-section {
   position: relative;
@@ -9,83 +9,141 @@
   isolation: isolate;
 }
 
-.store-feed-contract-section::before {
+.store-feed-ledger-board::before {
   position: absolute;
-  inset: 4.5rem -1.15rem -0.55rem;
+  inset: 4.2rem -1.35rem -0.85rem;
   z-index: -1;
   content: "";
-  clip-path: polygon(1% 4%, 21% 1.6%, 49% 3%, 73% 0.8%, 98% 2.2%, 96.7% 32%, 98.4% 70%, 96.2% 98%, 71% 96.8%, 43% 99%, 17% 97.4%, 1.4% 98.6%, 2.8% 58%);
+  clip-path: polygon(1% 5%, 19% 1.8%, 45% 3.5%, 72% 0.9%, 98.5% 2.5%, 96.8% 27%, 99% 62%, 96.2% 98.2%, 73% 96.4%, 46% 99.2%, 18% 97%, 1.2% 99%, 3% 58%);
   background:
-    linear-gradient(104deg, rgba(255, 252, 246, 0.2), rgba(255, 247, 235, 0.54) 46%, rgba(185, 201, 175, 0.18)),
-    radial-gradient(circle at 20% 24%, rgba(216, 197, 236, 0.18), transparent 29%),
-    radial-gradient(circle at 82% 74%, rgba(255, 176, 143, 0.13), transparent 30%),
+    linear-gradient(109deg, rgba(255, 252, 246, 0.28), rgba(255, 246, 232, 0.7) 45%, rgba(185, 201, 175, 0.2)),
+    radial-gradient(circle at 14% 22%, rgba(216, 197, 236, 0.2), transparent 31%),
+    radial-gradient(circle at 86% 72%, rgba(255, 176, 143, 0.15), transparent 31%),
     var(--grain-image),
     var(--dust-image);
-  background-size: cover, cover, cover, 22rem 22rem, 34rem 34rem;
-  filter: drop-shadow(0.24rem 0.72rem 1.7rem rgba(47, 38, 35, 0.12));
-  opacity: 0.9;
+  background-size: cover, cover, cover, 20rem 20rem, 31rem 31rem;
+  filter: drop-shadow(0.3rem 0.84rem 1.85rem rgba(47, 38, 35, 0.14));
+  opacity: 0.96;
 }
 
-.store-feed-contract-section::after {
+.store-feed-ledger-board::after {
   position: absolute;
-  inset: 6.4rem 0.8rem 1.2rem 2.2rem;
+  inset: 6.4rem 0.25rem 1.35rem 1.35rem;
   z-index: -1;
   content: "";
-  clip-path: polygon(0 12%, 22% 8%, 47% 13%, 73% 9%, 100% 15%, 98% 88%, 76% 93%, 49% 88%, 24% 94%, 1% 86%);
+  clip-path: polygon(0 13%, 23% 8%, 48% 13%, 75% 8.5%, 100% 15%, 98.5% 86%, 76% 93%, 50% 88%, 25% 94.5%, 1% 86.5%);
   background:
-    linear-gradient(93deg, transparent 0 18%, rgba(47, 38, 35, 0.055) 19%, transparent 20% 54%, rgba(47, 38, 35, 0.04) 55%, transparent 57%),
-    linear-gradient(178deg, rgba(255, 255, 255, 0.18), rgba(47, 38, 35, 0.04));
-  opacity: 0.62;
-  transform: rotate(-0.35deg);
+    linear-gradient(91deg, transparent 0 14%, rgba(47, 38, 35, 0.055) 15%, transparent 16.5% 48%, rgba(47, 38, 35, 0.042) 49%, transparent 50.5% 77%, rgba(47, 38, 35, 0.035) 78%, transparent 79.4%),
+    linear-gradient(178deg, rgba(255, 255, 255, 0.2), rgba(47, 38, 35, 0.045));
+  opacity: 0.68;
+  transform: rotate(-0.32deg);
   pointer-events: none;
 }
 
-.store-feed-contract-section > p:not(.eyebrow) {
+.store-feed-ledger-board__intro {
+  display: grid;
+  max-width: 39rem;
+  gap: 0.72rem;
+}
+
+.store-feed-ledger-board__intro > p:not(.eyebrow) {
   max-width: 37rem;
-  padding: 0.72rem 0.95rem;
-  clip-path: polygon(1.5% 5%, 29% 1%, 64% 3%, 98.5% 2%, 96.4% 94%, 75% 97%, 42% 95.5%, 2% 99%);
+  padding: 0.74rem 0.95rem;
+  clip-path: polygon(1.5% 6%, 29% 1%, 64% 3.5%, 98.5% 2%, 96.4% 94%, 75% 97.3%, 42% 95.8%, 2% 99%);
   background:
-    linear-gradient(138deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.58)),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.86), rgba(255, 247, 235, 0.64)),
     var(--grain-image);
   background-size: cover, 17rem 17rem;
   box-shadow: 0.22rem 0.36rem 0.85rem rgba(47, 38, 35, 0.09);
-  transform: rotate(-0.22deg);
+  transform: rotate(-0.28deg);
 }
 
-.store-feed-field-snippets {
-  display: flex;
-  flex-wrap: wrap;
+.store-feed-ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
-  gap: clamp(0.72rem, 1.8vw, 1.05rem);
-  margin-top: 0.25rem;
+  gap: clamp(0.8rem, 1.8vw, 1.15rem);
+  margin-top: 0.2rem;
 }
 
-.store-feed-field-snippet {
-  flex: 1 1 min(14rem, 100%);
-  min-width: min(100%, 13rem);
-  max-width: 22rem;
-  border-radius: 0;
-  clip-path: polygon(2% 3%, 25% 0.8%, 56% 2.6%, 98% 1.2%, 96.8% 36%, 99% 96%, 72% 98.4%, 35% 96.8%, 1.5% 99%);
+.store-feed-ledger-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-height: 12rem;
+  padding: 1.5rem 0.95rem 0.9rem;
+  clip-path: polygon(2% 3.5%, 25% 0.8%, 56% 2.8%, 98% 1.2%, 96.8% 36%, 99% 96%, 72% 98.4%, 35% 96.8%, 1.5% 99%);
   background:
-    linear-gradient(146deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.66) 62%, rgba(216, 197, 236, 0.18)),
+    linear-gradient(146deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.68) 62%, rgba(216, 197, 236, 0.18)),
     var(--grain-image),
     var(--fine-scratch-image);
-  background-size: cover, 18rem 18rem, 38rem 38rem;
+  background-size: cover, 17rem 17rem, 36rem 36rem;
   box-shadow:
     -0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
-    0.34rem 0.62rem 1.15rem rgba(47, 38, 35, 0.13),
-    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+    0.36rem 0.66rem 1.2rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
-.store-feed-field-snippet:nth-child(odd) {
-  transform: rotate(-0.64deg) translateY(0.1rem);
+.store-feed-ledger-card::before {
+  position: absolute;
+  inset: 0.18rem 34% auto 28%;
+  height: 0.62rem;
+  content: "";
+  clip-path: polygon(0 24%, 18% 0, 74% 8%, 100% 26%, 94% 100%, 8% 86%);
+  background: rgba(255, 246, 218, 0.72);
+  box-shadow: 0 0.16rem 0.45rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-1.2deg);
 }
 
-.store-feed-field-snippet:nth-child(even) {
-  transform: rotate(0.52deg) translateY(-0.08rem);
+.store-feed-ledger-card__tab,
+.store-feed-ledger-card__label {
+  width: fit-content;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.store-feed-rule-notes {
+.store-feed-ledger-card__tab {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.62rem;
+  color: rgba(47, 38, 35, 0.44);
+}
+
+.store-feed-ledger-card__label {
+  padding: 0.36rem 0.48rem 0.32rem;
+  clip-path: polygon(1% 12%, 28% 2%, 68% 8%, 100% 0, 97% 91%, 64% 100%, 29% 94%, 0 100%);
+  background: rgba(255, 247, 235, 0.72);
+  color: rgba(87, 72, 58, 0.9);
+}
+
+.store-feed-ledger-card p {
+  margin: 0;
+  color: rgba(47, 38, 35, 0.77);
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  line-height: 1.55;
+}
+
+.store-feed-ledger-card:nth-child(4n + 1) {
+  transform: rotate(-0.82deg) translateY(0.12rem);
+}
+
+.store-feed-ledger-card:nth-child(4n + 2) {
+  transform: rotate(0.66deg) translateY(-0.1rem);
+}
+
+.store-feed-ledger-card:nth-child(4n + 3) {
+  transform: rotate(-0.28deg) translateY(0.28rem);
+}
+
+.store-feed-ledger-card:nth-child(4n) {
+  transform: rotate(0.94deg) translateY(0.02rem);
+}
+
+.store-feed-rule-tape {
   display: flex;
   flex-wrap: wrap;
   gap: 0.58rem;
@@ -94,28 +152,51 @@
   list-style: none;
 }
 
-.store-feed-rule-notes li {
+.store-feed-rule-tape li {
   width: fit-content;
-  max-width: min(100%, 24rem);
+  max-width: min(100%, 25rem);
   margin: 0;
-  padding: 0.48rem 0.68rem 0.44rem;
-  clip-path: polygon(1% 8%, 27% 2%, 62% 5%, 99% 1%, 97% 91%, 70% 97%, 32% 94%, 1% 100%);
+  padding: 0.5rem 0.7rem 0.46rem;
+  clip-path: polygon(1% 9%, 27% 2%, 62% 5%, 99% 1%, 97% 91%, 70% 97%, 32% 94%, 1% 100%);
   background:
-    linear-gradient(128deg, rgba(255, 252, 246, 0.92), rgba(245, 224, 198, 0.48)),
+    linear-gradient(128deg, rgba(255, 252, 246, 0.93), rgba(245, 224, 198, 0.5)),
     var(--grain-image);
   background-size: cover, 14rem 14rem;
   box-shadow: 0.16rem 0.28rem 0.72rem rgba(47, 38, 35, 0.09);
 }
 
+.store-feed-rule-tape li:nth-child(odd) {
+  transform: rotate(-0.4deg);
+}
+
+.store-feed-rule-tape li:nth-child(even) {
+  transform: rotate(0.36deg);
+}
+
+@media (max-width: 960px) {
+  .store-feed-ledger-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
-  .store-feed-contract-section::before {
+  .store-feed-ledger-board::before {
     inset: 5.2rem -0.45rem -0.3rem;
   }
 
-  .store-feed-contract-section > p:not(.eyebrow),
-  .store-feed-field-snippet,
-  .store-feed-field-snippet:nth-child(odd),
-  .store-feed-field-snippet:nth-child(even) {
+  .store-feed-ledger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-feed-ledger-board__intro > p:not(.eyebrow),
+  .store-feed-ledger-card,
+  .store-feed-ledger-card:nth-child(4n + 1),
+  .store-feed-ledger-card:nth-child(4n + 2),
+  .store-feed-ledger-card:nth-child(4n + 3),
+  .store-feed-ledger-card:nth-child(4n),
+  .store-feed-rule-tape li,
+  .store-feed-rule-tape li:nth-child(odd),
+  .store-feed-rule-tape li:nth-child(even) {
     transform: none;
   }
 }

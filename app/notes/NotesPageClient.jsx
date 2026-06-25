@@ -49,7 +49,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
   const archivePosts = useMemo(() => state.posts.slice(1), [state.posts]);
 
   return (
-    <main id="top" className="site-shell page-layout">
+    <main id="top" className="site-shell page-layout notes-room-page">
       <PageIntro eyebrow="Still Here Notes" title="Studio notes room">
         <p>
           This page is the Website-owned reading door. The Blog repo keeps the
@@ -58,57 +58,62 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
         </p>
       </PageIntro>
 
-      <section className="link-card wide-card" aria-labelledby="notes-title">
-        <p className="eyebrow">{routeLabel}</p>
-        <h1 id="notes-title">Read the notes</h1>
-        <p>
-          Published posts appear here when the public Blog index is available.
-          The source can stay structured while visitors get a real page instead
-          of a raw feed.
-        </p>
-
-        {state.status === "loading" && (
-          <p className="reader-state">Gathering the public notes index inside the studio shell...</p>
-        )}
-        {state.status === "error" && (
-          <div className="reader-state reader-state--error">
-            <p>{state.error}</p>
-            <small>The notes room stays ready even when the public source is temporarily unavailable.</small>
-          </div>
-        )}
-        {state.status === "ready" && state.posts.length === 0 && (
-          <p className="reader-state">No published notes are available yet. This page is ready for them when they arrive.</p>
-        )}
-        {state.status === "ready" && state.posts.length > 0 && (
-          <p className="source-note">
-            Showing {state.posts.length} published note{state.posts.length === 1 ? "" : "s"} from the {sourceLabel(state.source)}, sorted newest first.
+      <section className="notes-reader-board" aria-labelledby="notes-title">
+        <div className="notes-reader-board__copy">
+          <p className="eyebrow">{routeLabel}</p>
+          <h1 id="notes-title">Read the notes</h1>
+          <p>
+            Published posts appear here when the public Blog index is available.
+            The source can stay structured while visitors get a real page instead
+            of a raw feed.
           </p>
-        )}
 
-        {featuredPost && (
-          <a className="source-link" href={`${routeBase}/post/?slug=${featuredPost.slug}`}>
-            <span>{featuredPost.title}</span>
-            <small>{featuredPost.category} · {featuredPost.date}</small>
-            <small>{featuredPost.excerpt}</small>
-            <em>Start with latest note</em>
-          </a>
-        )}
+          {state.status === "loading" && (
+            <p className="reader-state">Gathering the public notes index inside the studio shell...</p>
+          )}
+          {state.status === "error" && (
+            <div className="reader-state reader-state--error">
+              <p>{state.error}</p>
+              <small>The notes room stays ready even when the public source is temporarily unavailable.</small>
+            </div>
+          )}
+          {state.status === "ready" && state.posts.length === 0 && (
+            <p className="reader-state">No published notes are available yet. This page is ready for them when they arrive.</p>
+          )}
+          {state.status === "ready" && state.posts.length > 0 && (
+            <p className="source-note notes-source-stamp">
+              Showing {state.posts.length} published note{state.posts.length === 1 ? "" : "s"} from the {sourceLabel(state.source)}, sorted newest first.
+            </p>
+          )}
+        </div>
 
-        {archivePosts.length > 0 && (
-          <div className="post-list" aria-label="More published notes">
-            {archivePosts.map((post) => (
-              <a className="source-link" href={`${routeBase}/post/?slug=${post.slug}`} key={post.slug}>
-                <span>{post.title}</span>
-                <small>{post.category} · {post.date}</small>
-                <small>{post.excerpt}</small>
-                <em>Open note</em>
-              </a>
-            ))}
-          </div>
-        )}
+        <div className="notes-paper-stack" aria-label="Published notes">
+          {featuredPost && (
+            <a className="source-link notes-note-card notes-note-card--featured" href={`${routeBase}/post/?slug=${featuredPost.slug}`}>
+              <span className="notes-note-card__label">Latest note</span>
+              <strong>{featuredPost.title}</strong>
+              <small>{featuredPost.category} · {featuredPost.date}</small>
+              <p>{featuredPost.excerpt}</p>
+              <em>Start with latest note</em>
+            </a>
+          )}
+
+          {archivePosts.length > 0 && (
+            <div className="notes-scroll-strip" aria-label="More published notes">
+              {archivePosts.map((post) => (
+                <a className="source-link notes-note-card" href={`${routeBase}/post/?slug=${post.slug}`} key={post.slug}>
+                  <span className="notes-note-card__label">Open note</span>
+                  <strong>{post.title}</strong>
+                  <small>{post.category} · {post.date}</small>
+                  <p>{post.excerpt}</p>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </section>
 
-      <section className="content-grid content-grid--small" aria-label="Notes system details">
+      <section className="notes-support-strip" aria-label="Notes system details">
         {notesSupportCards.map((card) => (
           <DetailCard eyebrow={card.eyebrow} title={card.title} key={card.title}>
             <p>{card.description}</p>
@@ -116,26 +121,30 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
         ))}
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="notes-source-title">
-        <p className="eyebrow">Source readiness</p>
-        <h1 id="notes-source-title">The reader knows what it needs from Blog.</h1>
-        <p>
-          The Notes room can stay calm even while connected repos change because the
-          expected Blog feed shape is named here in visitor-facing language.
-        </p>
-        <div className="content-grid content-grid--small embedded-grid">
+      <section className="notes-source-board" aria-labelledby="notes-source-title">
+        <div className="notes-source-board__intro">
+          <p className="eyebrow">Source readiness</p>
+          <h1 id="notes-source-title">The reader knows what it needs from Blog.</h1>
+          <p>
+            The Notes room can stay calm even while connected repos change because the
+            expected Blog feed shape is named here in visitor-facing language.
+          </p>
+        </div>
+        <div className="notes-source-ledger" aria-label="Blog feed readiness requirements">
           {blogFeedReadiness.map((item) => (
-            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
+            <article className="notes-source-card" key={item.title}>
+              <p className="eyebrow">{item.eyebrow}</p>
+              <h2>{item.title}</h2>
               <p>{item.description}</p>
               <ul className="detail-list">
                 {item.details.map((detail) => <li key={detail}>{detail}</li>)}
               </ul>
-            </DetailCard>
+            </article>
           ))}
         </div>
-        <div className="pathway-list" aria-label="Source fallback rules">
+        <div className="notes-fallback-rules" aria-label="Source fallback rules">
           {sourceFallbackRules.map((rule) => (
-            <div className="pathway-link" key={rule.label}>
+            <div className="notes-fallback-rule" key={rule.label}>
               <span>{rule.label}</span>
               <p>{rule.description}</p>
             </div>
@@ -143,10 +152,10 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="notes-states-title">
+      <section className="notes-state-board" aria-labelledby="notes-states-title">
         <p className="eyebrow">Reader behavior</p>
         <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
-        <div className="content-grid content-grid--small embedded-grid">
+        <div className="notes-state-list">
           {notesReaderStates.map((readerState) => (
             <DetailCard eyebrow={readerState.eyebrow} title={readerState.title} key={readerState.title}>
               <p>{readerState.description}</p>

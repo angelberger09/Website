@@ -10,6 +10,7 @@ import './store-hierarchy-pass.css';
 import './store-feed-contract-pass.css';
 import './store-availability-board-pass.css';
 import './store-lane-collage-pass.css';
+import './store-promise-collage-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

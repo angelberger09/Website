@@ -1,0 +1,58 @@
+/* Notes post receipt strip pass.
+   Turns real post profile details into small paper receipt slips inside the reader sheet. */
+
+.notes-post-receipt-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.5vw, 0.82rem);
+  margin: clamp(1rem, 2.5vw, 1.45rem) 0 clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.notes-post-receipt-slip {
+  display: grid;
+  gap: 0.28rem;
+  align-content: start;
+  min-height: 5.6rem;
+  padding: 0.72rem 0.78rem 0.82rem;
+  clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%));
+  background:
+    linear-gradient(150deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 58%, rgba(245, 224, 198, 0.34)),
+    var(--grain-image);
+  background-size: cover, 17rem 17rem;
+  box-shadow: var(--fast-paper-shadow, 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.8rem rgba(47, 38, 35, 0.11)), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.notes-post-receipt-slip span {
+  width: fit-content;
+  padding: 0.18rem 0.42rem 0.16rem;
+  clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%));
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.74)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.06);
+  color: rgba(47, 38, 35, 0.66);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notes-post-receipt-slip strong {
+  color: rgba(47, 38, 35, 0.9);
+  font-family: var(--font-display);
+  font-size: clamp(1.04rem, 2vw, 1.36rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+@media (max-width: 760px) {
+  .notes-post-receipt-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-post-receipt-slip {
+    min-height: auto;
+  }
+}

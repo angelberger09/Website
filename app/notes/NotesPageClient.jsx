@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
+import { blogFeedReadiness, sourceFallbackRules } from "../source-readiness";
 import { INDEX_URLS, notesReaderStates, notesSupportCards } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -113,6 +114,33 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             <p>{card.description}</p>
           </DetailCard>
         ))}
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="notes-source-title">
+        <p className="eyebrow">Source readiness</p>
+        <h1 id="notes-source-title">The reader knows what it needs from Blog.</h1>
+        <p>
+          The Notes room can stay calm even while connected repos change because the
+          expected Blog feed shape is named here in visitor-facing language.
+        </p>
+        <div className="content-grid content-grid--small embedded-grid">
+          {blogFeedReadiness.map((item) => (
+            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
+              <p>{item.description}</p>
+              <ul className="detail-list">
+                {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            </DetailCard>
+          ))}
+        </div>
+        <div className="pathway-list" aria-label="Source fallback rules">
+          {sourceFallbackRules.map((rule) => (
+            <div className="pathway-link" key={rule.label}>
+              <span>{rule.label}</span>
+              <p>{rule.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="link-card wide-card" aria-labelledby="notes-states-title">

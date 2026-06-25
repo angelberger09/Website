@@ -32,6 +32,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store availability states currently use `store-snippet-list` and `store-state-snippet` surfaces in `app/store/page.jsx` with staggered cut-paper treatment in `app/paper-card-pass.css`; this partially satisfies the placed availability paper-strip target and should be visually reviewed before adding more Store styling.
 - The Store availability section now has a narrow `app/store-paper-snippet-pass.css` refinement that turns the section eyebrow and title into clipped paper snippets, supporting FEEDBACK-016 without changing Store copy or inventing product material.
 - The Store launch checklist now uses a `store-editorial-section` wrapper in `app/store/page.jsx` plus a light paper-field backdrop in `app/store-paper-snippet-pass.css`, reducing one nested wide-card panel while preserving the truthful checklist content.
+- The Store page now includes a narrow preview-board pass in `app/store/page.jsx` and `app/store-paper-snippet-pass.css`: existing Store lane data becomes honest image-like paper/photo surfaces that support FEEDBACK-017 without implying product photos, live listings, or completed inventory.
 
 ## Active direction
 

@@ -1,0 +1,56 @@
+/* About direct room labels pass.
+   Keeps the room-map papery while replacing decorative numeric markers with useful direct visitor labels. */
+
+.about-room-piece__path-label {
+  position: absolute;
+  right: 0.78rem;
+  bottom: 0.72rem;
+  z-index: 0;
+  display: inline-flex;
+  max-width: min(11rem, 52%);
+  padding: 0.34rem 0.58rem 0.3rem;
+  color: rgba(58, 45, 42, 0.62);
+  font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.72), rgba(185, 201, 175, 0.38)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(3% 13%, 28% 1%, 57% 9%, 96% 0, 98% 84%, 72% 98%, 33% 92%, 4% 99%);
+  box-shadow: 0.12rem 0.18rem 0 rgba(47, 38, 35, 0.06), 0 0.38rem 0.8rem rgba(47, 38, 35, 0.08);
+  transform: rotate(-1.2deg);
+}
+
+.about-room-piece:nth-child(2n) .about-room-piece__path-label {
+  left: 0.86rem;
+  right: auto;
+  transform: rotate(1deg);
+}
+
+.about-room-piece__eyebrow,
+.about-room-piece h2,
+.about-room-piece p {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .about-room-piece__path-label {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    order: 4;
+    max-width: 100%;
+    width: max-content;
+    margin-top: 0.2rem;
+    transform: none;
+  }
+
+  .about-room-piece:nth-child(2n) .about-room-piece__path-label {
+    left: auto;
+    transform: none;
+  }
+}

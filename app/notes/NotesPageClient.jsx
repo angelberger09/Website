@@ -47,6 +47,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
 
   const featuredPost = useMemo(() => state.posts[0], [state.posts]);
   const archivePosts = useMemo(() => state.posts.slice(1), [state.posts]);
+  const galleryPosts = useMemo(() => state.posts.slice(0, 6), [state.posts]);
 
   return (
     <main id="top" className="site-shell page-layout notes-room-page">
@@ -112,6 +113,40 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           )}
         </div>
       </section>
+
+      {galleryPosts.length > 0 && (
+        <section className="notes-gallery-board" aria-labelledby="notes-gallery-title">
+          <div className="notes-gallery-board__intro">
+            <p className="eyebrow">Writing shelf</p>
+            <h1 id="notes-gallery-title">A small note contact sheet.</h1>
+            <p>
+              The same published notes also become a scrollable paper/photo shelf, so
+              the room has a more visual reading rhythm without inventing screenshots
+              or private writing material.
+            </p>
+          </div>
+          <div className="notes-gallery-scroll" aria-label="Published note contact sheet">
+            {galleryPosts.map((post, index) => (
+              <a
+                className={`notes-gallery-card ${index % 2 === 0 ? "notes-gallery-card--image" : "notes-gallery-card--note"}`}
+                href={`${routeBase}/post/?slug=${post.slug}`}
+                key={`gallery-${post.slug}`}
+              >
+                <span className="notes-gallery-card__number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="notes-gallery-card__image" aria-hidden="true">
+                  <span>{post.category || "note"}</span>
+                </span>
+                <span className="notes-gallery-card__copy">
+                  <small>{index === 0 ? "Latest from the shelf" : "Public note"}</small>
+                  <strong>{post.title}</strong>
+                  <span>{post.excerpt}</span>
+                  <em>{post.date}</em>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="notes-support-strip" aria-label="Notes system details">
         {notesSupportCards.map((card, index) => (

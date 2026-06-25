@@ -1,5 +1,5 @@
 /* Notes post path shelf pass.
-   Adds a small visible paper-note bridge between the reading sheet and the shared support/continuity areas without inventing post content. */
+   Adds a small visible paper/photo bridge between the reading sheet and the shared support/continuity areas without inventing post content. */
 
 .notes-post-path-shelf {
   position: relative;
@@ -9,7 +9,7 @@
   gap: clamp(0.85rem, 2vw, 1.15rem);
   isolation: isolate;
   content-visibility: auto;
-  contain-intrinsic-size: 1px 340px;
+  contain-intrinsic-size: 1px 390px;
 }
 
 .notes-post-path-shelf::before {
@@ -28,16 +28,80 @@
 }
 
 .notes-post-path-note {
+  --path-wash-a: rgba(255, 176, 143, 0.34);
+  --path-wash-b: rgba(185, 201, 175, 0.34);
   position: relative;
   display: grid;
-  gap: 0.52rem;
+  gap: 0.58rem;
   align-content: start;
-  min-height: 11.2rem;
-  padding: clamp(0.95rem, 2vw, 1.18rem);
+  min-height: 15.4rem;
+  padding: clamp(0.82rem, 2vw, 1rem);
+  overflow: hidden;
   clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%));
   background: var(--fast-paper-background, linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 58%, rgba(245, 224, 198, 0.36)), var(--grain-image));
   background-size: cover, 22rem 22rem;
   box-shadow: var(--fast-paper-shadow, 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.85rem 1.8rem rgba(47, 38, 35, 0.11)), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.notes-post-path-note:nth-child(2) {
+  --path-wash-a: rgba(216, 197, 236, 0.34);
+  --path-wash-b: rgba(255, 176, 143, 0.25);
+}
+
+.notes-post-path-note:nth-child(3) {
+  --path-wash-a: rgba(185, 201, 175, 0.34);
+  --path-wash-b: rgba(216, 197, 236, 0.3);
+}
+
+.notes-post-path-note__visual {
+  position: relative;
+  display: grid;
+  min-height: 6.8rem;
+  align-items: end;
+  padding: 0.68rem;
+  clip-path: polygon(2% 4%, 98% 1%, 96.5% 92%, 4% 99%);
+  background:
+    radial-gradient(circle at 18% 28%, var(--path-wash-a), transparent 35%),
+    radial-gradient(circle at 78% 68%, var(--path-wash-b), transparent 38%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.26), rgba(47, 38, 35, 0.1)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.07), 0 0.2rem 0.45rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-post-path-note__visual::before {
+  position: absolute;
+  inset: 0.44rem auto auto 0.58rem;
+  width: 42%;
+  height: 0.5rem;
+  content: "";
+  clip-path: polygon(1% 18%, 99% 0, 96% 82%, 4% 100%);
+  background: rgba(255, 252, 246, 0.58);
+}
+
+.notes-post-path-note__visual i {
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.82rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  clip-path: polygon(50% 0, 98% 42%, 75% 100%, 20% 94%, 0 34%);
+  background: rgba(255, 252, 246, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.06);
+}
+
+.notes-post-path-note__visual strong {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding: 0.28rem 0.52rem 0.24rem;
+  clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%));
+  background: rgba(255, 252, 246, 0.72);
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.76rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .notes-post-path-note span {

@@ -35,6 +35,7 @@ import './store-promise-collage-pass.css';
 import './store-promise-photo-pass.css';
 import './store-checklist-collage-pass.css';
 import './store-path-photo-pass.css';
+import './store-path-direct-labels-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-reader-photo-strip-pass.css';

@@ -3,6 +3,7 @@ import './hero.css';
 import './typography.css';
 import './paper-card-pass.css';
 import './paper-header-pass.css';
+import './header-paper-tabs-pass.css';
 import './root-paper-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-hierarchy-pass.css';

@@ -15,6 +15,25 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
 
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
+const aboutRoomFrames = [
+  {
+    mark: "Room",
+    detail: "front door"
+  },
+  {
+    mark: "Tone",
+    detail: "warm signal"
+  },
+  {
+    mark: "Edge",
+    detail: "public line"
+  },
+  {
+    mark: "Drift",
+    detail: "gentle motion"
+  }
+];
+
 const aboutPrincipleFrames = [
   {
     mark: "Soft",
@@ -70,14 +89,21 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="about-room-map" aria-label="Soft Strange Studio orientation notes">
-          {aboutSections.map((section, index) => (
-            <article className="about-room-piece" key={section.title}>
-              <span className="about-room-piece__path-label">{aboutRoomLabels[index] ?? "Studio note"}</span>
-              <span className="about-room-piece__eyebrow">{section.eyebrow}</span>
-              <h2>{section.title}</h2>
-              <p>{section.description}</p>
-            </article>
-          ))}
+          {aboutSections.map((section, index) => {
+            const frame = aboutRoomFrames[index] ?? aboutRoomFrames[0];
+            return (
+              <article className="about-room-piece" key={section.title}>
+                <span className="about-room-piece__photo" aria-hidden="true">
+                  <b>{frame.mark}</b>
+                  <em>{frame.detail}</em>
+                </span>
+                <span className="about-room-piece__path-label">{aboutRoomLabels[index] ?? "Studio note"}</span>
+                <span className="about-room-piece__eyebrow">{section.eyebrow}</span>
+                <h2>{section.title}</h2>
+                <p>{section.description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

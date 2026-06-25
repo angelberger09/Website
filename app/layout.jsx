@@ -31,6 +31,7 @@ import './notes-post-path-shelf-pass.css';
 import './notes-post-receipt-strip-pass.css';
 import './blog-path-bridge-pass.css';
 import './continuity-paper-trail-pass.css';
+import './continuity-thread-pass.css';
 import './page-intro-subtitle-pass.css';
 import './page-intro-photo-card-pass.css';
 import './footer-paper-trail-pass.css';

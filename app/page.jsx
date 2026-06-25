@@ -3,7 +3,6 @@ import { pageContinuity } from "./page-continuity";
 import { NextStepBand } from "./next-step-band";
 import { homepageRoomMarkers } from "./homepage-room-markers";
 import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
-import { DetailCard } from "./site-chrome";
 
 export default function HomePage() {
   const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
@@ -27,8 +26,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--intro" aria-labelledby="studio-front-room-title">
-        <div className="split-feature">
+      <section className="studio-pages studio-pages--intro home-paper-field" aria-labelledby="studio-front-room-title">
+        <div className="split-feature home-paper-field__intro">
           <div>
             <p className="eyebrow">Front room</p>
             <h1 id="studio-front-room-title">A calm place to enter the work.</h1>
@@ -40,17 +39,21 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="content-grid content-grid--small">
-          {homepageHighlights.map((highlight) => (
-            <DetailCard eyebrow={highlight.eyebrow} title={highlight.title} key={highlight.title}>
+        <div className="home-note-board home-note-board--highlights" aria-label="Homepage highlights">
+          {homepageHighlights.map((highlight, index) => (
+            <article className="home-note-piece" key={highlight.title}>
+              <span className="home-note-piece__pin" aria-hidden="true" />
+              <span className="home-note-piece__eyebrow">{highlight.eyebrow}</span>
+              <h2>{highlight.title}</h2>
               <p>{highlight.description}</p>
-            </DetailCard>
+              <span className="home-note-piece__count">0{index + 1}</span>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact" aria-labelledby="studio-room-status-title">
-        <div className="section-intro">
+      <section className="studio-pages studio-pages--compact home-room-status" aria-labelledby="studio-room-status-title">
+        <div className="section-intro home-section-scrap">
           <p className="eyebrow">Current rooms</p>
           <h1 id="studio-room-status-title">What is ready now, and what is still preparing.</h1>
           <p>
@@ -59,17 +62,20 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="content-grid content-grid--small">
+        <div className="home-room-board" aria-label="Current room states">
           {homepageRoomMarkers.map((room) => (
-            <DetailCard eyebrow={room.eyebrow} title={room.title} status={room.status} key={room.title}>
+            <article className="home-room-slip" key={room.title}>
+              <span className="home-room-slip__status">{room.status}</span>
+              <span className="home-room-slip__eyebrow">{room.eyebrow}</span>
+              <h2>{room.title}</h2>
               <p>{room.description}</p>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="studio-pages" aria-labelledby="studio-pages-title">
-        <div className="section-intro">
+      <section className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
+        <div className="section-intro home-section-scrap">
           <p className="eyebrow">Website-owned routes</p>
           <h1 id="studio-pages-title">The studio has real doors now.</h1>
           <p>
@@ -79,29 +85,38 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="page-grid">
-          {homepageCards.map((page) => (
-            <a className="page-card" href={page.href} key={page.href}>
-              <span className="page-card__label">{page.eyebrow}</span>
-              <h2>{page.title}</h2>
-              <p>{page.description}</p>
-              <span className="page-card__cue">Enter {page.title}</span>
+        <div className="home-door-board" aria-label="Studio room doors">
+          {homepageCards.map((page, index) => (
+            <a className="home-door-card" href={page.href} key={page.href}>
+              <span className="home-door-card__image" aria-hidden="true">
+                <span>{page.eyebrow}</span>
+                <strong>{page.title}</strong>
+              </span>
+              <span className="home-door-card__copy">
+                <span className="home-door-card__label">{page.eyebrow}</span>
+                <h2>{page.title}</h2>
+                <p>{page.description}</p>
+                <span className="home-door-card__cue">Enter {page.title}</span>
+              </span>
+              <span className="home-door-card__number">0{index + 1}</span>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact" aria-labelledby="studio-shape-title">
-        <div className="section-intro">
+      <section className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
+        <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio shape</p>
           <h1 id="studio-shape-title">Built to feel authored before technical.</h1>
         </div>
 
-        <div className="content-grid content-grid--small">
+        <div className="home-pillar-strip" aria-label="Studio shape principles">
           {studioPillars.map((pillar) => (
-            <DetailCard eyebrow={pillar.eyebrow} title={pillar.title} key={pillar.title}>
+            <article className="home-pillar-note" key={pillar.title}>
+              <span>{pillar.eyebrow}</span>
+              <h2>{pillar.title}</h2>
               <p>{pillar.description}</p>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>

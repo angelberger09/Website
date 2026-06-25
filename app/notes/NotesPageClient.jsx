@@ -47,6 +47,21 @@ function fallbackVisualLabel(rule) {
   return firstWords || "path";
 }
 
+function supportVisualLabel(card, index) {
+  const labels = ["safe notes", "reader room", "table view"];
+  return labels[index] || card.eyebrow || "support";
+}
+
+function readerStateVisualLabel(readerState) {
+  const labelMap = {
+    Loading: "gathering",
+    Unavailable: "shelf pause",
+    "Published only": "public notes"
+  };
+
+  return labelMap[readerState.title] || readerState.eyebrow || "state";
+}
+
 function buildNotesPathCards(featuredPost, routeBase) {
   return [
     {
@@ -200,6 +215,9 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <section className="notes-support-strip" aria-label="Notes system details">
         {notesSupportCards.map((card, index) => (
           <article className="notes-support-note" key={card.title}>
+            <span className="notes-support-note__photo" aria-hidden="true">
+              <span>{supportVisualLabel(card, index)}</span>
+            </span>
             <span className="notes-support-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <p className="eyebrow">{card.eyebrow}</p>
             <h2>{card.title}</h2>
@@ -257,6 +275,9 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
         <div className="notes-state-list">
           {notesReaderStates.map((readerState) => (
             <article className="notes-state-note" key={readerState.title}>
+              <span className="notes-state-note__photo" aria-hidden="true">
+                <span>{readerStateVisualLabel(readerState)}</span>
+              </span>
               <p className="eyebrow">{readerState.eyebrow}</p>
               <h2>{readerState.title}</h2>
               <p>{readerState.description}</p>

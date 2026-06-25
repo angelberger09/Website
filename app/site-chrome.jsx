@@ -8,28 +8,32 @@ const pageIntroVisuals = {
     title: "Studio map",
     note: "Principles, pathways, and public-safe memory.",
     status: "Open room",
-    path: "Start here"
+    path: "Start here",
+    cue: "Map first"
   },
   "Studio notes room": {
     label: "Notes",
     title: "Reader light",
     note: "Published writing gathered into one calm room.",
     status: "Reading shelf",
-    path: "Newest first"
+    path: "Newest first",
+    cue: "Read gently"
   },
   "First public archive": {
     label: "Archive",
     title: "Work lanes",
     note: "Ready pieces, preparing records, offstage drafts.",
     status: "Public pieces",
-    path: "Browse softly"
+    path: "Browse softly",
+    cue: "No fake work"
   },
   "Future studio pieces": {
     label: "Store",
     title: "Availability path",
     note: "Prepared lanes before public shop links open.",
     status: "Preparing",
-    path: "No fake stock"
+    path: "No fake stock",
+    cue: "Wait for links"
   }
 };
 
@@ -39,7 +43,8 @@ function getPageIntroVisual(title, eyebrow) {
     title,
     note: "A route-specific studio card inside the paper frame.",
     status: "Studio room",
-    path: "Keep going"
+    path: "Keep going",
+    cue: "Public path"
   };
 }
 
@@ -84,6 +89,12 @@ export function StudioFooter() {
 export function PageIntro({ eyebrow, title, children }) {
   const visual = getPageIntroVisual(title, eyebrow);
 
+  const roomTags = [
+    { label: "Room", value: visual.label },
+    { label: "State", value: visual.status },
+    { label: "Cue", value: visual.cue || visual.path }
+  ];
+
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
@@ -92,8 +103,12 @@ export function PageIntro({ eyebrow, title, children }) {
           {title}
         </h1>
         <div className="page-hero__room-tags" aria-label="Room status">
-          <span>{visual.status}</span>
-          <span>{visual.path}</span>
+          {roomTags.map((tag) => (
+            <span key={tag.label}>
+              <small>{tag.label}</small>
+              {tag.value}
+            </span>
+          ))}
         </div>
         <div className="page-hero__text">{children}</div>
       </div>

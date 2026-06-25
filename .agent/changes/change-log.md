@@ -352,3 +352,36 @@ The active copy lessons were partially satisfied: the interface was filled and p
 - METRIC-001
 - METRIC-002
 - METRIC-016
+
+## 2026-06-25 07:51 ET — Visitor-facing source copy refinement
+
+### Changed
+
+- Replaced remaining visitor-facing source/mechanics language on the homepage with warmer room/back-room copy.
+- Replaced remaining Notes reader/support/readiness phrases such as public source, behind-the-scenes list, backend structure, and raw URLs with writing-shelf, public-path, and quiet-backup language.
+- Humanized Portfolio future feed ledger labels from raw field names into public id, project name, public state, short note, studio role, preview place, and public path.
+- Humanized Store future feed ledger labels from raw field names into public id, piece name, availability, short note, preview place, and delivery note.
+- Updated public memory, pages matrix, content-sources matrix, quality metrics, and a dedicated change record.
+
+### Why
+
+METRIC-001 and METRIC-002 were still partially satisfied. The rendered interface had already moved away from repo/raw-feed language, but several public sections still exposed implementation-first terms. The Website should explain connected sources as calm studio shelves, rooms, public paths, and readiness states without hiding the truthful source contracts underneath.
+
+### Related items
+
+- PAGE-001
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-006
+- COMP-008
+- DATA-008
+- DATA-009
+- DATA-010
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- METRIC-001
+- METRIC-002
+- METRIC-016

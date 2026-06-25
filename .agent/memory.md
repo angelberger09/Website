@@ -9,6 +9,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Avoid technical demo language in visible homepage copy.
 - The personal header identity is `Angel Berger`.
 - The current top-level page destinations are About, Notes, Portfolio, and Store.
+- The homepage now uses `home-paper-field`, `home-note-board`, `home-room-board`, `home-door-board`, and `home-pillar-strip` markup in `app/page.jsx` plus `app/home-paper-collage-pass.css`, so the front-room highlights, room status, route doors, and studio-shape pillars render as a visible paper/collage front room instead of generic `DetailCard` grids or broad shared page cards.
 - The Notes page renders published public Blog repo content inside the Website shell.
 - The Notes page now also includes a source-readiness section that names the Blog feed contract, published-record needs, reader file paths, and fallback behavior in visitor-facing language.
 - The Notes page now uses `notes-reader-board`, `notes-paper-stack`, `notes-source-board`, and related markup in `app/notes/NotesPageClient.jsx` plus `app/notes-paper-reader-pass.css`, replacing broad generic note/source panels with a paper reader board, scrollable note strip, and taped source ledger while preserving the Blog feed contract.
@@ -90,7 +91,7 @@ Store growth should use public-readiness gates before adding live commerce links
 
 ## Filled page structure
 
-- `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path.
+- `/Website/` explains the public studio shape, highlights the filled front room, links to the four main doors, and offers a short next-step path. Its front-room highlights, room status, door grid, and studio-shape pillars now render as a homepage-specific paper/collage board system instead of generic detail-card grids.
 - `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio. Its principles and pathways now render as taped paper-note boards instead of broad shared UI panels.
 - `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, names Blog source-readiness expectations, and routes visitors toward portfolio or home. Its main reader/source/support/state sections now render as a paper reader board, scrollable note strip, taped source ledger, fallback tapes, and paper support/state notes instead of broad generic panels.
 - `/Website/notes/post/?slug=...` renders individual public notes inside the Website reader and offers post-specific next-step continuity back to notes or onward to portfolio. Its post reader now renders as a paper desk with a lined reading sheet, clipped reader states, and taped support notes instead of broad generic reader/support cards.

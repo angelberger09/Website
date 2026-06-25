@@ -36,3 +36,10 @@ These rules should shape current Website work.
 - Apply caution at the boundary, not inside validated in-bounds work: once feedback is public-safe, supported by `.agent`, and inside the current Website scope, implement it visibly and completely across the relevant surface area instead of making symbolic or overly timid changes.
 - Photo/polaroid centers should render authored placeholder images, staged shot backgrounds, page previews, or route-specific visual material; they should not sit behind the UI as empty decals or blank dark backing plates.
 - Build gallery experiences as alternating scrollable paper/photo sequences with image cards, short text snippets, readable captions, and accessible native scroll behavior instead of relying on one static decorative background image.
+- Strengthen large section backgrounds as intentional paper/collage fields when content feels washed out or ungrounded.
+- Make the page root feel like grainy paper: visible fiber and texture should be present at the environment level, not only on cards.
+- Give paper surfaces a lightly crinkled or physically handled feel through soft creases, pressure variation, and scanned tonal imperfections while preserving readability.
+- Flatten page hierarchy away from nested app panels; use paper placement, snippets, spacing, and editorial rhythm instead of card-within-card UI structure.
+- Put text into smaller paper snippets, labels, strips, or note pieces where appropriate instead of relying on broad generic text panels.
+- Let photo/image-like surfaces carry more content structure, with text snippets supporting the visual composition without implying fake products or completed work.
+- Store availability rows and similar repeated wide bands should feel like placed paper strips or collage snippets, not styled UI list rows.

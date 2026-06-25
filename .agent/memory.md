@@ -11,6 +11,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The current top-level page destinations are About, Notes, Portfolio, and Store.
 - The Notes page renders published public Blog repo content inside the Website shell.
 - Individual Notes/Blog post routes should remain connected to the wider studio path after reading, not behave like dead-end article views.
+- The Portfolio page now includes archive readiness lanes so public work can be marked as ready now, preparing next, or held offstage without exposing raw drafts.
 - Public content should be structured so the main Website can eventually pull from Blog, Portfolio, and Store repos.
 - The `.agent/` folder is a public project-memory layer, not a place for private notes.
 - All top-level Website pages should be meaningfully filled even before every connected repo has live data; use honest preparation states instead of empty placeholders or fake listings.
@@ -38,9 +39,11 @@ Shared card surfaces should not default to soft rounded UI panels. Treat page ca
 
 Page intro titles should be supportive subtitles rather than hero headlines. Across the major public pages, keep them 2–5 words, thinner, slightly smaller, and on one line.
 
-Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process, and Store readiness promises.
+Page fill should turn every route into a useful public room: homepage orientation, About principles and pathways, Notes reader states, Portfolio lanes/process/readiness, and Store readiness promises.
 
 Page-to-page continuity should feel like a guided studio path rather than a set of isolated filled cards. Use reusable next-step language to point visitors toward the most natural related routes, including after individual note reading.
+
+Portfolio growth should use public-readiness lanes before adding deeper case studies: show work that is already framed, prepare records that need public assets or source links, and keep raw/private drafts offstage.
 
 ## Filled page structure
 
@@ -48,7 +51,7 @@ Page-to-page continuity should feel like a guided studio path rather than a set 
 - `/Website/about/` explains the public studio shape, working principles, next-path choices, and routes visitors toward notes or portfolio.
 - `/Website/notes/` loads published notes from the Blog repo, explains reader behavior for loading, error, empty, and published states, and routes visitors toward portfolio or home.
 - `/Website/notes/post/?slug=...` renders individual public notes inside the Website reader and offers post-specific next-step continuity back to notes or onward to portfolio.
-- `/Website/portfolio/` gives the first public project/archive cards, archive lanes, a publishing rhythm, and related routes into notes or store.
+- `/Website/portfolio/` gives the first public project/archive cards, archive readiness lanes, archive lanes, a publishing rhythm, and related routes into notes or store.
 - `/Website/store/` gives future product lanes without inventing live listings, states the trust rules for future shop links, and routes visitors back into portfolio or about.
 - `/Website/blog/` remains a compatibility route for the Notes reader.
 

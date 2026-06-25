@@ -7,6 +7,43 @@
   isolation: isolate;
 }
 
+.title-lockup::before,
+.title-lockup::after,
+.home-paper-field::after,
+.home-room-status::after,
+.home-door-section::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.4)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.12rem 0.24rem 0 rgba(47, 38, 35, 0.055), 0 0.5rem 1rem rgba(47, 38, 35, 0.08);
+  opacity: 0.72;
+}
+
+.title-lockup::before {
+  top: clamp(2rem, 8vw, 5rem);
+  right: clamp(-1.5rem, -2vw, -0.35rem);
+  width: clamp(4.5rem, 10vw, 7rem);
+  height: clamp(2.8rem, 6vw, 4.2rem);
+  clip-path: polygon(2% 8%, 92% 0, 99% 78%, 12% 100%);
+  transform: rotate(8deg);
+  animation: home-paper-breathe 9s ease-in-out infinite;
+}
+
+.title-lockup::after {
+  bottom: clamp(1.5rem, 6vw, 4rem);
+  left: clamp(-1.5rem, -2vw, -0.35rem);
+  width: clamp(3.8rem, 8vw, 5.8rem);
+  height: clamp(2.2rem, 5vw, 3.4rem);
+  clip-path: polygon(8% 0, 100% 12%, 88% 100%, 0 78%);
+  transform: rotate(-9deg);
+  animation: home-paper-breathe 11s ease-in-out infinite reverse;
+}
+
 .home-paper-field::before,
 .home-room-status::before,
 .home-door-section::before {
@@ -24,6 +61,35 @@
   background-size: cover, cover, cover, cover, 24rem 24rem;
   box-shadow: 0.2rem 0.72rem 1.7rem rgba(47, 38, 35, 0.09);
   opacity: 0.9;
+}
+
+.home-paper-field::after,
+.home-room-status::after,
+.home-door-section::after {
+  width: clamp(3.5rem, 8vw, 6.25rem);
+  height: clamp(2.2rem, 5vw, 3.6rem);
+  clip-path: polygon(3% 12%, 78% 0, 100% 84%, 18% 100%);
+}
+
+.home-paper-field::after {
+  top: clamp(0.4rem, 3vw, 1.8rem);
+  right: clamp(1rem, 9vw, 8rem);
+  transform: rotate(-5deg);
+  animation: home-paper-breathe 12s ease-in-out infinite;
+}
+
+.home-room-status::after {
+  right: clamp(0.5rem, 5vw, 4rem);
+  bottom: clamp(1.2rem, 4vw, 2.6rem);
+  transform: rotate(7deg);
+  animation: home-paper-breathe 10s ease-in-out infinite reverse;
+}
+
+.home-door-section::after {
+  top: clamp(1rem, 4vw, 3rem);
+  left: clamp(1rem, 8vw, 7rem);
+  transform: rotate(4deg);
+  animation: home-paper-breathe 13s ease-in-out infinite;
 }
 
 .home-section-scrap {
@@ -221,6 +287,27 @@
   text-transform: uppercase;
 }
 
+@keyframes home-paper-breathe {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -0.32rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-lockup::before,
+  .title-lockup::after,
+  .home-paper-field::after,
+  .home-room-status::after,
+  .home-door-section::after {
+    animation: none;
+  }
+}
+
 @media (max-width: 980px) {
   .home-note-board,
   .home-room-board,
@@ -236,6 +323,14 @@
   .home-door-board,
   .home-pillar-strip {
     grid-template-columns: 1fr;
+  }
+
+  .title-lockup::before,
+  .title-lockup::after,
+  .home-paper-field::after,
+  .home-room-status::after,
+  .home-door-section::after {
+    display: none;
   }
 
   .home-note-piece,

@@ -386,3 +386,24 @@ The polaroid motif should not sit only behind content as decoration when it is b
 - ASSET-006
 - ASSET-007
 - METRIC-020
+
+## 2026-06-24 20:09 ET — Portfolio archive readiness lanes
+
+### Changed
+
+- Added `portfolioReadiness` data in `app/site-data.js`.
+- Added an Archive readiness section to `app/portfolio/page.jsx`.
+- Updated public memory, pages matrix, components matrix, and relationship map for the Portfolio readiness pass.
+
+### Why
+
+The Portfolio page already had public project cards and archive lanes. This pass makes the page clearer for future growth by naming how work moves from ready cards to preparing records without inventing complete case studies too early.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DATA-006
+- LESSON-002
+- LESSON-004
+- LESSON-018

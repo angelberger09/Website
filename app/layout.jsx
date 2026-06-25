@@ -6,6 +6,7 @@ import './paper-header-pass.css';
 import './header-paper-tabs-pass.css';
 import './root-paper-pass.css';
 import './store-paper-snippet-pass.css';
+import './store-preview-collage-pass.css';
 import './store-hierarchy-pass.css';
 import './store-feed-contract-pass.css';
 import './store-availability-board-pass.css';

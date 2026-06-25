@@ -17,7 +17,7 @@ export const metadata = {
 export default function StorePage() {
   return (
     <main id="top" className="site-shell page-layout">
-      <PageIntro eyebrow="Store" title="A calm doorway for future studio pieces.">
+      <PageIntro eyebrow="Store" title="Future studio pieces">
         <p>
           The store page is filled out as a public readiness page with real lanes,
           not empty filler. When public links are ready, this page can point

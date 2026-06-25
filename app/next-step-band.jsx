@@ -1,3 +1,5 @@
+const trailLabels = ["Next room", "Soft path"];
+
 export function NextStepBand({ eyebrow, title, description, steps = [] }) {
   return (
     <section className="continuity-paper-trail" aria-labelledby="continuity-title">
@@ -7,9 +9,10 @@ export function NextStepBand({ eyebrow, title, description, steps = [] }) {
         <p>{description}</p>
       </div>
       <div className="continuity-paper-trail__steps" aria-label="Suggested next rooms">
+        <span className="continuity-paper-thread" aria-hidden="true">Follow the thread</span>
         {steps.map((item, index) => (
           <a className="continuity-paper-step" href={item.href} key={item.title}>
-            <span className="continuity-paper-step__pin">0{index + 1}</span>
+            <span className="continuity-paper-step__pin">{trailLabels[index] ?? "Open door"}</span>
             <span className="continuity-paper-step__eyebrow">{item.eyebrow}</span>
             <strong>{item.title}</strong>
             <small>{item.description}</small>

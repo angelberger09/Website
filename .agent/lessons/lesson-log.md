@@ -243,3 +243,17 @@ Shared card surfaces should not feel like generic rounded UI panels. They should
 ### Future rule
 
 When refining `.page-card`, `.detail-card`, `.source-link`, `.link-card`, `.reader-card`, `.pathway-link`, or continuity bands, reduce the uniform rounded-card feeling and use paper-piece cues: cut or torn edges, uneven shapes, layered backing shadows, subtle texture, content-bearing centers, and restrained polaroid framing while preserving readability and accessible focus states.
+
+## LESSON-023 — Keep page intro titles supportive
+
+Timestamp: 2026-06-24 21:48 ET  
+Context: Internal alignment for PageIntro subtitle feedback  
+Status: active
+
+### Lesson
+
+Major page intro titles should behave as supportive subtitles, not as competing hero headlines.
+
+### Future rule
+
+Keep major `PageIntro` titles 2–5 words, thinner, slightly smaller, and on one line where possible. They should orient visitors beneath the true homepage hero language instead of creating a second hero system on every route.

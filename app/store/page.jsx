@@ -126,19 +126,23 @@ export default function StorePage() {
         </ul>
       </section>
 
-      <section className="store-editorial-section store-promise-section" aria-labelledby="store-promise-title">
-        <p className="eyebrow">Store promise</p>
-        <h1 id="store-promise-title">Prepared, honest, and easy to update.</h1>
-        <p>
-          This page should be useful before public links exist and trustworthy after
-          they launch. It names the intended lanes, keeps availability clear, and
-          leaves room for direct public paths when they exist.
-        </p>
-        <div className="content-grid content-grid--small embedded-grid">
+      <section className="store-editorial-section store-promise-section store-promise-board" aria-labelledby="store-promise-title">
+        <div className="store-promise-board__intro">
+          <p className="eyebrow">Store promise</p>
+          <h1 id="store-promise-title">Prepared, honest, and easy to update.</h1>
+          <p>
+            This page should be useful before public links exist and trustworthy after
+            they launch. It names the intended lanes, keeps availability clear, and
+            leaves room for direct public paths when they exist.
+          </p>
+        </div>
+        <div className="store-promise-note-stack" aria-label="Store promise notes">
           {storePromises.map((promise) => (
-            <DetailCard eyebrow={promise.eyebrow} title={promise.title} key={promise.title}>
+            <article className="store-promise-note" key={promise.title}>
+              <span>{promise.eyebrow}</span>
+              <h2>{promise.title}</h2>
               <p>{promise.description}</p>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </section>

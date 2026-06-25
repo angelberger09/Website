@@ -303,3 +303,47 @@ Current `.agent` state says filled-page sections should move away from generic U
 - METRIC-028
 - METRIC-029
 - METRIC-030
+
+## 2026-06-25 05:41 ET — Continuity paper trail
+
+### Changed
+
+- Replaced the reusable `NextStepBand` broad `link-card wide-card` / `pathway-link` markup with `continuity-paper-trail`, `continuity-paper-trail__copy`, and staggered `continuity-paper-step` links in `app/next-step-band.jsx`.
+- Added `app/continuity-paper-trail-pass.css` for the paper-field backdrop, copy sheet, taped step notes, clipped labels, responsive fallbacks, and accessible hover/focus states.
+- Loaded the continuity pass from `app/layout.jsx` before the performance budget override.
+- Updated public memory, pages matrix, components matrix, design-language matrix, quality metrics matrix, and a dedicated change record.
+
+### Why
+
+Current `.agent` state says filled pages should feel connected through calm next-step paths while shared card-like surfaces should not remain rounded or generic UI panels. The reusable continuity band still inherited broad shared panel/link-row classes, so every route ended with a less-paper-like interface surface.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
+- METRIC-029

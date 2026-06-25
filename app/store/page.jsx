@@ -1,5 +1,6 @@
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
+import { storeAvailabilityStates, storeReadinessChecklist } from "../store-readiness";
 import { storePromises, storeSections } from "../site-data";
 import { DetailCard, PageIntro } from "../site-chrome";
 
@@ -30,6 +31,39 @@ export default function StorePage() {
             )}
           </DetailCard>
         ))}
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="store-readiness-title">
+        <p className="eyebrow">Launch checklist</p>
+        <h1 id="store-readiness-title">Nothing moves to available without context.</h1>
+        <p>
+          The store can stay useful before anything is for sale by naming what each
+          future product lane still needs. This keeps the page warm and honest while
+          making the next public product update easier to decide.
+        </p>
+        <div className="content-grid content-grid--small embedded-grid">
+          {storeReadinessChecklist.map((item) => (
+            <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
+              <p>{item.description}</p>
+              <ul className="detail-list">
+                {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            </DetailCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="link-card wide-card" aria-labelledby="store-states-title">
+        <p className="eyebrow">Availability states</p>
+        <h1 id="store-states-title">The shop path can open in gentle stages.</h1>
+        <div className="pathway-list" aria-label="Store availability states">
+          {storeAvailabilityStates.map((state) => (
+            <div className="pathway-link" key={state.label}>
+              <span>{state.label}</span>
+              <p>{state.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="link-card wide-card" aria-labelledby="store-promise-title">

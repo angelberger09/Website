@@ -10,7 +10,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | PAGE-003A | Page | Notes Post Reader | `app/notes/post/page.jsx`, `app/notes/post/PostReaderClient.jsx` | Website-owned individual note reader | LESSON-002, LESSON-004, LESSON-022 | active |
 | PAGE-003B | Page | Blog Compatibility Routes | `app/blog/page.jsx`, `app/blog/post/page.jsx` | Preserve existing Blog route links while reusing Notes reader | LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-022 | active |
 | PAGE-004 | Page | Portfolio | `app/portfolio/page.jsx` | First public work/project archive with readiness lanes and related route continuity | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-022 | active |
-| PAGE-005 | Page | Store | `app/store/page.jsx` | Future shop/product lane doorway with honest readiness and related route continuity | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-022 | active |
+| PAGE-005 | Page | Store | `app/store/page.jsx` | Future shop/product lane doorway with launch checklist, staged availability states, honest readiness, and related route continuity | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-022 | active |
 | COMP-001 | Component | Floating Header | `app/site-chrome.jsx`, `app/globals.css` | Persistent personal identity and direct navigation | LESSON-002, LESSON-011, LESSON-015, LESSON-020 | active |
 | COMP-002 | Component | Direct Studio Navigation | `app/site-chrome.jsx`, `app/globals.css`, `app/typography.css` | Compact access to top-level Website pages | LESSON-003, LESSON-013, LESSON-015, LESSON-020 | active |
 | COMP-003 | Component | Scroll Title Sequence | `app/page.jsx`, `app/globals.css`, `app/hero.css`, `app/typography.css` | Left-docked rotating paper-list arrival title with polaroid material stack | LESSON-012, LESSON-014, LESSON-016, LESSON-019, LESSON-021 | active |
@@ -18,7 +18,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | COMP-005 | Component | Shared Site Chrome | `app/site-chrome.jsx`, `app/layout.jsx` | Header, atmosphere, footer, page intro, and detail card primitives | LESSON-001, LESSON-002, LESSON-015, LESSON-019, LESSON-020, LESSON-022 | active |
 | COMP-006 | Component | Notes Reader Client | `app/notes/NotesPageClient.jsx` | Loads published Blog posts into Website-owned Notes page | LESSON-002, LESSON-004, LESSON-018, LESSON-022 | active |
 | COMP-007 | Component | Post Reader Client | `app/notes/post/PostReaderClient.jsx` | Loads public Blog post profile and Markdown into Website reader | LESSON-002, LESSON-004, LESSON-022 | active |
-| COMP-008 | Component | Filled Page Sections | `app/site-data.js`, route files | Route-specific sections, including Portfolio readiness lanes, that make pages useful before connected repos have full data | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-021, LESSON-022 | active |
+| COMP-008 | Component | Filled Page Sections | `app/site-data.js`, `app/store-readiness.js`, route files | Route-specific sections, including Portfolio readiness lanes and Store launch readiness, that make pages useful before connected repos have full data | LESSON-001, LESSON-002, LESSON-004, LESSON-018, LESSON-019, LESSON-021, LESSON-022 | active |
 | COMP-009 | Component | Next Step Band | `app/next-step-band.jsx`, `app/page-continuity.js`, route files | Reusable page-to-page continuity pattern for filled Website rooms | LESSON-002, LESSON-018, LESSON-022 | active |
 | DATA-001 | Content Source | Blog Home URL | Blog repo Pages URL | Standalone public notes site | LESSON-004 | active |
 | DATA-002 | Content Source | Posts Index URL | Blog repo Pages URL | Readable public post archive | LESSON-004 | active |
@@ -26,6 +26,7 @@ Every meaningful project item gets an ID so future work can trace purpose, lesso
 | DATA-004 | Content Source | Example Post URL | Blog repo Pages URL | Full example public post | LESSON-004 | active |
 | DATA-005 | Content Source | Page Continuity Data | `app/page-continuity.js` | Shared route-to-route next-step copy for major Website pages | LESSON-002, LESSON-018 | active |
 | DATA-006 | Content Source | Portfolio Readiness Data | `app/site-data.js` | Shared criteria for ready, preparing, and held Portfolio records before a future Portfolio feed exists | LESSON-002, LESSON-004, LESSON-018 | active |
+| DATA-007 | Content Source | Store Readiness Data | `app/store-readiness.js` | Shared checklist and availability states for future Store listings before a Store feed exists | LESSON-002, LESSON-004, LESSON-018 | active |
 | DESIGN-001 | Design Pattern | Warm Cream Background | `app/globals.css` | Soft studio atmosphere | LESSON-001 | active |
 | DESIGN-002 | Design Pattern | Large Editorial Type | `app/globals.css`, `app/hero.css`, `app/typography.css` | Authored visual identity | LESSON-012, LESSON-014 | active |
 | DESIGN-003 | Design Pattern | Rounded Minimal Cards | `app/globals.css` | Former gentle card base to refine into paper-piece surfaces | LESSON-003, LESSON-022 | active |

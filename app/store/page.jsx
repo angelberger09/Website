@@ -119,7 +119,7 @@ export default function StorePage() {
         </ul>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="store-promise-title">
+      <section className="store-editorial-section store-promise-section" aria-labelledby="store-promise-title">
         <p className="eyebrow">Store promise</p>
         <h1 id="store-promise-title">Prepared, honest, and easy to update.</h1>
         <p>

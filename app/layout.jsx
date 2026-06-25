@@ -20,6 +20,7 @@ import './store-gallery-pass.css';
 import './store-hierarchy-pass.css';
 import './store-feed-contract-pass.css';
 import './store-availability-board-pass.css';
+import './store-availability-status-pass.css';
 import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
 import './store-checklist-collage-pass.css';

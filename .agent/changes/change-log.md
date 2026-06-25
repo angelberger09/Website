@@ -489,3 +489,39 @@ The first-screen route entry was a useful improvement, but it still read mostly 
 - METRIC-021
 - METRIC-028
 - METRIC-030
+
+## 2026-06-25 14:21 ET — About pathway photo cards
+
+### Changed
+
+- Added route-specific abstract visual centers to the About `Where to go next` pathway cards in `app/about/page.jsx`.
+- Added `app/about-pathway-photo-pass.css` so Notes, Portfolio, and Store path cards read as clipped paper/photo cards with small paper labels instead of text-only notes.
+- Imported the pass from `app/layout.jsx`.
+- Updated pages and quality metrics matrices, plus a dedicated change record.
+
+### Why
+
+The About page had strong paper orientation and contact-sheet sections, but the local next-path cards were still mostly text-only paper slips. Current active lessons favor honest photo/image-like surfaces where they can carry route structure without implying fake screenshots, fake product imagery, or private work.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- DESIGN-031
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-029
+- METRIC-030

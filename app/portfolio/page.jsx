@@ -170,17 +170,25 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="portfolio-feed-board portfolio-paper-board" aria-labelledby="portfolio-feed-title">
+      <section className="portfolio-feed-board portfolio-paper-board portfolio-feed-board--shelf" aria-labelledby="portfolio-feed-title">
         <div className="portfolio-board-heading portfolio-board-heading--compact">
-          <p className="eyebrow">Future feed shape</p>
-          <h1 id="portfolio-feed-title">The Portfolio repo needs public archive fields.</h1>
+          <p className="eyebrow">Future archive shelf</p>
+          <h1 id="portfolio-feed-title">The archive shelf needs public-facing cards.</h1>
           <p>
-            When a Portfolio feed exists, the Website should receive only the safe,
-            visitor-facing facts needed to make calm project cards and deeper routes.
-            This keeps raw drafts offstage while making the future archive easier to grow.
+            When deeper Portfolio material is ready, this page should receive only the safe,
+            visitor-facing facts needed to make calm project cards and studio routes. The
+            raw drafts stay offstage; the public shelf stays warm and legible.
           </p>
         </div>
-        <div className="portfolio-feed-ledger" aria-label="Future Portfolio feed fields">
+        <aside className="portfolio-feed-shelf-intro" aria-label="Portfolio archive shelf boundary">
+          <p className="portfolio-note-label">Public boundary</p>
+          <h2>Only framed material comes forward.</h2>
+          <p>
+            This shelf is a promise to future archive work: name the piece, explain the public
+            shape, show only safe preview material, and leave private process outside the room.
+          </p>
+        </aside>
+        <div className="portfolio-feed-ledger portfolio-feed-ledger--visitor" aria-label="Future Portfolio archive card parts">
           {portfolioFeedFields.map((field) => (
             <article className="portfolio-feed-card" key={field.label}>
               <span>{field.label}</span>
@@ -188,7 +196,7 @@ export default function PortfolioPage() {
             </article>
           ))}
         </div>
-        <div className="portfolio-rule-tapes" aria-label="Future Portfolio feed rules">
+        <div className="portfolio-rule-tapes portfolio-rule-tapes--visitor" aria-label="Future Portfolio archive rules">
           {portfolioFeedRules.map((rule) => <p key={rule}>{rule}</p>)}
         </div>
       </section>

@@ -29,9 +29,9 @@ export default function AboutPage() {
           <p className="eyebrow">Studio shape</p>
           <h1>A public room with soft edges.</h1>
           <p>
-            The first About section should orient visitors without reverting to a
-            generic card grid. These pieces keep the existing studio copy but place
-            it as a small paper map: front door, tone, scope, and movement.
+            Start here for the shape of the studio: what belongs in the room,
+            how it should feel, what stays offstage, and where a visitor can
+            wander next.
           </p>
         </div>
         <div className="about-room-map" aria-label="Soft Strange Studio orientation notes">
@@ -51,8 +51,8 @@ export default function AboutPage() {
           <p className="eyebrow">Studio contact sheet</p>
           <h1 id="about-contact-sheet-title">A few soft frames before the notes.</h1>
           <p>
-            The About room can show its shape as a small paper-photo sequence, using
-            only the public orientation material already on this page.
+            These small frames show the public room in pieces: front door,
+            tone, boundaries, and movement, all kept soft enough to enter.
           </p>
         </div>
         <div className="about-contact-sheet" aria-label="Soft Strange Studio orientation frames">

@@ -250,6 +250,7 @@ body::before,
 .home-note-piece__eyebrow,
 .home-room-slip__eyebrow,
 .home-door-card__label,
+.home-door-card__cue,
 .home-pillar-note span,
 .home-room-slip__status,
 .about-room-piece__eyebrow,
@@ -289,6 +290,16 @@ body::before,
   box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07), 0 0.45rem 0.9rem rgba(47, 38, 35, 0.08);
   background-image: linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76)), var(--grain-image);
   background-size: cover, 18rem 18rem;
+}
+
+.home-door-card__cue {
+  justify-self: start;
+  padding: 0.34rem 0.64rem;
+  color: rgba(58, 45, 42, 0.9);
+}
+
+.home-door-card__number {
+  display: none;
 }
 
 .home-door-card__image,

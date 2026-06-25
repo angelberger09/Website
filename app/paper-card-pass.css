@@ -1,0 +1,143 @@
+/* Shared paper-card styling pass. Loaded after the base CSS so the existing filled pages gain stronger paper and collage surface cues without changing each route. */
+
+.page-card,
+.detail-card,
+.source-link,
+.link-card,
+.reader-card,
+.pathway-link {
+  isolation: isolate;
+  border-radius: clamp(0.45rem, 1.2vw, 0.95rem) clamp(1.25rem, 2.8vw, 2.35rem) clamp(0.85rem, 2vw, 1.75rem) clamp(0.35rem, 1vw, 0.9rem);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.75) 52%, rgba(245, 224, 198, 0.42)),
+    var(--grain-image),
+    var(--dust-image),
+    var(--fine-scratch-image);
+  background-size: cover, 30rem 30rem, 42rem 42rem, 58rem 58rem;
+  box-shadow:
+    -0.45rem 0.55rem 0 rgba(47, 38, 35, 0.035),
+    0.55rem 0.85rem 0 rgba(255, 176, 143, 0.09),
+    0 1.4rem 3rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+}
+
+.page-card::after,
+.detail-card::after,
+.source-link::after,
+.link-card::after,
+.reader-card::after,
+.pathway-link::after,
+.next-step-band::after {
+  position: absolute;
+  inset: 0.42rem;
+  z-index: 0;
+  content: "";
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 22%, transparent 78%, rgba(47, 38, 35, 0.035));
+  pointer-events: none;
+}
+
+.page-card::before,
+.detail-card::before,
+.source-link::before,
+.link-card::before,
+.reader-card::before {
+  opacity: 0.12;
+  transform: rotate(-1.5deg) scale(1.06);
+}
+
+.page-card:nth-child(2n),
+.detail-card:nth-child(2n),
+.source-link:nth-child(2n) {
+  border-radius: clamp(1.15rem, 2.3vw, 2rem) clamp(0.55rem, 1.4vw, 1.05rem) clamp(1.5rem, 2.8vw, 2.4rem) clamp(0.75rem, 1.8vw, 1.35rem);
+  transform: rotate(0.25deg);
+}
+
+.page-card:nth-child(2n + 1),
+.detail-card:nth-child(2n + 1),
+.source-link:nth-child(2n + 1) {
+  transform: rotate(-0.2deg);
+}
+
+.page-card:hover,
+.page-card:focus,
+.source-link:hover,
+.source-link:focus,
+.pathway-link:hover,
+.pathway-link:focus {
+  transform: translateY(-0.18rem) rotate(0deg);
+}
+
+.page-card > *,
+.detail-card > *,
+.source-link > *,
+.link-card > *,
+.reader-card > *,
+.pathway-link > *,
+.next-step-band > * {
+  z-index: 1;
+}
+
+.page-card__label,
+.status-pill,
+.tag-row span {
+  border-radius: 999px 0.8rem 999px 0.9rem;
+  background:
+    linear-gradient(135deg, rgba(185, 201, 175, 0.9), rgba(255, 250, 242, 0.65)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: 0 0.25rem 0.65rem rgba(47, 38, 35, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.pathway-link {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.88), rgba(185, 201, 175, 0.25)),
+    var(--grain-image);
+  background-size: cover, 28rem 28rem;
+}
+
+.next-step-band {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(0.7rem, 1.8vw, 1.4rem) clamp(2rem, 4vw, 3.25rem) clamp(1rem, 2vw, 1.85rem) clamp(0.6rem, 1.5vw, 1.2rem);
+  background:
+    linear-gradient(130deg, rgba(255, 250, 242, 0.94), rgba(255, 247, 235, 0.68) 58%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 34rem 34rem, 46rem 46rem;
+  box-shadow: -0.55rem 0.65rem 0 rgba(47, 38, 35, 0.035), 0 1.45rem 3.2rem rgba(47, 38, 35, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.78), inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+}
+
+.reader-state {
+  border-radius: 0.55rem 1.25rem 0.85rem 0.65rem;
+  background: linear-gradient(145deg, rgba(255, 250, 242, 0.86), rgba(255, 247, 235, 0.58)), var(--grain-image);
+  background-size: cover, 24rem 24rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.055);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-card:nth-child(2n),
+  .detail-card:nth-child(2n),
+  .source-link:nth-child(2n),
+  .page-card:nth-child(2n + 1),
+  .detail-card:nth-child(2n + 1),
+  .source-link:nth-child(2n + 1) {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-card,
+  .detail-card,
+  .source-link,
+  .link-card,
+  .reader-card,
+  .pathway-link,
+  .next-step-band {
+    border-radius: 1rem;
+    transform: none;
+  }
+}

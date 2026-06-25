@@ -29,6 +29,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Shared `PageIntro` polaroid stacks now carry small route-specific photo-center cards through `app/site-chrome.jsx` and `app/globals.css`, so About, Notes, Portfolio, and Store route intros no longer use empty polaroid centers.
 - The feedback-alignment harness should be boundary-cautious rather than action-timid: once a change is public-safe, supported by `.agent`, and inside the Website scope, the implementation should be complete enough to visibly satisfy the chosen bounded target.
 - Store-page screenshot feedback from 2026-06-25 has been split into separate public-safe feedback records: stronger section backgrounds, grainy root paper, crinkled paper material, flatter hierarchy, text snippets, photo-led content, and availability rows that feel less like UI strips.
+- The Store availability states currently use `store-snippet-list` and `store-state-snippet` surfaces in `app/store/page.jsx` with staggered cut-paper treatment in `app/paper-card-pass.css`; this partially satisfies the placed availability paper-strip target and should be visually reviewed before adding more Store styling.
 
 ## Active direction
 

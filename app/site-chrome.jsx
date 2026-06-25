@@ -71,9 +71,8 @@ export function StudioFooter() {
         <small>Public rooms, gently connected.</small>
       </div>
       <nav className="studio-footer__trail" aria-label="Footer pages">
-        {siteNavPages.map((page, index) => (
+        {siteNavPages.map((page) => (
           <a href={page.href} key={page.href}>
-            <span>0{index + 1}</span>
             {page.title}
           </a>
         ))}

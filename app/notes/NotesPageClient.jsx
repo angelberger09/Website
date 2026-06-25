@@ -33,6 +33,10 @@ function sourceLabel(source) {
   return "quiet backup shelf";
 }
 
+function notePhotoLabel(post) {
+  return post.category || post.series || "note";
+}
+
 export default function NotesPageClient({ routeBase = "/Website/notes", routeLabel = "Notes" }) {
   const [state, setState] = useState({ status: "loading", posts: [], source: "", error: null });
 
@@ -92,6 +96,9 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           {featuredPost && (
             <a className="source-link notes-note-card notes-note-card--featured" href={`${routeBase}/post/?slug=${featuredPost.slug}`}>
               <span className="notes-note-card__label">Latest note</span>
+              <span className="notes-note-card__photo" aria-hidden="true">
+                <span>{notePhotoLabel(featuredPost)}</span>
+              </span>
               <strong>{featuredPost.title}</strong>
               <small>{featuredPost.category} · {featuredPost.date}</small>
               <p>{featuredPost.excerpt}</p>
@@ -104,6 +111,9 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
               {archivePosts.map((post) => (
                 <a className="source-link notes-note-card" href={`${routeBase}/post/?slug=${post.slug}`} key={post.slug}>
                   <span className="notes-note-card__label">Open note</span>
+                  <span className="notes-note-card__photo" aria-hidden="true">
+                    <span>{notePhotoLabel(post)}</span>
+                  </span>
                   <strong>{post.title}</strong>
                   <small>{post.category} · {post.date}</small>
                   <p>{post.excerpt}</p>

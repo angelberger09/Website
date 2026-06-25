@@ -29,6 +29,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Feedback-only passes should update `.agent/` memory and leave public Website source unchanged unless implementation is explicitly requested.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 - The shared `NextStepBand` now uses `continuity-paper-trail` / `continuity-paper-step` markup in `app/next-step-band.jsx` plus `app/continuity-paper-trail-pass.css`, replacing the remaining broad `link-card wide-card` / `pathway-link` continuity surface with a visible paper trail used by every major route.
+- The shared footer now uses `studio-footer--paper`, `studio-footer__mark`, and `studio-footer__trail` markup in `app/site-chrome.jsx` plus `app/footer-paper-trail-pass.css`, so the bottom chrome reads as a small paper trail with clipped nav slips instead of a plain text/nav row.
 - The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
 - The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
 - Shared card-like surfaces now use stronger, visibly irregular cut-paper silhouettes and edge shadows in `app/paper-card-pass.css` so they read less like rounded UI cards and more like lifted torn paper pieces.
@@ -100,6 +101,7 @@ Store growth should use public-readiness gates before adding live commerce links
 - `/Website/portfolio/` gives the first public project/archive cards, a horizontal alternating paper/photo gallery strip, archive readiness lanes, archive lanes, a future Portfolio feed contract, staged record states, a publishing rhythm, and related routes into notes or store. Its opening archive, gallery, readiness lanes, lane sequence, feed contract, record states, process rhythm, and reusable continuity band now render as Portfolio-specific paper/photo boards, ledger cards, state notes, process ribbons, and a paper trail instead of generic shared panels.
 - `/Website/store/` gives future product lanes without inventing live listings, states the trust rules for future shop links, adds launch-readiness gates, availability states, a future Store feed contract, a horizontal paper/photo preview shelf, and routes visitors back into portfolio or about. Its reusable continuity band now renders as the shared paper trail instead of a broad shared link panel.
 - `/Website/blog/` remains a compatibility route for the Notes reader.
+- The shared footer appears after every route and now uses a clipped paper mark plus placed nav slips so the bottom of each room stays in the paper/collage system instead of ending as a plain text row.
 
 ## Do not store here
 

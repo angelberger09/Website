@@ -30,7 +30,7 @@ const portfolioGalleryFrames = [
   },
   {
     kind: "note",
-    eyebrow: "source rhythm",
+    eyebrow: "public rhythm",
     title: "Images stay honest",
     caption: "Abstract photo centers are allowed here because they represent public structure, not invented screenshots or unavailable work."
   },
@@ -38,7 +38,7 @@ const portfolioGalleryFrames = [
     kind: "image",
     eyebrow: portfolioPieces[1]?.eyebrow ?? "public piece",
     title: portfolioPieces[1]?.title ?? "Studio archive path",
-    caption: "Each card can become a deeper route later, once public assets and stable source fields exist."
+    caption: "Each card can become a deeper route later, once public assets and stable card parts exist."
   }
 ];
 
@@ -151,7 +151,7 @@ export default function PortfolioPage() {
           <p>
             Portfolio items do not need to become full records all at once. The
             page can hold active systems now, then deepen each lane when public images,
-            writeups, or source data are ready.
+            writeups, or shelf details are ready.
           </p>
         </div>
         <div className="portfolio-lane-strip">

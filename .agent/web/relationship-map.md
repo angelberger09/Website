@@ -8,7 +8,7 @@
 - PAGE-003A Notes Post Reader uses `app/notes/post/page.jsx` and `app/notes/post/PostReaderClient.jsx` with loading, missing-slug, unavailable-source, public-status, support-card, and continuity states.
 - PAGE-003B Blog compatibility uses `app/blog/page.jsx` and `app/blog/post/page.jsx`, reusing the upgraded Notes index and Post Reader clients.
 - PAGE-004 Portfolio uses `app/portfolio/page.jsx` and now pulls project details, archive readiness, archive lanes, and publishing rhythm from `app/site-data.js`.
-- PAGE-005 Store uses `app/store/page.jsx` and now pulls lane details plus readiness promises from `app/site-data.js`.
+- PAGE-005 Store uses `app/store/page.jsx`, pulls lane details plus readiness promises from `app/site-data.js`, and pulls launch checklist plus staged availability states from `app/store-readiness.js`.
 
 ## Shared components
 
@@ -16,7 +16,7 @@
 - COMP-001 Floating Header and COMP-002 Direct Studio Navigation appear on each page.
 - COMP-006 Notes Reader Client loads the Blog index, filters to public posts, sorts newest first, and points readers toward the latest note.
 - COMP-007 Post Reader Client loads public note profiles and Markdown while providing clear reader states and page continuity.
-- COMP-008 Filled Page Sections use `app/site-data.js` and `app/globals.css` to make each route feel complete, including Portfolio archive readiness lanes.
+- COMP-008 Filled Page Sections use `app/site-data.js`, `app/store-readiness.js`, and `app/globals.css` to make each route feel complete, including Portfolio archive readiness lanes and Store launch readiness gates.
 - COMP-009 Next Step Band uses `app/next-step-band.jsx` with `app/page-continuity.js`, now including the individual note reader route.
 
 ## Data and design
@@ -24,6 +24,7 @@
 - DATA-003 powers the Notes, Post Reader, and Blog compatibility routes.
 - DATA-005 powers the next-step bands for Home, About, Notes, Portfolio, Store, and the note reader path.
 - DATA-006 powers Portfolio readiness language until a future Portfolio feed can provide deeper public records.
+- DATA-007 powers Store readiness language until a future Store feed can provide public product records.
 - DESIGN-015 removes the old Pages trigger and numbered nav treatment.
 - DESIGN-017 keeps the polaroid frame/backing motif available across the site.
 - DESIGN-018 treats each top-level route as a filled public room with useful content and honest readiness states.
@@ -32,4 +33,4 @@
 
 ## Next board signal
 
-The Portfolio page now explains how future public project records should move from preparing to published. A future run should choose between Store data readiness, live Blog feed validation, or a visual paper-card styling pass.
+The Store page now explains how future product records should move from preparing to previewing to available. A future run should choose between live Blog feed validation, future Store feed schema planning, or checking the paper-card pass on the live site.

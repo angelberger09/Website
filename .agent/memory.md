@@ -24,6 +24,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - Filled pages should also keep visitor continuity clear: each major route should offer calm, human-facing next steps into related studio rooms.
 - The shared page-card, detail-card, source-link, reader-card, pathway-link, and next-step surfaces now have a dedicated paper-card styling pass layered after the base CSS.
 - The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
+- Shared card-like surfaces now use cut-paper silhouettes and edge shadows in `app/paper-card-pass.css` so they read less like rounded UI cards and more like lifted torn paper pieces.
 
 ## Active direction
 
@@ -43,7 +44,7 @@ When polaroid/photo frames are used as cards, the transparent middle should carr
 
 Shared card surfaces should not default to soft rounded UI panels. Treat page cards, detail cards, wide cards, reader cards, source links, pathway rows, and next-step bands as content-bearing paper/polaroid pieces with cut or uneven edge cues, layered backing shadows, texture, and visible sheet depth.
 
-The current shared paper-card pass uses uneven radii, subtle alternating rotations, paper grain/dust/scratch overlays, inset sheet highlights, and layered backing shadows across the card system. Future styling should keep the effect readable and avoid making text surfaces too noisy.
+The current shared paper-card pass should remove rounded-corner card language from shared card-like surfaces. Cards should use squared/cut/torn silhouettes, edge shadows, clip-path shapes, layered offsets, and texture so the edges feel physical. Future styling should keep the effect readable and avoid making text surfaces too noisy.
 
 Page intro titles should be supportive subtitles rather than hero headlines. Across the major public pages, keep them 2–5 words, thinner, slightly smaller, and on one line.
 

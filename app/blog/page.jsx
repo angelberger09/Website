@@ -18,6 +18,10 @@ export default function BlogPage() {
               The writing is the same public shelf; this note simply tells people which door they used.
             </p>
           </div>
+          <div className="notes-blog-path-bridge__photo" aria-hidden="true">
+            <span>Blog</span>
+            <strong>same shelf</strong>
+          </div>
           <div className="notes-blog-path-bridge__slips" aria-label="Blog path notes">
             <span>same notes</span>
             <span>keeps old links</span>

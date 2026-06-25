@@ -55,6 +55,7 @@ import './page-intro-performance-pass.css';
 import './home-entry-contact-sheet-pass.css';
 import './performance-budget-pass.css';
 import './root-paper-budget-pass.css';
+import './home-room-status-photo-pass.css';
 import './header-active-room-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 

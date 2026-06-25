@@ -8,6 +8,7 @@ import './root-paper-pass.css';
 import './home-paper-collage-pass.css';
 import './about-paper-collage-pass.css';
 import './about-contact-sheet-pass.css';
+import './about-text-slip-pass.css';
 import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './store-paper-snippet-pass.css';

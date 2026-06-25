@@ -18,7 +18,7 @@ async function fetchPostsIndex() {
     } catch {}
   }
 
-  throw new Error("The public notes source could not be reached right now.");
+  throw new Error("The public notes shelf could not be reached right now.");
 }
 
 function sortPublishedPosts(posts) {
@@ -52,7 +52,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
     <main id="top" className="site-shell page-layout notes-room-page">
       <PageIntro eyebrow="Still Here Notes" title="Studio notes room">
         <p>
-          This page is the studio reading door. The public writing source keeps the
+          This page is the studio reading door. The public writing shelf keeps the
           note files organized, and this page turns them into a softer reading
           experience inside the Soft Strange Studio shell.
         </p>
@@ -63,8 +63,8 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <p className="eyebrow">{routeLabel}</p>
           <h1 id="notes-title">Read the notes</h1>
           <p>
-            Published posts appear here when the public writing source is available.
-            The source can stay structured while visitors get a real page instead
+            Published posts appear here when the public writing shelf is available.
+            The shelves can stay organized while visitors get a real page instead
             of a behind-the-scenes list.
           </p>
 
@@ -74,7 +74,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           {state.status === "error" && (
             <div className="reader-state reader-state--error">
               <p>{state.error}</p>
-              <small>The notes room stays ready even when the public source is temporarily unavailable.</small>
+              <small>The notes room stays ready even when the public shelf is temporarily unavailable.</small>
             </div>
           )}
           {state.status === "ready" && state.posts.length === 0 && (
@@ -129,7 +129,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <p className="eyebrow">Source readiness</p>
           <h1 id="notes-source-title">The reader knows what each note needs.</h1>
           <p>
-            The Notes room can stay calm even while connected source spaces change
+            The Notes room can stay calm even while connected writing shelves change
             because the expected public writing shape is named here in visitor-facing language.
           </p>
         </div>

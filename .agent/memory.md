@@ -53,6 +53,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The About page now uses `about-opening-board`, `about-room-map`, and `about-room-piece` markup in `app/about/page.jsx` plus `app/about-paper-collage-pass.css`, replacing its first generic `DetailCard` grid with a paper room-map collage that uses existing public-safe About copy.
 - The About page also uses `about-paper-board`, `about-principle-note`, and `about-pathway-note` markup in `app/about/page.jsx` plus `app/about-paper-collage-pass.css`, replacing broad shared `link-card wide-card` panels for principles and pathways with visible taped paper-note boards.
 - The Portfolio opening archive now uses `portfolio-archive-board`, `portfolio-piece-collage`, and `portfolio-piece-card` markup in `app/portfolio/page.jsx` plus `app/portfolio-paper-archive-pass.css`, replacing the first generic `DetailCard` project grid with staged paper/photo archive pieces while preserving existing public-safe portfolio data.
+- The final performance budget now extends beyond the first covered surfaces to About boards, Portfolio archive/gallery/support pieces, Store lane/gallery/checklist/feed/promise pieces, Notes, continuity, and footer paper pieces. It keeps the interface visibly paper-like while simplifying repeated cuts, shadows, transforms, pseudo-elements, and heavy texture stacks so newer visual passes do not bypass the render budget.
 
 ## Active direction
 

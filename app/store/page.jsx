@@ -64,6 +64,11 @@ export default function StorePage() {
       <section className="store-entry-receipts" aria-label="Store trust notes">
         {storeEntryReceipts.map((receipt, index) => (
           <article className="store-entry-receipt" key={receipt.title}>
+            <div className="store-entry-receipt__photo" aria-hidden="true">
+              <span>{receipt.eyebrow}</span>
+              <i />
+              <i />
+            </div>
             <span className="store-entry-receipt__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <p className="store-entry-receipt__eyebrow">{receipt.eyebrow}</p>
             <h2>{receipt.title}</h2>

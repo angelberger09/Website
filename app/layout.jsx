@@ -22,6 +22,7 @@ import './notes-paper-reader-pass.css';
 import './continuity-paper-trail-pass.css';
 import './performance-budget-pass.css';
 import './page-intro-subtitle-pass.css';
+import './footer-paper-trail-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

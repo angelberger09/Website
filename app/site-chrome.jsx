@@ -49,7 +49,19 @@ export function PageIntro({ eyebrow, title, children }) {
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 id="page-title">{title}</h1>
+        <h1
+          id="page-title"
+          style={{
+            maxWidth: "12ch",
+            fontSize: "clamp(2rem, 4.4vw, 3.6rem)",
+            fontWeight: 500,
+            lineHeight: 1,
+            letterSpacing: "-0.045em",
+            whiteSpace: "nowrap"
+          }}
+        >
+          {title}
+        </h1>
         <div className="page-hero__text">{children}</div>
       </div>
       <div className="page-hero__stack" aria-hidden="true">

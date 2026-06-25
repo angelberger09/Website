@@ -39,6 +39,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The Store opening path section now uses `store-lane-collage` / `store-lane-piece` markup in `app/store/page.jsx` and `app/store-lane-collage-pass.css`, replacing the first generic Store `DetailCard` grid with staggered paper/photo lane pieces that keep the existing honest lane data while strengthening FEEDBACK-015 / FEEDBACK-017 / METRIC-030.
 - The Store promise section now uses `store-promise-board` / `store-promise-note` markup in `app/store/page.jsx` plus `app/store-promise-collage-pass.css`, replacing another generic embedded `DetailCard` grid with taped promise notes inside a paper-field board while preserving the honest no-fake-inventory copy.
 - The Store launch checklist now uses `store-checklist-collage` / `store-checklist-note` markup in `app/store/page.jsx` plus `app/store-checklist-collage-pass.css`, replacing the remaining generic `DetailCard` checklist grid with taped readiness notes while preserving the honest launch requirements.
+- The Store preview board now uses `store-shot-card__staged-pieces` and `store-shot-card__materials` in `app/store/page.jsx` plus `app/store-preview-collage-pass.css`, making existing Store lane data read more like staged paper/photo content while preserving the no-fake-product boundary.
 
 ## Active direction
 

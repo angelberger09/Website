@@ -301,7 +301,8 @@
 }
 
 .portfolio-readiness-note h2,
-.portfolio-lane-piece h2 {
+.portfolio-lane-piece h2,
+.portfolio-feed-shelf-intro h2 {
   margin: 0;
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   line-height: 0.98;
@@ -313,7 +314,8 @@
 .portfolio-feed-card p,
 .portfolio-state-note p,
 .portfolio-rule-tapes p,
-.portfolio-process-ribbon p {
+.portfolio-process-ribbon p,
+.portfolio-feed-shelf-intro p {
   margin: 0;
   color: rgba(59, 45, 32, 0.72);
 }
@@ -413,6 +415,42 @@
   padding: 0.95rem 0.18rem 0.15rem;
 }
 
+.portfolio-feed-board--shelf {
+  grid-template-columns: minmax(14rem, 0.62fr) minmax(0, 1.38fr);
+  align-items: start;
+}
+
+.portfolio-feed-board--shelf .portfolio-board-heading,
+.portfolio-rule-tapes--visitor {
+  grid-column: 1 / -1;
+}
+
+.portfolio-feed-shelf-intro {
+  position: relative;
+  display: grid;
+  gap: 0.72rem;
+  min-height: 100%;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.58), transparent 22%),
+    linear-gradient(145deg, rgba(255, 250, 235, 0.96), rgba(226, 208, 171, 0.76));
+  box-shadow: 0 15px 28px rgba(82, 59, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(3% 2%, 97% 0, 100% 92%, 94% 100%, 4% 97%, 0 13%);
+}
+
+.portfolio-feed-shelf-intro::before {
+  content: "";
+  position: absolute;
+  top: -0.42rem;
+  left: 1.15rem;
+  width: 5.2rem;
+  height: 1.1rem;
+  background: rgba(241, 219, 171, 0.68);
+  box-shadow: 0 7px 16px rgba(74, 53, 30, 0.1);
+  transform: rotate(-3deg);
+  clip-path: polygon(4% 8%, 97% 0, 100% 86%, 10% 100%, 0 74%);
+}
+
 .portfolio-feed-ledger {
   display: grid;
   grid-template-columns: repeat(7, minmax(8.4rem, 1fr));
@@ -420,6 +458,10 @@
   overflow-x: auto;
   padding: 0.35rem 0.1rem 0.9rem;
   scroll-snap-type: x proximity;
+}
+
+.portfolio-feed-ledger--visitor {
+  grid-template-columns: repeat(7, minmax(9.2rem, 1fr));
 }
 
 .portfolio-feed-card {
@@ -498,6 +540,10 @@
   .portfolio-process-ribbon {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .portfolio-feed-board--shelf {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -523,6 +569,8 @@
   .portfolio-lane-piece,
   .portfolio-lane-piece:nth-child(2),
   .portfolio-lane-piece:nth-child(3),
+  .portfolio-feed-card:nth-child(even),
+  .portfolio-feed-card:nth-child(odd),
   .portfolio-state-note,
   .portfolio-state-note:nth-child(2n),
   .portfolio-process-ribbon li,
@@ -536,7 +584,8 @@
     font-size: clamp(2rem, 14vw, 3.4rem);
   }
 
-  .portfolio-feed-ledger {
+  .portfolio-feed-ledger,
+  .portfolio-feed-ledger--visitor {
     grid-template-columns: repeat(7, minmax(11rem, 1fr));
   }
 }

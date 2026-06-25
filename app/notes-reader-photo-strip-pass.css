@@ -1,0 +1,86 @@
+/* Notes reader photo strip pass.
+   Makes the primary notes stack carry visible abstract photo/paper centers, matching the route's gallery direction without inventing note imagery. */
+
+.notes-note-card::before {
+  display: none;
+}
+
+.notes-note-card__label {
+  margin-top: 0;
+}
+
+.notes-note-card__photo {
+  position: relative;
+  display: grid;
+  min-height: 5.8rem;
+  align-items: end;
+  overflow: hidden;
+  clip-path: polygon(1.5% 4%, 98% 1%, 96.5% 92%, 4% 99%);
+  background:
+    radial-gradient(circle at 18% 26%, rgba(255, 176, 143, 0.42), transparent 32%),
+    radial-gradient(circle at 76% 66%, rgba(185, 201, 175, 0.42), transparent 36%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.34), rgba(47, 38, 35, 0.13)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08), 0 0.24rem 0 rgba(47, 38, 35, 0.05);
+}
+
+.notes-note-card__photo::before,
+.notes-note-card__photo::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.notes-note-card__photo::before {
+  inset: 0.48rem 0.65rem auto;
+  height: 0.68rem;
+  clip-path: polygon(3% 10%, 97% 0, 94% 88%, 4% 100%);
+  background: rgba(255, 252, 246, 0.48);
+}
+
+.notes-note-card__photo::after {
+  right: 0.7rem;
+  bottom: 0.62rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.22);
+}
+
+.notes-note-card__photo span {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  margin: 0.72rem;
+  padding: 0.28rem 0.5rem 0.24rem;
+  clip-path: polygon(3% 12%, 96% 0, 98% 86%, 6% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.7)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(47, 38, 35, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.notes-note-card--featured .notes-note-card__photo {
+  min-height: 8.4rem;
+}
+
+.notes-note-card--featured .notes-note-card__label {
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .notes-note-card__photo {
+    min-height: 5.2rem;
+  }
+
+  .notes-note-card--featured .notes-note-card__photo {
+    min-height: 6.8rem;
+  }
+}

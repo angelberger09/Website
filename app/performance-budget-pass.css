@@ -37,6 +37,7 @@ body::before,
 .content-grid,
 .page-grid,
 .post-list,
+.home-hero-contact-sheet,
 .about-opening-board,
 .about-paper-board,
 .portfolio-archive-board,
@@ -89,7 +90,9 @@ body::before,
 .home-room-slip,
 .home-pillar-note,
 .home-door-card,
+.home-hero-contact-sheet,
 .home-hero-route-slip,
+.page-hero__photo-card,
 .about-room-piece,
 .about-principle-note,
 .about-pathway-note,
@@ -140,7 +143,9 @@ body::before,
 .home-room-slip,
 .home-pillar-note,
 .home-door-card,
+.home-hero-contact-sheet,
 .home-hero-route-slip,
+.page-hero__photo-card,
 .about-room-piece,
 .about-principle-note,
 .about-pathway-note,
@@ -188,6 +193,8 @@ body::before,
 .pathway-link::after,
 .next-step-band::before,
 .next-step-band::after,
+.page-hero__photo-card::before,
+.page-hero__photo-card::after,
 .store-availability-card::before,
 .store-availability-card::after,
 .store-shot-card__image::after,
@@ -258,6 +265,8 @@ body::before,
 .home-door-card__label,
 .home-door-card__cue,
 .home-hero-route-strip__label,
+.home-hero-route-slip__copy small,
+.page-hero__photo-card span,
 .home-pillar-note span,
 .home-room-slip__status,
 .about-room-piece__eyebrow,
@@ -310,6 +319,7 @@ body::before,
 }
 
 .home-door-card__image,
+.home-hero-route-slip__preview,
 .portfolio-piece-card__image,
 .portfolio-gallery-card__image,
 .portfolio-lane-piece__image,
@@ -325,6 +335,13 @@ body::before,
     linear-gradient(135deg, rgba(216, 197, 236, 0.32), rgba(47, 38, 35, 0.12));
   background-size: cover;
   box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.page-hero__stack .hero-polaroid--back,
+.page-hero__stack .hero-polaroid--frame,
+.page-hero__photo-card {
+  filter: none;
+  will-change: auto;
 }
 
 .store-gallery-card__pieces i,
@@ -346,6 +363,14 @@ body::before,
   transform: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__stack .hero-polaroid--back,
+  .page-hero__stack .hero-polaroid--frame,
+  .page-hero__photo-card {
+    transform: none;
+  }
+}
+
 @media (max-width: 760px) {
   .site-shell,
   .home-page,
@@ -355,6 +380,7 @@ body::before,
   .content-grid,
   .page-grid,
   .post-list,
+  .home-hero-contact-sheet,
   .about-opening-board,
   .about-paper-board,
   .portfolio-archive-board,

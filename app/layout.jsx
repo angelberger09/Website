@@ -17,6 +17,7 @@ import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './portfolio-archive-ticket-pass.css';
 import './portfolio-state-process-photo-pass.css';
+import './portfolio-continuity-photo-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-preview-collage-pass.css';

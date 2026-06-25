@@ -14,6 +14,8 @@ export const metadata = {
   description: "Future product paths for Soft Strange Studio."
 };
 
+const visualStoreLanes = storeSections.slice(0, 3);
+
 export default function StorePage() {
   return (
     <main id="top" className="site-shell page-layout">
@@ -36,6 +38,31 @@ export default function StorePage() {
             )}
           </DetailCard>
         ))}
+      </section>
+
+      <section className="store-visual-board" aria-labelledby="store-visual-board-title">
+        <div className="store-visual-board__copy">
+          <p className="eyebrow">Preview board</p>
+          <h1 id="store-visual-board-title">Visual lanes without fake listings.</h1>
+          <p>
+            These image-like paper pieces show the kinds of store paths being prepared
+            while staying clearly in preview mode. They are mood and readiness cues,
+            not product photos or live inventory.
+          </p>
+        </div>
+        <div className="store-shot-strip" aria-label="Store visual preview lanes">
+          {visualStoreLanes.map((lane, index) => (
+            <article className="store-shot-card" key={lane.title}>
+              <div className="store-shot-card__image" aria-hidden="true">
+                <span className="store-shot-card__mark">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <div className="store-shot-card__caption">
+                <span>{lane.eyebrow}</span>
+                <p>{lane.title}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="store-editorial-section store-launch-checklist-card" aria-labelledby="store-readiness-title">

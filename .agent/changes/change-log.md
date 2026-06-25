@@ -473,3 +473,34 @@ The stored feedback said the top bar should feel like a tactile paper strip laid
 - ASSET-002
 - ASSET-003
 - METRIC-019
+
+## 2026-06-24 23:21 ET — Stronger shared paper card edge pass
+
+### Changed
+
+- Refined `app/paper-card-pass.css` so shared card-like surfaces use more visibly irregular cut-paper `clip-path` silhouettes instead of near-rectangular cuts.
+- Strengthened the layered paper shadows and texture density on `.page-card`, `.detail-card`, `.source-link`, `.link-card`, `.reader-card`, `.pathway-link`, and `.next-step-band`.
+- Added the stronger torn/cut treatment to alternating `.link-card`, `.reader-card`, and `.pathway-link` instances so non-homepage surfaces do not stay visually too uniform.
+- Made `.page-card__label`, `.status-pill`, `.tag-row span`, and `.reader-state` use more irregular cut silhouettes instead of pill-like shapes.
+- Updated `.agent/memory.md`, `.agent/matrices/components.matrix.md`, and `.agent/matrices/quality-metrics.matrix.md` for the refinement.
+
+### Why
+
+The current `app/paper-card-pass.css` technically removed rounded corners, but its cut paths were subtle enough that shared cards could still read as soft UI panels. This pass keeps the existing bounded paper-card system and makes the edge treatment visibly stronger without introducing a new component pattern.
+
+### Related items
+
+- FEEDBACK-010
+- FEEDBACK-011
+- LESSON-022
+- LESSON-024
+- COMP-004
+- COMP-005
+- COMP-006
+- COMP-007
+- COMP-008
+- COMP-009
+- DESIGN-022
+- DESIGN-024
+- METRIC-021
+- METRIC-023

@@ -59,9 +59,14 @@
 .source-link,
 .link-card,
 .reader-card,
-.pathway-link {
+.pathway-link,
+.next-step-band {
+  --paper-cut: polygon(0.6% 1.1%, 99.1% 0.25%, 98.6% 98.9%, 0.2% 99.3%);
+  position: relative;
   isolation: isolate;
-  border-radius: clamp(0.45rem, 1.2vw, 0.95rem) clamp(1.25rem, 2.8vw, 2.35rem) clamp(0.85rem, 2vw, 1.75rem) clamp(0.35rem, 1vw, 0.9rem);
+  overflow: visible;
+  border-radius: 0;
+  clip-path: var(--paper-cut);
   background:
     linear-gradient(142deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.75) 52%, rgba(245, 224, 198, 0.42)),
     var(--grain-image),
@@ -69,11 +74,12 @@
     var(--fine-scratch-image);
   background-size: cover, 30rem 30rem, 42rem 42rem, 58rem 58rem;
   box-shadow:
-    -0.45rem 0.55rem 0 rgba(47, 38, 35, 0.035),
-    0.55rem 0.85rem 0 rgba(255, 176, 143, 0.09),
-    0 1.4rem 3rem rgba(47, 38, 35, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.11);
+  filter:
+    drop-shadow(-0.28rem 0.35rem 0 rgba(47, 38, 35, 0.06))
+    drop-shadow(0.46rem 0.56rem 0 rgba(255, 176, 143, 0.11))
+    drop-shadow(0 1.25rem 2.65rem rgba(47, 38, 35, 0.16));
 }
 
 .page-card::after,
@@ -84,11 +90,12 @@
 .pathway-link::after,
 .next-step-band::after {
   position: absolute;
-  inset: 0.42rem;
+  inset: 0.44rem;
   z-index: 0;
   content: "";
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 22%, transparent 78%, rgba(47, 38, 35, 0.035));
+  border-radius: 0;
+  clip-path: polygon(0.5% 1.4%, 99.2% 0.4%, 98.8% 98.2%, 0.7% 99.4%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 22%, transparent 78%, rgba(47, 38, 35, 0.05));
   pointer-events: none;
 }
 
@@ -96,21 +103,32 @@
 .detail-card::before,
 .source-link::before,
 .link-card::before,
-.reader-card::before {
-  opacity: 0.12;
-  transform: rotate(-1.5deg) scale(1.06);
+.reader-card::before,
+.pathway-link::before,
+.next-step-band::before {
+  position: absolute;
+  inset: -0.28rem -0.2rem -0.34rem -0.28rem;
+  z-index: -1;
+  content: "";
+  border-radius: 0;
+  clip-path: polygon(1.4% 0.8%, 99.4% 1.5%, 98.1% 99.4%, 0.6% 98.4%);
+  background: rgba(47, 38, 35, 0.11);
+  filter: blur(0.18rem);
+  opacity: 0.58;
+  pointer-events: none;
 }
 
 .page-card:nth-child(2n),
 .detail-card:nth-child(2n),
 .source-link:nth-child(2n) {
-  border-radius: clamp(1.15rem, 2.3vw, 2rem) clamp(0.55rem, 1.4vw, 1.05rem) clamp(1.5rem, 2.8vw, 2.4rem) clamp(0.75rem, 1.8vw, 1.35rem);
+  --paper-cut: polygon(1% 0.35%, 99.4% 1.1%, 99% 98.4%, 0.45% 99.1%);
   transform: rotate(0.25deg);
 }
 
 .page-card:nth-child(2n + 1),
 .detail-card:nth-child(2n + 1),
 .source-link:nth-child(2n + 1) {
+  --paper-cut: polygon(0.35% 1%, 98.8% 0.25%, 99.5% 99%, 1.1% 98.5%);
   transform: rotate(-0.2deg);
 }
 
@@ -130,23 +148,24 @@
 .reader-card > *,
 .pathway-link > *,
 .next-step-band > * {
+  position: relative;
   z-index: 1;
 }
 
 .page-card__label,
 .status-pill,
 .tag-row span {
-  border-radius: 999px 0.8rem 999px 0.9rem;
+  border-radius: 0;
+  clip-path: polygon(2% 4%, 98% 0, 96% 96%, 3% 100%);
   background:
     linear-gradient(135deg, rgba(185, 201, 175, 0.9), rgba(255, 250, 242, 0.65)),
     var(--grain-image);
   background-size: cover, 22rem 22rem;
-  box-shadow: 0 0.25rem 0.65rem rgba(47, 38, 35, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  box-shadow: 0.12rem 0.28rem 0.62rem rgba(47, 38, 35, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 .pathway-link {
-  position: relative;
-  overflow: hidden;
+  --paper-cut: polygon(0.7% 0.9%, 99.5% 0.35%, 98.7% 98.8%, 0.3% 99.2%);
   background:
     linear-gradient(135deg, rgba(255, 250, 242, 0.88), rgba(185, 201, 175, 0.25)),
     var(--grain-image);
@@ -154,22 +173,21 @@
 }
 
 .next-step-band {
-  position: relative;
-  overflow: hidden;
-  border-radius: clamp(0.7rem, 1.8vw, 1.4rem) clamp(2rem, 4vw, 3.25rem) clamp(1rem, 2vw, 1.85rem) clamp(0.6rem, 1.5vw, 1.2rem);
+  --paper-cut: polygon(0.4% 1%, 99.3% 0.25%, 98.9% 98.6%, 0.8% 99.4%);
   background:
     linear-gradient(130deg, rgba(255, 250, 242, 0.94), rgba(255, 247, 235, 0.68) 58%, rgba(216, 197, 236, 0.16)),
     var(--grain-image),
     var(--dust-image);
   background-size: cover, 34rem 34rem, 46rem 46rem;
-  box-shadow: -0.55rem 0.65rem 0 rgba(47, 38, 35, 0.035), 0 1.45rem 3.2rem rgba(47, 38, 35, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.78), inset 0 -1px 0 rgba(47, 38, 35, 0.08);
 }
 
 .reader-state {
-  border-radius: 0.55rem 1.25rem 0.85rem 0.65rem;
+  border-radius: 0;
+  clip-path: polygon(1% 2%, 98.5% 0.5%, 99% 98%, 0.7% 99.5%);
   background: linear-gradient(145deg, rgba(255, 250, 242, 0.86), rgba(255, 247, 235, 0.58)), var(--grain-image);
   background-size: cover, 24rem 24rem;
   box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.055);
+  filter: drop-shadow(0.24rem 0.38rem 0 rgba(47, 38, 35, 0.08));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -191,7 +209,8 @@
   .reader-card,
   .pathway-link,
   .next-step-band {
-    border-radius: 1rem;
+    --paper-cut: polygon(0.5% 0.9%, 99.4% 0.35%, 99% 99%, 0.4% 98.7%);
+    border-radius: 0;
     transform: none;
   }
 }

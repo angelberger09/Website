@@ -263,8 +263,38 @@
   line-height: 1.6;
 }
 
-.notes-source-card .detail-list {
-  margin-top: 0.1rem;
+.notes-source-detail-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-top: 0.18rem;
+}
+
+.notes-source-detail-slip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.32rem 0.54rem 0.28rem;
+  clip-path: polygon(3% 9%, 96% 0, 98% 86%, 6% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.76)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.06);
+  color: rgba(47, 38, 35, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.notes-source-detail-slip:nth-child(2n) {
+  transform: rotate(-0.8deg) translateY(0.04rem);
+}
+
+.notes-source-detail-slip:nth-child(2n + 1) {
+  transform: rotate(0.6deg);
 }
 
 .notes-fallback-rules {
@@ -279,8 +309,16 @@
 }
 
 .notes-fallback-rule span {
+  width: fit-content;
+  padding: 0.24rem 0.48rem;
+  clip-path: polygon(3% 12%, 97% 0, 94% 90%, 5% 100%);
+  background: rgba(255, 176, 143, 0.22);
   color: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 0.8rem;
   font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .notes-support-strip,

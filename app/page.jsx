@@ -1,3 +1,4 @@
+import cardStyles from "./hero-polaroid-card-pass.module.css";
 import { pageContinuity } from "./page-continuity";
 import { NextStepBand } from "./next-step-band";
 import { homepageRoomMarkers } from "./homepage-room-markers";
@@ -5,14 +6,16 @@ import { homepageCards, homepageHighlights, studioPillars } from "./site-data";
 import { DetailCard } from "./site-chrome";
 
 export default function HomePage() {
+  const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
+
   return (
     <main id="top" className="home-page">
       <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
         <div className="title-lockup">
-          <aside className="hero-polaroid hero-polaroid--frame hero-polaroid-card" aria-label="Studio card preview">
-            <span className="page-card__label">Open rooms</span>
-            <strong>Notes, archive, store</strong>
-            <span>Four calm doors, already framed for visitors.</span>
+          <aside className={heroCardClassName} aria-label="Studio card preview">
+            <span className={cardStyles.label}>Open rooms</span>
+            <strong className={cardStyles.title}>Notes, archive, store</strong>
+            <span className={cardStyles.note}>Four calm doors, already framed for visitors.</span>
           </aside>
           <p className="title-kicker">Soft Strange Studio</p>
           <ul className="title-list" aria-label="Welcome to Soft Strange Studio">

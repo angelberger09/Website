@@ -296,13 +296,13 @@ export const notesReaderStates = [
   },
   {
     title: "Unavailable",
-    eyebrow: "If source pauses",
+    eyebrow: "If shelf pauses",
     description: "Explain that the public notes shelf could not be reached instead of sending visitors to raw URLs."
   },
   {
     title: "Published only",
     eyebrow: "Public rule",
-    description: "Render only notes marked as published in the public writing index."
+    description: "Show only notes that are ready for the public writing shelf."
   }
 ];
 

@@ -1,0 +1,320 @@
+/* Store scroll gallery pass.
+   Extends the existing Store preview language into an accessible horizontal paper/photo shelf without inventing product photos or live inventory. */
+
+.store-gallery-board {
+  position: relative;
+  display: grid;
+  width: min(100%, 82rem);
+  gap: clamp(1.15rem, 3vw, 2rem);
+  padding: clamp(1.15rem, 3.2vw, 2.4rem) 0 clamp(1.35rem, 3.4vw, 2.6rem);
+  isolation: isolate;
+}
+
+.store-gallery-board::before {
+  position: absolute;
+  inset: clamp(0.55rem, 1.8vw, 1rem) -0.75rem clamp(0.7rem, 1.8vw, 1.15rem);
+  z-index: -2;
+  content: "";
+  clip-path: polygon(1% 7%, 18% 2%, 44% 4%, 75% 1%, 99% 5%, 97% 90%, 84% 98%, 51% 95%, 17% 99%, 0 88%);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 176, 143, 0.17), transparent 28%),
+    radial-gradient(circle at 84% 70%, rgba(185, 201, 175, 0.2), transparent 30%),
+    linear-gradient(126deg, rgba(255, 252, 246, 0.72), rgba(245, 224, 198, 0.34)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+  box-shadow: 0 1.1rem 2.8rem rgba(47, 38, 35, 0.11), inset 0 0 0 1px rgba(47, 38, 35, 0.06);
+}
+
+.store-gallery-board::after {
+  position: absolute;
+  top: clamp(0.55rem, 1.7vw, 1.2rem);
+  left: clamp(2rem, 10vw, 8rem);
+  z-index: -1;
+  width: clamp(5.5rem, 13vw, 9rem);
+  height: 1.28rem;
+  content: "";
+  clip-path: polygon(5% 8%, 95% 0, 100% 76%, 13% 100%, 0 78%);
+  background:
+    linear-gradient(95deg, rgba(255, 252, 246, 0.68), rgba(241, 219, 171, 0.48)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0 0.35rem 0.8rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-2.4deg);
+}
+
+.store-gallery-board__intro {
+  display: grid;
+  max-width: 42rem;
+  gap: 0.65rem;
+}
+
+.store-gallery-board__intro > .eyebrow,
+.store-gallery-board__intro > h1 {
+  width: fit-content;
+  max-width: min(100%, 42rem);
+  clip-path: polygon(2% 7%, 27% 1%, 62% 4%, 98% 1%, 97% 91%, 74% 98%, 28% 96%, 1% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76) 62%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.16rem 0.24rem 0 rgba(47, 38, 35, 0.07), 0 0.62rem 1.1rem rgba(47, 38, 35, 0.1);
+}
+
+.store-gallery-board__intro > .eyebrow {
+  margin: 0;
+  padding: 0.35rem 0.64rem 0.31rem;
+  transform: rotate(-0.55deg);
+}
+
+.store-gallery-board__intro > h1 {
+  margin: 0;
+  padding: clamp(0.62rem, 1.5vw, 0.92rem) clamp(0.82rem, 2vw, 1.2rem);
+  font-size: clamp(1.65rem, 4.4vw, 3.2rem);
+  line-height: 0.94;
+  transform: rotate(0.25deg);
+}
+
+.store-gallery-board__intro > p {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.store-gallery-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(16.5rem, 23.5rem);
+  gap: clamp(0.8rem, 2vw, 1.25rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding: 0.45rem 0.2rem 1.25rem;
+  scrollbar-width: thin;
+}
+
+.store-gallery-card {
+  position: relative;
+  display: grid;
+  min-height: 25rem;
+  padding: 0.72rem;
+  align-content: stretch;
+  color: var(--ink);
+  scroll-snap-align: start;
+  clip-path: polygon(2% 2%, 31% 0, 63% 2%, 98% 1%, 100% 91%, 92% 100%, 5% 97%, 0 13%);
+  background:
+    linear-gradient(154deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.76) 58%, rgba(245, 224, 198, 0.36)),
+    var(--fine-scratch-image),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem, 18rem 18rem;
+  box-shadow: 0.2rem 0.34rem 0 rgba(47, 38, 35, 0.07), 0 1rem 2rem rgba(47, 38, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  transform: rotate(var(--store-gallery-tilt, -0.65deg));
+}
+
+.store-gallery-card:nth-child(2n) {
+  --store-gallery-tilt: 0.8deg;
+  margin-top: clamp(0.65rem, 1.8vw, 1.45rem);
+  clip-path: polygon(0 6%, 24% 1%, 70% 0, 99% 4%, 96% 98%, 58% 96%, 8% 100%, 2% 85%);
+}
+
+.store-gallery-card:nth-child(3n) {
+  --store-gallery-tilt: -0.28deg;
+  margin-top: clamp(0.2rem, 1vw, 0.72rem);
+}
+
+.store-gallery-card__number {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.72rem;
+  z-index: 3;
+  display: inline-grid;
+  place-items: center;
+  min-width: 2rem;
+  padding: 0.28rem 0.42rem;
+  clip-path: polygon(6% 6%, 98% 0, 100% 88%, 14% 100%, 0 76%);
+  color: rgba(47, 38, 35, 0.62);
+  font-family: var(--font-hand);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  background: rgba(255, 248, 225, 0.84);
+  box-shadow: 0 0.38rem 0.78rem rgba(47, 38, 35, 0.08);
+}
+
+.store-gallery-card__image {
+  position: relative;
+  display: grid;
+  min-height: 13.8rem;
+  align-items: end;
+  padding: 0.9rem;
+  overflow: hidden;
+  clip-path: polygon(1% 4%, 96% 0, 100% 90%, 93% 100%, 0 96%);
+  background:
+    radial-gradient(circle at 22% 20%, rgba(255, 255, 255, 0.62), transparent 20%),
+    radial-gradient(circle at 75% 70%, rgba(216, 197, 236, 0.34), transparent 28%),
+    linear-gradient(135deg, rgba(55, 43, 35, 0.86), rgba(161, 130, 96, 0.48) 54%, rgba(255, 176, 143, 0.32)),
+    var(--soft-scratch-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  color: rgba(255, 250, 235, 0.92);
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.2), inset 0 -1.5rem 2.4rem rgba(47, 35, 25, 0.24);
+}
+
+.store-gallery-card:nth-child(2n) .store-gallery-card__image {
+  background:
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.62), transparent 22%),
+    radial-gradient(circle at 20% 76%, rgba(185, 201, 175, 0.36), transparent 30%),
+    linear-gradient(142deg, rgba(71, 56, 45, 0.84), rgba(138, 119, 88, 0.52) 55%, rgba(216, 197, 236, 0.32)),
+    var(--soft-scratch-image);
+}
+
+.store-gallery-card__image > span {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 12rem;
+  padding: 0.38rem 0.56rem;
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 90%);
+  background: rgba(41, 31, 23, 0.44);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.store-gallery-card__pieces {
+  position: absolute;
+  inset: 15% 13% 22%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: 0.82fr 1fr;
+  gap: 0.42rem;
+  opacity: 0.9;
+}
+
+.store-gallery-card__pieces i {
+  display: block;
+  min-height: 3rem;
+  clip-path: polygon(4% 8%, 34% 0, 94% 5%, 100% 90%, 60% 98%, 3% 94%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.38), rgba(255, 247, 235, 0.08)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 12rem 12rem, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.2), 0.16rem 0.24rem 0.55rem rgba(47, 38, 35, 0.12);
+}
+
+.store-gallery-card__pieces i:nth-child(1) {
+  grid-row: 1 / 3;
+  transform: rotate(-3.4deg);
+}
+
+.store-gallery-card__pieces i:nth-child(2) {
+  transform: rotate(2.2deg) translateY(0.18rem);
+}
+
+.store-gallery-card__pieces i:nth-child(3) {
+  transform: rotate(-1.3deg) translate(-0.22rem, -0.08rem);
+}
+
+.store-gallery-card__copy {
+  display: grid;
+  gap: 0.62rem;
+  align-content: start;
+  padding: 0.88rem 0.2rem 0.2rem;
+}
+
+.store-gallery-card__copy > .eyebrow {
+  width: fit-content;
+  margin: 0;
+  padding: 0.28rem 0.5rem 0.24rem;
+  clip-path: polygon(3% 12%, 30% 1%, 92% 0, 98% 82%, 70% 98%, 5% 92%);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.56)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.1rem 0.16rem 0.34rem rgba(47, 38, 35, 0.09);
+}
+
+.store-gallery-card h2 {
+  margin: 0;
+  font-size: clamp(1.32rem, 2.4vw, 1.92rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.store-gallery-card p {
+  margin: 0;
+  color: rgba(47, 38, 35, 0.72);
+}
+
+.store-gallery-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.34rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-gallery-card__details li {
+  width: fit-content;
+  padding: 0.23rem 0.43rem 0.2rem;
+  clip-path: polygon(3% 13%, 28% 4%, 88% 0, 98% 84%, 72% 97%, 7% 91%);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.5)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(47, 38, 35, 0.72);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0.1rem 0.16rem 0.35rem rgba(47, 38, 35, 0.09);
+}
+
+.store-gallery-card--note {
+  min-height: 19rem;
+  align-content: center;
+  background:
+    linear-gradient(135deg, rgba(255, 248, 225, 0.98), rgba(239, 224, 190, 0.86)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 17rem 17rem, 24rem 24rem;
+}
+
+.store-gallery-card--note::before {
+  position: absolute;
+  top: -0.42rem;
+  left: 1.1rem;
+  width: 5.5rem;
+  height: 1.14rem;
+  content: "";
+  clip-path: polygon(5% 8%, 96% 0, 100% 82%, 9% 100%, 0 72%);
+  background: rgba(241, 219, 171, 0.72);
+  box-shadow: 0 0.36rem 0.82rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-3deg);
+}
+
+.store-gallery-card--note .store-gallery-card__copy {
+  padding: 1.25rem 0.25rem 0.4rem;
+}
+
+@media (max-width: 760px) {
+  .store-gallery-board {
+    padding: 1.1rem 0;
+  }
+
+  .store-gallery-board::before {
+    inset-inline: -0.2rem;
+  }
+
+  .store-gallery-scroll {
+    grid-auto-columns: minmax(15rem, 82vw);
+    padding-bottom: 1rem;
+  }
+
+  .store-gallery-card,
+  .store-gallery-card:nth-child(2n),
+  .store-gallery-card:nth-child(3n) {
+    margin-top: 0;
+    transform: none;
+  }
+}

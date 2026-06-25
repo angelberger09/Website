@@ -4,6 +4,7 @@ import './typography.css';
 import './paper-card-pass.css';
 import './paper-header-pass.css';
 import './root-paper-pass.css';
+import './store-paper-snippet-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

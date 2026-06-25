@@ -38,7 +38,7 @@ export default function StorePage() {
         ))}
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="store-readiness-title">
+      <section className="store-editorial-section store-launch-checklist-card" aria-labelledby="store-readiness-title">
         <p className="eyebrow">Launch checklist</p>
         <h1 id="store-readiness-title">Nothing moves to available without context.</h1>
         <p>
@@ -46,7 +46,7 @@ export default function StorePage() {
           future product lane still needs. This keeps the page warm and honest while
           making the next public product update easier to decide.
         </p>
-        <div className="content-grid content-grid--small embedded-grid">
+        <div className="content-grid content-grid--small embedded-grid store-paper-field-grid">
           {storeReadinessChecklist.map((item) => (
             <DetailCard eyebrow={item.eyebrow} title={item.title} key={item.title}>
               <p>{item.description}</p>

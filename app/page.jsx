@@ -86,7 +86,7 @@ export default function HomePage() {
         </div>
 
         <div className="home-door-board" aria-label="Studio room doors">
-          {homepageCards.map((page, index) => (
+          {homepageCards.map((page) => (
             <a className="home-door-card" href={page.href} key={page.href}>
               <span className="home-door-card__image" aria-hidden="true">
                 <span>{page.eyebrow}</span>
@@ -98,7 +98,6 @@ export default function HomePage() {
                 <p>{page.description}</p>
                 <span className="home-door-card__cue">Enter {page.title}</span>
               </span>
-              <span className="home-door-card__number">0{index + 1}</span>
             </a>
           ))}
         </div>

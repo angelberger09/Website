@@ -59,12 +59,16 @@ export default function HomePage() {
 
         <div className="home-note-board home-note-board--highlights" aria-label="Homepage highlights">
           {homepageHighlights.map((highlight, index) => (
-            <article className="home-note-piece" key={highlight.title}>
+            <article className="home-note-piece home-note-piece--with-visual" key={highlight.title}>
               <span className="home-note-piece__pin" aria-hidden="true" />
+              <span className="home-note-piece__visual" aria-hidden="true">
+                <span>{highlight.eyebrow}</span>
+                <strong>{highlight.title}</strong>
+              </span>
               <span className="home-note-piece__eyebrow">{highlight.eyebrow}</span>
               <h2>{highlight.title}</h2>
               <p>{highlight.description}</p>
-              <span className="home-note-piece__count">0{index + 1}</span>
+              <span className="home-note-piece__cue">Studio note</span>
             </article>
           ))}
         </div>

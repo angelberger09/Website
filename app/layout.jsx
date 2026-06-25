@@ -64,6 +64,7 @@ import './continuity-photo-steps-pass.css';
 import './home-room-status-photo-pass.css';
 import './header-active-room-pass.css';
 import './header-paper-labels-pass.css';
+import './footer-studio-mark-photo-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

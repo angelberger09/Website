@@ -98,7 +98,7 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section className="link-card wide-card" aria-labelledby="store-feed-title">
+      <section className="store-editorial-section store-feed-contract-section" aria-labelledby="store-feed-title">
         <p className="eyebrow">Future feed shape</p>
         <h1 id="store-feed-title">The Store repo needs calm, public fields.</h1>
         <p>
@@ -106,15 +106,15 @@ export default function StorePage() {
           needed to make honest product cards. This contract keeps raw planning out
           of the site while making the future data handoff easier.
         </p>
-        <div className="pathway-list" aria-label="Future Store feed fields">
+        <div className="pathway-list store-feed-field-snippets" aria-label="Future Store feed fields">
           {storeFeedFields.map((field) => (
-            <div className="pathway-link" key={field.label}>
+            <div className="pathway-link store-feed-field-snippet" key={field.label}>
               <span>{field.label}</span>
               <p>{field.description}</p>
             </div>
           ))}
         </div>
-        <ul className="detail-list">
+        <ul className="detail-list store-feed-rule-notes">
           {storeFeedRules.map((rule) => <li key={rule}>{rule}</li>)}
         </ul>
       </section>

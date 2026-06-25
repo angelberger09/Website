@@ -76,12 +76,12 @@ export default function HomePage() {
 
       <section className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
         <div className="section-intro home-section-scrap">
-          <p className="eyebrow">Website-owned routes</p>
+          <p className="eyebrow">Studio rooms</p>
           <h1 id="studio-pages-title">The studio has real doors now.</h1>
           <p>
-            Each main page is filled out as a calm public entry point. The connected
-            repos can still provide content later, but the Website owns the visitor
-            experience, the layout, and the studio feeling.
+            Each main page is filled out as a calm public entry point. The deeper
+            source spaces can keep growing quietly, while this Website keeps the
+            visitor path warm, readable, and easy to follow.
           </p>
         </div>
 

@@ -410,3 +410,43 @@ LESSON-023 / METRIC-022 remained partially satisfied: PageIntro titles were alre
 - DESIGN-023
 - LESSON-023
 - METRIC-022
+
+## 2026-06-25 09:09 ET — Homepage hero route slips
+
+### Changed
+
+- Added a `home-hero-route-strip` with four `home-hero-route-slip` links under the homepage hero note in `app/page.jsx`.
+- Styled the new hero route slips in `app/home-paper-collage-pass.css` as clipped paper snippets with accessible focus states and a two-column mobile fallback.
+- Extended `app/performance-budget-pass.css` so the new hero route slips use the final cheap paper surface, transform reset, and focus rules.
+- Updated memory, pages matrix, components matrix, quality metrics, and a dedicated change record.
+
+### Why
+
+METRIC-001, METRIC-002, and METRIC-017 were still partially satisfied around homepage first-screen orientation. The homepage had clear door sections lower on the page, but the hero itself could do more to immediately orient visitors inside the four public studio rooms without adding fake content or heavy new effects.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-006
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-002
+- METRIC-007
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029

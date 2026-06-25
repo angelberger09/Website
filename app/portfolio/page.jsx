@@ -20,17 +20,39 @@ export default function PortfolioPage() {
         </p>
       </PageIntro>
 
-      <section className="content-grid" aria-label="Portfolio pieces">
-        {portfolioPieces.map((piece) => (
-          <DetailCard eyebrow={piece.eyebrow} title={piece.title} status={piece.status} key={piece.title}>
-            <p>{piece.description}</p>
-            {piece.details && (
-              <ul className="detail-list">
-                {piece.details.map((detail) => <li key={detail}>{detail}</li>)}
-              </ul>
-            )}
-          </DetailCard>
-        ))}
+      <section className="portfolio-archive-board" aria-labelledby="portfolio-pieces-title">
+        <div className="portfolio-board-heading">
+          <p className="eyebrow">Portfolio pieces</p>
+          <h1 id="portfolio-pieces-title">Public work sits as staged archive pieces.</h1>
+          <p>
+            These are the first visible project doors: honest public records, studio systems,
+            and future visual-world lanes arranged as handled paper/photo pieces instead of
+            a generic card grid.
+          </p>
+        </div>
+        <div className="portfolio-piece-collage">
+          {portfolioPieces.map((piece, index) => (
+            <article className="portfolio-piece-card" data-archive-index={index + 1} key={piece.title}>
+              <span className="portfolio-piece-card__tape" aria-hidden="true" />
+              <div className="portfolio-piece-card__image" aria-hidden="true">
+                <span>{piece.eyebrow}</span>
+              </div>
+              <div className="portfolio-piece-card__body">
+                <div className="portfolio-piece-card__meta">
+                  <span>{piece.status}</span>
+                  <small>{piece.eyebrow}</small>
+                </div>
+                <h2>{piece.title}</h2>
+                <p>{piece.description}</p>
+                {piece.details && (
+                  <ul className="portfolio-piece-card__details">
+                    {piece.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="link-card wide-card" aria-labelledby="portfolio-readiness-title">

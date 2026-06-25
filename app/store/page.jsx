@@ -284,11 +284,11 @@ export default function StorePage() {
           </p>
         </div>
         <div className="store-path-photo-grid" aria-label="Store next room photo cards">
-          {storePathCards.map((step, index) => (
+          {storePathCards.map((step) => (
             <a className="store-path-photo-card" href={step.href} key={step.href}>
               <div className="store-path-photo-card__image" aria-hidden="true">
                 <b>{step.eyebrow}</b>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="store-path-photo-card__cue">Open room</span>
               </div>
               <div className="store-path-photo-card__copy">
                 <span>{step.eyebrow}</span>

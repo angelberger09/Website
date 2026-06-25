@@ -15,6 +15,23 @@ export const metadata = {
 };
 
 const visualStoreLanes = storeSections.slice(0, 3);
+const storeEntryReceipts = [
+  {
+    eyebrow: "Preview room",
+    title: "Mood before listing",
+    description: "The store can show tone, materials, and future paths without pretending a shelf is open."
+  },
+  {
+    eyebrow: "Trust rule",
+    title: "No fake inventory",
+    description: "Pieces stay in preparation until a real public listing, delivery note, and context are ready."
+  },
+  {
+    eyebrow: "Opening path",
+    title: "Linked when ready",
+    description: "When a piece can be visited or purchased, the card can point to that public path directly."
+  }
+];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -38,11 +55,21 @@ export default function StorePage() {
     <main id="top" className="site-shell page-layout">
       <PageIntro eyebrow="Store" title="Future studio pieces">
         <p>
-          The store page is filled out as a public readiness page with real lanes,
-          not empty filler. When public links are ready, this page can point
-          visitors toward them without breaking the studio atmosphere.
+          This room gathers the product paths being prepared for later: soft
+          previews, honest stage notes, and clear public doors when they exist.
         </p>
       </PageIntro>
+
+      <section className="store-entry-receipts" aria-label="Store trust notes">
+        {storeEntryReceipts.map((receipt, index) => (
+          <article className="store-entry-receipt" key={receipt.title}>
+            <span className="store-entry-receipt__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <p className="store-entry-receipt__eyebrow">{receipt.eyebrow}</p>
+            <h2>{receipt.title}</h2>
+            <p>{receipt.description}</p>
+          </article>
+        ))}
+      </section>
 
       <section className="store-lane-collage" aria-label="Store paths">
         {storeSections.map((section, index) => (

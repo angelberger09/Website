@@ -9,6 +9,39 @@ export const metadata = {
   description: "Public work and project systems from Soft Strange Studio."
 };
 
+const portfolioGalleryFrames = [
+  {
+    kind: "image",
+    eyebrow: portfolioPieces[0]?.eyebrow ?? "public piece",
+    title: portfolioPieces[0]?.title ?? "Website room system",
+    caption: "A first public archive piece, staged as a handled photo surface rather than a finished case-study spread."
+  },
+  {
+    kind: "note",
+    eyebrow: "archive note",
+    title: "Public before polished",
+    caption: "The gallery can show what is safely framed now while deeper images, writeups, and source records wait offstage."
+  },
+  {
+    kind: "image",
+    eyebrow: portfolioLanes[0]?.eyebrow ?? "lane",
+    title: portfolioLanes[0]?.title ?? "Systems lane",
+    caption: "Lane material becomes a previewable paper/photo card without pretending a private project is ready."
+  },
+  {
+    kind: "note",
+    eyebrow: "source rhythm",
+    title: "Images stay honest",
+    caption: "Abstract photo centers are allowed here because they represent public structure, not invented screenshots or unavailable work."
+  },
+  {
+    kind: "image",
+    eyebrow: portfolioPieces[1]?.eyebrow ?? "public piece",
+    title: portfolioPieces[1]?.title ?? "Studio archive path",
+    caption: "Each card can become a deeper route later, once public assets and stable source fields exist."
+  }
+];
+
 export default function PortfolioPage() {
   return (
     <main id="top" className="site-shell page-layout">
@@ -49,6 +82,35 @@ export default function PortfolioPage() {
                     {piece.details.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
                 )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="portfolio-gallery-board" aria-labelledby="portfolio-gallery-title">
+        <div className="portfolio-board-heading portfolio-board-heading--compact">
+          <p className="eyebrow">Gallery path</p>
+          <h1 id="portfolio-gallery-title">A sideways stack of public archive moments.</h1>
+          <p>
+            This scroll strip alternates abstract photo cards with short paper notes, giving the
+            Portfolio room a real gallery rhythm while keeping unfinished project assets and
+            private case-study drafts offstage.
+          </p>
+        </div>
+        <div className="portfolio-gallery-scroll" aria-label="Scrollable Portfolio gallery preview">
+          {portfolioGalleryFrames.map((frame, index) => (
+            <article className={`portfolio-gallery-card portfolio-gallery-card--${frame.kind}`} key={`${frame.kind}-${frame.title}`}>
+              <span className="portfolio-gallery-card__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              {frame.kind === "image" && (
+                <div className="portfolio-gallery-card__image" aria-hidden="true">
+                  <span>{frame.eyebrow}</span>
+                </div>
+              )}
+              <div className="portfolio-gallery-card__copy">
+                <p className="portfolio-note-label">{frame.eyebrow}</p>
+                <h2>{frame.title}</h2>
+                <p>{frame.caption}</p>
               </div>
             </article>
           ))}

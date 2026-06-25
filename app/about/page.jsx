@@ -11,7 +11,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main id="top" className="site-shell page-layout">
-      <PageIntro eyebrow="About the studio" title="A soft public place for creative work.">
+      <PageIntro eyebrow="About the studio" title="Soft public studio">
         <p>
           Soft Strange Studio is the public home for notes, creature work,
           visual systems, and gentle experiments. The page should feel warm,

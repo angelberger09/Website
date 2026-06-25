@@ -60,6 +60,8 @@ const portfolioArchiveTickets = [
   }
 ];
 
+const portfolioProcessVisuals = ["signal", "shape", "preview", "open"];
+
 export default function PortfolioPage() {
   return (
     <main id="top" className="site-shell page-layout">
@@ -228,31 +230,41 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="portfolio-state-board portfolio-paper-board" aria-labelledby="portfolio-states-title">
+      <section className="portfolio-state-board portfolio-paper-board portfolio-state-photo-board" aria-labelledby="portfolio-states-title">
         <div className="portfolio-board-heading portfolio-board-heading--compact">
           <p className="eyebrow">Record states</p>
           <h1 id="portfolio-states-title">Archive records can open in stages.</h1>
         </div>
         <div className="portfolio-state-stack" aria-label="Portfolio record states">
           {portfolioRecordStates.map((state, index) => (
-            <article className="portfolio-state-note" data-state-index={index + 1} key={state.label}>
-              <span>{state.label}</span>
-              <p>{state.description}</p>
+            <article className="portfolio-state-note portfolio-state-photo" data-state-index={index + 1} key={state.label}>
+              <div className="portfolio-state-photo__image" aria-hidden="true">
+                <span>{state.label}</span>
+              </div>
+              <div className="portfolio-state-photo__copy">
+                <span>{state.label}</span>
+                <p>{state.description}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="portfolio-process-board portfolio-paper-board" aria-labelledby="portfolio-process-title">
+      <section className="portfolio-process-board portfolio-paper-board portfolio-process-photo-board" aria-labelledby="portfolio-process-title">
         <div className="portfolio-board-heading portfolio-board-heading--compact">
           <p className="eyebrow">Publishing rhythm</p>
           <h1 id="portfolio-process-title">A simple path from signal to public project.</h1>
         </div>
-        <ol className="portfolio-process-ribbon">
+        <ol className="portfolio-process-ribbon portfolio-process-photo-ribbon">
           {portfolioProcess.map((step, index) => (
             <li data-step-index={index + 1} key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{step}</p>
+              <div className="portfolio-process-ribbon__image" aria-hidden="true">
+                <span>{portfolioProcessVisuals[index] ?? "step"}</span>
+              </div>
+              <div className="portfolio-process-ribbon__copy">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{step}</p>
+              </div>
             </li>
           ))}
         </ol>

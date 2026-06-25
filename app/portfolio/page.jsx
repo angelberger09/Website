@@ -216,9 +216,14 @@ export default function PortfolioPage() {
         <div className="portfolio-archive-ticket-board" aria-label="Future Portfolio archive card path">
           {portfolioArchiveTickets.map((ticket, index) => (
             <article className="portfolio-archive-ticket" data-ticket-index={index + 1} key={ticket.title}>
-              <p className="portfolio-note-label">{ticket.eyebrow}</p>
-              <h2>{ticket.title}</h2>
-              <p>{ticket.caption}</p>
+              <div className="portfolio-archive-ticket__photo" aria-hidden="true">
+                <span>{ticket.eyebrow}</span>
+              </div>
+              <div className="portfolio-archive-ticket__copy">
+                <p className="portfolio-note-label">{ticket.eyebrow}</p>
+                <h2>{ticket.title}</h2>
+                <p>{ticket.caption}</p>
+              </div>
             </article>
           ))}
         </div>

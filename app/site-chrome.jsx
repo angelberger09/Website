@@ -1,14 +1,5 @@
 import { siteNavPages } from "./site-data";
 
-const pageIntroTitleStyle = {
-  maxWidth: "12ch",
-  fontSize: "clamp(2rem, 4.4vw, 3.6rem)",
-  fontWeight: 500,
-  lineHeight: 1,
-  letterSpacing: "-0.045em",
-  whiteSpace: "nowrap"
-};
-
 const pageIntroVisuals = {
   "Soft public studio": {
     label: "About",
@@ -91,7 +82,7 @@ export function PageIntro({ eyebrow, title, children }) {
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 id="page-title" style={pageIntroTitleStyle}>
+        <h1 id="page-title" className="page-hero__subtitle">
           {title}
         </h1>
         <div className="page-hero__text">{children}</div>

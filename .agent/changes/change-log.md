@@ -407,3 +407,24 @@ The Portfolio page already had public project cards and archive lanes. This pass
 - LESSON-002
 - LESSON-004
 - LESSON-018
+
+## 2026-06-24 20:28 ET — Store launch readiness gates
+
+### Changed
+
+- Added `app/store-readiness.js` with a public-safe product readiness checklist and staged availability states.
+- Added Store launch checklist and availability-state sections to `app/store/page.jsx`.
+- Updated public memory, semantic index, content sources matrix, pages matrix, components matrix, and relationship map for the Store readiness pass.
+
+### Why
+
+The Store page already names future product lanes and promises not to fake inventory. This pass makes the next Store growth step clearer by defining what a product needs before it moves from preparing to previewing or available, without pretending any live listings exist.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DATA-007
+- LESSON-002
+- LESSON-004
+- LESSON-018

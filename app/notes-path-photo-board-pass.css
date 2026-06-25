@@ -1,0 +1,154 @@
+.notes-path-photo-board {
+  position: relative;
+  display: grid;
+  gap: clamp(1.1rem, 2.4vw, 1.8rem);
+  padding: clamp(1.2rem, 4vw, 2.2rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.notes-path-photo-board::before {
+  content: "";
+  position: absolute;
+  inset: 0.35rem 0.1rem 0.15rem;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 176, 143, 0.18), transparent 14rem),
+    radial-gradient(circle at 84% 76%, rgba(126, 139, 116, 0.16), transparent 15rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.86), rgba(245, 224, 198, 0.44)),
+    var(--grain-image);
+  background-size: auto, auto, cover, 22rem 22rem;
+  clip-path: polygon(1% 4%, 99% 1%, 98% 96%, 2% 99%);
+  box-shadow: 0.4rem 0.6rem 0 rgba(47, 38, 35, 0.08), 0 1.4rem 2.6rem rgba(47, 38, 35, 0.12);
+}
+
+.notes-path-photo-board__intro {
+  max-width: 48rem;
+}
+
+.notes-path-photo-board__intro h1 {
+  max-width: 12em;
+  margin: 0.25rem 0 0.45rem;
+  font-size: clamp(1.7rem, 4.2vw, 3.1rem);
+  line-height: 0.96;
+}
+
+.notes-path-photo-board__intro > p:not(.eyebrow) {
+  display: inline-block;
+  max-width: 42rem;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  color: rgba(47, 38, 35, 0.74);
+  background: linear-gradient(135deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.72)), var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1% 5%, 98% 0, 100% 92%, 3% 100%);
+  box-shadow: 0.16rem 0.24rem 0 rgba(47, 38, 35, 0.08), 0 0.75rem 1.2rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-path-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.3rem);
+  align-items: stretch;
+}
+
+.notes-path-photo-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(8rem, 0.72fr) auto;
+  min-height: 22rem;
+  padding: 0.85rem;
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(145deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76)), var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  clip-path: polygon(2% 1%, 98% 3%, 97% 98%, 1% 96%);
+  box-shadow: 0.22rem 0.34rem 0 rgba(47, 38, 35, 0.08), 0 1rem 1.8rem rgba(47, 38, 35, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.notes-path-photo-card:nth-child(2) {
+  transform: translateY(0.55rem) rotate(0.8deg);
+}
+
+.notes-path-photo-card:nth-child(3) {
+  transform: translateY(-0.2rem) rotate(-0.65deg);
+}
+
+.notes-path-photo-card:hover,
+.notes-path-photo-card:focus {
+  transform: translateY(-0.15rem);
+  outline: 2px solid rgba(126, 139, 116, 0.48);
+  outline-offset: 0.2rem;
+  box-shadow: 0.28rem 0.42rem 0 rgba(47, 38, 35, 0.1), 0 1.15rem 2.1rem rgba(47, 38, 35, 0.14);
+}
+
+.notes-path-photo-card__image {
+  display: grid;
+  place-items: center;
+  min-height: 9rem;
+  color: rgba(255, 252, 246, 0.92);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  background:
+    radial-gradient(circle at 24% 24%, rgba(255, 176, 143, 0.34), transparent 38%),
+    linear-gradient(145deg, rgba(47, 38, 35, 0.86), rgba(126, 139, 116, 0.56)),
+    var(--dust-image);
+  background-size: cover, cover, 16rem 16rem;
+  clip-path: polygon(3% 5%, 96% 1%, 99% 94%, 2% 98%);
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.14);
+}
+
+.notes-path-photo-card__image span {
+  padding: 0.45rem 0.65rem;
+  background: rgba(47, 38, 35, 0.38);
+  clip-path: polygon(3% 2%, 98% 0, 96% 100%, 1% 94%);
+}
+
+.notes-path-photo-card__copy {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.85rem 0.2rem 0.1rem;
+}
+
+.notes-path-photo-card__copy small {
+  width: fit-content;
+  padding: 0.28rem 0.5rem;
+  color: rgba(47, 38, 35, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.68rem;
+  background: rgba(255, 252, 246, 0.74);
+  clip-path: polygon(2% 8%, 100% 1%, 96% 98%, 0 92%);
+}
+
+.notes-path-photo-card__copy strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 0.98;
+}
+
+.notes-path-photo-card__copy span:last-child {
+  color: rgba(47, 38, 35, 0.72);
+  line-height: 1.55;
+}
+
+@media (max-width: 780px) {
+  .notes-path-photo-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-path-photo-card,
+  .notes-path-photo-card:nth-child(2),
+  .notes-path-photo-card:nth-child(3) {
+    min-height: auto;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-path-photo-card {
+    transition: none;
+  }
+}

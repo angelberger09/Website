@@ -1,0 +1,100 @@
+/* Notes support photo slips pass.
+   Gives the Notes support and reader-state notes honest abstract paper/photo centers without inventing note art or changing the Blog feed contract. */
+
+.notes-support-note,
+.notes-state-note {
+  overflow: hidden;
+  padding-top: clamp(6.8rem, 16vw, 7.8rem);
+}
+
+.notes-support-note > *,
+.notes-state-note > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-support-note::after,
+.notes-state-note::after {
+  position: absolute;
+  inset: 0.78rem 0.82rem auto;
+  z-index: 0;
+  height: clamp(4.75rem, 10vw, 5.5rem);
+  content: "";
+  clip-path: polygon(2% 6%, 20% 2%, 52% 5%, 98% 1%, 96% 90%, 74% 96%, 36% 94%, 4% 99%);
+  background:
+    radial-gradient(circle at 18% 28%, rgba(255, 176, 143, 0.38), transparent 34%),
+    radial-gradient(circle at 76% 70%, rgba(185, 201, 175, 0.36), transparent 38%),
+    linear-gradient(138deg, rgba(216, 197, 236, 0.28), rgba(255, 252, 246, 0.48) 52%, rgba(47, 38, 35, 0.1)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.07), 0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08);
+}
+
+.notes-support-note::before,
+.notes-state-note::before {
+  position: absolute;
+  top: 1.52rem;
+  left: 1.18rem;
+  z-index: 1;
+  width: fit-content;
+  max-width: calc(100% - 2.4rem);
+  padding: 0.28rem 0.52rem 0.24rem;
+  clip-path: polygon(3% 13%, 96% 0, 98% 86%, 7% 100%);
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.68)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0.07rem 0.12rem 0 rgba(47, 38, 35, 0.06);
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.notes-support-note:nth-child(1)::before {
+  content: "room path";
+}
+
+.notes-support-note:nth-child(2)::before {
+  content: "writing shelf";
+}
+
+.notes-support-note:nth-child(3)::before {
+  content: "quiet return";
+}
+
+.notes-state-note:nth-child(1)::before {
+  content: "gathering";
+}
+
+.notes-state-note:nth-child(2)::before {
+  content: "unavailable";
+}
+
+.notes-state-note:nth-child(3)::before {
+  content: "empty shelf";
+}
+
+.notes-support-note .notes-support-note__pin {
+  z-index: 2;
+}
+
+.notes-support-note:nth-child(2n)::after,
+.notes-state-note:nth-child(2n)::after {
+  transform: rotate(-0.6deg) translateY(0.08rem);
+}
+
+.notes-support-note:nth-child(2n + 1)::after,
+.notes-state-note:nth-child(2n + 1)::after {
+  transform: rotate(0.52deg);
+}
+
+@media (max-width: 720px) {
+  .notes-support-note,
+  .notes-state-note {
+    padding-top: 6.6rem;
+  }
+}

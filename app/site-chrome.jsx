@@ -6,22 +6,30 @@ const pageIntroVisuals = {
   "Soft public studio": {
     label: "About",
     title: "Studio map",
-    note: "Principles, pathways, and public-safe memory."
+    note: "Principles, pathways, and public-safe memory.",
+    status: "Open room",
+    path: "Start here"
   },
   "Studio notes room": {
     label: "Notes",
     title: "Reader light",
-    note: "Published writing gathered into one calm room."
+    note: "Published writing gathered into one calm room.",
+    status: "Reading shelf",
+    path: "Newest first"
   },
   "First public archive": {
     label: "Archive",
     title: "Work lanes",
-    note: "Ready pieces, preparing records, offstage drafts."
+    note: "Ready pieces, preparing records, offstage drafts.",
+    status: "Public pieces",
+    path: "Browse softly"
   },
   "Future studio pieces": {
     label: "Store",
     title: "Availability path",
-    note: "Prepared lanes before public shop links open."
+    note: "Prepared lanes before public shop links open.",
+    status: "Preparing",
+    path: "No fake stock"
   }
 };
 
@@ -29,7 +37,9 @@ function getPageIntroVisual(title, eyebrow) {
   return pageIntroVisuals[title] || {
     label: eyebrow,
     title,
-    note: "A route-specific studio card inside the paper frame."
+    note: "A route-specific studio card inside the paper frame.",
+    status: "Studio room",
+    path: "Keep going"
   };
 }
 
@@ -81,6 +91,10 @@ export function PageIntro({ eyebrow, title, children }) {
         <h1 id="page-title" className="page-hero__subtitle">
           {title}
         </h1>
+        <div className="page-hero__room-tags" aria-label="Room status">
+          <span>{visual.status}</span>
+          <span>{visual.path}</span>
+        </div>
         <div className="page-hero__text">{children}</div>
       </div>
       <div className="page-hero__stack" aria-hidden="true">

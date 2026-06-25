@@ -58,7 +58,7 @@ export default function HomePage() {
           <h1 id="studio-room-status-title">What is ready now, and what is still preparing.</h1>
           <p>
             The front page now gives a quick status read before visitors choose a door,
-            so the filled site feels honest without flattening every page into the same promise.
+            so the filled site feels honest without flattening every room into the same promise.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function HomePage() {
           <h1 id="studio-pages-title">The studio has real doors now.</h1>
           <p>
             Each main page is filled out as a calm public entry point. The deeper
-            source spaces can keep growing quietly, while this Website keeps the
+            back rooms can keep growing quietly, while this Website keeps the
             visitor path warm, readable, and easy to follow.
           </p>
         </div>

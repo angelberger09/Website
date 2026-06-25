@@ -444,3 +444,32 @@ The Store page had readiness gates but the future Store repo data path was still
 - LESSON-002
 - LESSON-004
 - LESSON-018
+
+## 2026-06-24 22:20 ET — Paper header surface implementation
+
+### Changed
+
+- Applied `FEEDBACK-008` / `LESSON-020` in `app/paper-card-pass.css` so the shared floating header now gets a cream paper surface, existing grain/dust/scratch texture, stronger layered shadow, `backdrop-filter: none`, and a subtle lower-edge paper cue.
+- Updated `.agent/memory.md` to record that the shared header now has a first paper-surface implementation and that future header refinements should tune the existing material pass rather than adding a competing header system.
+- Updated `.agent/matrices/components.matrix.md`, `.agent/matrices/design-language.matrix.md`, `.agent/matrices/quality-metrics.matrix.md`, and `.agent/matrices/semantic-index.md` to connect the implementation to `COMP-001`, `DESIGN-020`, `METRIC-019`, and `LESSON-020`.
+- Added `.agent/changes/2026-06-24-paper-header-surface-implementation.md` as the detailed implementation record.
+
+### Why
+
+The stored feedback said the top bar should feel like a tactile paper strip laid over the page rather than a smooth glassy UI capsule. This pass intentionally implemented that feedback while preserving the current direct navigation structure.
+
+### Related items
+
+- FEEDBACK-008
+- LESSON-020
+- COMP-001
+- COMP-002
+- COMP-005
+- DESIGN-004
+- DESIGN-011
+- DESIGN-019
+- DESIGN-020
+- ASSET-001
+- ASSET-002
+- ASSET-003
+- METRIC-019

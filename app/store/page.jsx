@@ -167,13 +167,23 @@ export default function StorePage() {
       </section>
 
       <section className="store-editorial-section store-availability-card store-availability-board" aria-labelledby="store-states-title">
-        <p className="eyebrow">Availability states</p>
-        <h1 id="store-states-title">The shop path can open in gentle stages.</h1>
-        <div className="store-availability-collage store-snippet-list" aria-label="Store availability states">
-          {storeAvailabilityStates.map((state) => (
-            <article className="store-state-snippet" key={state.label}>
-              <span>{state.label}</span>
-              <p>{state.description}</p>
+        <div className="store-availability-board__intro">
+          <p className="eyebrow">Availability states</p>
+          <h1 id="store-states-title">The shop path can open in gentle stages.</h1>
+        </div>
+        <div className="store-availability-collage store-availability-status-path store-snippet-list" aria-label="Store availability states">
+          {storeAvailabilityStates.map((state, index) => (
+            <article className="store-state-snippet store-availability-status" key={state.label}>
+              <span className="store-availability-status__stage">Stage {String(index + 1).padStart(2, "0")}</span>
+              <div className="store-availability-status__visual" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </div>
+              <div className="store-availability-status__copy">
+                <span className="store-availability-status__label">{state.label}</span>
+                <p>{state.description}</p>
+              </div>
             </article>
           ))}
         </div>

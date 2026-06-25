@@ -26,6 +26,7 @@ This file stores distilled, public-safe memory for the Website repo.
 - The shared floating header now has a first paper-surface implementation in `app/paper-card-pass.css`, using existing grain/dust/scratch assets, a stronger layered shadow, a cream paper surface, and a subtle uneven lower-edge cue.
 - Shared card-like surfaces now use stronger, visibly irregular cut-paper silhouettes and edge shadows in `app/paper-card-pass.css` so they read less like rounded UI cards and more like lifted torn paper pieces.
 - The homepage hero polaroid stack now carries a small readable studio-room preview through `app/page.jsx` and `app/hero-polaroid-card-pass.module.css`, so the frame is no longer only decorative.
+- The feedback-alignment harness should be boundary-cautious rather than action-timid: once a change is public-safe, supported by `.agent`, and inside the Website scope, the implementation should be complete enough to visibly satisfy the chosen bounded target.
 
 ## Active direction
 

@@ -79,3 +79,7 @@ COMP-001 now applies FEEDBACK-008 / LESSON-020 through `app/paper-card-pass.css`
 ## Addendum — 2026-06-24 22:55 ET
 
 COMP-003 now applies FEEDBACK-009 / LESSON-021 through `app/page.jsx` and `app/hero-polaroid-card-pass.module.css`. The homepage hero polaroid frame now carries a small readable studio-room preview instead of remaining only an `aria-hidden` decorative frame.
+
+## Addendum — 2026-06-24 23:21 ET
+
+COMP-004, COMP-005, COMP-006, COMP-007, COMP-008, and COMP-009 now receive a stronger shared card-edge refinement in `app/paper-card-pass.css`. The pass keeps the existing paper-card system but makes the cut paths, card alternates, small label chips, reader states, shadows, and mobile cut silhouettes visibly more irregular so LESSON-022 and LESSON-024 are less likely to read as a symbolic-only CSS change.

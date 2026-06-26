@@ -80,6 +80,10 @@
   transform: rotate(-0.5deg);
 }
 
+.page-hero__room-shelf > span:nth-child(4) {
+  transform: rotate(0.45deg);
+}
+
 .page-hero__room-shelf-photo {
   display: grid;
   min-height: 100%;

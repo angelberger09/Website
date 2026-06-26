@@ -1,0 +1,97 @@
+/* Shared PageIntro paper desk pass.
+   Grounds the route intro cluster so the filled photo card, copy slip, and room tickets read as one placed paper surface instead of separate floating pieces. */
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: clamp(-0.9rem, -1.8vw, -0.55rem) clamp(-0.85rem, -1.6vw, -0.45rem) clamp(-1.05rem, -2vw, -0.7rem);
+  background:
+    linear-gradient(91deg, rgba(150, 121, 92, 0.10) 0 0.22rem, transparent 0.22rem 2.05rem),
+    radial-gradient(circle at 16% 20%, rgba(255, 176, 143, 0.13), transparent 18rem),
+    radial-gradient(circle at 86% 72%, rgba(185, 201, 175, 0.13), transparent 20rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.72), rgba(255, 247, 235, 0.46) 55%, rgba(245, 224, 198, 0.22)),
+    var(--grain-image);
+  background-size: 2.05rem 100%, cover, cover, cover, 26rem 26rem;
+  clip-path: polygon(1% 3%, 99% 0, 97% 91%, 89% 94%, 84% 100%, 4% 96%, 0 72%);
+  box-shadow:
+    0 2.2rem 4.6rem rgba(72, 49, 31, 0.12),
+    0 0.7rem 1.35rem rgba(72, 49, 31, 0.08),
+    inset 0 1px 0 rgba(255, 252, 239, 0.66);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: clamp(0.8rem, 2vw, 1.6rem);
+  right: clamp(1.1rem, 5vw, 5rem);
+  bottom: clamp(-1.15rem, -2vw, -0.72rem);
+  height: clamp(0.52rem, 1vw, 0.82rem);
+  background: linear-gradient(90deg, rgba(72, 49, 31, 0.14), rgba(72, 49, 31, 0.02));
+  filter: blur(0.45rem);
+  opacity: 0.62;
+  transform: rotate(-0.55deg);
+  pointer-events: none;
+}
+
+.page-hero__photo-card,
+.page-hero__copy-slip,
+.page-hero__room-tags span,
+.page-hero__subtitle {
+  filter: drop-shadow(0 0.72rem 0.9rem rgba(72, 49, 31, 0.10));
+}
+
+.page-hero__copy-slip,
+.page-hero__room-tags span {
+  box-shadow:
+    0 1.05rem 1.75rem rgba(72, 49, 31, 0.13),
+    0 0.24rem 0.5rem rgba(72, 49, 31, 0.08),
+    inset 0 1px 0 rgba(255, 252, 239, 0.72);
+}
+
+.page-hero__stack::after {
+  content: '';
+  position: absolute;
+  left: 9%;
+  right: 6%;
+  bottom: 7%;
+  z-index: 0;
+  height: 0.72rem;
+  background: rgba(72, 49, 31, 0.14);
+  filter: blur(0.58rem);
+  opacity: 0.58;
+  transform: rotate(1.2deg);
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .page-hero::before {
+    inset: -0.75rem -0.55rem -0.9rem;
+  }
+
+  .page-hero::after {
+    right: 1.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero::before {
+    clip-path: polygon(2% 2%, 98% 0, 100% 94%, 5% 99%, 0 74%);
+  }
+
+  .page-hero__copy-slip,
+  .page-hero__room-tags span {
+    box-shadow:
+      0 0.82rem 1.35rem rgba(72, 49, 31, 0.12),
+      0 0.18rem 0.38rem rgba(72, 49, 31, 0.08),
+      inset 0 1px 0 rgba(255, 252, 239, 0.72);
+  }
+}

@@ -343,3 +343,37 @@ The shared next-step band had route-photo link cards, but the lead copy sheet st
 - METRIC-023
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 08:51 ET — Homepage path ledger focus
+
+### Changed
+
+- Added `app/home-path-ledger-focus-pass.css`.
+- Loaded the pass from `app/layout.jsx`.
+- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
+
+### Why
+
+The homepage reading path already made the long front page more legible, but its six equal chapter cards could still read as another card grid. Current homepage, calm-room, flattened-hierarchy, and paper-snippet guidance supports making the path read as one composed paper ledger shelf while preserving the existing anchor links and public copy.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-026
+- METRIC-001
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-028
+- METRIC-029

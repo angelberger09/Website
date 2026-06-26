@@ -117,3 +117,35 @@ The homepage had the right chapter path and left-docket structure, but the in-pa
 - METRIC-028
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 15:41 ET — Linked footer exit receipts
+
+### Changed
+
+- Updated the shared footer receipt shelf in `app/site-chrome.jsx` so the Start, Read, and Browse receipts are real route links to About, Notes, and Portfolio.
+- Updated `app/footer-exit-receipts-pass.css` so the linked receipts show visible action slips, hover lift, focus outlines, and link-safe paper styling.
+- Updated `.agent/matrices/pages.matrix.md` with the footer continuity refinement.
+
+### Why
+
+The footer already had a paper receipt path, but the receipts themselves were visual-only spans. The current calm-room and continuity metrics call for visible paper pieces that also function as clear routes, so this pass makes the bottom paper shelf useful instead of only decorative.
+
+### Related items
+
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-029

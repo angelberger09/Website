@@ -57,9 +57,9 @@
 }
 
 .home-path-map__step {
-  min-height: clamp(8.2rem, 13vw, 10.6rem);
+  min-height: clamp(10.3rem, 16vw, 13rem);
   overflow: hidden;
-  padding: clamp(0.92rem, 1.5vw, 1.15rem);
+  padding: clamp(0.82rem, 1.35vw, 1rem);
 }
 
 .home-path-map__thread {
@@ -76,7 +76,73 @@
   opacity: 0.78;
 }
 
+.home-path-map__photo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  min-height: clamp(4.45rem, 7.2vw, 5.8rem);
+  margin: 0 1.05rem 0.72rem 0;
+  padding: 0.72rem 0.78rem;
+  clip-path: polygon(3% 7%, 42% 2%, 98% 7%, 96% 88%, 69% 96%, 5% 91%);
+  background:
+    linear-gradient(140deg, rgba(65, 52, 48, 0.82), rgba(123, 83, 74, 0.48) 48%, rgba(226, 198, 163, 0.42)),
+    radial-gradient(circle at 24% 18%, rgba(255, 247, 231, 0.38), transparent 30%),
+    var(--grain-image);
+  background-size: cover, cover, 12rem 12rem;
+  box-shadow: 0 0.55rem 1rem rgba(72, 49, 31, 0.17), inset 0 0 0 1px rgba(255, 252, 239, 0.16);
+  color: rgba(255, 252, 239, 0.94);
+  transform: rotate(-1.4deg);
+}
+
+.home-path-map__step:nth-child(2n) .home-path-map__photo {
+  clip-path: polygon(4% 4%, 74% 7%, 97% 2%, 95% 92%, 38% 96%, 3% 88%);
+  transform: rotate(1.2deg);
+}
+
+.home-path-map__photo b,
+.home-path-map__photo em {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.home-path-map__photo b {
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.34rem;
+  padding: 0.2rem 0.48rem;
+  clip-path: polygon(4% 14%, 92% 3%, 100% 82%, 13% 98%);
+  background: rgba(255, 252, 239, 0.84);
+  color: rgba(58, 45, 42, 0.82);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-path-map__photo em {
+  max-width: 8rem;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  text-shadow: 0 0.08rem 0 rgba(47, 38, 35, 0.22);
+}
+
+.home-path-map__number,
+.home-path-map__copy {
+  position: relative;
+  z-index: 2;
+}
+
 .home-path-map__number {
+  width: fit-content;
   background:
     linear-gradient(128deg, rgba(255, 252, 246, 0.96), rgba(216, 197, 236, 0.36)),
     var(--grain-image);
@@ -124,7 +190,7 @@
   .home-path-map__step,
   .home-path-map__step:nth-child(2n),
   .home-path-map__step:nth-child(2n + 1) {
-    min-height: 7.2rem;
+    min-height: 9.6rem;
     transform: none;
   }
 }

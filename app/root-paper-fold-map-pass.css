@@ -1,0 +1,96 @@
+/* Root paper fold map pass.
+   Keeps the paper environment visible at page scale without adding fixed overlays or new content. */
+
+body {
+  background-attachment: scroll;
+  background-image:
+    linear-gradient(180deg, rgba(255, 251, 242, 0.88), rgba(255, 247, 235, 0.32) 42%, rgba(244, 223, 196, 0.32)),
+    linear-gradient(101deg, transparent 0 13%, rgba(81, 61, 42, 0.034) 13.08% 13.52%, transparent 13.72% 47%, rgba(255, 255, 255, 0.22) 47.2% 47.7%, transparent 48% 100%),
+    linear-gradient(172deg, transparent 0 26%, rgba(83, 62, 43, 0.03) 26.1% 26.5%, transparent 26.82% 68%, rgba(255, 255, 255, 0.2) 68.2% 68.72%, transparent 69% 100%),
+    repeating-linear-gradient(88deg, rgba(83, 62, 43, 0.018) 0 1px, transparent 1px 0.72rem),
+    repeating-linear-gradient(178deg, rgba(255, 255, 255, 0.13) 0 1px, transparent 1px 1.18rem),
+    radial-gradient(circle at 15% 8%, rgba(255, 176, 143, 0.18), transparent 30rem),
+    radial-gradient(circle at 84% 24%, rgba(216, 197, 236, 0.16), transparent 32rem),
+    radial-gradient(circle at 48% 86%, rgba(185, 201, 175, 0.14), transparent 34rem),
+    var(--grain-image),
+    var(--dust-image);
+  background-size:
+    cover,
+    64rem 64rem,
+    78rem 78rem,
+    23rem 23rem,
+    31rem 31rem,
+    auto,
+    auto,
+    auto,
+    14rem 14rem,
+    36rem 36rem;
+  background-position:
+    center,
+    8% 0,
+    82% 14%,
+    0 0,
+    9% 6%,
+    center,
+    center,
+    center,
+    42% 24%,
+    58% 44%;
+  background-blend-mode: normal, normal, normal, multiply, screen, normal, normal, normal, multiply, multiply;
+}
+
+.site-shell,
+.home-page,
+.studio-footer {
+  isolation: isolate;
+}
+
+.site-shell::before,
+.home-page::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: clamp(3rem, 7vw, 5rem) max(0.75rem, calc((100vw - 86rem) / 2)) auto;
+  min-height: clamp(22rem, 46vw, 42rem);
+  pointer-events: none;
+  background:
+    linear-gradient(94deg, transparent 0 9%, rgba(91, 68, 45, 0.032) 9.2% 9.6%, transparent 9.9% 58%, rgba(255, 255, 255, 0.24) 58.2% 58.7%, transparent 59% 100%),
+    linear-gradient(180deg, rgba(255, 250, 239, 0.22), transparent 72%);
+  filter: blur(0.1px);
+  opacity: 0.72;
+  clip-path: polygon(0 0, 100% 2%, 98% 88%, 53% 100%, 3% 92%);
+}
+
+@media (max-width: 760px) {
+  body {
+    background-size:
+      cover,
+      42rem 42rem,
+      52rem 52rem,
+      18rem 18rem,
+      24rem 24rem,
+      auto,
+      auto,
+      auto,
+      13rem 13rem,
+      30rem 30rem;
+    background-position:
+      center,
+      18% 0,
+      76% 14%,
+      0 0,
+      12% 6%,
+      center,
+      center,
+      center,
+      50% 24%,
+      54% 44%;
+  }
+
+  .site-shell::before,
+  .home-page::before {
+    inset: 4.5rem 0.55rem auto;
+    min-height: 22rem;
+    opacity: 0.54;
+  }
+}

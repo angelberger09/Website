@@ -1,0 +1,151 @@
+/* Homepage path ledger focus pass.
+   Refines the existing six-card reading map into a calmer paper ledger shelf
+   so the homepage path reads as one orientation object instead of another card grid. */
+
+.home-path-map {
+  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr) !important;
+  align-items: stretch;
+  gap: clamp(0.8rem, 2vw, 1.35rem) !important;
+  padding: clamp(0.85rem, 2.2vw, 1.25rem) clamp(0.85rem, 2vw, 1.2rem) clamp(0.95rem, 2.4vw, 1.35rem) clamp(3rem, 6vw, 5.3rem) !important;
+  clip-path: polygon(1% 4%, 34% 0, 72% 2%, 99% 1%, 98% 91%, 72% 100%, 36% 97%, 0 99%);
+  background:
+    linear-gradient(105deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.66) 48%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow:
+    0.18rem 0.25rem 0 rgba(47, 38, 35, 0.065),
+    0 0.72rem 1.6rem rgba(47, 38, 35, 0.09);
+}
+
+.home-path-map__label {
+  align-self: start;
+  margin-top: 0.15rem;
+}
+
+.home-path-map__note {
+  align-self: end;
+  margin: 0;
+  max-width: 13rem;
+  color: rgba(58, 45, 42, 0.68);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  line-height: 1.45;
+}
+
+.home-path-map__trail {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex !important;
+  gap: clamp(0.46rem, 1vw, 0.7rem) !important;
+  align-items: stretch;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x proximity;
+  padding: 0.2rem 0.15rem 0.55rem;
+}
+
+.home-path-map__trail::-webkit-scrollbar {
+  height: 0.42rem;
+}
+
+.home-path-map__trail::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(58, 45, 42, 0.18);
+}
+
+.home-path-map__step,
+.home-path-map__step:nth-child(2n),
+.home-path-map__step:nth-child(2n + 1) {
+  flex: 0 0 clamp(8.8rem, 13vw, 11.4rem);
+  min-height: 5.9rem !important;
+  scroll-snap-align: start;
+  align-content: start !important;
+  grid-template-columns: 2.45rem minmax(0, 1fr);
+  gap: 0.46rem 0.55rem !important;
+  padding: 0.62rem 0.58rem !important;
+  transform: none !important;
+}
+
+.home-path-map__photo {
+  grid-row: span 2;
+  width: 2.45rem;
+  height: 2.45rem;
+  align-self: center;
+  clip-path: polygon(5% 8%, 91% 0, 100% 88%, 12% 100%);
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 176, 143, 0.38), transparent 42%),
+    linear-gradient(145deg, rgba(58, 45, 42, 0.9), rgba(112, 93, 86, 0.72));
+  color: rgba(255, 252, 246, 0.92);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  box-shadow: 0.08rem 0.16rem 0.34rem rgba(47, 38, 35, 0.16);
+}
+
+.home-path-map__photo b {
+  display: block;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-path-map__photo em {
+  display: none;
+}
+
+.home-path-map__number {
+  padding: 0;
+  background: transparent !important;
+  color: rgba(58, 45, 42, 0.52) !important;
+  font-size: 0.52rem !important;
+}
+
+.home-path-map__copy {
+  align-self: center;
+}
+
+.home-path-map__copy strong {
+  font-size: clamp(1rem, 1.45vw, 1.25rem) !important;
+  letter-spacing: -0.035em !important;
+}
+
+.home-path-map__copy small {
+  font-size: 0.54rem !important;
+  line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+  .home-path-map {
+    grid-template-columns: 1fr !important;
+    padding: clamp(0.8rem, 4vw, 1rem) clamp(0.78rem, 4vw, 1rem) !important;
+  }
+
+  .home-path-map__note {
+    max-width: 100%;
+  }
+
+  .home-path-map__trail {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .home-path-map__step,
+  .home-path-map__step:nth-child(2n),
+  .home-path-map__step:nth-child(2n + 1) {
+    flex-basis: min(78vw, 12.5rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .home-path-map__trail {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .home-path-map__step,
+  .home-path-map__step:nth-child(2n),
+  .home-path-map__step:nth-child(2n + 1) {
+    flex-basis: auto;
+  }
+}

@@ -1,0 +1,103 @@
+.notes-source-board {
+  position: relative;
+  overflow: visible;
+}
+
+.notes-source-board::before {
+  content: "Feed shape  ·  Public notes  ·  Backup path";
+  position: absolute;
+  top: clamp(-1.35rem, -1vw, -0.75rem);
+  right: clamp(1rem, 4vw, 3rem);
+  z-index: 3;
+  max-width: min(34rem, calc(100% - 2rem));
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.68rem, 1.5vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: rgba(67, 54, 45, 0.82);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.94), rgba(239, 224, 194, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 180px 180px;
+  border: 1px solid rgba(118, 91, 65, 0.14);
+  box-shadow:
+    0 1rem 1.6rem rgba(72, 49, 31, 0.16),
+    0 0.18rem 0 rgba(255, 255, 255, 0.62) inset;
+  clip-path: polygon(1.6% 9%, 98.2% 0%, 96.8% 91%, 4.2% 100%);
+  transform: rotate(1.2deg);
+  pointer-events: none;
+}
+
+.notes-source-board::after {
+  content: "source map";
+  position: absolute;
+  top: clamp(1.1rem, 2vw, 1.85rem);
+  left: clamp(0.7rem, 3vw, 2.2rem);
+  z-index: 2;
+  padding: 0.45rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 232, 0.9);
+  background:
+    linear-gradient(135deg, rgba(83, 73, 61, 0.88), rgba(115, 92, 67, 0.78)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, 220px 220px;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.7rem 1rem rgba(52, 38, 25, 0.18);
+  transform: rotate(-2.6deg);
+  pointer-events: none;
+}
+
+.notes-source-board__intro {
+  padding-top: clamp(0.6rem, 1.4vw, 1.2rem);
+}
+
+.notes-source-receipt,
+.notes-fallback-receipt {
+  box-shadow:
+    0 1.1rem 2rem rgba(73, 48, 30, 0.14),
+    0 0.16rem 0 rgba(255, 255, 255, 0.52) inset;
+}
+
+.notes-source-receipt::after,
+.notes-fallback-receipt::after {
+  content: "public shelf";
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.55rem;
+  padding: 0.28rem 0.45rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(79, 63, 52, 0.68);
+  background: rgba(255, 249, 229, 0.76);
+  box-shadow: 0 0.45rem 0.8rem rgba(83, 58, 37, 0.1);
+  clip-path: polygon(4% 9%, 100% 0%, 96% 92%, 0% 100%);
+}
+
+.notes-fallback-receipt::after {
+  content: "backup path";
+}
+
+@media (max-width: 720px) {
+  .notes-source-board::before {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: block;
+    max-width: none;
+    margin: 0 0 1rem;
+    transform: rotate(0.6deg);
+  }
+
+  .notes-source-board::after {
+    display: none;
+  }
+}

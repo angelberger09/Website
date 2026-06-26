@@ -1,0 +1,111 @@
+/* Shared PageIntro foreground-card correction.
+   Keeps the route intro paper/photo card from reading as a random background decal behind the page title. */
+
+.page-hero {
+  grid-template-columns: minmax(0, 0.82fr) minmax(17rem, 0.54fr);
+  overflow: visible;
+}
+
+.page-hero__copy {
+  max-width: min(100%, 43rem);
+}
+
+.page-hero__stack {
+  z-index: 1;
+  width: min(100%, 24rem);
+  min-height: clamp(15.5rem, 25vw, 22rem);
+  justify-self: end;
+  transform: none;
+}
+
+.page-hero__stack .hero-polaroid {
+  top: 50%;
+  left: 50%;
+  width: clamp(15.5rem, 27vw, 23rem);
+}
+
+.page-hero__stack .hero-polaroid--back {
+  z-index: 0;
+  opacity: 0.58;
+  transform: translate(-45%, -42%) rotate(2.2deg) scale(1.02);
+}
+
+.page-hero__stack .hero-polaroid--frame {
+  z-index: 1;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) rotate(0.8deg);
+}
+
+.page-hero__photo-card {
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: clamp(13.75rem, 22vw, 18.4rem);
+  min-height: clamp(11.5rem, 19vw, 15.6rem);
+  align-content: start;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  padding: clamp(1.05rem, 2vw, 1.55rem);
+  color: rgba(47, 38, 35, 0.94);
+  background-image:
+    radial-gradient(circle at 22% 18%, rgba(255, 176, 143, 0.22), transparent 32%),
+    radial-gradient(circle at 82% 72%, rgba(216, 197, 236, 0.22), transparent 35%),
+    linear-gradient(142deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.82) 58%, rgba(245, 224, 198, 0.42)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 20rem 20rem;
+  box-shadow:
+    0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0 1.1rem 2.2rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  transform: translate(-50%, -50%) rotate(-0.42deg);
+}
+
+.page-hero__photo-card span {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.page-hero__photo-card strong {
+  max-width: 12ch;
+  font-size: clamp(1.45rem, 2.65vw, 2.4rem);
+  line-height: 1;
+}
+
+.page-hero__photo-card small {
+  max-width: 24ch;
+  color: rgba(86, 70, 65, 0.84);
+  font-size: clamp(0.72rem, 0.92vw, 0.86rem);
+  line-height: 1.42;
+}
+
+@media (max-width: 860px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__stack {
+    width: min(100%, 22rem);
+    min-height: 13.5rem;
+    justify-self: start;
+    margin-top: 0.5rem;
+  }
+
+  .page-hero__stack .hero-polaroid {
+    width: clamp(14rem, 58vw, 20rem);
+  }
+
+  .page-hero__photo-card {
+    width: clamp(12.4rem, 52vw, 16.4rem);
+    min-height: clamp(10.2rem, 44vw, 13.7rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero__stack {
+    justify-self: center;
+    min-height: 12.75rem;
+  }
+
+  .page-hero__photo-card strong {
+    font-size: clamp(1.25rem, 7vw, 1.8rem);
+  }
+}

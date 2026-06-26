@@ -1,0 +1,102 @@
+/* Shared PageIntro room compass pass.
+   Adds a visible paper compass to the route photo stack so each major page intro reads as a calm room with open / focus / exit cues, not only a decorative photo card. */
+
+.page-hero__stack {
+  padding-left: clamp(0.35rem, 1vw, 0.85rem);
+}
+
+.page-hero__room-compass {
+  position: absolute;
+  z-index: 5;
+  left: clamp(-0.95rem, -1.8vw, -0.35rem);
+  top: clamp(1rem, 3vw, 2.4rem);
+  display: grid;
+  gap: 0.38rem;
+  width: min(9.5rem, 48%);
+  transform: rotate(-2.4deg);
+  pointer-events: none;
+}
+
+.page-hero__room-compass::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -0.35rem -0.25rem -0.28rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.9), rgba(242, 220, 188, 0.52)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(2% 8%, 96% 0, 100% 86%, 88% 100%, 0 92%);
+  box-shadow:
+    0 0.82rem 1.35rem rgba(63, 45, 35, 0.12),
+    0.12rem 0.18rem 0 rgba(63, 45, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74);
+  opacity: 0.92;
+}
+
+.page-hero__room-compass span {
+  display: grid;
+  gap: 0.08rem;
+  padding: 0.34rem 0.48rem 0.36rem;
+  color: rgba(53, 41, 36, 0.9);
+  background:
+    linear-gradient(135deg, rgba(255, 249, 236, 0.96), rgba(246, 230, 205, 0.82)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(0 7%, 98% 0, 100% 82%, 91% 100%, 4% 96%);
+  box-shadow:
+    0 0.48rem 0.82rem rgba(63, 45, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.page-hero__room-compass span:nth-child(2) {
+  transform: translateX(0.4rem) rotate(1.2deg);
+}
+
+.page-hero__room-compass span:nth-child(3) {
+  transform: translateX(0.08rem) rotate(-0.8deg);
+}
+
+.page-hero__room-compass small {
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(105, 79, 62, 0.72);
+}
+
+@media (max-width: 860px) {
+  .page-hero__stack {
+    padding-left: 0;
+    padding-top: 2.65rem;
+  }
+
+  .page-hero__room-compass {
+    left: 50%;
+    top: 0.15rem;
+    width: min(20rem, 92%);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    transform: translateX(-50%) rotate(-0.7deg);
+  }
+
+  .page-hero__room-compass::before {
+    inset: -0.24rem -0.2rem -0.18rem;
+  }
+
+  .page-hero__room-compass span,
+  .page-hero__room-compass span:nth-child(2),
+  .page-hero__room-compass span:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero__room-compass {
+    width: min(15.5rem, 94%);
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__stack {
+    padding-top: 7rem;
+  }
+}

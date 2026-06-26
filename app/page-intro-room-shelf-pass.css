@@ -57,7 +57,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(2.6rem, 0.65fr) minmax(0, 1fr);
+  grid-template-columns: minmax(3.1rem, 0.72fr) minmax(0, 1fr);
   align-items: stretch;
   gap: 0.42rem;
   min-height: 4.75rem;
@@ -88,14 +88,15 @@
   display: grid;
   min-height: 100%;
   place-items: end start;
-  padding: 0.36rem;
-  color: rgba(47, 38, 35, 0.74);
+  padding: 0.34rem;
+  color: rgba(47, 38, 35, 0.76);
   font-family: var(--font-hand);
-  font-size: 0.58rem;
+  font-size: clamp(0.46rem, 0.72vw, 0.58rem);
   font-weight: 900;
-  letter-spacing: 0.12em;
-  line-height: 1;
+  letter-spacing: 0.09em;
+  line-height: 1.08;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
   background:
     radial-gradient(circle at 22% 26%, rgba(255, 176, 143, 0.34), transparent 34%),
     radial-gradient(circle at 78% 72%, rgba(185, 201, 175, 0.32), transparent 36%),

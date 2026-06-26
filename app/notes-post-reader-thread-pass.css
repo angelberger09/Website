@@ -1,0 +1,93 @@
+/* Tie individual Notes/Blog post Markdown scraps into one calm reader sheet thread. */
+.notes-post-markdown {
+  padding-left: clamp(0.45rem, 1.2vw, 0.85rem);
+}
+
+.notes-post-markdown::before,
+.notes-post-markdown::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.notes-post-markdown::before {
+  top: clamp(0.3rem, 1vw, 0.75rem);
+  bottom: clamp(0.4rem, 1vw, 0.8rem);
+  left: 0;
+  width: clamp(0.42rem, 0.9vw, 0.68rem);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.62), rgba(185, 201, 175, 0.58) 48%, rgba(216, 197, 236, 0.46)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.18rem 0 0 rgba(255, 250, 242, 0.68),
+    0.44rem 0.4rem 1.2rem rgba(47, 38, 35, 0.12);
+  opacity: 0.92;
+  clip-path: polygon(22% 0, 92% 1%, 76% 22%, 96% 44%, 74% 68%, 88% 100%, 12% 98%, 28% 72%, 4% 46%, 26% 20%);
+}
+
+.notes-post-markdown::after {
+  top: clamp(0.65rem, 1.8vw, 1.1rem);
+  left: clamp(-0.14rem, -0.2vw, -0.05rem);
+  z-index: 2;
+  width: clamp(4.8rem, 11vw, 6.8rem);
+  height: 1.45rem;
+  content: "reader thread";
+  display: grid;
+  place-items: center;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(115deg, rgba(255, 250, 242, 0.94), rgba(255, 176, 143, 0.26)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 28rem 28rem;
+  box-shadow:
+    0.22rem 0.38rem 0.85rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(3% 13%, 22% 2%, 58% 7%, 98% 0, 93% 88%, 68% 97%, 36% 91%, 5% 100%);
+  font-size: clamp(0.52rem, 0.78vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+}
+
+.notes-post-markdown h2,
+.notes-post-markdown h3,
+.notes-post-markdown p {
+  margin-left: clamp(0.35rem, 0.9vw, 0.72rem);
+}
+
+.notes-post-markdown p {
+  box-shadow:
+    0.32rem 0.42rem 0 rgba(255, 176, 143, 0.14),
+    -0.18rem 0.28rem 0 rgba(185, 201, 175, 0.2),
+    0 0.82rem 1.55rem rgba(47, 38, 35, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.notes-post-markdown p:nth-of-type(2n) {
+  box-shadow:
+    0.28rem 0.38rem 0 rgba(216, 197, 236, 0.16),
+    -0.18rem 0.28rem 0 rgba(185, 201, 175, 0.18),
+    0 0.76rem 1.45rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown {
+    padding-left: 0.35rem;
+  }
+
+  .notes-post-markdown::after {
+    left: 0.12rem;
+    width: 5.4rem;
+  }
+
+  .notes-post-markdown h2,
+  .notes-post-markdown h3,
+  .notes-post-markdown p {
+    margin-left: 0.42rem;
+  }
+}

@@ -60,6 +60,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages studio-pages--intro home-paper-field" aria-labelledby="studio-front-room-title">
+        <span className="home-docket-step" aria-hidden="true">01 / Front room</span>
         <div className="split-feature home-paper-field__intro">
           <div>
             <p className="eyebrow">Front room</p>
@@ -90,6 +91,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages studio-pages--compact home-room-status" aria-labelledby="studio-room-status-title">
+        <span className="home-docket-step" aria-hidden="true">02 / Current rooms</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Current rooms</p>
           <h1 id="studio-room-status-title">What is ready now, and what is still preparing.</h1>
@@ -116,6 +118,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
+        <span className="home-docket-step" aria-hidden="true">03 / Studio rooms</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio rooms</p>
           <h1 id="studio-pages-title">The studio has real doors now.</h1>
@@ -145,6 +148,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
+        <span className="home-docket-step" aria-hidden="true">04 / Studio shape</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio shape</p>
           <h1 id="studio-shape-title">Built to feel handmade and clear.</h1>
@@ -162,6 +166,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
+        <span className="home-docket-step" aria-hidden="true">05 / House rules</span>
         <div className="home-studio-checks__intro">
           <p className="eyebrow">House rules</p>
           <h1 id="studio-checks-title">What every room should keep close.</h1>
@@ -192,6 +197,7 @@ export default function HomePage() {
       </section>
 
       <section className="studio-pages studio-pages--compact" aria-label="Where to go next">
+        <span className="home-docket-step" aria-hidden="true">06 / Next path</span>
         <NextStepBand {...pageContinuity.home} />
       </section>
     </main>

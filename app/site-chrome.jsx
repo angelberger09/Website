@@ -136,9 +136,9 @@ export function PageIntro({ eyebrow, title, children }) {
           ))}
         </div>
       </div>
-      <div className="page-hero__stack" aria-hidden="true">
-        <span className="hero-polaroid hero-polaroid--back" />
-        <div className="page-hero__photo-card">
+      <div className="page-hero__stack" aria-hidden="false">
+        <span className="hero-polaroid hero-polaroid--back" aria-hidden="true" />
+        <div className="page-hero__photo-card" aria-hidden="true">
           <span>{visual.label}</span>
           <strong>{visual.title}</strong>
           <small>{visual.note}</small>
@@ -147,7 +147,12 @@ export function PageIntro({ eyebrow, title, children }) {
             <em>{visual.cue}</em>
           </span>
         </div>
-        <span className="hero-polaroid hero-polaroid--frame" />
+        <span className="hero-polaroid hero-polaroid--frame" aria-hidden="true" />
+        <aside className="page-hero__room-key" aria-label={`${visual.label} room key`}>
+          <span>{visual.label} room key</span>
+          <strong>{visual.status}</strong>
+          <small>{visual.note}</small>
+        </aside>
       </div>
     </section>
   );

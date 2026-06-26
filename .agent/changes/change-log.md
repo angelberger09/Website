@@ -333,3 +333,35 @@ The footer had become paper-like and useful, but the four-room exit receipts, ac
 - METRIC-018
 - METRIC-021
 - METRIC-028
+
+## 2026-06-26 17:10 ET — Global metadata paper snippets
+
+### Changed
+
+- Added `app/global-metadata-paper-snippets-pass.css`.
+- Loaded the pass after the recent status/detail/eyebrow paper label refinements in `app/layout.jsx`.
+- Converted shared `.page-card__label`, `.source-link em`, and generic `.tag-row span` metadata/cue surfaces into clipped paper snippets with grain, scratches, pin dots, uneven silhouettes, and lifted shadows.
+- Added `.agent/changes/2026-06-26-global-metadata-paper-snippets.md` as the dedicated ledger note.
+
+### Why
+
+The base Website CSS still included shared rounded metadata-chip styling. Current paper-material, paper-snippet, torn-edge, and shared-card lessons support correcting that at the global pattern level so future page cards, source links, and tag rows do not reintroduce smooth UI pills.
+
+### Related items
+
+- COMP-004
+- COMP-005
+- COMP-006
+- COMP-007
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-029

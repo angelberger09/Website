@@ -1,0 +1,2 @@
+/* This file intentionally triggers the Website audit workflow after the consolidated feedback implementation batch.
+   It is not imported by the live app. The workflow watches app/** so this commit starts a Playwright/CDP audit run on main. */

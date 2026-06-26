@@ -104,6 +104,13 @@ export function PageIntro({ eyebrow, title, children }) {
     { label: "Cue", value: visual.cue || visual.path }
   ];
 
+  const roomRhythm = [
+    { label: "Enter", value: visual.path },
+    { label: "Focus", value: visual.title },
+    { label: "Shelf", value: visual.status },
+    { label: "Continue", value: visual.cue || visual.label }
+  ];
+
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
@@ -120,6 +127,14 @@ export function PageIntro({ eyebrow, title, children }) {
           ))}
         </div>
         <div className="page-hero__text">{children}</div>
+        <div className="page-hero__room-rhythm" aria-label="Room reading rhythm">
+          {roomRhythm.map((step) => (
+            <span key={`${step.label}-${step.value}`}>
+              <small>{step.label}</small>
+              {step.value}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="page-hero__stack" aria-hidden="true">
         <span className="hero-polaroid hero-polaroid--back" />

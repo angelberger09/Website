@@ -270,3 +270,38 @@ The Portfolio archive lanes still showed ordinal `Lane one`, `Lane two`, and `La
 - METRIC-029
 - METRIC-030
 - METRIC-032
+
+## 2026-06-26 08:08 ET — About exit shelf paper cues
+
+### Changed
+
+- Added `app/about-exit-shelf-pass.css`.
+- Loaded the pass from `app/layout.jsx`.
+- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
+
+### Why
+
+The About pathway cards already had route-photo centers, but the closing next-door area still read as separate cards more than a named room exit. Current calm-room, direct-label, paper-snippet, and continuity guidance supports making the section visibly read as one exit shelf with direct route cues.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-028
+- METRIC-029

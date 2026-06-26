@@ -1,0 +1,80 @@
+.portfolio-lane-piece__image,
+.portfolio-lane-piece__copy {
+  position: relative;
+}
+
+.portfolio-lane-piece__image span,
+.portfolio-lane-piece__copy .portfolio-note-label {
+  font-size: 0;
+}
+
+.portfolio-lane-piece__image span::after,
+.portfolio-lane-piece__copy .portfolio-note-label::after {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-lane-piece__copy .portfolio-note-label::after {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+}
+
+.portfolio-lane-piece:nth-child(1) .portfolio-lane-piece__image span::after,
+.portfolio-lane-piece:nth-child(1) .portfolio-lane-piece__copy .portfolio-note-label::after {
+  content: "Systems shelf";
+}
+
+.portfolio-lane-piece:nth-child(2) .portfolio-lane-piece__image span::after,
+.portfolio-lane-piece:nth-child(2) .portfolio-lane-piece__copy .portfolio-note-label::after {
+  content: "Texture shelf";
+}
+
+.portfolio-lane-piece:nth-child(3) .portfolio-lane-piece__image span::after,
+.portfolio-lane-piece:nth-child(3) .portfolio-lane-piece__copy .portfolio-note-label::after {
+  content: "Creature shelf";
+}
+
+.portfolio-lane-piece::after {
+  position: absolute;
+  top: 0.68rem;
+  right: 0.82rem;
+  z-index: 2;
+  width: max-content;
+  max-width: min(11rem, 58%);
+  padding: 0.34rem 0.55rem;
+  color: rgba(59, 45, 32, 0.74);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 235, 0.92), rgba(236, 216, 174, 0.72)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 170px 170px;
+  box-shadow: 0 0.55rem 1rem rgba(82, 59, 35, 0.13);
+  clip-path: polygon(3% 8%, 97% 0, 100% 84%, 91% 100%, 0 92%);
+  transform: rotate(2.4deg);
+}
+
+.portfolio-lane-piece:nth-child(1)::after {
+  content: "Open systems";
+}
+
+.portfolio-lane-piece:nth-child(2)::after {
+  content: "Read texture";
+  transform: rotate(-2deg);
+}
+
+.portfolio-lane-piece:nth-child(3)::after {
+  content: "Hold creatures";
+}
+
+@media (max-width: 720px) {
+  .portfolio-lane-piece::after {
+    top: 0.58rem;
+    right: 0.68rem;
+    max-width: min(10rem, 64%);
+  }
+}

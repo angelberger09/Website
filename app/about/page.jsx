@@ -58,23 +58,33 @@ const aboutRoomKey = [
 const aboutRoomSpine = [
   {
     label: "Room key",
-    detail: "enter softly"
+    detail: "enter softly",
+    mark: "Key",
+    cue: "open room"
   },
   {
     label: "Studio shape",
-    detail: "front room"
+    detail: "front room",
+    mark: "Shape",
+    cue: "public map"
   },
   {
     label: "Contact sheet",
-    detail: "soft frames"
+    detail: "soft frames",
+    mark: "Frames",
+    cue: "look gently"
   },
   {
     label: "Principles",
-    detail: "public promise"
+    detail: "public promise",
+    mark: "Promise",
+    cue: "keep close"
   },
   {
     label: "Next doors",
-    detail: "open path"
+    detail: "open path",
+    mark: "Doors",
+    cue: "leave softly"
   }
 ];
 
@@ -167,8 +177,14 @@ export default function AboutPage() {
       <aside className="about-room-spine" aria-label="About room section path">
         {aboutRoomSpine.map((item) => (
           <span className="about-room-spine__slip" key={item.label}>
-            <b>{item.label}</b>
-            <em>{item.detail}</em>
+            <span className="about-room-spine__photo" aria-hidden="true">
+              <b>{item.mark}</b>
+              <em>{item.cue}</em>
+            </span>
+            <span className="about-room-spine__copy">
+              <b>{item.label}</b>
+              <em>{item.detail}</em>
+            </span>
           </span>
         ))}
       </aside>

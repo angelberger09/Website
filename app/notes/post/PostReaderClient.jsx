@@ -5,6 +5,21 @@ import { NextStepBand } from "../../next-step-band";
 import { pageContinuity } from "../../page-continuity";
 import { PAGES_BASE, RAW_BASE } from "../../site-data";
 
+const postReaderIntroSlips = [
+  {
+    label: "Room",
+    value: "Reader sheet"
+  },
+  {
+    label: "Source",
+    value: "Public shelf"
+  },
+  {
+    label: "Return",
+    value: "Notes room"
+  }
+];
+
 const postReaderSupportCards = [
   {
     title: "Inside the studio",
@@ -166,6 +181,14 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
             Individual notes open as calm studio sheets so the writing stays connected
             to the same public room path as the rest of Soft Strange Studio.
           </p>
+          <div className="notes-post-intro-receipts" aria-label="Reader room cues">
+            {postReaderIntroSlips.map((slip) => (
+              <span className="notes-post-intro-receipt" key={slip.label}>
+                <small>{slip.label}</small>
+                <strong>{slip.value}</strong>
+              </span>
+            ))}
+          </div>
           <div className="notes-post-desk__photo-card" aria-hidden="true">
             <span className="notes-post-desk__photo-kicker">Reader room</span>
             <strong>Public note</strong>

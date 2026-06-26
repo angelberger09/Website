@@ -4,7 +4,8 @@
 
 - Updated `app/site-chrome.jsx` so the shared `PageIntro` room shelf now renders four visible slips instead of three.
 - Added a `Trust` slip between the existing `Read` and `Continue` slips.
-- The new slip uses each route intro's existing `visual.status` value, such as `Open room`, `Reading shelf`, `Public pieces`, or `Preparing`, and pairs it with an abstract `safe` paper/photo cue.
+- The new slip uses each route intro's existing `visual.status` value, such as `Open room`, `Reading shelf`, `Public pieces`, or `Preparing`, and pairs it with an abstract `source` paper/photo cue.
+- Updated `app/page-intro-room-shelf-pass.css` so the fourth paper slip gets its own slight rotation instead of inheriting a neutral repeated-card posture.
 
 ## Why
 
@@ -16,6 +17,11 @@ Partially satisfied. The shared route intro now has a clearer four-part room pat
 
 ## Related items
 
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
 - COMP-005
 - DESIGN-019
 - DESIGN-021

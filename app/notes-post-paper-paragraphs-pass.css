@@ -1,0 +1,88 @@
+/* Make individual note body paragraphs read as placed paper writing strips, not plain document text. */
+.notes-post-markdown {
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.notes-post-markdown p {
+  position: relative;
+  margin: 0;
+  padding: clamp(0.92rem, 2vw, 1.22rem) clamp(1rem, 2.4vw, 1.45rem) clamp(0.95rem, 2vw, 1.25rem) clamp(1.18rem, 2.8vw, 1.75rem);
+  color: rgba(58, 45, 42, 0.92);
+  background:
+    linear-gradient(90deg, rgba(185, 201, 175, 0.22) 0 0.22rem, transparent 0.22rem),
+    repeating-linear-gradient(180deg, transparent 0 1.58rem, rgba(47, 38, 35, 0.055) 1.58rem 1.64rem),
+    linear-gradient(145deg, rgba(255, 250, 242, 0.9), rgba(255, 247, 235, 0.62) 62%, rgba(216, 197, 236, 0.1)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: auto, auto, cover, 25rem 25rem, 42rem 42rem;
+  box-shadow:
+    0.32rem 0.42rem 0 rgba(255, 176, 143, 0.14),
+    0 0.82rem 1.55rem rgba(47, 38, 35, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  clip-path: polygon(1.2% 3%, 22% 1.2%, 52% 2.8%, 98.6% 1.4%, 97.6% 58%, 99% 96%, 72% 98%, 38% 96.4%, 2% 98%);
+}
+
+.notes-post-markdown p::before {
+  position: absolute;
+  top: 0.68rem;
+  left: 0.62rem;
+  width: 0.42rem;
+  height: calc(100% - 1.36rem);
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 176, 143, 0.62), rgba(185, 201, 175, 0.5));
+  box-shadow: 0.12rem 0 0 rgba(255, 250, 242, 0.74);
+  clip-path: polygon(18% 0, 100% 4%, 82% 100%, 0 94%);
+}
+
+.notes-post-markdown p::after {
+  position: absolute;
+  top: -0.34rem;
+  right: clamp(1rem, 5vw, 3.25rem);
+  width: 2.8rem;
+  height: 0.48rem;
+  content: "";
+  background:
+    linear-gradient(110deg, rgba(255, 250, 242, 0.74), rgba(255, 176, 143, 0.22)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow: 0 0.2rem 0.46rem rgba(47, 38, 35, 0.1);
+  opacity: 0.78;
+  transform: rotate(1.4deg);
+  clip-path: polygon(4% 16%, 28% 4%, 68% 12%, 97% 3%, 94% 86%, 70% 78%, 36% 92%, 6% 82%);
+}
+
+.notes-post-markdown p:nth-of-type(2n) {
+  background:
+    linear-gradient(90deg, rgba(216, 197, 236, 0.2) 0 0.22rem, transparent 0.22rem),
+    repeating-linear-gradient(180deg, transparent 0 1.58rem, rgba(47, 38, 35, 0.048) 1.58rem 1.64rem),
+    linear-gradient(145deg, rgba(255, 250, 242, 0.88), rgba(185, 201, 175, 0.14) 58%, rgba(255, 176, 143, 0.1)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  transform: rotate(-0.15deg);
+  clip-path: polygon(2% 2%, 30% 3.4%, 60% 1.4%, 97.8% 3%, 99% 93%, 64% 96%, 28% 98%, 1% 94%);
+}
+
+.notes-post-markdown p:nth-of-type(3n) {
+  transform: rotate(0.12deg);
+}
+
+.notes-post-markdown h2 + p,
+.notes-post-markdown h3 + p {
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown {
+    gap: 0.86rem;
+  }
+
+  .notes-post-markdown p {
+    padding: 0.82rem 0.88rem 0.9rem 1.2rem;
+    transform: none;
+  }
+
+  .notes-post-markdown p::after {
+    right: 0.9rem;
+  }
+}

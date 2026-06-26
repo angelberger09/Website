@@ -159,7 +159,6 @@ export function PageIntro({ eyebrow, title, children }) {
   const roomShelf = [
     { label: "Open", value: visual.label, visual: "door" },
     { label: "Read", value: visual.title, visual: "page" },
-    { label: "Trust", value: visual.status, visual: "safe" },
     { label: "Continue", value: visual.path, visual: "path" }
   ];
 

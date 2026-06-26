@@ -1,0 +1,197 @@
+.store-entry-receipts,
+.store-lane-collage,
+.store-visual-board__copy,
+.store-gallery-board__intro,
+.store-checklist-collage__intro,
+.store-availability-board__intro,
+.store-feed-ledger-board__intro,
+.store-promise-board__intro,
+.store-path-photo-board__intro {
+  position: relative;
+}
+
+.store-entry-receipts,
+.store-lane-collage {
+  padding-top: clamp(2.8rem, 5vw, 3.8rem);
+}
+
+.store-visual-board__copy,
+.store-gallery-board__intro,
+.store-checklist-collage__intro,
+.store-availability-board__intro,
+.store-feed-ledger-board__intro,
+.store-promise-board__intro,
+.store-path-photo-board__intro {
+  padding-left: clamp(5.9rem, 11vw, 8.35rem);
+}
+
+.store-entry-receipts::before,
+.store-lane-collage::before,
+.store-visual-board__copy::before,
+.store-gallery-board__intro::before,
+.store-checklist-collage__intro::before,
+.store-availability-board__intro::before,
+.store-feed-ledger-board__intro::before,
+.store-promise-board__intro::before,
+.store-path-photo-board__intro::before {
+  position: absolute;
+  z-index: 2;
+  display: inline-grid;
+  min-width: clamp(4.9rem, 8.4vw, 6.9rem);
+  padding: 0.38rem 0.58rem 0.34rem;
+  color: rgba(60, 45, 32, 0.75);
+  font-family: var(--font-hand);
+  font-size: clamp(0.68rem, 1.05vw, 0.82rem);
+  line-height: 1;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 227, 0.94), rgba(238, 219, 177, 0.76)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.52rem 1rem rgba(82, 59, 35, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  transform: rotate(-2deg);
+  clip-path: polygon(5% 0, 98% 6%, 100% 82%, 12% 100%, 0 72%);
+}
+
+.store-entry-receipts::after,
+.store-lane-collage::after,
+.store-visual-board__copy::after,
+.store-gallery-board__intro::after,
+.store-checklist-collage__intro::after,
+.store-availability-board__intro::after,
+.store-feed-ledger-board__intro::after,
+.store-promise-board__intro::after,
+.store-path-photo-board__intro::after {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(92, 68, 43, 0.22) 0 0.34rem,
+    transparent 0.34rem 0.72rem
+  );
+  filter: drop-shadow(0.18rem 0.22rem 0 rgba(255, 255, 255, 0.48));
+  pointer-events: none;
+}
+
+.store-entry-receipts::before,
+.store-lane-collage::before {
+  top: 0.15rem;
+  left: clamp(0.3rem, 1.4vw, 0.9rem);
+}
+
+.store-entry-receipts::after,
+.store-lane-collage::after {
+  top: clamp(1.7rem, 3.2vw, 2.4rem);
+  left: clamp(2.35rem, 4vw, 3.4rem);
+  width: 1px;
+  height: calc(100% - clamp(1.9rem, 3vw, 2.4rem));
+}
+
+.store-visual-board__copy::before,
+.store-gallery-board__intro::before,
+.store-checklist-collage__intro::before,
+.store-availability-board__intro::before,
+.store-feed-ledger-board__intro::before,
+.store-promise-board__intro::before,
+.store-path-photo-board__intro::before {
+  top: clamp(0.08rem, 0.5vw, 0.32rem);
+  left: 0;
+}
+
+.store-visual-board__copy::after,
+.store-gallery-board__intro::after,
+.store-checklist-collage__intro::after,
+.store-availability-board__intro::after,
+.store-feed-ledger-board__intro::after,
+.store-promise-board__intro::after,
+.store-path-photo-board__intro::after {
+  top: clamp(2.18rem, 4.2vw, 3rem);
+  left: clamp(2.1rem, 4vw, 3.2rem);
+  width: 1px;
+  height: calc(100% + clamp(1.2rem, 2.4vw, 2.2rem));
+}
+
+.store-entry-receipts::before {
+  content: "trust notes";
+}
+
+.store-lane-collage::before {
+  content: "opening lanes";
+}
+
+.store-visual-board__copy::before {
+  content: "preview board";
+}
+
+.store-gallery-board__intro::before {
+  content: "slow shelf";
+}
+
+.store-checklist-collage__intro::before {
+  content: "launch context";
+}
+
+.store-availability-board__intro::before {
+  content: "open stages";
+}
+
+.store-feed-ledger-board__intro::before {
+  content: "future parts";
+}
+
+.store-promise-board__intro::before {
+  content: "store promise";
+}
+
+.store-path-photo-board__intro::before {
+  content: "return path";
+}
+
+@media (max-width: 760px) {
+  .store-visual-board__copy,
+  .store-gallery-board__intro,
+  .store-checklist-collage__intro,
+  .store-availability-board__intro,
+  .store-feed-ledger-board__intro,
+  .store-promise-board__intro,
+  .store-path-photo-board__intro {
+    padding-left: 0;
+    padding-top: 2.55rem;
+  }
+
+  .store-entry-receipts::before,
+  .store-lane-collage::before,
+  .store-visual-board__copy::before,
+  .store-gallery-board__intro::before,
+  .store-checklist-collage__intro::before,
+  .store-availability-board__intro::before,
+  .store-feed-ledger-board__intro::before,
+  .store-promise-board__intro::before,
+  .store-path-photo-board__intro::before {
+    top: 0;
+    left: 0;
+    min-width: 0;
+  }
+
+  .store-entry-receipts::after,
+  .store-lane-collage::after,
+  .store-visual-board__copy::after,
+  .store-gallery-board__intro::after,
+  .store-checklist-collage__intro::after,
+  .store-availability-board__intro::after,
+  .store-feed-ledger-board__intro::after,
+  .store-promise-board__intro::after,
+  .store-path-photo-board__intro::after {
+    top: 1.48rem;
+    left: 0.82rem;
+    width: clamp(3.8rem, 18vw, 5.8rem);
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(92, 68, 43, 0.22) 0 0.34rem,
+      transparent 0.34rem 0.72rem
+    );
+  }
+}

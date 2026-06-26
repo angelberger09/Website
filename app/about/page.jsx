@@ -13,6 +13,21 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
   marker: ["Front room", "Tone", "Edges", "Motion"][index] ?? "Studio"
 }));
 
+const aboutContactRail = [
+  {
+    label: "Start sideways",
+    detail: "Four public frames"
+  },
+  {
+    label: "Stay readable",
+    detail: "Soft room notes"
+  },
+  {
+    label: "Follow the room",
+    detail: "Notes, work, store"
+  }
+];
+
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
 const aboutRoomFrames = [
@@ -115,6 +130,14 @@ export default function AboutPage() {
             These small frames show the public room in pieces: front door,
             tone, boundaries, and movement, all kept soft enough to enter.
           </p>
+        </div>
+        <div className="about-contact-sheet-rail" aria-label="Contact sheet path cues">
+          {aboutContactRail.map((item) => (
+            <span className="about-contact-sheet-rail__slip" key={item.label}>
+              <b>{item.label}</b>
+              <em>{item.detail}</em>
+            </span>
+          ))}
         </div>
         <div className="about-contact-sheet" aria-label="Soft Strange Studio orientation frames">
           {aboutContactSheet.map((frame) => (

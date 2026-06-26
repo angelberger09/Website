@@ -114,6 +114,10 @@ export default function HomePage() {
           {homepagePathSteps.map((step) => (
             <a className="home-path-map__step" href={step.href} key={step.href} role="listitem">
               <span className="home-path-map__thread" aria-hidden="true" />
+              <span className="home-path-map__photo" aria-hidden="true">
+                <b>{step.label}</b>
+                <em>{step.title}</em>
+              </span>
               <span className="home-path-map__number">{step.label}</span>
               <span className="home-path-map__copy">
                 <strong>{step.title}</strong>

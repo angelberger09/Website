@@ -29,9 +29,11 @@
 .about-contact-sheet-rail__slip {
   position: relative;
   display: grid;
-  gap: 0.12rem;
-  min-width: min(12rem, 100%);
-  padding: 0.52rem 0.72rem 0.48rem;
+  grid-template-columns: minmax(4.2rem, 0.62fr) minmax(6.8rem, 1fr);
+  gap: 0.54rem;
+  align-items: center;
+  min-width: min(15.4rem, 100%);
+  padding: 0.44rem 0.58rem 0.46rem 0.48rem;
   color: rgba(58, 45, 42, 0.9);
   background:
     linear-gradient(145deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.66)),
@@ -62,7 +64,81 @@
   background-size: cover, cover, 16rem 16rem;
 }
 
-.about-contact-sheet-rail__slip b {
+.about-contact-sheet-rail__photo {
+  position: relative;
+  display: grid;
+  min-height: 4.3rem;
+  place-items: end start;
+  padding: 0.42rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 24% 24%, rgba(255, 176, 143, 0.42), transparent 34%),
+    radial-gradient(circle at 78% 74%, rgba(185, 201, 175, 0.4), transparent 36%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.34), rgba(47, 38, 35, 0.12));
+  clip-path: polygon(3% 6%, 34% 1%, 72% 4%, 97% 2%, 94% 54%, 98% 96%, 64% 98%, 28% 95%, 2% 98%, 5% 48%);
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08), 0.08rem 0.16rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.about-contact-sheet-rail__photo::before,
+.about-contact-sheet-rail__photo::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.about-contact-sheet-rail__photo::before {
+  inset: 14% 12% auto auto;
+  width: 42%;
+  height: 36%;
+  background: rgba(255, 252, 246, 0.34);
+  clip-path: polygon(8% 18%, 62% 0, 100% 36%, 70% 100%, 14% 86%);
+}
+
+.about-contact-sheet-rail__photo::after {
+  inset: auto auto 12% 12%;
+  width: 38%;
+  height: 22%;
+  background: rgba(47, 38, 35, 0.08);
+  clip-path: polygon(0 34%, 32% 0, 76% 18%, 100% 68%, 70% 100%, 18% 84%);
+}
+
+.about-contact-sheet-rail__photo b {
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  padding: 0.22rem 0.34rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.62)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(3% 12%, 34% 0, 68% 9%, 98% 2%, 93% 90%, 64% 100%, 28% 94%, 3% 98%);
+  color: rgba(58, 45, 42, 0.88);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.about-contact-sheet-rail__photo em {
+  position: absolute;
+  right: 0.38rem;
+  bottom: 0.4rem;
+  z-index: 1;
+  color: rgba(58, 45, 42, 0.6);
+  font-size: 0.55rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-contact-sheet-rail__copy {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.about-contact-sheet-rail__copy b {
   font-size: 0.7rem;
   font-weight: 950;
   letter-spacing: 0.14em;
@@ -70,7 +146,7 @@
   text-transform: uppercase;
 }
 
-.about-contact-sheet-rail__slip em {
+.about-contact-sheet-rail__copy em {
   color: rgba(89, 72, 66, 0.78);
   font-size: 0.78rem;
   font-style: normal;
@@ -89,6 +165,7 @@
   }
 
   .about-contact-sheet-rail__slip {
+    grid-template-columns: minmax(4.8rem, 0.5fr) minmax(0, 1fr);
     min-width: 0;
   }
 }

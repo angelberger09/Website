@@ -20,7 +20,6 @@ Added `app/portfolio-lane-direct-labels-pass.css` and loaded it from `app/layout
 ## Agent files changed
 
 - `.agent/matrices/pages.matrix.md`
-- `.agent/matrices/quality-metrics.matrix.md`
 - `.agent/changes/change-log.md`
 - `.agent/changes/2026-06-26-portfolio-lane-direct-labels.md`
 

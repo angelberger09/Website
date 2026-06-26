@@ -1,0 +1,80 @@
+/* Continuity exit shelf pass.
+   Makes the shared next-step band read as an explicit room-exit shelf instead of only a pair of route cards. */
+
+.continuity-paper-trail__steps {
+  position: relative;
+  padding-block-start: clamp(2rem, 4vw, 2.75rem);
+  isolation: isolate;
+}
+
+.continuity-paper-trail__steps::before,
+.continuity-paper-trail__steps::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.continuity-paper-trail__steps::before {
+  top: 0.12rem;
+  left: clamp(0.35rem, 1.4vw, 0.85rem);
+  z-index: 2;
+  content: "exit shelf";
+  width: fit-content;
+  padding: 0.34rem 0.72rem 0.28rem;
+  clip-path: polygon(4% 9%, 96% 0, 92% 92%, 7% 100%);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.95), rgba(245, 224, 198, 0.64)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  color: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.08), 0 0.45rem 0.9rem rgba(47, 38, 35, 0.1);
+}
+
+.continuity-paper-trail__steps::after {
+  top: 0.98rem;
+  left: clamp(5.7rem, 13vw, 8.6rem);
+  right: clamp(0.6rem, 2vw, 1.4rem);
+  z-index: -1;
+  height: 0.16rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(47, 38, 35, 0.24) 0 0.36rem, transparent 0.36rem 0.72rem);
+  opacity: 0.58;
+  transform: rotate(0.45deg);
+}
+
+.continuity-paper-step {
+  overflow: visible;
+}
+
+.continuity-paper-step__copy::before {
+  display: block;
+  width: fit-content;
+  margin-block-end: 0.08rem;
+  padding: 0.12rem 0.38rem 0.1rem;
+  content: "room note";
+  clip-path: polygon(4% 12%, 96% 2%, 93% 90%, 8% 100%);
+  background: rgba(185, 201, 175, 0.2);
+  color: var(--muted);
+  font-family: var(--font-hand);
+  font-size: 0.64rem;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .continuity-paper-trail__steps {
+    padding-block-start: 2.25rem;
+  }
+
+  .continuity-paper-trail__steps::after {
+    left: 6rem;
+    right: 1rem;
+  }
+}

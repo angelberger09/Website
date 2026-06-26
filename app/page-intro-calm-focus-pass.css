@@ -1,7 +1,7 @@
 /* Shared PageIntro calm-focus pass.
    This pass resolves cue accumulation in the route intros by turning the intro
-   into one readable room board: copy, one compact structure shelf, and one
-   content-bearing photo/key stack. */
+   into one readable room board: copy, one compact three-step path shelf, and
+   one content-bearing photo/key stack. */
 
 .page-hero {
   gap: clamp(1.1rem, 3vw, 2.2rem) !important;
@@ -25,23 +25,31 @@
 .page-hero__room-shelf {
   margin-top: clamp(0.65rem, 1.8vw, 1rem) !important;
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: clamp(0.45rem, 1.3vw, 0.72rem) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(0.55rem, 1.4vw, 0.82rem) !important;
 }
 
 .page-hero__room-shelf > span {
   min-height: auto !important;
-  padding: clamp(0.52rem, 1.4vw, 0.74rem) !important;
+  padding: clamp(0.62rem, 1.5vw, 0.86rem) !important;
   display: grid !important;
-  grid-template-columns: 2.15rem minmax(0, 1fr) !important;
-  gap: 0.48rem !important;
+  grid-template-columns: 2.35rem minmax(0, 1fr) !important;
+  gap: 0.54rem !important;
   align-items: center !important;
   transform: none !important;
 }
 
+.page-hero__room-shelf > span:nth-child(2) {
+  transform: translateY(0.18rem) rotate(-0.45deg) !important;
+}
+
+.page-hero__room-shelf > span:nth-child(3) {
+  transform: translateY(-0.08rem) rotate(0.35deg) !important;
+}
+
 .page-hero__room-shelf-photo {
-  width: 2.15rem !important;
-  height: 2.15rem !important;
+  width: 2.35rem !important;
+  height: 2.35rem !important;
   min-height: 0 !important;
   font-size: 0 !important;
 }
@@ -81,7 +89,16 @@
   }
 
   .page-hero__room-shelf {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .page-hero__room-shelf > span {
+    grid-template-columns: 2.05rem minmax(0, 1fr) !important;
+  }
+
+  .page-hero__room-shelf-photo {
+    width: 2.05rem !important;
+    height: 2.05rem !important;
   }
 
   .page-hero__stack {

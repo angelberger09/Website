@@ -37,10 +37,18 @@ const pageIntroVisuals = {
   }
 };
 
+const footerRoomLoopCues = {
+  About: "Map room",
+  Notes: "Read shelf",
+  Portfolio: "Work shelf",
+  Store: "Open later"
+};
+
 const footerRoomLoop = siteNavPages.map((page) => ({
   href: page.href,
   title: page.title,
-  eyebrow: page.eyebrow
+  eyebrow: page.eyebrow,
+  cue: footerRoomLoopCues[page.title] || "Studio path"
 }));
 
 function getPageIntroVisual(title, eyebrow) {
@@ -102,9 +110,14 @@ export function StudioFooter() {
         <div className="studio-footer__room-loop-track">
           {footerRoomLoop.map((room) => (
             <a className="studio-footer__room-loop-slip" href={room.href} key={room.href}>
-              <span aria-hidden="true" />
-              <b>{room.title}</b>
-              <small>{room.eyebrow}</small>
+              <span className="studio-footer__room-loop-photo" aria-hidden="true">
+                <b>{room.cue}</b>
+                <em>{room.title}</em>
+              </span>
+              <span className="studio-footer__room-loop-copy">
+                <b>{room.title}</b>
+                <small>{room.eyebrow}</small>
+              </span>
             </a>
           ))}
         </div>

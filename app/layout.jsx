@@ -124,6 +124,7 @@ import './paper-asset-shell-pass.css';
 import './paper-asset-card-pass.css';
 import './detail-card-paper-face-pass.css';
 import './home-path-ledger-focus-pass.css';
+import './footer-calm-exit-shelf-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

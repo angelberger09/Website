@@ -149,3 +149,44 @@ The footer already had a paper receipt path, but the receipts themselves were vi
 - METRIC-018
 - METRIC-021
 - METRIC-029
+
+## 2026-06-26 15:50 ET — Homepage path map room cards
+
+### Changed
+
+- Added `app/home-path-map-room-cards-pass.css`.
+- Loaded the pass after the homepage section thread and room sequence stamp styling in `app/layout.jsx`.
+- Reworked the homepage reading-path map into a composed paper board with six connected room cards, a dashed path thread, image-like centers, a visible `six calm rooms` stamp, and stronger hover/focus depth.
+
+### Why
+
+The homepage reading path was useful, but it could still read as a secondary navigation strip rather than a composed paper-room object. This pass strengthens the first scan of the homepage sequence while preserving the existing anchors, copy, routes, and honest public content.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-001
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030

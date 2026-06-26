@@ -58,6 +58,15 @@ const homepagePathSteps = [
   }
 ];
 
+const homepageChapterNotes = {
+  frontRoom: "Start with the whole room before choosing a door.",
+  roomStatus: "Check what is public now and what is warming up.",
+  roomDoors: "Move from the front room into one clear destination.",
+  studioShape: "Read the making rules behind the paper path.",
+  houseRules: "Keep the public rooms soft, useful, and honest.",
+  nextPath: "Leave by a neighboring room instead of a dead end."
+};
+
 export default function HomePage() {
   const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
 
@@ -117,6 +126,7 @@ export default function HomePage() {
 
       <section id="studio-front-room" className="studio-pages studio-pages--intro home-paper-field" aria-labelledby="studio-front-room-title">
         <span className="home-docket-step" aria-hidden="true">Front room</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.frontRoom}</span>
         <div className="split-feature home-paper-field__intro">
           <div>
             <p className="eyebrow">Front room</p>
@@ -148,6 +158,7 @@ export default function HomePage() {
 
       <section id="studio-room-status" className="studio-pages studio-pages--compact home-room-status" aria-labelledby="studio-room-status-title">
         <span className="home-docket-step" aria-hidden="true">Current rooms</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.roomStatus}</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Current rooms</p>
           <h1 id="studio-room-status-title">What is ready now, and what is still preparing.</h1>
@@ -175,6 +186,7 @@ export default function HomePage() {
 
       <section id="studio-room-doors" className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
         <span className="home-docket-step" aria-hidden="true">Studio rooms</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.roomDoors}</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio rooms</p>
           <h1 id="studio-pages-title">The studio has real doors now.</h1>
@@ -205,6 +217,7 @@ export default function HomePage() {
 
       <section id="studio-shape" className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
         <span className="home-docket-step" aria-hidden="true">Studio shape</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.studioShape}</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio shape</p>
           <h1 id="studio-shape-title">Built to feel handmade and clear.</h1>
@@ -227,6 +240,7 @@ export default function HomePage() {
 
       <section id="studio-house-rules" className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
         <span className="home-docket-step" aria-hidden="true">House rules</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.houseRules}</span>
         <div className="home-studio-checks__intro">
           <p className="eyebrow">House rules</p>
           <h1 id="studio-checks-title">What every room should keep close.</h1>
@@ -258,6 +272,7 @@ export default function HomePage() {
 
       <section id="studio-next-path" className="studio-pages studio-pages--compact" aria-label="Where to go next">
         <span className="home-docket-step" aria-hidden="true">Next path</span>
+        <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.nextPath}</span>
         <NextStepBand {...pageContinuity.home} />
       </section>
     </main>

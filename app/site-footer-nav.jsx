@@ -7,14 +7,14 @@ const footerPhotoLabels = {
   About: "Studio",
   Notes: "Read",
   Portfolio: "Work",
-  Store: "Shop"
+  Store: "Prep"
 };
 
 const footerActiveLabels = {
   About: "Current studio map",
   Notes: "Current writing shelf",
   Portfolio: "Current archive room",
-  Store: "Current store path"
+  Store: "Current prepared store path"
 };
 
 function normalizePath(path) {

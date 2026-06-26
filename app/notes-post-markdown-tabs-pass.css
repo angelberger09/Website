@@ -1,0 +1,83 @@
+.notes-post-markdown {
+  position: relative;
+}
+
+.notes-post-markdown h2,
+.notes-post-markdown h3 {
+  position: relative;
+  width: fit-content;
+  max-width: min(100%, 34rem);
+  margin: clamp(2.1rem, 5vw, 3.1rem) 0 0.9rem;
+  padding: 0.72rem 1rem 0.7rem 1.25rem;
+  color: rgba(58, 45, 42, 0.96);
+  background:
+    linear-gradient(130deg, rgba(255, 250, 242, 0.98), rgba(255, 247, 235, 0.86) 58%, rgba(185, 201, 175, 0.22)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 20rem 20rem, 34rem 34rem;
+  box-shadow:
+    0.32rem 0.46rem 0 rgba(185, 201, 175, 0.22),
+    0 0.9rem 1.8rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(1% 8%, 17% 2%, 49% 5%, 76% 1%, 99% 7%, 97% 92%, 72% 97%, 38% 94%, 5% 98%);
+  transform: rotate(-0.45deg);
+}
+
+.notes-post-markdown h3 {
+  margin-top: clamp(1.6rem, 4vw, 2.35rem);
+  padding: 0.58rem 0.88rem 0.56rem 1rem;
+  transform: rotate(0.35deg);
+}
+
+.notes-post-markdown h2::before,
+.notes-post-markdown h3::before {
+  position: absolute;
+  top: -0.68rem;
+  left: 0.9rem;
+  content: "reader tab";
+  padding: 0.18rem 0.42rem;
+  color: rgba(58, 45, 42, 0.66);
+  background:
+    linear-gradient(125deg, rgba(255, 176, 143, 0.42), rgba(255, 250, 242, 0.88)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0 0.32rem 0.8rem rgba(47, 38, 35, 0.11);
+  clip-path: polygon(4% 8%, 94% 0, 100% 88%, 7% 100%);
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.notes-post-markdown h2::after,
+.notes-post-markdown h3::after {
+  position: absolute;
+  top: 0.42rem;
+  left: -0.32rem;
+  width: 0.46rem;
+  height: calc(100% - 0.84rem);
+  content: "";
+  background: linear-gradient(180deg, rgba(185, 201, 175, 0.72), rgba(216, 197, 236, 0.4));
+  box-shadow: 0.14rem 0 0 rgba(255, 250, 242, 0.72);
+  clip-path: polygon(10% 0, 100% 4%, 88% 100%, 0 94%);
+}
+
+.notes-post-markdown p + h2,
+.notes-post-markdown p + h3 {
+  margin-top: clamp(2.3rem, 5vw, 3.25rem);
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown h2,
+  .notes-post-markdown h3 {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .notes-post-markdown h2::before,
+  .notes-post-markdown h3::before {
+    left: 0.7rem;
+  }
+}

@@ -122,6 +122,7 @@ import './feedback-consolidated-room-reset-pass.css';
 import './key-card-section-style-pass.css';
 import './key-card-fixed-scale-pass.css';
 import './page-intro-room-shelf-pass.css';
+import './page-intro-trust-spine-pass.css';
 import './page-intro-calm-focus-pass.css';
 import './paper-asset-shell-pass.css';
 import './paper-asset-card-pass.css';

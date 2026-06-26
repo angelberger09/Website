@@ -1,0 +1,95 @@
+/* Turn shared detail/process lists into placed paper scraps instead of plain indented UI lists. */
+.detail-list,
+.process-list {
+  display: grid;
+  gap: clamp(0.5rem, 1.4vw, 0.8rem);
+  margin: clamp(0.75rem, 2vw, 1.15rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-list li,
+.process-list li {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 0.72rem 0.9rem 0.7rem 1.85rem;
+  color: rgba(86, 70, 65, 0.86);
+  font-size: clamp(0.9rem, 1.2vw, 1.02rem);
+  line-height: 1.5;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 242, 0.96), rgba(255, 247, 235, 0.72) 58%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 26rem 26rem, 40rem 40rem;
+  box-shadow:
+    0 0.55rem 1.25rem rgba(47, 38, 35, 0.09),
+    0 0.12rem 0.28rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(1.2% 4%, 24% 1.4%, 53% 3%, 98.4% 1.8%, 97.2% 62%, 99% 96%, 70% 98%, 36% 96%, 2% 98%);
+}
+
+.detail-list li::before,
+.process-list li::before {
+  position: absolute;
+  top: 0.98rem;
+  left: 0.72rem;
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  content: "";
+  background:
+    radial-gradient(circle at 38% 32%, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(135deg, rgba(255, 176, 143, 0.85), rgba(185, 201, 175, 0.78));
+  box-shadow:
+    0 0.12rem 0.25rem rgba(47, 38, 35, 0.16),
+    0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.detail-list li::after,
+.process-list li::after {
+  position: absolute;
+  inset: 0.18rem 0.42rem auto auto;
+  z-index: -1;
+  width: 2.8rem;
+  height: 0.48rem;
+  content: "";
+  background: rgba(255, 250, 242, 0.72);
+  box-shadow: 0 0.18rem 0.45rem rgba(47, 38, 35, 0.08);
+  opacity: 0.82;
+  transform: rotate(1.5deg);
+  clip-path: polygon(2% 18%, 22% 5%, 64% 14%, 98% 4%, 95% 86%, 74% 78%, 35% 92%, 5% 82%);
+}
+
+.detail-list li:nth-child(2n),
+.process-list li:nth-child(2n) {
+  clip-path: polygon(2% 2%, 31% 3.8%, 58% 1.2%, 97% 4%, 99% 92%, 62% 96%, 28% 98%, 1% 94%);
+  transform: rotate(-0.25deg);
+}
+
+.detail-list li:nth-child(3n),
+.process-list li:nth-child(3n) {
+  background:
+    linear-gradient(145deg, rgba(255, 250, 242, 0.94), rgba(216, 197, 236, 0.16) 48%, rgba(255, 176, 143, 0.12)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  transform: rotate(0.2deg);
+}
+
+.detail-list li strong,
+.process-list li strong {
+  color: rgba(58, 45, 42, 0.94);
+}
+
+@media (max-width: 760px) {
+  .detail-list li,
+  .process-list li {
+    padding: 0.68rem 0.78rem 0.66rem 1.68rem;
+    font-size: 0.92rem;
+  }
+
+  .detail-list li::before,
+  .process-list li::before {
+    left: 0.62rem;
+  }
+}

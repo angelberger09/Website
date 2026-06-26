@@ -49,3 +49,7 @@ Shared PageIntro room shelves now render the intended fourth `Trust` slip betwee
 ## Addendum — 2026-06-26 15:41 ET
 
 The shared footer exit receipts now render as actual linked paper exits to About, Notes, and Portfolio, with visible action slips (`Open map`, `Read notes`, `View work`), focus outlines, hover lift, and accessible labels. This keeps the bottom chrome aligned with the calm-room continuity and direct-navigation metrics: the receipt shelf is no longer only a decorative paper sequence before the footer nav.
+
+## Addendum — 2026-06-26 15:50 ET
+
+The homepage reading path now loads `app/home-path-map-room-cards-pass.css` after the earlier ledger and section-thread passes, making the `Read this page` map read as a composed paper-room board with six connected chapter cards, a visible dashed path, image-like centers, and a `six calm rooms` stamp. This keeps PAGE-001 aligned with the authored homepage, flattened editorial hierarchy, paper-snippet, paper-card, and calm-room continuity metrics without changing anchors, copy, routes, or public data.

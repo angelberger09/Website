@@ -12,6 +12,7 @@ import './home-pillar-photo-pass.css';
 import './home-check-photo-pass.css';
 import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';
+import './about-room-key-pass.css';
 import './about-contact-sheet-pass.css';
 import './about-contact-sheet-rail-pass.css';
 import './about-principle-photo-pass.css';

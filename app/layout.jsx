@@ -133,6 +133,7 @@ import './status-pill-paper-slip-pass.css';
 import './detail-card-room-pin-pass.css';
 import './home-path-ledger-focus-pass.css';
 import './home-section-thread-pass.css';
+import './home-room-sequence-stamps-pass.css';
 import './footer-calm-exit-shelf-pass.css';
 import './footer-exit-receipts-pass.css';
 import './footer-current-room-stamp-pass.css';

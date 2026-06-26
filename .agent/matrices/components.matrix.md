@@ -107,3 +107,7 @@ COMP-005 now retires the rendered footer `Room loop` rail because the four-room 
 ## Addendum — 2026-06-26 17:19 ET
 
 COMP-005, COMP-006, and COMP-007 now carry `app/reader-state-paper-scraps-pass.css`, which turns remaining shared `.source-note` and `.reader-state` fallback surfaces into clipped paper scraps with tape tabs, grain/scratch texture, uneven silhouettes, and lifted shadows. This keeps source/loading/error state language from falling back to smooth rounded app panels while preserving honest reader-state copy and error distinction.
+
+## Addendum — 2026-06-26 19:40 ET
+
+COMP-002 and COMP-005 now keep the shared footer trail's Store photo cue aligned with the prepared-room boundary: `app/site-footer-nav.jsx` changes the visible Store cue from `Shop` to `Prep` and the active Store state to `Current prepared store path`. This preserves direct footer navigation while avoiding any implication of live product inventory or open shop links.

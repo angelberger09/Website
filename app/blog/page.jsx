@@ -26,6 +26,8 @@ const blogPathCards = [
   }
 ];
 
+const blogPathSlips = ["older door", "same shelf", "soft landing"];
+
 export default function BlogPage() {
   return (
     <>
@@ -38,6 +40,11 @@ export default function BlogPage() {
               This doorway keeps older Blog links useful while guiding visitors into the softer Notes room.
               The writing is the same public shelf; this note simply tells people which door they used.
             </p>
+            <div className="notes-blog-path-bridge__slips" aria-label="Blog path reminders">
+              {blogPathSlips.map((slip) => (
+                <span key={slip}>{slip}</span>
+              ))}
+            </div>
           </div>
           <div className="notes-blog-path-bridge__photo" aria-hidden="true">
             <span>Blog</span>

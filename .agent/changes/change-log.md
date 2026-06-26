@@ -287,3 +287,38 @@ Remaining shared `DetailCard` headings could still read as plain card headings e
 - METRIC-023
 - METRIC-028
 - METRIC-029
+
+## 2026-06-26 14:18 ET — Footer exit receipt photo cues
+
+### Changed
+
+- Updated `app/site-chrome.jsx` so each footer exit receipt includes an honest abstract paper/photo cue.
+- Updated `app/footer-exit-receipts-pass.css` so the receipt shelf uses a visible photo-led left face plus a readable copy slip.
+- Added a dedicated change note for the shared footer refinement.
+
+### Why
+
+The shared footer exit shelf already guided visitors through Start, Read, and Browse receipts, but the receipts were still text-first. Current paper/photo guidance asks repeated route and exit surfaces to carry visible content-bearing photo centers where safe, without inventing fake screenshots, products, portfolio pieces, or private material.
+
+### Related items
+
+- COMP-005
+- DESIGN-018
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-029
+- METRIC-030

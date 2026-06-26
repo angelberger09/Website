@@ -103,6 +103,8 @@ import './key-card-section-style-pass.css';
 import './key-card-fixed-scale-pass.css';
 import './page-intro-room-shelf-pass.css';
 import './page-intro-calm-focus-pass.css';
+import './paper-asset-shell-pass.css';
+import './paper-asset-card-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

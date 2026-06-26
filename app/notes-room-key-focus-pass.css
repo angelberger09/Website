@@ -1,0 +1,151 @@
+.notes-room-page .page-hero {
+  position: relative;
+}
+
+.notes-room-page .page-hero::after {
+  position: absolute;
+  right: clamp(1rem, 5vw, 4rem);
+  bottom: clamp(-1.55rem, -2.6vw, -0.8rem);
+  z-index: 1;
+  width: clamp(8.8rem, 18vw, 13rem);
+  height: 1px;
+  content: "";
+  background: repeating-linear-gradient(
+    to right,
+    rgba(96, 67, 42, 0.34) 0 0.42rem,
+    transparent 0.42rem 0.76rem
+  );
+  filter: drop-shadow(0 0.18rem 0 rgba(255, 255, 255, 0.55));
+  transform: rotate(-1.2deg);
+}
+
+.notes-room-page .page-hero__room-key {
+  display: grid;
+  grid-template-columns: minmax(4.7rem, 0.72fr) 1fr;
+  align-items: center;
+  gap: 0.72rem 0.86rem;
+  max-width: clamp(15rem, 26vw, 20rem);
+  padding: clamp(0.9rem, 1.5vw, 1.12rem);
+  background:
+    linear-gradient(135deg, rgba(255, 251, 233, 0.96), rgba(239, 223, 188, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow:
+    0 1.2rem 2.2rem rgba(73, 50, 28, 0.16),
+    0 0.32rem 0 rgba(143, 106, 65, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  clip-path: polygon(3% 2%, 99% 0, 97% 93%, 84% 100%, 2% 96%, 0 13%);
+  transform: rotate(1.15deg) translateY(-0.28rem);
+}
+
+.notes-room-page .page-hero__room-key::before,
+.notes-room-page .page-hero__room-key::after {
+  position: absolute;
+  z-index: 2;
+  display: inline-grid;
+  padding: 0.28rem 0.46rem 0.23rem;
+  color: rgba(61, 45, 31, 0.78);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 0.86vw, 0.72rem);
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 248, 226, 0.94);
+  box-shadow: 0 0.42rem 0.85rem rgba(85, 60, 33, 0.12);
+  clip-path: polygon(5% 2%, 100% 8%, 94% 100%, 2% 88%);
+}
+
+.notes-room-page .page-hero__room-key::before {
+  top: -0.54rem;
+  left: 48%;
+  content: "latest first";
+  transform: rotate(-3deg);
+}
+
+.notes-room-page .page-hero__room-key::after {
+  right: 0.82rem;
+  bottom: -0.5rem;
+  content: "return path";
+  transform: rotate(2.5deg);
+}
+
+.notes-room-page .page-hero__room-key-photo {
+  grid-row: span 3;
+  min-height: 6.4rem;
+  padding: 0.58rem;
+  background:
+    radial-gradient(circle at 28% 28%, rgba(255, 250, 229, 0.96), transparent 32%),
+    linear-gradient(145deg, rgba(165, 134, 89, 0.32), rgba(68, 52, 38, 0.2)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, cover, 160px 160px;
+  box-shadow:
+    inset 0 0 0 1px rgba(87, 62, 38, 0.11),
+    0 0.62rem 1.1rem rgba(70, 48, 29, 0.13);
+  clip-path: polygon(8% 0, 100% 5%, 94% 92%, 18% 100%, 0 72%);
+}
+
+.notes-room-page .page-hero__room-key-photo b,
+.notes-room-page .page-hero__room-key-photo em {
+  width: fit-content;
+  background: rgba(255, 249, 230, 0.72);
+  box-shadow: 0 0.24rem 0.5rem rgba(71, 51, 32, 0.08);
+  clip-path: polygon(2% 10%, 100% 0, 96% 92%, 8% 100%);
+}
+
+.notes-room-page .page-hero__room-key > span:not(.page-hero__room-key-photo) {
+  width: fit-content;
+  padding: 0.24rem 0.48rem 0.18rem;
+  background: rgba(255, 250, 233, 0.76);
+  box-shadow: 0 0.3rem 0.7rem rgba(80, 56, 33, 0.09);
+  clip-path: polygon(3% 0, 100% 10%, 94% 96%, 0 82%);
+}
+
+.notes-room-page .page-hero__room-key strong {
+  position: relative;
+  margin-top: 0.06rem;
+}
+
+.notes-room-page .page-hero__room-key strong::after {
+  display: block;
+  width: min(7rem, 88%);
+  height: 0.34rem;
+  margin-top: 0.28rem;
+  content: "";
+  background: linear-gradient(90deg, rgba(151, 108, 62, 0.24), transparent);
+  clip-path: polygon(2% 20%, 100% 0, 96% 100%, 0 82%);
+}
+
+.notes-room-page .page-hero__room-shelf {
+  padding: clamp(0.58rem, 1.1vw, 0.82rem);
+  background:
+    linear-gradient(145deg, rgba(255, 248, 226, 0.86), rgba(236, 219, 184, 0.62)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 0.82rem 1.5rem rgba(75, 52, 31, 0.11);
+  clip-path: polygon(1% 5%, 98% 0, 100% 90%, 7% 100%, 0 76%);
+}
+
+.notes-room-page .page-hero__room-shelf > span {
+  background: rgba(255, 252, 237, 0.74);
+  box-shadow: 0 0.32rem 0.72rem rgba(79, 55, 33, 0.08);
+  clip-path: polygon(4% 0, 100% 8%, 96% 92%, 0 100%);
+}
+
+@media (max-width: 760px) {
+  .notes-room-page .page-hero::after {
+    right: 12%;
+    bottom: -0.95rem;
+    width: 42%;
+  }
+
+  .notes-room-page .page-hero__room-key {
+    grid-template-columns: 1fr;
+    max-width: none;
+    transform: rotate(0.8deg);
+  }
+
+  .notes-room-page .page-hero__room-key-photo {
+    grid-row: auto;
+    min-height: 5.4rem;
+  }
+}

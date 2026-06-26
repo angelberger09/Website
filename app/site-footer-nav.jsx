@@ -10,6 +10,13 @@ const footerPhotoLabels = {
   Store: "Shop"
 };
 
+const footerActiveLabels = {
+  About: "Current studio map",
+  Notes: "Current writing shelf",
+  Portfolio: "Current archive room",
+  Store: "Current store path"
+};
+
 function normalizePath(path) {
   if (!path) return "/Website";
   const cleanPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
@@ -60,7 +67,10 @@ export function FooterNav() {
               <span>{footerPhotoLabels[page.title] ?? "Room"}</span>
               <strong>{getFooterInitials(page.title)}</strong>
             </span>
-            <span className="studio-footer__trail-title">{page.title}</span>
+            <span className="studio-footer__trail-copy">
+              <span className="studio-footer__trail-title">{page.title}</span>
+              {active && <span className="studio-footer__trail-state">{footerActiveLabels[page.title] ?? "Current room"}</span>}
+            </span>
           </a>
         );
       })}

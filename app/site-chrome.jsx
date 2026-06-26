@@ -127,6 +127,10 @@ export function PageIntro({ eyebrow, title, children }) {
           <span>{visual.label}</span>
           <strong>{visual.title}</strong>
           <small>{visual.note}</small>
+          <span className="page-hero__photo-labels">
+            <em>{visual.path}</em>
+            <em>{visual.cue}</em>
+          </span>
         </div>
         <span className="hero-polaroid hero-polaroid--frame" />
       </div>

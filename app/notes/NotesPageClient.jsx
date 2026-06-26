@@ -37,6 +37,11 @@ function notePhotoLabel(post) {
   return post.category || post.series || "note";
 }
 
+function noteGalleryCue(index) {
+  const labels = ["Latest note", "Open note", "Shelf note"];
+  return labels[index] || "Shelf note";
+}
+
 function sourceVisualLabel(item) {
   const firstDetail = item.details?.[0];
   return firstDetail || item.eyebrow || "shelf";
@@ -50,6 +55,11 @@ function fallbackVisualLabel(rule) {
 function supportVisualLabel(card, index) {
   const labels = ["safe notes", "reader room", "table view"];
   return labels[index] || card.eyebrow || "support";
+}
+
+function supportPinLabel(index) {
+  const labels = ["Safe shelf", "Reader path", "Table view"];
+  return labels[index] || "Notes cue";
 }
 
 function readerStateVisualLabel(readerState) {
@@ -196,7 +206,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
                 href={`${routeBase}/post/?slug=${post.slug}`}
                 key={`gallery-${post.slug}`}
               >
-                <span className="notes-gallery-card__number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="notes-gallery-card__number">{noteGalleryCue(index)}</span>
                 <span className="notes-gallery-card__image" aria-hidden="true">
                   <span>{post.category || "note"}</span>
                 </span>
@@ -218,7 +228,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             <span className="notes-support-note__photo" aria-hidden="true">
               <span>{supportVisualLabel(card, index)}</span>
             </span>
-            <span className="notes-support-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <span className="notes-support-note__pin" aria-hidden="true">{supportPinLabel(index)}</span>
             <p className="eyebrow">{card.eyebrow}</p>
             <h2>{card.title}</h2>
             <p>{card.description}</p>

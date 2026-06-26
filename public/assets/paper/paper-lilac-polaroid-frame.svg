@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-label="Cream paper polaroid frame over muted purple backing on black background">
+  <defs>
+    <filter id="paperNoise" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.52" numOctaves="5" seed="93" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.88 0 0 0 0 0.82 0 0 0 0 0.70 0 0 0 .34 0" result="tone"/>
+      <feComposite in="tone" in2="SourceGraphic" operator="in" result="texture"/>
+      <feBlend in="SourceGraphic" in2="texture" mode="multiply"/>
+    </filter>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="22" stdDeviation="21" flood-color="#000" flood-opacity="0.68"/>
+      <feDropShadow dx="10" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.26"/>
+    </filter>
+    <linearGradient id="lilac" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8b7897"/>
+      <stop offset="0.58" stop-color="#6f5a78"/>
+      <stop offset="1" stop-color="#4c3b57"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.58" stop-color="#efe4ce"/>
+      <stop offset="1" stop-color="#d8c6a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="#000"/>
+  <g filter="url(#shadow)">
+    <path d="M316 120 C468 104 602 128 760 110 C915 92 1076 124 1282 111 C1302 262 1288 404 1306 552 C1322 694 1294 822 1308 964 C1148 954 1000 982 836 965 C668 948 526 986 315 964 C330 812 300 672 318 520 C336 374 304 248 316 120 Z" fill="url(#lilac)" filter="url(#paperNoise)" transform="rotate(-2.2 812 542)"/>
+    <path d="M432 164 C540 150 648 168 766 155 C894 141 1034 166 1196 156 C1210 295 1198 428 1210 568 C1222 712 1202 832 1194 934 C1056 930 936 948 798 934 C660 920 548 948 400 932 C410 788 394 655 406 512 C418 374 394 254 432 164 Z" fill="url(#cream)" filter="url(#paperNoise)" transform="rotate(1.2 804 544)"/>
+    <path d="M522 260 L1115 260 L1115 764 L522 764 Z" fill="#000" transform="rotate(1.2 804 544)"/>
+    <path d="M432 164 C538 184 664 150 798 170 C938 191 1050 158 1196 156" fill="none" stroke="#fff8df" stroke-opacity="0.30" stroke-width="5" transform="rotate(1.2 804 544)"/>
+    <path d="M460 878 C584 838 690 908 820 870 C948 832 1066 904 1194 934" fill="none" stroke="#5f4a64" stroke-opacity="0.10" stroke-width="8" transform="rotate(1.2 804 544)"/>
+    <path d="M380 150 C455 262 480 410 456 548 C438 656 484 776 552 922" fill="none" stroke="#e9dff0" stroke-opacity="0.18" stroke-width="6" transform="rotate(-2.2 812 542)"/>
+    <path d="M1228 164 C1148 298 1126 406 1162 544 C1190 652 1268 760 1302 940" fill="none" stroke="#2a1d30" stroke-opacity="0.18" stroke-width="6" transform="rotate(-2.2 812 542)"/>
+  </g>
+</svg>

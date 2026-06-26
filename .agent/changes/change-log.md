@@ -190,3 +190,29 @@ The homepage reading path was useful, but it could still read as a secondary nav
 - METRIC-028
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 16:18 ET — Root paper room corners
+
+### Changed
+
+- Extended `app/root-paper-fold-map-pass.css` with two low-layer, asset-backed paper corner sheets in the global atmosphere.
+- Kept the new paper edge treatment behind routed content so it strengthens the root environment without adding copy, links, fake photos, or new interaction.
+- Updated `design-language.matrix.md` and added a dedicated change note for the root paper environment pass.
+
+### Why
+
+The routed boards, cards, and footer/header elements now have many content-bearing paper/photo refinements, but the open page environment could still read as a smooth pastel background between rooms. This pass makes the root surface feel more like a physical paper tabletop before cards appear.
+
+### Related items
+
+- COMP-005
+- DESIGN-019
+- DESIGN-027
+- DESIGN-028
+- DESIGN-036
+- ASSET-006
+- LESSON-019
+- LESSON-024
+- METRIC-018
+- METRIC-026
+- METRIC-027

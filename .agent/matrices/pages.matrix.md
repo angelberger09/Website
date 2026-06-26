@@ -45,3 +45,7 @@ The Store page now loads `app/store-section-spine-labels-pass.css`, adding clipp
 ## Addendum — 2026-06-26 14:40 ET
 
 Shared PageIntro room shelves now render the intended fourth `Trust` slip between the readable page cue and the continuation path, using each route's existing status (`Open room`, `Reading shelf`, `Public pieces`, `Preparing`, or fallback `Studio room`). This aligns the shared intro across About, Notes, Blog compatibility, Portfolio, and Store with the four-part calm-room structure already described in the shelf styling: hero board, featured shelf, source note, and next path.
+
+## Addendum — 2026-06-26 15:41 ET
+
+The shared footer exit receipts now render as actual linked paper exits to About, Notes, and Portfolio, with visible action slips (`Open map`, `Read notes`, `View work`), focus outlines, hover lift, and accessible labels. This keeps the bottom chrome aligned with the calm-room continuity and direct-navigation metrics: the receipt shelf is no longer only a decorative paper sequence before the footer nav.

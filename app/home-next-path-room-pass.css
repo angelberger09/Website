@@ -25,7 +25,7 @@
 .home-next-path-note {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(8rem, 12rem);
+  grid-template-columns: minmax(0, 1fr) minmax(9.6rem, 14rem);
   align-items: center;
   gap: clamp(0.8rem, 2.3vw, 1.4rem);
   width: min(100%, 42rem);
@@ -57,26 +57,28 @@
 }
 
 .home-next-path-note::after {
-  content: "next room";
+  content: "next room\A notes · archive · store";
   justify-self: end;
   display: grid;
   place-items: end start;
   align-self: stretch;
-  min-height: 7.2rem;
-  width: min(100%, 11.6rem);
-  padding: 0.86rem 0.8rem;
+  min-height: 7.8rem;
+  width: min(100%, 13.2rem);
+  padding: 0.94rem 0.88rem;
   clip-path: polygon(4% 3%, 96% 8%, 100% 86%, 84% 98%, 6% 92%, 0 14%);
   background:
-    linear-gradient(150deg, rgba(116, 102, 122, 0.24), rgba(239, 226, 205, 0.5) 48%, rgba(255, 252, 246, 0.92)),
+    linear-gradient(150deg, rgba(116, 102, 122, 0.28), rgba(239, 226, 205, 0.54) 48%, rgba(255, 252, 246, 0.94)),
     radial-gradient(circle at 25% 24%, rgba(255, 255, 255, 0.74), transparent 33%),
+    linear-gradient(90deg, transparent 0 35%, rgba(71, 52, 78, 0.18) 35% 38%, transparent 38% 100%),
     var(--grain-image);
-  background-size: cover, cover, 12rem 12rem;
-  color: rgba(71, 52, 78, 0.86);
-  font-size: 0.68rem;
+  background-size: cover, cover, cover, 12rem 12rem;
+  color: rgba(71, 52, 78, 0.88);
+  font-size: clamp(0.68rem, 1vw, 0.78rem);
   font-weight: 900;
-  letter-spacing: 0.16em;
-  line-height: 1;
+  letter-spacing: 0.15em;
+  line-height: 1.35;
   text-transform: uppercase;
+  white-space: pre-line;
   box-shadow:
     0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
     0 0.64rem 1rem rgba(47, 38, 35, 0.13),
@@ -131,8 +133,8 @@
 
   .home-next-path-note::after {
     justify-self: start;
-    width: min(100%, 13rem);
-    min-height: 5.7rem;
+    width: min(100%, 15rem);
+    min-height: 6.2rem;
     transform: rotate(-0.6deg);
   }
 }

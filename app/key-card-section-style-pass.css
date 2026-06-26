@@ -1,0 +1,439 @@
+/* Key card section style pass.
+   Applies the quieter cream-paper + inset framed-window look from the latest visual reference
+   across the main Website sections. The goal is to make large sections feel like intentional
+   paper/photo cards instead of loose scraps or generic UI panels. */
+
+:root {
+  --key-card-paper: #f6edcf;
+  --key-card-paper-light: #fff9e8;
+  --key-card-paper-warm: #e7d8ae;
+  --key-card-ink: rgba(47, 38, 35, 0.88);
+  --key-card-muted: rgba(83, 72, 66, 0.72);
+  --key-card-border: rgba(47, 38, 35, 0.26);
+  --key-card-shadow: 0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 1.15rem 2.4rem rgba(47, 38, 35, 0.2);
+  --key-card-window-shadow: inset 0 0 0 0.16rem rgba(47, 38, 35, 0.18), inset 0 0.18rem 0.2rem rgba(47, 38, 35, 0.08);
+  --key-card-cut: polygon(1.6% 1.4%, 19% 0.7%, 42% 1.5%, 64% 0.8%, 97.4% 1.8%, 98.7% 42%, 97.8% 73%, 99% 97.2%, 75% 98.1%, 53% 97.4%, 31% 99%, 2% 97.1%, 1.1% 62%, 2.3% 27%);
+  --key-card-window-cut: polygon(1.2% 1.9%, 22% 1.1%, 48% 1.8%, 75% 1%, 98.8% 2.2%, 97.8% 48%, 99% 97.4%, 72% 98.7%, 44% 97.5%, 1.4% 98.6%, 2.2% 57%);
+}
+
+/* Outer section cards: large, warm, handmade paper sheet. */
+.page-hero,
+.title-lockup,
+.home-path-map,
+.home-paper-field,
+.home-room-status,
+.home-door-section,
+.home-studio-checks,
+.home-paper-field--pillars,
+.studio-pages,
+.notes-reader-board,
+.notes-gallery-board,
+.notes-source-board,
+.notes-state-board,
+.notes-support-strip,
+.notes-path-photo-board,
+.about-opening-board,
+.about-paper-board,
+.about-contact-sheet-board,
+.portfolio-archive-board,
+.portfolio-gallery-board,
+.portfolio-paper-board,
+.portfolio-readiness-board,
+.portfolio-feed-board,
+.portfolio-state-board,
+.portfolio-process-board,
+.store-lane-collage,
+.store-gallery-board,
+.store-availability-board,
+.store-promise-board,
+.store-checklist-collage,
+.store-feed-ledger-board,
+.store-editorial-section,
+.continuity-paper-trail,
+.studio-footer--paper {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: var(--key-card-cut) !important;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.34), transparent 36%),
+    radial-gradient(circle at 84% 76%, rgba(140, 112, 76, 0.12), transparent 38%),
+    linear-gradient(138deg, var(--key-card-paper-light), var(--key-card-paper) 58%, var(--key-card-paper-warm)),
+    var(--grain-image) !important;
+  background-size: cover, cover, cover, 21rem 21rem !important;
+  box-shadow: var(--key-card-shadow) !important;
+}
+
+.page-hero > *,
+.title-lockup > *,
+.home-path-map > *,
+.home-paper-field > *,
+.home-room-status > *,
+.home-door-section > *,
+.home-studio-checks > *,
+.home-paper-field--pillars > *,
+.studio-pages > *,
+.notes-reader-board > *,
+.notes-gallery-board > *,
+.notes-source-board > *,
+.notes-state-board > *,
+.notes-support-strip > *,
+.notes-path-photo-board > *,
+.about-opening-board > *,
+.about-paper-board > *,
+.about-contact-sheet-board > *,
+.portfolio-archive-board > *,
+.portfolio-gallery-board > *,
+.portfolio-paper-board > *,
+.portfolio-readiness-board > *,
+.portfolio-feed-board > *,
+.portfolio-state-board > *,
+.portfolio-process-board > *,
+.store-lane-collage > *,
+.store-gallery-board > *,
+.store-availability-board > *,
+.store-promise-board > *,
+.store-checklist-collage > *,
+.store-feed-ledger-board > *,
+.store-editorial-section > *,
+.continuity-paper-trail > *,
+.studio-footer--paper > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Inset framed window: the part that makes the section match the uploaded reference. */
+.page-hero::before,
+.title-lockup::before,
+.home-path-map::before,
+.home-paper-field::before,
+.home-room-status::before,
+.home-door-section::before,
+.home-studio-checks::before,
+.home-paper-field--pillars::before,
+.studio-pages::before,
+.notes-reader-board::before,
+.notes-gallery-board::before,
+.notes-source-board::before,
+.notes-state-board::before,
+.notes-support-strip::before,
+.notes-path-photo-board::before,
+.about-opening-board::before,
+.about-paper-board::before,
+.about-contact-sheet-board::before,
+.portfolio-archive-board::before,
+.portfolio-gallery-board::before,
+.portfolio-paper-board::before,
+.portfolio-readiness-board::before,
+.portfolio-feed-board::before,
+.portfolio-state-board::before,
+.portfolio-process-board::before,
+.store-lane-collage::before,
+.store-gallery-board::before,
+.store-availability-board::before,
+.store-promise-board::before,
+.store-checklist-collage::before,
+.store-feed-ledger-board::before,
+.store-editorial-section::before,
+.continuity-paper-trail::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: clamp(0.95rem, 2.4vw, 1.65rem);
+  clip-path: var(--key-card-window-cut);
+  background:
+    radial-gradient(circle at 58% 46%, rgba(255, 255, 255, 0.62), transparent 45%),
+    linear-gradient(135deg, rgba(255, 252, 244, 0.9), rgba(242, 235, 222, 0.48)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  box-shadow: var(--key-card-window-shadow);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+/* A faint lifted lower edge, like the reference card curling off the page. */
+.page-hero::after,
+.title-lockup::after,
+.home-path-map::after,
+.home-paper-field::after,
+.home-room-status::after,
+.home-door-section::after,
+.home-studio-checks::after,
+.home-paper-field--pillars::after,
+.studio-pages::after,
+.notes-reader-board::after,
+.notes-gallery-board::after,
+.notes-source-board::after,
+.notes-state-board::after,
+.notes-support-strip::after,
+.notes-path-photo-board::after,
+.about-opening-board::after,
+.about-paper-board::after,
+.about-contact-sheet-board::after,
+.portfolio-archive-board::after,
+.portfolio-gallery-board::after,
+.portfolio-paper-board::after,
+.portfolio-readiness-board::after,
+.portfolio-feed-board::after,
+.portfolio-state-board::after,
+.portfolio-process-board::after,
+.store-lane-collage::after,
+.store-gallery-board::after,
+.store-availability-board::after,
+.store-promise-board::after,
+.store-checklist-collage::after,
+.store-feed-ledger-board::after,
+.store-editorial-section::after,
+.continuity-paper-trail::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: clamp(1rem, 4vw, 3.5rem);
+  right: clamp(1rem, 4vw, 3.5rem);
+  bottom: clamp(0.55rem, 1.6vw, 1rem);
+  height: 0.08rem;
+  background: linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.18), transparent);
+  transform: rotate(0.7deg);
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+/* Framed window needs internal breathing room so content does not sit directly on the border. */
+.page-hero,
+.title-lockup,
+.home-path-map,
+.home-paper-field,
+.home-room-status,
+.home-door-section,
+.home-studio-checks,
+.home-paper-field--pillars,
+.studio-pages,
+.notes-reader-board,
+.notes-gallery-board,
+.notes-source-board,
+.notes-state-board,
+.notes-support-strip,
+.notes-path-photo-board,
+.about-opening-board,
+.about-paper-board,
+.about-contact-sheet-board,
+.portfolio-archive-board,
+.portfolio-gallery-board,
+.portfolio-paper-board,
+.portfolio-readiness-board,
+.portfolio-feed-board,
+.portfolio-state-board,
+.portfolio-process-board,
+.store-lane-collage,
+.store-gallery-board,
+.store-availability-board,
+.store-promise-board,
+.store-checklist-collage,
+.store-feed-ledger-board,
+.store-editorial-section,
+.continuity-paper-trail {
+  padding: clamp(1.65rem, 4vw, 3rem) !important;
+}
+
+/* Labels should feel like white paper tape pasted onto the inset window. */
+.eyebrow,
+.page-hero__room-tags span,
+.notes-note-card__label,
+.notes-gallery-card__copy small,
+.notes-source-card .eyebrow,
+.notes-state-note .eyebrow,
+.notes-support-note .eyebrow,
+.notes-path-photo-card__copy small,
+.home-docket-step,
+.store-state-snippet .eyebrow,
+.portfolio-piece-card .eyebrow,
+.portfolio-readiness-card .eyebrow,
+.about-room-piece .eyebrow,
+.about-principle-note .eyebrow,
+.about-pathway-note .eyebrow {
+  width: fit-content;
+  border-radius: 0 !important;
+  clip-path: polygon(1% 10%, 99% 2%, 97% 91%, 4% 100%);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(249, 243, 231, 0.72)),
+    var(--grain-image) !important;
+  background-size: cover, 11rem 11rem !important;
+  color: rgba(47, 38, 35, 0.66) !important;
+  box-shadow: 0.05rem 0.08rem 0 rgba(47, 38, 35, 0.06);
+}
+
+/* Major headings inherit the bold paper-sign feeling without becoming full-page posters. */
+.page-hero__subtitle,
+.title-line,
+.section-intro h1,
+.split-feature h1,
+.notes-reader-board__copy > h1,
+.notes-gallery-board__intro h1,
+.notes-source-board__intro > h1,
+.notes-state-board__intro > h1,
+.notes-path-photo-board__intro h1,
+.home-studio-checks__intro h1,
+.store-section-intro h1,
+.portfolio-gallery-board__intro h1,
+.about-contact-sheet-board__intro h1 {
+  color: var(--key-card-ink) !important;
+  text-shadow: none !important;
+}
+
+.page-hero__text p,
+.title-note,
+.section-intro p,
+.split-feature p,
+.notes-reader-board__copy > p:not(.eyebrow),
+.notes-gallery-board__intro p,
+.notes-source-board__intro p,
+.notes-path-photo-board__intro p {
+  color: var(--key-card-muted) !important;
+}
+
+/* Inner cards become smaller versions of the same reference card. */
+.home-hero-route-slip,
+.home-door-card,
+.home-room-slip,
+.home-note-piece,
+.home-pillar-note,
+.home-check-note,
+.notes-note-card,
+.notes-gallery-card,
+.notes-source-card,
+.notes-state-note,
+.notes-support-note,
+.notes-path-photo-card,
+.about-room-piece,
+.about-principle-note,
+.about-pathway-note,
+.portfolio-piece-card,
+.portfolio-gallery-card,
+.portfolio-readiness-card,
+.portfolio-feed-card,
+.portfolio-state-note,
+.portfolio-process-step,
+.store-lane-piece,
+.store-gallery-card,
+.store-state-snippet,
+.store-promise-note,
+.store-checklist-note,
+.store-feed-ledger-card,
+.link-card,
+.detail-card,
+.pathway-link,
+.source-link,
+.continuity-paper-step {
+  position: relative;
+  border-radius: 0 !important;
+  clip-path: var(--key-card-window-cut) !important;
+  background:
+    linear-gradient(139deg, rgba(255, 252, 244, 0.94), rgba(238, 229, 211, 0.7)),
+    var(--grain-image) !important;
+  background-size: cover, 15rem 15rem !important;
+  box-shadow: 0.1rem 0.15rem 0 rgba(47, 38, 35, 0.08), 0 0.65rem 1.3rem rgba(47, 38, 35, 0.12) !important;
+}
+
+/* Visual/photo blocks get the grey inset-outline treatment seen in the uploaded card. */
+.page-hero__photo-card,
+.notes-note-card__photo,
+.notes-gallery-card__image,
+.notes-source-receipt__photo,
+.notes-fallback-receipt__photo,
+.notes-state-note__photo,
+.notes-support-note__photo,
+.notes-path-photo-card__image,
+.home-hero-route-slip__preview,
+.home-door-card__preview,
+.portfolio-gallery-card__image,
+.store-gallery-card__image,
+.about-contact-card__image,
+.store-shot-card__image,
+.portfolio-piece-card__image,
+.store-lane-piece__image {
+  border-radius: 0 !important;
+  clip-path: var(--key-card-window-cut) !important;
+  background:
+    radial-gradient(circle at 55% 48%, rgba(255, 255, 255, 0.64), transparent 45%),
+    linear-gradient(135deg, rgba(250, 247, 238, 0.9), rgba(218, 214, 201, 0.42)),
+    var(--grain-image) !important;
+  background-size: cover, cover, 13rem 13rem !important;
+  box-shadow: var(--key-card-window-shadow) !important;
+}
+
+/* Keep the style calmer on small screens. */
+@media (max-width: 760px) {
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-paper-field--pillars,
+  .studio-pages,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-opening-board,
+  .about-paper-board,
+  .about-contact-sheet-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-lane-collage,
+  .store-gallery-board,
+  .store-availability-board,
+  .store-promise-board,
+  .store-checklist-collage,
+  .store-feed-ledger-board,
+  .store-editorial-section,
+  .continuity-paper-trail {
+    padding: clamp(1.15rem, 5vw, 1.6rem) !important;
+  }
+
+  .page-hero::before,
+  .title-lockup::before,
+  .home-path-map::before,
+  .home-paper-field::before,
+  .home-room-status::before,
+  .home-door-section::before,
+  .home-studio-checks::before,
+  .home-paper-field--pillars::before,
+  .studio-pages::before,
+  .notes-reader-board::before,
+  .notes-gallery-board::before,
+  .notes-source-board::before,
+  .notes-state-board::before,
+  .notes-support-strip::before,
+  .notes-path-photo-board::before,
+  .about-opening-board::before,
+  .about-paper-board::before,
+  .about-contact-sheet-board::before,
+  .portfolio-archive-board::before,
+  .portfolio-gallery-board::before,
+  .portfolio-paper-board::before,
+  .portfolio-readiness-board::before,
+  .portfolio-feed-board::before,
+  .portfolio-state-board::before,
+  .portfolio-process-board::before,
+  .store-lane-collage::before,
+  .store-gallery-board::before,
+  .store-availability-board::before,
+  .store-promise-board::before,
+  .store-checklist-collage::before,
+  .store-feed-ledger-board::before,
+  .store-editorial-section::before,
+  .continuity-paper-trail::before {
+    inset: 0.72rem;
+  }
+}

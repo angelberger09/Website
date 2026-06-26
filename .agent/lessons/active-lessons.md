@@ -44,3 +44,5 @@ These rules should shape current Website work.
 - Put text into smaller paper snippets, labels, strips, or note pieces where appropriate instead of relying on broad generic text panels.
 - Let photo/image-like surfaces carry more content structure, with text snippets supporting the visual composition without implying fake products or completed work.
 - Store availability rows and similar repeated wide bands should feel like placed paper strips or collage snippets, not styled UI list rows.
+- Strengthen drop shadows and lifted-paper depth across homepage paper/photo pieces, header tabs, route slips, and section cards so every placed surface reads as physically layered instead of washed into the background.
+- Organize the homepage into a human-readable left-docked editorial path: group related paper pieces, separate sections with clear spacing and alignment, and avoid scattered or hard-to-scan layouts that make the page feel unorganized.

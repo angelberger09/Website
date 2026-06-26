@@ -23,6 +23,7 @@ import './portfolio-gallery-pass.css';
 import './portfolio-archive-ticket-pass.css';
 import './portfolio-feed-photo-ledger-pass.css';
 import './portfolio-state-process-photo-pass.css';
+import './portfolio-process-direct-labels-pass.css';
 import './portfolio-continuity-photo-pass.css';
 import './portfolio-readiness-photo-pass.css';
 import './store-paper-snippet-pass.css';

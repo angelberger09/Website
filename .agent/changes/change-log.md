@@ -305,3 +305,41 @@ The About pathway cards already had route-photo centers, but the closing next-do
 - METRIC-021
 - METRIC-028
 - METRIC-029
+
+## 2026-06-26 08:19 ET — Continuity trail map cue
+
+### Changed
+
+- Added a content-bearing `Room trail` abstract paper/photo cue to `app/next-step-band.jsx`.
+- Added `app/continuity-map-cue-pass.css`.
+- Loaded the new continuity map cue pass from `app/layout.jsx`.
+- Updated `.agent/matrices/components.matrix.md` and added a dedicated change note.
+
+### Why
+
+The shared next-step band had route-photo link cards, but the lead copy sheet still started as a mostly text-only note. Current continuity, paper-piece, content-bearing photo center, and calm-room guidance supports making the exit surface visibly read as a guided route-map object before the two next-room links.
+
+### Related items
+
+- COMP-009
+- COMP-005
+- DESIGN-018
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-029
+- METRIC-030

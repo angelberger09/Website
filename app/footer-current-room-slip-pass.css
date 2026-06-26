@@ -1,0 +1,60 @@
+/* Footer current-room slip pass.
+   Makes the active footer room visibly labeled as a clipped paper slip instead of relying only on a background tint. */
+
+.studio-footer__trail-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.16rem;
+  align-content: center;
+  min-width: min(9.2rem, 42vw);
+}
+
+.studio-footer__trail-state {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.16rem 0.38rem 0.18rem;
+  clip-path: polygon(3% 13%, 96% 0, 100% 76%, 82% 100%, 4% 90%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.58)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  box-shadow: 0.08rem 0.13rem 0 rgba(47, 38, 35, 0.1), 0 0.26rem 0.42rem rgba(47, 38, 35, 0.12);
+  color: rgba(68, 53, 49, 0.88);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  text-transform: none;
+  transform: rotate(-1.1deg);
+}
+
+.studio-footer__trail-link--active .studio-footer__trail-title,
+.studio-footer__trail a[aria-current="page"] .studio-footer__trail-title {
+  letter-spacing: 0.13em;
+}
+
+.studio-footer__trail-link--active .studio-footer__trail-photo::after,
+.studio-footer__trail a[aria-current="page"] .studio-footer__trail-photo::after {
+  position: absolute;
+  right: 0.22rem;
+  bottom: 0.2rem;
+  width: 0.78rem;
+  height: 0.34rem;
+  content: "";
+  clip-path: polygon(4% 14%, 100% 0, 86% 82%, 0 100%);
+  background: rgba(255, 252, 246, 0.78);
+  box-shadow: 0.04rem 0.08rem 0 rgba(47, 38, 35, 0.12);
+}
+
+@media (max-width: 760px) {
+  .studio-footer__trail-copy {
+    min-width: min(8.2rem, 62vw);
+  }
+
+  .studio-footer__trail-state {
+    font-size: 0.66rem;
+  }
+}

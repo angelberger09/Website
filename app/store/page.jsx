@@ -32,6 +32,7 @@ const storeEntryReceipts = [
     description: "When a piece can be visited or purchased, the card can point to that public path directly."
   }
 ];
+const storeEntryCueLabels = ["Preview path", "Trust note", "Open when ready"];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -69,7 +70,7 @@ export default function StorePage() {
               <i />
               <i />
             </div>
-            <span className="store-entry-receipt__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <span className="store-entry-receipt__pin" aria-hidden="true">{storeEntryCueLabels[index] ?? "Store cue"}</span>
             <p className="store-entry-receipt__eyebrow">{receipt.eyebrow}</p>
             <h2>{receipt.title}</h2>
             <p>{receipt.description}</p>

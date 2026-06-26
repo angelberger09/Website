@@ -69,6 +69,7 @@ import './home-room-status-photo-pass.css';
 import './header-active-room-pass.css';
 import './header-paper-labels-pass.css';
 import './header-paper-thread-pass.css';
+import './header-paper-edge-stamps-pass.css';
 import './footer-studio-mark-photo-pass.css';
 import './page-intro-foreground-card-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';

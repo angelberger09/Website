@@ -99,6 +99,24 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function renderListBlock(block) {
+  const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+  const isOrdered = lines.every((line) => /^\d+\.\s+/.test(line));
+  const isUnordered = lines.every((line) => /^[-*]\s+/.test(line));
+
+  if (!isOrdered && !isUnordered) return null;
+
+  const tag = isOrdered ? "ol" : "ul";
+  const itemPattern = isOrdered ? /^\d+\.\s+/ : /^[-*]\s+/;
+  const items = lines
+    .map((line) => line.replace(itemPattern, "").trim())
+    .filter(Boolean)
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+
+  return `<${tag}>${items}</${tag}>`;
+}
+
 function markdownToHtml(markdown) {
   return markdown
     .split(/\n{2,}/)
@@ -108,6 +126,10 @@ function markdownToHtml(markdown) {
       if (block.startsWith("### ")) return `<h3>${escapeHtml(block.slice(4))}</h3>`;
       if (block.startsWith("## ")) return `<h2>${escapeHtml(block.slice(3))}</h2>`;
       if (block.startsWith("# ")) return `<h2>${escapeHtml(block.slice(2))}</h2>`;
+
+      const listBlock = renderListBlock(block);
+      if (listBlock) return listBlock;
+
       return `<p>${escapeHtml(block).replaceAll("\n", "<br />")}</p>`;
     })
     .join("");

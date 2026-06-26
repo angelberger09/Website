@@ -92,6 +92,7 @@ import './page-intro-room-key-card-pass.css';
 import './feedback-consolidated-room-reset-pass.css';
 import './key-card-section-style-pass.css';
 import './key-card-fixed-scale-pass.css';
+import './page-intro-room-shelf-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

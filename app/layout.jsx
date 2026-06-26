@@ -89,6 +89,7 @@ import './room-heading-ribbons-pass.css';
 import './page-intro-room-rhythm-pass.css';
 import './page-intro-room-thread-labels-pass.css';
 import './page-intro-room-key-card-pass.css';
+import './page-intro-room-compass-pass.css';
 import './feedback-consolidated-room-reset-pass.css';
 import './key-card-section-style-pass.css';
 import './key-card-fixed-scale-pass.css';

@@ -1,0 +1,208 @@
+/* Paper asset card pass.
+   Defines reusable asset-backed paper roles for smaller pieces while only applying
+   the first live layer to content-bearing card and photo surfaces. */
+
+:root {
+  --paper-card-note: url('/Website/assets/paper/paper-aged-deckle-sheet.svg');
+  --paper-card-stack: url('/Website/assets/paper/paper-grid-clip-stack.svg');
+  --paper-card-feature: url('/Website/assets/paper/paper-torn-tape-deckled.svg');
+  --paper-card-frame: url('/Website/assets/paper/paper-lilac-polaroid-frame.svg');
+  --paper-card-fiber: url('/Website/atmosphere/grain-noise.svg');
+  --paper-card-shadow:
+    0.06rem 0.08rem 0 rgba(47, 38, 35, 0.08),
+    0 0.5rem 1rem rgba(47, 38, 35, 0.13),
+    -0.18rem 0.22rem 0.65rem rgba(86, 59, 105, 0.06);
+  --paper-card-window-shadow:
+    inset 0 0 0 0.11rem rgba(47, 38, 35, 0.14),
+    0 0.38rem 0.8rem rgba(47, 38, 35, 0.12);
+}
+
+.paper-shell--note,
+.paper-shell--frame,
+.paper-shell--stack {
+  --paper-card-art: var(--paper-card-note);
+  background-image:
+    var(--paper-card-art),
+    linear-gradient(135deg, rgba(255, 253, 244, 0.92), rgba(238, 225, 202, 0.7)),
+    var(--paper-card-fiber) !important;
+  background-size: 100% 100%, cover, 9rem 9rem !important;
+  background-repeat: no-repeat, no-repeat, repeat !important;
+  background-position: center !important;
+  background-blend-mode: screen, normal, multiply !important;
+  box-shadow: var(--paper-card-shadow) !important;
+  border: 0 !important;
+}
+
+.paper-shell--frame {
+  --paper-card-art: var(--paper-card-frame);
+}
+
+.paper-shell--stack {
+  --paper-card-art: var(--paper-card-stack);
+}
+
+.paper-shell--note > *,
+.paper-shell--frame > *,
+.paper-shell--stack > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Live card role mapping. Keep this restrained: asset surfaces should support
+   content-bearing cards, not become a repeated wallpaper on every tiny label. */
+:where(
+  .home-note-piece,
+  .home-room-slip,
+  .home-door-card,
+  .home-pillar-note,
+  .home-check-note,
+  .notes-note-card,
+  .notes-gallery-card,
+  .notes-support-note,
+  .notes-state-note,
+  .notes-path-photo-card,
+  .about-room-piece,
+  .about-principle-note,
+  .about-pathway-note,
+  .about-contact-card,
+  .portfolio-piece-card,
+  .portfolio-gallery-card,
+  .portfolio-readiness-note,
+  .portfolio-lane-piece,
+  .portfolio-archive-ticket,
+  .portfolio-state-note,
+  .store-entry-receipt,
+  .store-lane-piece,
+  .store-shot-card,
+  .store-gallery-card,
+  .store-state-snippet,
+  .store-promise-note,
+  .store-checklist-note,
+  .store-feed-ledger-card,
+  .store-path-photo-card,
+  .continuity-paper-step
+) {
+  --paper-card-art: var(--paper-card-feature);
+  background-image:
+    var(--paper-card-art),
+    linear-gradient(135deg, rgba(255, 253, 244, 0.94), rgba(240, 229, 208, 0.72) 62%, rgba(123, 89, 141, 0.1)),
+    var(--paper-card-fiber) !important;
+  background-size:
+    100% 100%,
+    cover,
+    8.5rem 8.5rem !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat !important;
+  background-position:
+    center,
+    center,
+    center !important;
+  background-blend-mode:
+    screen,
+    normal,
+    multiply !important;
+  border: 0 !important;
+  box-shadow: var(--paper-card-shadow) !important;
+}
+
+:where(
+  .notes-source-card,
+  .notes-fallback-rule,
+  .portfolio-feed-card,
+  .portfolio-process-ribbon li,
+  .store-checklist-note,
+  .store-feed-ledger-card
+) {
+  --paper-card-art: var(--paper-card-stack);
+}
+
+:where(
+  .about-principle-note,
+  .about-pathway-note,
+  .notes-note-card,
+  .notes-support-note,
+  .notes-state-note
+) {
+  --paper-card-art: var(--paper-card-note);
+}
+
+/* Photo/window surfaces get the lilac polaroid material as an overlay, with the
+   black matte hidden through blend mode so existing readable labels stay visible. */
+:where(
+  .page-hero__photo-card,
+  .home-hero-route-slip__preview,
+  .home-note-piece__visual,
+  .home-room-slip__image,
+  .home-door-card__image,
+  .home-pillar-note__photo,
+  .home-check-note__photo,
+  .notes-note-card__photo,
+  .notes-gallery-card__image,
+  .notes-support-note__photo,
+  .notes-state-note__photo,
+  .notes-path-photo-card__image,
+  .about-room-piece__photo,
+  .about-contact-card__image,
+  .about-principle-note__photo,
+  .about-pathway-note__photo,
+  .portfolio-piece-card__image,
+  .portfolio-gallery-card__image,
+  .portfolio-readiness-note__photo,
+  .portfolio-lane-piece__image,
+  .portfolio-archive-ticket__photo,
+  .portfolio-state-photo__image,
+  .portfolio-process-ribbon__image,
+  .store-entry-receipt__photo,
+  .store-lane-piece__photo,
+  .store-shot-card__image,
+  .store-gallery-card__image,
+  .store-availability-status__visual,
+  .store-feed-ledger-card__photo,
+  .store-path-photo-card__image
+) {
+  background-image:
+    var(--paper-card-frame),
+    linear-gradient(135deg, rgba(65, 48, 76, 0.9), rgba(123, 93, 146, 0.72) 52%, rgba(229, 208, 223, 0.78)),
+    var(--paper-card-fiber) !important;
+  background-size:
+    100% 100%,
+    cover,
+    7.5rem 7.5rem !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat !important;
+  background-position:
+    center,
+    center,
+    center !important;
+  background-blend-mode:
+    screen,
+    normal,
+    soft-light !important;
+  box-shadow: var(--paper-card-window-shadow) !important;
+  border: 0 !important;
+}
+
+@media (max-width: 760px) {
+  :where(
+    .home-note-piece,
+    .home-room-slip,
+    .home-door-card,
+    .notes-note-card,
+    .notes-gallery-card,
+    .about-contact-card,
+    .portfolio-piece-card,
+    .portfolio-gallery-card,
+    .store-gallery-card,
+    .store-path-photo-card,
+    .continuity-paper-step
+  ) {
+    background-size: 112% 108%, cover, 7rem 7rem !important;
+    box-shadow:
+      0.04rem 0.06rem 0 rgba(47, 38, 35, 0.07),
+      0 0.36rem 0.78rem rgba(47, 38, 35, 0.12) !important;
+  }
+}

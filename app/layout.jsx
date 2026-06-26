@@ -20,6 +20,7 @@ import './about-principle-photo-pass.css';
 import './about-text-slip-pass.css';
 import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';
+import './about-exit-shelf-pass.css';
 import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './portfolio-archive-ticket-pass.css';

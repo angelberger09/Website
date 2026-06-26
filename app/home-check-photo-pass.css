@@ -1,0 +1,85 @@
+/* Homepage house-rule photo centers. */
+
+.home-check-note--with-photo {
+  grid-template-rows: auto auto auto 1fr auto;
+  min-height: clamp(20rem, 28vw, 24rem);
+  padding-top: 0.78rem;
+}
+
+.home-check-note__photo {
+  display: grid;
+  align-content: end;
+  gap: 0.28rem;
+  min-height: clamp(7.2rem, 14vw, 10rem);
+  margin: -0.08rem -0.08rem 0.18rem;
+  padding: clamp(0.78rem, 1.8vw, 1rem);
+  color: rgba(255, 252, 246, 0.94);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.68), transparent 22%),
+    radial-gradient(circle at 80% 70%, rgba(255, 176, 143, 0.34), transparent 30%),
+    linear-gradient(138deg, rgba(47, 38, 35, 0.86), rgba(139, 118, 89, 0.54) 56%, rgba(185, 201, 175, 0.4)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, cover, 230px 230px, 170px 170px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.18),
+    inset 0 -1.8rem 2.4rem rgba(47, 35, 25, 0.28),
+    0 0.72rem 1.25rem rgba(82, 59, 35, 0.13);
+  clip-path: polygon(2% 5%, 97% 0, 100% 86%, 92% 100%, 4% 96%, 0 18%);
+}
+
+.home-check-note:nth-child(2) .home-check-note__photo {
+  background:
+    radial-gradient(circle at 76% 20%, rgba(255, 255, 255, 0.62), transparent 22%),
+    radial-gradient(circle at 18% 76%, rgba(216, 197, 236, 0.36), transparent 31%),
+    linear-gradient(142deg, rgba(50, 57, 46, 0.84), rgba(124, 136, 99, 0.54) 55%, rgba(255, 248, 225, 0.44)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, cover, 230px 230px, 170px 170px;
+}
+
+.home-check-note:nth-child(3) .home-check-note__photo {
+  background:
+    radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.64), transparent 22%),
+    radial-gradient(circle at 76% 74%, rgba(185, 201, 175, 0.36), transparent 32%),
+    linear-gradient(142deg, rgba(55, 45, 69, 0.84), rgba(111, 94, 138, 0.52) 54%, rgba(236, 216, 174, 0.42)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, cover, 230px 230px, 170px 170px;
+}
+
+.home-check-note__photo b,
+.home-check-note__photo em {
+  width: fit-content;
+  max-width: 14rem;
+  background: rgba(41, 31, 23, 0.46);
+  box-shadow: 0 0.42rem 0.84rem rgba(47, 35, 25, 0.16);
+  text-shadow: 0 0.14rem 0.38rem rgba(47, 38, 35, 0.28);
+  clip-path: polygon(4% 0, 100% 8%, 96% 100%, 0 91%);
+}
+
+.home-check-note__photo b {
+  padding: 0.34rem 0.54rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-check-note__photo em {
+  padding: 0.28rem 0.5rem;
+  color: rgba(255, 252, 246, 0.82);
+  font-family: var(--font-hand);
+  font-size: 0.86rem;
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  .home-check-note--with-photo {
+    min-height: auto;
+  }
+
+  .home-check-note__photo {
+    min-height: 7rem;
+  }
+}

@@ -71,6 +71,7 @@ import './notes-post-intro-receipts-pass.css';
 import './notes-post-room-sequence-pass.css';
 import './notes-post-section-spine-pass.css';
 import './notes-post-support-cues-pass.css';
+import './notes-post-margin-rail-pass.css';
 import './blog-path-bridge-pass.css';
 import './blog-path-contact-cards-pass.css';
 import './continuity-paper-trail-pass.css';

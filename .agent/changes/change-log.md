@@ -255,3 +255,47 @@ The shared footer exit shelf had become useful and paper-like, but it only surfa
 - METRIC-021
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 16:41 ET — PageIntro route-specific shelf cues
+
+### Changed
+
+- Updated `app/site-chrome.jsx` so the shared PageIntro room shelf uses route-specific cue faces for About, Notes, Portfolio, Store, and fallback routes instead of generic `door`, `page`, `source`, and `path` placeholders.
+- Updated `app/page-intro-room-shelf-pass.css` so longer direct labels fit inside the small paper/photo faces without breaking the responsive shelf.
+- Added `.agent/changes/2026-06-26-pageintro-route-specific-shelf-cues.md` as the dedicated ledger note.
+
+### Why
+
+The PageIntro shelf already had the correct four-part calm-room structure, but its small visual faces were still generic. Current direct-label, content-bearing polaroid/photo, and paper-snippet metrics support making those faces route-specific and useful without adding fake content, changing routes, or touching connected data contracts.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- DESIGN-015
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-023
+- DESIGN-030
+- DESIGN-031
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-023
+- LESSON-025
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-022
+- METRIC-024
+- METRIC-029
+- METRIC-030

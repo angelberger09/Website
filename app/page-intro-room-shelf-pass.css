@@ -1,0 +1,111 @@
+/* Shared PageIntro room shelf pass.
+   Makes the calm-room structure visible in each route intro: hero board, featured shelf,
+   source note, and next path. */
+
+.page-hero__room-shelf {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.48rem, 1.4vw, 0.74rem);
+  max-width: min(100%, 42rem);
+  margin-top: clamp(0.86rem, 2.2vw, 1.25rem);
+  padding: 0.72rem 0.78rem 0.82rem;
+  color: rgba(48, 38, 34, 0.86);
+  background-image:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.66), rgba(245, 232, 211, 0.42) 58%, rgba(154, 133, 166, 0.12)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(1% 9%, 16% 2%, 38% 5%, 62% 1%, 84% 4%, 99% 0, 97% 91%, 77% 96%, 53% 94%, 31% 99%, 2% 94%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(59, 45, 39, 0.07),
+    0 0.72rem 1.25rem rgba(59, 45, 39, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.page-hero__room-shelf::before {
+  content: "room shelf";
+  position: absolute;
+  left: clamp(0.62rem, 1.4vw, 0.92rem);
+  top: -0.42rem;
+  z-index: 1;
+  width: fit-content;
+  padding: 0.16rem 0.48rem 0.13rem;
+  color: rgba(89, 70, 62, 0.76);
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 244, 224, 0.86);
+  clip-path: polygon(1% 15%, 98% 0, 94% 88%, 5% 100%);
+  box-shadow: 0.08rem 0.14rem 0 rgba(59, 45, 39, 0.08);
+  transform: rotate(-1.2deg);
+}
+
+.page-hero__room-shelf::after {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(111, 83, 111, 0.24), transparent);
+  opacity: 0.52;
+}
+
+.page-hero__room-shelf span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: start;
+  gap: 0.16rem;
+  min-height: 3.15rem;
+  padding: 0.5rem 0.54rem 0.56rem;
+  background-image:
+    linear-gradient(136deg, rgba(255, 252, 246, 0.92), rgba(241, 226, 203, 0.72)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(2% 7%, 96% 1%, 99% 91%, 88% 99%, 5% 96%);
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(59, 45, 39, 0.06),
+    0 0.4rem 0.78rem rgba(59, 45, 39, 0.08);
+}
+
+.page-hero__room-shelf span:nth-child(2) {
+  transform: rotate(0.6deg);
+}
+
+.page-hero__room-shelf span:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+.page-hero__room-shelf small {
+  color: rgba(111, 83, 111, 0.74);
+  font-size: 0.53rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .page-hero__room-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero__room-shelf {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__room-shelf::after {
+    top: 0.8rem;
+    bottom: 0.8rem;
+    left: 1.1rem;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(111, 83, 111, 0.22), transparent);
+  }
+}

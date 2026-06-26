@@ -88,6 +88,7 @@ import './calm-structured-rooms-pass.css';
 import './room-heading-ribbons-pass.css';
 import './page-intro-room-rhythm-pass.css';
 import './page-intro-room-thread-labels-pass.css';
+import './page-intro-room-key-card-pass.css';
 import './feedback-consolidated-room-reset-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 

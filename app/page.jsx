@@ -270,9 +270,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="studio-next-path" className="studio-pages studio-pages--compact" aria-label="Where to go next">
+      <section id="studio-next-path" className="studio-pages studio-pages--compact home-next-path-room" aria-label="Where to go next">
         <span className="home-docket-step" aria-hidden="true">Next path</span>
         <span className="home-docket-note" aria-hidden="true">{homepageChapterNotes.nextPath}</span>
+        <div className="home-next-path-note" aria-label="Homepage closing path note">
+          <span className="home-next-path-note__tag">Leave gently</span>
+          <strong>Choose the neighboring room that fits the next step.</strong>
+          <p>The front page closes with a quiet path instead of a dead end, so the studio still feels like one connected place.</p>
+        </div>
         <NextStepBand {...pageContinuity.home} />
       </section>
     </main>

@@ -258,157 +258,32 @@ The Portfolio archive lanes still showed ordinal `Lane one`, `Lane two`, and `La
 - DESIGN-015
 - DESIGN-019
 - DESIGN-022
-- DESIGN-030
-- DESIGN-031
-- LESSON-015
-- LESSON-019
-- LESSON-022
-- LESSON-026
-- METRIC-014
-- METRIC-018
-- METRIC-021
-- METRIC-029
-- METRIC-030
-- METRIC-032
 
-## 2026-06-26 08:08 ET — About exit shelf paper cues
+## 2026-06-26 14:10 ET — DetailCard room-note heading cues
 
 ### Changed
 
-- Added `app/about-exit-shelf-pass.css`.
-- Loaded the pass from `app/layout.jsx`.
-- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
+- Added `app/detail-card-room-pin-pass.css`.
+- Loaded the pass from `app/layout.jsx` after the existing DetailCard and status-pill paper passes.
+- Added a dedicated matrix and change note for the shared DetailCard heading refinement.
 
 ### Why
 
-The About pathway cards already had route-photo centers, but the closing next-door area still read as separate cards more than a named room exit. Current calm-room, direct-label, paper-snippet, and continuity guidance supports making the section visibly read as one exit shelf with direct route cues.
+Remaining shared `DetailCard` headings could still read as plain card headings even when the surrounding surface had paper-card treatment. The shared heading now gets a clipped `room note` slip and subtle binding thread so the pattern reads more like a placed paper-room object without changing copy or data.
 
 ### Related items
 
-- PAGE-002
 - COMP-008
-- COMP-009
-- DESIGN-015
-- DESIGN-018
 - DESIGN-019
-- DESIGN-022
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-015
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- METRIC-014
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-028
-- METRIC-029
-
-## 2026-06-26 08:19 ET — Continuity trail map cue
-
-### Changed
-
-- Added a content-bearing `Room trail` abstract paper/photo cue to `app/next-step-band.jsx`.
-- Added `app/continuity-map-cue-pass.css`.
-- Loaded the new continuity map cue pass from `app/layout.jsx`.
-- Updated `.agent/matrices/components.matrix.md` and added a dedicated change note.
-
-### Why
-
-The shared next-step band had route-photo link cards, but the lead copy sheet still started as a mostly text-only note. Current continuity, paper-piece, content-bearing photo center, and calm-room guidance supports making the exit surface visibly read as a guided route-map object before the two next-room links.
-
-### Related items
-
-- COMP-009
-- COMP-005
-- DESIGN-018
-- DESIGN-019
-- DESIGN-021
 - DESIGN-022
 - DESIGN-024
+- DESIGN-029
 - DESIGN-030
-- LESSON-002
-- LESSON-018
 - LESSON-019
-- LESSON-021
 - LESSON-022
 - LESSON-024
-- LESSON-025
-- METRIC-017
 - METRIC-018
-- METRIC-020
 - METRIC-021
 - METRIC-023
-- METRIC-029
-- METRIC-030
-
-## 2026-06-26 08:51 ET — Homepage path ledger focus
-
-### Changed
-
-- Added `app/home-path-ledger-focus-pass.css`.
-- Loaded the pass from `app/layout.jsx`.
-- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
-
-### Why
-
-The homepage reading path already made the long front page more legible, but its six equal chapter cards could still read as another card grid. Current homepage, calm-room, flattened-hierarchy, and paper-snippet guidance supports making the path read as one composed paper ledger shelf while preserving the existing anchor links and public copy.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-026
-- METRIC-001
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-028
-- METRIC-029
-
-## 2026-06-26 09:10 ET — Notes section spine labels
-
-### Changed
-
-- Added `app/notes-section-spine-labels-pass.css`.
-- Loaded the pass from `app/layout.jsx`.
-- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
-
-### Why
-
-The Notes index and Blog compatibility reader already had paper/photo note cards, source receipts, support slips, and a local next-path board, but the major sections still read as separate boards rather than one guided writing-room sequence. Current calm-room, flattened-hierarchy, direct-label, and paper-snippet guidance supports adding visible section-spine labels without changing Blog feed data or inventing new notes.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- COMP-008
-- DESIGN-015
-- DESIGN-019
-- DESIGN-022
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-015
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- METRIC-014
-- METRIC-017
-- METRIC-018
-- METRIC-021
 - METRIC-028
 - METRIC-029

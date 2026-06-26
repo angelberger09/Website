@@ -128,6 +128,7 @@ import './paper-asset-card-pass.css';
 import './detail-card-paper-face-pass.css';
 import './detail-card-binding-thread-pass.css';
 import './status-pill-paper-slip-pass.css';
+import './detail-card-room-pin-pass.css';
 import './home-path-ledger-focus-pass.css';
 import './home-section-thread-pass.css';
 import './footer-calm-exit-shelf-pass.css';

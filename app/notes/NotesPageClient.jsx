@@ -122,8 +122,8 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <PageIntro eyebrow="Still Here Notes" title="Studio notes room">
         <p>
           This page is the studio reading door. The public writing shelf keeps the
-          note files organized, and this page turns them into a softer reading
-          experience inside the Soft Strange Studio shell.
+          published notes organized, and this room turns them into a softer reading
+          path inside Soft Strange Studio.
         </p>
       </PageIntro>
 
@@ -133,12 +133,12 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <h1 id="notes-title">Read the notes</h1>
           <p>
             Published posts appear here when the public writing shelf is available.
-            The shelves can stay organized while visitors get a real page instead
-            of a plain behind-the-scenes list.
+            The shelves can stay organized while visitors get a calm room with real
+            notes, not a plain publishing checklist.
           </p>
 
           {state.status === "loading" && (
-            <p className="reader-state">Gathering the public notes inside the studio shell...</p>
+            <p className="reader-state">Gathering the public notes inside the studio room...</p>
           )}
           {state.status === "error" && (
             <div className="reader-state reader-state--error">

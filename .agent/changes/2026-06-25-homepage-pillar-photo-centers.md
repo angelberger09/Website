@@ -2,33 +2,35 @@
 
 ## Changed
 
-- Added `app/home-pillar-photo-pass.css` to turn the Homepage `Studio shape` pillar notes into larger content-bearing abstract paper/photo pieces.
-- Loaded the new pass from `app/layout.jsx` after the existing homepage paper passes.
-- Updated `.agent/matrices/pages.matrix.md` so PAGE-001 records the stronger photo/image treatment on the studio-shape pillar notes.
+- Updated `app/page.jsx` so each homepage studio-shape pillar renders an explicit `home-pillar-note__photo` abstract paper/photo center instead of relying on a pseudo-element label.
+- Updated `app/home-pillar-photo-pass.css` so those centers have clipped paper/photo surfaces, taped cues, readable pillar labels, and responsive fallback sizing.
+- Updated `.agent/matrices/pages.matrix.md` and `.agent/matrices/quality-metrics.matrix.md` after the interface change.
 
 ## Why
 
-The current `.agent` state keeps METRIC-030 and related paper/photo lessons partially satisfied: visual surfaces should carry meaningful content structure without implying fake work or unavailable assets. The Homepage pillar notes were already papery, but they still read mostly as text slips compared with the nearby route doors, status cards, and highlight notes.
+The homepage studio-shape section was only partially satisfying the paper/photo surface goal: it had paper-card styling, but the visual center was still CSS-generated rather than content-bearing markup. The current active lessons favor honest photo/image-like surfaces carrying existing route or section meaning without implying fake project, product, or private imagery.
 
-## Satisfaction check
+## Satisfaction state
 
-- Target state: partially satisfied.
-- Visible correction: the Homepage studio-shape pillar notes now gain abstract paper/photo centers labeled with public-safe studio principles.
-- Boundary: no fake products, fake portfolio work, fake photos, or private content were added.
+Partially satisfied. The visible homepage should now show stronger studio-shape pillar photo centers, but deployed visual review should still confirm the section reads clearly at screenshot scale.
 
 ## Related items
 
 - PAGE-001
+- COMP-004
 - COMP-008
 - DESIGN-019
 - DESIGN-021
 - DESIGN-022
 - DESIGN-024
+- DESIGN-030
+- DESIGN-031
 - LESSON-019
 - LESSON-021
 - LESSON-022
 - LESSON-024
 - LESSON-025
+- LESSON-026
 - METRIC-018
 - METRIC-020
 - METRIC-021

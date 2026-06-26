@@ -1,0 +1,83 @@
+.detail-card {
+  isolation: isolate;
+}
+
+.detail-card:has(.detail-card__paper-face) {
+  padding-top: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.detail-card:has(.detail-card__paper-face)::after {
+  position: absolute;
+  top: 1.05rem;
+  left: clamp(1rem, 3vw, 1.45rem);
+  z-index: 1;
+  width: min(8.8rem, 42%);
+  height: 0.7rem;
+  content: "Room note";
+  display: inline-grid;
+  place-items: center start;
+  padding-left: 0.72rem;
+  color: rgba(76, 58, 52, 0.68);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(90deg, rgba(126, 101, 80, 0.3) 0 52%, transparent 52% 100%) bottom left / 0.56rem 1px repeat-x,
+    linear-gradient(120deg, rgba(255, 250, 242, 0.92), rgba(219, 201, 165, 0.28));
+  box-shadow: 0 0.28rem 0.74rem rgba(58, 45, 42, 0.12);
+  clip-path: polygon(2% 21%, 98% 6%, 94% 79%, 7% 96%);
+  opacity: 0.94;
+  transform: rotate(-1.1deg);
+}
+
+.detail-card:has(.detail-card__paper-face) .detail-card__paper-face {
+  margin-bottom: clamp(0.68rem, 1.6vw, 1rem);
+}
+
+.detail-card:has(.detail-card__paper-face) .detail-card__paper-face::after {
+  position: absolute;
+  right: calc(100% - 0.6rem);
+  bottom: 0.96rem;
+  width: clamp(2.8rem, 7vw, 5.8rem);
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, rgba(95, 73, 64, 0.12), rgba(95, 73, 64, 0.52));
+  box-shadow: 0 0.12rem 0 rgba(255, 255, 255, 0.55);
+  transform: rotate(-3deg);
+  transform-origin: right center;
+}
+
+.detail-card:has(.detail-card__paper-face) > .eyebrow {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.24rem 0.58rem 0.21rem;
+  background: rgba(255, 250, 242, 0.72);
+  box-shadow: 0 0.3rem 0.85rem rgba(58, 45, 42, 0.09);
+  clip-path: polygon(3% 16%, 97% 4%, 94% 91%, 8% 100%);
+}
+
+@supports not selector(:has(*)) {
+  .detail-card__paper-face {
+    margin-bottom: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-card:has(.detail-card__paper-face) {
+    padding-top: 1.15rem;
+  }
+
+  .detail-card:has(.detail-card__paper-face)::after {
+    top: 0.72rem;
+    left: 0.95rem;
+    width: min(7.8rem, 58%);
+  }
+
+  .detail-card:has(.detail-card__paper-face) .detail-card__paper-face::after {
+    width: 2.3rem;
+  }
+}

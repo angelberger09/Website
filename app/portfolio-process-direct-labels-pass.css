@@ -1,0 +1,32 @@
+.portfolio-process-ribbon__phase {
+  min-width: min(100%, 7.4rem);
+  color: rgba(59, 45, 32, 0.74);
+  font-family: var(--font-hand);
+  line-height: 1.05;
+  text-align: left;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 229, 0.96), rgba(236, 217, 178, 0.84)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow:
+    0 0.55rem 1rem rgba(82, 59, 35, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  transform: rotate(-1.4deg);
+  clip-path: polygon(5% 4%, 98% 0, 100% 86%, 91% 100%, 0 92%);
+}
+
+.portfolio-process-photo-ribbon li:nth-child(2n) .portfolio-process-ribbon__phase {
+  transform: rotate(1.2deg);
+  clip-path: polygon(0 8%, 94% 0, 100% 12%, 97% 100%, 7% 94%, 2% 84%);
+}
+
+.portfolio-process-ribbon__copy {
+  align-content: start;
+}
+
+@media (max-width: 680px) {
+  .portfolio-process-ribbon__phase,
+  .portfolio-process-photo-ribbon li:nth-child(2n) .portfolio-process-ribbon__phase {
+    transform: none;
+  }
+}

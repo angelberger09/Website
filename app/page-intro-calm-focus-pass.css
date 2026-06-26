@@ -1,0 +1,107 @@
+/* Shared PageIntro calm-focus pass.
+   This pass resolves cue accumulation in the route intros by turning the intro
+   into one readable room board: copy, one compact structure shelf, and one
+   content-bearing photo/key stack. */
+
+.page-hero {
+  gap: clamp(1.1rem, 3vw, 2.2rem) !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(14rem, 0.36fr) !important;
+  align-items: stretch !important;
+  padding: clamp(1.25rem, 3.2vw, 2.35rem) !important;
+}
+
+.page-hero__copy {
+  align-self: center;
+  display: grid;
+  gap: clamp(0.72rem, 1.8vw, 1rem);
+}
+
+.page-hero__room-tags,
+.page-hero__room-rhythm,
+.page-hero__room-compass {
+  display: none !important;
+}
+
+.page-hero__room-shelf {
+  margin-top: clamp(0.65rem, 1.8vw, 1rem) !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(0.45rem, 1.3vw, 0.72rem) !important;
+}
+
+.page-hero__room-shelf > span {
+  min-height: auto !important;
+  padding: clamp(0.52rem, 1.4vw, 0.74rem) !important;
+  display: grid !important;
+  grid-template-columns: 2.15rem minmax(0, 1fr) !important;
+  gap: 0.48rem !important;
+  align-items: center !important;
+  transform: none !important;
+}
+
+.page-hero__room-shelf-photo {
+  width: 2.15rem !important;
+  height: 2.15rem !important;
+  min-height: 0 !important;
+  font-size: 0 !important;
+}
+
+.page-hero__room-shelf-copy {
+  gap: 0.08rem !important;
+  min-width: 0;
+}
+
+.page-hero__room-shelf-copy small {
+  font-size: 0.58rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+.page-hero__stack {
+  min-height: clamp(18rem, 31vw, 23rem) !important;
+  transform: none !important;
+  align-self: stretch !important;
+}
+
+.page-hero__room-key {
+  inset: auto clamp(0.35rem, 1.2vw, 0.75rem) clamp(0.45rem, 1.6vw, 0.85rem) auto !important;
+  width: min(13.5rem, 82%) !important;
+  transform: rotate(-1.2deg) !important;
+}
+
+.page-hero__photo-card {
+  inset: 12% 12% auto 11% !important;
+  min-height: 58% !important;
+  display: grid !important;
+  align-content: center !important;
+}
+
+@media (max-width: 860px) {
+  .page-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-hero__room-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .page-hero__stack {
+    min-height: 18rem !important;
+    width: min(25rem, 100%);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .page-hero__room-shelf {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-hero__room-shelf > span {
+    grid-template-columns: 1.9rem minmax(0, 1fr) !important;
+  }
+
+  .page-hero__room-shelf-photo {
+    width: 1.9rem !important;
+    height: 1.9rem !important;
+  }
+}

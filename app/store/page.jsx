@@ -242,6 +242,11 @@ export default function StorePage() {
           {storeFeedFields.map((field, index) => (
             <article className="store-feed-ledger-card" key={field.label}>
               <span className="store-feed-ledger-card__tab" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <div className="store-feed-ledger-card__photo" aria-hidden="true">
+                <b>{field.label}</b>
+                <i />
+                <i />
+              </div>
               <span className="store-feed-ledger-card__label">{field.label}</span>
               <p>{field.description}</p>
             </article>

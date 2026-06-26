@@ -48,17 +48,20 @@ const footerExitReceipts = [
   {
     label: "Start",
     title: "Studio map",
-    note: "Begin with the public room shape."
+    note: "Begin with the public room shape.",
+    visual: "front room"
   },
   {
     label: "Read",
     title: "Notes shelf",
-    note: "Move into published writing next."
+    note: "Move into published writing next.",
+    visual: "paper note"
   },
   {
     label: "Browse",
     title: "Archive path",
-    note: "Continue through ready work and future pieces."
+    note: "Continue through ready work and future pieces.",
+    visual: "next shelf"
   }
 ];
 
@@ -125,9 +128,15 @@ export function StudioFooter() {
       <div className="studio-footer__exit-receipts" aria-label="Footer exit receipts">
         {footerExitReceipts.map((receipt) => (
           <span className="studio-footer__exit-receipt" key={receipt.label}>
-            <small>{receipt.label}</small>
-            <b>{receipt.title}</b>
-            <em>{receipt.note}</em>
+            <span className="studio-footer__exit-receipt-photo" aria-hidden="true">
+              <b>{receipt.visual}</b>
+              <em>{receipt.label}</em>
+            </span>
+            <span className="studio-footer__exit-receipt-copy">
+              <small>{receipt.label}</small>
+              <b>{receipt.title}</b>
+              <em>{receipt.note}</em>
+            </span>
           </span>
         ))}
       </div>

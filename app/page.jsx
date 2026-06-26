@@ -210,7 +210,11 @@ export default function HomePage() {
 
         <div className="home-pillar-strip" aria-label="Studio shape principles">
           {studioPillars.map((pillar) => (
-            <article className="home-pillar-note" key={pillar.title}>
+            <article className="home-pillar-note home-pillar-note--with-photo" key={pillar.title}>
+              <span className="home-pillar-note__photo" aria-hidden="true">
+                <b>{pillar.eyebrow}</b>
+                <em>{pillar.title}</em>
+              </span>
               <span>{pillar.eyebrow}</span>
               <h2>{pillar.title}</h2>
               <p>{pillar.description}</p>

@@ -1,0 +1,95 @@
+.home-page .studio-pages {
+  isolation: isolate;
+}
+
+.home-page .studio-pages::after {
+  position: absolute;
+  top: clamp(1.3rem, 4.2vw, 2.45rem);
+  right: clamp(0.9rem, 4.4vw, 3.25rem);
+  z-index: 0;
+  width: clamp(7.8rem, 18vw, 12rem);
+  min-height: clamp(5.2rem, 10vw, 7rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: clamp(0.7rem, 1.5vw, 0.95rem);
+  color: rgba(64, 45, 27, 0.66);
+  font-size: clamp(0.62rem, 0.95vw, 0.74rem);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  background:
+    linear-gradient(150deg, rgba(255, 253, 244, 0.94), rgba(236, 219, 187, 0.64) 58%, rgba(199, 170, 124, 0.22)),
+    radial-gradient(circle at 24% 22%, rgba(132, 95, 55, 0.17), transparent 34%),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, auto, 150px 150px;
+  clip-path: polygon(5% 4%, 94% 0, 100% 18%, 96% 94%, 68% 100%, 0 88%, 3% 48%);
+  box-shadow:
+    0 1rem 1.9rem rgba(68, 48, 27, 0.16),
+    0 0.2rem 0.45rem rgba(68, 48, 27, 0.14),
+    inset 0 0 0 1px rgba(120, 88, 52, 0.1),
+    inset 0 -1.6rem 2.4rem rgba(121, 83, 43, 0.06);
+  transform: rotate(1.8deg);
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.home-page #studio-front-room::after {
+  content: "Front room";
+}
+
+.home-page #studio-room-status::after {
+  content: "Ready rooms";
+}
+
+.home-page #studio-room-doors::after {
+  content: "Room doors";
+}
+
+.home-page #studio-shape::after {
+  content: "Studio shape";
+}
+
+.home-page #studio-house-rules::after {
+  content: "House rules";
+}
+
+.home-page #studio-next-path::after {
+  content: "Next path";
+}
+
+.home-page .home-docket-step {
+  box-shadow:
+    0 0.9rem 1.55rem rgba(73, 52, 30, 0.16),
+    0 0.18rem 0.42rem rgba(73, 52, 30, 0.14),
+    inset 0 0 0 1px rgba(111, 82, 48, 0.1);
+}
+
+.home-page .home-docket-note {
+  max-width: min(13.5rem, 25vw);
+  color: rgba(54, 39, 25, 0.82);
+  box-shadow:
+    0 0.8rem 1.35rem rgba(72, 52, 30, 0.14),
+    inset 0 -0.55rem 0.95rem rgba(126, 93, 50, 0.055);
+}
+
+@media (max-width: 960px) {
+  .home-page .studio-pages::after {
+    top: 1rem;
+    right: 0.85rem;
+    width: clamp(6.3rem, 28vw, 8.2rem);
+    min-height: 4rem;
+    opacity: 0.58;
+  }
+
+  .home-page .home-docket-note {
+    max-width: min(100%, 28rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .studio-pages::after {
+    display: none;
+  }
+}

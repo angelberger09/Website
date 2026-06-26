@@ -1,0 +1,88 @@
+/* Shared PageIntro room-key pass.
+   Makes the route photo stack expose a readable public room key instead of keeping the route card only as decorative visual material. */
+
+.page-hero__stack {
+  padding-bottom: clamp(2.35rem, 5vw, 3.8rem);
+}
+
+.page-hero__room-key {
+  position: absolute;
+  z-index: 4;
+  right: clamp(-0.45rem, -1vw, -0.1rem);
+  bottom: clamp(0.1rem, 1.2vw, 0.75rem);
+  display: grid;
+  gap: 0.28rem;
+  width: min(15.5rem, 72%);
+  padding: 0.72rem 0.85rem 0.78rem;
+  color: rgba(49, 39, 35, 0.92);
+  background-image:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(251, 239, 219, 0.92)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1.5% 5%, 97% 0, 99% 82%, 92% 100%, 3% 96%, 0 20%);
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(65, 49, 42, 0.1),
+    0 0.78rem 1.35rem rgba(65, 49, 42, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  transform: rotate(-1.6deg);
+}
+
+.page-hero__room-key::before {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  top: -0.25rem;
+  width: 2.5rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: rgba(236, 207, 166, 0.72);
+  box-shadow: 0 0.18rem 0.32rem rgba(66, 49, 39, 0.12);
+  transform: rotate(4deg);
+}
+
+.page-hero__room-key span {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.16rem 0.42rem 0.12rem;
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(81, 64, 57, 0.8);
+  background: rgba(255, 247, 231, 0.84);
+  clip-path: polygon(0 10%, 100% 0, 96% 100%, 4% 94%);
+}
+
+.page-hero__room-key strong {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.55vw, 1.38rem);
+  line-height: 0.98;
+}
+
+.page-hero__room-key small {
+  max-width: 24ch;
+  color: rgba(86, 70, 65, 0.78);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 860px) {
+  .page-hero__stack {
+    padding-bottom: 3.1rem;
+  }
+
+  .page-hero__room-key {
+    right: auto;
+    left: min(8vw, 2.4rem);
+    bottom: 0.25rem;
+    width: min(15rem, 76%);
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero__room-key {
+    left: 50%;
+    width: min(14.5rem, 88%);
+    transform: translateX(-50%) rotate(-1.1deg);
+  }
+}

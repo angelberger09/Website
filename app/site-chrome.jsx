@@ -195,8 +195,16 @@ export function PageIntro({ eyebrow, title, children }) {
 }
 
 export function DetailCard({ eyebrow, title, children, status }) {
+  const faceLabel = status || eyebrow;
+
   return (
     <article className="detail-card">
+      {faceLabel && (
+        <span className="detail-card__paper-face" aria-hidden="true">
+          <b>{faceLabel}</b>
+          <em>paper note</em>
+        </span>
+      )}
       <p className="eyebrow">{eyebrow}</p>
       <h2>{title}</h2>
       <div>{children}</div>

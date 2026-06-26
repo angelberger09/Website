@@ -95,3 +95,7 @@ COMP-009 now adds a content-bearing `Room trail` paper/photo map cue to the shar
 ## Addendum — 2026-06-26 11:18 ET
 
 COMP-005 now carries a shared footer `Room loop` rail built from the existing public `siteNavPages` route data in `app/site-chrome.jsx` and styled by `app/footer-room-loop-pass.css`. The bottom chrome should now read as one connected studio-room sequence with clipped paper/photo slips for About, Notes, Portfolio, and Store, rather than ending as separate footer nav cards.
+
+## Addendum — 2026-06-26 14:18 ET
+
+COMP-005 now carries photo-led footer exit receipts through `app/site-chrome.jsx` and `app/footer-exit-receipts-pass.css`. The Start, Read, and Browse receipts keep their existing public route copy, but each now has an honest abstract paper/photo face so the shared footer exit shelf no longer reads as text-only beside the newer room-loop and continuity photo surfaces.

@@ -1,0 +1,124 @@
+/* About exit shelf pass. Makes the About next-door section read as one clipped exit shelf instead of three separate cards. */
+
+.about-pathways-board {
+  position: relative;
+  overflow: visible;
+}
+
+.about-pathways-board::before {
+  position: absolute;
+  top: clamp(1.1rem, 3vw, 1.8rem);
+  right: clamp(1rem, 4vw, 2.4rem);
+  z-index: 2;
+  content: "exit shelf";
+  padding: 0.42rem 0.66rem;
+  color: rgba(58, 45, 42, 0.74);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(243, 232, 214, 0.76)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(4% 14%, 33% 0, 73% 8%, 98% 2%, 94% 92%, 61% 100%, 8% 88%);
+  box-shadow:
+    0 0.42rem 0.9rem rgba(58, 45, 42, 0.12),
+    0.12rem 0.16rem 0 rgba(58, 45, 42, 0.1);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: rotate(1.6deg);
+}
+
+.about-pathways-board::after {
+  position: absolute;
+  right: clamp(1.6rem, 6vw, 4.2rem);
+  bottom: clamp(3.2rem, 8vw, 5.6rem);
+  left: clamp(1.4rem, 5vw, 3.8rem);
+  z-index: 0;
+  height: 0.18rem;
+  content: "";
+  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.18) 0 0.75rem, transparent 0.75rem 1.18rem);
+  opacity: 0.72;
+  transform: rotate(-0.8deg);
+}
+
+.about-pathway-collage {
+  position: relative;
+  z-index: 1;
+}
+
+.about-pathway-note {
+  position: relative;
+}
+
+.about-pathway-note::before {
+  position: absolute;
+  top: -0.62rem;
+  left: 1rem;
+  z-index: 4;
+  padding: 0.32rem 0.5rem;
+  color: rgba(58, 45, 42, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 248, 238, 0.96), rgba(228, 214, 195, 0.78)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(2% 18%, 45% 0, 96% 12%, 91% 94%, 38% 100%, 0 86%);
+  box-shadow: 0 0.28rem 0.55rem rgba(58, 45, 42, 0.13);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(-2.2deg);
+}
+
+.about-pathway-note:nth-child(1)::before {
+  content: "writing exit";
+}
+
+.about-pathway-note:nth-child(2)::before {
+  content: "archive exit";
+  transform: rotate(1.4deg);
+}
+
+.about-pathway-note:nth-child(3)::before {
+  content: "store exit";
+  transform: rotate(-1deg);
+}
+
+.about-pathway-note::after {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 1rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  z-index: 3;
+  content: "";
+  background: rgba(58, 45, 42, 0.46);
+  border-radius: 999px;
+  box-shadow:
+    0 0.08rem 0 rgba(255, 252, 246, 0.62) inset,
+    0 0.26rem 0.5rem rgba(58, 45, 42, 0.18);
+}
+
+.about-pathway-note__label {
+  box-shadow: 0 0.16rem 0.32rem rgba(58, 45, 42, 0.1);
+}
+
+@media (max-width: 820px) {
+  .about-pathways-board::before {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: inline-block;
+    margin: 0 0 1rem;
+  }
+
+  .about-pathways-board::after {
+    right: 1rem;
+    bottom: 2rem;
+    left: 1rem;
+  }
+
+  .about-pathway-note::before {
+    left: 0.82rem;
+  }
+}

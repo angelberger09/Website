@@ -66,7 +66,7 @@ const footerExitReceipts = [
     label: "Start",
     title: "Studio map",
     note: "Begin with the public room shape.",
-    visual: "front room",
+    visual: "map room",
     href: "/Website/about/",
     action: "Open map"
   },
@@ -74,7 +74,7 @@ const footerExitReceipts = [
     label: "Read",
     title: "Notes shelf",
     note: "Move into published writing next.",
-    visual: "paper note",
+    visual: "latest note",
     href: "/Website/notes/",
     action: "Read notes"
   },
@@ -82,7 +82,7 @@ const footerExitReceipts = [
     label: "Browse",
     title: "Archive path",
     note: "Continue through ready work.",
-    visual: "next shelf",
+    visual: "work shelf",
     href: "/Website/portfolio/",
     action: "View work"
   },
@@ -90,7 +90,7 @@ const footerExitReceipts = [
     label: "Store",
     title: "Future pieces",
     note: "Check what opens when links are ready.",
-    visual: "slow shelf",
+    visual: "shop prep",
     href: "/Website/store/",
     action: "Check store"
   }

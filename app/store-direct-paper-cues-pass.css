@@ -1,0 +1,68 @@
+.store-lane-piece__photo span,
+.store-gallery-card__number,
+.store-checklist-note__pin,
+.store-feed-ledger-card__tab {
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.store-lane-piece__photo span::after,
+.store-gallery-card__number::after,
+.store-checklist-note__pin::after,
+.store-feed-ledger-card__tab::after {
+  display: inline-grid;
+  place-items: center;
+  min-width: clamp(4.9rem, 9vw, 7.2rem);
+  padding: 0.34rem 0.54rem 0.3rem;
+  color: rgba(61, 45, 31, 0.76);
+  font-family: var(--font-hand);
+  font-size: clamp(0.64rem, 0.92vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.96), rgba(235, 218, 178, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.46rem 0.9rem rgba(82, 59, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  clip-path: polygon(4% 4%, 96% 0, 100% 78%, 88% 100%, 0 92%);
+  transform: rotate(-2deg);
+}
+
+.store-lane-piece:nth-child(1) .store-lane-piece__photo span::after { content: "Soft goods"; }
+.store-lane-piece:nth-child(2) .store-lane-piece__photo span::after { content: "Print shelf"; }
+.store-lane-piece:nth-child(3) .store-lane-piece__photo span::after { content: "Studio tools"; }
+
+.store-gallery-card:nth-child(1) .store-gallery-card__number::after { content: "Soft goods"; }
+.store-gallery-card:nth-child(2) .store-gallery-card__number::after { content: "Print shelf"; }
+.store-gallery-card:nth-child(3) .store-gallery-card__number::after { content: "Studio tools"; }
+.store-gallery-card:nth-child(4) .store-gallery-card__number::after { content: "Preview rule"; }
+.store-gallery-card:nth-child(5) .store-gallery-card__number::after { content: "Launch rule"; }
+
+.store-checklist-note:nth-child(1) .store-checklist-note__pin::after { content: "Public path"; }
+.store-checklist-note:nth-child(2) .store-checklist-note__pin::after { content: "Care note"; }
+.store-checklist-note:nth-child(3) .store-checklist-note__pin::after { content: "Shelf state"; }
+
+.store-feed-ledger-card:nth-child(1) .store-feed-ledger-card__tab::after { content: "Name"; }
+.store-feed-ledger-card:nth-child(2) .store-feed-ledger-card__tab::after { content: "Preview"; }
+.store-feed-ledger-card:nth-child(3) .store-feed-ledger-card__tab::after { content: "Stage"; }
+.store-feed-ledger-card:nth-child(4) .store-feed-ledger-card__tab::after { content: "Public link"; }
+.store-feed-ledger-card:nth-child(5) .store-feed-ledger-card__tab::after { content: "Delivery"; }
+
+.store-checklist-note__pin::after,
+.store-feed-ledger-card__tab::after {
+  min-width: clamp(5.3rem, 9.6vw, 7.8rem);
+}
+
+@media (max-width: 760px) {
+  .store-lane-piece__photo span::after,
+  .store-gallery-card__number::after,
+  .store-checklist-note__pin::after,
+  .store-feed-ledger-card__tab::after {
+    min-width: 0;
+    max-width: 9.5rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+}

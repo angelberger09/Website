@@ -1,0 +1,78 @@
+.detail-card__paper-face {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(11.5rem, 100%);
+  min-height: 5.8rem;
+  align-content: end;
+  justify-items: start;
+  gap: 0.22rem;
+  margin: -0.15rem 0 0.45rem auto;
+  padding: 0.86rem 0.9rem 0.72rem;
+  color: rgba(58, 45, 42, 0.9);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 176, 143, 0.28), transparent 34%),
+    radial-gradient(circle at 82% 20%, rgba(216, 197, 236, 0.22), transparent 34%),
+    linear-gradient(145deg, rgba(255, 250, 242, 0.95), rgba(185, 201, 175, 0.24)),
+    var(--grain-image);
+  background-size: auto, auto, cover, 22rem 22rem;
+  box-shadow:
+    0 0.62rem 1.35rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(4% 7%, 31% 2%, 63% 5%, 96% 3%, 98% 48%, 94% 96%, 66% 94%, 30% 98%, 3% 91%);
+  transform: rotate(1.1deg);
+}
+
+.detail-card:nth-child(even) .detail-card__paper-face {
+  margin-right: auto;
+  margin-left: 0;
+  transform: rotate(-1.4deg);
+}
+
+.detail-card__paper-face::before {
+  position: absolute;
+  top: 0.48rem;
+  right: 0.55rem;
+  width: 2.6rem;
+  height: 0.62rem;
+  content: "";
+  background: rgba(255, 250, 242, 0.78);
+  box-shadow: 0 0.2rem 0.55rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(3% 18%, 96% 6%, 92% 86%, 8% 94%);
+  opacity: 0.86;
+}
+
+.detail-card__paper-face b,
+.detail-card__paper-face em {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-card__paper-face b {
+  max-width: 14ch;
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 0.95vw, 0.8rem);
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.detail-card__paper-face em {
+  color: rgba(86, 70, 65, 0.68);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .detail-card__paper-face,
+  .detail-card:nth-child(even) .detail-card__paper-face {
+    width: min(10.5rem, 86%);
+    margin-right: 0;
+    margin-left: auto;
+    transform: rotate(0.8deg);
+  }
+}

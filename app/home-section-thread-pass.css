@@ -1,0 +1,107 @@
+.home-page {
+  --home-thread-x: clamp(0.85rem, 4vw, 2.4rem);
+}
+
+.home-page .studio-pages {
+  position: relative;
+}
+
+.home-page .studio-pages::before {
+  content: "";
+  position: absolute;
+  left: var(--home-thread-x);
+  top: clamp(1.15rem, 4vw, 2rem);
+  bottom: clamp(1.15rem, 4vw, 2rem);
+  width: 2px;
+  border-left: 2px dashed rgba(103, 76, 45, 0.2);
+  filter: drop-shadow(0 0.2rem 0.3rem rgba(95, 68, 38, 0.08));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-docket-step,
+.home-docket-note {
+  position: absolute;
+  left: var(--home-thread-x);
+  z-index: 3;
+  max-width: min(12rem, 24vw);
+  transform: translateX(-0.35rem) rotate(-0.55deg);
+  color: rgba(64, 46, 30, 0.74);
+  text-align: left;
+  pointer-events: none;
+}
+
+.home-docket-step {
+  top: clamp(1rem, 3.2vw, 1.65rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.34rem 0.58rem 0.31rem;
+  font-size: clamp(0.62rem, 0.92vw, 0.74rem);
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: linear-gradient(115deg, rgba(255, 252, 242, 0.96), rgba(239, 225, 198, 0.76)), url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 145px 145px;
+  clip-path: polygon(2% 18%, 94% 5%, 100% 78%, 91% 98%, 4% 91%);
+  box-shadow: 0 0.62rem 1.25rem rgba(73, 52, 30, 0.12), inset 0 0 0 1px rgba(111, 82, 48, 0.08);
+}
+
+.home-docket-step::before {
+  content: "";
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: rgba(119, 84, 45, 0.28);
+}
+
+.home-docket-note {
+  top: clamp(3.05rem, 7vw, 4.25rem);
+  display: block;
+  padding: 0.42rem 0.56rem 0.45rem;
+  font-size: clamp(0.68rem, 1.05vw, 0.8rem);
+  line-height: 1.25;
+  background: linear-gradient(135deg, rgba(250, 243, 225, 0.9), rgba(232, 211, 177, 0.58)), url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, 180px 180px;
+  clip-path: polygon(4% 8%, 96% 0, 98% 86%, 88% 100%, 0 92%);
+  box-shadow: 0 0.54rem 1rem rgba(72, 52, 30, 0.1), inset 0 -0.45rem 0.9rem rgba(126, 93, 50, 0.045);
+}
+
+.home-page .studio-pages > :not(.home-docket-step):not(.home-docket-note) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 961px) {
+  .home-page .studio-pages {
+    padding-left: max(var(--home-thread-x), 2rem);
+  }
+}
+
+@media (max-width: 960px) {
+  .home-page {
+    --home-thread-x: clamp(0.65rem, 3vw, 1rem);
+  }
+
+  .home-docket-step,
+  .home-docket-note {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: inline-flex;
+    max-width: 100%;
+    margin: 0 0 0.55rem 0;
+    transform: rotate(-0.4deg);
+  }
+
+  .home-docket-note {
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-page .studio-pages::before {
+    display: none;
+  }
+}

@@ -1,0 +1,130 @@
+/* Footer calm exit shelf pass.
+   Current room guidance asks repeated route cues to consolidate into calmer shelves.
+   This keeps the footer room-loop links accessible, but makes the loop read as one quiet
+   paper exit shelf instead of a second row of large competing navigation cards. */
+
+.studio-footer__room-loop {
+  width: min(100%, 760px) !important;
+  margin-top: clamp(-0.45rem, -1vw, -0.15rem) !important;
+  padding: 0.72rem clamp(0.78rem, 2.2vw, 1.15rem) 0.76rem !important;
+}
+
+.studio-footer__room-loop::before {
+  inset: 0.25rem 0 0.22rem !important;
+  border-radius: 0 !important;
+  clip-path: polygon(1.4% 18%, 24% 8%, 61% 12%, 98.4% 5%, 96.8% 88%, 70% 94%, 36% 90%, 2% 96%) !important;
+  background:
+    linear-gradient(100deg, rgba(255, 252, 242, 0.9), rgba(239, 226, 202, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg') !important;
+  background-size: auto, 170px 170px !important;
+  box-shadow: 0 0.72rem 1.65rem rgba(77, 60, 35, 0.12), inset 0 0 0 1px rgba(95, 76, 49, 0.08) !important;
+}
+
+.studio-footer__room-loop::after {
+  left: clamp(1rem, 4vw, 2.8rem) !important;
+  right: clamp(1rem, 4vw, 2.8rem) !important;
+  top: auto !important;
+  bottom: 0.82rem !important;
+  opacity: 0.5;
+}
+
+.studio-footer__room-loop-label {
+  margin: 0 0 0.45rem 0.25rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  color: rgba(69, 51, 32, 0.64) !important;
+}
+
+.studio-footer__room-loop-track {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.48rem !important;
+}
+
+.studio-footer__room-loop-slip {
+  flex: 1 1 8.2rem !important;
+  max-width: 10.6rem !important;
+  min-height: 0 !important;
+  grid-template-columns: 1.72rem minmax(0, 1fr) !important;
+  gap: 0.42rem !important;
+  align-items: center !important;
+  padding: 0.48rem 0.54rem !important;
+  border-radius: 0 !important;
+  clip-path: polygon(4% 9%, 96% 3%, 99% 87%, 90% 97%, 5% 93%, 1% 20%) !important;
+  box-shadow: 0 0.55rem 1.05rem rgba(72, 52, 30, 0.1), inset 0 -0.5rem 1rem rgba(123, 95, 48, 0.045) !important;
+  transform: rotate(var(--footer-loop-tilt, -0.35deg)) !important;
+}
+
+.studio-footer__room-loop-slip:nth-child(even) {
+  --footer-loop-tilt: 0.35deg;
+}
+
+.studio-footer__room-loop-photo {
+  width: 1.72rem !important;
+  min-width: 1.72rem !important;
+  min-height: 1.72rem !important;
+  aspect-ratio: 1 !important;
+  padding: 0 !important;
+  align-content: center !important;
+  justify-items: center !important;
+  border-radius: 0 !important;
+}
+
+.studio-footer__room-loop-photo::before,
+.studio-footer__room-loop-photo em {
+  display: none !important;
+}
+
+.studio-footer__room-loop-photo b {
+  max-width: 1.3rem !important;
+  overflow: hidden;
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+.studio-footer__room-loop-photo b::first-letter {
+  font-size: 0.72rem;
+  letter-spacing: 0;
+}
+
+.studio-footer__room-loop-copy {
+  min-width: 0 !important;
+}
+
+.studio-footer__room-loop-copy b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem !important;
+  line-height: 1.05 !important;
+}
+
+.studio-footer__room-loop-copy small {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .studio-footer__room-loop {
+    overflow-x: visible !important;
+    padding-inline: 0.65rem !important;
+  }
+
+  .studio-footer__room-loop-track {
+    min-width: 0 !important;
+  }
+
+  .studio-footer__room-loop-slip {
+    width: auto !important;
+    flex-basis: calc(50% - 0.3rem) !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .studio-footer__room-loop-slip {
+    flex-basis: 100% !important;
+  }
+}

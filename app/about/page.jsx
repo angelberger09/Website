@@ -117,13 +117,16 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="about-contact-sheet" aria-label="Soft Strange Studio orientation frames">
-          {aboutContactSheet.map((frame, index) => (
+          {aboutContactSheet.map((frame) => (
             <article className="about-contact-card" key={frame.title}>
               <div className="about-contact-card__image" aria-hidden="true">
                 <span>{frame.marker}</span>
               </div>
               <div className="about-contact-card__copy">
-                <small>0{index + 1} · {frame.eyebrow}</small>
+                <div className="about-contact-card__tags" aria-label={`${frame.marker} contact sheet marker`}>
+                  <small>Studio frame</small>
+                  <small>{frame.eyebrow}</small>
+                </div>
                 <h2>{frame.title}</h2>
                 <p>{frame.description}</p>
               </div>

@@ -1,0 +1,367 @@
+/* Key card fixed-scale pass.
+   Keeps the paper-card effect visually stable as the page/viewport grows.
+   The previous pass used viewport-based clamp values for the paper frame, inset window,
+   padding, and shadows; on large screens that made the effect itself get larger.
+   This pass uses mostly rem-based constants so the card can get wider without the border,
+   inset, label, shadow, and paper curl feeling inflated. */
+
+:root {
+  --key-card-frame-inset: 1.12rem;
+  --key-card-frame-inset-mobile: 0.78rem;
+  --key-card-padding: 1.85rem;
+  --key-card-padding-compact: 1.35rem;
+  --key-card-inner-padding: 1.05rem;
+  --key-card-shadow-fixed: 0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08), 0 0.9rem 1.65rem rgba(47, 38, 35, 0.15);
+  --key-card-window-shadow-fixed: inset 0 0 0 0.13rem rgba(47, 38, 35, 0.2), inset 0 0.12rem 0.16rem rgba(47, 38, 35, 0.08);
+  --key-card-small-shadow-fixed: 0.07rem 0.1rem 0 rgba(47, 38, 35, 0.08), 0 0.42rem 0.95rem rgba(47, 38, 35, 0.11);
+}
+
+/* The section may widen, but the paper-effect thickness should not. */
+.page-hero,
+.title-lockup,
+.home-path-map,
+.home-paper-field,
+.home-room-status,
+.home-door-section,
+.home-studio-checks,
+.home-paper-field--pillars,
+.studio-pages,
+.notes-reader-board,
+.notes-gallery-board,
+.notes-source-board,
+.notes-state-board,
+.notes-support-strip,
+.notes-path-photo-board,
+.about-opening-board,
+.about-paper-board,
+.about-contact-sheet-board,
+.portfolio-archive-board,
+.portfolio-gallery-board,
+.portfolio-paper-board,
+.portfolio-readiness-board,
+.portfolio-feed-board,
+.portfolio-state-board,
+.portfolio-process-board,
+.store-lane-collage,
+.store-gallery-board,
+.store-availability-board,
+.store-promise-board,
+.store-checklist-collage,
+.store-feed-ledger-board,
+.store-editorial-section,
+.continuity-paper-trail,
+.studio-footer--paper {
+  padding: var(--key-card-padding) !important;
+  box-shadow: var(--key-card-shadow-fixed) !important;
+  background-size: cover, cover, cover, 18rem 18rem !important;
+}
+
+/* Fixed inset window. This is the main fix: no vw-based frame growth. */
+.page-hero::before,
+.title-lockup::before,
+.home-path-map::before,
+.home-paper-field::before,
+.home-room-status::before,
+.home-door-section::before,
+.home-studio-checks::before,
+.home-paper-field--pillars::before,
+.studio-pages::before,
+.notes-reader-board::before,
+.notes-gallery-board::before,
+.notes-source-board::before,
+.notes-state-board::before,
+.notes-support-strip::before,
+.notes-path-photo-board::before,
+.about-opening-board::before,
+.about-paper-board::before,
+.about-contact-sheet-board::before,
+.portfolio-archive-board::before,
+.portfolio-gallery-board::before,
+.portfolio-paper-board::before,
+.portfolio-readiness-board::before,
+.portfolio-feed-board::before,
+.portfolio-state-board::before,
+.portfolio-process-board::before,
+.store-lane-collage::before,
+.store-gallery-board::before,
+.store-availability-board::before,
+.store-promise-board::before,
+.store-checklist-collage::before,
+.store-feed-ledger-board::before,
+.store-editorial-section::before,
+.continuity-paper-trail::before {
+  inset: var(--key-card-frame-inset) !important;
+  box-shadow: var(--key-card-window-shadow-fixed) !important;
+  background-size: cover, cover, 15rem 15rem !important;
+}
+
+/* Lower edge/curl stays subtle instead of stretching into a giant decorative line. */
+.page-hero::after,
+.title-lockup::after,
+.home-path-map::after,
+.home-paper-field::after,
+.home-room-status::after,
+.home-door-section::after,
+.home-studio-checks::after,
+.home-paper-field--pillars::after,
+.studio-pages::after,
+.notes-reader-board::after,
+.notes-gallery-board::after,
+.notes-source-board::after,
+.notes-state-board::after,
+.notes-support-strip::after,
+.notes-path-photo-board::after,
+.about-opening-board::after,
+.about-paper-board::after,
+.about-contact-sheet-board::after,
+.portfolio-archive-board::after,
+.portfolio-gallery-board::after,
+.portfolio-paper-board::after,
+.portfolio-readiness-board::after,
+.portfolio-feed-board::after,
+.portfolio-state-board::after,
+.portfolio-process-board::after,
+.store-lane-collage::after,
+.store-gallery-board::after,
+.store-availability-board::after,
+.store-promise-board::after,
+.store-checklist-collage::after,
+.store-feed-ledger-board::after,
+.store-editorial-section::after,
+.continuity-paper-trail::after {
+  left: 2.1rem !important;
+  right: 2.1rem !important;
+  bottom: 0.7rem !important;
+  height: 1px !important;
+  opacity: 0.38 !important;
+}
+
+/* Inner card effect also stays fixed. Cards should scale by layout, not by paper treatment. */
+.home-hero-route-slip,
+.home-door-card,
+.home-room-slip,
+.home-note-piece,
+.home-pillar-note,
+.home-check-note,
+.notes-note-card,
+.notes-gallery-card,
+.notes-source-card,
+.notes-state-note,
+.notes-support-note,
+.notes-path-photo-card,
+.about-room-piece,
+.about-principle-note,
+.about-pathway-note,
+.portfolio-piece-card,
+.portfolio-gallery-card,
+.portfolio-readiness-card,
+.portfolio-feed-card,
+.portfolio-state-note,
+.portfolio-process-step,
+.store-lane-piece,
+.store-gallery-card,
+.store-state-snippet,
+.store-promise-note,
+.store-checklist-note,
+.store-feed-ledger-card,
+.link-card,
+.detail-card,
+.pathway-link,
+.source-link,
+.continuity-paper-step {
+  padding: var(--key-card-inner-padding) !important;
+  box-shadow: var(--key-card-small-shadow-fixed) !important;
+  background-size: cover, 12rem 12rem !important;
+}
+
+/* Photo/window blocks get fixed border/shadow thickness too. */
+.page-hero__photo-card,
+.notes-note-card__photo,
+.notes-gallery-card__image,
+.notes-source-receipt__photo,
+.notes-fallback-receipt__photo,
+.notes-state-note__photo,
+.notes-support-note__photo,
+.notes-path-photo-card__image,
+.home-hero-route-slip__preview,
+.home-door-card__preview,
+.portfolio-gallery-card__image,
+.store-gallery-card__image,
+.about-contact-card__image,
+.store-shot-card__image,
+.portfolio-piece-card__image,
+.store-lane-piece__image {
+  box-shadow: var(--key-card-window-shadow-fixed) !important;
+  background-size: cover, cover, 11rem 11rem !important;
+}
+
+/* Labels should stay label-sized on large pages. */
+.eyebrow,
+.page-hero__room-tags span,
+.notes-note-card__label,
+.notes-gallery-card__copy small,
+.notes-source-card .eyebrow,
+.notes-state-note .eyebrow,
+.notes-support-note .eyebrow,
+.notes-path-photo-card__copy small,
+.home-docket-step,
+.store-state-snippet .eyebrow,
+.portfolio-piece-card .eyebrow,
+.portfolio-readiness-card .eyebrow,
+.about-room-piece .eyebrow,
+.about-principle-note .eyebrow,
+.about-pathway-note .eyebrow {
+  padding: 0.28rem 0.52rem !important;
+  font-size: clamp(0.66rem, 0.78rem, 0.82rem) !important;
+  box-shadow: 0.04rem 0.06rem 0 rgba(47, 38, 35, 0.06) !important;
+  background-size: cover, 9rem 9rem !important;
+}
+
+/* Large screens get more empty paper, not thicker paper effects. */
+@media (min-width: 1180px) {
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-paper-field--pillars,
+  .studio-pages,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-opening-board,
+  .about-paper-board,
+  .about-contact-sheet-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-lane-collage,
+  .store-gallery-board,
+  .store-availability-board,
+  .store-promise-board,
+  .store-checklist-collage,
+  .store-feed-ledger-board,
+  .store-editorial-section,
+  .continuity-paper-trail {
+    padding: 2rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-paper-field--pillars,
+  .studio-pages,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-opening-board,
+  .about-paper-board,
+  .about-contact-sheet-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-lane-collage,
+  .store-gallery-board,
+  .store-availability-board,
+  .store-promise-board,
+  .store-checklist-collage,
+  .store-feed-ledger-board,
+  .store-editorial-section,
+  .continuity-paper-trail,
+  .studio-footer--paper {
+    padding: var(--key-card-padding-compact) !important;
+  }
+
+  .page-hero::before,
+  .title-lockup::before,
+  .home-path-map::before,
+  .home-paper-field::before,
+  .home-room-status::before,
+  .home-door-section::before,
+  .home-studio-checks::before,
+  .home-paper-field--pillars::before,
+  .studio-pages::before,
+  .notes-reader-board::before,
+  .notes-gallery-board::before,
+  .notes-source-board::before,
+  .notes-state-board::before,
+  .notes-support-strip::before,
+  .notes-path-photo-board::before,
+  .about-opening-board::before,
+  .about-paper-board::before,
+  .about-contact-sheet-board::before,
+  .portfolio-archive-board::before,
+  .portfolio-gallery-board::before,
+  .portfolio-paper-board::before,
+  .portfolio-readiness-board::before,
+  .portfolio-feed-board::before,
+  .portfolio-state-board::before,
+  .portfolio-process-board::before,
+  .store-lane-collage::before,
+  .store-gallery-board::before,
+  .store-availability-board::before,
+  .store-promise-board::before,
+  .store-checklist-collage::before,
+  .store-feed-ledger-board::before,
+  .store-editorial-section::before,
+  .continuity-paper-trail::before {
+    inset: var(--key-card-frame-inset-mobile) !important;
+  }
+
+  .home-hero-route-slip,
+  .home-door-card,
+  .home-room-slip,
+  .home-note-piece,
+  .home-pillar-note,
+  .home-check-note,
+  .notes-note-card,
+  .notes-gallery-card,
+  .notes-source-card,
+  .notes-state-note,
+  .notes-support-note,
+  .notes-path-photo-card,
+  .about-room-piece,
+  .about-principle-note,
+  .about-pathway-note,
+  .portfolio-piece-card,
+  .portfolio-gallery-card,
+  .portfolio-readiness-card,
+  .portfolio-feed-card,
+  .portfolio-state-note,
+  .portfolio-process-step,
+  .store-lane-piece,
+  .store-gallery-card,
+  .store-state-snippet,
+  .store-promise-note,
+  .store-checklist-note,
+  .store-feed-ledger-card,
+  .link-card,
+  .detail-card,
+  .pathway-link,
+  .source-link,
+  .continuity-paper-step {
+    padding: 0.9rem !important;
+  }
+}

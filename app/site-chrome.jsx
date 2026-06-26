@@ -112,10 +112,10 @@ export function PageIntro({ eyebrow, title, children }) {
   ];
 
   const roomShelf = [
-    { label: "Hero board", value: visual.title },
-    { label: "Featured shelf", value: visual.status },
-    { label: "Source note", value: visual.cue || visual.note },
-    { label: "Next path", value: visual.path }
+    { label: "Hero board", value: visual.title, visual: "hero" },
+    { label: "Featured shelf", value: visual.status, visual: "shelf" },
+    { label: "Source note", value: visual.cue || visual.note, visual: "note" },
+    { label: "Next path", value: visual.path, visual: "path" }
   ];
 
   const roomCompass = [
@@ -151,8 +151,11 @@ export function PageIntro({ eyebrow, title, children }) {
         <div className="page-hero__room-shelf" aria-label="Room structure">
           {roomShelf.map((step) => (
             <span key={`${step.label}-${step.value}`}>
-              <small>{step.label}</small>
-              {step.value}
+              <b className="page-hero__room-shelf-photo" aria-hidden="true">{step.visual}</b>
+              <span className="page-hero__room-shelf-copy">
+                <small>{step.label}</small>
+                {step.value}
+              </span>
             </span>
           ))}
         </div>

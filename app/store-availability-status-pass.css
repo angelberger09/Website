@@ -42,6 +42,35 @@
   z-index: 2;
 }
 
+.store-availability-status__stage {
+  display: inline-grid;
+  width: fit-content;
+  min-width: clamp(6.4rem, 11vw, 8.8rem);
+  padding: 0.34rem 0.58rem 0.31rem;
+  color: rgba(61, 45, 31, 0.78);
+  font-size: 0;
+  line-height: 1;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.96), rgba(235, 218, 178, 0.82)),
+    var(--grain-image);
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.5rem 0.9rem rgba(82, 59, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  clip-path: polygon(4% 4%, 96% 0, 100% 78%, 88% 100%, 0 92%);
+  transform: rotate(-1.5deg);
+}
+
+.store-availability-status__stage::after {
+  font-family: var(--font-hand);
+  font-size: clamp(0.66rem, 0.94vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.store-availability-status:nth-child(1) .store-availability-status__stage::after { content: "Preparing room"; }
+.store-availability-status:nth-child(2) .store-availability-status__stage::after { content: "Preview room"; }
+.store-availability-status:nth-child(3) .store-availability-status__stage::after { content: "Open room"; }
+
 .store-availability-status__visual {
   position: relative;
   z-index: 1;
@@ -68,6 +97,30 @@
   clip-path: polygon(0 35%, 35% 16%, 66% 38%, 100% 20%, 98% 78%, 66% 88%, 35% 66%, 1% 88%);
   background: rgba(47, 38, 35, 0.16);
 }
+
+.store-availability-status__visual::after {
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.62rem;
+  z-index: 3;
+  display: inline-grid;
+  place-items: center;
+  max-width: 8.5rem;
+  padding: 0.28rem 0.48rem 0.24rem;
+  color: rgba(61, 45, 31, 0.74);
+  font-family: var(--font-hand);
+  font-size: clamp(0.58rem, 0.82vw, 0.7rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 250, 232, 0.82);
+  box-shadow: 0 0.32rem 0.68rem rgba(47, 38, 35, 0.12);
+  clip-path: polygon(4% 14%, 98% 2%, 92% 88%, 7% 100%);
+}
+
+.store-availability-status:nth-child(1) .store-availability-status__visual::after { content: "Prep table"; }
+.store-availability-status:nth-child(2) .store-availability-status__visual::after { content: "Sample slip"; }
+.store-availability-status:nth-child(3) .store-availability-status__visual::after { content: "Public link"; }
 
 .store-availability-status__visual i {
   position: relative;

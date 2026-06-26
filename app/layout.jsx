@@ -87,6 +87,7 @@ import './page-intro-performance-pass.css';
 import './home-entry-contact-sheet-pass.css';
 import './performance-budget-pass.css';
 import './root-paper-budget-pass.css';
+import './root-paper-fold-map-pass.css';
 import './continuity-photo-steps-pass.css';
 import './continuity-map-cue-pass.css';
 import './continuity-exit-shelf-pass.css';

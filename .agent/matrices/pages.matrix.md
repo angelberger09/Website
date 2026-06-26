@@ -41,3 +41,7 @@ The Notes index and Blog compatibility reader now load `app/notes-section-spine-
 ## Addendum — 2026-06-26 09:20 ET
 
 The Store page now loads `app/store-section-spine-labels-pass.css`, adding clipped paper section-spine labels and dashed thread cues for trust notes, opening lanes, preview board, slow shelf, launch context, open stages, future parts, store promise, and return path. This keeps PAGE-005 closer to the calm-room sequence, direct-label, flattened hierarchy, and paper-snippet metrics without changing product data, inventing inventory, or adding new routes.
+
+## Addendum — 2026-06-26 14:40 ET
+
+Shared PageIntro room shelves now render the intended fourth `Trust` slip between the readable page cue and the continuation path, using each route's existing status (`Open room`, `Reading shelf`, `Public pieces`, `Preparing`, or fallback `Studio room`). This aligns the shared intro across About, Notes, Blog compatibility, Portfolio, and Store with the four-part calm-room structure already described in the shelf styling: hero board, featured shelf, source note, and next path.

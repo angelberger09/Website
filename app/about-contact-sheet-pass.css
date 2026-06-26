@@ -151,6 +151,13 @@
   gap: 0.58rem;
 }
 
+.about-contact-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  align-items: center;
+}
+
 .about-contact-card__copy small {
   width: max-content;
   max-width: 100%;
@@ -165,6 +172,13 @@
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.about-contact-card__copy small:first-child {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.86), rgba(185, 201, 175, 0.44)),
+    var(--grain-image);
+  color: rgba(58, 45, 42, 0.9);
 }
 
 .about-contact-card__copy h2 {

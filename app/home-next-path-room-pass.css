@@ -1,0 +1,94 @@
+/* Homepage next path room pass.
+   Makes the closing homepage chapter feel composed before the shared continuity trail. */
+
+.home-next-path-room {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-next-path-room::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.35rem, 1.6vw, 0.9rem) clamp(0.2rem, 1.8vw, 1.1rem) clamp(0.45rem, 1.7vw, 1rem);
+  z-index: -1;
+  clip-path: polygon(1% 8%, 20% 3%, 44% 7%, 70% 2%, 99% 9%, 97% 88%, 76% 96%, 48% 92%, 22% 98%, 3% 90%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.74), rgba(239, 226, 205, 0.42) 58%, rgba(154, 133, 166, 0.16)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.14rem 0.24rem 0 rgba(47, 38, 35, 0.07),
+    0 1.1rem 2rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.home-next-path-note {
+  position: relative;
+  display: grid;
+  gap: clamp(0.36rem, 1vw, 0.55rem);
+  width: min(100%, 34rem);
+  margin: 0 auto clamp(0.9rem, 2.2vw, 1.35rem);
+  padding: clamp(0.95rem, 2.3vw, 1.28rem) clamp(1rem, 2.6vw, 1.55rem);
+  clip-path: polygon(2% 5%, 98% 1%, 96% 88%, 82% 98%, 7% 94%);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.96), rgba(241, 230, 211, 0.78)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  color: rgba(47, 38, 35, 0.82);
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.82rem 1.45rem rgba(47, 38, 35, 0.13);
+  transform: rotate(-0.35deg);
+}
+
+.home-next-path-note::before {
+  content: "";
+  position: absolute;
+  top: -0.42rem;
+  left: clamp(1.1rem, 6vw, 3.2rem);
+  width: clamp(3rem, 8vw, 4.6rem);
+  height: 0.86rem;
+  clip-path: polygon(4% 20%, 100% 0, 92% 86%, 0 100%);
+  background: rgba(221, 205, 181, 0.72);
+  box-shadow: 0 0.18rem 0.42rem rgba(47, 38, 35, 0.1);
+  transform: rotate(1.8deg);
+}
+
+.home-next-path-note__tag {
+  justify-self: start;
+  padding: 0.24rem 0.5rem 0.2rem;
+  clip-path: polygon(3% 10%, 96% 2%, 99% 86%, 8% 100%);
+  background: rgba(111, 83, 111, 0.12);
+  color: rgba(111, 83, 111, 0.88);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-next-path-note strong {
+  max-width: 26rem;
+  font-size: clamp(1.18rem, 2.4vw, 1.72rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.home-next-path-note p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(47, 38, 35, 0.68);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .home-next-path-room::before {
+    inset: 0.2rem 0 0.6rem;
+  }
+
+  .home-next-path-note {
+    margin-inline: 0;
+    transform: none;
+  }
+}

@@ -299,3 +299,37 @@ The PageIntro shelf already had the correct four-part calm-room structure, but i
 - METRIC-024
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 16:48 ET — Footer route cue consolidation
+
+### Changed
+
+- Removed the rendered footer `Room loop` rail from `app/site-chrome.jsx`.
+- Removed the unused footer room-loop CSS imports from `app/layout.jsx`.
+- Added `.agent/changes/2026-06-26-footer-route-cue-consolidation.md` as the dedicated ledger note.
+- Updated `.agent/matrices/components.matrix.md` so COMP-005 records the calmer footer route structure.
+
+### Why
+
+The footer had become paper-like and useful, but the four-room exit receipts, active footer route trail, and older room-loop rail repeated the same top-level destinations. Current anti-accumulation, calm-room, direct-route, flattened hierarchy, and performance-budget guidance supports keeping the newer four-room receipt shelf and direct footer trail while retiring the duplicate room-loop surface.
+
+### Related items
+
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-029
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-026
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-028

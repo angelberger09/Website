@@ -95,14 +95,30 @@
   top: 0.72rem;
   left: 0.75rem;
   z-index: 2;
-  padding: 0.22rem 0.42rem;
+  min-width: max-content;
+  padding: 0.26rem 0.54rem 0.22rem;
   clip-path: polygon(4% 14%, 96% 0, 92% 88%, 8% 100%);
   background: rgba(255, 176, 143, 0.3);
   color: rgba(47, 38, 35, 0.74);
   font-family: var(--font-hand);
-  font-size: 0.7rem;
+  font-size: 0;
   font-weight: 800;
   letter-spacing: 0.12em;
+}
+
+.notes-gallery-card__number::after {
+  content: "Open note";
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.notes-gallery-card:first-child .notes-gallery-card__number::after {
+  content: "Latest note";
+}
+
+.notes-gallery-card--note .notes-gallery-card__number::after {
+  content: "Shelf note";
 }
 
 .notes-gallery-card__image {

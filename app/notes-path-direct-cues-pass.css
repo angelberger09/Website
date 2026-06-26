@@ -1,0 +1,70 @@
+/* Notes path direct cues pass.
+   Adds clear paper cue labels to the Notes local route-photo cards without introducing fake note art or decorative numbering. */
+
+.notes-path-photo-card__image {
+  position: relative;
+  overflow: hidden;
+  align-content: center;
+}
+
+.notes-path-photo-card__image::before {
+  content: "";
+  position: absolute;
+  inset: 0.65rem;
+  z-index: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.16), rgba(255, 176, 143, 0.08)),
+    linear-gradient(0deg, rgba(255, 252, 246, 0.06), transparent 58%);
+  clip-path: polygon(3% 5%, 96% 1%, 98% 94%, 2% 98%);
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.12);
+}
+
+.notes-path-photo-card__image::after {
+  content: "Open note";
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.78rem;
+  z-index: 2;
+  width: fit-content;
+  max-width: calc(100% - 1.6rem);
+  padding: 0.34rem 0.58rem 0.28rem;
+  clip-path: polygon(4% 14%, 98% 0, 94% 88%, 6% 100%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.74)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.16), 0 0.45rem 0.8rem rgba(47, 38, 35, 0.18);
+  color: rgba(47, 38, 35, 0.78);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.notes-path-photo-card:nth-child(2) .notes-path-photo-card__image::after {
+  content: "Open archive";
+}
+
+.notes-path-photo-card:nth-child(3) .notes-path-photo-card__image::after {
+  content: "Front room";
+}
+
+.notes-path-photo-card__image > span {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.35rem;
+  background: rgba(47, 38, 35, 0.46);
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.14);
+}
+
+@media (max-width: 780px) {
+  .notes-path-photo-card__image::after {
+    bottom: 0.66rem;
+  }
+
+  .notes-path-photo-card__image > span {
+    margin-bottom: 1.1rem;
+  }
+}

@@ -76,6 +76,7 @@ import './footer-studio-mark-photo-pass.css';
 import './page-intro-foreground-card-pass.css';
 import './home-left-docket-pass.css';
 import './home-direct-path-labels-pass.css';
+import './shared-paper-depth-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

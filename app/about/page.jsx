@@ -55,6 +55,29 @@ const aboutRoomKey = [
   }
 ];
 
+const aboutRoomSpine = [
+  {
+    label: "Room key",
+    detail: "enter softly"
+  },
+  {
+    label: "Studio shape",
+    detail: "front room"
+  },
+  {
+    label: "Contact sheet",
+    detail: "soft frames"
+  },
+  {
+    label: "Principles",
+    detail: "public promise"
+  },
+  {
+    label: "Next doors",
+    detail: "open path"
+  }
+];
+
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
 const aboutRoomFrames = [
@@ -140,6 +163,15 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <aside className="about-room-spine" aria-label="About room section path">
+        {aboutRoomSpine.map((item) => (
+          <span className="about-room-spine__slip" key={item.label}>
+            <b>{item.label}</b>
+            <em>{item.detail}</em>
+          </span>
+        ))}
+      </aside>
 
       <section className="about-opening-board" aria-label="About Soft Strange Studio">
         <div className="about-opening-copy">

@@ -3,11 +3,15 @@
 
 :where(
   .home-hero-route-slip,
+  .home-path-map__step,
   .home-note-piece,
   .home-room-card,
+  .home-room-slip,
   .home-door-card,
   .home-pillar-card,
+  .home-pillar-note,
   .home-check-card,
+  .home-check-note,
   .about-room-piece,
   .about-contact-card,
   .about-principle-note,
@@ -44,8 +48,12 @@
 
 :where(
   .home-hero-route-slip,
+  .home-path-map__step,
   .home-note-piece,
+  .home-room-slip,
   .home-door-card,
+  .home-pillar-note,
+  .home-check-note,
   .about-contact-card,
   .notes-note-card,
   .portfolio-gallery-card,
@@ -59,6 +67,7 @@
 
 :where(
   .home-paper-field,
+  .home-path-map,
   .home-note-board,
   .home-room-board,
   .home-door-board,
@@ -88,12 +97,46 @@
     inset 0 1px 0 rgba(255, 252, 239, 0.64);
 }
 
+.home-page :where(
+  .home-room-slip,
+  .home-pillar-note,
+  .home-check-note,
+  .home-path-map__step
+) {
+  transform-style: preserve-3d;
+}
+
+.home-page :where(
+  .home-room-slip,
+  .home-pillar-note,
+  .home-check-note,
+  .home-path-map__step
+)::before {
+  filter: drop-shadow(0 0.55rem 0.8rem rgba(72, 49, 31, 0.08));
+}
+
+.home-page :where(
+  .home-room-slip__image,
+  .home-pillar-note__photo,
+  .home-check-note__photo,
+  .home-path-map__number
+) {
+  box-shadow:
+    0 12px 22px rgba(72, 49, 31, 0.14),
+    0 4px 8px rgba(72, 49, 31, 0.08),
+    inset 0 1px 0 rgba(255, 252, 239, 0.72);
+}
+
 @media (max-width: 720px) {
   :where(
     .home-hero-route-slip,
+    .home-path-map__step,
     .home-note-piece,
     .home-room-card,
+    .home-room-slip,
     .home-door-card,
+    .home-pillar-note,
+    .home-check-note,
     .about-contact-card,
     .notes-note-card,
     .portfolio-gallery-card,

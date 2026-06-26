@@ -365,3 +365,34 @@ The base Website CSS still included shared rounded metadata-chip styling. Curren
 - METRIC-021
 - METRIC-023
 - METRIC-029
+
+## 2026-06-26 17:19 ET — Reader state paper scraps
+
+### Changed
+
+- Added `app/reader-state-paper-scraps-pass.css`.
+- Loaded the pass after the global metadata paper-snippet pass in `app/layout.jsx`.
+- Converted shared `.source-note` and `.reader-state` fallback surfaces into clipped paper scraps with grain/scratch texture, tape tabs, uneven silhouettes, and lifted shadows.
+- Preserved `.reader-state--error` as a warmer warning-toned paper scrap.
+- Added `.agent/changes/2026-06-26-reader-state-paper-scraps.md` as the dedicated ledger note.
+
+### Why
+
+The Notes and reader routes already have many route-specific paper/photo boards, but the base shared source-note and reader-state fallback pattern still used smooth rounded-panel language from `app/globals.css`. Current paper-material, paper-card, torn-edge, and text-snippet lessons support correcting that shared fallback so loading, source, and reader status surfaces do not reintroduce app-panel styling.
+
+### Related items
+
+- COMP-005
+- COMP-006
+- COMP-007
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-029

@@ -1,0 +1,94 @@
+/* About contact-sheet rail pass.
+   Adds visible paper cues for the horizontal About frame path without inventing new assets. */
+
+.about-contact-sheet-rail {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.48rem, 1.4vw, 0.82rem);
+  align-items: center;
+  margin: -0.16rem 0 clamp(0.9rem, 2vw, 1.18rem);
+  padding-inline: 0.18rem;
+}
+
+.about-contact-sheet-rail::before {
+  position: absolute;
+  right: 0.3rem;
+  bottom: -0.36rem;
+  left: 0.3rem;
+  height: 0.14rem;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.18) 16%, rgba(185, 201, 175, 0.32) 52%, rgba(47, 38, 35, 0.12) 86%, transparent),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(0 22%, 16% 0, 38% 38%, 62% 8%, 83% 48%, 100% 18%, 96% 100%, 72% 72%, 46% 100%, 24% 68%, 0 96%);
+  opacity: 0.82;
+}
+
+.about-contact-sheet-rail__slip {
+  position: relative;
+  display: grid;
+  gap: 0.12rem;
+  min-width: min(12rem, 100%);
+  padding: 0.52rem 0.72rem 0.48rem;
+  color: rgba(58, 45, 42, 0.9);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.66)),
+    radial-gradient(circle at 10% 18%, rgba(255, 176, 143, 0.24), transparent 42%),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+  clip-path: polygon(2% 10%, 28% 0, 66% 7%, 98% 1%, 94% 88%, 72% 100%, 32% 94%, 4% 99%);
+  box-shadow:
+    0.12rem 0.22rem 0 rgba(47, 38, 35, 0.08),
+    0 0.58rem 1.1rem rgba(47, 38, 35, 0.11);
+}
+
+.about-contact-sheet-rail__slip:nth-child(2) {
+  transform: rotate(-0.75deg);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.9), rgba(216, 197, 236, 0.34)),
+    radial-gradient(circle at 82% 20%, rgba(185, 201, 175, 0.28), transparent 38%),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+}
+
+.about-contact-sheet-rail__slip:nth-child(3) {
+  transform: rotate(0.85deg);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.92), rgba(185, 201, 175, 0.32)),
+    radial-gradient(circle at 24% 82%, rgba(255, 176, 143, 0.2), transparent 40%),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+}
+
+.about-contact-sheet-rail__slip b {
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.about-contact-sheet-rail__slip em {
+  color: rgba(89, 72, 66, 0.78);
+  font-size: 0.78rem;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .about-contact-sheet-rail {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-contact-sheet-rail::before {
+    display: none;
+  }
+
+  .about-contact-sheet-rail__slip {
+    min-width: 0;
+  }
+}

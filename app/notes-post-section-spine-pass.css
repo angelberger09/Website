@@ -1,0 +1,116 @@
+.notes-post-desk,
+.notes-post-path-shelf,
+.notes-post-support-board {
+  position: relative;
+}
+
+.notes-post-desk {
+  padding-top: clamp(2.95rem, 5.2vw, 4rem);
+}
+
+.notes-post-path-shelf,
+.notes-post-support-board {
+  padding-left: clamp(5.75rem, 10vw, 7.9rem);
+}
+
+.notes-post-desk::before,
+.notes-post-path-shelf::before,
+.notes-post-support-board::before {
+  position: absolute;
+  z-index: 3;
+  display: inline-grid;
+  min-width: clamp(4.75rem, 8.4vw, 6.6rem);
+  padding: 0.4rem 0.58rem 0.34rem;
+  color: rgba(58, 43, 31, 0.76);
+  font-family: var(--font-hand);
+  font-size: clamp(0.68rem, 1.05vw, 0.82rem);
+  line-height: 1;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 231, 0.96), rgba(237, 218, 176, 0.78)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.52rem 1rem rgba(82, 59, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  transform: rotate(-2deg);
+  clip-path: polygon(5% 0, 98% 7%, 100% 82%, 13% 100%, 0 72%);
+  pointer-events: none;
+}
+
+.notes-post-desk::after,
+.notes-post-path-shelf::after,
+.notes-post-support-board::after {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(92, 68, 43, 0.22) 0 0.34rem,
+    transparent 0.34rem 0.72rem
+  );
+  filter: drop-shadow(0.18rem 0.22rem 0 rgba(255, 255, 255, 0.5));
+  pointer-events: none;
+}
+
+.notes-post-desk::before {
+  content: "reader desk";
+  top: clamp(0.5rem, 1.5vw, 0.9rem);
+  left: clamp(0.7rem, 2.2vw, 1.4rem);
+}
+
+.notes-post-path-shelf::before {
+  content: "return shelf";
+  top: clamp(0.08rem, 0.5vw, 0.32rem);
+  left: 0;
+}
+
+.notes-post-support-board::before {
+  content: "source notes";
+  top: clamp(0.08rem, 0.5vw, 0.32rem);
+  left: 0;
+}
+
+.notes-post-desk::after {
+  top: clamp(2.1rem, 3.6vw, 2.8rem);
+  left: clamp(2.8rem, 4.8vw, 3.7rem);
+  width: 1px;
+  height: calc(100% - clamp(2.4rem, 4vw, 3rem));
+}
+
+.notes-post-path-shelf::after,
+.notes-post-support-board::after {
+  top: clamp(2.18rem, 4vw, 2.9rem);
+  left: clamp(2.05rem, 4vw, 3.1rem);
+  width: 1px;
+  height: calc(100% + clamp(1.2rem, 2.4vw, 2.1rem));
+}
+
+@media (max-width: 760px) {
+  .notes-post-path-shelf,
+  .notes-post-support-board {
+    padding-left: 0;
+    padding-top: 2.55rem;
+  }
+
+  .notes-post-desk::before,
+  .notes-post-path-shelf::before,
+  .notes-post-support-board::before {
+    top: 0;
+    left: 0;
+    min-width: 0;
+  }
+
+  .notes-post-desk::after,
+  .notes-post-path-shelf::after,
+  .notes-post-support-board::after {
+    top: 1.48rem;
+    left: 0.82rem;
+    width: clamp(3.8rem, 18vw, 5.8rem);
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(92, 68, 43, 0.22) 0 0.34rem,
+      transparent 0.34rem 0.72rem
+    );
+  }
+}

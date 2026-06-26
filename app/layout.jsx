@@ -60,6 +60,7 @@ import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
 import './notes-post-path-shelf-pass.css';
 import './notes-post-receipt-strip-pass.css';
+import './notes-post-tag-snippets-pass.css';
 import './notes-post-intro-receipts-pass.css';
 import './notes-post-room-sequence-pass.css';
 import './blog-path-bridge-pass.css';

@@ -16,15 +16,21 @@ const aboutContactSheet = aboutSections.map((section, index) => ({
 const aboutContactRail = [
   {
     label: "Start sideways",
-    detail: "Four public frames"
+    detail: "Four public frames",
+    mark: "01",
+    frame: "first frame"
   },
   {
     label: "Stay readable",
-    detail: "Soft room notes"
+    detail: "Soft room notes",
+    mark: "02",
+    frame: "clear copy"
   },
   {
     label: "Follow the room",
-    detail: "Notes, work, store"
+    detail: "Notes, work, store",
+    mark: "03",
+    frame: "next doors"
   }
 ];
 
@@ -134,8 +140,14 @@ export default function AboutPage() {
         <div className="about-contact-sheet-rail" aria-label="Contact sheet path cues">
           {aboutContactRail.map((item) => (
             <span className="about-contact-sheet-rail__slip" key={item.label}>
-              <b>{item.label}</b>
-              <em>{item.detail}</em>
+              <span className="about-contact-sheet-rail__photo" aria-hidden="true">
+                <b>{item.mark}</b>
+                <em>{item.frame}</em>
+              </span>
+              <span className="about-contact-sheet-rail__copy">
+                <b>{item.label}</b>
+                <em>{item.detail}</em>
+              </span>
             </span>
           ))}
         </div>

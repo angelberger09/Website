@@ -1,0 +1,42 @@
+name: Website audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Website base URL to audit
+        required: false
+        default: https://angelberger09.github.io/Website/
+      routes:
+        description: Comma-separated route list
+        required: false
+        default: /,/about/,/notes/,/portfolio/,/store/
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run audit
+        run: node scripts/audit-website.mjs --base="${{ inputs.base_url }}" --routes="${{ inputs.routes }}"
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: website-audit-logs
+          path: logs/
+          retention-days: 14

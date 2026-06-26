@@ -1,0 +1,75 @@
+/* Header identity paper seal pass.
+   Gives the Angel Berger identity its own clipped paper/photo seal so the header mark reads as a placed studio label, not plain text on the paper strip. */
+
+.identity-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.34rem;
+  padding: 0.58rem 0.92rem 0.5rem 2.72rem;
+  clip-path: polygon(1% 11%, 22% 2%, 53% 7%, 97% 3%, 94% 87%, 72% 96%, 38% 91%, 4% 98%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.96), rgba(245, 229, 207, 0.76) 58%, rgba(185, 201, 175, 0.28)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 14rem 14rem, 31rem 31rem;
+  box-shadow:
+    0.18rem 0.22rem 0 rgba(47, 38, 35, 0.12),
+    0 0.54rem 1rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.12);
+  transform: rotate(-0.45deg);
+}
+
+.identity-link::before {
+  position: absolute;
+  top: 0.42rem;
+  bottom: 0.38rem;
+  left: 0.56rem;
+  width: 1.48rem;
+  content: "";
+  clip-path: polygon(8% 4%, 92% 0, 100% 82%, 15% 100%, 0 20%);
+  background:
+    radial-gradient(circle at 36% 34%, rgba(255, 176, 143, 0.7) 0 0.2rem, transparent 0.22rem),
+    radial-gradient(circle at 70% 64%, rgba(87, 108, 75, 0.55) 0 0.18rem, transparent 0.2rem),
+    linear-gradient(145deg, rgba(68, 53, 49, 0.84), rgba(102, 80, 70, 0.5) 46%, rgba(255, 252, 246, 0.66)),
+    var(--dust-image);
+  background-size: cover, cover, cover, 15rem 15rem;
+  box-shadow:
+    0 0.2rem 0.38rem rgba(47, 38, 35, 0.22),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.28);
+  opacity: 0.96;
+}
+
+.identity-link::after {
+  right: 0.84rem;
+  bottom: 0.24rem;
+  left: 2.7rem;
+  height: 0.16rem;
+  background: rgba(87, 108, 75, 0.42);
+  opacity: 0.9;
+}
+
+.identity-link:focus-visible {
+  outline: 2px solid rgba(87, 108, 75, 0.58);
+  outline-offset: 0.18rem;
+}
+
+@media (max-width: 760px) {
+  .identity-link {
+    min-height: 2.08rem;
+    padding: 0.5rem 0.72rem 0.44rem 2.34rem;
+    font-size: 0.72rem;
+  }
+
+  .identity-link::before {
+    top: 0.36rem;
+    bottom: 0.32rem;
+    left: 0.48rem;
+    width: 1.28rem;
+  }
+
+  .identity-link::after {
+    left: 2.34rem;
+  }
+}

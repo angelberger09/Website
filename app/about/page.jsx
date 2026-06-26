@@ -34,6 +34,27 @@ const aboutContactRail = [
   }
 ];
 
+const aboutRoomKey = [
+  {
+    label: "Enter softly",
+    detail: "Start with the public room shape.",
+    mark: "01",
+    cue: "front room"
+  },
+  {
+    label: "Read the edge",
+    detail: "Notice what stays warm, clear, and offstage.",
+    mark: "02",
+    cue: "soft boundary"
+  },
+  {
+    label: "Choose a door",
+    detail: "Continue into notes, archive work, or prepared store paths.",
+    mark: "03",
+    cue: "next path"
+  }
+];
+
 const aboutRoomLabels = ["Start here", "Keep soft", "Hold edges", "Move gently"];
 
 const aboutRoomFrames = [
@@ -98,6 +119,27 @@ export default function AboutPage() {
           tactile, odd, and easy to understand.
         </p>
       </PageIntro>
+
+      <section className="about-room-key-board" aria-labelledby="about-room-key-title">
+        <div className="about-room-key-board__heading">
+          <p className="eyebrow">Room key</p>
+          <h1 id="about-room-key-title">A short path through the public room.</h1>
+        </div>
+        <div className="about-room-key-strip" aria-label="About room reading path">
+          {aboutRoomKey.map((item) => (
+            <article className="about-room-key-slip" key={item.label}>
+              <span className="about-room-key-slip__photo" aria-hidden="true">
+                <b>{item.mark}</b>
+                <em>{item.cue}</em>
+              </span>
+              <span className="about-room-key-slip__copy">
+                <b>{item.label}</b>
+                <em>{item.detail}</em>
+              </span>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="about-opening-board" aria-label="About Soft Strange Studio">
         <div className="about-opening-copy">

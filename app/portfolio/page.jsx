@@ -61,6 +61,7 @@ const portfolioArchiveTickets = [
 ];
 
 const portfolioProcessVisuals = ["signal", "shape", "preview", "open"];
+const portfolioProcessLabels = ["Read signal", "Shape card", "Add preview", "Open path"];
 
 export default function PortfolioPage() {
   return (
@@ -272,7 +273,7 @@ export default function PortfolioPage() {
                 <span>{portfolioProcessVisuals[index] ?? "step"}</span>
               </div>
               <div className="portfolio-process-ribbon__copy">
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="portfolio-process-ribbon__phase">{portfolioProcessLabels[index] ?? "Next step"}</span>
                 <p>{step}</p>
               </div>
             </li>

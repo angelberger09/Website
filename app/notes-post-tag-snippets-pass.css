@@ -1,0 +1,60 @@
+/* Notes post tag snippets pass.
+   Converts the remaining generic reader tag row into clipped paper metadata snippets. */
+
+.notes-post-tags {
+  align-items: center;
+  gap: clamp(0.42rem, 1.4vw, 0.72rem);
+  margin: clamp(0.85rem, 2vw, 1.15rem) 0 0;
+}
+
+.notes-post-tags span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  padding: 0.42rem 0.72rem 0.46rem;
+  border: 0;
+  border-radius: 0;
+  clip-path: var(--fast-paper-cut, polygon(1% 4%, 98% 1%, 99% 95%, 2% 99%));
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.78) 58%, rgba(237, 214, 187, 0.34)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  color: rgba(47, 38, 35, 0.74);
+  font-family: var(--font-hand);
+  font-size: clamp(0.68rem, 1.4vw, 0.78rem);
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.55rem 1.15rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transform: rotate(-0.8deg);
+}
+
+.notes-post-tags span:nth-child(2n) {
+  transform: rotate(0.7deg) translateY(0.05rem);
+}
+
+.notes-post-tags span::before {
+  content: "";
+  width: 0.38rem;
+  height: 0.38rem;
+  margin-right: 0.38rem;
+  border-radius: 999px;
+  background: rgba(144, 117, 89, 0.42);
+  box-shadow: 0 0 0 0.12rem rgba(255, 252, 246, 0.72);
+}
+
+@media (max-width: 640px) {
+  .notes-post-tags {
+    gap: 0.42rem;
+  }
+
+  .notes-post-tags span {
+    min-height: 1.95rem;
+    padding-inline: 0.58rem;
+  }
+}

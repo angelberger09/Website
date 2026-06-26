@@ -46,3 +46,4 @@ These rules should shape current Website work.
 - Store availability rows and similar repeated wide bands should feel like placed paper strips or collage snippets, not styled UI list rows.
 - Strengthen drop shadows and lifted-paper depth across homepage paper/photo pieces, header tabs, route slips, and section cards so every placed surface reads as physically layered instead of washed into the background.
 - Organize the homepage into a human-readable left-docked editorial path: group related paper pieces, separate sections with clear spacing and alignment, and avoid scattered or hard-to-scan layouts that make the page feel unorganized.
+- Structure every major page as a calm room: one composed hero board, featured content, secondary shelf, readiness/source note, and next-path rhythm; use smaller heading scale, controlled max widths, and opacity/transform-only reveal motion instead of cropped giant type, random decals, or loud repeated scraps.

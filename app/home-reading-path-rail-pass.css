@@ -1,0 +1,130 @@
+/* Homepage reading path rail pass: turn the quick path map into a clearer editorial chapter trail. */
+
+.home-path-map {
+  grid-template-columns: minmax(10rem, 0.42fr) minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(0.9rem, 2.2vw, 1.5rem);
+  clip-path: polygon(1% 5%, 24% 0, 52% 3%, 99% 1%, 98% 94%, 76% 100%, 45% 97%, 2% 99%);
+  background:
+    radial-gradient(circle at 10% 18%, rgba(255, 176, 143, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 78%, rgba(185, 201, 175, 0.14), transparent 32%),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.58) 62%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 15rem 15rem;
+  box-shadow:
+    0 1.15rem 2.4rem rgba(72, 49, 31, 0.12),
+    inset 0 1px 0 rgba(255, 252, 239, 0.72);
+  padding: clamp(1rem, 2.4vw, 1.5rem) clamp(1rem, 2.8vw, 1.8rem) clamp(1.1rem, 2.4vw, 1.6rem) clamp(3.1rem, 6vw, 5.2rem);
+}
+
+.home-path-map::after {
+  position: absolute;
+  top: clamp(1.2rem, 2.8vw, 1.65rem);
+  bottom: clamp(1.2rem, 2.8vw, 1.65rem);
+  left: clamp(2.18rem, 4.9vw, 4.48rem);
+  width: clamp(0.58rem, 1vw, 0.78rem);
+  content: "";
+  pointer-events: none;
+  clip-path: polygon(48% 0, 88% 5%, 62% 28%, 94% 50%, 58% 74%, 74% 100%, 22% 96%, 36% 72%, 6% 48%, 34% 22%);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.34), rgba(216, 197, 236, 0.25) 52%, rgba(185, 201, 175, 0.34)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.14rem 0.18rem 0 rgba(47, 38, 35, 0.07);
+  opacity: 0.8;
+}
+
+.home-path-map__label {
+  align-self: start;
+  margin-top: 0.15rem;
+}
+
+.home-path-map__note {
+  max-width: 18rem;
+  margin: -0.25rem 0 0;
+  color: rgba(58, 45, 42, 0.72);
+  font-size: clamp(0.82rem, 1.15vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.home-path-map__trail {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.68rem, 1.2vw, 0.95rem);
+}
+
+.home-path-map__step {
+  min-height: clamp(8.2rem, 13vw, 10.6rem);
+  overflow: hidden;
+  padding: clamp(0.92rem, 1.5vw, 1.15rem);
+}
+
+.home-path-map__thread {
+  position: absolute;
+  top: 0.68rem;
+  right: 0.66rem;
+  bottom: 0.68rem;
+  width: 0.38rem;
+  clip-path: polygon(44% 0, 88% 8%, 58% 100%, 14% 94%);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.42), rgba(216, 197, 236, 0.28), rgba(185, 201, 175, 0.38)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  opacity: 0.78;
+}
+
+.home-path-map__number {
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.96), rgba(216, 197, 236, 0.36)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow:
+    0 0.46rem 0.78rem rgba(72, 49, 31, 0.12),
+    inset 0 1px 0 rgba(255, 252, 239, 0.75);
+  color: rgba(58, 45, 42, 0.76);
+  text-transform: uppercase;
+}
+
+.home-path-map__copy strong {
+  max-width: 7.5rem;
+}
+
+.home-path-map__copy small {
+  max-width: 9rem;
+}
+
+@media (max-width: 900px) {
+  .home-path-map {
+    grid-template-columns: 1fr;
+  }
+
+  .home-path-map__note,
+  .home-path-map__trail {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .home-path-map__trail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .home-path-map {
+    padding-right: 0.8rem;
+  }
+
+  .home-path-map__trail {
+    grid-template-columns: 1fr;
+  }
+
+  .home-path-map__step,
+  .home-path-map__step:nth-child(2n),
+  .home-path-map__step:nth-child(2n + 1) {
+    min-height: 7.2rem;
+    transform: none;
+  }
+}

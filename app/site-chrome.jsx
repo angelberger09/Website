@@ -44,6 +44,24 @@ const footerRoomLoopCues = {
   Store: "Open later"
 };
 
+const footerExitReceipts = [
+  {
+    label: "Start",
+    title: "Studio map",
+    note: "Begin with the public room shape."
+  },
+  {
+    label: "Read",
+    title: "Notes shelf",
+    note: "Move into published writing next."
+  },
+  {
+    label: "Browse",
+    title: "Archive path",
+    note: "Continue through ready work and future pieces."
+  }
+];
+
 const footerRoomLoop = siteNavPages.map((page) => ({
   href: page.href,
   title: page.title,
@@ -103,6 +121,15 @@ export function StudioFooter() {
           <p>Soft Strange Studio</p>
           <small>Public rooms, gently connected.</small>
         </span>
+      </div>
+      <div className="studio-footer__exit-receipts" aria-label="Footer exit receipts">
+        {footerExitReceipts.map((receipt) => (
+          <span className="studio-footer__exit-receipt" key={receipt.label}>
+            <small>{receipt.label}</small>
+            <b>{receipt.title}</b>
+            <em>{receipt.note}</em>
+          </span>
+        ))}
       </div>
       <FooterNav />
       <div className="studio-footer__room-loop" aria-label="Studio room loop">

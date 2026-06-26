@@ -1,18 +1,20 @@
 /* Applies LESSON-020 / METRIC-019 without disturbing the shared card pass. */
 .floating-header {
   overflow: visible;
-  border-radius: 0 0 1.15rem 1.55rem;
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 99% 74%, 96% 96%, 84% 91%, 72% 97%, 57% 93%, 43% 98%, 29% 92%, 15% 97%, 4% 91%, 1% 72%);
   background:
-    linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(255, 247, 235, 0.92) 58%, rgba(245, 232, 211, 0.88)),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.99), rgba(255, 247, 235, 0.9) 55%, rgba(245, 232, 211, 0.92)),
+    repeating-linear-gradient(96deg, rgba(47, 38, 35, 0.035) 0 1px, transparent 1px 4.8rem),
     var(--grain-image),
     var(--dust-image),
     var(--fine-scratch-image);
-  background-size: cover, 30rem 30rem, 52rem 52rem, 68rem 68rem;
-  background-position: center, 12% 18%, 48% 20%, 62% 35%;
+  background-size: cover, cover, 24rem 24rem, 46rem 46rem, 62rem 62rem;
+  background-position: center, center, 12% 18%, 48% 20%, 62% 35%;
   box-shadow:
     0 0.18rem 0 rgba(255, 255, 255, 0.68) inset,
-    0 1.15rem 1.8rem rgba(47, 38, 35, 0.16),
-    0 2.8rem 5.2rem rgba(47, 38, 35, 0.1);
+    0 1.25rem 1.9rem rgba(47, 38, 35, 0.19),
+    0 3rem 5.4rem rgba(47, 38, 35, 0.12);
   backdrop-filter: none;
 }
 
@@ -24,40 +26,75 @@
 }
 
 .floating-header::before {
-  inset: 0.28rem 0.38rem 0.28rem;
+  inset: 0.18rem 0.34rem 0.22rem;
   z-index: -1;
-  border-radius: 0 0 1.35rem 1.05rem;
-  background: rgba(118, 91, 78, 0.14);
-  filter: blur(0.45rem);
-  transform: translate3d(0.18rem, 0.34rem, 0) rotate(-0.45deg);
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 99% 76%, 94% 98%, 76% 94%, 58% 99%, 36% 93%, 13% 98%, 1% 88%);
+  background: rgba(118, 91, 78, 0.18);
+  filter: blur(0.42rem);
+  transform: translate3d(0.2rem, 0.38rem, 0) rotate(-0.38deg);
 }
 
 .floating-header::after {
-  right: 1.1rem;
-  bottom: -0.18rem;
-  left: 0.85rem;
-  height: 0.36rem;
-  border-radius: 0 0 58% 42%;
+  right: 0.7rem;
+  bottom: -0.22rem;
+  left: 0.62rem;
+  height: 0.42rem;
+  border-radius: 0;
+  clip-path: polygon(1% 12%, 18% 0, 34% 18%, 52% 4%, 67% 22%, 84% 5%, 99% 18%, 96% 100%, 3% 88%);
   background:
-    linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.1) 14%, rgba(47, 38, 35, 0.06) 78%, transparent),
+    linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.13) 14%, rgba(47, 38, 35, 0.07) 78%, transparent),
     var(--grain-image);
-  background-size: cover, 24rem 24rem;
-  opacity: 0.72;
-  transform: rotate(-0.28deg);
+  background-size: cover, 20rem 20rem;
+  opacity: 0.86;
+  transform: rotate(-0.24deg);
+}
+
+.identity-link {
+  padding: 0.38rem 0.58rem 0.34rem;
+  clip-path: polygon(2% 6%, 24% 0, 63% 4%, 98% 1%, 95% 87%, 76% 98%, 35% 93%, 4% 100%);
+  background:
+    linear-gradient(140deg, rgba(255, 250, 242, 0.88), rgba(245, 232, 211, 0.45)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.12rem 0.26rem 0.5rem rgba(47, 38, 35, 0.12),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
 }
 
 .folder-panel a {
+  border-radius: 0;
+  clip-path: polygon(4% 8%, 28% 1%, 64% 5%, 98% 0, 95% 90%, 72% 99%, 36% 94%, 3% 100%);
   background:
-    linear-gradient(145deg, rgba(255, 250, 242, 0.82), rgba(245, 232, 211, 0.38)),
+    linear-gradient(145deg, rgba(255, 250, 242, 0.84), rgba(245, 232, 211, 0.42)),
     var(--grain-image);
-  background-size: cover, 22rem 22rem;
-  box-shadow: inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+  background-size: cover, 20rem 20rem;
+  box-shadow:
+    0.1rem 0.22rem 0.46rem rgba(47, 38, 35, 0.11),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
 }
 
 .folder-panel a:hover,
-.folder-panel a:focus {
+.folder-panel a:focus,
+.folder-panel a:focus-visible,
+.identity-link:hover,
+.identity-link:focus,
+.identity-link:focus-visible {
   background:
-    linear-gradient(135deg, rgba(185, 201, 175, 0.42), rgba(255, 176, 143, 0.24)),
+    linear-gradient(135deg, rgba(185, 201, 175, 0.44), rgba(255, 176, 143, 0.26)),
     var(--grain-image);
-  background-size: cover, 22rem 22rem;
+  background-size: cover, 20rem 20rem;
+  outline: 2px solid rgba(255, 176, 143, 0.6);
+  outline-offset: 0.14rem;
+}
+
+@media (max-width: 760px) {
+  .floating-header {
+    clip-path: polygon(0 0, 100% 0, 99% 78%, 92% 96%, 67% 92%, 43% 98%, 18% 93%, 2% 96%, 1% 74%);
+  }
+
+  .identity-link,
+  .folder-panel a {
+    clip-path: polygon(3% 7%, 31% 2%, 71% 5%, 97% 1%, 94% 91%, 62% 97%, 25% 94%, 4% 100%);
+  }
 }

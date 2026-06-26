@@ -1,0 +1,115 @@
+/* Footer exit receipts pass.
+   Gives the shared footer one compact receipt shelf before direct nav so the
+   bottom chrome reads as a guided paper exit path, not only separate links. */
+
+.studio-footer__exit-receipts {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.44rem, 1.2vw, 0.72rem);
+  width: min(100%, 680px);
+  margin: clamp(-0.18rem, -0.5vw, 0rem) auto clamp(0.48rem, 1vw, 0.72rem);
+  padding: 0.18rem clamp(0.2rem, 1vw, 0.6rem);
+}
+
+.studio-footer__exit-receipts::before {
+  content: "";
+  position: absolute;
+  inset: 0.2rem 0.5rem 0.12rem;
+  z-index: -1;
+  background:
+    linear-gradient(96deg, rgba(250, 245, 232, 0.78), rgba(231, 214, 184, 0.34)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 150px 150px;
+  clip-path: polygon(1% 22%, 18% 8%, 51% 12%, 97% 4%, 99% 78%, 79% 91%, 42% 86%, 4% 96%);
+  box-shadow:
+    0 0.72rem 1.35rem rgba(76, 55, 29, 0.11),
+    inset 0 -0.85rem 1.2rem rgba(129, 98, 51, 0.05);
+  opacity: 0.94;
+}
+
+.studio-footer__exit-receipt {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  min-height: 5.2rem;
+  padding: 0.62rem 0.68rem 0.66rem;
+  background:
+    linear-gradient(160deg, rgba(255, 252, 242, 0.96), rgba(238, 225, 199, 0.76)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, 190px 190px;
+  clip-path: polygon(4% 8%, 92% 2%, 99% 18%, 95% 94%, 19% 98%, 2% 84%);
+  box-shadow:
+    0 0.58rem 1rem rgba(69, 50, 28, 0.13),
+    0 0.12rem 0 rgba(255, 252, 242, 0.64) inset;
+  transform: rotate(var(--footer-receipt-tilt, -0.6deg));
+}
+
+.studio-footer__exit-receipt:nth-child(2) {
+  --footer-receipt-tilt: 0.45deg;
+}
+
+.studio-footer__exit-receipt:nth-child(3) {
+  --footer-receipt-tilt: -0.25deg;
+}
+
+.studio-footer__exit-receipt::before {
+  content: "";
+  position: absolute;
+  top: 0.32rem;
+  right: 0.44rem;
+  width: 1.6rem;
+  height: 0.42rem;
+  background: rgba(198, 170, 119, 0.2);
+  clip-path: polygon(0 16%, 100% 0, 92% 92%, 8% 100%);
+}
+
+.studio-footer__exit-receipt small {
+  width: fit-content;
+  padding: 0.18rem 0.38rem;
+  background: rgba(88, 67, 39, 0.08);
+  clip-path: polygon(4% 7%, 96% 0, 100% 78%, 8% 100%);
+  color: rgba(76, 56, 32, 0.72);
+  font-size: 0.66rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.studio-footer__exit-receipt b {
+  color: rgba(44, 33, 21, 0.92);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.9vw, 1.28rem);
+  font-weight: 650;
+  line-height: 0.98;
+}
+
+.studio-footer__exit-receipt em {
+  max-width: 16ch;
+  color: rgba(70, 52, 31, 0.7);
+  font-size: 0.74rem;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .studio-footer__exit-receipts {
+    grid-template-columns: 1fr;
+    width: min(100%, 24rem);
+    gap: 0.42rem;
+  }
+
+  .studio-footer__exit-receipts::before {
+    inset: 0.12rem 0.18rem;
+  }
+
+  .studio-footer__exit-receipt {
+    min-height: 0;
+    padding: 0.58rem 0.68rem;
+  }
+
+  .studio-footer__exit-receipt em {
+    max-width: none;
+  }
+}

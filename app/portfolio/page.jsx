@@ -9,6 +9,27 @@ export const metadata = {
   description: "Public work and project systems from Soft Strange Studio."
 };
 
+const portfolioRoomKeys = [
+  {
+    photo: "open",
+    label: "Archive door",
+    title: "Start with what is public",
+    caption: "The room opens with safe project doors first, then lets deeper records wait until they have enough public shape."
+  },
+  {
+    photo: "frame",
+    label: "Preview frame",
+    title: "Read the image surface",
+    caption: "Abstract paper/photo centers mark structure and direction without pretending unfinished screenshots or private case studies exist."
+  },
+  {
+    photo: "shelf",
+    label: "Next shelf",
+    title: "Follow the public path",
+    caption: "Readiness notes, lanes, and record states show how a piece can move from held material into an open archive route."
+  }
+];
+
 const portfolioGalleryFrames = [
   {
     kind: "image",
@@ -73,6 +94,32 @@ export default function PortfolioPage() {
           losing the quiet studio feeling.
         </p>
       </PageIntro>
+
+      <section className="portfolio-room-key-board" aria-labelledby="portfolio-room-key-title">
+        <div className="portfolio-room-key-board__heading">
+          <p className="eyebrow">Archive room key</p>
+          <h1 id="portfolio-room-key-title">How to read the archive.</h1>
+          <p>
+            The Portfolio room is intentionally staged: start with safe public pieces,
+            read the preview surfaces as orientation, then follow the shelf notes only
+            where the public path is ready.
+          </p>
+        </div>
+        <div className="portfolio-room-key-strip" aria-label="Portfolio archive reading path">
+          {portfolioRoomKeys.map((key) => (
+            <article className="portfolio-room-key-slip" key={key.title}>
+              <div className="portfolio-room-key-slip__photo" aria-hidden="true">
+                <b>{key.photo}</b>
+                <em>{key.label}</em>
+              </div>
+              <div className="portfolio-room-key-slip__copy">
+                <b>{key.title}</b>
+                <em>{key.caption}</em>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="portfolio-archive-board" aria-labelledby="portfolio-pieces-title">
         <div className="portfolio-board-heading">

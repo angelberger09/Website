@@ -9,7 +9,13 @@ const pageIntroVisuals = {
     note: "Principles, pathways, and public-safe memory.",
     status: "Open room",
     path: "Start here",
-    cue: "Map first"
+    cue: "Map first",
+    shelf: [
+      { label: "Open", value: "About", visual: "Map room" },
+      { label: "Read", value: "Studio map", visual: "Principles" },
+      { label: "Trust", value: "Open room", visual: "Public edge" },
+      { label: "Continue", value: "Start here", visual: "Next doors" }
+    ]
   },
   "Studio notes room": {
     label: "Notes",
@@ -17,7 +23,13 @@ const pageIntroVisuals = {
     note: "Published writing gathered into one calm room.",
     status: "Reading shelf",
     path: "Newest first",
-    cue: "Read gently"
+    cue: "Read gently",
+    shelf: [
+      { label: "Open", value: "Notes", visual: "Read shelf" },
+      { label: "Read", value: "Reader light", visual: "Latest note" },
+      { label: "Trust", value: "Reading shelf", visual: "Public feed" },
+      { label: "Continue", value: "Newest first", visual: "Soft return" }
+    ]
   },
   "First public archive": {
     label: "Archive",
@@ -25,7 +37,13 @@ const pageIntroVisuals = {
     note: "Ready pieces, preparing records, offstage drafts.",
     status: "Public pieces",
     path: "Browse softly",
-    cue: "No fake work"
+    cue: "No fake work",
+    shelf: [
+      { label: "Open", value: "Archive", visual: "Work shelf" },
+      { label: "Read", value: "Work lanes", visual: "Preview lane" },
+      { label: "Trust", value: "Public pieces", visual: "No fake work" },
+      { label: "Continue", value: "Browse softly", visual: "Next shelf" }
+    ]
   },
   "Future studio pieces": {
     label: "Store",
@@ -33,7 +51,13 @@ const pageIntroVisuals = {
     note: "Prepared lanes before public shop links open.",
     status: "Preparing",
     path: "No fake stock",
-    cue: "Wait for links"
+    cue: "Wait for links",
+    shelf: [
+      { label: "Open", value: "Store", visual: "Slow shelf" },
+      { label: "Read", value: "Availability path", visual: "Preview path" },
+      { label: "Trust", value: "Preparing", visual: "No fake stock" },
+      { label: "Continue", value: "No fake stock", visual: "Ready links" }
+    ]
   }
 };
 
@@ -93,7 +117,13 @@ function getPageIntroVisual(title, eyebrow) {
     note: "A route-specific studio card inside the paper frame.",
     status: "Studio room",
     path: "Keep going",
-    cue: "Public path"
+    cue: "Public path",
+    shelf: [
+      { label: "Open", value: eyebrow, visual: "Studio door" },
+      { label: "Read", value: title, visual: "Route card" },
+      { label: "Trust", value: "Studio room", visual: "Public note" },
+      { label: "Continue", value: "Keep going", visual: "Next path" }
+    ]
   };
 }
 
@@ -186,13 +216,7 @@ export function StudioFooter() {
 
 export function PageIntro({ eyebrow, title, children }) {
   const visual = getPageIntroVisual(title, eyebrow);
-
-  const roomShelf = [
-    { label: "Open", value: visual.label, visual: "door" },
-    { label: "Read", value: visual.title, visual: "page" },
-    { label: "Trust", value: visual.status, visual: "source" },
-    { label: "Continue", value: visual.path, visual: "path" }
-  ];
+  const roomShelf = visual.shelf;
 
   return (
     <section className="page-hero" aria-labelledby="page-title">

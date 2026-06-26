@@ -1,0 +1,79 @@
+/* Notes post intro receipt pass.
+   Turns the individual reader intro cues into visible paper slips without changing note data. */
+
+.notes-post-intro-receipts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.42rem, 1.2vw, 0.68rem);
+  width: min(100%, 26rem);
+  margin: clamp(0.7rem, 1.8vw, 1rem) 0 clamp(0.55rem, 1.4vw, 0.8rem);
+  padding: clamp(0.36rem, 1vw, 0.52rem);
+  isolation: isolate;
+}
+
+.notes-post-intro-receipts::before {
+  position: absolute;
+  inset: 0.12rem 0 0.04rem;
+  z-index: -1;
+  content: "";
+  clip-path: polygon(2% 12%, 26% 3%, 55% 8%, 98% 2%, 96% 88%, 70% 96%, 38% 91%, 3% 98%);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.66), rgba(236, 220, 195, 0.34) 68%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow: 0.08rem 0.18rem 0 rgba(47, 38, 35, 0.06), 0 0.65rem 1.1rem rgba(47, 38, 35, 0.09);
+}
+
+.notes-post-intro-receipt {
+  position: relative;
+  display: grid;
+  gap: 0.18rem;
+  min-height: 3.45rem;
+  align-content: center;
+  padding: clamp(0.48rem, 1.1vw, 0.68rem) clamp(0.5rem, 1.2vw, 0.78rem);
+  clip-path: polygon(4% 9%, 97% 2%, 99% 83%, 84% 97%, 8% 93%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.96), rgba(247, 235, 213, 0.78)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(47, 38, 35, 0.82);
+  box-shadow: 0.06rem 0.12rem 0 rgba(47, 38, 35, 0.08), 0 0.45rem 0.82rem rgba(47, 38, 35, 0.11);
+}
+
+.notes-post-intro-receipt:nth-child(2) {
+  transform: rotate(0.55deg) translateY(0.06rem);
+}
+
+.notes-post-intro-receipt:nth-child(3) {
+  transform: rotate(-0.42deg) translateY(-0.02rem);
+}
+
+.notes-post-intro-receipt small {
+  color: rgba(111, 83, 111, 0.74);
+  font-family: var(--font-hand);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.notes-post-intro-receipt strong {
+  color: var(--ink);
+  font-size: clamp(0.76rem, 1.05vw, 0.9rem);
+  line-height: 1.12;
+}
+
+@media (max-width: 640px) {
+  .notes-post-intro-receipts {
+    grid-template-columns: 1fr;
+    width: min(100%, 18rem);
+  }
+
+  .notes-post-intro-receipt,
+  .notes-post-intro-receipt:nth-child(2),
+  .notes-post-intro-receipt:nth-child(3) {
+    min-height: 0;
+    transform: none;
+  }
+}

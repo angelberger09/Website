@@ -19,6 +19,45 @@ const homepageCheckFrames = [
   }
 ];
 
+const homepagePathSteps = [
+  {
+    href: "#studio-front-room",
+    label: "01",
+    title: "Front room",
+    detail: "enter softly"
+  },
+  {
+    href: "#studio-room-status",
+    label: "02",
+    title: "Current rooms",
+    detail: "see what is ready"
+  },
+  {
+    href: "#studio-room-doors",
+    label: "03",
+    title: "Studio rooms",
+    detail: "choose a door"
+  },
+  {
+    href: "#studio-shape",
+    label: "04",
+    title: "Studio shape",
+    detail: "read the making rules"
+  },
+  {
+    href: "#studio-house-rules",
+    label: "05",
+    title: "House rules",
+    detail: "keep the promise"
+  },
+  {
+    href: "#studio-next-path",
+    label: "06",
+    title: "Next path",
+    detail: "continue gently"
+  }
+];
+
 export default function HomePage() {
   const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
 
@@ -59,7 +98,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--intro home-paper-field" aria-labelledby="studio-front-room-title">
+      <nav className="home-path-map" aria-label="Homepage reading path">
+        <span className="home-path-map__label">Read this page</span>
+        <div className="home-path-map__trail" role="list">
+          {homepagePathSteps.map((step) => (
+            <a className="home-path-map__step" href={step.href} key={step.href} role="listitem">
+              <span className="home-path-map__number">{step.label}</span>
+              <span className="home-path-map__copy">
+                <strong>{step.title}</strong>
+                <small>{step.detail}</small>
+              </span>
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <section id="studio-front-room" className="studio-pages studio-pages--intro home-paper-field" aria-labelledby="studio-front-room-title">
         <span className="home-docket-step" aria-hidden="true">01 / Front room</span>
         <div className="split-feature home-paper-field__intro">
           <div>
@@ -74,7 +128,7 @@ export default function HomePage() {
         </div>
 
         <div className="home-note-board home-note-board--highlights" aria-label="Homepage highlights">
-          {homepageHighlights.map((highlight, index) => (
+          {homepageHighlights.map((highlight) => (
             <article className="home-note-piece home-note-piece--with-visual" key={highlight.title}>
               <span className="home-note-piece__pin" aria-hidden="true" />
               <span className="home-note-piece__visual" aria-hidden="true">
@@ -90,7 +144,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact home-room-status" aria-labelledby="studio-room-status-title">
+      <section id="studio-room-status" className="studio-pages studio-pages--compact home-room-status" aria-labelledby="studio-room-status-title">
         <span className="home-docket-step" aria-hidden="true">02 / Current rooms</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Current rooms</p>
@@ -117,7 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
+      <section id="studio-room-doors" className="studio-pages home-door-section" aria-labelledby="studio-pages-title">
         <span className="home-docket-step" aria-hidden="true">03 / Studio rooms</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio rooms</p>
@@ -147,7 +201,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
+      <section id="studio-shape" className="studio-pages studio-pages--compact home-paper-field home-paper-field--pillars" aria-labelledby="studio-shape-title">
         <span className="home-docket-step" aria-hidden="true">04 / Studio shape</span>
         <div className="section-intro home-section-scrap">
           <p className="eyebrow">Studio shape</p>
@@ -165,7 +219,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
+      <section id="studio-house-rules" className="studio-pages studio-pages--compact home-studio-checks" aria-labelledby="studio-checks-title">
         <span className="home-docket-step" aria-hidden="true">05 / House rules</span>
         <div className="home-studio-checks__intro">
           <p className="eyebrow">House rules</p>
@@ -196,7 +250,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="studio-pages studio-pages--compact" aria-label="Where to go next">
+      <section id="studio-next-path" className="studio-pages studio-pages--compact" aria-label="Where to go next">
         <span className="home-docket-step" aria-hidden="true">06 / Next path</span>
         <NextStepBand {...pageContinuity.home} />
       </section>

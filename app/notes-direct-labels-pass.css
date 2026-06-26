@@ -2,47 +2,43 @@
    Replaces decorative numeric note/support pins with human-facing paper labels so the Notes room stays direct and studio-like. */
 
 .notes-gallery-card__number {
-  min-width: 4.7rem;
-  color: transparent;
+  display: inline-flex;
+  min-width: 5.6rem;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  color: rgba(47, 38, 35, 0.76);
   text-align: center;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .notes-gallery-card__number::after {
-  content: "note shelf";
-  color: rgba(47, 38, 35, 0.74);
-}
-
-.notes-gallery-card:first-child .notes-gallery-card__number::after {
-  content: "latest";
+  content: none;
 }
 
 .notes-support-note__pin {
-  min-width: 4.9rem;
-  color: transparent;
+  display: inline-flex;
+  min-width: 5.85rem;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  color: rgba(47, 38, 35, 0.74);
   text-align: center;
+  line-height: 1.08;
+  white-space: nowrap;
 }
 
 .notes-support-note__pin::after {
-  color: rgba(47, 38, 35, 0.74);
-}
-
-.notes-support-note:nth-child(1) .notes-support-note__pin::after {
-  content: "safe shelf";
-}
-
-.notes-support-note:nth-child(2) .notes-support-note__pin::after {
-  content: "reader";
-}
-
-.notes-support-note:nth-child(3) .notes-support-note__pin::after {
-  content: "return";
+  content: none;
 }
 
 @media (max-width: 720px) {
   .notes-gallery-card__number,
   .notes-support-note__pin {
-    min-width: 4.35rem;
-    font-size: 0.64rem;
-    letter-spacing: 0.09em;
+    min-width: 4.95rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    white-space: normal;
   }
 }

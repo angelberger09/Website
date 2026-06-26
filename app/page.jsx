@@ -4,6 +4,21 @@ import { NextStepBand } from "./next-step-band";
 import { homepageRoomMarkers } from "./homepage-room-markers";
 import { homepageCards, homepageHighlights, homepageStudioChecks, studioPillars } from "./site-data";
 
+const homepageCheckFrames = [
+  {
+    label: "Paper leads",
+    detail: "material first"
+  },
+  {
+    label: "Human words",
+    detail: "warm public copy"
+  },
+  {
+    label: "Honest growth",
+    detail: "no fake shelves"
+  }
+];
+
 export default function HomePage() {
   const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
 
@@ -158,14 +173,21 @@ export default function HomePage() {
         </div>
 
         <div className="home-check-rail" aria-label="Soft Strange Studio house rules">
-          {homepageStudioChecks.map((check) => (
-            <article className="home-check-note" key={check.title}>
-              <span className="home-check-note__eyebrow">{check.eyebrow}</span>
-              <h2>{check.title}</h2>
-              <p>{check.description}</p>
-              <small>{check.note}</small>
-            </article>
-          ))}
+          {homepageStudioChecks.map((check, index) => {
+            const frame = homepageCheckFrames[index] ?? homepageCheckFrames[0];
+            return (
+              <article className="home-check-note home-check-note--with-photo" key={check.title}>
+                <span className="home-check-note__photo" aria-hidden="true">
+                  <b>{frame.label}</b>
+                  <em>{frame.detail}</em>
+                </span>
+                <span className="home-check-note__eyebrow">{check.eyebrow}</span>
+                <h2>{check.title}</h2>
+                <p>{check.description}</p>
+                <small>{check.note}</small>
+              </article>
+            );
+          })}
         </div>
       </section>
 

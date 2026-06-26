@@ -1,0 +1,94 @@
+/* Shared PageIntro room rhythm pass.
+   Makes the calm-room structure visible without adding a new route system. */
+
+.page-hero__room-rhythm {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.42rem, 1.2vw, 0.68rem);
+  width: min(100%, 42rem);
+  margin-top: clamp(0.65rem, 1.7vw, 1rem);
+  padding: clamp(0.52rem, 1.4vw, 0.72rem);
+  isolation: isolate;
+}
+
+.page-hero__room-rhythm::before {
+  content: "";
+  position: absolute;
+  inset: 0.16rem 0.08rem 0.02rem;
+  z-index: -1;
+  clip-path: polygon(1.2% 11%, 18% 4%, 40% 8%, 64% 2%, 98% 10%, 96% 88%, 75% 96%, 48% 90%, 22% 98%, 3% 91%);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.7), rgba(232, 216, 193, 0.32) 62%, rgba(154, 133, 166, 0.16)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.1rem 0.2rem 0 rgba(47, 38, 35, 0.06), 0 0.8rem 1.4rem rgba(47, 38, 35, 0.1);
+}
+
+.page-hero__room-rhythm::after {
+  content: "";
+  position: absolute;
+  left: clamp(0.85rem, 2vw, 1.25rem);
+  right: clamp(0.85rem, 2vw, 1.25rem);
+  top: 50%;
+  z-index: -1;
+  height: 0.12rem;
+  background: linear-gradient(90deg, transparent, rgba(111, 83, 111, 0.28), rgba(111, 83, 111, 0.16), transparent);
+  transform: rotate(-0.3deg);
+}
+
+.page-hero__room-rhythm span {
+  position: relative;
+  display: grid;
+  min-height: 4.55rem;
+  align-content: center;
+  gap: 0.24rem;
+  padding: clamp(0.56rem, 1.2vw, 0.76rem) clamp(0.54rem, 1.1vw, 0.8rem);
+  clip-path: polygon(3% 6%, 96% 1%, 99% 82%, 82% 97%, 8% 94%);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.94), rgba(244, 233, 213, 0.74)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  color: rgba(47, 38, 35, 0.82);
+  font-size: clamp(0.75rem, 1.05vw, 0.86rem);
+  font-weight: 780;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.08), 0 0.52rem 0.9rem rgba(47, 38, 35, 0.1);
+}
+
+.page-hero__room-rhythm span:nth-child(2) {
+  transform: rotate(0.45deg);
+}
+
+.page-hero__room-rhythm span:nth-child(3) {
+  transform: rotate(-0.35deg);
+}
+
+.page-hero__room-rhythm small {
+  color: rgba(111, 83, 111, 0.78);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-rhythm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-hero__room-rhythm::after {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .page-hero__room-rhythm {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__room-rhythm span {
+    min-height: 0;
+  }
+}

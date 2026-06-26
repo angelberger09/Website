@@ -1,0 +1,322 @@
+/* Paper asset shell pass.
+   Uses the generated paper SVGs as the main material surface for large boards.
+   The SVGs keep their black matte for future alpha workflows, so this live pass
+   uses screen blending over cream fields: black areas disappear into the section
+   color while the scanned paper, tape, folds, and yarn-purple tones show through. */
+
+:root {
+  --paper-shell-wide: url('/Website/assets/paper/paper-torn-tape-wide.svg');
+  --paper-shell-aged: url('/Website/assets/paper/paper-aged-deckle-sheet.svg');
+  --paper-shell-grid: url('/Website/assets/paper/paper-grid-clip-stack.svg');
+  --paper-shell-deckled: url('/Website/assets/paper/paper-torn-tape-deckled.svg');
+  --paper-shell-frame: url('/Website/assets/paper/paper-lilac-polaroid-frame.svg');
+
+  --paper-shell-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.95rem 1.8rem rgba(47, 38, 35, 0.16),
+    -0.45rem 0.4rem 1.3rem rgba(71, 52, 88, 0.08);
+  --paper-shell-shadow-large:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 1.25rem 2.25rem rgba(47, 38, 35, 0.17),
+    -0.55rem 0.55rem 1.45rem rgba(86, 59, 105, 0.1);
+  --paper-shell-field:
+    linear-gradient(135deg, rgba(255, 252, 242, 0.94), rgba(238, 224, 199, 0.72) 56%, rgba(174, 143, 183, 0.14));
+  --paper-shell-field-soft:
+    linear-gradient(135deg, rgba(255, 252, 242, 0.9), rgba(242, 231, 209, 0.66) 58%, rgba(104, 80, 124, 0.1));
+  --paper-shell-fiber: url('/Website/atmosphere/grain-noise.svg');
+  --paper-shell-inner: 1.65rem;
+}
+
+.paper-shell--hero,
+.paper-shell--board,
+.paper-shell--note,
+.paper-shell--frame,
+.paper-shell--stack {
+  position: relative;
+  isolation: isolate;
+}
+
+.paper-shell__inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--paper-shell-inner);
+}
+
+/* Major public room surfaces: these are the first real-asset shells. */
+:where(
+  .paper-shell--hero,
+  .paper-shell--board,
+  .paper-shell--note,
+  .paper-shell--stack,
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-next-path-room,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-room-key-board,
+  .about-opening-board,
+  .about-contact-sheet-board,
+  .about-paper-board,
+  .portfolio-room-key-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-lane-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-entry-receipts,
+  .store-lane-collage,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-editorial-section,
+  .store-availability-board,
+  .store-feed-ledger-board,
+  .store-promise-board,
+  .store-path-photo-board,
+  .continuity-paper-trail
+) {
+  --paper-shell-art: var(--paper-shell-wide);
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0.55rem !important;
+  background-image:
+    var(--paper-shell-art),
+    var(--paper-shell-field),
+    var(--paper-shell-fiber) !important;
+  background-size:
+    100% 100%,
+    cover,
+    13rem 13rem !important;
+  background-position:
+    center,
+    center,
+    center !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat !important;
+  background-blend-mode:
+    screen,
+    normal,
+    multiply !important;
+  box-shadow: var(--paper-shell-shadow) !important;
+}
+
+/* Asset role mapping. */
+:where(.paper-shell--hero, .page-hero, .title-lockup, .home-paper-field, .home-next-path-room) {
+  --paper-shell-art: var(--paper-shell-wide);
+  --paper-shell-field: linear-gradient(135deg, rgba(255, 253, 244, 0.95), rgba(240, 227, 205, 0.68) 60%, rgba(116, 88, 138, 0.11));
+  box-shadow: var(--paper-shell-shadow-large) !important;
+}
+
+:where(.paper-shell--note, .about-opening-board, .about-contact-sheet-board, .about-paper-board) {
+  --paper-shell-art: var(--paper-shell-aged);
+}
+
+:where(.paper-shell--stack, .notes-reader-board, .notes-source-board, .notes-state-board, .notes-support-strip, .portfolio-readiness-board, .portfolio-feed-board, .portfolio-state-board, .portfolio-process-board, .store-checklist-collage, .store-feed-ledger-board) {
+  --paper-shell-art: var(--paper-shell-grid);
+  --paper-shell-field: var(--paper-shell-field-soft);
+}
+
+:where(.paper-shell--board, .home-room-status, .home-door-section, .home-studio-checks, .portfolio-room-key-board, .portfolio-archive-board, .portfolio-gallery-board, .portfolio-lane-board, .store-entry-receipts, .store-lane-collage, .store-visual-board, .store-gallery-board, .store-availability-board, .store-promise-board, .store-path-photo-board) {
+  --paper-shell-art: var(--paper-shell-deckled);
+}
+
+:where(.paper-shell--frame, .notes-gallery-board, .portfolio-gallery-board, .store-gallery-board) {
+  --paper-shell-art: var(--paper-shell-frame);
+}
+
+/* Keep the existing content above the asset surface when older passes add pseudo-elements. */
+:where(
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-next-path-room,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-room-key-board,
+  .about-opening-board,
+  .about-contact-sheet-board,
+  .about-paper-board,
+  .portfolio-room-key-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-lane-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-entry-receipts,
+  .store-lane-collage,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-editorial-section,
+  .store-availability-board,
+  .store-feed-ledger-board,
+  .store-promise-board,
+  .store-path-photo-board,
+  .continuity-paper-trail
+) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Let section size change without zooming generated CSS folds back in. */
+:where(
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-next-path-room,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-room-key-board,
+  .about-opening-board,
+  .about-contact-sheet-board,
+  .about-paper-board,
+  .portfolio-room-key-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-lane-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-entry-receipts,
+  .store-lane-collage,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-editorial-section,
+  .store-availability-board,
+  .store-feed-ledger-board,
+  .store-promise-board,
+  .store-path-photo-board,
+  .continuity-paper-trail
+)::before {
+  background-size: 17rem 17rem, 23rem 19rem, cover !important;
+  opacity: 0.42 !important;
+}
+
+:where(
+  .page-hero,
+  .title-lockup,
+  .home-path-map,
+  .home-paper-field,
+  .home-room-status,
+  .home-door-section,
+  .home-studio-checks,
+  .home-next-path-room,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-room-key-board,
+  .about-opening-board,
+  .about-contact-sheet-board,
+  .about-paper-board,
+  .portfolio-room-key-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .portfolio-readiness-board,
+  .portfolio-lane-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .portfolio-process-board,
+  .store-entry-receipts,
+  .store-lane-collage,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-editorial-section,
+  .store-availability-board,
+  .store-feed-ledger-board,
+  .store-promise-board,
+  .store-path-photo-board,
+  .continuity-paper-trail
+)::after {
+  opacity: 0.35 !important;
+}
+
+/* Mobile: keep the asset readable without huge shadows or oversized paper margins. */
+@media (max-width: 760px) {
+  :where(
+    .page-hero,
+    .title-lockup,
+    .home-path-map,
+    .home-paper-field,
+    .home-room-status,
+    .home-door-section,
+    .home-studio-checks,
+    .home-next-path-room,
+    .notes-reader-board,
+    .notes-gallery-board,
+    .notes-source-board,
+    .notes-state-board,
+    .notes-support-strip,
+    .notes-path-photo-board,
+    .about-room-key-board,
+    .about-opening-board,
+    .about-contact-sheet-board,
+    .about-paper-board,
+    .portfolio-room-key-board,
+    .portfolio-archive-board,
+    .portfolio-gallery-board,
+    .portfolio-paper-board,
+    .portfolio-readiness-board,
+    .portfolio-lane-board,
+    .portfolio-feed-board,
+    .portfolio-state-board,
+    .portfolio-process-board,
+    .store-entry-receipts,
+    .store-lane-collage,
+    .store-visual-board,
+    .store-gallery-board,
+    .store-editorial-section,
+    .store-availability-board,
+    .store-feed-ledger-board,
+    .store-promise-board,
+    .store-path-photo-board,
+    .continuity-paper-trail
+  ) {
+    border-radius: 0.35rem !important;
+    background-size:
+      122% 108%,
+      cover,
+      10rem 10rem !important;
+    box-shadow:
+      0.07rem 0.1rem 0 rgba(47, 38, 35, 0.07),
+      0 0.62rem 1.18rem rgba(47, 38, 35, 0.13) !important;
+  }
+}

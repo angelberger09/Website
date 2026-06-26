@@ -216,3 +216,42 @@ The routed boards, cards, and footer/header elements now have many content-beari
 - METRIC-018
 - METRIC-026
 - METRIC-027
+
+## 2026-06-26 16:30 ET — Footer four-room exit shelf
+
+### Changed
+
+- Added a Store receipt to the shared footer exit shelf in `app/site-chrome.jsx`.
+- Added `app/footer-four-room-exit-pass.css` so the exit receipt shelf supports four active top-level room receipts on desktop, two-by-two on medium screens, and one-column on mobile.
+- Loaded the new footer receipt pass in `app/layout.jsx` after the existing footer exit receipt styling.
+
+### Why
+
+The shared footer exit shelf had become useful and paper-like, but it only surfaced three of the four active Website rooms. Current continuity and direct-route guidance supports making the bottom exit shelf expose the full public room set without inventing new content or implying live Store products.
+
+### Related items
+
+- PAGE-005
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-029
+- METRIC-030

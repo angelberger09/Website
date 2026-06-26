@@ -49,19 +49,25 @@ const footerExitReceipts = [
     label: "Start",
     title: "Studio map",
     note: "Begin with the public room shape.",
-    visual: "front room"
+    visual: "front room",
+    href: "/Website/about/",
+    action: "Open map"
   },
   {
     label: "Read",
     title: "Notes shelf",
     note: "Move into published writing next.",
-    visual: "paper note"
+    visual: "paper note",
+    href: "/Website/notes/",
+    action: "Read notes"
   },
   {
     label: "Browse",
     title: "Archive path",
     note: "Continue through ready work and future pieces.",
-    visual: "next shelf"
+    visual: "next shelf",
+    href: "/Website/portfolio/",
+    action: "View work"
   }
 ];
 
@@ -127,7 +133,12 @@ export function StudioFooter() {
       </div>
       <div className="studio-footer__exit-receipts" aria-label="Footer exit receipts">
         {footerExitReceipts.map((receipt) => (
-          <span className="studio-footer__exit-receipt" key={receipt.label}>
+          <a
+            className="studio-footer__exit-receipt"
+            href={receipt.href}
+            key={receipt.label}
+            aria-label={`${receipt.action}: ${receipt.title}`}
+          >
             <span className="studio-footer__exit-receipt-photo" aria-hidden="true">
               <b>{receipt.visual}</b>
               <em>{receipt.label}</em>
@@ -136,8 +147,11 @@ export function StudioFooter() {
               <small>{receipt.label}</small>
               <b>{receipt.title}</b>
               <em>{receipt.note}</em>
+              <span className="studio-footer__exit-receipt-action" aria-hidden="true">
+                {receipt.action}
+              </span>
             </span>
-          </span>
+          </a>
         ))}
       </div>
       <FooterNav />

@@ -118,12 +118,34 @@
 
 .store-entry-receipt__pin {
   position: absolute;
-  right: 0.75rem;
-  bottom: 0.62rem;
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
-  line-height: 0.78;
-  letter-spacing: -0.08em;
-  color: rgba(59, 45, 32, 0.08);
+  right: 0.7rem;
+  bottom: 0.72rem;
+  display: inline-grid;
+  place-items: center;
+  max-width: min(9.6rem, calc(100% - 1.4rem));
+  padding: 0.34rem 0.56rem 0.3rem;
+  color: rgba(59, 45, 32, 0.72);
+  font-family: var(--font-hand);
+  font-size: clamp(0.6rem, 1.2vw, 0.72rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 251, 235, 0.92), rgba(239, 220, 180, 0.76)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.46rem 0.92rem rgba(82, 59, 35, 0.12);
+  clip-path: polygon(7% 4%, 100% 0, 96% 88%, 13% 100%, 0 74%);
+  transform: rotate(1.6deg);
+}
+
+.store-entry-receipt:nth-child(2) .store-entry-receipt__pin {
+  transform: rotate(-1.25deg);
+}
+
+.store-entry-receipt:nth-child(3) .store-entry-receipt__pin {
+  transform: rotate(2.1deg);
 }
 
 .store-entry-receipt__eyebrow {

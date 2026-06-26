@@ -1,0 +1,63 @@
+/* Portfolio gallery direct cue pass.
+   Replaces repeated/generated gallery chip text with direct, source-backed room cues. */
+
+.portfolio-gallery-card__number {
+  min-width: 5.8rem;
+  color: rgba(59, 45, 32, 0.74) !important;
+  font-family: var(--font-hand);
+  font-size: 0.68rem !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.portfolio-gallery-card__number::after {
+  content: none !important;
+}
+
+.portfolio-gallery-card:nth-child(1) .portfolio-gallery-card__number {
+  transform: rotate(1.5deg);
+}
+
+.portfolio-gallery-card:nth-child(2) .portfolio-gallery-card__number {
+  transform: rotate(-1.8deg);
+}
+
+.portfolio-gallery-card:nth-child(3) .portfolio-gallery-card__number {
+  transform: rotate(1.2deg);
+}
+
+.portfolio-gallery-card:nth-child(4) .portfolio-gallery-card__number {
+  transform: rotate(-1.1deg);
+}
+
+.portfolio-gallery-card:nth-child(5) .portfolio-gallery-card__number {
+  transform: rotate(1.7deg);
+}
+
+.portfolio-gallery-card:nth-child(1) .portfolio-gallery-card__number::before {
+  content: "Public piece";
+}
+
+.portfolio-gallery-card:nth-child(2) .portfolio-gallery-card__number::before {
+  content: "Archive note";
+}
+
+.portfolio-gallery-card:nth-child(3) .portfolio-gallery-card__number::before {
+  content: "Systems lane";
+}
+
+.portfolio-gallery-card:nth-child(4) .portfolio-gallery-card__number::before {
+  content: "Image rule";
+}
+
+.portfolio-gallery-card:nth-child(5) .portfolio-gallery-card__number::before {
+  content: "Archive path";
+}
+
+@media (max-width: 760px) {
+  .portfolio-gallery-card__number {
+    min-width: 5.1rem;
+    font-size: 0.62rem !important;
+  }
+}

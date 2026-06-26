@@ -322,3 +322,40 @@ The shared footer exit shelf already guided visitors through Start, Read, and Br
 - METRIC-023
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 14:40 ET — PageIntro trust shelf slip
+
+### Changed
+
+- Updated `app/site-chrome.jsx` so shared PageIntro room shelves render a fourth `Trust` slip using each route's existing status.
+- Updated `app/page-intro-room-shelf-pass.css` so the new fourth slip receives a deliberate paper-piece rotation.
+- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
+
+### Why
+
+The PageIntro shelf styling and current calm-room guidance describe a four-part room rhythm: hero board, featured shelf, source note, and next path. The component was still rendering only three slips, so route intros missed the visible trust/source note in the shared shelf.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-023
+- DESIGN-030
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-023
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-022
+- METRIC-029

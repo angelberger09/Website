@@ -38,19 +38,19 @@ const aboutRoomKey = [
   {
     label: "Enter softly",
     detail: "Start with the public room shape.",
-    mark: "01",
+    mark: "Enter",
     cue: "front room"
   },
   {
     label: "Read the edge",
     detail: "Notice what stays warm, clear, and offstage.",
-    mark: "02",
+    mark: "Edge",
     cue: "soft boundary"
   },
   {
     label: "Choose a door",
     detail: "Continue into notes, archive work, or prepared store paths.",
-    mark: "03",
+    mark: "Doors",
     cue: "next path"
   }
 ];

@@ -20,6 +20,24 @@ const postReaderIntroSlips = [
   }
 ];
 
+const postReaderMarginRail = [
+  {
+    label: "Open sheet",
+    detail: "Start in the public reader room.",
+    mark: "Open"
+  },
+  {
+    label: "Read quietly",
+    detail: "Let the note sit on the paper sheet.",
+    mark: "Read"
+  },
+  {
+    label: "Return softly",
+    detail: "Step back to the Notes shelf when ready.",
+    mark: "Back"
+  }
+];
+
 const postReaderSupportCards = [
   {
     title: "Inside the studio",
@@ -190,6 +208,15 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
               <span className="notes-post-intro-receipt" key={slip.label}>
                 <small>{slip.label}</small>
                 <strong>{slip.value}</strong>
+              </span>
+            ))}
+          </div>
+          <div className="notes-post-margin-rail" aria-label="Reader margin path">
+            {postReaderMarginRail.map((slip) => (
+              <span className="notes-post-margin-slip" key={slip.label}>
+                <small>{slip.mark}</small>
+                <strong>{slip.label}</strong>
+                <em>{slip.detail}</em>
               </span>
             ))}
           </div>

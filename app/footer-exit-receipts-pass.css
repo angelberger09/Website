@@ -37,6 +37,8 @@
   gap: 0.52rem;
   min-height: 5.8rem;
   padding: 0.5rem 0.58rem 0.54rem;
+  color: inherit;
+  text-decoration: none;
   background:
     linear-gradient(160deg, rgba(255, 252, 242, 0.96), rgba(238, 225, 199, 0.76)),
     url('/Website/atmosphere/fine-scratches.svg');
@@ -46,6 +48,10 @@
     0 0.58rem 1rem rgba(69, 50, 28, 0.13),
     0 0.12rem 0 rgba(255, 252, 242, 0.64) inset;
   transform: rotate(var(--footer-receipt-tilt, -0.6deg));
+  transition:
+    filter 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .studio-footer__exit-receipt:nth-child(2) {
@@ -54,6 +60,20 @@
 
 .studio-footer__exit-receipt:nth-child(3) {
   --footer-receipt-tilt: -0.25deg;
+}
+
+.studio-footer__exit-receipt:hover,
+.studio-footer__exit-receipt:focus-visible {
+  transform: translateY(-0.14rem) rotate(var(--footer-receipt-tilt, -0.6deg));
+  box-shadow:
+    0 0.86rem 1.28rem rgba(69, 50, 28, 0.17),
+    0 0.12rem 0 rgba(255, 252, 242, 0.72) inset;
+  filter: saturate(1.04);
+}
+
+.studio-footer__exit-receipt:focus-visible {
+  outline: 2px solid rgba(74, 106, 82, 0.72);
+  outline-offset: 0.16rem;
 }
 
 .studio-footer__exit-receipt::before {
@@ -65,6 +85,21 @@
   height: 0.42rem;
   background: rgba(198, 170, 119, 0.2);
   clip-path: polygon(0 16%, 100% 0, 92% 92%, 8% 100%);
+}
+
+.studio-footer__exit-receipt::after {
+  content: "go";
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.42rem;
+  padding: 0.12rem 0.36rem;
+  color: rgba(57, 42, 25, 0.68);
+  background: rgba(255, 249, 231, 0.66);
+  clip-path: polygon(5% 6%, 98% 0, 92% 91%, 0 100%);
+  font-size: 0.56rem;
+  font-weight: 820;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .studio-footer__exit-receipt-photo {
@@ -172,6 +207,23 @@
   font-size: 0.74rem;
   font-style: normal;
   line-height: 1.25;
+}
+
+.studio-footer__exit-receipt-action {
+  width: fit-content;
+  margin-top: 0.12rem;
+  padding: 0.16rem 0.46rem;
+  color: rgba(52, 42, 30, 0.78);
+  background:
+    linear-gradient(112deg, rgba(239, 226, 195, 0.7), rgba(255, 251, 235, 0.78)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 120px 120px;
+  clip-path: polygon(4% 13%, 100% 0, 94% 88%, 8% 100%);
+  box-shadow: 0 0.18rem 0.36rem rgba(74, 54, 30, 0.1);
+  font-size: 0.62rem;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 760px) {

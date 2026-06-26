@@ -64,10 +64,18 @@ const footerExitReceipts = [
   {
     label: "Browse",
     title: "Archive path",
-    note: "Continue through ready work and future pieces.",
+    note: "Continue through ready work.",
     visual: "next shelf",
     href: "/Website/portfolio/",
     action: "View work"
+  },
+  {
+    label: "Store",
+    title: "Future pieces",
+    note: "Check what opens when links are ready.",
+    visual: "slow shelf",
+    href: "/Website/store/",
+    action: "Check store"
   }
 ];
 

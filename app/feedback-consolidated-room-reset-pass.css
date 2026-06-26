@@ -1,0 +1,560 @@
+/* Consolidated feedback room reset.
+   Large visible implementation pass after reviewing feedback log and active lessons.
+   Goals: calmer structure, stronger paper material, less poster weight, better page rhythm,
+   more useful content surfaces, and safer performance defaults. */
+
+:root {
+  --room-max: 70rem;
+  --room-wide: 78rem;
+  --room-copy: 42rem;
+  --room-gap: clamp(2.25rem, 5vw, 4.75rem);
+  --room-card-gap: clamp(0.8rem, 2vw, 1.25rem);
+  --room-ink-soft: rgba(47, 38, 35, 0.78);
+  --room-muted-soft: rgba(86, 70, 65, 0.72);
+  --room-plum: #6d536f;
+  --room-plum-soft: rgba(109, 83, 111, 0.18);
+  --room-thread: rgba(109, 83, 111, 0.42);
+  --room-paper: rgba(255, 251, 242, 0.94);
+  --room-paper-soft: rgba(255, 247, 235, 0.68);
+  --room-paper-field: rgba(255, 250, 242, 0.54);
+  --room-shadow: 0 1.1rem 2.4rem rgba(47, 38, 35, 0.13);
+  --room-shadow-strong: 0.16rem 0.26rem 0 rgba(47, 38, 35, 0.08), 0 1.4rem 2.9rem rgba(47, 38, 35, 0.17);
+  --room-cut: polygon(1% 1.8%, 18% 0.8%, 43% 1.6%, 67% 0.6%, 98.2% 1.7%, 97.4% 39%, 98.6% 74%, 96.8% 98%, 70% 97.2%, 42% 98.7%, 17% 97.5%, 1.6% 98.4%, 2.4% 58%);
+  --room-note-cut: polygon(1.5% 2.2%, 30% 0.9%, 62% 1.9%, 98% 0.8%, 96.8% 96.4%, 72% 98.6%, 31% 97.2%, 1.2% 99%);
+}
+
+/* 1. Global room rhythm */
+.home-page,
+.site-shell.page-layout,
+.readable-shell.page-layout {
+  gap: var(--room-gap);
+  align-items: center;
+}
+
+.home-page > section,
+.site-shell.page-layout > section,
+.readable-shell.page-layout > section,
+.home-page > nav {
+  width: min(var(--room-wide), calc(100% - clamp(1.2rem, 5vw, 3.5rem)));
+  margin-inline: auto;
+}
+
+.home-page > section + section,
+.site-shell.page-layout > section + section,
+.readable-shell.page-layout > section + section {
+  margin-top: 0;
+}
+
+section[id] {
+  scroll-margin-top: 7rem;
+}
+
+/* 2. Background: paper field, not low-contrast fog */
+body::before {
+  opacity: 0.82;
+}
+
+.atmosphere-layer {
+  opacity: 0.42;
+}
+
+.atmosphere-layer__gloss,
+.atmosphere-layer__scratches {
+  opacity: 0.14;
+}
+
+/* 3. Header: more like a paper strip, less like soft UI */
+.floating-header {
+  width: min(68rem, calc(100% - 1rem));
+  padding: clamp(0.42rem, 1vw, 0.6rem) clamp(0.58rem, 2vw, 1rem);
+  border-radius: 0 0 1.05rem 1.05rem;
+  clip-path: polygon(0.8% 0, 18% 2%, 42% 0.8%, 68% 1.8%, 99% 0, 98.2% 84%, 82% 97%, 52% 91%, 21% 99%, 1.6% 87%);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(241, 227, 205, 0.9)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0 0.24rem 0 rgba(47, 38, 35, 0.09), 0 1rem 2rem rgba(47, 38, 35, 0.2);
+}
+
+.identity-link,
+.folder-menu a,
+.header-nav-link {
+  border-radius: 0 !important;
+  clip-path: polygon(2% 10%, 98% 1%, 96% 92%, 5% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(234, 219, 198, 0.62)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.07);
+}
+
+.header-nav-link[aria-current="page"] {
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.98), rgba(216, 197, 236, 0.36)),
+    var(--grain-image);
+  color: var(--ink);
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.1), 0 0.6rem 1rem rgba(47, 38, 35, 0.11);
+}
+
+/* 4. Shared page hero: quiet room heading */
+.page-hero {
+  min-height: 0;
+  align-items: center;
+  grid-template-columns: minmax(0, 0.78fr) minmax(13rem, 0.38fr);
+  border-radius: 0;
+  clip-path: var(--room-cut);
+  background:
+    radial-gradient(circle at 14% 22%, rgba(255, 176, 143, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 74%, rgba(109, 83, 111, 0.16), transparent 36%),
+    linear-gradient(140deg, rgba(255, 253, 247, 0.94), rgba(255, 245, 228, 0.7) 62%, rgba(216, 197, 236, 0.14)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+}
+
+.page-hero__subtitle {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 5vw, 4.25rem) !important;
+  line-height: 1 !important;
+}
+
+.page-hero__text p {
+  max-width: var(--room-copy);
+  color: var(--room-muted-soft);
+}
+
+.page-hero__stack {
+  transform: scale(0.92);
+  transform-origin: center right;
+}
+
+/* 5. Homepage: front-room contact sheet instead of giant poster. */
+.scroll-title {
+  min-height: auto;
+  padding-top: clamp(7rem, 13vh, 9rem);
+  padding-bottom: clamp(2rem, 6vh, 4rem);
+}
+
+.title-lockup {
+  width: min(var(--room-wide), 100%);
+  min-height: 0;
+  grid-template-columns: minmax(0, 0.74fr) minmax(13rem, 0.38fr);
+  gap: clamp(1rem, 4vw, 2.2rem);
+  padding: clamp(1.2rem, 3vw, 2.1rem);
+  clip-path: var(--room-cut);
+}
+
+.title-line {
+  font-size: clamp(3rem, 7vw, 5.9rem) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.045em;
+}
+
+.title-line--to {
+  font-size: clamp(1.8rem, 4vw, 3rem) !important;
+}
+
+.title-note {
+  max-width: 34rem;
+  color: var(--room-muted-soft);
+}
+
+.home-hero-route-strip__links,
+.home-door-board {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.home-hero-route-slip,
+.home-door-card,
+.home-room-slip,
+.home-note-piece,
+.home-pillar-note,
+.home-check-note,
+.detail-card,
+.link-card,
+.source-link,
+.reader-card,
+.pathway-link,
+.continuity-paper-step {
+  border-radius: 0 !important;
+  clip-path: var(--room-note-cut);
+  box-shadow: var(--room-shadow);
+}
+
+.home-hero-route-slip:hover,
+.home-door-card:hover,
+.source-link:hover,
+.link-card:hover,
+.pathway-link:hover,
+.continuity-paper-step:hover {
+  transform: translateY(-0.12rem) !important;
+}
+
+.home-path-map,
+.home-paper-field,
+.home-room-status,
+.home-door-section,
+.home-studio-checks,
+.home-paper-field--pillars {
+  padding: clamp(1.15rem, 3vw, 2rem);
+  clip-path: var(--room-cut);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.72), rgba(255, 247, 235, 0.42) 65%, rgba(109, 83, 111, 0.08)),
+    var(--grain-image);
+  background-size: cover, 24rem 24rem;
+  box-shadow: 0 0.8rem 2rem rgba(47, 38, 35, 0.1);
+}
+
+.home-docket-step {
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(216, 197, 236, 0.24)),
+    var(--grain-image) !important;
+  color: var(--room-plum) !important;
+}
+
+/* 6. Common section hierarchy: one readable heading, then shelf. */
+.section-intro,
+.split-feature,
+.home-studio-checks__intro,
+.notes-gallery-board__intro,
+.notes-source-board__intro,
+.notes-state-board__intro,
+.notes-path-photo-board__intro,
+.portfolio-gallery-board__intro,
+.store-gallery-board__intro,
+.store-section-intro,
+.about-contact-sheet-board__intro {
+  max-width: var(--room-copy);
+  margin-inline: 0 auto;
+}
+
+.section-intro h1,
+.split-feature h1,
+.home-studio-checks__intro h1,
+.notes-gallery-board__intro h1,
+.notes-source-board__intro h1,
+.notes-state-board__intro h1,
+.notes-path-photo-board__intro h1,
+.portfolio-gallery-board__intro h1,
+.store-gallery-board__intro h1,
+.store-section-intro h1,
+.about-contact-sheet-board__intro h1 {
+  max-width: 15ch;
+  font-size: clamp(1.9rem, 4vw, 3.25rem) !important;
+  line-height: 1.06 !important;
+}
+
+/* 7. Notes: make the reading room calmer and more scannable. */
+.notes-reader-board,
+.notes-gallery-board,
+.notes-source-board,
+.notes-state-board,
+.notes-path-photo-board {
+  padding: clamp(1.15rem, 3vw, 2rem);
+  clip-path: var(--room-cut);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.5) 65%, rgba(109, 83, 111, 0.1)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: var(--room-shadow);
+}
+
+.notes-reader-board {
+  grid-template-columns: minmax(16rem, 0.34fr) minmax(0, 0.66fr);
+}
+
+.notes-reader-board__copy {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.notes-reader-board__copy > h1,
+.notes-gallery-board__intro h1,
+.notes-source-board__intro > h1,
+.notes-state-board__intro > h1,
+.notes-path-photo-board__intro h1 {
+  clip-path: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.notes-paper-stack {
+  gap: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.notes-note-card {
+  min-width: 0;
+  transform: none !important;
+}
+
+.notes-note-card::before {
+  opacity: 0.38;
+}
+
+.notes-note-card strong {
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem) !important;
+  line-height: 1.08 !important;
+}
+
+.notes-note-card--featured strong {
+  font-size: clamp(1.9rem, 4vw, 2.8rem) !important;
+}
+
+.notes-scroll-strip,
+.notes-gallery-scroll,
+.notes-source-ledger,
+.notes-state-list,
+.notes-path-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: visible;
+  gap: var(--room-card-gap);
+}
+
+.notes-support-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--room-card-gap);
+}
+
+.notes-gallery-card,
+.notes-source-card,
+.notes-state-note,
+.notes-support-note,
+.notes-path-photo-card,
+.notes-fallback-rule {
+  transform: none !important;
+}
+
+.notes-gallery-card__number,
+.notes-support-note__pin {
+  opacity: 0.58;
+}
+
+/* 8. About / Portfolio / Store: consistent shelves and calmer rows. */
+.about-opening-board,
+.about-paper-board,
+.about-contact-sheet-board,
+.portfolio-archive-board,
+.portfolio-gallery-board,
+.portfolio-paper-board,
+.portfolio-readiness-board,
+.portfolio-feed-board,
+.portfolio-state-board,
+.portfolio-process-board,
+.store-lane-collage,
+.store-gallery-board,
+.store-availability-board,
+.store-promise-board,
+.store-checklist-collage,
+.store-feed-ledger-board {
+  width: min(var(--room-wide), 100%);
+  padding: clamp(1.15rem, 3vw, 2rem);
+  clip-path: var(--room-cut);
+  background:
+    radial-gradient(circle at 14% 24%, rgba(255, 176, 143, 0.1), transparent 30%),
+    radial-gradient(circle at 86% 72%, rgba(109, 83, 111, 0.12), transparent 34%),
+    linear-gradient(140deg, rgba(255, 252, 246, 0.78), rgba(255, 247, 235, 0.48) 64%, rgba(216, 197, 236, 0.1)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  box-shadow: var(--room-shadow);
+}
+
+.about-room-piece,
+.about-principle-note,
+.about-pathway-note,
+.portfolio-piece-card,
+.portfolio-gallery-card,
+.portfolio-readiness-card,
+.portfolio-feed-card,
+.portfolio-state-note,
+.portfolio-process-step,
+.store-lane-piece,
+.store-gallery-card,
+.store-state-snippet,
+.store-promise-note,
+.store-checklist-note,
+.store-feed-ledger-card {
+  transform: none !important;
+  border-radius: 0 !important;
+  clip-path: var(--room-note-cut);
+  box-shadow: var(--room-shadow);
+}
+
+.portfolio-gallery-scroll,
+.store-gallery-scroll,
+.about-contact-sheet,
+.about-pathway-grid,
+.store-availability-collage,
+.store-checklist-grid,
+.store-promise-grid,
+.portfolio-piece-collage,
+.portfolio-readiness-grid,
+.portfolio-state-grid {
+  gap: var(--room-card-gap);
+}
+
+/* 9. Individual note reader: keep the article quieter than the index. */
+.notes-post-desk {
+  grid-template-columns: 1fr !important;
+  width: min(var(--room-max), 100%);
+}
+
+.notes-post-desk__intro,
+.notes-post-sheet,
+.notes-post-support-board,
+.notes-post-path-board,
+.notes-post-source-slip {
+  width: min(var(--room-copy), 100%);
+  justify-self: center;
+}
+
+.notes-post-sheet {
+  width: min(54rem, 100%);
+  padding: clamp(1.25rem, 3vw, 2.3rem);
+}
+
+.notes-post-sheet h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem) !important;
+  max-width: 18ch;
+}
+
+.notes-post-markdown {
+  max-width: 43rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* 10. Performance: reduce heavy visual noise while preserving material. */
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero,
+  .title-lockup,
+  .studio-pages,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-opening-board,
+  .about-paper-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .store-lane-collage,
+  .store-gallery-board,
+  .store-availability-board,
+  .continuity-paper-trail {
+    animation-name: feedback-room-settle;
+    animation-duration: 320ms;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes feedback-room-settle {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .page-hero,
+  .title-lockup,
+  .studio-pages,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-support-strip,
+  .notes-path-photo-board,
+  .about-opening-board,
+  .about-paper-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .store-lane-collage,
+  .store-gallery-board,
+  .store-availability-board,
+  .continuity-paper-trail {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* 11. Responsive shelves: avoid overflowing paper grids. */
+@media (max-width: 1040px) {
+  .title-lockup,
+  .page-hero,
+  .notes-reader-board {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__stack,
+  .title-lockup > .hero-polaroid {
+    justify-self: start;
+    transform-origin: left center;
+  }
+
+  .home-hero-route-strip__links,
+  .home-door-board,
+  .notes-scroll-strip,
+  .notes-gallery-scroll,
+  .notes-source-ledger,
+  .notes-state-list,
+  .notes-path-photo-strip,
+  .notes-support-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notes-reader-board__copy {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page > section,
+  .site-shell.page-layout > section,
+  .readable-shell.page-layout > section,
+  .home-page > nav {
+    width: min(100% - 1rem, var(--room-wide));
+  }
+
+  .floating-header {
+    width: calc(100% - 0.5rem);
+  }
+
+  .title-line {
+    font-size: clamp(2.65rem, 13vw, 4.2rem) !important;
+  }
+
+  .home-hero-route-strip__links,
+  .home-door-board,
+  .home-note-board,
+  .home-room-board,
+  .home-pillar-strip,
+  .home-check-rail,
+  .notes-scroll-strip,
+  .notes-gallery-scroll,
+  .notes-source-ledger,
+  .notes-state-list,
+  .notes-path-photo-strip,
+  .notes-support-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero__stack,
+  .title-lockup > .hero-polaroid {
+    justify-self: center;
+  }
+}

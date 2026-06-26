@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-label="Wide torn cream paper with tape on black background">
+  <defs>
+    <filter id="paperNoise" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.62" numOctaves="5" seed="31" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.92 0 0 0 0 0.88 0 0 0 0 0.78 0 0 0 .34 0" result="paperTone"/>
+      <feComposite in="paperTone" in2="SourceGraphic" operator="in" result="texture"/>
+      <feBlend in="SourceGraphic" in2="texture" mode="multiply"/>
+    </filter>
+    <filter id="liftShadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.62"/>
+      <feDropShadow dx="-10" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+    <linearGradient id="paperLight" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf4"/>
+      <stop offset="0.58" stop-color="#f6efde"/>
+      <stop offset="1" stop-color="#e1d4b9"/>
+    </linearGradient>
+    <linearGradient id="tapeTone" x1="0" x2="1">
+      <stop offset="0" stop-color="#d8c49d" stop-opacity="0.74"/>
+      <stop offset="0.46" stop-color="#efe0bc" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#b59f76" stop-opacity="0.70"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="#000"/>
+  <g filter="url(#liftShadow)">
+    <path d="M118 206 C232 196 328 209 456 199 C582 189 706 201 835 196 C976 191 1088 205 1213 197 C1330 190 1410 202 1481 199 L1487 803 C1391 808 1288 794 1181 806 C1062 820 962 805 840 821 C718 837 630 808 510 829 C386 851 282 818 123 829 C111 725 119 612 113 499 C107 388 114 294 118 206 Z" fill="url(#paperLight)" filter="url(#paperNoise)"/>
+    <path d="M120 804 C184 786 245 834 309 799 C372 781 439 830 505 807 C580 782 636 848 711 813 C771 787 843 836 906 807 C978 779 1032 840 1106 810 C1180 780 1239 821 1310 804 C1377 787 1430 817 1485 803 L1487 835 C1368 849 1261 833 1140 850 C1000 869 887 837 746 861 C600 882 502 844 351 864 C244 878 165 845 121 860 Z" fill="#f3ead7" opacity="0.9"/>
+    <path d="M210 214 C446 242 699 206 959 222 C1120 232 1320 208 1458 226" fill="none" stroke="#fff" stroke-opacity="0.24" stroke-width="5"/>
+    <path d="M212 348 C388 338 584 360 752 342 C943 321 1136 356 1376 338" fill="none" stroke="#6a574a" stroke-opacity="0.08" stroke-width="4"/>
+    <path d="M282 648 C444 630 622 664 782 640 C927 617 1075 657 1282 628" fill="none" stroke="#6a574a" stroke-opacity="0.08" stroke-width="3"/>
+    <rect x="560" y="118" width="512" height="132" rx="3" fill="url(#tapeTone)" filter="url(#paperNoise)" transform="rotate(-0.9 816 184)"/>
+    <path d="M560 121 C646 111 731 123 815 118 C902 113 988 124 1072 116 L1072 249 C980 239 889 252 798 244 C719 237 641 249 560 240 Z" fill="#fff5d2" opacity="0.16"/>
+  </g>
+</svg>

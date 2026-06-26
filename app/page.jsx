@@ -100,9 +100,11 @@ export default function HomePage() {
 
       <nav className="home-path-map" aria-label="Homepage reading path">
         <span className="home-path-map__label">Read this page</span>
+        <p className="home-path-map__note">A simple chapter trail keeps the long front page calm, ordered, and easy to scan.</p>
         <div className="home-path-map__trail" role="list">
           {homepagePathSteps.map((step) => (
             <a className="home-path-map__step" href={step.href} key={step.href} role="listitem">
+              <span className="home-path-map__thread" aria-hidden="true" />
               <span className="home-path-map__number">{step.label}</span>
               <span className="home-path-map__copy">
                 <strong>{step.title}</strong>

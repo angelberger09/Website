@@ -44,6 +44,7 @@ import './store-promise-photo-pass.css';
 import './store-checklist-collage-pass.css';
 import './store-path-photo-pass.css';
 import './store-path-direct-labels-pass.css';
+import './store-direct-paper-cues-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-direct-labels-pass.css';

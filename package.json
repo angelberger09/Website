@@ -6,11 +6,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && rm -rf dist && cp -R out dist",
-    "start": "next start"
+    "start": "next start",
+    "audit:website": "node scripts/audit-website.mjs",
+    "audit:website:live": "node scripts/audit-website.mjs --base https://angelberger09.github.io/Website/",
+    "audit:website:local": "node scripts/audit-website.mjs --base http://localhost:3000/Website/"
   },
   "dependencies": {
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
   }
 }

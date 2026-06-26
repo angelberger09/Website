@@ -37,6 +37,12 @@ const pageIntroVisuals = {
   }
 };
 
+const footerRoomLoop = siteNavPages.map((page) => ({
+  href: page.href,
+  title: page.title,
+  eyebrow: page.eyebrow
+}));
+
 function getPageIntroVisual(title, eyebrow) {
   return pageIntroVisuals[title] || {
     label: eyebrow,
@@ -91,6 +97,18 @@ export function StudioFooter() {
         </span>
       </div>
       <FooterNav />
+      <div className="studio-footer__room-loop" aria-label="Studio room loop">
+        <span className="studio-footer__room-loop-label">Room loop</span>
+        <div className="studio-footer__room-loop-track">
+          {footerRoomLoop.map((room) => (
+            <a className="studio-footer__room-loop-slip" href={room.href} key={room.href}>
+              <span aria-hidden="true" />
+              <b>{room.title}</b>
+              <small>{room.eyebrow}</small>
+            </a>
+          ))}
+        </div>
+      </div>
     </footer>
   );
 }

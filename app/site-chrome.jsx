@@ -98,30 +98,10 @@ export function StudioFooter() {
 export function PageIntro({ eyebrow, title, children }) {
   const visual = getPageIntroVisual(title, eyebrow);
 
-  const roomTags = [
-    { label: "Room", value: visual.label },
-    { label: "State", value: visual.status },
-    { label: "Cue", value: visual.cue || visual.path }
-  ];
-
-  const roomRhythm = [
-    { label: "Enter", value: visual.path },
-    { label: "Focus", value: visual.title },
-    { label: "Shelf", value: visual.status },
-    { label: "Continue", value: visual.cue || visual.label }
-  ];
-
   const roomShelf = [
-    { label: "Hero board", value: visual.title, visual: "hero" },
-    { label: "Featured shelf", value: visual.status, visual: "shelf" },
-    { label: "Source note", value: visual.cue || visual.note, visual: "note" },
-    { label: "Next path", value: visual.path, visual: "path" }
-  ];
-
-  const roomCompass = [
-    { label: "Open", value: visual.label },
-    { label: "Look for", value: visual.title },
-    { label: "Leave by", value: visual.path }
+    { label: "Open", value: visual.label, visual: "door" },
+    { label: "Read", value: visual.title, visual: "page" },
+    { label: "Continue", value: visual.path, visual: "path" }
   ];
 
   return (
@@ -131,24 +111,8 @@ export function PageIntro({ eyebrow, title, children }) {
         <h1 id="page-title" className="page-hero__subtitle">
           {title}
         </h1>
-        <div className="page-hero__room-tags" aria-label="Room status">
-          {roomTags.map((tag) => (
-            <span key={tag.label}>
-              <small>{tag.label}</small>
-              {tag.value}
-            </span>
-          ))}
-        </div>
         <div className="page-hero__text">{children}</div>
-        <div className="page-hero__room-rhythm" aria-label="Room reading rhythm">
-          {roomRhythm.map((step) => (
-            <span key={`${step.label}-${step.value}`}>
-              <small>{step.label}</small>
-              {step.value}
-            </span>
-          ))}
-        </div>
-        <div className="page-hero__room-shelf" aria-label="Room structure">
+        <div className="page-hero__room-shelf" aria-label="Room path">
           {roomShelf.map((step) => (
             <span key={`${step.label}-${step.value}`}>
               <b className="page-hero__room-shelf-photo" aria-hidden="true">{step.visual}</b>
@@ -180,14 +144,6 @@ export function PageIntro({ eyebrow, title, children }) {
           <span>{visual.label} room key</span>
           <strong>{visual.status}</strong>
           <small>{visual.note}</small>
-        </aside>
-        <aside className="page-hero__room-compass" aria-label={`${visual.label} room compass`}>
-          {roomCompass.map((step) => (
-            <span key={`${step.label}-${step.value}`}>
-              <small>{step.label}</small>
-              {step.value}
-            </span>
-          ))}
         </aside>
       </div>
     </section>

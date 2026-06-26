@@ -1,0 +1,56 @@
+/* Status pill paper slip pass.
+   Recasts remaining global status labels as clipped paper slips so DetailCard
+   metadata follows the shared paper-snippet system instead of rounded UI pills. */
+
+.status-pill {
+  position: relative;
+  z-index: 2;
+  display: inline-grid;
+  width: fit-content;
+  max-width: min(100%, 18rem);
+  border-radius: 0;
+  padding: 0.42rem 0.72rem 0.44rem;
+  color: rgba(54, 40, 24, 0.86);
+  background:
+    linear-gradient(158deg, rgba(255, 252, 242, 0.96), rgba(232, 215, 184, 0.68)),
+    url('/Website/atmosphere/grain-noise.svg'),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, 140px 140px, 220px 220px;
+  box-shadow:
+    0 0.44rem 0.78rem rgba(67, 48, 25, 0.12),
+    0 0.08rem 0 rgba(255, 252, 242, 0.68) inset,
+    inset 0 -0.3rem 0.7rem rgba(123, 91, 47, 0.05);
+  clip-path: polygon(2% 14%, 92% 2%, 100% 28%, 96% 92%, 16% 100%, 0 78%);
+  transform: rotate(-0.45deg);
+}
+
+.status-pill::before {
+  content: "";
+  position: absolute;
+  top: 0.24rem;
+  right: 0.4rem;
+  width: 1.42rem;
+  height: 0.34rem;
+  background: rgba(177, 143, 87, 0.22);
+  clip-path: polygon(0 18%, 100% 0, 90% 86%, 8% 100%);
+  pointer-events: none;
+}
+
+.detail-card .status-pill,
+.reader-card .status-pill,
+.link-card .status-pill {
+  align-self: start;
+  justify-self: start;
+  margin-top: 0.12rem;
+}
+
+.status-pill + .status-pill {
+  transform: rotate(0.35deg);
+}
+
+@media (max-width: 760px) {
+  .status-pill {
+    max-width: 100%;
+    padding: 0.38rem 0.62rem 0.4rem;
+  }
+}

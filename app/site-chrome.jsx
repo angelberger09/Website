@@ -118,6 +118,12 @@ export function PageIntro({ eyebrow, title, children }) {
     { label: "Next path", value: visual.path }
   ];
 
+  const roomCompass = [
+    { label: "Open", value: visual.label },
+    { label: "Look for", value: visual.title },
+    { label: "Leave by", value: visual.path }
+  ];
+
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
@@ -167,6 +173,14 @@ export function PageIntro({ eyebrow, title, children }) {
           <span>{visual.label} room key</span>
           <strong>{visual.status}</strong>
           <small>{visual.note}</small>
+        </aside>
+        <aside className="page-hero__room-compass" aria-label={`${visual.label} room compass`}>
+          {roomCompass.map((step) => (
+            <span key={`${step.label}-${step.value}`}>
+              <small>{step.label}</small>
+              {step.value}
+            </span>
+          ))}
         </aside>
       </div>
     </section>

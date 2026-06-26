@@ -1,0 +1,90 @@
+.studio-footer__room-loop-slip {
+  grid-template-columns: minmax(4.8rem, 0.9fr) 1fr;
+  min-height: 5.8rem;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.studio-footer__room-loop-photo {
+  position: relative;
+  width: auto;
+  min-width: 4.8rem;
+  aspect-ratio: auto;
+  min-height: 4.25rem;
+  display: grid;
+  align-content: end;
+  gap: 0.14rem;
+  padding: 0.55rem 0.5rem 0.48rem;
+  border-radius: 0;
+  color: rgba(56, 41, 27, 0.86);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.96), rgba(216, 195, 152, 0.76)),
+    radial-gradient(circle at 25% 18%, rgba(255, 255, 247, 0.82), transparent 28%),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, auto, 150px 150px;
+  clip-path: polygon(7% 2%, 96% 9%, 100% 88%, 91% 100%, 4% 94%, 0 17%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 234, 0.38),
+    inset 0 -18px 30px rgba(118, 91, 48, 0.08),
+    0 12px 20px rgba(62, 44, 24, 0.18);
+}
+
+.studio-footer__room-loop-photo::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 16%;
+  top: 0.4rem;
+  height: 0.42rem;
+  background: rgba(255, 248, 221, 0.78);
+  clip-path: polygon(0 17%, 100% 0, 94% 100%, 6% 86%);
+  box-shadow: 0 5px 10px rgba(69, 50, 27, 0.12);
+  transform: rotate(-2deg);
+}
+
+.studio-footer__room-loop-photo b,
+.studio-footer__room-loop-photo em {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.studio-footer__room-loop-photo b {
+  max-width: 5.6rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.studio-footer__room-loop-photo em {
+  color: rgba(76, 58, 36, 0.62);
+  font-size: 0.58rem;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.studio-footer__room-loop-copy {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.studio-footer__room-loop-slip:nth-child(2) .studio-footer__room-loop-photo {
+  transform: rotate(1.2deg);
+}
+
+.studio-footer__room-loop-slip:nth-child(3) .studio-footer__room-loop-photo {
+  transform: rotate(-0.8deg);
+}
+
+.studio-footer__room-loop-slip:nth-child(4) .studio-footer__room-loop-photo {
+  transform: rotate(0.7deg);
+}
+
+@media (max-width: 760px) {
+  .studio-footer__room-loop-slip {
+    width: 14.5rem;
+    grid-template-columns: 5.4rem 1fr;
+  }
+}

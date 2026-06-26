@@ -1,0 +1,80 @@
+/* Header paper edge stamps pass.
+   Adds visible torn-edge tabs and a fibrous lower strip to the shared top bar so the whole header reads as placed paper without changing direct navigation text. */
+
+.floating-header {
+  overflow: visible;
+}
+
+.floating-header__edge,
+.floating-header__lower-fiber {
+  position: absolute;
+  display: block;
+  content: "";
+  pointer-events: none;
+}
+
+.floating-header__edge {
+  z-index: 0;
+  top: 0.22rem;
+  width: clamp(2.6rem, 9vw, 5.4rem);
+  height: 1.08rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(240, 218, 190, 0.58)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 11rem 11rem, 18rem 18rem;
+  box-shadow:
+    0 0.22rem 0.42rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  opacity: 0.94;
+}
+
+.floating-header__edge--left {
+  left: clamp(0.66rem, 3vw, 1.8rem);
+  clip-path: polygon(0 18%, 92% 0, 100% 78%, 8% 100%);
+  transform: rotate(-2.4deg);
+}
+
+.floating-header__edge--right {
+  right: clamp(0.66rem, 3vw, 1.8rem);
+  clip-path: polygon(6% 0, 100% 18%, 90% 100%, 0 74%);
+  transform: rotate(2.1deg);
+}
+
+.floating-header__lower-fiber {
+  right: 0.82rem;
+  bottom: -0.2rem;
+  left: 0.82rem;
+  z-index: 0;
+  height: 0.72rem;
+  background:
+    radial-gradient(circle at 7% 46%, rgba(68, 53, 49, 0.22) 0 0.045rem, transparent 0.055rem),
+    radial-gradient(circle at 23% 62%, rgba(87, 108, 75, 0.2) 0 0.05rem, transparent 0.06rem),
+    radial-gradient(circle at 46% 42%, rgba(68, 53, 49, 0.18) 0 0.04rem, transparent 0.052rem),
+    radial-gradient(circle at 78% 58%, rgba(87, 108, 75, 0.22) 0 0.05rem, transparent 0.064rem),
+    linear-gradient(90deg, transparent, rgba(68, 53, 49, 0.18) 9%, rgba(255, 252, 246, 0.54) 52%, rgba(68, 53, 49, 0.16) 90%, transparent);
+  clip-path: polygon(0 31%, 10% 48%, 22% 36%, 36% 56%, 51% 34%, 66% 53%, 81% 39%, 100% 57%, 100% 76%, 82% 58%, 67% 73%, 51% 51%, 36% 75%, 22% 55%, 9% 69%, 0 52%);
+  opacity: 0.68;
+}
+
+.identity-link,
+.folder-menu {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .floating-header__edge {
+    top: 0.18rem;
+    width: 2.4rem;
+    height: 0.86rem;
+    opacity: 0.74;
+  }
+
+  .floating-header__lower-fiber {
+    right: 0.54rem;
+    left: 0.54rem;
+    bottom: -0.12rem;
+    opacity: 0.52;
+  }
+}

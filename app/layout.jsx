@@ -38,6 +38,7 @@ import './store-path-photo-pass.css';
 import './store-path-direct-labels-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
+import './notes-direct-labels-pass.css';
 import './notes-reader-photo-strip-pass.css';
 import './notes-path-photo-board-pass.css';
 import './notes-support-photo-slips-pass.css';

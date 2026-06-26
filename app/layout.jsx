@@ -34,6 +34,7 @@ import './portfolio-readiness-photo-pass.css';
 import './portfolio-room-key-pass.css';
 import './portfolio-section-spine-labels-pass.css';
 import './portfolio-lane-direct-labels-pass.css';
+import './portfolio-state-path-shelf-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-preview-collage-pass.css';

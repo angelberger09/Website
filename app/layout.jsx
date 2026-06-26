@@ -61,6 +61,7 @@ import './notes-path-direct-cues-pass.css';
 import './notes-support-photo-slips-pass.css';
 import './notes-source-receipts-pass.css';
 import './notes-source-path-thread-pass.css';
+import './notes-source-room-cues-pass.css';
 import './notes-section-spine-labels-pass.css';
 import './notes-room-key-focus-pass.css';
 import './notes-post-source-slip-pass.css';

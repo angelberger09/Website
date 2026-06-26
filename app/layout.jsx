@@ -138,6 +138,7 @@ import './home-room-sequence-stamps-pass.css';
 import './home-path-map-room-cards-pass.css';
 import './footer-calm-exit-shelf-pass.css';
 import './footer-exit-receipts-pass.css';
+import './footer-four-room-exit-pass.css';
 import './footer-current-room-stamp-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 

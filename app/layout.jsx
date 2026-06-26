@@ -73,6 +73,7 @@ import './header-paper-thread-pass.css';
 import './header-paper-edge-stamps-pass.css';
 import './footer-studio-mark-photo-pass.css';
 import './page-intro-foreground-card-pass.css';
+import './home-left-docket-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

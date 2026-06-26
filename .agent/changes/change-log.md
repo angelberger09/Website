@@ -395,3 +395,41 @@ The shared footer trail already knew the active page, but the active route still
 - METRIC-021
 - METRIC-023
 - METRIC-029
+
+## 2026-06-26 15:20 ET — Header identity paper seal
+
+### Changed
+
+- Added `app/header-identity-paper-seal-pass.css`.
+- Loaded the pass from `app/layout.jsx` after the existing header paper edge stamps.
+- Added a dedicated change note and components-matrix update for the shared header identity refinement.
+
+### Why
+
+The shared header already had paper-strip and direct-nav tab treatments, but the `Angel Berger` identity mark still read comparatively text-first. Current header feedback asks the whole top strip to read as layered paper at screenshot scale, so the identity side now becomes a clipped paper studio label with an honest abstract photo/seal face while preserving the same public identity text and accessible direct navigation.
+
+### Related items
+
+- COMP-001
+- COMP-002
+- COMP-005
+- DESIGN-004
+- DESIGN-015
+- DESIGN-019
+- DESIGN-020
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- LESSON-002
+- LESSON-015
+- LESSON-019
+- LESSON-020
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- METRIC-014
+- METRIC-018
+- METRIC-019
+- METRIC-020
+- METRIC-021
+- METRIC-023

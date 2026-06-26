@@ -84,15 +84,28 @@
   z-index: 2;
   display: inline-grid;
   place-items: center;
-  min-width: 2rem;
-  padding: 0.3rem 0.42rem;
-  color: rgba(59, 45, 32, 0.66);
-  font-family: var(--font-hand);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  background: rgba(255, 248, 225, 0.82);
+  min-width: 4.8rem;
+  padding: 0.34rem 0.52rem;
+  color: transparent;
+  font-size: 0;
+  letter-spacing: 0;
+  background: rgba(255, 248, 225, 0.88);
   box-shadow: 0 0.42rem 0.8rem rgba(82, 59, 35, 0.08);
   clip-path: polygon(6% 6%, 98% 0, 100% 88%, 14% 100%, 0 76%);
+}
+
+.portfolio-gallery-card__number::after {
+  content: "Archive view";
+  color: rgba(59, 45, 32, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.portfolio-gallery-card--note .portfolio-gallery-card__number::after {
+  content: "Paper note";
 }
 
 .portfolio-gallery-card__image {

@@ -62,6 +62,9 @@ export function AtmosphereLayer() {
 export function SiteHeader() {
   return (
     <header className="floating-header" aria-label="Site header">
+      <span className="floating-header__edge floating-header__edge--left" aria-hidden="true" />
+      <span className="floating-header__edge floating-header__edge--right" aria-hidden="true" />
+      <span className="floating-header__lower-fiber" aria-hidden="true" />
       <a className="identity-link" href="/Website/" aria-label="Soft Strange Studio home">
         Angel Berger
       </a>

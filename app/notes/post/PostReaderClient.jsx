@@ -9,21 +9,25 @@ const postReaderSupportCards = [
   {
     title: "Inside the studio",
     eyebrow: "Context",
+    visualLabel: "room path",
     description: "The note comes from the public writing shelf, but the reading surface keeps the same soft studio context as the rest of the rooms."
   },
   {
     title: "Published only",
     eyebrow: "Boundary",
+    visualLabel: "public shelf",
     description: "The reader checks the public note profile and does not present drafts or unavailable writing as finished public work."
   },
   {
     title: "Clear way back",
     eyebrow: "Path",
+    visualLabel: "return slip",
     description: "Missing, loading, and quiet-error states all point visitors back toward the notes index instead of leaving them at a dead end."
   },
   {
     title: "Paper reader sheet",
     eyebrow: "Material",
+    visualLabel: "reader sheet",
     description: "The post surface should read like a calm paper sheet in the studio, not a file viewer or technical endpoint."
   }
 ];
@@ -242,6 +246,9 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
 
         {postReaderSupportCards.map((card) => (
           <article className="notes-support-note notes-post-support-note" key={card.title}>
+            <span className="notes-support-note__photo" aria-hidden="true">
+              <span>{card.visualLabel}</span>
+            </span>
             <span className="notes-support-note__pin">{card.eyebrow}</span>
             <h2>{card.title}</h2>
             <p>{card.description}</p>

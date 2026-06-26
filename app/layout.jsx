@@ -77,6 +77,7 @@ import './page-intro-foreground-card-pass.css';
 import './home-left-docket-pass.css';
 import './home-editorial-chapters-pass.css';
 import './home-direct-path-labels-pass.css';
+import './home-reading-path-rail-pass.css';
 import './shared-paper-depth-pass.css';
 import './page-intro-paper-desk-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';

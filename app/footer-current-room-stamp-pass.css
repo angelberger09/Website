@@ -1,0 +1,102 @@
+/* Footer current-room stamp pass.
+   Strengthens the active footer route as a visible clipped paper stamp so the shared footer trail reads as one navigable room path, not a row of equal scraps. */
+
+.studio-footer__trail-link--active,
+.studio-footer__trail a[aria-current="page"] {
+  isolation: isolate;
+  transform: rotate(-0.62deg) translateY(-0.18rem);
+}
+
+.studio-footer__trail-link--active::before,
+.studio-footer__trail a[aria-current="page"]::before {
+  top: 0.34rem;
+  right: auto;
+  left: 3.15rem;
+  z-index: 2;
+  width: clamp(4.7rem, 12vw, 6.7rem);
+  height: auto;
+  min-height: 1.02rem;
+  padding: 0.24rem 0.46rem 0.2rem;
+  content: "current room";
+  clip-path: polygon(2% 14%, 26% 2%, 72% 8%, 98% 0, 96% 86%, 70% 98%, 31% 90%, 0 96%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 225, 204, 0.88)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.11),
+    0 0.34rem 0.66rem rgba(47, 38, 35, 0.12);
+  color: rgba(58, 45, 42, 0.9);
+  font-size: 0.48rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(1.4deg);
+}
+
+.studio-footer__trail-link--active::after,
+.studio-footer__trail a[aria-current="page"]::after {
+  right: 0.72rem;
+  bottom: 0.48rem;
+  left: 0.72rem;
+  z-index: -1;
+  height: 0.22rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(47, 38, 35, 0.22) 0 0.32rem, transparent 0.32rem 0.58rem),
+    linear-gradient(90deg, transparent, rgba(255, 176, 143, 0.5), transparent);
+  opacity: 0.76;
+}
+
+.studio-footer__trail-link--active .studio-footer__trail-photo,
+.studio-footer__trail a[aria-current="page"] .studio-footer__trail-photo {
+  transform: rotate(-1.5deg) scale(1.05);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.24),
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.12),
+    0 0.42rem 0.76rem rgba(47, 38, 35, 0.15);
+}
+
+.studio-footer__trail-link--active .studio-footer__trail-copy,
+.studio-footer__trail a[aria-current="page"] .studio-footer__trail-copy {
+  display: grid;
+  gap: 0.32rem;
+  padding-top: 1.05rem;
+}
+
+.studio-footer__trail-link--active .studio-footer__trail-state,
+.studio-footer__trail a[aria-current="page"] .studio-footer__trail-state {
+  display: inline-block;
+  width: fit-content;
+  max-width: 13rem;
+  padding: 0.18rem 0.38rem;
+  clip-path: polygon(4% 6%, 96% 0, 100% 82%, 9% 100%);
+  background: rgba(255, 252, 246, 0.68);
+  color: rgba(68, 53, 49, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  text-transform: none;
+}
+
+@media (max-width: 760px) {
+  .studio-footer__trail-link--active,
+  .studio-footer__trail a[aria-current="page"] {
+    transform: rotate(-0.42deg) translateY(-0.08rem);
+  }
+
+  .studio-footer__trail-link--active::before,
+  .studio-footer__trail a[aria-current="page"]::before {
+    left: 2.85rem;
+    width: 5.15rem;
+    font-size: 0.43rem;
+  }
+
+  .studio-footer__trail-link--active .studio-footer__trail-copy,
+  .studio-footer__trail a[aria-current="page"] .studio-footer__trail-copy {
+    padding-top: 0.95rem;
+  }
+}

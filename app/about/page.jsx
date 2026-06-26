@@ -17,19 +17,19 @@ const aboutContactRail = [
   {
     label: "Start sideways",
     detail: "Four public frames",
-    mark: "01",
+    mark: "First",
     frame: "first frame"
   },
   {
     label: "Stay readable",
     detail: "Soft room notes",
-    mark: "02",
+    mark: "Copy",
     frame: "clear copy"
   },
   {
     label: "Follow the room",
     detail: "Notes, work, store",
-    mark: "03",
+    mark: "Doors",
     frame: "next doors"
   }
 ];

@@ -359,3 +359,39 @@ The PageIntro shelf styling and current calm-room guidance describe a four-part 
 - METRIC-021
 - METRIC-022
 - METRIC-029
+
+## 2026-06-26 15:09 ET — Footer current-room stamp
+
+### Changed
+
+- Added `app/footer-current-room-stamp-pass.css`.
+- Loaded the pass from `app/layout.jsx` after the existing footer exit receipt pass.
+- Added a dedicated matrix and change note for the shared footer active-route refinement.
+
+### Why
+
+The shared footer trail already knew the active page, but the active route still read too close to the other paper scraps. Current direct navigation and filled-room continuity guidance asks the shared exit path to make the current room visibly obvious without adding fake content or extra route labels.
+
+### Related items
+
+- COMP-002
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-029

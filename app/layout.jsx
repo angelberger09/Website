@@ -134,6 +134,7 @@ import './home-path-ledger-focus-pass.css';
 import './home-section-thread-pass.css';
 import './footer-calm-exit-shelf-pass.css';
 import './footer-exit-receipts-pass.css';
+import './footer-current-room-stamp-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

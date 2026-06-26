@@ -377,3 +377,38 @@ The homepage reading path already made the long front page more legible, but its
 - METRIC-021
 - METRIC-028
 - METRIC-029
+
+## 2026-06-26 09:10 ET — Notes section spine labels
+
+### Changed
+
+- Added `app/notes-section-spine-labels-pass.css`.
+- Loaded the pass from `app/layout.jsx`.
+- Updated `.agent/matrices/pages.matrix.md` and added a dedicated change note.
+
+### Why
+
+The Notes index and Blog compatibility reader already had paper/photo note cards, source receipts, support slips, and a local next-path board, but the major sections still read as separate boards rather than one guided writing-room sequence. Current calm-room, flattened-hierarchy, direct-label, and paper-snippet guidance supports adding visible section-spine labels without changing Blog feed data or inventing new notes.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-015
+- DESIGN-019
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-028
+- METRIC-029

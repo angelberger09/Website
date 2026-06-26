@@ -4,7 +4,7 @@
 
 - Added `app/home-section-thread-pass.css`.
 - Loaded the new homepage thread pass from `app/layout.jsx`.
-- Updated `.agent/matrices/pages.matrix.md` with a short addendum for PAGE-001.
+- Added `.agent/matrices/homepage-section-thread.matrix.md` for the PAGE-001 implementation trace.
 
 ## Why
 

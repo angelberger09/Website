@@ -84,6 +84,7 @@ import './shared-paper-depth-pass.css';
 import './page-intro-paper-desk-pass.css';
 import './calm-structured-rooms-pass.css';
 import './room-heading-ribbons-pass.css';
+import './page-intro-room-rhythm-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

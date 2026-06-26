@@ -14,6 +14,12 @@ export function NextStepBand({ eyebrow, title, description, steps = [] }) {
   return (
     <section className="continuity-paper-trail" aria-labelledby="continuity-title">
       <div className="continuity-paper-trail__copy">
+        <div className="continuity-paper-trail__map" aria-hidden="true">
+          <span className="continuity-paper-trail__map-photo">
+            <span>Room trail</span>
+          </span>
+          <span className="continuity-paper-trail__map-slip">Choose softly</span>
+        </div>
         <p className="eyebrow">{eyebrow}</p>
         <h1 id="continuity-title">{title}</h1>
         <p>{description}</p>

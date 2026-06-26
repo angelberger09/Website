@@ -111,6 +111,13 @@ export function PageIntro({ eyebrow, title, children }) {
     { label: "Continue", value: visual.cue || visual.label }
   ];
 
+  const roomShelf = [
+    { label: "Hero board", value: visual.title },
+    { label: "Featured shelf", value: visual.status },
+    { label: "Source note", value: visual.cue || visual.note },
+    { label: "Next path", value: visual.path }
+  ];
+
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="page-hero__copy">
@@ -129,6 +136,14 @@ export function PageIntro({ eyebrow, title, children }) {
         <div className="page-hero__text">{children}</div>
         <div className="page-hero__room-rhythm" aria-label="Room reading rhythm">
           {roomRhythm.map((step) => (
+            <span key={`${step.label}-${step.value}`}>
+              <small>{step.label}</small>
+              {step.value}
+            </span>
+          ))}
+        </div>
+        <div className="page-hero__room-shelf" aria-label="Room structure">
+          {roomShelf.map((step) => (
             <span key={`${step.label}-${step.value}`}>
               <small>{step.label}</small>
               {step.value}

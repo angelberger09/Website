@@ -87,12 +87,12 @@ const footerExitReceipts = [
     action: "View work"
   },
   {
-    label: "Store",
-    title: "Future pieces",
-    note: "Check what opens when links are ready.",
-    visual: "shop prep",
+    label: "Prep",
+    title: "Prepared pieces",
+    note: "Preview what is staged before links open.",
+    visual: "prep shelf",
     href: "/Website/store/",
-    action: "Check store"
+    action: "Preview prep"
   }
 ];
 

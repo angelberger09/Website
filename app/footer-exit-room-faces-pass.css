@@ -1,0 +1,51 @@
+/* Footer exit room faces pass.
+   Makes the four footer exit receipts visually route-specific instead of sharing
+   one generic abstract paper/photo treatment. */
+
+.studio-footer__exit-receipt-photo b {
+  max-width: 9ch;
+  text-wrap: balance;
+}
+
+.studio-footer__exit-receipt:nth-child(1) .studio-footer__exit-receipt-photo {
+  background:
+    radial-gradient(circle at 26% 20%, rgba(255, 252, 240, 0.7), transparent 24%),
+    linear-gradient(142deg, rgba(113, 139, 104, 0.34), rgba(218, 184, 126, 0.28) 48%, rgba(86, 66, 43, 0.22)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, auto, 140px 140px;
+}
+
+.studio-footer__exit-receipt:nth-child(2) .studio-footer__exit-receipt-photo {
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 252, 240, 0.64), transparent 24%),
+    linear-gradient(134deg, rgba(130, 125, 171, 0.28), rgba(231, 207, 153, 0.27) 52%, rgba(80, 64, 51, 0.2)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, auto, 170px 170px;
+}
+
+.studio-footer__exit-receipt:nth-child(3) .studio-footer__exit-receipt-photo {
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255, 252, 240, 0.62), transparent 24%),
+    linear-gradient(138deg, rgba(103, 126, 128, 0.3), rgba(194, 163, 119, 0.3) 46%, rgba(64, 57, 47, 0.24)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, auto, 155px 155px;
+}
+
+.studio-footer__exit-receipt:nth-child(4) .studio-footer__exit-receipt-photo {
+  background:
+    radial-gradient(circle at 70% 22%, rgba(255, 252, 240, 0.62), transparent 24%),
+    linear-gradient(136deg, rgba(95, 116, 93, 0.28), rgba(196, 153, 122, 0.28) 48%, rgba(67, 54, 37, 0.23)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, auto, 150px 150px;
+}
+
+.studio-footer__exit-receipt-photo em {
+  box-shadow: 0 0.14rem 0.28rem rgba(75, 55, 31, 0.1);
+}
+
+@media (max-width: 760px) {
+  .studio-footer__exit-receipt-photo b {
+    max-width: 8ch;
+    font-size: 0.82rem;
+  }
+}

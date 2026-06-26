@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-label="Deckled torn paper with tape and crease shadows on black background">
+  <defs>
+    <filter id="fiber" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" seed="82" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.93 0 0 0 0 0.90 0 0 0 0 0.80 0 0 0 .36 0" result="tone"/>
+      <feComposite in="tone" in2="SourceGraphic" operator="in" result="texture"/>
+      <feBlend in="SourceGraphic" in2="texture" mode="multiply"/>
+    </filter>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="16" stdDeviation="17" flood-color="#000" flood-opacity="0.62"/>
+      <feDropShadow dx="-12" dy="10" stdDeviation="7" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.55" stop-color="#f0e5cf"/>
+      <stop offset="1" stop-color="#d6c3a3"/>
+    </linearGradient>
+    <linearGradient id="tape" x1="0" x2="1">
+      <stop offset="0" stop-color="#c8b28c" stop-opacity="0.78"/>
+      <stop offset="0.55" stop-color="#f4dfb4" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#9d855e" stop-opacity="0.74"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="#000"/>
+  <g filter="url(#shadow)">
+    <path d="M147 218 C276 208 395 226 524 211 C654 196 774 228 910 212 C1039 197 1160 225 1304 211 C1384 203 1454 210 1482 218 L1472 826 C1366 820 1272 840 1163 824 C1043 806 936 846 812 825 C688 804 592 846 464 824 C342 803 241 840 140 826 C126 708 144 594 134 480 C124 366 145 279 147 218 Z" fill="url(#paper)" filter="url(#fiber)"/>
+    <path d="M140 826 C201 800 268 847 331 816 C404 780 470 848 548 815 C620 784 690 849 763 813 C846 772 923 845 1005 814 C1082 785 1152 843 1236 812 C1320 781 1400 836 1472 826 L1472 858 C1371 870 1264 848 1160 866 C1040 887 940 852 814 874 C692 895 594 855 465 878 C345 899 246 854 140 870 Z" fill="#f8f0df" opacity="0.92"/>
+    <path d="M210 238 C412 263 604 214 822 238 C1018 260 1244 218 1446 240" fill="none" stroke="#fff" stroke-opacity="0.28" stroke-width="5"/>
+    <path d="M305 352 C500 328 679 376 882 342 C1074 310 1240 368 1394 344" fill="none" stroke="#5f4a64" stroke-opacity="0.07" stroke-width="5"/>
+    <path d="M1094 255 C1005 376 978 484 1012 598 C1050 728 1156 768 1242 839" fill="none" stroke="#5f4a64" stroke-opacity="0.09" stroke-width="5"/>
+    <path d="M360 254 C430 384 438 548 492 677 C528 762 586 798 662 856" fill="none" stroke="#fff7e8" stroke-opacity="0.28" stroke-width="6"/>
+    <rect x="594" y="112" width="500" height="118" rx="2" fill="url(#tape)" filter="url(#fiber)" transform="rotate(0.7 844 171)"/>
+    <path d="M594 112 C690 126 780 106 878 117 C950 125 1020 111 1094 112 L1094 228 C1001 216 910 237 813 224 C734 214 658 233 594 228 Z" fill="#fff0c8" opacity="0.18"/>
+  </g>
+</svg>

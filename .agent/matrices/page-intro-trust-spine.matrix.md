@@ -2,7 +2,7 @@
 
 | ID | Type | Name | Location | Purpose | Related Lessons | Related Metrics | Status |
 |---|---|---|---|---|---|---|---|
-| COMP-005A | Component refinement | PageIntro trust spine | `app/page-intro-trust-spine-pass.css`, `app/layout.jsx`, `app/site-chrome.jsx` | Makes the shared PageIntro four-slip shelf visibly read as a calm-room sequence: hero board, featured shelf, source note, and next path. | LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-023 | METRIC-017, METRIC-018, METRIC-020, METRIC-021, METRIC-022, METRIC-029 | active |
+| COMP-005A | Component refinement | PageIntro trust spine | `app/page-intro-trust-spine-pass.css`, `app/page-intro-calm-focus-pass.css`, `app/layout.jsx`, `app/site-chrome.jsx` | Makes the shared PageIntro four-slip shelf visibly read as a calm-room sequence: hero board, featured shelf, source note, and next path, with the calm-focus grid now matching the four rendered slips instead of forcing a stale three-column shelf. | LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-023 | METRIC-017, METRIC-018, METRIC-020, METRIC-021, METRIC-022, METRIC-029 | active |
 
 ## Boundary
 
@@ -12,5 +12,5 @@
 
 ## Satisfaction check
 
-- Previous state: partially satisfied. The four `Open / Read / Trust / Continue` slips existed, but the source/trust role was visually similar to the other slips and the four-part room model was not obvious at a glance.
-- Current state: refined. The shelf now has visible `hero board`, `featured shelf`, `source note`, and `next path` paper labels, with the third Trust slip styled as a public-safe source note.
+- Previous state: partially satisfied. The four `Open / Read / Trust / Continue` slips existed, and the trust-spine pass labeled them as hero board, featured shelf, source note, and next path, but `app/page-intro-calm-focus-pass.css` still described and laid out the shelf as a three-step path, so the fourth Continue slip could wrap or feel like an accidental extra cue.
+- Current state: refined. The calm-focus pass now treats the PageIntro shelf as a compact four-slip grid on desktop, a two-by-two grid on narrower route intros, and a single-column stack on small screens, matching the actual rendered PageIntro sequence without adding another cue system.

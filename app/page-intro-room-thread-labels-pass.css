@@ -1,0 +1,71 @@
+/* PageIntro room thread labels pass.
+   Makes the shared route hero reading rhythm feel like a connected paper path
+   instead of four separate slips, while keeping the existing calm-room structure. */
+
+.page-hero__room-rhythm {
+  padding-top: clamp(1.05rem, 2.2vw, 1.35rem);
+}
+
+.page-hero__room-rhythm::before {
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.08),
+    0 0.95rem 1.65rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74);
+}
+
+.page-hero__room-rhythm::after {
+  top: calc(50% + 0.34rem);
+  height: 0.18rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(111, 83, 111, 0.38) 0 0.55rem, transparent 0.55rem 0.86rem),
+    linear-gradient(90deg, transparent, rgba(111, 83, 111, 0.22), rgba(111, 83, 111, 0.12), transparent);
+  box-shadow: 0 0.12rem 0 rgba(255, 252, 246, 0.58);
+}
+
+.page-hero__room-rhythm span:first-child::before {
+  content: "room path";
+  position: absolute;
+  top: clamp(-1rem, -1.6vw, -0.72rem);
+  left: -0.18rem;
+  z-index: 3;
+  padding: 0.22rem 0.46rem 0.18rem;
+  clip-path: polygon(3% 12%, 98% 2%, 96% 90%, 6% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(238, 226, 207, 0.72)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(111, 83, 111, 0.86);
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0.06rem 0.11rem 0 rgba(47, 38, 35, 0.08), 0 0.42rem 0.72rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-1.4deg);
+}
+
+.page-hero__room-rhythm span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: clamp(-0.58rem, -1vw, -0.32rem);
+  z-index: 2;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(111, 83, 111, 0.52);
+  box-shadow:
+    0 0 0 0.16rem rgba(255, 252, 246, 0.72),
+    0.04rem 0.08rem 0 rgba(47, 38, 35, 0.09);
+  transform: translateY(-50%) rotate(0.4deg);
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-rhythm span:not(:last-child)::after {
+    display: none;
+  }
+
+  .page-hero__room-rhythm span:first-child::before {
+    top: -0.82rem;
+  }
+}

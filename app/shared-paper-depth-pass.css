@@ -127,6 +127,78 @@
     inset 0 1px 0 rgba(255, 252, 239, 0.72);
 }
 
+/* Contact-shadow alignment pass
+   Recent paper slips and room-key boards were added after the first depth pass.
+   Give those newer surfaces the same visible grounded lift so they do not wash into the cream page. */
+:where(
+  .page-hero__foreground-card,
+  .page-hero__room-key-card,
+  .page-hero__room-compass,
+  .page-hero__room-shelf,
+  .page-hero__room-shelf-item,
+  .page-hero__copy-slip,
+  .page-hero__room-ticket,
+  .about-room-key-board,
+  .about-room-key-card,
+  .about-room-spine__slip,
+  .about-contact-rail__slip,
+  .portfolio-room-key-board,
+  .portfolio-room-key-card,
+  .portfolio-section-spine__slip,
+  .store-section-spine__slip,
+  .notes-section-spine__slip,
+  .notes-post-sequence__step,
+  .notes-post-margin-rail__slip,
+  .continuity-map-cue,
+  .continuity-exit-shelf,
+  .studio-footer__exit-receipt
+) {
+  box-shadow:
+    0 16px 30px rgba(72, 49, 31, 0.18),
+    0 5px 12px rgba(72, 49, 31, 0.12),
+    inset 0 1px 0 rgba(255, 252, 239, 0.80);
+  filter: drop-shadow(0 0.65rem 0.8rem rgba(72, 49, 31, 0.10));
+}
+
+:where(
+  .page-hero__room-key-card,
+  .page-hero__room-shelf-item,
+  .about-room-key-card,
+  .portfolio-room-key-card,
+  .notes-post-sequence__step,
+  .continuity-map-cue,
+  .studio-footer__exit-receipt
+) {
+  position: relative;
+}
+
+:where(
+  .page-hero__room-key-card,
+  .page-hero__room-shelf-item,
+  .about-room-key-card,
+  .portfolio-room-key-card,
+  .notes-post-sequence__step,
+  .continuity-map-cue,
+  .studio-footer__exit-receipt
+)::before {
+  box-shadow:
+    0 0.8rem 1.25rem rgba(72, 49, 31, 0.12),
+    inset 0 1px 0 rgba(255, 252, 239, 0.34);
+}
+
+:where(
+  .page-hero__room-shelf-item,
+  .about-room-spine__slip,
+  .portfolio-section-spine__slip,
+  .store-section-spine__slip,
+  .notes-section-spine__slip,
+  .notes-post-margin-rail__slip,
+  .studio-footer__exit-receipt
+) {
+  outline: 1px solid rgba(93, 64, 38, 0.14);
+  outline-offset: -1px;
+}
+
 @media (max-width: 720px) {
   :where(
     .home-hero-route-slip,
@@ -146,6 +218,21 @@
     box-shadow:
       0 14px 24px rgba(72, 49, 31, 0.14),
       0 4px 9px rgba(72, 49, 31, 0.09),
+      inset 0 1px 0 rgba(255, 251, 238, 0.72);
+  }
+
+  :where(
+    .page-hero__foreground-card,
+    .page-hero__room-key-card,
+    .page-hero__room-shelf-item,
+    .about-room-key-card,
+    .portfolio-room-key-card,
+    .notes-post-sequence__step,
+    .studio-footer__exit-receipt
+  ) {
+    box-shadow:
+      0 13px 22px rgba(72, 49, 31, 0.16),
+      0 4px 9px rgba(72, 49, 31, 0.10),
       inset 0 1px 0 rgba(255, 251, 238, 0.72);
   }
 }

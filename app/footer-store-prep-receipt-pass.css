@@ -1,0 +1,61 @@
+/* Footer Store prep receipt pass.
+   Keeps the Store route visible while making its prepared/no-live-stock state unmistakable. */
+
+.studio-footer__exit-receipt:nth-child(4) {
+  --footer-receipt-tilt: -0.55deg;
+  position: relative;
+  overflow: visible;
+  background:
+    linear-gradient(104deg, rgba(255, 249, 230, 0.94), rgba(244, 232, 202, 0.91)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 20px 34px rgba(53, 43, 31, 0.18),
+    0 4px 0 rgba(116, 91, 59, 0.1);
+}
+
+.studio-footer__exit-receipt:nth-child(4)::after {
+  content: "prepared only";
+  position: absolute;
+  top: -0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  padding: 0.28rem 0.58rem 0.24rem;
+  border-radius: 0.15rem;
+  background:
+    linear-gradient(120deg, rgba(255, 252, 239, 0.95), rgba(212, 183, 130, 0.76)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, 110px 110px;
+  color: rgba(76, 57, 38, 0.82);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  clip-path: polygon(3% 10%, 96% 0, 100% 83%, 6% 100%, 0 74%);
+  box-shadow: 0 8px 14px rgba(67, 49, 34, 0.16);
+  transform: rotate(2deg);
+}
+
+.studio-footer__exit-receipt:nth-child(4) .studio-footer__exit-receipt-photo {
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255, 252, 235, 0.72), transparent 25%),
+    linear-gradient(140deg, rgba(126, 139, 109, 0.32), rgba(208, 164, 118, 0.3) 46%, rgba(86, 66, 42, 0.26)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, auto, 180px 180px;
+}
+
+.studio-footer__exit-receipt:nth-child(4) .studio-footer__exit-receipt-action {
+  background:
+    linear-gradient(100deg, rgba(95, 116, 93, 0.18), rgba(255, 252, 239, 0.74)),
+    url('/Website/atmosphere/grain-noise.svg');
+  color: rgba(69, 83, 61, 0.94);
+  box-shadow: inset 0 -1px 0 rgba(76, 57, 38, 0.12);
+}
+
+@media (max-width: 760px) {
+  .studio-footer__exit-receipt:nth-child(4)::after {
+    top: -0.62rem;
+    right: 0.7rem;
+    font-size: 0.52rem;
+  }
+}

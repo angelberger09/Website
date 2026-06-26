@@ -109,6 +109,28 @@
 
 .notes-support-note .notes-support-note__pin {
   z-index: 2;
+  min-width: max-content;
+  padding-inline: 0.52rem;
+  font-size: 0;
+}
+
+.notes-support-note .notes-support-note__pin::after {
+  content: "Reader cue";
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.notes-support-note:nth-child(1) .notes-support-note__pin::after {
+  content: "Safe shelf";
+}
+
+.notes-support-note:nth-child(2) .notes-support-note__pin::after {
+  content: "Reader path";
+}
+
+.notes-support-note:nth-child(3) .notes-support-note__pin::after {
+  content: "Table view";
 }
 
 .notes-support-note:nth-child(2n) .notes-support-note__photo,

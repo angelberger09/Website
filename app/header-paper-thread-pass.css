@@ -1,0 +1,98 @@
+/* Header paper thread pass.
+   Strengthens the shared header as one connected paper strip with a visible stitched route-thread and active-room stamp, preserving direct unnumbered navigation and accessible labels. */
+
+.floating-header {
+  --header-thread-ink: rgba(68, 53, 49, 0.24);
+  --header-thread-sage: rgba(87, 108, 75, 0.34);
+}
+
+.floating-header::after {
+  position: absolute;
+  right: 1.18rem;
+  bottom: 0.42rem;
+  left: 1.18rem;
+  z-index: -1;
+  height: 0.42rem;
+  content: "";
+  background:
+    radial-gradient(circle at 8% 48%, var(--header-thread-sage) 0 0.09rem, transparent 0.1rem),
+    radial-gradient(circle at 32% 52%, var(--header-thread-ink) 0 0.075rem, transparent 0.085rem),
+    radial-gradient(circle at 58% 46%, var(--header-thread-sage) 0 0.08rem, transparent 0.09rem),
+    radial-gradient(circle at 84% 55%, var(--header-thread-ink) 0 0.07rem, transparent 0.08rem),
+    linear-gradient(90deg, transparent, rgba(68, 53, 49, 0.2) 12%, rgba(87, 108, 75, 0.28) 50%, rgba(68, 53, 49, 0.16) 88%, transparent);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  clip-path: polygon(0 42%, 18% 25%, 38% 48%, 61% 29%, 82% 54%, 100% 38%, 100% 63%, 82% 76%, 61% 51%, 38% 71%, 18% 48%, 0 66%);
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.folder-panel__link {
+  transform-origin: 50% 90%;
+}
+
+.folder-panel__link:nth-child(odd) {
+  transform: rotate(-0.7deg);
+}
+
+.folder-panel__link:nth-child(even) {
+  transform: rotate(0.55deg);
+}
+
+.folder-panel__link span {
+  position: relative;
+  z-index: 1;
+}
+
+.folder-panel__link span::after {
+  display: block;
+  width: 72%;
+  height: 0.16rem;
+  margin: 0.18rem auto 0;
+  content: "";
+  background: rgba(68, 53, 49, 0.22);
+  clip-path: polygon(0 28%, 42% 0, 100% 32%, 96% 78%, 47% 100%, 3% 82%);
+  opacity: 0.62;
+}
+
+.folder-panel__link[aria-current="page"] span::after,
+.folder-panel__link--active span::after {
+  width: 86%;
+  background: rgba(87, 108, 75, 0.56);
+  opacity: 0.96;
+}
+
+.folder-panel__link[aria-current="page"]::after,
+.folder-panel__link--active::after {
+  position: absolute;
+  right: 0.32rem;
+  bottom: -0.18rem;
+  width: 1.4rem;
+  height: 0.52rem;
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.9), rgba(245, 224, 198, 0.68)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  clip-path: polygon(4% 22%, 100% 4%, 91% 78%, 0 100%);
+  box-shadow: 0 0.16rem 0.34rem rgba(47, 38, 35, 0.14);
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .floating-header::after {
+    right: 0.72rem;
+    left: 0.72rem;
+    bottom: 0.34rem;
+    opacity: 0.58;
+  }
+
+  .folder-panel__link:nth-child(n) {
+    transform: none;
+  }
+
+  .folder-panel__link span::after {
+    margin-top: 0.12rem;
+  }
+}

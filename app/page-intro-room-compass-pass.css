@@ -11,8 +11,8 @@
   left: clamp(-0.95rem, -1.8vw, -0.35rem);
   top: clamp(1rem, 3vw, 2.4rem);
   display: grid;
-  gap: 0.38rem;
-  width: min(9.5rem, 48%);
+  gap: 0.42rem;
+  width: min(10.8rem, 52%);
   transform: rotate(-2.4deg);
   pointer-events: none;
 }
@@ -21,23 +21,28 @@
   content: '';
   position: absolute;
   z-index: -1;
-  inset: -0.35rem -0.25rem -0.28rem;
+  inset: -0.45rem -0.32rem -0.34rem;
   background:
-    linear-gradient(135deg, rgba(255, 252, 244, 0.9), rgba(242, 220, 188, 0.52)),
+    radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.74) 0 0.18rem, transparent 0.21rem),
+    linear-gradient(135deg, rgba(255, 252, 244, 0.92), rgba(242, 220, 188, 0.56)),
     var(--grain-image);
-  background-size: cover, 18rem 18rem;
+  background-size: 100% 100%, cover, 18rem 18rem;
   clip-path: polygon(2% 8%, 96% 0, 100% 86%, 88% 100%, 0 92%);
   box-shadow:
-    0 0.82rem 1.35rem rgba(63, 45, 35, 0.12),
-    0.12rem 0.18rem 0 rgba(63, 45, 35, 0.08),
+    0 0.98rem 1.65rem rgba(63, 45, 35, 0.15),
+    0.12rem 0.18rem 0 rgba(63, 45, 35, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.74);
-  opacity: 0.92;
+  opacity: 0.96;
 }
 
 .page-hero__room-compass span {
+  position: relative;
   display: grid;
-  gap: 0.08rem;
-  padding: 0.34rem 0.48rem 0.36rem;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.45rem;
+  padding: 0.34rem 0.52rem 0.36rem 0.38rem;
   color: rgba(53, 41, 36, 0.9);
   background:
     linear-gradient(135deg, rgba(255, 249, 236, 0.96), rgba(246, 230, 205, 0.82)),
@@ -45,19 +50,52 @@
   background-size: cover, 14rem 14rem;
   clip-path: polygon(0 7%, 98% 0, 100% 82%, 91% 100%, 4% 96%);
   box-shadow:
-    0 0.48rem 0.82rem rgba(63, 45, 35, 0.12),
+    0 0.55rem 0.92rem rgba(63, 45, 35, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.page-hero__room-compass span::before {
+  content: 'Door';
+  display: grid;
+  place-items: center;
+  min-height: 1.8rem;
+  font-size: 0.48rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(62, 48, 38, 0.78);
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.7) 0 0.2rem, transparent 0.24rem),
+    linear-gradient(145deg, rgba(124, 104, 78, 0.2), rgba(236, 212, 178, 0.7) 48%, rgba(111, 88, 72, 0.18)),
+    var(--dust-image);
+  background-size: 100% 100%, cover, 12rem 12rem;
+  clip-path: polygon(7% 0, 100% 9%, 92% 100%, 0 88%);
+  box-shadow:
+    0 0.38rem 0.62rem rgba(55, 40, 31, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .page-hero__room-compass span:nth-child(2) {
   transform: translateX(0.4rem) rotate(1.2deg);
 }
 
+.page-hero__room-compass span:nth-child(2)::before {
+  content: 'Map';
+  clip-path: polygon(0 10%, 94% 0, 100% 92%, 8% 100%);
+}
+
 .page-hero__room-compass span:nth-child(3) {
   transform: translateX(0.08rem) rotate(-0.8deg);
 }
 
+.page-hero__room-compass span:nth-child(3)::before {
+  content: 'Path';
+  clip-path: polygon(9% 5%, 100% 0, 94% 88%, 0 100%);
+}
+
 .page-hero__room-compass small {
+  display: block;
+  margin-bottom: 0.08rem;
   font-size: 0.52rem;
   font-weight: 850;
   letter-spacing: 0.13em;
@@ -68,13 +106,13 @@
 @media (max-width: 860px) {
   .page-hero__stack {
     padding-left: 0;
-    padding-top: 2.65rem;
+    padding-top: 3.05rem;
   }
 
   .page-hero__room-compass {
     left: 50%;
     top: 0.15rem;
-    width: min(20rem, 92%);
+    width: min(24rem, 94%);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     transform: translateX(-50%) rotate(-0.7deg);
   }
@@ -92,11 +130,11 @@
 
 @media (max-width: 520px) {
   .page-hero__room-compass {
-    width: min(15.5rem, 94%);
+    width: min(16.5rem, 94%);
     grid-template-columns: 1fr;
   }
 
   .page-hero__stack {
-    padding-top: 7rem;
+    padding-top: 8.15rem;
   }
 }

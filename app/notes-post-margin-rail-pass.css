@@ -1,0 +1,155 @@
+/* Notes post reader margin rail pass.
+   Adds a visible paper-margin reading path before the individual note sheet. */
+
+.notes-post-margin-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.42rem, 1.2vw, 0.68rem);
+  margin: clamp(0.72rem, 1.8vw, 1.05rem) 0 clamp(0.85rem, 2vw, 1.18rem);
+  padding: clamp(0.48rem, 1.3vw, 0.68rem);
+  isolation: isolate;
+}
+
+.notes-post-margin-rail::before {
+  content: "reader margin";
+  position: absolute;
+  z-index: 2;
+  top: -0.42rem;
+  left: clamp(0.45rem, 1.5vw, 0.86rem);
+  display: inline-grid;
+  padding: 0.28rem 0.52rem 0.24rem;
+  color: rgba(58, 43, 31, 0.72);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 0.95vw, 0.72rem);
+  font-weight: 840;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 241, 0.96), rgba(234, 217, 177, 0.8)),
+    var(--grain-image);
+  background-size: cover, 120px 120px;
+  box-shadow: 0 0.38rem 0.78rem rgba(75, 52, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(4% 5%, 100% 0, 94% 82%, 11% 100%, 0 72%);
+  transform: rotate(-1.6deg);
+}
+
+.notes-post-margin-rail::after {
+  content: "";
+  position: absolute;
+  inset: 50% clamp(0.95rem, 3vw, 1.5rem) auto;
+  z-index: -1;
+  height: 0.12rem;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(91, 65, 43, 0.24) 0 0.45rem,
+    transparent 0.45rem 0.8rem
+  );
+  filter: drop-shadow(0 0.24rem 0 rgba(255, 255, 255, 0.45));
+}
+
+.notes-post-margin-slip {
+  position: relative;
+  display: grid;
+  gap: 0.18rem;
+  align-content: start;
+  min-height: 6.25rem;
+  padding: clamp(0.78rem, 1.8vw, 1rem) clamp(0.68rem, 1.8vw, 0.9rem) clamp(0.68rem, 1.6vw, 0.82rem);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.78), transparent 34%),
+    linear-gradient(142deg, rgba(255, 252, 246, 0.96), rgba(240, 224, 197, 0.75) 65%, rgba(160, 130, 156, 0.12)),
+    var(--grain-image);
+  background-size: cover, cover, 140px 140px;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.76rem 1.25rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(3% 7%, 97% 2%, 100% 83%, 89% 99%, 4% 94%);
+  transform: rotate(-0.75deg);
+}
+
+.notes-post-margin-slip:nth-child(2) {
+  transform: translateY(0.22rem) rotate(0.55deg);
+}
+
+.notes-post-margin-slip:nth-child(3) {
+  transform: translateY(-0.08rem) rotate(-0.18deg);
+}
+
+.notes-post-margin-slip::before {
+  content: "";
+  position: absolute;
+  inset: 0.42rem auto auto 0.52rem;
+  width: 2.35rem;
+  height: 0.48rem;
+  background: rgba(255, 252, 246, 0.76);
+  box-shadow: 0 0.14rem 0.32rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(5% 20%, 100% 0, 91% 84%, 0 100%);
+}
+
+.notes-post-margin-slip small,
+.notes-post-margin-slip strong,
+.notes-post-margin-slip em {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-margin-slip small {
+  width: max-content;
+  padding: 0.22rem 0.42rem 0.18rem;
+  color: rgba(74, 52, 69, 0.76);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.62);
+  clip-path: polygon(4% 8%, 100% 0, 94% 88%, 0 100%);
+}
+
+.notes-post-margin-slip strong {
+  margin-top: 0.18rem;
+  font-size: clamp(0.82rem, 1.25vw, 0.96rem);
+  letter-spacing: 0.045em;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.notes-post-margin-slip em {
+  max-width: 18ch;
+  color: rgba(58, 43, 31, 0.68);
+  font-size: clamp(0.72rem, 1.05vw, 0.82rem);
+  font-style: normal;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .notes-post-margin-rail {
+    grid-template-columns: 1fr;
+    padding-top: 2.05rem;
+  }
+
+  .notes-post-margin-rail::before {
+    top: 0;
+  }
+
+  .notes-post-margin-rail::after {
+    inset: 2.85rem auto 0 1rem;
+    width: 0.12rem;
+    height: auto;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(91, 65, 43, 0.22) 0 0.45rem,
+      transparent 0.45rem 0.8rem
+    );
+  }
+
+  .notes-post-margin-slip,
+  .notes-post-margin-slip:nth-child(2),
+  .notes-post-margin-slip:nth-child(3) {
+    min-height: 0;
+    padding-left: clamp(1.05rem, 5vw, 1.3rem);
+    transform: none;
+  }
+}

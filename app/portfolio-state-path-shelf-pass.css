@@ -1,0 +1,112 @@
+.portfolio-state-photo-board,
+.portfolio-process-photo-board {
+  position: relative;
+  padding-top: clamp(4.4rem, 7vw, 5.6rem);
+}
+
+.portfolio-state-photo-board::after,
+.portfolio-process-photo-board::after {
+  content: "state shelf";
+  position: absolute;
+  top: clamp(1rem, 2.2vw, 1.35rem);
+  left: clamp(1rem, 2.6vw, 1.55rem);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.42rem 0.78rem 0.36rem;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(78, 55, 35, 0.82);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 231, 0.98), rgba(237, 218, 176, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 0.68rem 1.2rem rgba(78, 55, 35, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(4% 0, 98% 8%, 100% 82%, 90% 100%, 0 92%);
+  transform: rotate(-1.6deg);
+}
+
+.portfolio-process-photo-board::after {
+  content: "publish path";
+  transform: rotate(1.35deg);
+}
+
+.portfolio-state-stack,
+.portfolio-process-photo-ribbon {
+  position: relative;
+}
+
+.portfolio-state-stack::before,
+.portfolio-process-photo-ribbon::before {
+  content: "";
+  position: absolute;
+  top: clamp(-2.2rem, -3vw, -1.55rem);
+  left: clamp(1.4rem, 4vw, 2.3rem);
+  right: clamp(1.2rem, 4vw, 2rem);
+  height: 2px;
+  z-index: 0;
+  background-image: linear-gradient(90deg, rgba(111, 82, 48, 0.34) 0 44%, transparent 44% 100%);
+  background-size: 1.1rem 2px;
+}
+
+.portfolio-state-photo,
+.portfolio-process-photo-ribbon li {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-state-photo::after,
+.portfolio-process-photo-ribbon li::after {
+  position: absolute;
+  top: -2.74rem;
+  left: 50%;
+  z-index: 4;
+  width: max-content;
+  max-width: 10rem;
+  padding: 0.34rem 0.52rem 0.28rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 252, 242, 0.96);
+  background:
+    linear-gradient(135deg, rgba(57, 42, 28, 0.74), rgba(104, 78, 47, 0.52)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0 0.5rem 0.92rem rgba(62, 44, 25, 0.16);
+  clip-path: polygon(5% 0, 100% 8%, 96% 100%, 0 88%);
+  transform: translateX(-50%) rotate(-1.2deg);
+}
+
+.portfolio-state-photo:nth-child(1)::after { content: "card front"; }
+.portfolio-state-photo:nth-child(2)::after { content: "case room"; }
+.portfolio-state-photo:nth-child(3)::after { content: "framing"; }
+.portfolio-state-photo:nth-child(4)::after { content: "offstage"; }
+
+.portfolio-process-photo-ribbon li:nth-child(1)::after { content: "signal"; }
+.portfolio-process-photo-ribbon li:nth-child(2)::after { content: "shape"; }
+.portfolio-process-photo-ribbon li:nth-child(3)::after { content: "preview"; }
+.portfolio-process-photo-ribbon li:nth-child(4)::after { content: "open"; }
+
+@media (max-width: 680px) {
+  .portfolio-state-photo-board,
+  .portfolio-process-photo-board {
+    padding-top: 4rem;
+  }
+
+  .portfolio-state-stack::before,
+  .portfolio-process-photo-ribbon::before {
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .portfolio-state-photo::after,
+  .portfolio-process-photo-ribbon li::after {
+    top: -2.36rem;
+  }
+}

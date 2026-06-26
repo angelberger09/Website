@@ -1,0 +1,87 @@
+/* About section spine labels pass.
+   Gives the About page one visible room path that ties its major paper boards together. */
+
+.about-room-spine {
+  position: relative;
+  display: grid;
+  width: min(var(--studio-max, 72rem), 100%);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.45rem, 1.5vw, 0.8rem);
+  margin: clamp(-1rem, -1.5vw, -0.35rem) auto clamp(-0.35rem, -0.8vw, 0rem);
+  padding: clamp(0.55rem, 1.5vw, 0.8rem);
+  isolation: isolate;
+}
+
+.about-room-spine::before {
+  content: "";
+  position: absolute;
+  inset: 50% clamp(0.9rem, 3vw, 1.8rem) auto;
+  z-index: -1;
+  height: 0.14rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(111, 83, 111, 0.3), rgba(185, 148, 164, 0.36), transparent);
+  box-shadow: 0 0.28rem 0.8rem rgba(47, 38, 35, 0.08);
+}
+
+.about-room-spine__slip {
+  display: grid;
+  min-height: 4.25rem;
+  align-content: center;
+  gap: 0.16rem;
+  padding: 0.78rem 0.72rem 0.66rem;
+  clip-path: polygon(2% 8%, 98% 2%, 96% 92%, 5% 99%);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.95), rgba(243, 232, 213, 0.68) 64%, rgba(154, 133, 166, 0.12)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.75rem 1.45rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  transform: rotate(-0.55deg);
+}
+
+.about-room-spine__slip:nth-child(2n) {
+  transform: rotate(0.48deg) translateY(0.18rem);
+}
+
+.about-room-spine__slip:nth-child(3) {
+  transform: rotate(-0.18deg) translateY(-0.08rem);
+}
+
+.about-room-spine__slip b {
+  font-size: clamp(0.76rem, 1.2vw, 0.88rem);
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.about-room-spine__slip em {
+  color: rgba(111, 83, 111, 0.72);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .about-room-spine {
+    grid-template-columns: 1fr;
+    margin-block: 0;
+  }
+
+  .about-room-spine::before {
+    inset: clamp(0.8rem, 4vw, 1.2rem) auto clamp(0.8rem, 4vw, 1.2rem) 1.08rem;
+    width: 0.12rem;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(111, 83, 111, 0.28), rgba(185, 148, 164, 0.32), transparent);
+  }
+
+  .about-room-spine__slip,
+  .about-room-spine__slip:nth-child(2n),
+  .about-room-spine__slip:nth-child(3) {
+    min-height: 3.5rem;
+    transform: none;
+  }
+}

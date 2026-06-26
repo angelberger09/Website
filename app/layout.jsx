@@ -28,6 +28,7 @@ import './portfolio-process-direct-labels-pass.css';
 import './portfolio-continuity-photo-pass.css';
 import './portfolio-readiness-photo-pass.css';
 import './portfolio-room-key-pass.css';
+import './portfolio-section-spine-labels-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-preview-collage-pass.css';

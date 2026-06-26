@@ -173,6 +173,10 @@ export function PageIntro({ eyebrow, title, children }) {
         </div>
         <span className="hero-polaroid hero-polaroid--frame" aria-hidden="true" />
         <aside className="page-hero__room-key" aria-label={`${visual.label} room key`}>
+          <span className="page-hero__room-key-photo" aria-hidden="true">
+            <b>{visual.label}</b>
+            <em>{visual.path}</em>
+          </span>
           <span>{visual.label} room key</span>
           <strong>{visual.status}</strong>
           <small>{visual.note}</small>

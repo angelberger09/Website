@@ -1,0 +1,120 @@
+/* Homepage path ledger consolidation pass.
+   Rebalances the top reading path after the room-card pass so it reads as one
+   left-docked editorial guide instead of another dense card board. */
+
+.home-page .home-path-map {
+  max-width: min(1040px, calc(100% - 2rem));
+  margin-left: clamp(1rem, 6vw, 5.5rem);
+  margin-right: auto;
+  grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr) !important;
+  gap: clamp(0.65rem, 1.8vw, 1.05rem) !important;
+  padding: clamp(0.8rem, 1.8vw, 1.08rem) clamp(0.78rem, 1.8vw, 1.05rem) clamp(0.9rem, 2vw, 1.18rem) clamp(2.35rem, 4.8vw, 4.25rem) !important;
+  background:
+    linear-gradient(100deg, rgba(255, 253, 246, 0.95), rgba(248, 236, 216, 0.72) 54%, rgba(218, 198, 171, 0.2)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow:
+    0.16rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0 0.78rem 1.55rem rgba(47, 38, 35, 0.12),
+    inset 0 0 0 1px rgba(112, 80, 45, 0.08);
+}
+
+.home-page .home-path-map::after {
+  content: "front-page map";
+  right: auto;
+  left: clamp(0.7rem, 1.5vw, 1rem);
+  top: -0.58rem;
+  transform: rotate(-1.2deg);
+}
+
+.home-page .home-path-map__label {
+  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+  letter-spacing: 0.12em;
+}
+
+.home-page .home-path-map__note {
+  max-width: 11.5rem;
+  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+  line-height: 1.32;
+}
+
+.home-page .home-path-map__trail {
+  gap: clamp(0.36rem, 0.8vw, 0.55rem) !important;
+  padding: 0.16rem 0.1rem 0.44rem;
+}
+
+.home-page .home-path-map__trail::before {
+  top: 47%;
+  border-top-color: rgba(103, 74, 42, 0.18);
+}
+
+.home-page .home-path-map__step,
+.home-page .home-path-map__step:nth-child(2n),
+.home-page .home-path-map__step:nth-child(2n + 1) {
+  flex: 0 0 clamp(7.35rem, 10.4vw, 9.35rem);
+  min-height: 4.95rem !important;
+  grid-template-columns: 1fr;
+  gap: 0.28rem !important;
+  padding: 0.48rem 0.5rem 0.52rem !important;
+  align-content: start !important;
+  clip-path: polygon(5% 5%, 96% 1%, 100% 82%, 93% 100%, 0 94%);
+}
+
+.home-page .home-path-map__photo {
+  width: 100%;
+  height: 1.7rem;
+  min-height: 1.7rem;
+  align-self: auto;
+  place-items: center start;
+  padding: 0.24rem 0.34rem;
+  color: rgba(255, 252, 246, 0.94);
+}
+
+.home-page .home-path-map__photo b {
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+}
+
+.home-page .home-path-map__number {
+  margin-top: 0.1rem;
+  font-size: 0.48rem !important;
+  letter-spacing: 0.12em;
+}
+
+.home-page .home-path-map__copy strong {
+  margin-top: 0.12rem;
+  font-size: clamp(0.82rem, 1.05vw, 0.98rem) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.home-page .home-path-map__copy small {
+  margin-top: 0.12rem;
+  font-size: 0.5rem !important;
+  line-height: 1.15;
+}
+
+@media (max-width: 760px) {
+  .home-page .home-path-map {
+    max-width: calc(100% - 1rem);
+    margin-inline: auto;
+    padding: clamp(0.78rem, 4vw, 1rem) !important;
+  }
+
+  .home-page .home-path-map__note {
+    max-width: 32rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-page .home-path-map::after {
+    display: inline-flex;
+    top: -0.45rem;
+    font-size: 0.52rem;
+  }
+
+  .home-page .home-path-map__step,
+  .home-page .home-path-map__step:nth-child(2n),
+  .home-page .home-path-map__step:nth-child(2n + 1) {
+    min-height: 4.4rem !important;
+  }
+}

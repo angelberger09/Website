@@ -1,0 +1,260 @@
+/* Blog old-door room docket pass.
+   Makes the /blog compatibility route read as one guided old-door-to-Notes docket instead of a leftover alias banner. */
+
+.notes-blog-path-page {
+  position: relative;
+}
+
+.notes-blog-path-page::before {
+  content: "compatibility room";
+  position: absolute;
+  top: clamp(0.55rem, 1.8vw, 0.9rem);
+  left: clamp(1rem, 4vw, 2.35rem);
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.34rem 0.66rem 0.3rem;
+  color: rgba(75, 58, 54, 0.78);
+  background:
+    linear-gradient(134deg, rgba(255, 252, 246, 0.92), rgba(246, 225, 209, 0.7)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 14rem 14rem, 30rem 30rem;
+  clip-path: polygon(3% 12%, 98% 0, 94% 88%, 7% 100%);
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.46rem 0.9rem rgba(47, 38, 35, 0.11);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 0.86vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge,
+.notes-blog-path-page .notes-blog-handoff-strip {
+  isolation: isolate;
+}
+
+.notes-blog-path-page .notes-blog-path-bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(10rem, 0.48fr) minmax(15rem, 0.86fr);
+  align-items: stretch;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+  margin-top: clamp(1.5rem, 3vw, 2.2rem);
+  background:
+    radial-gradient(circle at 14% 16%, rgba(255, 176, 143, 0.2), transparent 28%),
+    radial-gradient(circle at 86% 78%, rgba(185, 201, 175, 0.18), transparent 32%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.68), rgba(239, 217, 198, 0.34)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  clip-path: polygon(1% 2%, 32% 0.6%, 66% 2.2%, 98.5% 0.9%, 97.5% 42%, 99% 96%, 70% 99%, 34% 97.4%, 1.4% 98.8%, 2.4% 52%);
+  box-shadow:
+    0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0 1.2rem 2rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.78rem, 2vw, 1.05rem) auto clamp(0.78rem, 2vw, 1.05rem) 50%;
+  z-index: 0;
+  width: 0.16rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(180deg, rgba(96, 71, 89, 0.32) 0 0.34rem, transparent 0.34rem 0.7rem),
+    linear-gradient(180deg, transparent, rgba(122, 88, 113, 0.2), transparent);
+  box-shadow: 0.16rem 0 0.55rem rgba(47, 38, 35, 0.1);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo {
+  align-self: center;
+  min-height: clamp(10rem, 20vw, 14rem);
+  display: grid;
+  place-items: center;
+  gap: 0.32rem;
+  padding: clamp(0.95rem, 2vw, 1.3rem);
+  color: rgba(255, 252, 246, 0.92);
+  background:
+    linear-gradient(150deg, rgba(47, 38, 35, 0.84), rgba(96, 71, 89, 0.72)),
+    radial-gradient(circle at 50% 28%, rgba(255, 176, 143, 0.32), transparent 36%),
+    var(--soft-scratches-image),
+    var(--grain-image);
+  background-size: cover, cover, 24rem 24rem, 14rem 14rem;
+  clip-path: polygon(7% 3%, 96% 7%, 92% 94%, 10% 98%, 3% 46%);
+  box-shadow:
+    0.16rem 0.28rem 0 rgba(47, 38, 35, 0.16),
+    0 0.8rem 1.45rem rgba(47, 38, 35, 0.18),
+    inset 0 0 0 0.58rem rgba(255, 252, 246, 0.58);
+  text-align: center;
+  transform: rotate(1.25deg);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo::before,
+.notes-blog-path-page .notes-blog-path-bridge__photo::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 3.4rem;
+  height: 0.72rem;
+  background:
+    linear-gradient(130deg, rgba(255, 252, 246, 0.62), rgba(229, 197, 167, 0.4)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  box-shadow: 0 0.22rem 0.55rem rgba(47, 38, 35, 0.14);
+  opacity: 0.9;
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo::before {
+  top: -0.28rem;
+  left: 10%;
+  transform: rotate(-7deg);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo::after {
+  right: 8%;
+  bottom: -0.24rem;
+  transform: rotate(6deg);
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo span {
+  font-family: var(--font-hand);
+  font-size: clamp(0.8rem, 1.4vw, 0.96rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.notes-blog-path-page .notes-blog-path-bridge__photo strong {
+  max-width: 8ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.4vw, 2.6rem);
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.notes-blog-path-page .notes-blog-handoff-strip {
+  position: relative;
+  margin-top: clamp(1rem, 2.8vw, 1.6rem);
+  padding: clamp(1rem, 2.4vw, 1.45rem);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.62), rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  clip-path: polygon(1.2% 7%, 32% 2%, 72% 4%, 98% 1.2%, 97% 92%, 68% 98%, 28% 95%, 2% 98%);
+  box-shadow:
+    0.14rem 0.24rem 0 rgba(47, 38, 35, 0.07),
+    0 0.92rem 1.55rem rgba(47, 38, 35, 0.11);
+}
+
+.notes-blog-path-page .notes-blog-handoff-strip::before {
+  content: "same notes path";
+  position: absolute;
+  top: clamp(0.54rem, 1.6vw, 0.78rem);
+  right: clamp(0.7rem, 2vw, 1.05rem);
+  z-index: 2;
+  padding: 0.28rem 0.56rem 0.24rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.86), rgba(255, 176, 143, 0.3)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(4% 0, 96% 8%, 92% 96%, 8% 88%);
+  box-shadow: 0 0.28rem 0.72rem rgba(47, 38, 35, 0.12);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(1.4deg);
+}
+
+.notes-blog-path-page .notes-blog-handoff-strip__steps {
+  position: relative;
+}
+
+.notes-blog-path-page .notes-blog-handoff-strip__steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.45rem;
+  left: 0.45rem;
+  height: 0.14rem;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.28) 0 0.36rem, transparent 0.36rem 0.72rem);
+  transform: translateY(-50%);
+}
+
+.notes-blog-path-page .notes-blog-handoff-card {
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(4% 5%, 96% 1%, 98% 88%, 80% 98%, 24% 96%, 2% 99%);
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.58rem 1rem rgba(47, 38, 35, 0.12);
+}
+
+.notes-blog-path-page .notes-blog-handoff-card:nth-child(2) {
+  transform: translateY(-0.28rem) rotate(-0.45deg);
+}
+
+.notes-blog-path-page .notes-blog-handoff-card:nth-child(3) {
+  transform: translateY(0.2rem) rotate(0.55deg);
+}
+
+@media (max-width: 980px) {
+  .notes-blog-path-page .notes-blog-path-bridge {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-blog-path-page .notes-blog-path-bridge::before {
+    inset: auto clamp(1rem, 4vw, 1.5rem) clamp(0.85rem, 2vw, 1.1rem);
+    width: auto;
+    height: 0.14rem;
+    background:
+      repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.3) 0 0.34rem, transparent 0.34rem 0.7rem),
+      linear-gradient(90deg, transparent, rgba(122, 88, 113, 0.18), transparent);
+  }
+
+  .notes-blog-path-page .notes-blog-path-bridge__photo {
+    min-height: 8.5rem;
+    transform: rotate(-0.6deg);
+  }
+
+  .notes-blog-path-page .notes-blog-handoff-strip__steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .notes-blog-path-page::before {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin: 0 0 0.75rem 0.4rem;
+  }
+
+  .notes-blog-path-page .notes-blog-path-bridge {
+    margin-top: 0;
+    clip-path: polygon(2% 1%, 98% 0, 96% 97%, 4% 99%);
+  }
+
+  .notes-blog-path-page .notes-blog-path-bridge__photo,
+  .notes-blog-path-page .notes-blog-handoff-card:nth-child(n) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-blog-path-page .notes-blog-path-bridge__photo,
+  .notes-blog-path-page .notes-blog-handoff-card:nth-child(n) {
+    transform: none;
+  }
+}

@@ -1,0 +1,91 @@
+/* About contact sheet frame-sequence pass.
+   Makes the existing exposure desk read as one numbered contact-sheet path without
+   changing copy, routes, data, or inventing images. */
+
+.about-paper-room .about-contact-sheet {
+  position: relative;
+  counter-reset: about-frame-sequence;
+  padding-top: clamp(1.35rem, 2vw, 1.65rem);
+}
+
+.about-paper-room .about-contact-sheet::before {
+  position: sticky;
+  left: 0.25rem;
+  z-index: 4;
+  display: inline-grid;
+  width: max-content;
+  margin: -1.05rem 0 0.15rem;
+  padding: 0.34rem 0.62rem;
+  content: "frame path";
+  align-self: start;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.94), rgba(255, 176, 143, 0.34)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  clip-path: polygon(4% 14%, 33% 2%, 69% 8%, 98% 0, 94% 90%, 64% 100%, 5% 92%);
+  box-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.09), 0 0.55rem 1rem rgba(47, 38, 35, 0.12);
+  color: rgba(58, 45, 42, 0.82);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-paper-room .about-contact-card {
+  counter-increment: about-frame-sequence;
+}
+
+.about-paper-room .about-contact-card::after {
+  content: "frame " counter(about-frame-sequence, decimal-leading-zero);
+}
+
+.about-paper-room .about-contact-card__image {
+  background:
+    radial-gradient(circle at 26% 26%, rgba(255, 176, 143, 0.48), transparent 31%),
+    radial-gradient(circle at 72% 66%, rgba(185, 201, 175, 0.44), transparent 33%),
+    repeating-linear-gradient(90deg, rgba(255, 250, 242, 0.3) 0 0.28rem, transparent 0.28rem 1.15rem),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.42), rgba(58, 45, 42, 0.16));
+}
+
+.about-paper-room .about-contact-card__image::before {
+  inset: 0.55rem auto 0.55rem 0.5rem;
+  width: 0.42rem;
+  height: auto;
+  background:
+    radial-gradient(circle, rgba(255, 252, 246, 0.7) 0 35%, transparent 38% 100%) 0 0 / 0.42rem 1.08rem repeat-y;
+  clip-path: none;
+  opacity: 0.72;
+}
+
+.about-paper-room .about-contact-card__image::after {
+  inset: 0.55rem 0.5rem 0.55rem auto;
+  width: 0.42rem;
+  height: auto;
+  background:
+    radial-gradient(circle, rgba(47, 38, 35, 0.16) 0 35%, transparent 38% 100%) 0 0 / 0.42rem 1.08rem repeat-y;
+  clip-path: none;
+  opacity: 0.48;
+}
+
+.about-paper-room .about-contact-card__tags small:first-child {
+  position: relative;
+}
+
+.about-paper-room .about-contact-card__tags small:first-child::after {
+  display: inline-block;
+  margin-left: 0.38rem;
+  content: counter(about-frame-sequence, decimal-leading-zero);
+  color: rgba(58, 45, 42, 0.58);
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .about-paper-room .about-contact-sheet {
+    padding-top: 1.25rem;
+  }
+
+  .about-paper-room .about-contact-sheet::before {
+    position: relative;
+    left: 0;
+  }
+}

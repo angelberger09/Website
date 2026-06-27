@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 13:51 ET — Footer room index terminal budget
+
+### Changed
+
+- Added `app/footer-room-index-terminal-budget-pass.css`.
+- Loaded the pass after `app/footer-room-index-docket-pass.css` and before `app/final-paper-surface-budget-pass.css` in `app/layout.jsx`.
+- Calmed the newest footer room-index docket with normalized grain, lighter route-card shadows, containment, reduced label depth, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-footer-room-index-terminal-budget.md`.
+- Added `.agent/matrices/footer-room-index-terminal-budget.matrix.md`.
+
+### Why
+
+The footer room index docket already made the lower footer route trail feel bound into the shared exit path, but its newest surface treatment needed terminal-style budget coverage so the footer stayed visually calm, readable, and performance-aligned instead of becoming another heavier late paper layer.
+
+### Related items
+
+- COMP-002
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 13:40 ET — Footer room index docket
 
 ### Changed

@@ -81,6 +81,7 @@ const portfolioArchiveTickets = [
   }
 ];
 
+const portfolioRuleSlips = ["Safe facts", "Public preview", "Private drafts"];
 const portfolioProcessVisuals = ["signal", "shape", "preview", "open"];
 const portfolioProcessLabels = ["Read signal", "Shape card", "Add preview", "Open path"];
 
@@ -283,8 +284,13 @@ export default function PortfolioPage() {
             </article>
           ))}
         </div>
-        <div className="portfolio-rule-tapes portfolio-rule-tapes--visitor" aria-label="Future Portfolio archive rules">
-          {portfolioFeedRules.map((rule) => <p key={rule}>{rule}</p>)}
+        <div className="portfolio-rule-tapes portfolio-rule-tapes--visitor portfolio-rule-slip-board" aria-label="Future Portfolio archive rules">
+          {portfolioFeedRules.map((rule, index) => (
+            <article className="portfolio-rule-slip" key={rule}>
+              <span>{portfolioRuleSlips[index] ?? "Public rule"}</span>
+              <p>{rule}</p>
+            </article>
+          ))}
         </div>
       </section>
 

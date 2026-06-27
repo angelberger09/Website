@@ -154,3 +154,37 @@ The About page already had the correct room-key structure, but its first entry s
 - METRIC-028
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 22:40 ET — Homepage arrival ticket cues
+
+### Changed
+
+- Added `home-arrival-ticket` markup to `app/page.jsx`.
+- Added `app/home-arrival-ticket-pass.css`.
+- Loaded the pass in `app/layout.jsx`.
+- Added `.agent/changes/2026-06-26-homepage-arrival-ticket-cues.md`.
+
+### Why
+
+The homepage first screen already had a title and route-card strip, but the immediate arrival promise between the intro copy and room links could read more clearly as small paper snippets. The new `Front door`, `Four rooms`, and `Soft map` cues reinforce the public-room path without adding fake content or heavier visual effects.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-006
+- DESIGN-019
+- DESIGN-022
+- DESIGN-029
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-019
+- LESSON-022
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-029
+- METRIC-030

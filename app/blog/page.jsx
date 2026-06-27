@@ -28,6 +28,24 @@ const blogPathCards = [
 
 const blogPathSlips = ["older door", "same shelf", "soft landing"];
 
+const blogHandoffSteps = [
+  {
+    cue: "Door kept",
+    title: "Older links land softly",
+    description: "The Blog path stays open so public links still arrive at a kind front step."
+  },
+  {
+    cue: "Shelf shared",
+    title: "Same notes continue below",
+    description: "The next room is the active writing shelf, not a separate or duplicate archive."
+  },
+  {
+    cue: "Reader table",
+    title: "Open a note from here",
+    description: "Choose a public note below and it opens inside the same studio reader path."
+  }
+];
+
 export default function BlogPage() {
   return (
     <>
@@ -61,6 +79,22 @@ export default function BlogPage() {
                   <strong>{card.title}</strong>
                   <span>{card.description}</span>
                 </span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="notes-blog-handoff-strip" aria-labelledby="blog-handoff-title">
+          <div className="notes-blog-handoff-strip__label">
+            <span>handoff strip</span>
+            <h2 id="blog-handoff-title">From old door to reader table</h2>
+          </div>
+          <div className="notes-blog-handoff-strip__steps" aria-label="Blog path handoff">
+            {blogHandoffSteps.map((step) => (
+              <article className="notes-blog-handoff-card" key={step.cue}>
+                <span className="notes-blog-handoff-card__cue">{step.cue}</span>
+                <strong>{step.title}</strong>
+                <span>{step.description}</span>
               </article>
             ))}
           </div>

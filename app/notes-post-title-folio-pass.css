@@ -1,0 +1,100 @@
+.notes-post-sheet > .notes-post-kicker,
+.notes-post-sheet > h1,
+.notes-post-sheet > .notes-post-subtitle {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-sheet > .notes-post-kicker {
+  width: fit-content;
+  max-width: min(100%, 18rem);
+  margin: 0 0 -0.16rem clamp(0.4rem, 2vw, 1.2rem);
+  padding: 0.34rem 0.72rem 0.3rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(120deg, rgba(255, 176, 143, 0.34), rgba(255, 250, 242, 0.88) 55%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 17rem 17rem, 28rem 28rem;
+  box-shadow:
+    0.18rem 0.26rem 0 rgba(185, 201, 175, 0.2),
+    0 0.55rem 1rem rgba(47, 38, 35, 0.12);
+  clip-path: polygon(3% 12%, 22% 3%, 62% 7%, 97% 1%, 94% 88%, 70% 96%, 32% 90%, 5% 100%);
+  transform: rotate(-0.8deg);
+}
+
+.notes-post-sheet > h1 {
+  width: fit-content;
+  max-width: min(100%, 44rem);
+  margin: 0 0 0.72rem;
+  padding: clamp(0.86rem, 2.4vw, 1.24rem) clamp(1rem, 3vw, 1.65rem) clamp(0.92rem, 2.6vw, 1.32rem);
+  color: rgba(58, 45, 42, 0.96);
+  background:
+    linear-gradient(90deg, rgba(185, 201, 175, 0.22) 0 0.28rem, transparent 0.28rem),
+    linear-gradient(137deg, rgba(255, 250, 242, 0.98), rgba(255, 247, 235, 0.76) 56%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: auto, cover, 22rem 22rem, 38rem 38rem;
+  box-shadow:
+    0.42rem 0.52rem 0 rgba(255, 176, 143, 0.14),
+    0.1rem 1rem 1.9rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(1.4% 4%, 20% 1%, 52% 3.2%, 98.2% 1.4%, 97% 91%, 74% 98%, 34% 95%, 2% 98%);
+}
+
+.notes-post-sheet > h1::after {
+  position: absolute;
+  right: clamp(0.9rem, 5vw, 3.4rem);
+  bottom: -0.34rem;
+  width: 3.4rem;
+  height: 0.58rem;
+  content: "";
+  background:
+    linear-gradient(105deg, rgba(255, 250, 242, 0.74), rgba(185, 201, 175, 0.24)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow: 0 0.28rem 0.55rem rgba(47, 38, 35, 0.12);
+  opacity: 0.82;
+  transform: rotate(1.8deg);
+  clip-path: polygon(4% 18%, 30% 3%, 68% 12%, 98% 2%, 94% 86%, 65% 78%, 34% 94%, 5% 82%);
+}
+
+.notes-post-sheet > .notes-post-subtitle {
+  width: fit-content;
+  max-width: min(100%, 37rem);
+  margin: 0 0 clamp(0.92rem, 2vw, 1.22rem) clamp(0.38rem, 1.8vw, 1rem);
+  padding: 0.74rem clamp(0.9rem, 2.4vw, 1.24rem) 0.78rem;
+  color: rgba(58, 45, 42, 0.78);
+  background:
+    linear-gradient(133deg, rgba(255, 250, 242, 0.9), rgba(185, 201, 175, 0.14) 62%, rgba(255, 176, 143, 0.12)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow:
+    0.24rem 0.34rem 0 rgba(216, 197, 236, 0.16),
+    0 0.72rem 1.3rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(2% 7%, 28% 3%, 58% 6%, 98% 2%, 96% 92%, 66% 96%, 31% 94%, 4% 98%);
+  transform: rotate(0.28deg);
+}
+
+.notes-post-tags {
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .notes-post-sheet > .notes-post-kicker,
+  .notes-post-sheet > h1,
+  .notes-post-sheet > .notes-post-subtitle {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+  .notes-post-sheet > h1 {
+    padding-inline: 0.96rem;
+  }
+
+  .notes-post-sheet > h1::after {
+    right: 1rem;
+  }
+}

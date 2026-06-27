@@ -2,6 +2,43 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 10:20 ET — About principles promise docket
+
+### Changed
+
+- Added `app/about-principles-promise-docket-pass.css`.
+- Loaded the pass after the latest About CSS passes in `app/layout.jsx`.
+- Turned the About working-principles section intro into a clipped paper promise docket with a stitch rail, top `public promise` tag, clipped eyebrow slip, paper-grain background, lifted shadow, and smaller clipped body copy slip.
+- Added `.agent/changes/2026-06-27-about-principles-promise-docket.md`.
+- Added `.agent/matrices/about-principles-promise-docket.matrix.md`.
+
+### Why
+
+The working-principle notes already had a promise-trail treatment, but their heading still read like regular intro copy above cards. This pass makes the section intro visibly part of the same composed About room section, supporting paper-first material, flattened hierarchy, text snippets, and calm-room sequencing without changing About copy, routes, data, accessibility labels, or public content boundaries.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 10:08 ET — Homepage house rules ledger
 
 ### Changed

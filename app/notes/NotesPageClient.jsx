@@ -245,6 +245,20 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
             visible note pieces are named here in visitor-facing language.
           </p>
         </div>
+        <div className="notes-shelf-promise-strip" aria-label="Public notes shelf promise">
+          <span>
+            <strong>Public shelf</strong>
+            <small>published notes only</small>
+          </span>
+          <span>
+            <strong>Quiet backup</strong>
+            <small>kept offstage</small>
+          </span>
+          <span>
+            <strong>Human labels</strong>
+            <small>no raw paths for visitors</small>
+          </span>
+        </div>
         <div className="notes-source-ledger notes-source-receipt-ledger" aria-label="Public notes shelf needs">
           {blogFeedReadiness.map((item) => (
             <article className="notes-source-card notes-source-receipt" key={item.title}>

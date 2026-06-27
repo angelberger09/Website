@@ -1,0 +1,94 @@
+/* Notes gallery terminal budget pass.
+   Keeps the newest Notes contact-sheet shelf visibly paper-like while calming late-layer shadow, thread, and mobile cost. */
+
+.notes-gallery-board {
+  contain: layout paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 48rem;
+}
+
+.notes-gallery-board::before {
+  inset: -0.55rem -0.55rem -0.45rem;
+  opacity: 0.86;
+  box-shadow:
+    0.12rem 0.22rem 0 rgba(47, 38, 35, 0.045),
+    0 0.72rem 1.25rem rgba(47, 38, 35, 0.085);
+}
+
+.notes-gallery-board::after {
+  opacity: 0.84;
+  box-shadow:
+    0.07rem 0.12rem 0 rgba(47, 38, 35, 0.06),
+    0 0.38rem 0.72rem rgba(47, 38, 35, 0.075);
+}
+
+.notes-gallery-scroll {
+  gap: clamp(0.72rem, 1.7vw, 1rem);
+  padding: 0.76rem 0.55rem 1.35rem;
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.12) 0 42%, transparent 42% 100%) center 1.05rem / 1.6rem 0.06rem repeat-x,
+    radial-gradient(circle at 12% 18%, rgba(255, 176, 143, 0.11), transparent 32%),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.28), rgba(255, 247, 235, 0.1));
+  scrollbar-color: rgba(47, 38, 35, 0.22) transparent;
+}
+
+.notes-gallery-card {
+  min-height: 23.5rem;
+  box-shadow:
+    0.11rem 0.18rem 0 rgba(47, 38, 35, 0.065),
+    0 0.62rem 1.12rem rgba(47, 38, 35, 0.095),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.notes-gallery-card:nth-child(2n) {
+  min-height: 21.75rem;
+}
+
+.notes-gallery-card::before {
+  opacity: 0.82;
+  box-shadow: 0 0.1rem 0.2rem rgba(47, 38, 35, 0.065);
+}
+
+.notes-gallery-card__image {
+  min-height: 8.6rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.055);
+}
+
+.notes-gallery-card__copy small,
+.notes-gallery-card__copy em,
+.notes-gallery-card__image span,
+.notes-gallery-card__number {
+  box-shadow: 0.05rem 0.09rem 0 rgba(47, 38, 35, 0.045);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-gallery-board,
+  .notes-gallery-scroll,
+  .notes-gallery-card {
+    content-visibility: visible;
+  }
+}
+
+@media (max-width: 760px) {
+  .notes-gallery-board {
+    contain-intrinsic-size: 58rem;
+  }
+
+  .notes-gallery-board::before {
+    inset: -0.35rem -0.25rem -0.25rem;
+  }
+
+  .notes-gallery-scroll {
+    gap: 0.72rem;
+    padding: 0.66rem 0.42rem 1.15rem;
+  }
+
+  .notes-gallery-card,
+  .notes-gallery-card:nth-child(2n),
+  .notes-gallery-card:nth-child(3n) {
+    min-height: 21.5rem;
+    box-shadow:
+      0.08rem 0.14rem 0 rgba(47, 38, 35, 0.055),
+      0 0.48rem 0.86rem rgba(47, 38, 35, 0.085);
+  }
+}

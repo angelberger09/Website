@@ -1,0 +1,64 @@
+.studio-footer__mark-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: 0.32rem;
+}
+
+.studio-footer__mark-copy p,
+.studio-footer__mark-copy small {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+  background-image:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.7) 62%, rgba(185, 201, 175, 0.16)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.06),
+    0 0.42rem 0.72rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.studio-footer__mark-copy p {
+  padding: 0.34rem 0.62rem 0.31rem;
+  clip-path: polygon(2% 8%, 28% 2%, 58% 6%, 98% 1%, 96% 88%, 70% 97%, 31% 93%, 4% 99%);
+  color: rgba(58, 45, 42, 0.94);
+  transform: rotate(-0.42deg);
+}
+
+.studio-footer__mark-copy small {
+  margin-left: 0.42rem;
+  padding: 0.32rem 0.58rem 0.34rem;
+  clip-path: polygon(3% 4%, 34% 7%, 69% 2%, 97% 6%, 99% 86%, 63% 96%, 26% 94%, 1% 91%);
+  color: rgba(111, 98, 93, 0.92);
+  transform: rotate(0.56deg);
+}
+
+.studio-footer__mark-copy p::after {
+  position: absolute;
+  top: -0.18rem;
+  right: 0.58rem;
+  width: 2.1rem;
+  height: 0.32rem;
+  content: "";
+  background: rgba(255, 250, 242, 0.78);
+  box-shadow: 0 0.12rem 0.28rem rgba(47, 38, 35, 0.08);
+  clip-path: polygon(4% 18%, 28% 2%, 70% 14%, 98% 4%, 94% 82%, 64% 94%, 32% 78%, 2% 90%);
+}
+
+@media (max-width: 760px) {
+  .studio-footer__mark-copy p,
+  .studio-footer__mark-copy small {
+    max-width: min(100%, 18rem);
+    transform: none;
+  }
+
+  .studio-footer__mark-copy small {
+    margin-left: 0;
+  }
+}

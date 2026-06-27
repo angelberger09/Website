@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 14:48 ET — Home house rules terminal budget
+
+### Changed
+
+- Extended `app/terminal-room-surface-budget-pass.css` to include the homepage house-rules intro, rail, notes, rule slips, photo centers, small slips, and connector thread.
+- Normalized final paper shadows, blend/filter use, thread opacity, reduced-motion transforms, and mobile intrinsic sizing for the house-rules section.
+- Added `.agent/changes/2026-06-27-home-house-rules-terminal-budget.md`.
+- Added `.agent/matrices/home-house-rules-terminal-budget.matrix.md`.
+
+### Why
+
+The homepage house-rules docket and ledger already made the rules area feel more guided, but the newest terminal room surface budget did not include those homepage rule surfaces. Extending the terminal budget keeps the section visibly paper-like while reducing over-stacked depth and aligning it with the calmer late room boards.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 14:41 ET — Terminal room surface budget
 
 ### Changed
@@ -218,95 +262,3 @@ The footer exit receipt shelf already read as a composed paper path, but the low
 - METRIC-002
 - METRIC-014
 - METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 13:28 ET — Homepage next path bound docket
-
-### Changed
-
-- Added `app/home-next-path-bound-docket-pass.css`.
-- Loaded the pass after the existing homepage next-path room/ticket-stack passes in `app/layout.jsx`.
-- Bound the homepage closing `Next path` note more clearly into the shared continuity trail with an `exit docket` slip, stronger lifted-paper depth, clipped continuation slips, a direct About/Notes route face, and a dashed connector thread.
-- Added `.agent/changes/2026-06-27-home-next-path-bound-docket.md`.
-- Added `.agent/matrices/home-next-path-bound-docket.matrix.md`.
-
-### Why
-
-The homepage closing path already had a paper note and abstract `next room` face, but it could still read as a standalone card before the shared continuity trail. This pass makes the section closer to the calm-room sequence, paper-first material, flattened hierarchy, text-snippet, continuity, and photo/content-surface goals without changing routes, public copy claims, accessibility labels, or inventing new content.
-
-### Related items
-
-- PAGE-001
-- COMP-004
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-001
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 13:21 ET — Portfolio feed bound shelf
-
-### Changed
-
-- Added `app/portfolio-feed-bound-shelf-pass.css`.
-- Loaded the pass after `app/portfolio-feed-public-docket-pass.css` in `app/layout.jsx`.
-- Bound the Portfolio future archive shelf into a clearer public-card shelf with a clipped boundary slip, public-rules label, stronger backing surfaces for the ticket board/field ledger/rule tapes, dashed connector-thread cues, and mobile/reduced-motion fallbacks.
-- Added `.agent/changes/2026-06-27-portfolio-feed-bound-shelf.md`.
-- Added `.agent/matrices/portfolio-feed-bound-shelf.matrix.md`.
-
-### Why
-
-The Portfolio future archive shelf already had a public-card docket and field/rule surfaces, but it could still scan as stacked neighboring paper pieces. This pass makes the section closer to the paper-first, flattened hierarchy, section-field, text-snippet, photo-led, and honest public archive goals without adding fake portfolio work, screenshots, private records, or new routes.
-
-### Related items
-
-- PAGE-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-026
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-025
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032

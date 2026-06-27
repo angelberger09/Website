@@ -33,6 +33,12 @@ const storeEntryReceipts = [
   }
 ];
 const storeEntryCueLabels = ["Preview path", "Trust note", "Open when ready"];
+const storeLaneCueLabels = ["Download shelf", "Coloring shelf", "Creature shelf", "Link shelf"];
+const storeShotCueLabels = ["Digital files", "Color pages", "Creature goods"];
+const storeGalleryCueLabels = ["Digital files", "Color pages", "Creature goods", "Link shelf", "Preview rule", "Launch rule"];
+const storeChecklistCueLabels = ["Story ready", "Preview proof", "Delivery note"];
+const storeAvailabilityCueLabels = ["Preparing room", "Preview room", "Open room"];
+const storeFeedCueLabels = ["Handle", "Name", "Status", "Note", "Preview", "Delivery"];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -82,7 +88,7 @@ export default function StorePage() {
         {storeSections.map((section, index) => (
           <article className="store-lane-piece" key={section.title}>
             <div className="store-lane-piece__photo" aria-hidden="true">
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span>{storeLaneCueLabels[index] ?? section.eyebrow}</span>
             </div>
             <div className="store-lane-piece__copy">
               <p className="eyebrow">{section.eyebrow}</p>
@@ -112,7 +118,7 @@ export default function StorePage() {
           {visualStoreLanes.map((lane, index) => (
             <article className="store-shot-card" key={lane.title}>
               <div className="store-shot-card__image" aria-hidden="true">
-                <span className="store-shot-card__mark">{String(index + 1).padStart(2, "0")}</span>
+                <span className="store-shot-card__mark">{storeShotCueLabels[index] ?? lane.eyebrow}</span>
                 <div className="store-shot-card__staged-pieces">
                   <span />
                   <span />
@@ -148,7 +154,7 @@ export default function StorePage() {
               key={`${item.kind}-${item.title}`}
             >
               <span className="store-gallery-card__number" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
+                {storeGalleryCueLabels[index] ?? item.eyebrow}
               </span>
               {item.kind === "lane" && (
                 <div className="store-gallery-card__image" aria-hidden="true">
@@ -186,7 +192,7 @@ export default function StorePage() {
         <div className="store-checklist-note-stack" aria-label="Store launch checklist">
           {storeReadinessChecklist.map((item, index) => (
             <article className="store-checklist-note" key={item.title}>
-              <span className="store-checklist-note__pin" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span className="store-checklist-note__pin" aria-hidden="true">{storeChecklistCueLabels[index] ?? item.eyebrow}</span>
               <div className="store-checklist-note__visual" aria-hidden="true">
                 <b>{item.eyebrow}</b>
                 <i />
@@ -214,7 +220,7 @@ export default function StorePage() {
         <div className="store-availability-collage store-availability-status-path store-snippet-list" aria-label="Store availability states">
           {storeAvailabilityStates.map((state, index) => (
             <article className="store-state-snippet store-availability-status" key={state.label}>
-              <span className="store-availability-status__stage">Stage {String(index + 1).padStart(2, "0")}</span>
+              <span className="store-availability-status__stage">{storeAvailabilityCueLabels[index] ?? state.label}</span>
               <div className="store-availability-status__visual" aria-hidden="true">
                 <i />
                 <i />
@@ -242,7 +248,7 @@ export default function StorePage() {
         <div className="store-feed-ledger-grid" aria-label="Future Store card parts">
           {storeFeedFields.map((field, index) => (
             <article className="store-feed-ledger-card" key={field.label}>
-              <span className="store-feed-ledger-card__tab" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span className="store-feed-ledger-card__tab" aria-hidden="true">{storeFeedCueLabels[index] ?? field.label}</span>
               <div className="store-feed-ledger-card__photo" aria-hidden="true">
                 <b>{field.label}</b>
                 <i />

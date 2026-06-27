@@ -43,7 +43,6 @@ Timestamp: 2026-06-27 12:09 ET
 ## Public files changed
 
 - `app/final-paper-surface-budget-pass.css`
-- `app/notes-post-path-return-compass-pass.css`
 
 ## Related semantic items
 

@@ -1,0 +1,148 @@
+.portfolio-state-photo-board .portfolio-board-heading,
+.portfolio-process-photo-board .portfolio-board-heading {
+  position: relative;
+  width: min(100%, 48rem);
+  padding: clamp(1rem, 2.4vw, 1.45rem) clamp(1rem, 3vw, 1.6rem) clamp(1.05rem, 2.6vw, 1.55rem) clamp(1.15rem, 3vw, 1.85rem);
+  margin-bottom: clamp(1.2rem, 3vw, 1.9rem);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 239, 0.97), rgba(238, 219, 181, 0.9)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 180px 180px, 150px 150px;
+  box-shadow:
+    0 1.15rem 2rem rgba(82, 59, 35, 0.15),
+    0 0.18rem 0 rgba(255, 255, 255, 0.5) inset;
+  clip-path: polygon(1.5% 5%, 97% 0, 100% 86%, 94% 100%, 4% 96%, 0 18%);
+}
+
+.portfolio-state-photo-board .portfolio-board-heading::before,
+.portfolio-process-photo-board .portfolio-board-heading::before {
+  content: "archive state";
+  position: absolute;
+  left: 0.58rem;
+  top: 0.78rem;
+  bottom: 0.78rem;
+  width: 2.15rem;
+  display: grid;
+  place-items: center;
+  color: rgba(64, 47, 31, 0.68);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(-1deg);
+  background:
+    linear-gradient(180deg, rgba(245, 226, 184, 0.92), rgba(255, 250, 229, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0.5rem 0 0.95rem rgba(82, 59, 35, 0.08);
+  clip-path: polygon(16% 0, 100% 6%, 92% 94%, 10% 100%, 0 14%);
+}
+
+.portfolio-process-photo-board .portfolio-board-heading::before {
+  content: "publish path";
+}
+
+.portfolio-state-photo-board .portfolio-board-heading .eyebrow,
+.portfolio-process-photo-board .portfolio-board-heading .eyebrow {
+  width: fit-content;
+  margin-left: clamp(2rem, 5vw, 2.8rem);
+  padding: 0.34rem 0.58rem;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 229, 0.96), rgba(232, 211, 173, 0.86)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0 0.5rem 0.9rem rgba(82, 59, 35, 0.1);
+  clip-path: polygon(3% 7%, 100% 0, 96% 92%, 7% 100%, 0 84%);
+}
+
+.portfolio-state-photo-board .portfolio-board-heading h1,
+.portfolio-process-photo-board .portfolio-board-heading h1 {
+  max-width: 34rem;
+  margin-left: clamp(2rem, 5vw, 2.8rem);
+}
+
+.portfolio-process-photo-ribbon li::after {
+  content: "signal slip";
+  color: rgba(61, 44, 29, 0.78);
+  font-family: var(--font-hand);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.98), rgba(232, 211, 173, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+}
+
+.portfolio-process-photo-ribbon li:nth-child(2)::after {
+  content: "shape slip";
+}
+
+.portfolio-process-photo-ribbon li:nth-child(3)::after {
+  content: "preview slip";
+}
+
+.portfolio-process-photo-ribbon li:nth-child(4)::after {
+  content: "open slip";
+}
+
+.portfolio-state-photo::after {
+  content: "record slip";
+  position: absolute;
+  top: 0.7rem;
+  left: 0.68rem;
+  z-index: 2;
+  width: fit-content;
+  padding: 0.32rem 0.48rem;
+  color: rgba(61, 44, 29, 0.74);
+  font-family: var(--font-hand);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.97), rgba(236, 217, 177, 0.88)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0 0.55rem 1rem rgba(82, 59, 35, 0.12);
+  transform: rotate(-2.4deg);
+  clip-path: polygon(5% 4%, 100% 0, 96% 92%, 8% 100%, 0 84%);
+}
+
+.portfolio-state-photo:nth-child(2)::after {
+  content: "preview slip";
+  transform: rotate(2deg);
+}
+
+.portfolio-state-photo:nth-child(3)::after {
+  content: "public slip";
+}
+
+@media (max-width: 760px) {
+  .portfolio-state-photo-board .portfolio-board-heading,
+  .portfolio-process-photo-board .portfolio-board-heading {
+    padding: 1rem;
+  }
+
+  .portfolio-state-photo-board .portfolio-board-heading::before,
+  .portfolio-process-photo-board .portfolio-board-heading::before {
+    position: relative;
+    inset: auto;
+    width: fit-content;
+    min-height: 0;
+    margin-bottom: 0.7rem;
+    padding: 0.34rem 0.5rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-1deg);
+  }
+
+  .portfolio-state-photo-board .portfolio-board-heading .eyebrow,
+  .portfolio-process-photo-board .portfolio-board-heading .eyebrow,
+  .portfolio-state-photo-board .portfolio-board-heading h1,
+  .portfolio-process-photo-board .portfolio-board-heading h1 {
+    margin-left: 0;
+  }
+}

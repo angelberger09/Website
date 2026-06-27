@@ -28,6 +28,8 @@ const blogPathCards = [
 
 const blogPathSlips = ["older door", "same shelf", "soft landing"];
 
+const blogLandingDock = ["old link", "same shelf", "reader table"];
+
 const blogHandoffSteps = [
   {
     cue: "Door kept",
@@ -88,6 +90,15 @@ export default function BlogPage() {
           <div className="notes-blog-handoff-strip__label">
             <span>handoff strip</span>
             <h2 id="blog-handoff-title">From old door to reader table</h2>
+          </div>
+          <div className="notes-blog-landing-dock" aria-label="Blog path landing sequence">
+            <span className="notes-blog-landing-dock__pin">kept route</span>
+            <div className="notes-blog-landing-dock__rail" aria-hidden="true" />
+            <div className="notes-blog-landing-dock__slips">
+              {blogLandingDock.map((slip) => (
+                <span key={slip}>{slip}</span>
+              ))}
+            </div>
           </div>
           <div className="notes-blog-handoff-strip__steps" aria-label="Blog path handoff">
             {blogHandoffSteps.map((step) => (

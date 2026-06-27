@@ -2,6 +2,41 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 19:19 ET — About principles docket
+
+### Changed
+
+- Added `app/about-principles-docket-pass.css`.
+- Loaded it from `app/layout.jsx` after the existing About principles trail styling.
+- Turned the About `Working principles` heading into a composed promise docket with a clipped paper backing field, separate eyebrow slip, title sheet, promise-copy note, tape cue, mobile fallback, and reduced-motion safeguards.
+- Added `.agent/changes/2026-06-27-about-principles-docket.md`.
+- Added `.agent/matrices/about-principles-docket.matrix.md`.
+
+### Why
+
+The About page already has a strong room-map, contact-sheet, and paper-principle card system, but the working-principles intro still read like broad heading copy inside a panel. This pass keeps the existing public-safe copy while making the principle intro behave like a visible paper promise docket, supporting the paper-snippet, flattened hierarchy, and calm-room goals.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 18:28 ET — Portfolio archive rule slips
 
 ### Changed

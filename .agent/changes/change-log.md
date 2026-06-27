@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 16:09 ET — Homepage room status ledger map
+
+### Changed
+
+- Added `app/home-room-status-ledger-map-pass.css`.
+- Loaded it last in `app/layout.jsx` so it visibly refines the homepage `Current rooms` section after the late terminal passes.
+- Bound the existing room-status slips into one left-docked paper status map with a vertical spine, stitched thread, shared board backing, clipped status label, and restrained proof cues.
+- Added `.agent/changes/2026-06-27-home-room-status-ledger-map.md`.
+- Added `.agent/matrices/home-room-status-ledger-map.matrix.md`.
+
+### Why
+
+The homepage current-room section already had paper/photo slips, but it still scanned as a cluster of separate status cards. This pass makes the section read more like one human-readable editorial room map while preserving existing public-safe room marker data and avoiding fake content.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 15:51 ET — Notes gallery terminal budget
 
 ### Changed

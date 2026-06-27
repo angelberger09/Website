@@ -1,0 +1,186 @@
+/* Homepage room-status ledger map pass.
+   Binds the current-room slips into one readable status map without adding new content,
+   keeping the correction inside the existing homepage room-status pattern. */
+
+.home-room-status {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-room-status::before {
+  content: "room status";
+  position: absolute;
+  left: clamp(0.85rem, 2vw, 1.4rem);
+  top: clamp(1.15rem, 3vw, 1.85rem);
+  bottom: clamp(1.1rem, 3vw, 1.75rem);
+  width: clamp(1.25rem, 2vw, 1.65rem);
+  display: grid;
+  place-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  clip-path: polygon(16% 0, 100% 4%, 84% 100%, 0 95%);
+  background:
+    linear-gradient(180deg, rgba(216, 197, 236, 0.34), rgba(255, 176, 143, 0.24)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  color: rgba(58, 45, 42, 0.58);
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  box-shadow:
+    0.13rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.55rem 1rem rgba(47, 38, 35, 0.08);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-room-status::after {
+  content: "";
+  position: absolute;
+  left: clamp(2.3rem, 4.5vw, 3.85rem);
+  top: clamp(1.7rem, 4vw, 2.6rem);
+  bottom: clamp(1.5rem, 4vw, 2.35rem);
+  width: 0.11rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(58, 45, 42, 0.28) 0 0.32rem,
+    transparent 0.32rem 0.74rem
+  );
+  opacity: 0.58;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-room-status .home-section-scrap,
+.home-room-status .home-room-board {
+  position: relative;
+  z-index: 1;
+}
+
+.home-room-status .home-section-scrap {
+  margin-left: clamp(2rem, 5vw, 3.4rem);
+  max-width: min(100%, 48rem);
+}
+
+.home-room-board {
+  isolation: isolate;
+  margin-left: clamp(2rem, 5vw, 3.4rem);
+  padding: clamp(1rem, 2.2vw, 1.45rem) clamp(0.85rem, 2vw, 1.2rem) clamp(1.1rem, 2.2vw, 1.45rem);
+  clip-path: polygon(1% 4%, 98% 0, 100% 94%, 3% 100%, 0 18%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.72), rgba(245, 236, 222, 0.34)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.18rem 0.22rem 0 rgba(47, 38, 35, 0.08),
+    0 1.05rem 1.8rem rgba(47, 38, 35, 0.1);
+}
+
+.home-room-board::before {
+  content: "public room map";
+  position: absolute;
+  left: clamp(0.85rem, 2vw, 1.15rem);
+  top: 0.55rem;
+  padding: 0.18rem 0.62rem;
+  clip-path: polygon(4% 10%, 100% 0, 94% 100%, 0 88%);
+  background: rgba(255, 176, 143, 0.28);
+  color: rgba(58, 45, 42, 0.58);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.home-room-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.15rem, 2.5vw, 1.7rem);
+  right: clamp(1.15rem, 2.5vw, 1.7rem);
+  top: clamp(3.15rem, 5vw, 3.8rem);
+  height: 0.12rem;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(58, 45, 42, 0.28) 0 0.42rem,
+    transparent 0.42rem 0.92rem
+  );
+  opacity: 0.48;
+  z-index: 0;
+}
+
+.home-room-slip {
+  z-index: 1;
+  transform-origin: center top;
+}
+
+.home-room-slip:nth-child(odd) {
+  transform: translateY(0.18rem) rotate(-0.45deg);
+}
+
+.home-room-slip:nth-child(even) {
+  transform: translateY(0.55rem) rotate(0.5deg);
+}
+
+.home-room-slip__status {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding-inline: 0.52rem;
+  clip-path: polygon(0 18%, 100% 0, 94% 100%, 7% 86%);
+  background: rgba(216, 197, 236, 0.28);
+  box-shadow: 0.08rem 0.1rem 0 rgba(47, 38, 35, 0.07);
+}
+
+.home-room-slip__image {
+  position: relative;
+}
+
+.home-room-slip__image::after {
+  content: "checked";
+  position: absolute;
+  right: -0.35rem;
+  bottom: 0.42rem;
+  padding: 0.16rem 0.42rem;
+  transform: rotate(-4deg);
+  clip-path: polygon(8% 0, 100% 12%, 92% 100%, 0 86%);
+  background: rgba(255, 252, 246, 0.82);
+  color: rgba(58, 45, 42, 0.5);
+  font-size: 0.48rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0.08rem 0.11rem 0 rgba(47, 38, 35, 0.08);
+}
+
+@media (max-width: 760px) {
+  .home-room-status .home-section-scrap,
+  .home-room-board {
+    margin-left: clamp(1.85rem, 8vw, 3.1rem);
+  }
+
+  .home-room-status::after {
+    left: clamp(2.28rem, 9vw, 3.55rem);
+  }
+
+  .home-room-board {
+    padding-top: 2.35rem;
+  }
+
+  .home-room-board::after {
+    top: 4.2rem;
+  }
+
+  .home-room-slip:nth-child(odd),
+  .home-room-slip:nth-child(even) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-room-slip:nth-child(odd),
+  .home-room-slip:nth-child(even) {
+    transform: none;
+  }
+}

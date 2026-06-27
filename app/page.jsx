@@ -86,6 +86,11 @@ export default function HomePage() {
             <li><span className="title-line title-line--studio">Soft Strange Studio</span></li>
           </ul>
           <p className="title-note">A soft public studio for notes, art, creature work, and gentle project paths.</p>
+          <div className="home-arrival-ticket" aria-label="Homepage arrival cues">
+            <span>Front door</span>
+            <span>Four rooms</span>
+            <span>Soft map</span>
+          </div>
           <nav className="home-hero-route-strip home-hero-contact-sheet" aria-label="Start with a studio room">
             <span className="home-hero-route-strip__label">Start here</span>
             <div className="home-hero-route-strip__links" role="list">

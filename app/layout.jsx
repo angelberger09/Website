@@ -137,6 +137,7 @@ import './eyebrow-paper-label-pass.css';
 import './global-metadata-paper-snippets-pass.css';
 import './reader-state-paper-scraps-pass.css';
 import './list-paper-scraps-pass.css';
+import './section-intro-copy-slips-pass.css';
 import './pathway-link-paper-trail-pass.css';
 import './home-path-ledger-focus-pass.css';
 import './home-section-thread-pass.css';

@@ -1,0 +1,114 @@
+/* Portfolio gallery room rail pass.
+   Makes the gallery section read as one guided paper/photo shelf, not just isolated numbered cards. */
+
+.portfolio-gallery-board {
+  position: relative;
+}
+
+.portfolio-gallery-board::before {
+  content: "Gallery shelf";
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.35rem);
+  right: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.85rem 0.38rem;
+  color: rgba(62, 45, 31, 0.82);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 234, 0.98), rgba(238, 220, 184, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  border: 1px solid rgba(116, 86, 53, 0.16);
+  box-shadow: 0 0.55rem 1rem rgba(86, 58, 34, 0.17);
+  clip-path: polygon(4% 7%, 96% 0, 100% 82%, 7% 100%, 0 22%);
+  transform: rotate(1.5deg);
+}
+
+.portfolio-gallery-scroll {
+  position: relative;
+  padding-top: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+.portfolio-gallery-scroll::before {
+  content: "Public piece  ·  Archive note  ·  Systems lane  ·  Image rule  ·  Archive path";
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  display: inline-flex;
+  width: max-content;
+  max-width: min(62rem, 92vw);
+  margin: 0 0 0.8rem 0.2rem;
+  padding: 0.5rem 0.9rem 0.42rem;
+  color: rgba(70, 52, 36, 0.78);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 1.6vw, 0.74rem);
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background:
+    linear-gradient(90deg, rgba(255, 252, 239, 0.98), rgba(244, 232, 203, 0.92)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  border: 1px solid rgba(118, 86, 52, 0.13);
+  box-shadow: 0 0.5rem 1.1rem rgba(88, 60, 33, 0.15);
+  clip-path: polygon(1% 12%, 99% 4%, 97% 86%, 3% 100%, 0 34%);
+}
+
+.portfolio-gallery-scroll::after {
+  content: "";
+  position: absolute;
+  top: clamp(3.45rem, 6vw, 4rem);
+  left: clamp(1rem, 3vw, 1.8rem);
+  width: min(42rem, 72%);
+  height: 2px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(103, 76, 48, 0.34) 0 0.55rem,
+    transparent 0.55rem 1rem
+  );
+  opacity: 0.72;
+}
+
+.portfolio-gallery-card__number {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.portfolio-gallery-card__number::before {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  padding: 0.35rem 0.55rem 0.3rem;
+  color: rgba(59, 45, 32, 0.74);
+  font-size: 0.64rem;
+  line-height: 1;
+  background: rgba(255, 249, 231, 0.92);
+  box-shadow: 0 0.35rem 0.75rem rgba(84, 57, 34, 0.12);
+  clip-path: polygon(5% 9%, 100% 0, 94% 88%, 0 100%);
+}
+
+@media (max-width: 760px) {
+  .portfolio-gallery-board::before {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 0 0.75rem 0.35rem;
+  }
+
+  .portfolio-gallery-scroll::before {
+    max-width: 82vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .portfolio-gallery-scroll::after {
+    top: 3.55rem;
+    width: 86%;
+  }
+}

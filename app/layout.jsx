@@ -166,6 +166,7 @@ import './page-intro-shelf-ticket-faces-pass.css';
 import './page-intro-trust-spine-pass.css';
 import './page-intro-room-key-ticket-pass.css';
 import './page-intro-calm-focus-pass.css';
+import './page-intro-room-shelf-ledger-pass.css';
 import './paper-asset-shell-pass.css';
 import './paper-asset-card-pass.css';
 import './detail-card-paper-face-pass.css';
@@ -219,24 +220,16 @@ import './about-pathway-door-cue-tickets-pass.css';
 import './footer-bound-exit-path-pass.css';
 import './footer-room-index-docket-pass.css';
 import './footer-room-index-terminal-budget-pass.css';
-import './page-intro-room-shelf-ledger-pass.css';
-import './final-paper-surface-budget-pass.css';
-import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'Soft Strange Studio by Angel Berger — notes, art, projects, and store paths.',
+  description: 'A soft, strange studio site by Angel Berger.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <AtmosphereLayer />
-        <SiteHeader />
-        {children}
-        <StudioFooter />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

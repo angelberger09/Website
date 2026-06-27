@@ -200,6 +200,7 @@ import './notes-state-tray-spine-pass.css';
 import './notes-state-tray-direct-cues-pass.css';
 import './notes-state-reader-docket-pass.css';
 import './portfolio-feed-public-docket-pass.css';
+import './portfolio-feed-bound-shelf-pass.css';
 import './store-feed-shelf-docket-pass.css';
 import './home-house-rules-docket-pass.css';
 import './home-house-rules-ledger-pass.css';

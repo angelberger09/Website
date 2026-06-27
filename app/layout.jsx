@@ -222,6 +222,7 @@ import './footer-bound-exit-path-pass.css';
 import './footer-room-index-docket-pass.css';
 import './footer-room-index-terminal-budget-pass.css';
 import './terminal-room-surface-budget-pass.css';
+import './home-next-path-departure-compass-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

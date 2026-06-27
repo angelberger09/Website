@@ -1,0 +1,176 @@
+/* Homepage next path bound docket pass.
+   Binds the closing homepage note to the shared continuity trail so it reads as one exit surface. */
+
+.home-next-path-room {
+  --home-exit-ink: rgba(47, 38, 35, 0.84);
+  --home-exit-violet: rgba(89, 70, 96, 0.86);
+}
+
+.home-next-path-room::after {
+  content: "exit docket";
+  position: absolute;
+  left: clamp(1.1rem, 5vw, 3.4rem);
+  bottom: clamp(1.65rem, 5vw, 3rem);
+  z-index: -1;
+  display: inline-grid;
+  place-items: center;
+  min-width: clamp(6.2rem, 13vw, 9rem);
+  padding: 0.42rem 0.72rem 0.36rem;
+  clip-path: polygon(4% 14%, 96% 0, 100% 82%, 8% 100%, 0 28%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(224, 207, 178, 0.7)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(76, 60, 82, 0.8);
+  font-size: clamp(0.62rem, 1vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.72rem 1.15rem rgba(47, 38, 35, 0.12);
+  transform: rotate(-2.2deg);
+}
+
+.home-next-path-note {
+  grid-template-columns: minmax(0, 1fr) minmax(11.4rem, 15.4rem);
+  overflow: visible;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.1),
+    0 1.1rem 1.75rem rgba(47, 38, 35, 0.16),
+    -0.45rem 0.45rem 0 rgba(154, 133, 166, 0.12);
+}
+
+.home-next-path-note::before {
+  width: clamp(4.2rem, 10vw, 6.4rem);
+  height: 1rem;
+  background:
+    linear-gradient(120deg, rgba(221, 205, 181, 0.82), rgba(255, 252, 246, 0.48)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+}
+
+.home-next-path-note::after {
+  content: "next room\A about · notes";
+  min-height: 8.65rem;
+  border-left: 1px dashed rgba(76, 60, 82, 0.24);
+  background:
+    linear-gradient(150deg, rgba(116, 102, 122, 0.32), rgba(239, 226, 205, 0.58) 47%, rgba(255, 252, 246, 0.96)),
+    radial-gradient(circle at 22% 22%, rgba(255, 255, 255, 0.78), transparent 34%),
+    linear-gradient(90deg, transparent 0 27%, rgba(71, 52, 78, 0.16) 27% 30%, transparent 30% 100%),
+    var(--grain-image);
+  background-size: cover, cover, cover, 12rem 12rem;
+}
+
+.home-next-path-note__tag {
+  position: relative;
+  margin-bottom: 0.05rem;
+  box-shadow: 0 0.22rem 0.48rem rgba(47, 38, 35, 0.09);
+}
+
+.home-next-path-note__tag::after {
+  content: "front room exit";
+  position: absolute;
+  left: calc(100% + 0.42rem);
+  top: 50%;
+  width: max-content;
+  max-width: 12rem;
+  padding: 0.2rem 0.46rem 0.18rem;
+  clip-path: polygon(0 12%, 96% 4%, 100% 86%, 6% 100%);
+  background: rgba(255, 252, 246, 0.78);
+  color: rgba(76, 60, 82, 0.72);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateY(-50%) rotate(1.6deg);
+  box-shadow: 0 0.26rem 0.62rem rgba(47, 38, 35, 0.1);
+}
+
+.home-next-path-note strong {
+  position: relative;
+  padding-top: 0.2rem;
+}
+
+.home-next-path-note strong::after {
+  content: "about slip / notes slip";
+  display: block;
+  width: fit-content;
+  margin-top: 0.58rem;
+  padding: 0.28rem 0.56rem 0.22rem;
+  clip-path: polygon(3% 16%, 98% 2%, 94% 88%, 7% 100%, 0 35%);
+  background:
+    linear-gradient(120deg, rgba(239, 226, 205, 0.72), rgba(255, 252, 246, 0.72)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: var(--home-exit-violet);
+  font-size: clamp(0.62rem, 1vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0 0.34rem 0.72rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-0.8deg);
+}
+
+.home-next-path-note p {
+  border-left: 1px dashed rgba(76, 60, 82, 0.22);
+  padding-left: clamp(0.7rem, 1.7vw, 1rem);
+}
+
+.continuity-paper-trail {
+  position: relative;
+}
+
+.continuity-paper-trail::before {
+  content: "";
+  position: absolute;
+  left: clamp(1.8rem, 12vw, 8.5rem);
+  right: clamp(1.8rem, 12vw, 8.5rem);
+  top: -1rem;
+  height: 1px;
+  border-top: 1px dashed rgba(76, 60, 82, 0.24);
+  transform: rotate(-0.15deg);
+}
+
+@media (max-width: 700px) {
+  .home-next-path-room::after {
+    bottom: auto;
+    top: 0.7rem;
+    left: 1rem;
+    transform: rotate(-1deg);
+  }
+
+  .home-next-path-note {
+    grid-template-columns: 1fr;
+  }
+
+  .home-next-path-note__tag::after {
+    position: static;
+    display: inline-block;
+    margin-left: 0.4rem;
+    transform: rotate(1deg);
+  }
+
+  .home-next-path-note p {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .continuity-paper-trail::before {
+    left: 1.2rem;
+    right: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-next-path-note,
+  .home-next-path-note::after,
+  .home-next-path-note__tag::after,
+  .home-next-path-note strong::after,
+  .home-next-path-room::after {
+    transform: none;
+  }
+}

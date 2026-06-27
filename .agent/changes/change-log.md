@@ -2,6 +2,46 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 11:29 ET — About pathway door cue tickets
+
+### Changed
+
+- Added `app/about-pathway-door-cue-tickets-pass.css`.
+- Loaded the pass after the About departure-table CSS import in `app/layout.jsx`.
+- Updated `app/about/page.jsx` so the About next-door cards render source-backed door cue text from `aboutPathwayFrames` instead of relying on generic CSS-only pseudo-element stamps.
+- Added `.agent/changes/2026-06-27-about-pathway-door-cue-tickets.md`.
+- Added `.agent/matrices/about-pathway-door-cue-tickets.matrix.md`.
+
+### Why
+
+The About pathways departure table already read as one composed paper exit surface, but the next-door card cue labels were still mostly CSS-generated and included a generic first-card cue. This pass makes the section visibly closer to the source-backed, paper-first, flattened-hierarchy, text-snippet, and room-continuity goals without changing routes, destinations, public copy claims, accessibility labels, or inventing content.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 11:09 ET — Blog bridge old door ledger
 
 ### Changed

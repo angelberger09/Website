@@ -1,0 +1,122 @@
+/* Store return docket pass.
+   Turns the local Store next-room path into one composed return docket instead of two repeated exit cards. */
+
+.store-path-photo-board {
+  padding-top: clamp(1.4rem, 3.2vw, 2.6rem);
+}
+
+.store-path-photo-board::before {
+  box-shadow:
+    0 1.2rem 2.6rem rgba(47, 38, 35, 0.13),
+    0 0.24rem 0 rgba(47, 38, 35, 0.05),
+    inset 0 0 0 1px rgba(47, 38, 35, 0.06);
+}
+
+.store-path-photo-grid {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 1.8rem) clamp(0.8rem, 2vw, 1.2rem) clamp(1.05rem, 2.4vw, 1.45rem) clamp(4.7rem, 8vw, 6.25rem);
+  isolation: isolate;
+}
+
+.store-path-photo-grid::before {
+  position: absolute;
+  left: clamp(0.45rem, 1.3vw, 0.9rem);
+  top: clamp(1rem, 2.3vw, 1.45rem);
+  bottom: clamp(1rem, 2.3vw, 1.45rem);
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(2.55rem, 5vw, 3.45rem);
+  content: "return docket";
+  clip-path: polygon(10% 2%, 94% 0, 100% 18%, 92% 98%, 14% 100%, 0 86%, 4% 24%);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(245, 224, 198, 0.62)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(47, 38, 35, 0.72);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  box-shadow:
+    0.18rem 0.32rem 0 rgba(47, 38, 35, 0.06),
+    0 0.75rem 1.35rem rgba(47, 38, 35, 0.13);
+  transform: rotate(-1.2deg);
+}
+
+.store-path-photo-grid::after {
+  position: absolute;
+  left: clamp(3.45rem, 6.5vw, 4.8rem);
+  top: 50%;
+  z-index: 0;
+  width: calc(100% - clamp(5.2rem, 8vw, 6.4rem));
+  height: 0;
+  content: "";
+  border-top: 2px dashed rgba(83, 101, 74, 0.32);
+  filter: drop-shadow(0 0.12rem 0 rgba(255, 252, 246, 0.7));
+  transform: translateY(-50%) rotate(-0.25deg);
+}
+
+.store-path-photo-card {
+  z-index: 1;
+}
+
+.store-path-photo-card::before {
+  position: absolute;
+  top: 0.58rem;
+  left: clamp(0.62rem, 1.5vw, 0.9rem);
+  z-index: 2;
+  width: clamp(4.4rem, 8vw, 5.8rem);
+  height: 1.05rem;
+  content: "next room";
+  display: grid;
+  place-items: center;
+  clip-path: polygon(4% 12%, 36% 0, 96% 6%, 100% 82%, 68% 100%, 0 86%);
+  background:
+    linear-gradient(110deg, rgba(255, 252, 246, 0.86), rgba(255, 247, 235, 0.42)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(47, 38, 35, 0.64);
+  font-size: 0.54rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0.1rem 0.2rem 0.42rem rgba(47, 38, 35, 0.12);
+  transform: rotate(-1.8deg);
+}
+
+.store-path-photo-card:nth-child(2n)::before {
+  left: auto;
+  right: clamp(0.62rem, 1.5vw, 0.9rem);
+  content: "soft return";
+  transform: rotate(1.6deg);
+}
+
+.store-path-photo-card__cue {
+  font-size: clamp(0.84rem, 1.65vw, 1.02rem);
+  letter-spacing: 0.13em;
+}
+
+@media (max-width: 820px) {
+  .store-path-photo-grid {
+    padding: clamp(4rem, 11vw, 4.7rem) 0.25rem 0.3rem;
+  }
+
+  .store-path-photo-grid::before {
+    inset: 0.35rem auto auto 0.4rem;
+    width: min(14rem, 70vw);
+    height: 2.2rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-1deg);
+  }
+
+  .store-path-photo-grid::after {
+    left: 1rem;
+    right: 1rem;
+    top: 3.35rem;
+    width: auto;
+  }
+}

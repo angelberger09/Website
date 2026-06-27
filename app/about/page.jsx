@@ -128,17 +128,20 @@ const aboutPathwayFrames = [
   {
     label: "Writing shelf",
     mark: "Notes",
-    detail: "public words"
+    detail: "public words",
+    cue: "read next"
   },
   {
     label: "Archive wall",
     mark: "Work",
-    detail: "public shape"
+    detail: "public shape",
+    cue: "open archive"
   },
   {
     label: "Prep table",
     mark: "Store",
-    detail: "future lanes"
+    detail: "future lanes",
+    cue: "prep table"
   }
 ];
 
@@ -304,6 +307,7 @@ export default function AboutPage() {
                 </span>
                 <span className="about-pathway-note__label">{pathway.label}</span>
                 <small>{pathway.description}</small>
+                <span className="about-pathway-note__door-cue" aria-hidden="true">{frame.cue}</span>
                 <i aria-hidden="true">{frame.label}</i>
               </a>
             );

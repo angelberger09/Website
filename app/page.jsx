@@ -103,7 +103,7 @@ export default function HomePage() {
                   <span className="home-hero-route-slip__copy">
                     <span>{page.eyebrow}</span>
                     <strong>{page.title}</strong>
-                    <small>Open room</small>
+                    <small>{page.roomCue}</small>
                   </span>
                 </a>
               ))}

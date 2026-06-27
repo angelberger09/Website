@@ -1,0 +1,153 @@
+.portfolio-feed-board--shelf {
+  isolation: isolate;
+}
+
+.portfolio-feed-board--shelf > .portfolio-board-heading,
+.portfolio-feed-shelf-intro,
+.portfolio-archive-ticket-board,
+.portfolio-feed-ledger--visitor,
+.portfolio-rule-tapes--visitor {
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-feed-board--shelf .portfolio-feed-shelf-intro {
+  margin-left: clamp(0.25rem, 1vw, 0.7rem);
+  max-width: 44rem;
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2.2vw, 1.55rem) clamp(1rem, 2vw, 1.3rem);
+  border-left: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 244, 0.96), rgba(237, 219, 186, 0.83)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow:
+    0 1rem 1.8rem rgba(66, 44, 27, 0.14),
+    0 0.18rem 0.54rem rgba(66, 44, 27, 0.1);
+  clip-path: polygon(1.5% 2%, 98.8% 0, 100% 94%, 0 100%);
+  transform: rotate(-0.25deg);
+}
+
+.portfolio-feed-board--shelf .portfolio-feed-shelf-intro::before {
+  content: "shelf boundary";
+  position: absolute;
+  top: -0.62rem;
+  left: clamp(1rem, 2vw, 1.45rem);
+  padding: 0.3rem 0.58rem 0.24rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 253, 245, 0.94);
+  background:
+    linear-gradient(135deg, rgba(62, 45, 28, 0.76), rgba(108, 78, 47, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 110px 110px;
+  box-shadow: 0 0.48rem 0.9rem rgba(65, 45, 28, 0.13);
+  clip-path: polygon(4% 0, 100% 9%, 96% 100%, 0 90%);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket-board {
+  margin-left: clamp(0.75rem, 2.1vw, 1.6rem);
+  margin-right: clamp(0.2rem, 1vw, 0.6rem);
+  padding-top: clamp(1.75rem, 3.2vw, 2.25rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(98, 70, 43, 0.08),
+    0 1.15rem 2.1rem rgba(65, 43, 26, 0.13);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(0.95rem, 2vw, 1.35rem);
+  right: clamp(0.95rem, 2vw, 1.35rem);
+  top: clamp(1.05rem, 2vw, 1.35rem);
+  height: 2px;
+  z-index: 1;
+  background-image: linear-gradient(90deg, rgba(91, 64, 38, 0.34) 0 46%, transparent 46% 100%);
+  background-size: 0.85rem 2px;
+  opacity: 0.85;
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket {
+  box-shadow:
+    0 0.9rem 1.6rem rgba(65, 43, 26, 0.14),
+    0 0.14rem 0.42rem rgba(65, 43, 26, 0.1);
+}
+
+.portfolio-feed-board--shelf .portfolio-feed-ledger--visitor {
+  margin-left: clamp(1rem, 2.4vw, 1.9rem);
+  margin-right: clamp(0.45rem, 1.3vw, 0.9rem);
+  padding: clamp(1.9rem, 3vw, 2.25rem) clamp(0.72rem, 1.7vw, 1rem) clamp(0.85rem, 1.8vw, 1.15rem);
+  border-top: 0;
+  background:
+    linear-gradient(145deg, rgba(238, 222, 190, 0.64), rgba(255, 252, 238, 0.3)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, 220px 220px;
+  box-shadow: inset 0 0 0 1px rgba(98, 70, 43, 0.08);
+  clip-path: polygon(0 3%, 99% 0, 100% 96%, 1% 100%);
+}
+
+.portfolio-feed-board--shelf .portfolio-feed-ledger--visitor::after {
+  content: "";
+  position: absolute;
+  top: 1.12rem;
+  left: clamp(1rem, 2vw, 1.35rem);
+  right: clamp(1rem, 2vw, 1.35rem);
+  height: 2px;
+  background-image: linear-gradient(90deg, rgba(91, 64, 38, 0.32) 0 46%, transparent 46% 100%);
+  background-size: 0.85rem 2px;
+}
+
+.portfolio-feed-board--shelf .portfolio-rule-tapes--visitor {
+  width: min(100%, 49rem);
+  margin-left: clamp(1.25rem, 3vw, 2.25rem);
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(0.9rem, 1.8vw, 1.15rem);
+  border-top: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 244, 0.78), rgba(238, 219, 184, 0.5)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow:
+    0 0.95rem 1.7rem rgba(65, 43, 26, 0.12),
+    0 0.14rem 0.4rem rgba(65, 43, 26, 0.09);
+  clip-path: polygon(1.5% 0, 100% 4%, 97.5% 96%, 0 100%);
+}
+
+.portfolio-feed-board--shelf .portfolio-rule-tapes--visitor::before {
+  content: "public rules";
+  position: absolute;
+  top: -0.55rem;
+  right: clamp(1rem, 2vw, 1.45rem);
+  padding: 0.29rem 0.55rem 0.23rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(74, 52, 32, 0.76);
+  background: rgba(255, 253, 244, 0.86);
+  box-shadow: 0 0.42rem 0.8rem rgba(65, 45, 28, 0.1);
+  clip-path: polygon(4% 0, 100% 8%, 96% 100%, 0 91%);
+}
+
+.portfolio-feed-board--shelf .portfolio-rule-tapes--visitor p {
+  box-shadow: 0 0.5rem 0.95rem rgba(65, 43, 26, 0.1);
+}
+
+@media (max-width: 680px) {
+  .portfolio-feed-board--shelf .portfolio-feed-shelf-intro,
+  .portfolio-feed-board--shelf .portfolio-archive-ticket-board,
+  .portfolio-feed-board--shelf .portfolio-feed-ledger--visitor,
+  .portfolio-feed-board--shelf .portfolio-rule-tapes--visitor {
+    margin-left: 0;
+    margin-right: 0;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-feed-board--shelf .portfolio-feed-shelf-intro {
+    transform: none;
+  }
+}

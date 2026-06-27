@@ -26,6 +26,7 @@ import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';
 import './about-exit-shelf-pass.css';
 import './about-door-docket-pass.css';
+import './about-pathway-door-compass-pass.css';
 import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './portfolio-gallery-direct-cues-pass.css';

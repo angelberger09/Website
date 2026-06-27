@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 13:28 ET — Homepage next path bound docket
+
+### Changed
+
+- Added `app/home-next-path-bound-docket-pass.css`.
+- Loaded the pass after the existing homepage next-path room/ticket-stack passes in `app/layout.jsx`.
+- Bound the homepage closing `Next path` note more clearly into the shared continuity trail with an `exit docket` slip, stronger lifted-paper depth, clipped continuation slips, a direct About/Notes route face, and a dashed connector thread.
+- Added `.agent/changes/2026-06-27-home-next-path-bound-docket.md`.
+- Added `.agent/matrices/home-next-path-bound-docket.matrix.md`.
+
+### Why
+
+The homepage closing path already had a paper note and abstract `next room` face, but it could still read as a standalone card before the shared continuity trail. This pass makes the section closer to the calm-room sequence, paper-first material, flattened hierarchy, text-snippet, continuity, and photo/content-surface goals without changing routes, public copy claims, accessibility labels, or inventing new content.
+
+### Related items
+
+- PAGE-001
+- COMP-004
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 13:21 ET — Portfolio feed bound shelf
 
 ### Changed
@@ -238,124 +281,3 @@ The Blog route already explained that older public Blog links open the same Note
 - LESSON-002
 - LESSON-018
 - LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 10:50 ET — Footer bound exit path
-
-### Changed
-
-- Added `app/footer-bound-exit-path-pass.css`.
-- Loaded the pass after the latest footer and route-specific CSS imports in `app/layout.jsx`.
-- Bound the four footer exit receipts into one clearer `bound exit path` with a larger shared backing sheet, clipped route label, tape strips, alternating receipt placement, stronger lifted-paper depth, and mobile-safe fallbacks.
-- Added `.agent/changes/2026-06-27-footer-bound-exit-path.md`.
-- Added `.agent/matrices/footer-bound-exit-path.matrix.md`.
-
-### Why
-
-The footer already had paper exit receipts and a consolidated exit desk, but the receipt shelf could still scan as separate link cards. This pass makes the shared footer visibly closer to the calm-room continuity, paper-first material, flattened hierarchy, text-snippet, and route-path goals without changing routes, public copy, accessibility labels, or inventing new content.
-
-### Related items
-
-- COMP-005
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 10:39 ET — Notes gallery room docket
-
-### Changed
-
-- Added `app/notes-gallery-room-docket-pass.css`.
-- Loaded the pass after `app/notes-gallery-pass.css` in `app/layout.jsx`.
-- Bound the Notes contact-sheet gallery into a clearer `contact sheet path` room docket with a `published notes` slip, clipped intro copy, dashed shelf thread, alternating card placement, stronger lifted-paper depth, and a mobile-safe fallback.
-- Added `.agent/changes/2026-06-27-notes-gallery-room-docket.md`.
-- Added `.agent/matrices/notes-gallery-room-docket.matrix.md`.
-
-### Why
-
-The Notes gallery already used honest scrollable paper/photo note cards, but its intro and shelf could still read as separate pieces. This pass makes the gallery visibly closer to the calm-room, paper-first, flattened-hierarchy, text-snippet, photo-led, alternating-scroll-gallery goals without changing note data, routes, copy claims, accessibility labels, or public content boundaries.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 10:20 ET — About principles promise docket
-
-### Changed
-
-- Added `app/about-principles-promise-docket-pass.css`.
-- Loaded the pass after the latest About CSS passes in `app/layout.jsx`.
-- Turned the About working-principles section intro into a clipped paper promise docket with a stitch rail, top `public promise` tag, clipped eyebrow slip, paper-grain background, lifted shadow, and smaller clipped body copy slip.
-- Added `.agent/changes/2026-06-27-about-principles-promise-docket.md`.
-- Added `.agent/matrices/about-principles-promise-docket.matrix.md`.
-
-### Why
-
-The working-principle notes already had a promise-trail treatment, but their heading still read like regular intro copy above cards. This pass makes the section intro visibly part of the same composed About room section, supporting paper-first material, flattened hierarchy, text snippets, and calm-room sequencing without changing About copy, routes, data, accessibility labels, or public content boundaries.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024

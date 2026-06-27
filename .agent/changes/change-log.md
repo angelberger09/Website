@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 10:50 ET — Footer bound exit path
+
+### Changed
+
+- Added `app/footer-bound-exit-path-pass.css`.
+- Loaded the pass after the latest footer and route-specific CSS imports in `app/layout.jsx`.
+- Bound the four footer exit receipts into one clearer `bound exit path` with a larger shared backing sheet, clipped route label, tape strips, alternating receipt placement, stronger lifted-paper depth, and mobile-safe fallbacks.
+- Added `.agent/changes/2026-06-27-footer-bound-exit-path.md`.
+- Added `.agent/matrices/footer-bound-exit-path.matrix.md`.
+
+### Why
+
+The footer already had paper exit receipts and a consolidated exit desk, but the receipt shelf could still scan as separate link cards. This pass makes the shared footer visibly closer to the calm-room continuity, paper-first material, flattened hierarchy, text-snippet, and route-path goals without changing routes, public copy, accessibility labels, or inventing new content.
+
+### Related items
+
+- COMP-005
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 10:39 ET — Notes gallery room docket
 
 ### Changed

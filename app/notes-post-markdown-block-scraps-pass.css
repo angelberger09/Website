@@ -1,0 +1,125 @@
+/* Give Notes post quote and code Markdown blocks their own paper-scrap surfaces. */
+.notes-post-markdown blockquote,
+.notes-post-markdown pre {
+  position: relative;
+  isolation: isolate;
+  margin: clamp(0.95rem, 2.6vw, 1.45rem) 0 clamp(1.05rem, 2.8vw, 1.65rem);
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(138deg, rgba(255, 250, 242, 0.94), rgba(255, 247, 235, 0.72) 58%, rgba(185, 201, 175, 0.16)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 22rem 22rem, 42rem 42rem;
+  box-shadow:
+    0.18rem 0.25rem 0 rgba(216, 197, 236, 0.16),
+    0 0.82rem 1.5rem rgba(47, 38, 35, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(1.4% 4%, 24% 1.8%, 53% 3%, 98% 1.6%, 97% 91%, 70% 98%, 33% 95.5%, 2% 98%);
+}
+
+.notes-post-markdown blockquote::before,
+.notes-post-markdown pre::before {
+  position: absolute;
+  top: -0.31rem;
+  right: clamp(1rem, 4vw, 2.4rem);
+  z-index: 1;
+  width: clamp(3rem, 8vw, 4.8rem);
+  height: 0.56rem;
+  content: "";
+  background:
+    linear-gradient(105deg, rgba(255, 250, 242, 0.76), rgba(255, 176, 143, 0.22)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow: 0 0.18rem 0.42rem rgba(47, 38, 35, 0.1);
+  opacity: 0.86;
+  transform: rotate(1.4deg);
+  clip-path: polygon(2% 16%, 28% 4%, 66% 12%, 98% 3%, 94% 86%, 70% 78%, 34% 92%, 4% 82%);
+}
+
+.notes-post-markdown blockquote {
+  padding: clamp(1rem, 2.4vw, 1.35rem) clamp(1rem, 2.6vw, 1.55rem) clamp(1rem, 2.4vw, 1.35rem) clamp(1.25rem, 3vw, 1.8rem);
+  color: rgba(58, 45, 42, 0.88);
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  font-weight: 720;
+  line-height: 1.62;
+}
+
+.notes-post-markdown blockquote::after {
+  position: absolute;
+  top: 0.86rem;
+  left: 0.72rem;
+  width: 0.42rem;
+  height: calc(100% - 1.72rem);
+  min-height: 2.2rem;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 176, 143, 0.78), rgba(185, 201, 175, 0.58));
+  box-shadow: 0.1rem 0 0.24rem rgba(47, 38, 35, 0.08);
+  opacity: 0.84;
+  clip-path: polygon(16% 0, 100% 2%, 82% 98%, 0 100%);
+}
+
+.notes-post-markdown pre {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 100%;
+  padding: clamp(0.9rem, 2.2vw, 1.25rem);
+  overflow-x: auto;
+  color: rgba(58, 45, 42, 0.94);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  line-height: 1.55;
+  white-space: pre;
+  background:
+    linear-gradient(135deg, rgba(58, 45, 42, 0.08), rgba(255, 250, 242, 0.92) 16%, rgba(255, 247, 235, 0.76)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 20rem 20rem, 40rem 40rem;
+  clip-path: polygon(1% 2%, 21% 4%, 52% 1.5%, 98% 3%, 99% 92%, 67% 96.5%, 31% 98%, 1.5% 95%);
+}
+
+.notes-post-markdown pre code {
+  display: block;
+  min-width: max-content;
+  color: inherit;
+  font-size: 0.92rem;
+}
+
+.notes-post-code-label {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.32rem 0.58rem;
+  color: rgba(58, 45, 42, 0.78);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.92), rgba(216, 197, 236, 0.22)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0 0.18rem 0.42rem rgba(47, 38, 35, 0.08);
+  clip-path: polygon(2% 9%, 34% 2%, 63% 8%, 98% 3%, 96% 84%, 66% 94%, 31% 90%, 4% 96%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-post-markdown blockquote::before,
+  .notes-post-markdown pre::before {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown blockquote,
+  .notes-post-markdown pre {
+    margin-inline: -0.1rem;
+  }
+
+  .notes-post-markdown blockquote {
+    padding: 0.92rem 0.9rem 0.94rem 1.34rem;
+  }
+
+  .notes-post-markdown pre {
+    padding: 0.82rem;
+  }
+}

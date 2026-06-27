@@ -1,0 +1,86 @@
+/* Homepage departure compass terminal budget pass.
+   Loaded after the newest homepage departure-compass pass so the final
+   homepage exit surface stays visible, calm, and budgeted instead of becoming
+   an extra heavy layer after the terminal room budget. */
+
+.home-next-path-room {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 780px;
+}
+
+.home-next-path-room::before,
+.home-next-path-room .continuity-paper-trail,
+.home-next-path-note {
+  background-blend-mode: normal;
+  filter: none;
+}
+
+.home-next-path-room::before {
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.56) 58%, rgba(185, 201, 175, 0.14)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.055),
+    0 0.72rem 1.25rem rgba(47, 38, 35, 0.095),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+}
+
+.home-next-path-note,
+.home-next-path-room .continuity-paper-trail {
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.055),
+    0 0.58rem 1rem rgba(47, 38, 35, 0.085),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.home-next-path-note::after,
+.home-next-path-room .continuity-paper-trail::after,
+.home-next-path-room .continuity-paper-step {
+  filter: none;
+  box-shadow:
+    0.05rem 0.1rem 0 rgba(47, 38, 35, 0.045),
+    0 0.36rem 0.72rem rgba(47, 38, 35, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.home-next-path-room .continuity-paper-trail::before {
+  border-color: rgba(91, 73, 66, 0.2);
+  opacity: 0.72;
+  filter: none;
+}
+
+.home-next-path-room .continuity-paper-step::before,
+.home-next-path-room .continuity-paper-step::after {
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-next-path-room::before,
+  .home-next-path-note,
+  .home-next-path-note::before,
+  .home-next-path-note::after,
+  .home-next-path-room .continuity-paper-trail,
+  .home-next-path-room .continuity-paper-trail::before,
+  .home-next-path-room .continuity-paper-trail::after,
+  .home-next-path-room .continuity-paper-step,
+  .home-next-path-room .continuity-paper-step:nth-child(odd),
+  .home-next-path-room .continuity-paper-step:nth-child(even) {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-next-path-room {
+    contain-intrinsic-size: 1px 940px;
+  }
+
+  .home-next-path-room::before,
+  .home-next-path-note,
+  .home-next-path-room .continuity-paper-trail {
+    box-shadow:
+      0.05rem 0.1rem 0 rgba(47, 38, 35, 0.045),
+      0 0.36rem 0.72rem rgba(47, 38, 35, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.52);
+  }
+}

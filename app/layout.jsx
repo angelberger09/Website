@@ -218,21 +218,11 @@ import './store-preview-proof-rail-pass.css';
 import './terminal-preview-surface-budget-pass.css';
 import './about-room-path-docket-pass.css';
 import './about-opening-room-table-pass.css';
-import './about-contact-caption-strips-pass.css';
-import './about-principles-promise-docket-pass.css';
-import './about-pathways-departure-table-pass.css';
-import './footer-room-index-docket-pass.css';
-import './footer-room-index-terminal-budget-pass.css';
-import './terminal-room-surface-budget-pass.css';
-import './home-next-path-departure-compass-pass.css';
-import './home-departure-compass-terminal-budget-pass.css';
-import './notes-gallery-terminal-budget-pass.css';
-import './home-room-status-ledger-map-pass.css';
-import './home-reading-path-stitch-ledger-pass.css';
+import './about-opening-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A soft, strange studio site by Angel Berger.',
+  description: 'A soft, strange studio home for Angel Berger.'
 };
 
 export default function RootLayout({ children }) {

@@ -1,0 +1,150 @@
+/* Store preview proof rail pass.
+   Groups the Store preview board into one guided proof strip instead of loose staged preview cards. */
+
+.store-visual-board {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(1.1rem, 2.4vw, 1.8rem);
+  padding-left: clamp(0.45rem, 1.4vw, 1rem);
+}
+
+.store-visual-board__copy {
+  position: relative;
+  align-self: center;
+  padding-top: clamp(1.3rem, 2.6vw, 2rem);
+}
+
+.store-visual-board__copy::before {
+  position: absolute;
+  top: -0.2rem;
+  left: clamp(0.1rem, 0.7vw, 0.35rem);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(8.4rem, 14vw, 11.5rem);
+  min-height: 1.8rem;
+  content: "preview proof";
+  clip-path: polygon(2% 13%, 38% 0, 98% 7%, 100% 84%, 66% 100%, 0 90%);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.56)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  color: rgba(47, 38, 35, 0.72);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  box-shadow: 0.16rem 0.26rem 0 rgba(47, 38, 35, 0.06), 0 0.7rem 1.05rem rgba(47, 38, 35, 0.12);
+  transform: rotate(-1.2deg);
+}
+
+.store-visual-board__copy::after {
+  position: absolute;
+  top: clamp(2.25rem, 4.6vw, 3.25rem);
+  left: clamp(-0.55rem, -0.9vw, -0.2rem);
+  z-index: -1;
+  width: 0;
+  height: calc(100% - clamp(3.4rem, 6vw, 4.4rem));
+  min-height: 7rem;
+  content: "";
+  border-left: 2px dashed rgba(83, 101, 74, 0.28);
+  filter: drop-shadow(0.12rem 0.22rem 0 rgba(255, 252, 246, 0.36));
+}
+
+.store-shot-strip {
+  counter-reset: store-preview-proof;
+  align-items: stretch;
+  padding-top: clamp(2.1rem, 4vw, 2.9rem);
+}
+
+.store-shot-strip::after {
+  position: absolute;
+  top: clamp(0.6rem, 1.7vw, 1.05rem);
+  left: clamp(0.65rem, 1.8vw, 1.2rem);
+  right: clamp(0.65rem, 1.8vw, 1.2rem);
+  z-index: 0;
+  height: 0;
+  content: "";
+  border-top: 2px dashed rgba(83, 101, 74, 0.24);
+  transform: rotate(-0.4deg);
+}
+
+.store-shot-card {
+  counter-increment: store-preview-proof;
+  overflow: visible;
+}
+
+.store-shot-card::after {
+  position: absolute;
+  top: clamp(-1.35rem, -1.6vw, -0.85rem);
+  right: clamp(0.75rem, 1.6vw, 1.05rem);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  min-width: clamp(4.8rem, 8vw, 6.6rem);
+  min-height: 1.25rem;
+  padding: 0.18rem 0.52rem 0.14rem;
+  content: "proof " counter(store-preview-proof, decimal-leading-zero);
+  clip-path: polygon(3% 12%, 44% 0, 98% 10%, 96% 92%, 58% 100%, 0 84%);
+  background:
+    linear-gradient(100deg, rgba(185, 201, 175, 0.7), rgba(255, 252, 246, 0.75)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(47, 38, 35, 0.68);
+  font-size: 0.54rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0.12rem 0.2rem 0.45rem rgba(47, 38, 35, 0.12);
+  transform: rotate(1.4deg);
+}
+
+.store-shot-card:nth-child(2n)::after {
+  transform: rotate(-1deg);
+}
+
+.store-shot-card__caption {
+  position: relative;
+  padding-top: 0.2rem;
+}
+
+.store-shot-card__caption::before {
+  display: block;
+  width: fit-content;
+  margin: -0.25rem 0 0.4rem;
+  padding: 0.25rem 0.44rem 0.22rem;
+  content: "honest preview";
+  clip-path: polygon(4% 0, 92% 6%, 100% 82%, 72% 100%, 0 88%);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.5)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(47, 38, 35, 0.62);
+  font-size: 0.54rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0.08rem 0.14rem 0.32rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-0.8deg);
+}
+
+@media (max-width: 900px) {
+  .store-visual-board__copy::after {
+    display: none;
+  }
+
+  .store-shot-strip {
+    padding-top: clamp(2.4rem, 7vw, 3.15rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .store-shot-strip::after {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .store-shot-card::after {
+    top: -0.9rem;
+  }
+}

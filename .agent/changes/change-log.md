@@ -2,6 +2,43 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 09:39 ET — About contact rail docket
+
+### Changed
+
+- Updated `app/about-contact-caption-strips-pass.css`.
+- Turned the About contact-sheet rail into a bound `read frames` paper docket with a left spine, stitched connector path, stronger clipped rail slips, and a mobile-safe horizontal label fallback.
+- Added `.agent/changes/2026-06-27-about-contact-rail-docket.md`.
+- Added `.agent/matrices/about-contact-rail-docket.matrix.md`.
+
+### Why
+
+The About contact-sheet section already had an exposure desk, frame sequence, and caption strips, but the small rail above the frames could still scan as three detached cues rather than one guided route through the contact frames. This pass makes that rail visibly closer to the calm-room, paper-first, flattened hierarchy, and text-snippet goals without changing About copy, routes, data, accessibility labels, or inventing fake images, products, work, or private context.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 09:31 ET — About contact caption strips
 
 ### Changed

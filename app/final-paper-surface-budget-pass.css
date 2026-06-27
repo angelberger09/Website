@@ -30,6 +30,9 @@
 .home-room-sequence-stamp,
 .about-pathway-note,
 .about-pathway-note__door-cue,
+.about-principles-board .about-principles-collage,
+.about-principles-board .about-principle-note,
+.about-principles-board .about-principle-note::before,
 .footer-exit-receipt,
 .footer-exit-receipt__face,
 .studio-footer__current-room,
@@ -53,6 +56,7 @@
 .home-docket-step,
 .home-docket-note,
 .home-room-sequence-stamp,
+.about-principles-board .about-principle-note,
 .footer-exit-receipt,
 .studio-footer__current-room,
 .about-pathway-note,
@@ -65,6 +69,9 @@
 }
 
 .about-pathway-note__door-cue,
+.about-principles-board .about-principles-collage::after,
+.about-principles-board .about-principle-note::before,
+.about-principles-board .about-principle-note::after,
 .studio-footer__exit-receipt::before,
 .studio-footer__exit-receipt::after,
 .studio-footer__exit-receipts::after,
@@ -90,6 +97,7 @@
 .page-hero__room-shelf,
 .page-hero__trust-spine,
 .home-path-map,
+.about-principles-board .about-principles-collage,
 .studio-footer--paper,
 .studio-footer__exit-receipts,
 .notes-post-path-shelf {
@@ -100,12 +108,49 @@
 .page-hero__room-shelf,
 .page-hero__trust-spine,
 .home-path-map,
+.about-principles-board .about-principles-collage,
 .studio-footer__exit-receipts,
 .notes-post-path-shelf {
   background-image:
     linear-gradient(118deg, rgba(255, 252, 246, 0.86), rgba(255, 247, 235, 0.54) 58%, rgba(185, 201, 175, 0.16)),
     var(--grain-image);
   background-size: cover, 24rem 24rem;
+}
+
+/* About promise ledger: keep the latest bound-principles surface calm, readable, and covered by the terminal paper budget. */
+.about-principles-board .about-principles-collage {
+  padding-top: clamp(2.75rem, 4.8vw, 3.35rem);
+  clip-path: polygon(1% 4.5%, 18% 2.6%, 42% 3.6%, 68% 1.9%, 99% 3.3%, 98% 91.5%, 82% 97.6%, 54% 96.4%, 18% 98.5%, 0.9% 93.5%);
+}
+
+.about-principles-board .about-principles-collage::before {
+  opacity: 0.74;
+}
+
+.about-principles-board .about-principles-collage::after {
+  top: -0.52rem;
+  width: min(16.5rem, calc(100% - 2rem));
+  background: var(--final-paper-face);
+  background-size: cover, 16rem 16rem;
+  transform: rotate(-0.55deg);
+}
+
+.about-principles-board .about-principle-note {
+  min-height: 17.25rem;
+}
+
+.about-principles-board .about-principle-note:nth-child(1),
+.about-principles-board .about-principle-note:nth-child(3) {
+  transform: rotate(-0.18deg);
+}
+
+.about-principles-board .about-principle-note:nth-child(2) {
+  transform: translateY(0.28rem) rotate(0.22deg);
+}
+
+.about-principles-board .about-principle-note::before {
+  background: var(--final-paper-face) !important;
+  background-size: cover, 13rem 13rem !important;
 }
 
 /* Notes post path shelf: bind Read / Return / Continue into one reader-return compass without adding new post content. */
@@ -181,6 +226,11 @@
 @media (prefers-reduced-motion: reduce) {
   .about-pathway-note,
   .about-pathway-note__door-cue,
+  .about-principles-board .about-principles-collage::after,
+  .about-principles-board .about-principle-note,
+  .about-principles-board .about-principle-note:nth-child(2),
+  .about-principles-board .about-principle-note::before,
+  .about-principles-board .about-principle-note::after,
   .studio-footer__exit-receipt,
   .studio-footer__exit-receipt:nth-child(odd),
   .studio-footer__exit-receipt:nth-child(even),
@@ -198,6 +248,19 @@
 
   .notes-post-path-note,
   .notes-post-path-note:nth-of-type(2) {
+    transform: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .about-principles-board .about-principles-collage {
+    padding-top: 3.2rem;
+    contain-intrinsic-size: 1px 760px;
+  }
+
+  .about-principles-board .about-principle-note,
+  .about-principles-board .about-principle-note:nth-child(2) {
+    min-height: 0;
     transform: none;
   }
 }

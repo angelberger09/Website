@@ -2,6 +2,46 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 16:38 ET — Blog old-door room docket
+
+### Changed
+
+- Added `app/blog-old-door-room-docket-pass.css`.
+- Loaded it from `app/layout.jsx` after the existing Blog compatibility bridge styling.
+- Made the `/Website/blog/` compatibility intro read as one guided old-door-to-Notes room docket with a clipped backing field, direct `compatibility room` slip, binding thread, taped image-like Blog card, and bound handoff strip.
+- Added `.agent/changes/2026-06-27-blog-old-door-room-docket.md`.
+- Added `.agent/matrices/blog-old-door-room-docket.matrix.md`.
+
+### Why
+
+The Blog compatibility route already preserved old public links and reused the Notes shelf honestly, but its bridge and handoff still scanned as several separate old-door pieces. This pass keeps the same public-safe copy and routing while making the compatibility path visibly feel like a calm guided room inside the Website.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 16:31 ET — Notes state source cues
 
 ### Changed
@@ -238,69 +278,3 @@ The homepage house-rules docket and ledger already made the rules area feel more
 - LESSON-002
 - LESSON-018
 - LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-001
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-027
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 14:41 ET — Terminal room surface budget
-
-### Changed
-
-- Added `app/terminal-room-surface-budget-pass.css`.
-- Loaded the pass after `app/footer-room-index-terminal-budget-pass.css` in `app/layout.jsx` so it covers the newest late route/footer room surfaces.
-- Normalized large room/docket board backings, lifted-paper shadows, connector thread opacity, filter use, `content-visibility`, reduced-motion transforms, and mobile intrinsic sizing across shared PageIntro, About, Notes, Notes post, Portfolio, Store, and footer surfaces.
-- Added `.agent/changes/2026-06-27-terminal-room-surface-budget.md`.
-- Added `.agent/matrices/terminal-room-surface-budget.matrix.md`.
-
-### Why
-
-The newest room/docket passes made the interface more visibly paper-like, but some late-added surfaces bypassed the terminal calm/performance budget and risked over-stacked shadows, competing pseudo-layer noise, and uneven mobile/reduced-motion behavior. This pass keeps the paper-first, flat editorial hierarchy, text-snippet, continuity, and gallery goals visible while consolidating the accumulated surfaces instead of adding a new decorative direction.
-
-### Related items
-
-- PAGE-002
-- PAGE-003
-- PAGE-003A
-- PAGE-003B
-- PAGE-004
-- PAGE-005
-- COMP-005
-- COMP-006
-- COMP-007
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- DESIGN-032
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-026
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-025
-- METRIC-027
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-031
-- METRIC-032

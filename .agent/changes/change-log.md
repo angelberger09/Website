@@ -2,6 +2,44 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 15:41 ET — Notes gallery alternating ledger
+
+### Changed
+
+- Updated `app/notes-gallery-pass.css`.
+- Added a visible `scroll shelf` paper slip, dashed shelf thread, sticky edge fades, staggered card rhythm, tape tabs, copy clamping, reduced-motion handling, and mobile fallbacks to the Notes contact sheet.
+- Added `.agent/changes/2026-06-27-notes-gallery-alternating-ledger.md`.
+- Added `.agent/matrices/notes-gallery-alternating-ledger.matrix.md`.
+
+### Why
+
+The Notes gallery already used alternating image/note card classes, but the shelf could still read as neighboring cards rather than one guided scrollable paper/photo sequence. This pass makes the Notes gallery closer to the alternating scroll-gallery, paper-first, content-bearing image surface, flattened hierarchy, and text-snippet goals while staying within existing published-note data.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 14:48 ET — Home house rules terminal budget
 
 ### Changed

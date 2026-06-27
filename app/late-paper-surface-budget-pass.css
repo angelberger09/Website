@@ -1,0 +1,125 @@
+/* Late paper surface budget pass.
+   Loaded last so newest room/docket passes stay visibly handmade without
+   reintroducing heavy shadows, filters, rotation stacks, or pseudo-layer noise. */
+
+:root {
+  --late-paper-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.06), 0 0.68rem 1.22rem rgba(47, 38, 35, 0.1);
+  --late-paper-shadow-soft: 0.08rem 0.16rem 0 rgba(47, 38, 35, 0.05), 0 0.5rem 0.92rem rgba(47, 38, 35, 0.08);
+  --late-paper-field: linear-gradient(142deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.68) 62%, rgba(185, 201, 175, 0.14)), var(--grain-image);
+}
+
+.about-contact-sheet-board,
+.notes-post-support-board,
+.notes-state-tray,
+.portfolio-feed-board,
+.store-feed-ledger-board,
+.home-studio-checks {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 620px;
+}
+
+.about-contact-card,
+.notes-post-support-note,
+.notes-state-note,
+.portfolio-feed-card,
+.portfolio-feed-rule,
+.store-feed-ledger-card,
+.store-feed-ledger-board__intro,
+.store-feed-rule-tape,
+.home-check-note,
+.home-check-rail::after {
+  background-blend-mode: normal;
+  filter: none;
+  box-shadow: var(--late-paper-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.notes-post-title-folio,
+.notes-post-title-cue,
+.notes-post-support-ledger,
+.notes-state-tray::after,
+.portfolio-feed-board::before,
+.store-feed-ledger-board::before,
+.home-studio-checks::before {
+  filter: none;
+  box-shadow: var(--late-paper-shadow-soft);
+}
+
+.about-contact-card,
+.notes-post-support-note,
+.notes-state-note,
+.portfolio-feed-card,
+.store-feed-ledger-card,
+.home-check-note {
+  background-image: var(--late-paper-field);
+  background-size: cover, 22rem 22rem;
+}
+
+.about-contact-card::before,
+.about-contact-card::after,
+.notes-post-support-note::before,
+.notes-post-support-note::after,
+.notes-state-note::before,
+.notes-state-note::after,
+.portfolio-feed-card::before,
+.portfolio-feed-card::after,
+.store-feed-ledger-card::before,
+.store-feed-ledger-card::after,
+.home-check-note::before,
+.home-check-note::after {
+  filter: none;
+}
+
+.home-check-rail::before,
+.store-feed-ledger-grid::before,
+.portfolio-feed-board::after,
+.notes-post-support-ledger::before,
+.notes-state-tray::before {
+  opacity: 0.72;
+}
+
+.home-check-note small,
+.store-feed-ledger-card__tab,
+.store-feed-ledger-grid::after,
+.portfolio-feed-card__tab,
+.notes-post-support-note__label,
+.notes-state-note__label {
+  box-shadow: var(--late-paper-shadow-soft);
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-contact-card,
+  .notes-post-support-note,
+  .notes-state-note,
+  .portfolio-feed-card,
+  .store-feed-ledger-card,
+  .home-check-note,
+  .home-check-rail::after {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-contact-card,
+  .notes-post-support-note,
+  .notes-state-note,
+  .portfolio-feed-card,
+  .store-feed-ledger-card,
+  .store-feed-ledger-card:nth-child(even),
+  .store-feed-ledger-card:nth-child(odd),
+  .home-check-note,
+  .home-check-note:nth-child(1),
+  .home-check-note:nth-child(2),
+  .home-check-note:nth-child(3) {
+    transform: none;
+  }
+
+  .about-contact-sheet-board,
+  .notes-post-support-board,
+  .notes-state-tray,
+  .portfolio-feed-board,
+  .store-feed-ledger-board,
+  .home-studio-checks {
+    contain-intrinsic-size: 1px 780px;
+  }
+}

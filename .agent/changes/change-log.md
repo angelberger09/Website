@@ -225,3 +225,43 @@ The Portfolio future archive/feed shelf already had the right public-safe contra
 - METRIC-028
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 23:10 ET — Notes shelf promise strip
+
+### Changed
+
+- Added `notes-shelf-promise-strip` markup to `app/notes/NotesPageClient.jsx`.
+- Added `app/notes-shelf-promise-strip-pass.css`.
+- Loaded the pass in `app/layout.jsx` after the Notes source-room cues.
+- Added `.agent/changes/2026-06-26-notes-shelf-promise-strip.md`.
+- Added `.agent/matrices/notes-shelf-promise-strip.matrix.md`.
+
+### Why
+
+The Notes writing-shelf/source-map section already used visitor-facing language, but the public/backup boundary still lived mostly inside support cards and fallback receipts. This pass adds a visible paper promise strip for `Public shelf`, `Quiet backup`, and `Human labels`, making the Notes room's safety and no-raw-path promise visible before the source-map receipts without exposing technical URLs or private draft context.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-006
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029

@@ -52,6 +52,7 @@ import './store-path-photo-pass.css';
 import './store-path-direct-labels-pass.css';
 import './store-direct-paper-cues-pass.css';
 import './store-section-spine-labels-pass.css';
+import './store-direct-cue-content-pass.css';
 import './notes-paper-reader-pass.css';
 import './notes-gallery-pass.css';
 import './notes-direct-labels-pass.css';

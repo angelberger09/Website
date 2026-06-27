@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 13:21 ET — Portfolio feed bound shelf
+
+### Changed
+
+- Added `app/portfolio-feed-bound-shelf-pass.css`.
+- Loaded the pass after `app/portfolio-feed-public-docket-pass.css` in `app/layout.jsx`.
+- Bound the Portfolio future archive shelf into a clearer public-card shelf with a clipped boundary slip, public-rules label, stronger backing surfaces for the ticket board/field ledger/rule tapes, dashed connector-thread cues, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-portfolio-feed-bound-shelf.md`.
+- Added `.agent/matrices/portfolio-feed-bound-shelf.matrix.md`.
+
+### Why
+
+The Portfolio future archive shelf already had a public-card docket and field/rule surfaces, but it could still scan as stacked neighboring paper pieces. This pass makes the section closer to the paper-first, flattened hierarchy, section-field, text-snippet, photo-led, and honest public archive goals without adding fake portfolio work, screenshots, private records, or new routes.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 12:40 ET — About principle sequence ledger
 
 ### Changed

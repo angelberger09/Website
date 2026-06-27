@@ -3,24 +3,28 @@ export const siteNavPages = [
     title: "About",
     eyebrow: "Studio intro",
     href: "/Website/about/",
+    roomCue: "Open map",
     description: "Meet the public shape of Soft Strange Studio and the kind of work this space is holding."
   },
   {
     title: "Notes",
     eyebrow: "Still Here Notes",
     href: "/Website/notes/",
+    roomCue: "Reading shelf",
     description: "Read public notes in the studio reader while the writing source stays quietly organized."
   },
   {
     title: "Portfolio",
     eyebrow: "Public work",
     href: "/Website/portfolio/",
+    roomCue: "Public archive",
     description: "Browse the first project doors for site systems, visual atmosphere, creature work, and public experiments."
   },
   {
     title: "Store",
     eyebrow: "Future shop",
     href: "/Website/store/",
+    roomCue: "Preparing",
     description: "See the product paths being prepared for digital downloads, creature goods, and soft strange studio pieces."
   }
 ];

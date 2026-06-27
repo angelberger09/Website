@@ -1,0 +1,180 @@
+/* About contact sheet exposure-desk pass.
+   Turns the existing About contact sheet into one visible room-reading desk without
+   changing copy, links, data, or inventing imagery. */
+
+.about-paper-room .about-contact-sheet-board {
+  --about-exposure-cut: polygon(1.2% 3.2%, 17% 1.4%, 39% 2.8%, 62% 1.1%, 98.2% 3.4%, 96.8% 34%, 98.5% 68%, 96.4% 97.2%, 72% 98.7%, 42% 96.6%, 1.3% 98.4%, 2.6% 58%);
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.65rem);
+  align-items: stretch;
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+}
+
+.about-paper-room .about-contact-sheet-board::before {
+  inset: 0.05rem -0.55rem -0.45rem;
+  background:
+    linear-gradient(90deg, rgba(58, 45, 42, 0.1) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 12% 18%, rgba(255, 176, 143, 0.24), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(185, 201, 175, 0.23), transparent 32%),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.62) 62%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image);
+  background-size: 2.6rem 100%, cover, cover, cover, 24rem 24rem;
+  clip-path: var(--about-exposure-cut);
+  box-shadow: 0.22rem 0.36rem 0 rgba(47, 38, 35, 0.08), 0 1.1rem 2.1rem rgba(47, 38, 35, 0.14);
+}
+
+.about-paper-room .about-contact-sheet-board::after {
+  position: absolute;
+  inset: 1.15rem auto 1.15rem clamp(0.95rem, 2vw, 1.35rem);
+  z-index: -1;
+  width: 0.24rem;
+  content: "";
+  background:
+    repeating-linear-gradient(to bottom, rgba(58, 45, 42, 0.28) 0 0.52rem, transparent 0.52rem 0.95rem),
+    linear-gradient(to bottom, transparent, rgba(255, 176, 143, 0.4), rgba(185, 201, 175, 0.35), transparent);
+  clip-path: polygon(40% 0, 100% 6%, 70% 100%, 0 96%);
+  opacity: 0.7;
+}
+
+.about-paper-room .about-contact-sheet-heading,
+.about-paper-room .about-contact-sheet-rail {
+  grid-column: 1;
+}
+
+.about-paper-room .about-contact-sheet-heading {
+  position: relative;
+  align-content: start;
+  margin: 0;
+  padding: clamp(0.9rem, 2vw, 1.15rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.68)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  clip-path: polygon(2% 5%, 31% 1%, 68% 3%, 98% 1%, 94% 96%, 54% 98%, 4% 94%);
+  box-shadow: 0.14rem 0.22rem 0 rgba(47, 38, 35, 0.08), 0 0.78rem 1.35rem rgba(47, 38, 35, 0.12);
+}
+
+.about-paper-room .about-contact-sheet-heading::after {
+  display: inline-grid;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.15rem;
+  padding: 0.38rem 0.62rem;
+  content: "contact desk";
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.9), rgba(185, 201, 175, 0.48)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(3% 10%, 34% 0, 68% 7%, 98% 2%, 94% 88%, 61% 100%, 4% 94%);
+  color: rgba(58, 45, 42, 0.82);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-paper-room .about-contact-sheet-heading h1 {
+  max-width: 10ch;
+  font-size: clamp(1.75rem, 3.6vw, 3.35rem);
+  letter-spacing: -0.06em;
+}
+
+.about-paper-room .about-contact-sheet-heading p:not(.eyebrow) {
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.about-paper-room .about-contact-sheet-rail {
+  align-self: end;
+  margin: 0;
+}
+
+.about-paper-room .about-contact-sheet {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: stretch;
+  grid-auto-columns: minmax(16.5rem, 21rem);
+  gap: clamp(0.9rem, 1.8vw, 1.15rem);
+  padding: 0.38rem 0.45rem 1rem 0.25rem;
+}
+
+.about-paper-room .about-contact-card {
+  min-height: 27rem;
+  align-content: start;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.98), rgba(255, 247, 235, 0.8) 58%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow: 0.17rem 0.28rem 0 rgba(47, 38, 35, 0.09), 0 0.78rem 1.45rem rgba(47, 38, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.74);
+}
+
+.about-paper-room .about-contact-card:nth-child(2n) {
+  margin-top: clamp(0.7rem, 1.8vw, 1.2rem);
+}
+
+.about-paper-room .about-contact-card:nth-child(3n) {
+  margin-top: clamp(0.22rem, 1vw, 0.55rem);
+}
+
+.about-paper-room .about-contact-card::after {
+  position: absolute;
+  right: 0.88rem;
+  bottom: 0.82rem;
+  z-index: 1;
+  padding: 0.32rem 0.5rem;
+  content: "soft frame";
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.86), rgba(216, 197, 236, 0.38)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(2% 14%, 34% 1%, 72% 8%, 98% 3%, 93% 91%, 66% 100%, 4% 94%);
+  color: rgba(58, 45, 42, 0.74);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-paper-room .about-contact-card__image {
+  min-height: 11.5rem;
+  background:
+    radial-gradient(circle at 26% 26%, rgba(255, 176, 143, 0.48), transparent 31%),
+    radial-gradient(circle at 72% 66%, rgba(185, 201, 175, 0.44), transparent 33%),
+    linear-gradient(135deg, rgba(216, 197, 236, 0.42), rgba(58, 45, 42, 0.16));
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08), inset 0 -1.4rem 2.4rem rgba(47, 38, 35, 0.08);
+}
+
+.about-paper-room .about-contact-card__copy h2 {
+  max-width: 13ch;
+}
+
+@media (max-width: 900px) {
+  .about-paper-room .about-contact-sheet-board {
+    grid-template-columns: 1fr;
+  }
+
+  .about-paper-room .about-contact-sheet-heading,
+  .about-paper-room .about-contact-sheet-rail,
+  .about-paper-room .about-contact-sheet {
+    grid-column: 1;
+  }
+
+  .about-paper-room .about-contact-sheet {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-paper-room .about-contact-sheet-board {
+    padding: 1.1rem;
+  }
+
+  .about-paper-room .about-contact-sheet {
+    grid-auto-columns: minmax(82%, 1fr);
+  }
+
+  .about-paper-room .about-contact-card:nth-child(n) {
+    margin-top: 0;
+  }
+}

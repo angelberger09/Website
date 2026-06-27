@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 19:40 ET — About next doors exit ledger
+
+### Changed
+
+- Added `app/about-next-doors-exit-ledger-pass.css`.
+- Loaded it from `app/layout.jsx` after the About opening terminal budget pass.
+- Refined the About `Where to go next` doorway section so its final route choices read as one composed exit ledger, with a direct `exit ledger` paper slip, calmer stitched route line, stronger shared backing shadow, and tighter paper/photo doorway cards.
+- Added `.agent/changes/2026-06-27-about-next-doors-exit-ledger.md`.
+- Added `.agent/matrices/about-next-doors-exit-ledger.matrix.md`.
+
+### Why
+
+The About page already had room keys, contact frames, principle dockets, and a doorway compass, but the final next-door section could still scan as three neighboring route cards. This pass keeps the same public-safe routes and copy while making the handoff from About into Notes, Portfolio, and Store feel like one calm room-exit ledger.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 19:19 ET — About principles docket
 
 ### Changed
@@ -219,121 +264,4 @@ The newest Blog compatibility docket made the old `/Website/blog/` route feel li
 
 ### Why
 
-The Blog compatibility route already preserved old public links and reused the Notes shelf honestly, but its bridge and handoff still scanned as several separate old-door pieces. This pass keeps the same public-safe copy and routing while making the compatibility path visibly feel like a calm guided room inside the Website.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- COMP-008
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 16:31 ET — Notes state source cues
-
-### Changed
-
-- Updated `app/notes/NotesPageClient.jsx` so the Notes reader-state tray renders direct cue slips from source markup.
-- Added `app/notes-state-direct-cues-pass.css` to style `Gathering shelf`, `Pause note`, and `Public only` as clipped paper slips and suppress the older CSS-only pseudo labels.
-- Loaded the pass in `app/layout.jsx` after the existing Notes state docket styling.
-- Added `.agent/changes/2026-06-27-notes-state-source-cues.md`.
-- Added `.agent/matrices/notes-state-source-cues.matrix.md`.
-
-### Why
-
-The Notes reader-state tray already read as a unified paper docket, but its top-right cues were still partly CSS-generated instead of source-backed rendered labels. This pass keeps the same honest public reader states while making the visible cue slips durable, direct, and aligned with the paper-snippet and direct-label goals.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- DESIGN-015
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-015
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-002
-- METRIC-014
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 16:22 ET — Homepage room status ledger budget
-
-### Changed
-
-- Refined `app/home-room-status-ledger-map-pass.css` instead of adding another competing homepage room-status layer.
-- Added render-budget containment, calmer shadows, lighter connector thread opacity, reduced rotations, tighter status/photo cue shadows, and mobile/reduced-motion fallbacks for the current-room ledger map.
-- Added `.agent/changes/2026-06-27-home-room-status-ledger-budget.md`.
-- Added `.agent/matrices/home-room-status-ledger-budget.matrix.md`.
-
-### Why
-
-The newest homepage room-status ledger map visibly bound the current-room cards into one editorial map, but because it loaded after the terminal room surface budget, its shadows, thread, and staggered transforms could still feel slightly over-stacked compared with the calmer late page surfaces. This pass keeps the map visible while making it fit the shared paper/collage render budget.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-001
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-001
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-027
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 16:09 ET — Homepage room status ledger map
-
-### Changed
-
-- Added `app/home-room-status-ledger-map-pass.css`.
-- Loaded it last in `app/layout.jsx` so it visibly refines the homepage `Current rooms` section after the late terminal passes.
-- Bound the existing room-status slips into one left-docked paper status map with a vertical spine, stitched thread, shared board backing, clipped status label, and restrained proof cues.
-- Added `.agent/changes/2026-06-27-home-room-status-ledger-map.md`.
+The compatibility route exists to preserve old `/blog` links while the Website now presents writing through `/notes`. This pass keeps that honest compatibility purpose visible but makes it feel like an intentional old-door room instead of a detached legacy route surface.

@@ -1,0 +1,63 @@
+/* Homepage door room cue slips pass.
+   Makes the larger studio-door cards use the same data-backed direct room cues as the hero contact sheet. */
+
+.home-door-card__cue-stack {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+  margin-top: auto;
+  padding-top: 0.16rem;
+}
+
+.home-door-card__cue-stack::before {
+  position: absolute;
+  top: -0.42rem;
+  left: 0.08rem;
+  width: min(8rem, 72%);
+  height: 0.13rem;
+  content: "";
+  background: linear-gradient(90deg, rgba(47, 38, 35, 0.12), rgba(255, 176, 143, 0.34), transparent);
+  opacity: 0.78;
+}
+
+.home-door-card__room-cue {
+  width: fit-content;
+  clip-path: var(--fast-paper-cut, polygon(2% 10%, 100% 2%, 96% 92%, 0 100%));
+  background:
+    linear-gradient(132deg, rgba(216, 197, 236, 0.48), rgba(255, 252, 246, 0.76) 58%, rgba(185, 201, 175, 0.28)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.065),
+    0 0.38rem 0.72rem rgba(47, 38, 35, 0.08);
+  padding: 0.36rem 0.58rem;
+  color: rgba(58, 45, 42, 0.84);
+  font-family: var(--font-hand);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(-1.2deg);
+}
+
+.home-door-card:nth-child(2n) .home-door-card__room-cue {
+  transform: rotate(1deg);
+}
+
+.home-door-card__cue-stack .home-door-card__cue {
+  clip-path: var(--fast-paper-cut, polygon(3% 8%, 98% 2%, 95% 92%, 5% 98%));
+  background:
+    linear-gradient(132deg, rgba(255, 176, 143, 0.2), rgba(255, 252, 246, 0.64)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.055);
+  padding: 0.34rem 0.52rem;
+}
+
+@media (max-width: 640px) {
+  .home-door-card__cue-stack {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

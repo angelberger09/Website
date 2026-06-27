@@ -217,7 +217,10 @@ export default function HomePage() {
                 <span className="home-door-card__label">{page.eyebrow}</span>
                 <h2>{page.title}</h2>
                 <p>{page.description}</p>
-                <span className="home-door-card__cue">Enter {page.title}</span>
+                <span className="home-door-card__cue-stack" aria-label={`${page.title} room cue`}>
+                  <span className="home-door-card__room-cue">{page.roomCue}</span>
+                  <span className="home-door-card__cue">Enter {page.title}</span>
+                </span>
               </span>
             </a>
           ))}

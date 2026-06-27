@@ -41,6 +41,7 @@ const storeAvailabilityCueLabels = ["Preparing room", "Preview room", "Open room
 const storeFeedCueLabels = ["Handle", "Name", "Status", "Note", "Preview", "Delivery"];
 const storePromiseCueLabels = ["Useful before links", "Clear after launch", "Quiet source path"];
 const storePathCueLabels = ["Archive room", "Studio map"];
+const storePathBridgeLabels = ["See public work", "Meet the studio"];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -310,6 +311,9 @@ export default function StorePage() {
                 <b>{step.eyebrow}</b>
                 <span className="store-path-photo-card__cue">{storePathCueLabels[index] ?? "Open room"}</span>
               </div>
+              <span className="store-path-photo-card__bridge" aria-hidden="true">
+                {storePathBridgeLabels[index] ?? "Return path"}
+              </span>
               <div className="store-path-photo-card__copy">
                 <span>{step.eyebrow}</span>
                 <h2>{step.title}</h2>

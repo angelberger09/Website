@@ -202,6 +202,7 @@ import './portfolio-feed-public-docket-pass.css';
 import './store-feed-shelf-docket-pass.css';
 import './home-house-rules-docket-pass.css';
 import './home-house-rules-ledger-pass.css';
+import './home-house-rules-source-slips-pass.css';
 import './late-paper-surface-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
 import './store-preview-proof-rail-pass.css';
@@ -218,15 +219,15 @@ import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A public studio homepage for Soft Strange Studio.'
+  description: 'Soft Strange Studio by Angel Berger — notes, art, projects, and store paths.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <SiteHeader />
         <AtmosphereLayer />
+        <SiteHeader />
         {children}
         <StudioFooter />
       </body>

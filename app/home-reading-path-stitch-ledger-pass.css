@@ -1,0 +1,156 @@
+/* Homepage reading path stitch ledger pass.
+   Makes the existing Read this page rail scan as one stitched table-of-contents ledger
+   instead of a set of compact neighboring slips. */
+
+.home-path-map {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.home-path-map::before {
+  content: "stitched path";
+  position: absolute;
+  inset: clamp(0.72rem, 1.8vw, 1rem) auto clamp(0.72rem, 1.8vw, 1rem) clamp(1rem, 2.8vw, 1.7rem);
+  width: clamp(1.25rem, 2.1vw, 1.75rem);
+  display: grid;
+  place-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.54rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(58, 45, 42, 0.54);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.92), rgba(255, 239, 220, 0.64)),
+    var(--grain-image);
+  background-size: auto, 11rem 11rem;
+  clip-path: polygon(22% 0, 100% 2%, 86% 100%, 0 96%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0.2rem 0.42rem 0.7rem rgba(47, 38, 35, 0.12);
+  z-index: 0;
+}
+
+.home-path-map::after {
+  content: "";
+  position: absolute;
+  left: clamp(3.5rem, 7vw, 5.9rem);
+  right: clamp(1rem, 3vw, 2rem);
+  top: 50%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.28) 0 0.42rem, transparent 0.42rem 0.78rem);
+  opacity: 0.62;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-path-map__label,
+.home-path-map__note,
+.home-path-map__trail {
+  position: relative;
+  z-index: 1;
+}
+
+.home-path-map__label {
+  clip-path: polygon(4% 10%, 95% 0, 100% 88%, 7% 100%);
+  padding: 0.48rem 0.62rem;
+  background:
+    linear-gradient(100deg, rgba(255, 252, 246, 0.96), rgba(255, 243, 229, 0.72)),
+    var(--grain-image);
+  background-size: auto, 9rem 9rem;
+  box-shadow: 0.1rem 0.16rem 0.34rem rgba(47, 38, 35, 0.12);
+}
+
+.home-path-map__trail {
+  border-left: 1px dashed rgba(58, 45, 42, 0.2);
+  padding-left: clamp(0.68rem, 1.4vw, 0.95rem) !important;
+}
+
+.home-path-map__step,
+.home-path-map__step:nth-child(2n),
+.home-path-map__step:nth-child(2n + 1) {
+  position: relative;
+  border-radius: 0 !important;
+  clip-path: polygon(3% 7%, 92% 0, 100% 86%, 13% 100%, 0 72%);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.95), rgba(255, 245, 232, 0.8) 58%, rgba(153, 222, 201, 0.16)),
+    var(--grain-image) !important;
+  background-size: auto, 10rem 10rem !important;
+  box-shadow:
+    0.1rem 0.14rem 0 rgba(47, 38, 35, 0.07),
+    0.22rem 0.34rem 0.58rem rgba(47, 38, 35, 0.13) !important;
+}
+
+.home-path-map__step::before {
+  content: "";
+  position: absolute;
+  left: -0.62rem;
+  top: 50%;
+  width: 0.82rem;
+  height: 0.82rem;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: rgba(58, 45, 42, 0.5);
+  box-shadow: 0 0 0 0.22rem rgba(255, 252, 246, 0.72);
+  z-index: 2;
+}
+
+.home-path-map__thread {
+  display: block !important;
+  position: absolute;
+  left: -0.62rem;
+  right: auto;
+  top: 50%;
+  width: calc(100% + 0.62rem);
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.34) 0 0.34rem, transparent 0.34rem 0.62rem);
+  opacity: 0.58;
+  z-index: -1;
+}
+
+.home-path-map__number {
+  width: max-content;
+  padding: 0.2rem 0.34rem !important;
+  clip-path: polygon(4% 12%, 96% 0, 100% 82%, 8% 100%);
+  background: rgba(255, 252, 246, 0.74) !important;
+  box-shadow: 0.06rem 0.1rem 0.22rem rgba(47, 38, 35, 0.1);
+}
+
+@media (max-width: 760px) {
+  .home-path-map::before {
+    inset: 0.7rem auto auto 0.8rem;
+    height: 8rem;
+  }
+
+  .home-path-map::after {
+    left: 2.7rem;
+    right: 1rem;
+    top: auto;
+    bottom: 1.3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-path-map::after {
+    display: none;
+  }
+
+  .home-path-map__trail {
+    border-left: 1px dashed rgba(58, 45, 42, 0.22);
+    margin-left: 1.2rem;
+  }
+
+  .home-path-map__step::before {
+    left: -1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-path-map,
+  .home-path-map__step {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,85 @@
+/* About room spine ledger pass.
+   Binds the About section path into one readable paper ledger instead of five loose slips. */
+
+.about-room-spine {
+  overflow: visible;
+  padding: clamp(1.6rem, 3vw, 2.2rem) clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+  border-radius: 0;
+}
+
+.about-room-spine::after {
+  content: "room path ledger";
+  position: absolute;
+  inset: 0.36rem auto auto clamp(1.15rem, 3vw, 2rem);
+  z-index: 2;
+  display: inline-grid;
+  min-width: 8.2rem;
+  padding: 0.34rem 0.72rem 0.3rem;
+  clip-path: polygon(3% 13%, 100% 0, 96% 86%, 0 100%);
+  background:
+    linear-gradient(134deg, rgba(255, 252, 246, 0.98), rgba(238, 224, 202, 0.86)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.08),
+    0 0.52rem 1rem rgba(47, 38, 35, 0.16);
+  color: rgba(71, 52, 78, 0.82);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1.8deg);
+}
+
+.about-room-spine .about-room-spine__slip {
+  position: relative;
+  z-index: 1;
+}
+
+.about-room-spine .about-room-spine__slip::after {
+  content: "";
+  position: absolute;
+  inset: auto 0.9rem -0.28rem auto;
+  width: 2.9rem;
+  height: 0.48rem;
+  clip-path: polygon(0 18%, 100% 5%, 92% 86%, 6% 100%);
+  background: rgba(154, 133, 166, 0.18);
+  box-shadow: 0 0.14rem 0.42rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-2deg);
+}
+
+.about-room-spine .about-room-spine__slip:nth-child(2n)::after {
+  inset-inline: 0.8rem auto;
+  transform: rotate(2.4deg);
+}
+
+@supports (clip-path: polygon(0 0)) {
+  .about-room-spine {
+    clip-path: polygon(0.8% 7%, 99.2% 2%, 98.6% 93%, 1.4% 99%);
+    background:
+      radial-gradient(circle at 8% 16%, rgba(255, 176, 143, 0.14), transparent 28%),
+      linear-gradient(132deg, rgba(255, 252, 246, 0.5), rgba(232, 218, 193, 0.22) 58%, rgba(154, 133, 166, 0.1)),
+      var(--grain-image);
+    background-size: cover, cover, 18rem 18rem;
+    filter: drop-shadow(0 1.05rem 1.7rem rgba(47, 38, 35, 0.12));
+  }
+}
+
+@media (max-width: 760px) {
+  .about-room-spine {
+    padding-block-start: 1.85rem;
+  }
+
+  .about-room-spine::after {
+    inset-inline-start: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-room-spine,
+  .about-room-spine::after,
+  .about-room-spine .about-room-spine__slip::after {
+    transform: none;
+  }
+}

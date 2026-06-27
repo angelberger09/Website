@@ -9,11 +9,11 @@
   overflow: hidden;
   contain: layout paint style;
   content-visibility: auto;
-  contain-intrinsic-size: 420px;
+  contain-intrinsic-size: 460px;
 }
 
 .home-path-map::before {
-  content: "stitched path";
+  content: "room index";
   position: absolute;
   inset: clamp(0.72rem, 1.8vw, 1rem) auto clamp(0.72rem, 1.8vw, 1rem) clamp(1rem, 2.8vw, 1.7rem);
   width: clamp(1.1rem, 1.8vw, 1.48rem);
@@ -25,9 +25,9 @@
   line-height: 1;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(58, 45, 42, 0.5);
+  color: rgba(58, 45, 42, 0.52);
   background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.9), rgba(255, 239, 220, 0.56)),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.92), rgba(255, 239, 220, 0.58)),
     var(--grain-image);
   background-size: auto, 12rem 12rem;
   clip-path: polygon(18% 0, 100% 3%, 87% 100%, 0 95%);
@@ -85,7 +85,7 @@
   border-radius: 0 !important;
   clip-path: polygon(3% 7%, 92% 0, 100% 86%, 13% 100%, 0 72%);
   background:
-    linear-gradient(140deg, rgba(255, 252, 246, 0.93), rgba(255, 245, 232, 0.74) 58%, rgba(153, 222, 201, 0.12)),
+    linear-gradient(140deg, rgba(255, 252, 246, 0.94), rgba(255, 245, 232, 0.75) 58%, rgba(153, 222, 201, 0.13)),
     var(--grain-image) !important;
   background-size: auto, 11rem 11rem !important;
   box-shadow:
@@ -121,6 +121,42 @@
   z-index: -1;
 }
 
+.home-path-map__photo {
+  display: grid !important;
+  align-content: center;
+  gap: 0.18rem;
+  min-height: 5.85rem;
+}
+
+.home-path-map__chapter-slip,
+.home-path-map__room-key {
+  width: max-content;
+  max-width: 100%;
+  padding: 0.18rem 0.34rem;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.56rem;
+  line-height: 1;
+  color: rgba(58, 45, 42, 0.68);
+  background:
+    linear-gradient(105deg, rgba(255, 252, 246, 0.9), rgba(255, 238, 220, 0.64)),
+    var(--grain-image);
+  background-size: auto, 8rem 8rem;
+  clip-path: polygon(5% 16%, 94% 0, 100% 82%, 9% 100%);
+  box-shadow: 0.05rem 0.08rem 0.15rem rgba(47, 38, 35, 0.08);
+}
+
+.home-path-map__room-key {
+  margin-bottom: 0.08rem;
+  font-size: 0.54rem;
+  color: rgba(88, 79, 68, 0.72);
+  background:
+    linear-gradient(105deg, rgba(250, 243, 235, 0.86), rgba(153, 222, 201, 0.18)),
+    var(--grain-image);
+  background-size: auto, 8rem 8rem;
+}
+
 .home-path-map__number {
   width: max-content;
   padding: 0.18rem 0.32rem !important;
@@ -131,7 +167,7 @@
 
 @media (max-width: 760px) {
   .home-path-map {
-    contain-intrinsic-size: 520px;
+    contain-intrinsic-size: 560px;
   }
 
   .home-path-map::before {
@@ -165,6 +201,10 @@
 
   .home-path-map__step::before {
     left: -0.92rem;
+  }
+
+  .home-path-map__photo {
+    min-height: 4.9rem;
   }
 }
 

@@ -78,6 +78,7 @@ import './notes-reader-photo-strip-pass.css';
 import './notes-path-photo-board-pass.css';
 import './notes-path-direct-cues-pass.css';
 import './notes-path-reader-spine-pass.css';
+import './notes-path-exit-ledger-pass.css';
 import './notes-support-photo-slips-pass.css';
 import './notes-support-docket-pass.css';
 import './notes-source-receipts-pass.css';

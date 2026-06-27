@@ -1,0 +1,136 @@
+/* About pathways departure table pass.
+   Binds the final About next-door section into one composed departure surface without changing copy or routes. */
+
+.about-paper-room .about-pathways-board {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.2rem, 3vw, 1.9rem) clamp(1rem, 3vw, 2rem) clamp(1.35rem, 3vw, 2.1rem);
+}
+
+.about-paper-room .about-pathways-board::before {
+  inset: -0.65rem -0.95rem -1.05rem;
+  background:
+    linear-gradient(100deg, rgba(96, 71, 89, 0.16), transparent 18% 82%, rgba(255, 176, 143, 0.18)),
+    radial-gradient(circle at 10% 18%, rgba(216, 197, 236, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(185, 201, 175, 0.24), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.88), rgba(241, 228, 209, 0.48)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, cover, 18rem 18rem, 34rem 34rem;
+  clip-path: polygon(1% 7%, 16% 2%, 49% 4%, 99% 1%, 97% 86%, 90% 99%, 8% 96%, 0 80%);
+  filter:
+    drop-shadow(-0.28rem 0.26rem 0 rgba(47, 38, 35, 0.08))
+    drop-shadow(0.7rem 1.25rem 2.15rem rgba(47, 38, 35, 0.16));
+}
+
+.about-paper-room .about-pathways-board::after {
+  content: "soft exit table";
+  top: clamp(0.85rem, 2vw, 1.14rem);
+  left: clamp(0.8rem, 2vw, 1.16rem);
+  min-height: clamp(5.6rem, 9vw, 7.2rem);
+  color: rgba(255, 252, 246, 0.96);
+  background:
+    linear-gradient(165deg, rgba(96, 71, 89, 0.94), rgba(150, 109, 132, 0.72)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.14),
+    0 0.84rem 1.35rem rgba(47, 38, 35, 0.2);
+}
+
+.about-paper-room .about-pathways-board .about-board-heading {
+  display: grid;
+  gap: 0.48rem;
+  margin-left: clamp(4.45rem, 7vw, 6rem);
+  padding: clamp(0.78rem, 1.9vw, 1.08rem) clamp(0.88rem, 2vw, 1.24rem);
+  width: min(100%, 43rem);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.9), rgba(247, 235, 216, 0.66)),
+    var(--grain-image),
+    var(--soft-scratch-image);
+  background-size: cover, 14rem 14rem, 20rem 20rem;
+  clip-path: polygon(1% 11%, 28% 2%, 99% 5%, 96% 90%, 72% 99%, 4% 94%);
+  box-shadow:
+    0.13rem 0.2rem 0 rgba(47, 38, 35, 0.1),
+    0 0.85rem 1.35rem rgba(47, 38, 35, 0.14);
+}
+
+.about-paper-room .about-pathways-board .about-board-heading .eyebrow {
+  justify-self: start;
+  padding: 0.24rem 0.5rem;
+  background:
+    linear-gradient(135deg, rgba(185, 201, 175, 0.74), rgba(255, 252, 246, 0.72)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  clip-path: polygon(4% 18%, 36% 2%, 98% 8%, 92% 88%, 56% 99%, 5% 88%);
+  box-shadow: 0 0.2rem 0.48rem rgba(47, 38, 35, 0.12);
+}
+
+.about-paper-room .about-pathway-collage {
+  margin-top: clamp(1rem, 2.2vw, 1.4rem);
+  padding: clamp(0.88rem, 2vw, 1.15rem);
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.48), rgba(255, 252, 246, 0.16)),
+    repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.14) 0 0.08rem, transparent 0.08rem 1.5rem);
+  clip-path: polygon(0 8%, 16% 1%, 100% 6%, 98% 91%, 82% 99%, 2% 94%);
+}
+
+.about-paper-room .about-pathway-note {
+  outline: 1px solid rgba(96, 71, 89, 0.08);
+  outline-offset: -0.36rem;
+}
+
+.about-paper-room .about-pathway-note::after {
+  content: "leave softly";
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.7rem;
+  z-index: 4;
+  padding: 0.28rem 0.48rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(135deg, rgba(255, 246, 219, 0.9), rgba(255, 252, 246, 0.62)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  clip-path: polygon(5% 12%, 42% 3%, 97% 9%, 93% 91%, 58% 99%, 4% 88%);
+  box-shadow: 0 0.22rem 0.45rem rgba(47, 38, 35, 0.12);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+}
+
+.about-paper-room .about-pathway-note:nth-child(2)::after {
+  content: "read next";
+}
+
+.about-paper-room .about-pathway-note:nth-child(3)::after {
+  content: "open archive";
+}
+
+.about-paper-room .about-pathway-note:nth-child(4)::after {
+  content: "prep table";
+}
+
+@media (max-width: 880px) {
+  .about-paper-room .about-pathways-board .about-board-heading {
+    margin-left: 0;
+  }
+
+  .about-paper-room .about-pathway-collage {
+    background:
+      linear-gradient(180deg, rgba(255, 250, 242, 0.54), rgba(255, 252, 246, 0.18)),
+      repeating-linear-gradient(180deg, rgba(96, 71, 89, 0.14) 0 0.08rem, transparent 0.08rem 1.55rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .about-paper-room .about-pathway-note::after {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: inline-block;
+    margin-top: 0.65rem;
+  }
+}

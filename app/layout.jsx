@@ -107,6 +107,7 @@ import './blog-path-bridge-pass.css';
 import './blog-path-contact-cards-pass.css';
 import './blog-path-handoff-strip-pass.css';
 import './blog-reader-landing-dock-pass.css';
+import './blog-bridge-old-door-ledger-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-thread-pass.css';
 import './page-intro-subtitle-pass.css';

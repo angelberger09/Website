@@ -181,6 +181,7 @@ import './footer-exit-room-faces-pass.css';
 import './footer-current-room-stamp-pass.css';
 import './footer-store-prep-receipt-pass.css';
 import './footer-mark-copy-slips-pass.css';
+import './footer-exit-desk-consolidation-pass.css';
 import './final-paper-surface-budget-pass.css';
 import './about-contact-sheet-exposure-desk-pass.css';
 import './about-contact-sheet-frame-sequence-pass.css';

@@ -186,6 +186,7 @@ import './portfolio-feed-public-docket-pass.css';
 import './store-feed-shelf-docket-pass.css';
 import './home-house-rules-docket-pass.css';
 import './late-paper-surface-budget-pass.css';
+import './store-gallery-slow-shelf-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

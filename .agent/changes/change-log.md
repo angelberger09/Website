@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 11:51 ET — Terminal final paper budget
+
+### Changed
+
+- Moved `app/final-paper-surface-budget-pass.css` to the terminal import position in `app/layout.jsx`.
+- Extended `app/final-paper-surface-budget-pass.css` to cover the newest About pathway door notes and footer exit receipt surfaces.
+- Added `.agent/changes/2026-06-27-terminal-final-paper-budget.md`.
+- Added `.agent/matrices/terminal-final-paper-budget.matrix.md`.
+
+### Why
+
+The existing final budget was no longer final after newer room/path/footer passes were added. This let late surfaces bypass the calmer paper budget and risked reintroducing heavier shadows, filters, rotation stacks, and separated-card reads. This pass keeps the visible Website aligned with the paper-first, flattened room hierarchy and performance-budget lessons without adding fake content or another decorative system.
+
+### Related items
+
+- PAGE-002
+- COMP-005
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 11:29 ET — About pathway door cue tickets
 
 ### Changed
@@ -238,54 +282,3 @@ The house-rule cards already had a docket and photo-center treatment, but the in
 - LESSON-001
 - LESSON-002
 - LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-001
-- METRIC-002
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 09:50 ET — Homepage reading folio
-
-### Changed
-
-- Updated `app/home-first-read-compass-pass.css`.
-- Bound the homepage reading map into a clearer `page order` paper folio with a left rail, dashed trail binding, sticky `follow gently` cue, stronger clipped chapter slips, and mobile-safe fallback rules.
-- Added `.agent/changes/2026-06-27-home-reading-folio.md`.
-- Added `.agent/matrices/home-reading-folio.matrix.md`.
-
-### Why
-
-The homepage reading map already had a compact compass/ledger treatment, but it could still scan as a horizontal row of separate small slips. This pass makes the first-read path visibly closer to the active left-docked editorial-path and calm-room sequencing lessons without changing homepage copy, routes, anchor links, data, accessibility labels, or inventing new content.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-001
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023

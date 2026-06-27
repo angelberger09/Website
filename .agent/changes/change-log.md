@@ -188,3 +188,40 @@ The homepage first screen already had a title and route-card strip, but the imme
 - METRIC-021
 - METRIC-029
 - METRIC-030
+
+## 2026-06-26 22:51 ET — Portfolio feed drawer path
+
+### Changed
+
+- Added `app/portfolio-feed-drawer-path-pass.css`.
+- Loaded it after `app/portfolio-feed-photo-ledger-pass.css` in `app/layout.jsx`.
+- Added a visible `archive card drawer` paper label, left-side thread, `public boundary` slip, direct field slips, deeper ticket/card shadows, and a `safe shelf rules` label to the Portfolio future archive shelf.
+- Added `.agent/changes/2026-06-26-portfolio-feed-drawer-path.md`.
+- Added `.agent/matrices/portfolio-feed-drawer-path.matrix.md`.
+
+### Why
+
+The Portfolio future archive/feed shelf already had the right public-safe contract content, but the section could still read as separate cards instead of one coherent archive drawer path. This pass makes the feed contract area visibly more aligned with the calm-room, paper-snippet, flattened hierarchy, and photo-led content metrics without inventing projects or screenshots.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030

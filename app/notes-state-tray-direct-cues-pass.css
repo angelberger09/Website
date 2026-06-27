@@ -1,0 +1,94 @@
+.notes-state-note::after {
+  content: "state slip";
+  position: absolute;
+  right: clamp(0.7rem, 1.6vw, 1rem);
+  top: clamp(0.72rem, 1.5vw, 0.95rem);
+  z-index: 3;
+  max-width: 7.4rem;
+  padding: 0.44rem 0.58rem 0.4rem;
+  font-size: 0.58rem;
+  line-height: 1.05;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(61, 45, 34, 0.78);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.98), rgba(233, 216, 184, 0.92)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 0.52rem 1rem rgba(82, 55, 35, 0.18),
+    0 0.08rem 0 rgba(255, 255, 255, 0.74) inset;
+  transform: rotate(2.2deg);
+  clip-path: polygon(3% 8%, 98% 0, 100% 86%, 7% 100%, 0 31%);
+}
+
+.notes-state-note:nth-child(1)::after {
+  content: "Gather notes";
+}
+
+.notes-state-note:nth-child(2)::after {
+  content: "Pause shelf";
+  transform: rotate(-2.4deg);
+}
+
+.notes-state-note:nth-child(3)::after {
+  content: "Public only";
+  transform: rotate(1.4deg);
+}
+
+.notes-state-note .eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.32rem 0.52rem;
+  margin-top: 0.2rem;
+  background:
+    linear-gradient(135deg, rgba(250, 239, 208, 0.92), rgba(226, 203, 165, 0.78)),
+    url('/Website/atmosphere/dust-specks.svg');
+  box-shadow: 0 0.42rem 0.8rem rgba(80, 52, 34, 0.12);
+  clip-path: polygon(0 10%, 97% 0, 100% 84%, 6% 100%);
+}
+
+.notes-state-note h2 {
+  padding-right: clamp(2rem, 9vw, 5.7rem);
+}
+
+.notes-state-note p:last-child {
+  position: relative;
+  padding: 0.68rem 0.76rem 0.7rem;
+  margin-top: 0.65rem;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 240, 0.72), rgba(234, 217, 187, 0.42));
+  box-shadow: inset 0 0.08rem 0 rgba(255, 255, 255, 0.62);
+  clip-path: polygon(0 2%, 99% 0, 100% 92%, 3% 100%);
+}
+
+.notes-state-board__intro::after {
+  content: "loading / pause / public";
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.36rem 0.58rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(67, 49, 36, 0.72);
+  background:
+    linear-gradient(135deg, rgba(255, 247, 222, 0.94), rgba(219, 197, 160, 0.82)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  box-shadow: 0 0.45rem 0.86rem rgba(86, 57, 34, 0.13);
+  transform: rotate(-1.1deg);
+  clip-path: polygon(2% 12%, 100% 0, 96% 88%, 0 100%);
+}
+
+@media (max-width: 760px) {
+  .notes-state-note::after {
+    right: 0.62rem;
+    top: 0.72rem;
+    font-size: 0.54rem;
+  }
+
+  .notes-state-note h2 {
+    padding-right: 5.2rem;
+  }
+}

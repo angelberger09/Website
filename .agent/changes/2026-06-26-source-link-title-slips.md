@@ -2,9 +2,9 @@
 
 ## Interface change
 
-- Added `app/source-link-title-slip-pass.css` as a dedicated pass for shared source-link title labels.
 - Extended the already-loaded `app/final-paper-surface-budget-pass.css` so `.source-link span` labels render as clipped paper title slips instead of plain text.
 - Kept the treatment lightweight: no filters, no motion dependency, no new content, and no new route/data claims.
+- Removed an unloaded draft CSS file from the same pass so the rendered source of truth stays consolidated in the loaded final paper budget.
 
 ## Why
 

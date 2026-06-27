@@ -34,6 +34,7 @@ import './portfolio-feed-photo-ledger-pass.css';
 import './portfolio-feed-drawer-path-pass.css';
 import './portfolio-state-process-photo-pass.css';
 import './portfolio-process-direct-labels-pass.css';
+import './portfolio-process-public-thread-pass.css';
 import './portfolio-continuity-photo-pass.css';
 import './portfolio-readiness-photo-pass.css';
 import './portfolio-room-key-pass.css';

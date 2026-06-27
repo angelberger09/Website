@@ -117,6 +117,35 @@ function renderListBlock(block) {
   return `<${tag}>${items}</${tag}>`;
 }
 
+function renderQuoteBlock(block) {
+  const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+  const isQuote = lines.length > 0 && lines.every((line) => /^>\s?/.test(line));
+
+  if (!isQuote) return null;
+
+  const quote = lines
+    .map((line) => line.replace(/^>\s?/, "").trim())
+    .filter(Boolean)
+    .map(escapeHtml)
+    .join("<br />");
+
+  return `<blockquote>${quote}</blockquote>`;
+}
+
+function renderCodeBlock(block) {
+  if (!block.startsWith("```")) return null;
+
+  const lines = block.split("\n");
+  const firstLine = lines.shift() || "";
+  const language = firstLine.replace(/^```/, "").trim();
+  if (lines.at(-1)?.trim() === "```") lines.pop();
+
+  const code = escapeHtml(lines.join("\n"));
+  const label = language ? `<span class="notes-post-code-label">${escapeHtml(language)}</span>` : "";
+
+  return `<pre>${label}<code>${code}</code></pre>`;
+}
+
 function markdownToHtml(markdown) {
   return markdown
     .split(/\n{2,}/)
@@ -126,6 +155,12 @@ function markdownToHtml(markdown) {
       if (block.startsWith("### ")) return `<h3>${escapeHtml(block.slice(4))}</h3>`;
       if (block.startsWith("## ")) return `<h2>${escapeHtml(block.slice(3))}</h2>`;
       if (block.startsWith("# ")) return `<h2>${escapeHtml(block.slice(2))}</h2>`;
+
+      const codeBlock = renderCodeBlock(block);
+      if (codeBlock) return codeBlock;
+
+      const quoteBlock = renderQuoteBlock(block);
+      if (quoteBlock) return quoteBlock;
 
       const listBlock = renderListBlock(block);
       if (listBlock) return listBlock;

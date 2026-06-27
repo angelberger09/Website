@@ -154,6 +154,7 @@ import './home-section-thread-pass.css';
 import './home-room-sequence-stamps-pass.css';
 import './home-path-map-room-cards-pass.css';
 import './home-path-ledger-consolidation-pass.css';
+import './home-path-map-room-spine-pass.css';
 import './footer-exit-receipts-pass.css';
 import './footer-four-room-exit-pass.css';
 import './footer-exit-room-faces-pass.css';

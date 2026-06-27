@@ -2,6 +2,43 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 09:31 ET — About contact caption strips
+
+### Changed
+
+- Added `app/about-contact-caption-strips-pass.css`.
+- Loaded the pass after `app/about-opening-room-table-pass.css` in `app/layout.jsx`.
+- Turned the About contact-sheet heading paragraph and card captions into clipped paper caption strips with a visible `frame path` section tag and small `public frame` tabs on the contact cards.
+- Added `.agent/changes/2026-06-27-about-contact-caption-strips.md`.
+- Added `.agent/matrices/about-contact-caption-strips.matrix.md`.
+
+### Why
+
+The About contact sheet already had abstract paper/photo frame structure, but the support paragraph and card captions still scanned as regular text blocks under image cards. This pass makes those supporting text areas visibly align with the paper-snippet, flattened hierarchy, and paper/photo sequence goals without changing About copy, routes, data, accessibility labels, or inventing fake images, products, work, or private context.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 08:39 ET — Store feed boundary docket
 
 ### Changed
@@ -218,240 +255,3 @@ The About working-principles section already had public-safe copy and individual
 
 - PAGE-002
 - COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-002
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 01:38 ET — Portfolio record state docket
-
-### Changed
-
-- Added `app/portfolio-record-state-docket-pass.css`.
-- Loaded the pass after `app/portfolio-state-path-shelf-pass.css` in `app/layout.jsx`.
-- Turned the Portfolio record-state card stack into a more guided public/archive docket with a vertical `record docket` paper label, stitched thread, direct state cue slips, and small `public state` snippets.
-- Added `.agent/changes/2026-06-27-portfolio-record-state-docket.md`.
-- Added `.agent/matrices/portfolio-record-state-docket.matrix.md`.
-
-### Why
-
-The Portfolio record states already had public-safe state copy and paper/photo cards, but the area could still scan as four separate repeated cards instead of one readable archive-state path. This pass makes the section visibly closer to the calm-room, direct-label, paper-snippet, and flattened hierarchy goals without changing Portfolio data, route links, source contracts, or inventing project imagery.
-
-### Related items
-
-- PAGE-004
-- COMP-008
-- DESIGN-015
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-015
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-026
-- METRIC-002
-- METRIC-014
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 01:08 ET — Notes reader path spine
-
-### Changed
-
-- Added `app/notes-path-reader-spine-pass.css`.
-- Loaded the pass after `app/notes-path-direct-cues-pass.css` in `app/layout.jsx`.
-- Turned the existing Notes `After the shelf` path board into a more guided reader path with a vertical `reader path` paper spine, ordered route cue, dashed stitched thread, and numbered paper stamps on the existing next-path cards.
-- Added `.agent/changes/2026-06-27-notes-reader-path-spine.md`.
-- Added `.agent/matrices/notes-reader-path-spine.matrix.md`.
-
-### Why
-
-The Notes route already had public-safe continuity copy and paper/photo cards, but the path could still scan as three separate cards rather than one guided route through the room. This pass makes the reader path visibly more composed and human-readable without changing Blog data, route links, source contracts, or inventing note imagery.
-
-### Related items
-
-- PAGE-003
-- PAGE-003A
-- PAGE-003B
-- COMP-006
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-026
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-032
-
-## 2026-06-27 00:39 ET — PageIntro room key ticket
-
-### Changed
-
-- Added `app/page-intro-room-key-ticket-pass.css`.
-- Loaded the pass after `app/page-intro-trust-spine-pass.css` in `app/layout.jsx`.
-- Turned the existing shared `.page-hero__room-key` into a stronger clipped paper ticket with a direct `room key` label, dashed side thread, abstract paper/photo center, deeper lifted shadow, and mobile-safe sizing.
-- Added `.agent/changes/2026-06-27-pageintro-room-key-ticket.md`.
-- Added `.agent/matrices/pageintro-room-key-ticket.matrix.md`.
-
-### Why
-
-The shared PageIntro route stack already had route-specific shelf cues and a filled photo card, but the small room-key/status card still read quieter than the newer ticket and receipt surfaces. This pass makes the shared room key visibly part of the calm-room paper system across the top-level route intros without changing copy, routes, data, accessibility, or inventing imagery.
-
-### Related items
-
-- PAGE-002
-- PAGE-003
-- PAGE-003A
-- PAGE-003B
-- PAGE-004
-- PAGE-005
-- COMP-005
-- DESIGN-019
-- DESIGN-021
-- DESIGN-022
-- DESIGN-023
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-018
-- LESSON-019
-- LESSON-021
-- LESSON-022
-- LESSON-023
-- LESSON-024
-- LESSON-025
-- METRIC-017
-- METRIC-018
-- METRIC-020
-- METRIC-021
-- METRIC-022
-- METRIC-023
-- METRIC-024
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 00:11 ET — Homepage path map room spine
-
-### Changed
-
-- Added `app/home-path-map-room-spine-pass.css`.
-- Loaded the pass after `app/home-path-ledger-consolidation-pass.css` in `app/layout.jsx` so the homepage reading map becomes visibly more ordered after previous ledger/card refinements.
-- Turned the existing homepage `Read this page` map into a left-docked room-spine board with a vertical `room spine` slip, dashed stitched thread, clipped note, and chapter-stamped path cards.
-- Added `.agent/changes/2026-06-27-homepage-path-map-room-spine.md`.
-- Added `.agent/matrices/homepage-path-map-room-spine.matrix.md`.
-
-### Why
-
-The homepage path map already had the correct public-safe chapter content, but it could still scan as another row of separate route cards instead of one human-readable editorial path. This pass makes the reading map visibly closer to the calm-room, left-docked, paper-snippet, flattened hierarchy goal without changing links, page copy, data, routes, or inventing new material.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-001
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-26 23:50 ET — About contact sheet exposure desk
-
-### Changed
-
-- Added `app/about-contact-sheet-exposure-desk-pass.css`.
-- Loaded the pass after `app/final-paper-surface-budget-pass.css` in `app/layout.jsx` so the refinement remains visible after shared budget rules.
-- Turned the existing About contact sheet into a two-column paper exposure desk with a clipped board, stitched side thread, left contact-desk note stack, staggered frame cards, and direct `contact desk` / `soft frame` labels.
-- Added `.agent/changes/2026-06-26-about-contact-sheet-exposure-desk.md`.
-- Added `.agent/matrices/about-contact-sheet-exposure-desk.matrix.md`.
-
-### Why
-
-The About contact sheet already had honest public orientation copy and content-bearing frame cards, but it still read as a row of separate cards rather than one composed room-reading surface. This pass makes the section visibly closer to the calm-room, paper-snippet, flattened hierarchy, and photo-led content goals without changing copy, routes, data, or inventing imagery.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-26 23:30 ET — Homepage hero room status cues
-
-### Changed
-
-- Updated `app/home-entry-contact-sheet-pass.css` so the homepage hero contact-sheet cards no longer repeat the same visible `Open room` cue on every destination.
-- The first-screen route cards now show direct room status slips: `Open map`, `Reading shelf`, `Public archive`, and `Preparing`.
-- Added `.agent/changes/2026-06-26-homepage-hero-room-status-cues.md`.
-- Added `.agent/matrices/homepage-hero-room-status-cues.matrix.md`.
-
-### Why
-
-The homepage hero already had useful route cards, but the repeated status slip made every room look equally open and flattened the honest readiness path. The new visible status cues clarify the room jobs without changing route links, source data, or inventing unavailable store content.

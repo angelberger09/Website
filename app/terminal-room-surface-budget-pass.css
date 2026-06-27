@@ -11,6 +11,9 @@
 
 .page-hero__room-shelf,
 .page-hero__room-key,
+.home-studio-checks,
+.home-studio-checks__intro,
+.home-check-rail,
 .about-room-spine,
 .about-room-key-board,
 .about-contact-sheet-board,
@@ -36,6 +39,11 @@
 
 .page-hero__room-shelf > span,
 .page-hero__room-key,
+.home-studio-checks__intro,
+.home-studio-checks__intro::before,
+.home-studio-checks__intro p,
+.home-check-rail::after,
+.home-check-note,
 .about-room-spine__slip,
 .about-room-key-slip,
 .about-contact-sheet-rail__slip,
@@ -60,6 +68,36 @@
   background-blend-mode: normal;
   filter: none;
   box-shadow: var(--terminal-room-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.home-studio-checks__intro,
+.home-check-rail::after,
+.home-check-note {
+  background-image: var(--terminal-room-paper);
+  background-size: cover, 20rem 20rem;
+}
+
+.home-check-rail {
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.44), rgba(255, 247, 235, 0.2) 58%, transparent),
+    var(--grain-image);
+  background-size: cover, 26rem 26rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.home-check-note::before,
+.home-check-note::after,
+.home-check-note small,
+.home-check-note__rule-slip,
+.home-check-note__photo {
+  filter: none;
+  box-shadow: var(--terminal-room-shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.home-studio-checks__intro::after,
+.home-check-rail::before {
+  border-color: var(--terminal-room-thread);
+  opacity: 0.7;
 }
 
 .about-room-spine,
@@ -132,6 +170,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .page-hero__room-shelf > span,
+  .home-studio-checks__intro::before,
+  .home-check-rail::after,
+  .home-check-note,
+  .home-check-note:nth-child(1),
+  .home-check-note:nth-child(2),
+  .home-check-note:nth-child(3),
   .about-room-spine__slip,
   .about-room-key-slip,
   .about-contact-sheet-rail__slip,
@@ -154,6 +198,9 @@
 
 @media (max-width: 760px) {
   .page-hero__room-shelf,
+  .home-studio-checks,
+  .home-studio-checks__intro,
+  .home-check-rail,
   .about-room-spine,
   .about-room-key-board,
   .about-contact-sheet-board,
@@ -174,5 +221,10 @@
   .store-checklist-collage,
   .studio-footer__exit-receipts {
     contain-intrinsic-size: 1px 920px;
+  }
+
+  .home-studio-checks__intro,
+  .home-check-rail {
+    box-shadow: var(--terminal-room-shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.52);
   }
 }

@@ -161,6 +161,7 @@ import './footer-current-room-stamp-pass.css';
 import './footer-store-prep-receipt-pass.css';
 import './footer-mark-copy-slips-pass.css';
 import './final-paper-surface-budget-pass.css';
+import './about-contact-sheet-exposure-desk-pass.css';
 import './notes-post-title-folio-pass.css';
 import './notes-post-title-cue-slip-pass.css';
 import './notes-post-support-ledger-pass.css';

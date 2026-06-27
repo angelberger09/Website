@@ -1,0 +1,114 @@
+/* About principles promise docket pass. Turns the working-principles intro into the paper face of the promise trail, not a plain heading above card notes. */
+
+.about-principles-board {
+  --about-principles-docket-ink: rgba(56, 43, 40, 0.82);
+  --about-principles-docket-thread: rgba(86, 69, 61, 0.24);
+  --about-principles-docket-sage: rgba(185, 201, 175, 0.44);
+  --about-principles-docket-lavender: rgba(216, 197, 236, 0.34);
+  --about-principles-docket-coral: rgba(255, 176, 143, 0.24);
+}
+
+.about-principles-board .about-board-heading {
+  width: min(100%, 48rem);
+  max-width: none;
+  margin-inline: 0 auto;
+  padding: clamp(1.15rem, 3vw, 1.65rem) clamp(1rem, 3vw, 1.55rem) clamp(1.25rem, 3vw, 1.8rem) clamp(1.35rem, 3vw, 2rem);
+  background:
+    linear-gradient(104deg, rgba(255, 250, 242, 0.94), rgba(255, 250, 242, 0.78) 42%, var(--about-principles-docket-sage)),
+    radial-gradient(circle at 14% 22%, rgba(255, 255, 255, 0.72), transparent 34%),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1% 6%, 16% 1%, 42% 5%, 64% 0, 98% 4%, 96% 91%, 76% 100%, 48% 96%, 19% 100%, 3% 92%);
+  box-shadow:
+    0.16rem 0.18rem 0 rgba(66, 52, 47, 0.1),
+    0.5rem 0.82rem 1.35rem rgba(48, 38, 34, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: rotate(-0.45deg);
+  isolation: isolate;
+}
+
+.about-principles-board .about-board-heading::before {
+  top: clamp(0.8rem, 2vw, 1.05rem);
+  bottom: clamp(0.8rem, 2vw, 1.05rem);
+  left: clamp(0.62rem, 2vw, 0.9rem);
+  width: 0.18rem;
+  background: repeating-linear-gradient(180deg, var(--about-principles-docket-thread) 0 0.38rem, transparent 0.38rem 0.78rem);
+  border-radius: 999px;
+  box-shadow: 0.45rem 0 0 rgba(255, 255, 255, 0.28);
+}
+
+.about-principles-board .about-board-heading::after {
+  position: absolute;
+  top: -0.58rem;
+  right: clamp(1rem, 4vw, 3.8rem);
+  z-index: 2;
+  padding: 0.34rem 0.7rem 0.31rem;
+  content: "public promise";
+  color: var(--about-principles-docket-ink);
+  background:
+    linear-gradient(110deg, rgba(255, 250, 242, 0.92), var(--about-principles-docket-lavender), rgba(255, 250, 242, 0.76)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(3% 18%, 26% 2%, 72% 8%, 98% 0, 95% 84%, 72% 100%, 32% 93%, 6% 100%);
+  box-shadow: 0.16rem 0.28rem 0.66rem rgba(48, 38, 34, 0.14);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: rotate(1.4deg);
+}
+
+.about-principles-board .about-board-heading .eyebrow {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 0.8rem;
+  padding: 0.35rem 0.68rem 0.31rem;
+  background:
+    linear-gradient(100deg, rgba(255, 250, 242, 0.88), var(--about-principles-docket-coral)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(4% 12%, 34% 0, 76% 9%, 98% 2%, 95% 88%, 70% 100%, 28% 92%, 3% 100%);
+  box-shadow: 0.12rem 0.2rem 0.46rem rgba(48, 38, 34, 0.11);
+  color: rgba(61, 48, 43, 0.78);
+}
+
+.about-principles-board .about-board-heading h1 {
+  max-width: 22ch;
+  margin-bottom: 0.86rem;
+  color: rgba(52, 40, 37, 0.86);
+  line-height: 1.02;
+}
+
+.about-principles-board .about-board-heading p:not(.eyebrow) {
+  position: relative;
+  max-width: 39rem;
+  margin: 0;
+  padding: 0.78rem 0.9rem 0.72rem;
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.42), rgba(255, 250, 242, 0.64)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  clip-path: polygon(1% 10%, 26% 3%, 58% 7%, 98% 0, 96% 90%, 73% 100%, 34% 94%, 4% 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42);
+  color: rgba(66, 52, 47, 0.76);
+}
+
+.about-principles-board .about-board-heading + .about-principles-collage {
+  margin-top: clamp(0.8rem, 2vw, 1.15rem);
+}
+
+@media (max-width: 760px) {
+  .about-principles-board .about-board-heading {
+    padding: 1.2rem 0.92rem 1.25rem 1.2rem;
+    transform: none;
+  }
+
+  .about-principles-board .about-board-heading::after {
+    top: -0.44rem;
+    right: 0.9rem;
+  }
+
+  .about-principles-board .about-board-heading h1 {
+    max-width: 100%;
+  }
+}

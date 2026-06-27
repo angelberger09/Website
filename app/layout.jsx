@@ -154,6 +154,7 @@ import './footer-exit-room-faces-pass.css';
 import './footer-current-room-stamp-pass.css';
 import './footer-store-prep-receipt-pass.css';
 import './final-paper-surface-budget-pass.css';
+import './notes-post-title-folio-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

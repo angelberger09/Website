@@ -2,6 +2,41 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 02:10 ET — About principle promise trail
+
+### Changed
+
+- Added `app/about-principle-promise-trail-pass.css`.
+- Loaded the pass after `app/about-principle-snippet-pass.css` in `app/layout.jsx`.
+- Turned the About working-principles board into a more guided public-promise trail with a clipped `promise trail` strip, heading stitch rail, numbered promise slips, connecting thread, and mobile-safe vertical trail behavior.
+- Added `.agent/changes/2026-06-27-about-principle-promise-trail.md`.
+- Added `.agent/matrices/about-principle-promise-trail.matrix.md`.
+
+### Why
+
+The About working-principles section already had public-safe copy and individual paper notes, but it could still scan as three separate card-like promises rather than one readable studio promise sequence. This pass makes the section visibly closer to the calm-room, paper-snippet, flattened hierarchy, and paper-first goals without changing About content, route links, data, accessibility labels, or inventing studio material.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 01:38 ET — Portfolio record state docket
 
 ### Changed

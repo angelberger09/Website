@@ -1,0 +1,93 @@
+/* Notes state intro docket pass. Makes the reader-behavior intro itself read as a deliberate paper docket, not loose heading copy. */
+
+.notes-state-board__intro {
+  position: relative;
+  width: min(100%, 42rem);
+  margin: 0 0 clamp(1rem, 2.2vw, 1.55rem) clamp(1rem, 3vw, 2.35rem);
+  padding: clamp(0.9rem, 2.4vw, 1.35rem) clamp(0.95rem, 2.5vw, 1.55rem) clamp(1rem, 2.5vw, 1.45rem);
+  isolation: isolate;
+  transform: rotate(-0.45deg);
+}
+
+.notes-state-board__intro::before {
+  content: "";
+  position: absolute;
+  inset: -0.25rem -0.35rem -0.35rem -0.25rem;
+  z-index: -1;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.94), rgba(238, 219, 190, 0.66)),
+    url('/Website/atmosphere/dust-specks.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 22rem 22rem, 15rem 15rem;
+  box-shadow:
+    0 1.05rem 1.9rem rgba(74, 47, 29, 0.14),
+    0 0.24rem 0.55rem rgba(74, 47, 29, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(1% 7%, 19% 2%, 49% 5%, 76% 1%, 99% 7%, 97% 91%, 79% 96%, 52% 94%, 24% 99%, 2% 92%);
+}
+
+.notes-state-board__intro .eyebrow {
+  display: inline-block;
+  margin-bottom: 0.62rem;
+  padding: 0.3rem 0.54rem 0.25rem;
+  color: rgba(63, 49, 38, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.94), rgba(230, 212, 183, 0.7)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0 0.38rem 0.72rem rgba(74, 47, 29, 0.1);
+  clip-path: polygon(3% 9%, 96% 0, 100% 86%, 4% 100%);
+  transform: rotate(-1.4deg);
+}
+
+.notes-state-board__intro h1 {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.36rem 0.62rem 0.42rem;
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  line-height: 1.04;
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.88), rgba(240, 222, 195, 0.56)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0 0.5rem 0.95rem rgba(74, 47, 29, 0.11);
+  clip-path: polygon(1% 10%, 98% 2%, 100% 88%, 3% 100%);
+}
+
+.notes-state-board .notes-state-board__intro::after {
+  content: "state path / calm fallbacks / public shelf";
+  margin-top: 0.78rem;
+  background:
+    linear-gradient(135deg, rgba(246, 232, 204, 0.9), rgba(255, 252, 246, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0 0.42rem 0.76rem rgba(74, 47, 29, 0.1);
+  transform: rotate(0.8deg);
+}
+
+.notes-state-board__intro::marker {
+  color: transparent;
+}
+
+@media (max-width: 760px) {
+  .notes-state-board__intro {
+    margin: 0 0 1rem;
+    transform: none;
+  }
+
+  .notes-state-board__intro .eyebrow,
+  .notes-state-board__intro h1,
+  .notes-state-board .notes-state-board__intro::after {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-state-board__intro,
+  .notes-state-board__intro .eyebrow,
+  .notes-state-board__intro h1,
+  .notes-state-board .notes-state-board__intro::after {
+    transform: none;
+  }
+}

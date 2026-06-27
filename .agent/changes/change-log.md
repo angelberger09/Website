@@ -427,3 +427,38 @@ The Store footer route was correctly linked and visible, but the compact `Shop` 
 - METRIC-014
 - METRIC-017
 - METRIC-020
+
+## 2026-06-26 20:50 ET — Final paper surface budget
+
+### Changed
+
+- Added `app/final-paper-surface-budget-pass.css`.
+- Loaded it last in `app/layout.jsx` after the newest PageIntro, DetailCard, homepage path, and footer paper passes.
+- Added `.agent/matrices/final-paper-surface-budget.matrix.md` and a dedicated change note.
+
+### Why
+
+The existing performance-budget pass protects many early paper/collage surfaces and the root paper budget restores the environment afterward, but later visual passes were still able to add heavier filters, transforms, pseudo-layers, and inconsistent paper shadows. This final guardrail keeps late-loaded shared paper/photo surfaces visibly handmade while making their render cost calmer and more consistent.
+
+### Related items
+
+- COMP-005
+- COMP-008
+- COMP-009
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-027
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-007
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-026
+- METRIC-027
+- METRIC-028

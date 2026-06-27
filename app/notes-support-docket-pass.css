@@ -1,0 +1,114 @@
+/* Notes support docket pass.
+   Turns the three Notes support slips into one guided support docket without changing Blog feed data, route links, or public note copy. */
+
+.notes-support-strip {
+  grid-template-columns: minmax(7.4rem, 0.28fr) repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.75rem, 2vw, 1.15rem);
+  padding: clamp(0.55rem, 1.4vw, 0.8rem) 0 clamp(0.75rem, 1.8vw, 1rem);
+}
+
+.notes-support-strip::before {
+  inset: -0.95rem -1rem -0.92rem;
+  clip-path: polygon(1% 3%, 18% 0.8%, 48% 2.4%, 80% 1%, 99% 3.6%, 97.2% 35%, 98.8% 75%, 96.7% 98%, 68% 96.4%, 40% 98.8%, 12% 97.1%, 1.6% 99%, 2.4% 58%);
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.05), transparent 10rem),
+    radial-gradient(circle at 12% 24%, rgba(255, 176, 143, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 70%, rgba(216, 197, 236, 0.2), transparent 34%),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.58), rgba(255, 247, 235, 0.3)),
+    var(--grain-image);
+  background-size: cover, cover, cover, cover, 24rem 24rem;
+  box-shadow: 0.22rem 0.5rem 0 rgba(47, 38, 35, 0.055), 0 1.35rem 2.35rem rgba(47, 38, 35, 0.12);
+}
+
+.notes-support-strip::after {
+  content: "support docket";
+  position: relative;
+  z-index: 1;
+  order: -1;
+  align-self: stretch;
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  padding: 0.72rem 0.45rem;
+  clip-path: polygon(10% 1%, 94% 4%, 88% 96%, 2% 99%, 6% 42%);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.78) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  color: rgba(47, 38, 35, 0.76);
+  font-family: var(--font-hand);
+  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(0.7deg);
+  box-shadow: 0.13rem 0.22rem 0 rgba(47, 38, 35, 0.08), 0 0.8rem 1.3rem rgba(47, 38, 35, 0.12);
+}
+
+.notes-support-strip .notes-support-note {
+  min-height: clamp(16rem, 25vw, 18.2rem);
+  box-shadow: 0.16rem 0.28rem 0 rgba(47, 38, 35, 0.08), 0 0.95rem 1.7rem rgba(47, 38, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.notes-support-strip .notes-support-note::after {
+  display: block;
+  position: absolute;
+  inset: auto 0.82rem 0.74rem;
+  z-index: 0;
+  height: 0.1rem;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.2) 12%, rgba(47, 38, 35, 0.08) 72%, transparent);
+  opacity: 0.72;
+}
+
+.notes-support-strip .notes-support-note:nth-child(2) {
+  transform: rotate(-0.38deg) translateY(0.18rem);
+}
+
+.notes-support-strip .notes-support-note:nth-child(3) {
+  transform: rotate(0.44deg) translateY(-0.04rem);
+}
+
+.notes-support-strip .notes-support-note:nth-child(4) {
+  transform: rotate(-0.18deg) translateY(0.1rem);
+}
+
+.notes-support-strip .notes-support-note .eyebrow {
+  justify-self: start;
+  width: fit-content;
+  padding: 0.26rem 0.48rem 0.22rem;
+  clip-path: polygon(4% 12%, 96% 0, 94% 88%, 8% 100%);
+  background: rgba(255, 252, 246, 0.72);
+  box-shadow: 0.06rem 0.12rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.notes-support-strip .notes-support-note h2 {
+  max-width: 13rem;
+}
+
+.notes-support-strip .notes-support-note p:not(.eyebrow) {
+  max-width: 30ch;
+}
+
+@media (max-width: 900px) {
+  .notes-support-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-support-strip::after {
+    min-height: auto;
+    justify-self: start;
+    padding: 0.42rem 0.68rem 0.36rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.7deg);
+  }
+
+  .notes-support-strip .notes-support-note {
+    min-height: 15.5rem;
+  }
+}

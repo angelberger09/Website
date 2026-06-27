@@ -1,0 +1,70 @@
+/* Homepage house-rules source slips pass.
+   Replaces the generic corner stamp with real source-backed rule cues from app/page.jsx. */
+
+.home-check-note {
+  position: relative;
+}
+
+.home-check-note::after {
+  display: none;
+}
+
+.home-check-note__rule-slip {
+  position: absolute;
+  top: clamp(0.8rem, 1.8vw, 1.05rem);
+  right: clamp(0.78rem, 1.8vw, 1.05rem);
+  z-index: 4;
+  max-width: min(11rem, 46%);
+  padding: 0.42rem 0.66rem 0.34rem;
+  color: rgba(58, 45, 42, 0.82);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.72) 58%, rgba(255, 176, 143, 0.22)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow:
+    0.12rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0 0.5rem 0.9rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(3% 8%, 100% 0, 95% 92%, 8% 100%, 0 22%);
+  transform: rotate(1.6deg);
+}
+
+.home-check-note:nth-child(2) .home-check-note__rule-slip {
+  transform: rotate(-1.2deg);
+}
+
+.home-check-note:nth-child(3) .home-check-note__rule-slip {
+  transform: rotate(0.8deg);
+}
+
+.home-check-note__rule-slip::before {
+  position: absolute;
+  left: 0.42rem;
+  right: 0.42rem;
+  bottom: 0.22rem;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(88, 68, 50, 0.22), transparent);
+}
+
+.home-check-note__photo {
+  padding-top: clamp(2.1rem, 4vw, 2.6rem);
+}
+
+@media (max-width: 760px) {
+  .home-check-note__rule-slip {
+    top: 0.72rem;
+    right: 0.72rem;
+    max-width: min(10rem, 54%);
+    font-size: 0.68rem;
+  }
+
+  .home-check-note__photo {
+    padding-top: 2.4rem;
+  }
+}

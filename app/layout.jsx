@@ -32,6 +32,7 @@ import './portfolio-paper-archive-pass.css';
 import './portfolio-gallery-pass.css';
 import './portfolio-gallery-direct-cues-pass.css';
 import './portfolio-gallery-room-rail-pass.css';
+import './portfolio-gallery-bound-cues-pass.css';
 import './portfolio-archive-ticket-pass.css';
 import './portfolio-feed-photo-ledger-pass.css';
 import './portfolio-feed-drawer-path-pass.css';

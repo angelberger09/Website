@@ -1,0 +1,138 @@
+.notes-state-board {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.notes-state-board::before {
+  content: "state tray";
+  position: absolute;
+  left: clamp(-1.15rem, -1.7vw, -0.55rem);
+  top: clamp(1rem, 2vw, 1.55rem);
+  z-index: 2;
+  padding: 0.45rem 0.58rem;
+  max-width: 6.2rem;
+  font-size: 0.58rem;
+  line-height: 1.05;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(63, 49, 38, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 249, 232, 0.96), rgba(226, 211, 181, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 0.65rem 1.25rem rgba(86, 57, 34, 0.17),
+    0 0.08rem 0 rgba(255, 255, 255, 0.82) inset;
+  transform: rotate(-4deg);
+  clip-path: polygon(2% 7%, 96% 0, 100% 87%, 6% 100%);
+}
+
+.notes-state-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(0.5rem, 1.7vw, 1.35rem);
+  top: clamp(4rem, 7vw, 5.6rem);
+  bottom: clamp(1.4rem, 3vw, 2rem);
+  width: 2px;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(92, 70, 49, 0.34) 0 0.35rem,
+    transparent 0.35rem 0.72rem
+  );
+  opacity: 0.75;
+}
+
+.notes-state-board__intro {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 42rem);
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2.5vw, 1.65rem);
+  margin-left: clamp(0.5rem, 2vw, 1.25rem);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 235, 0.94), rgba(233, 219, 190, 0.78)),
+    url('/Website/atmosphere/dust-specks.svg');
+  box-shadow:
+    0 1.1rem 2.4rem rgba(78, 52, 34, 0.15),
+    -0.22rem 0.22rem 0 rgba(197, 154, 119, 0.16);
+  clip-path: polygon(0 4%, 98% 0, 100% 91%, 3% 100%);
+}
+
+.notes-state-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.45rem);
+  align-items: stretch;
+  margin-top: clamp(1.2rem, 3vw, 1.9rem);
+  padding-left: clamp(1.1rem, 3vw, 2.2rem);
+}
+
+.notes-state-note {
+  position: relative;
+  min-height: 100%;
+  transform: rotate(var(--state-tilt, -0.9deg));
+  box-shadow:
+    0 1.25rem 2.55rem rgba(74, 47, 29, 0.18),
+    0 0.16rem 0 rgba(255, 255, 255, 0.72) inset;
+}
+
+.notes-state-note:nth-child(2) {
+  --state-tilt: 1.05deg;
+  margin-top: clamp(0.45rem, 1vw, 0.75rem);
+}
+
+.notes-state-note:nth-child(3) {
+  --state-tilt: -1.45deg;
+}
+
+.notes-state-note::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  width: 3.2rem;
+  height: 0.56rem;
+  z-index: 2;
+  background: rgba(248, 235, 199, 0.8);
+  box-shadow: 0 0.24rem 0.55rem rgba(92, 65, 42, 0.13);
+  transform: translateX(-50%) rotate(-2deg);
+  clip-path: polygon(4% 10%, 100% 0, 96% 91%, 0 100%);
+}
+
+.notes-state-note__photo {
+  border-radius: 0;
+  box-shadow:
+    0 0.7rem 1.25rem rgba(68, 43, 28, 0.18),
+    0 0 0 1px rgba(93, 65, 45, 0.08) inset;
+  clip-path: polygon(2% 3%, 97% 0, 100% 88%, 7% 100%, 0 23%);
+}
+
+@media (max-width: 760px) {
+  .notes-state-board::before {
+    left: 0.35rem;
+    top: 0.65rem;
+  }
+
+  .notes-state-board::after {
+    display: none;
+  }
+
+  .notes-state-board__intro {
+    margin-left: 0;
+    padding-top: 2.6rem;
+  }
+
+  .notes-state-list {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+
+  .notes-state-note,
+  .notes-state-note:nth-child(2),
+  .notes-state-note:nth-child(3) {
+    margin-top: 0;
+    transform: none;
+  }
+}

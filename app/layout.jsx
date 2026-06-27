@@ -112,6 +112,7 @@ import './blog-path-handoff-strip-pass.css';
 import './blog-reader-landing-dock-pass.css';
 import './blog-bridge-old-door-ledger-pass.css';
 import './blog-old-door-room-docket-pass.css';
+import './blog-old-door-terminal-budget-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-thread-pass.css';
 import './page-intro-subtitle-pass.css';

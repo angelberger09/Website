@@ -272,6 +272,7 @@ export default function HomePage() {
                   <b>{frame.label}</b>
                   <em>{frame.detail}</em>
                 </span>
+                <span className="home-check-note__rule-slip">{frame.label}</span>
                 <span className="home-check-note__eyebrow">{check.eyebrow}</span>
                 <h2>{check.title}</h2>
                 <p>{check.description}</p>

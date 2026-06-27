@@ -153,6 +153,7 @@ import './footer-four-room-exit-pass.css';
 import './footer-exit-room-faces-pass.css';
 import './footer-current-room-stamp-pass.css';
 import './footer-store-prep-receipt-pass.css';
+import './footer-mark-copy-slips-pass.css';
 import './final-paper-surface-budget-pass.css';
 import './notes-post-title-folio-pass.css';
 import './notes-post-title-cue-slip-pass.css';

@@ -2,6 +2,48 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 13:40 ET — Footer room index docket
+
+### Changed
+
+- Added `app/footer-room-index-docket-pass.css`.
+- Loaded the pass after `app/footer-bound-exit-path-pass.css` and before the terminal final paper budget in `app/layout.jsx`.
+- Bound the lower shared footer route trail into a clipped `footer room index` docket with a top label slip, dashed stitch thread, lifted route cards, stronger active-room slip treatment, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-footer-room-index-docket.md`.
+- Added `.agent/matrices/footer-room-index-docket.matrix.md`.
+
+### Why
+
+The footer exit receipt shelf already read as a composed paper path, but the lower footer route trail could still scan as a separate nav row. This pass makes the shared footer closer to the direct navigation, calm-room continuity, paper-first material, flattened hierarchy, text-snippet, and torn-paper card goals without adding routes, fake content, private material, or product/portfolio claims.
+
+### Related items
+
+- COMP-002
+- COMP-005
+- COMP-009
+- DESIGN-015
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 13:28 ET — Homepage next path bound docket
 
 ### Changed
@@ -218,66 +260,3 @@ The existing final budget was no longer final after newer room/path/footer passe
 - Loaded the pass after the About departure-table CSS import in `app/layout.jsx`.
 - Updated `app/about/page.jsx` so the About next-door cards render source-backed door cue text from `aboutPathwayFrames` instead of relying on generic CSS-only pseudo-element stamps.
 - Added `.agent/changes/2026-06-27-about-pathway-door-cue-tickets.md`.
-- Added `.agent/matrices/about-pathway-door-cue-tickets.matrix.md`.
-
-### Why
-
-The About pathways departure table already read as one composed paper exit surface, but the next-door card cue labels were still mostly CSS-generated and included a generic first-card cue. This pass makes the section visibly closer to the source-backed, paper-first, flattened-hierarchy, text-snippet, and room-continuity goals without changing routes, destinations, public copy claims, accessibility labels, or inventing content.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 11:09 ET — Blog bridge old door ledger
-
-### Changed
-
-- Added `app/blog-bridge-old-door-ledger-pass.css`.
-- Loaded the pass after the existing Blog bridge/handoff CSS imports in `app/layout.jsx`.
-- Bound the Blog compatibility route intro into a clearer `old door ledger` with a clipped route label, larger paper copy face, body copy slip, vertical stitch thread, connector ticks, staggered path cards, stronger lifted-paper depth, and responsive fallbacks.
-- Added `.agent/changes/2026-06-27-blog-bridge-old-door-ledger.md`.
-- Added `.agent/matrices/blog-bridge-old-door-ledger.matrix.md`.
-
-### Why
-
-The Blog route already explained that older public Blog links open the same Notes writing shelf, but the opening bridge could still scan as separate neighboring cards. This pass makes the compatibility route visibly closer to the calm-room continuity, paper-first material, flattened hierarchy, text-snippet, photo-led, and route-path goals without changing routes, public copy, note data, accessibility labels, or inventing new content.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- COMP-008
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-002
-- LESSON-018
-- LESSON-019

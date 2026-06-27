@@ -3,7 +3,7 @@
 | Item | Value |
 |---|---|
 | Semantic focus | Shared source-link title labels |
-| Public source files | `app/final-paper-surface-budget-pass.css`, `app/source-link-title-slip-pass.css` |
+| Public source files | `app/final-paper-surface-budget-pass.css` |
 | Agent ledger | `.agent/changes/2026-06-26-source-link-title-slips.md` |
 | Satisfaction state | partially satisfied |
 | Interface mismatch | `.source-link` source cards had paper shells and metadata snippets, but the primary title label still read as plain UI text. |

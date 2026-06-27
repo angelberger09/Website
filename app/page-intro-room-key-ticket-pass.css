@@ -1,0 +1,123 @@
+/* Shared PageIntro room-key ticket pass
+   Goal: make the existing route room key read as a tactile paper ticket,
+   not a quiet caption tucked beside the polaroid stack. */
+
+.page-hero__room-key {
+  position: relative;
+  display: grid;
+  gap: 0.42rem;
+  padding: 1rem 1rem 1.05rem 1.1rem;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 253, 243, 0.96), rgba(244, 232, 207, 0.92)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 180px 180px;
+  box-shadow:
+    0 20px 28px rgba(82, 58, 37, 0.2),
+    0 7px 0 rgba(127, 95, 62, 0.08),
+    inset 0 0 0 1px rgba(116, 84, 54, 0.12);
+  clip-path: polygon(3% 0, 97% 2%, 100% 13%, 97% 100%, 8% 97%, 0 86%, 2% 49%, 0 11%);
+  transform: rotate(1.2deg) translateY(-0.25rem);
+  isolation: isolate;
+}
+
+.page-hero__room-key::before {
+  content: "room key";
+  position: absolute;
+  top: -0.72rem;
+  left: 0.85rem;
+  z-index: 2;
+  padding: 0.28rem 0.62rem 0.24rem;
+  font-size: 0.62rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(72, 52, 38, 0.72);
+  background: linear-gradient(135deg, rgba(255, 248, 224, 0.98), rgba(230, 207, 166, 0.92));
+  box-shadow: 0 8px 13px rgba(77, 54, 35, 0.16);
+  clip-path: polygon(4% 0, 96% 3%, 100% 74%, 92% 100%, 0 95%, 2% 18%);
+}
+
+.page-hero__room-key::after {
+  content: "";
+  position: absolute;
+  inset: 0.52rem auto 0.52rem 0.54rem;
+  width: 1px;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(107, 78, 54, 0.3) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+.page-hero__room-key-photo {
+  position: relative;
+  min-height: 4.4rem;
+  padding: 0.72rem 0.82rem;
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
+  color: rgba(46, 36, 31, 0.82);
+  background:
+    radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.66), transparent 34%),
+    linear-gradient(135deg, rgba(170, 196, 174, 0.5), rgba(181, 154, 196, 0.34) 45%, rgba(230, 173, 104, 0.36));
+  box-shadow:
+    inset 0 0 0 1px rgba(84, 64, 45, 0.14),
+    0 12px 18px rgba(82, 58, 37, 0.16);
+  clip-path: polygon(2% 3%, 98% 0, 100% 88%, 92% 100%, 6% 96%, 0 12%);
+}
+
+.page-hero__room-key-photo b,
+.page-hero__room-key-photo em {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.18rem 0.42rem 0.16rem;
+  background: rgba(255, 252, 237, 0.72);
+  box-shadow: 0 5px 9px rgba(91, 65, 40, 0.12);
+  clip-path: polygon(0 0, 96% 3%, 100% 88%, 7% 100%, 2% 72%);
+}
+
+.page-hero__room-key > span:not(.page-hero__room-key-photo) {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.22rem 0.5rem 0.18rem;
+  margin-left: 0.12rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(84, 61, 43, 0.72);
+  background: rgba(255, 249, 229, 0.72);
+  box-shadow: 0 6px 10px rgba(88, 62, 39, 0.1);
+  clip-path: polygon(3% 0, 100% 5%, 96% 100%, 0 92%);
+}
+
+.page-hero__room-key strong {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.05;
+  color: rgba(54, 42, 35, 0.92);
+}
+
+.page-hero__room-key small {
+  max-width: 24ch;
+  line-height: 1.45;
+  color: rgba(70, 52, 39, 0.74);
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-key {
+    transform: none;
+    margin-top: 0.4rem;
+  }
+
+  .page-hero__room-key::before {
+    top: -0.55rem;
+  }
+
+  .page-hero__room-key-photo {
+    min-height: 3.7rem;
+  }
+}

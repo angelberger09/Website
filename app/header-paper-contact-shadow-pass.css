@@ -1,0 +1,84 @@
+/* Header paper contact-shadow pass.
+   Makes the shared top strip read more like one tactile paper sheet over the page without changing labels, routes, or navigation behavior. */
+
+.floating-header {
+  --header-contact-shadow: rgba(47, 38, 35, 0.24);
+  --header-paper-edge: rgba(118, 91, 78, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 1), rgba(252, 242, 226, 0.96) 54%, rgba(237, 216, 188, 0.92)),
+    radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.78), transparent 42%),
+    radial-gradient(ellipse at 78% 72%, rgba(160, 126, 92, 0.16), transparent 48%),
+    repeating-linear-gradient(97deg, rgba(68, 53, 49, 0.04) 0 1px, transparent 1px 3.6rem),
+    var(--grain-image),
+    var(--dust-image),
+    var(--fine-scratch-image);
+  background-size: cover, cover, cover, cover, 18rem 18rem, 28rem 28rem, 42rem 42rem;
+  box-shadow:
+    0 0.14rem 0 rgba(255, 255, 255, 0.76) inset,
+    0 -0.08rem 0 rgba(118, 91, 78, 0.11) inset,
+    0 0.56rem 0.72rem rgba(47, 38, 35, 0.17),
+    0 1.65rem 2.25rem var(--header-contact-shadow),
+    0 3.8rem 6rem rgba(47, 38, 35, 0.12);
+  filter: drop-shadow(0 0.18rem 0.1rem rgba(47, 38, 35, 0.1));
+}
+
+.floating-header__edge {
+  box-shadow:
+    0 0.3rem 0.34rem rgba(47, 38, 35, 0.18),
+    0 0.9rem 1.2rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 var(--header-paper-edge);
+}
+
+.floating-header__lower-fiber {
+  bottom: -0.32rem;
+  height: 0.88rem;
+  background:
+    radial-gradient(circle at 7% 46%, rgba(68, 53, 49, 0.28) 0 0.045rem, transparent 0.055rem),
+    radial-gradient(circle at 23% 62%, rgba(87, 108, 75, 0.24) 0 0.05rem, transparent 0.06rem),
+    radial-gradient(circle at 46% 42%, rgba(68, 53, 49, 0.22) 0 0.04rem, transparent 0.052rem),
+    radial-gradient(circle at 78% 58%, rgba(87, 108, 75, 0.26) 0 0.05rem, transparent 0.064rem),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.72), rgba(118, 91, 78, 0.18) 54%, transparent 92%),
+    linear-gradient(90deg, transparent, rgba(68, 53, 49, 0.24) 9%, rgba(255, 252, 246, 0.58) 52%, rgba(68, 53, 49, 0.2) 90%, transparent);
+  box-shadow: 0 0.52rem 0.92rem rgba(47, 38, 35, 0.2);
+  opacity: 0.86;
+}
+
+.identity-link,
+.folder-panel__link {
+  box-shadow:
+    0 0.18rem 0.34rem rgba(47, 38, 35, 0.16),
+    0 0.52rem 0.76rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -1px 0 rgba(118, 91, 78, 0.12);
+}
+
+.folder-panel__link[aria-current="page"],
+.folder-panel__link--active {
+  transform: translateY(0.04rem) rotate(-0.55deg);
+  box-shadow:
+    0 0.22rem 0.42rem rgba(47, 38, 35, 0.2),
+    0 0.72rem 0.94rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -2px 0 rgba(87, 108, 75, 0.2);
+}
+
+@media (max-width: 760px) {
+  .floating-header {
+    box-shadow:
+      0 0.12rem 0 rgba(255, 255, 255, 0.72) inset,
+      0 0.42rem 0.58rem rgba(47, 38, 35, 0.15),
+      0 1.16rem 1.65rem rgba(47, 38, 35, 0.19);
+  }
+
+  .floating-header__lower-fiber {
+    bottom: -0.2rem;
+    height: 0.68rem;
+    opacity: 0.68;
+  }
+
+  .folder-panel__link[aria-current="page"],
+  .folder-panel__link--active {
+    transform: none;
+  }
+}

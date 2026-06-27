@@ -199,6 +199,7 @@ import './late-paper-surface-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
 import './store-preview-proof-rail-pass.css';
 import './terminal-preview-surface-budget-pass.css';
+import './about-room-path-docket-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

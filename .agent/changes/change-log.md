@@ -2,6 +2,44 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 00:11 ET — Homepage path map room spine
+
+### Changed
+
+- Added `app/home-path-map-room-spine-pass.css`.
+- Loaded the pass after `app/home-path-ledger-consolidation-pass.css` in `app/layout.jsx` so the homepage reading map becomes visibly more ordered after previous ledger/card refinements.
+- Turned the existing homepage `Read this page` map into a left-docked room-spine board with a vertical `room spine` slip, dashed stitched thread, clipped note, and chapter-stamped path cards.
+- Added `.agent/changes/2026-06-27-homepage-path-map-room-spine.md`.
+- Added `.agent/matrices/homepage-path-map-room-spine.matrix.md`.
+
+### Why
+
+The homepage path map already had the correct public-safe chapter content, but it could still scan as another row of separate route cards instead of one human-readable editorial path. This pass makes the reading map visibly closer to the calm-room, left-docked, paper-snippet, flattened hierarchy goal without changing links, page copy, data, routes, or inventing new material.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-26 23:50 ET — About contact sheet exposure desk
 
 ### Changed

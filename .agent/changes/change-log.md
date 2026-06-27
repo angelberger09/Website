@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 16:22 ET — Homepage room status ledger budget
+
+### Changed
+
+- Refined `app/home-room-status-ledger-map-pass.css` instead of adding another competing homepage room-status layer.
+- Added render-budget containment, calmer shadows, lighter connector thread opacity, reduced rotations, tighter status/photo cue shadows, and mobile/reduced-motion fallbacks for the current-room ledger map.
+- Added `.agent/changes/2026-06-27-home-room-status-ledger-budget.md`.
+- Added `.agent/matrices/home-room-status-ledger-budget.matrix.md`.
+
+### Why
+
+The newest homepage room-status ledger map visibly bound the current-room cards into one editorial map, but because it loaded after the terminal room surface budget, its shadows, thread, and staggered transforms could still feel slightly over-stacked compared with the calmer late page surfaces. This pass keeps the map visible while making it fit the shared paper/collage render budget.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 16:09 ET — Homepage room status ledger map
 
 ### Changed

@@ -5,7 +5,7 @@
 | Matrix ID | `notes-post-return-compass` |
 | Status | active |
 | Satisfaction state | partially satisfied → refined |
-| Public source touched | `app/final-paper-surface-budget-pass.css`, `app/notes-post-path-return-compass-pass.css` |
+| Public source touched | `app/final-paper-surface-budget-pass.css` |
 | Agent ledger touched | `.agent/changes/2026-06-27-notes-post-return-compass.md`, `.agent/matrices/notes-post-return-compass.matrix.md` |
 | Visible target | Individual Notes/Blog post reader path shelf |
 | Mismatch | Reader path cards were paper-like but still risked reading as separate cards instead of one composed return path. |

@@ -1,0 +1,133 @@
+/* Notes gallery room docket pass.
+   Binds the Notes contact-sheet intro and scroll shelf into one clearer reading-room docket. */
+
+.notes-gallery-board {
+  padding: clamp(1rem, 2.8vw, 1.65rem) clamp(0.75rem, 2.2vw, 1.25rem) clamp(1.05rem, 2.6vw, 1.55rem);
+}
+
+.notes-gallery-board::after {
+  content: "contact sheet path";
+  position: absolute;
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  top: clamp(0.65rem, 1.8vw, 1rem);
+  z-index: 2;
+  width: fit-content;
+  padding: 0.28rem 0.56rem 0.24rem;
+  color: rgba(63, 49, 38, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.94), rgba(231, 215, 188, 0.7)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0 0.42rem 0.8rem rgba(74, 47, 29, 0.13);
+  clip-path: polygon(4% 14%, 95% 0, 100% 84%, 6% 100%);
+  transform: rotate(1.4deg);
+}
+
+.notes-gallery-board__intro {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 48rem;
+  padding: clamp(0.78rem, 2vw, 1.08rem) clamp(0.88rem, 2.3vw, 1.35rem);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.68), rgba(255, 247, 235, 0.4)),
+    url('/Website/atmosphere/dust-specks.svg'),
+    var(--grain-image);
+  background-size: cover, 24rem 24rem, 16rem 16rem;
+  box-shadow:
+    0 0.85rem 1.6rem rgba(74, 47, 29, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  clip-path: polygon(1.5% 8%, 24% 2%, 59% 6%, 98% 1%, 100% 88%, 76% 97%, 42% 93%, 2% 99%);
+}
+
+.notes-gallery-board__intro::before {
+  content: "published notes";
+  width: fit-content;
+  padding: 0.26rem 0.52rem 0.23rem;
+  color: rgba(63, 49, 38, 0.7);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.72);
+  box-shadow: 0 0.3rem 0.58rem rgba(74, 47, 29, 0.1);
+  clip-path: polygon(3% 12%, 98% 0, 94% 88%, 5% 100%);
+  transform: rotate(-1deg);
+}
+
+.notes-gallery-board__intro > p {
+  width: min(100%, 38rem);
+  padding: 0.54rem 0.7rem 0.58rem;
+  background: rgba(255, 252, 246, 0.64);
+  box-shadow: 0 0.34rem 0.7rem rgba(74, 47, 29, 0.08);
+  clip-path: polygon(2% 8%, 98% 0, 96% 92%, 4% 100%);
+}
+
+.notes-gallery-scroll {
+  position: relative;
+  z-index: 1;
+  padding: clamp(0.55rem, 1.7vw, 0.8rem) 0.35rem 1.15rem;
+}
+
+.notes-gallery-scroll::before {
+  content: "";
+  position: absolute;
+  left: clamp(0.4rem, 1vw, 0.7rem);
+  right: clamp(0.4rem, 1vw, 0.7rem);
+  top: 50%;
+  height: 0.18rem;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(92, 70, 49, 0.26) 0 0.42rem,
+      transparent 0.42rem 0.84rem
+    );
+  box-shadow: 0 0.16rem 0 rgba(255, 252, 246, 0.7);
+}
+
+.notes-gallery-card {
+  box-shadow:
+    0.18rem 0.3rem 0 rgba(47, 38, 35, 0.08),
+    0 1.05rem 1.9rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+.notes-gallery-card:nth-child(odd) {
+  transform: rotate(-0.65deg);
+}
+
+.notes-gallery-card:nth-child(even) {
+  transform: rotate(0.55deg);
+}
+
+@media (max-width: 760px) {
+  .notes-gallery-board {
+    padding: clamp(0.85rem, 4vw, 1.1rem);
+  }
+
+  .notes-gallery-board::after {
+    position: relative;
+    inset: auto;
+    order: -1;
+    margin: 0 0 0.15rem auto;
+    transform: none;
+  }
+
+  .notes-gallery-board__intro {
+    padding: clamp(0.74rem, 4vw, 0.95rem);
+  }
+
+  .notes-gallery-card:nth-child(odd),
+  .notes-gallery-card:nth-child(even) {
+    transform: none;
+  }
+}

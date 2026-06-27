@@ -14,7 +14,9 @@
 .store-feed-ledger-board,
 .store-availability-board,
 .store-checklist-collage,
-.store-promise-board {
+.store-promise-board,
+.store-path-photo-board,
+.store-path-photo-grid {
   content-visibility: auto;
   contain-intrinsic-size: 1px 680px;
 }
@@ -25,7 +27,8 @@
 .store-availability-card,
 .store-checklist-note,
 .store-promise-note,
-.store-lane-piece {
+.store-lane-piece,
+.store-path-photo-card {
   background-image: var(--terminal-preview-paper);
   background-size: cover, 20rem 20rem;
   background-blend-mode: normal;
@@ -39,7 +42,8 @@
 .store-feed-ledger-board::before,
 .store-availability-board::before,
 .store-checklist-collage::before,
-.store-promise-board::before {
+.store-promise-board::before,
+.store-path-photo-board::before {
   filter: none;
   box-shadow: var(--terminal-preview-shadow-soft);
   opacity: 0.84;
@@ -53,13 +57,19 @@
 .store-feed-ledger-card__tab,
 .store-availability-card__status,
 .store-checklist-note__label,
-.store-promise-note__label {
+.store-promise-note__label,
+.store-path-photo-card__bridge,
+.store-path-photo-card__stamp,
+.store-path-photo-card__cue,
+.store-path-photo-grid::before,
+.store-path-photo-board__intro::after {
   filter: none;
   box-shadow: var(--terminal-preview-shadow-soft);
 }
 
 .store-shot-strip::after,
-.store-visual-board__copy::after {
+.store-visual-board__copy::after,
+.store-path-photo-grid::after {
   opacity: 0.66;
   filter: none;
 }
@@ -76,8 +86,24 @@
 .store-checklist-note::before,
 .store-checklist-note::after,
 .store-promise-note::before,
-.store-promise-note::after {
+.store-promise-note::after,
+.store-path-photo-card::before,
+.store-path-photo-card::after,
+.store-path-photo-card__image::before,
+.store-path-photo-card__image::after {
   filter: none;
+}
+
+.store-path-photo-grid::after {
+  border-color: rgba(83, 101, 74, 0.22);
+}
+
+.store-path-photo-card__image::before {
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.22), var(--terminal-preview-shadow-soft);
+}
+
+.store-path-photo-card__image::after {
+  opacity: 0.74;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,7 +113,13 @@
   .store-availability-card,
   .store-checklist-note,
   .store-promise-note,
-  .store-lane-piece {
+  .store-lane-piece,
+  .store-path-photo-card,
+  .store-path-photo-card__bridge,
+  .store-path-photo-card__stamp,
+  .store-path-photo-card::before,
+  .store-path-photo-grid::before,
+  .store-path-photo-board__intro::after {
     transform: none !important;
   }
 }
@@ -99,7 +131,9 @@
   .store-feed-ledger-board,
   .store-availability-board,
   .store-checklist-collage,
-  .store-promise-board {
+  .store-promise-board,
+  .store-path-photo-board,
+  .store-path-photo-grid {
     contain-intrinsic-size: 1px 840px;
   }
 
@@ -110,10 +144,13 @@
   .store-checklist-note,
   .store-promise-note,
   .store-lane-piece,
+  .store-path-photo-card,
   .store-shot-card:nth-child(even),
   .store-shot-card:nth-child(odd),
   .store-gallery-card:nth-child(even),
-  .store-gallery-card:nth-child(odd) {
+  .store-gallery-card:nth-child(odd),
+  .store-path-photo-card:nth-child(even),
+  .store-path-photo-card:nth-child(odd) {
     transform: none;
   }
 }

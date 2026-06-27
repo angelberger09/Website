@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 04:08 ET — Portfolio room key compass
+
+### Changed
+
+- Added `app/portfolio-room-key-compass-pass.css`.
+- Loaded the pass after `app/portfolio-room-key-pass.css` in `app/layout.jsx`.
+- Turned the Portfolio opening room-key strip into a clearer `archive compass` with a left paper spine, stitched route thread, and direct paper cue slips for `public first`, `preview honestly`, and `follow shelf`.
+- Added `.agent/matrices/portfolio-room-key-compass.matrix.md`.
+
+### Why
+
+The Portfolio room-key board already used honest public-safe archive guidance and content-bearing paper/photo slips. It was partially satisfied but could still read as three neighboring cards rather than one calm opening compass for the archive. This pass makes the first Portfolio section more human-readable, paper-first, and aligned with the calm-room sequence without changing Portfolio copy, data, links, routes, accessibility labels, or inventing project imagery.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-015
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-014
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 02:39 ET — About door docket
 
 ### Changed

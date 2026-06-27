@@ -1,0 +1,226 @@
+/* Notes source compass docket pass.
+   Consolidates the writing-shelf source map into one readable paper compass so the source rules do not scan as loose receipts. */
+
+.notes-source-board {
+  --notes-source-compass-paper: rgba(255, 250, 235, 0.94);
+  --notes-source-compass-ink: rgba(47, 38, 35, 0.78);
+  padding: clamp(1.15rem, 3vw, 1.95rem) clamp(0.95rem, 2.8vw, 1.75rem) clamp(1.35rem, 3vw, 2.1rem);
+}
+
+.notes-source-board::before {
+  content: "source compass";
+  left: clamp(0.75rem, 2vw, 1.35rem);
+  right: auto;
+  top: clamp(0.78rem, 1.8vw, 1.18rem);
+  z-index: 3;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.96), rgba(237, 220, 192, 0.76)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0 0.48rem 0.95rem rgba(74, 47, 29, 0.14),
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.08);
+  color: var(--notes-source-compass-ink);
+  transform: rotate(-1.2deg);
+}
+
+.notes-source-board__intro {
+  position: relative;
+  z-index: 2;
+  max-width: 48rem;
+  margin-left: clamp(0.35rem, 1.4vw, 0.9rem);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(0.9rem, 2.2vw, 1.3rem) clamp(0.85rem, 2vw, 1.1rem);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.7), rgba(255, 247, 235, 0.42)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(1% 7%, 98% 0, 100% 88%, 2% 100%);
+  box-shadow: 0 0.75rem 1.35rem rgba(74, 47, 29, 0.1);
+}
+
+.notes-source-board__intro::after {
+  content: "shape → file → fallback";
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0.3rem 0.58rem 0.26rem;
+  color: rgba(63, 49, 38, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.72);
+  clip-path: polygon(3% 14%, 96% 0, 100% 84%, 5% 100%);
+  transform: rotate(0.7deg);
+}
+
+.notes-shelf-promise-strip {
+  position: relative;
+  z-index: 2;
+  max-width: 54rem;
+  margin: clamp(0.95rem, 2vw, 1.25rem) auto clamp(1.05rem, 2.2vw, 1.45rem);
+  padding: clamp(0.55rem, 1.4vw, 0.75rem);
+  background:
+    linear-gradient(90deg, rgba(255, 252, 246, 0.58), rgba(245, 224, 198, 0.24), rgba(255, 252, 246, 0.48)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  clip-path: polygon(1% 12%, 28% 4%, 63% 9%, 98% 0, 100% 86%, 70% 96%, 34% 91%, 2% 100%);
+  box-shadow:
+    0 0.85rem 1.5rem rgba(74, 47, 29, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.notes-shelf-promise-strip::before {
+  content: "public note promise";
+  position: absolute;
+  left: clamp(0.55rem, 1.6vw, 1rem);
+  top: -0.58rem;
+  width: fit-content;
+  padding: 0.24rem 0.5rem 0.21rem;
+  color: rgba(63, 49, 38, 0.7);
+  font-family: var(--font-hand);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.92), rgba(231, 215, 188, 0.68)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(4% 15%, 95% 0, 100% 85%, 7% 100%);
+  box-shadow: 0 0.32rem 0.62rem rgba(74, 47, 29, 0.12);
+  transform: rotate(-1.6deg);
+}
+
+.notes-source-receipt-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  padding: clamp(1rem, 2.8vw, 1.55rem) clamp(0.75rem, 2.2vw, 1.25rem);
+  background:
+    linear-gradient(110deg, rgba(255, 252, 246, 0.56), rgba(245, 224, 198, 0.23)),
+    url('/Website/atmosphere/dust-specks.svg'),
+    var(--grain-image);
+  background-size: cover, 24rem 24rem, 18rem 18rem;
+  clip-path: polygon(1% 6%, 19% 2%, 48% 5%, 74% 1%, 99% 4%, 97% 92%, 75% 97%, 47% 94%, 18% 98%, 2% 93%);
+  box-shadow:
+    0 1.2rem 2.3rem rgba(74, 47, 29, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.notes-source-receipt-ledger::before {
+  top: clamp(1.15rem, 2vw, 1.45rem);
+  left: clamp(1rem, 2.7vw, 1.65rem);
+  right: clamp(1rem, 2.7vw, 1.65rem);
+  z-index: 0;
+  opacity: 0.88;
+}
+
+.notes-source-receipt {
+  z-index: 1;
+  min-height: 100%;
+  padding-top: clamp(5.4rem, 9vw, 6.4rem);
+  box-shadow:
+    0 0.9rem 1.45rem rgba(74, 47, 29, 0.15),
+    0.12rem 0.14rem 0 rgba(47, 38, 35, 0.08);
+}
+
+.notes-source-receipt::before {
+  content: "source step";
+  top: 0.7rem;
+  left: 0.72rem;
+}
+
+.notes-source-receipt:nth-child(1)::before {
+  content: "note shape";
+}
+
+.notes-source-receipt:nth-child(2)::before {
+  content: "reader file";
+}
+
+.notes-source-receipt:nth-child(3)::before {
+  content: "soft fallback";
+}
+
+.notes-source-receipt__photo {
+  position: absolute;
+  top: 1.55rem;
+  left: 0.95rem;
+  right: 0.95rem;
+  height: clamp(3.1rem, 6vw, 4rem);
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 35%, rgba(185, 201, 175, 0.44), transparent 32%),
+    radial-gradient(circle at 78% 64%, rgba(255, 176, 143, 0.32), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.92), rgba(245, 224, 198, 0.5)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 13rem 13rem;
+  clip-path: polygon(3% 11%, 96% 0, 100% 86%, 5% 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.38), 0 0.45rem 0.75rem rgba(74, 47, 29, 0.09);
+}
+
+.notes-source-receipt__copy {
+  position: relative;
+  z-index: 2;
+}
+
+.notes-source-detail-strip {
+  margin-top: 0.82rem;
+}
+
+.notes-fallback-receipts {
+  margin-top: clamp(1rem, 2.5vw, 1.45rem);
+  padding: clamp(0.95rem, 2.2vw, 1.3rem);
+  background:
+    linear-gradient(105deg, rgba(255, 252, 246, 0.5), rgba(216, 197, 236, 0.16), rgba(255, 247, 235, 0.45)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(1% 9%, 24% 2%, 52% 7%, 98% 1%, 100% 88%, 74% 96%, 43% 92%, 2% 98%);
+  box-shadow: 0 0.85rem 1.55rem rgba(74, 47, 29, 0.11);
+}
+
+.notes-fallback-receipts::before {
+  content: "backup route slips";
+  top: -0.65rem;
+  left: clamp(0.8rem, 2vw, 1.1rem);
+  z-index: 2;
+}
+
+.notes-fallback-receipt {
+  box-shadow: 0 0.6rem 1rem rgba(74, 47, 29, 0.12);
+}
+
+.notes-fallback-receipt__label {
+  width: fit-content;
+  padding: 0.24rem 0.48rem 0.21rem;
+  color: rgba(63, 49, 38, 0.72);
+  background: rgba(255, 252, 246, 0.68);
+  clip-path: polygon(3% 12%, 97% 0, 100% 86%, 6% 100%);
+  box-shadow: 0 0.26rem 0.5rem rgba(74, 47, 29, 0.1);
+}
+
+@media (max-width: 840px) {
+  .notes-source-board::before {
+    display: inline-flex;
+    margin: 0 0 0.75rem;
+  }
+
+  .notes-source-board__intro {
+    margin-left: 0;
+  }
+
+  .notes-source-receipt-ledger {
+    grid-template-columns: 1fr;
+    padding: clamp(0.8rem, 4vw, 1rem);
+  }
+
+  .notes-source-receipt {
+    padding-top: 5.95rem;
+  }
+}

@@ -1,0 +1,69 @@
+/* Store direct cue content pass.
+   Keeps Store paper/photo cues honest in the rendered source instead of hiding numbered markup behind pseudo-labels. */
+
+.store-lane-piece__photo span,
+.store-shot-card__mark,
+.store-gallery-card__number,
+.store-checklist-note__pin,
+.store-availability-status__stage,
+.store-feed-ledger-card__tab {
+  display: inline-grid;
+  place-items: center;
+  max-width: 9.4rem;
+  color: rgba(47, 38, 35, 0.76);
+  font-family: var(--font-hand);
+  font-size: clamp(0.58rem, 0.86vw, 0.72rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.075em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.store-lane-piece__photo span,
+.store-shot-card__mark,
+.store-gallery-card__number,
+.store-feed-ledger-card__tab {
+  padding: 0.3rem 0.48rem 0.26rem;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.72) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  box-shadow: 0.14rem 0.26rem 0.52rem rgba(47, 38, 35, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(4% 8%, 35% 1%, 68% 6%, 98% 2%, 95% 88%, 66% 98%, 28% 92%, 1% 100%);
+}
+
+.store-shot-card__mark,
+.store-gallery-card__number,
+.store-feed-ledger-card__tab {
+  min-width: 5.2rem;
+}
+
+.store-checklist-note__pin {
+  color: rgba(47, 38, 35, 0.76);
+  font-size: clamp(0.58rem, 0.86vw, 0.72rem);
+}
+
+.store-checklist-note__pin::after,
+.store-availability-status__stage::after {
+  display: none;
+  content: none;
+}
+
+.store-availability-status__stage {
+  color: rgba(61, 45, 31, 0.78);
+  font-size: clamp(0.62rem, 0.92vw, 0.78rem);
+}
+
+@media (max-width: 720px) {
+  .store-lane-piece__photo span,
+  .store-shot-card__mark,
+  .store-gallery-card__number,
+  .store-checklist-note__pin,
+  .store-availability-status__stage,
+  .store-feed-ledger-card__tab {
+    max-width: 100%;
+    letter-spacing: 0.055em;
+  }
+}

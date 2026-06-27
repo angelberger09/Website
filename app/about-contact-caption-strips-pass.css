@@ -100,6 +100,110 @@
   transform: rotate(0.35deg);
 }
 
+/* Contact rail docket refinement.
+   Keeps the existing About contact-sheet copy but makes the rail read as a bound route ledger instead of three separate slips. */
+.about-paper-room .about-contact-sheet-rail {
+  position: relative;
+  display: grid;
+  gap: clamp(0.58rem, 1.25vw, 0.78rem);
+  padding: clamp(0.82rem, 1.8vw, 1.08rem) clamp(0.72rem, 1.65vw, 0.96rem) clamp(0.82rem, 1.8vw, 1.08rem) clamp(2.65rem, 4vw, 3.35rem);
+  isolation: isolate;
+  clip-path: polygon(4% 2%, 36% 5%, 73% 1%, 98% 8%, 94% 90%, 68% 99%, 5% 94%);
+  background:
+    linear-gradient(90deg, rgba(96, 71, 89, 0.16), transparent 20%),
+    radial-gradient(circle at 10% 18%, rgba(255, 176, 143, 0.22), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.9), rgba(244, 232, 213, 0.66)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.08),
+    0 0.78rem 1.32rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transform: rotate(-0.25deg);
+}
+
+.about-paper-room .about-contact-sheet-rail::before {
+  content: "read frames";
+  position: absolute;
+  inset: 0.62rem auto 0.62rem 0.62rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(1.42rem, 2.5vw, 1.78rem);
+  padding: 0.42rem 0.22rem;
+  color: rgba(255, 252, 246, 0.94);
+  background:
+    linear-gradient(180deg, rgba(96, 71, 89, 0.9), rgba(160, 123, 141, 0.74)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  clip-path: polygon(18% 1%, 96% 8%, 82% 96%, 8% 91%);
+  box-shadow:
+    0.08rem 0.13rem 0 rgba(47, 38, 35, 0.14),
+    0 0.54rem 0.95rem rgba(47, 38, 35, 0.16);
+  font-size: clamp(0.54rem, 0.9vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(-1deg);
+}
+
+.about-paper-room .about-contact-sheet-rail::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: clamp(2.12rem, 3.45vw, 2.72rem);
+  z-index: 0;
+  width: 0.16rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(180deg, rgba(96, 71, 89, 0.34) 0 0.4rem, transparent 0.4rem 0.74rem),
+    linear-gradient(180deg, transparent, rgba(255, 176, 143, 0.36), rgba(185, 201, 175, 0.32), transparent);
+}
+
+.about-paper-room .about-contact-sheet-rail__slip {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(4.8rem, 0.42fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.55rem, 1.3vw, 0.78rem);
+  padding: clamp(0.48rem, 1.05vw, 0.62rem);
+  clip-path: polygon(2% 8%, 30% 2%, 98% 5%, 94% 91%, 74% 100%, 4% 94%);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.9), rgba(246, 236, 218, 0.68)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.11);
+}
+
+.about-paper-room .about-contact-sheet-rail__slip:nth-child(2n) {
+  transform: rotate(0.45deg) translateX(0.16rem);
+}
+
+.about-paper-room .about-contact-sheet-rail__slip:nth-child(2n + 1) {
+  transform: rotate(-0.38deg);
+}
+
+.about-paper-room .about-contact-sheet-rail__photo {
+  min-height: 4.6rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(47, 38, 35, 0.08),
+    inset 0 -1.1rem 1.6rem rgba(47, 38, 35, 0.08),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.1);
+}
+
+.about-paper-room .about-contact-sheet-rail__copy b {
+  display: inline-block;
+  padding: 0.18rem 0.36rem;
+  clip-path: polygon(4% 12%, 95% 2%, 100% 82%, 88% 100%, 5% 92%);
+  background: rgba(255, 246, 219, 0.68);
+}
+
 @media (max-width: 720px) {
   .about-paper-room .about-contact-sheet-heading::after {
     justify-self: stretch;
@@ -112,5 +216,28 @@
     justify-self: start;
     display: inline-block;
     margin-block: 0.28rem 0.1rem;
+  }
+
+  .about-paper-room .about-contact-sheet-rail {
+    padding: 3.25rem 0.74rem 0.82rem;
+  }
+
+  .about-paper-room .about-contact-sheet-rail::before {
+    inset: 0.7rem 0.72rem auto;
+    width: auto;
+    min-height: 1.32rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.7deg);
+  }
+
+  .about-paper-room .about-contact-sheet-rail::after {
+    inset: 2.72rem 1.1rem auto;
+    width: auto;
+    height: 0.16rem;
+    background: repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.3) 0 0.4rem, transparent 0.4rem 0.74rem);
+  }
+
+  .about-paper-room .about-contact-sheet-rail__slip {
+    grid-template-columns: 1fr;
   }
 }

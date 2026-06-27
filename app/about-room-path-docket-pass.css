@@ -1,0 +1,170 @@
+/* About room path docket pass.
+   Turns the existing About room spine into one composed paper docket without changing copy, routes, or data. */
+
+.about-paper-room .about-room-spine {
+  position: relative;
+  grid-template-columns: clamp(4.4rem, 8vw, 6.2rem) repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.38rem, 1vw, 0.7rem);
+  margin-block: clamp(-0.7rem, -0.9vw, -0.15rem) clamp(0.2rem, 0.7vw, 0.55rem);
+  padding: clamp(0.72rem, 1.8vw, 1rem);
+  clip-path: polygon(1% 8%, 99% 2%, 98% 91%, 94% 98%, 4% 96%, 0 17%);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.78), rgba(239, 226, 205, 0.46) 58%, rgba(170, 145, 164, 0.16)),
+    radial-gradient(circle at 8% 20%, rgba(255, 176, 143, 0.16), transparent 30%),
+    var(--grain-image);
+  background-size: cover, cover, 19rem 19rem;
+  box-shadow:
+    0.18rem 0.24rem 0 rgba(81, 61, 55, 0.08),
+    0 1.1rem 2.2rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.about-paper-room .about-room-spine::before {
+  content: "";
+  inset: 50% clamp(1.1rem, 3vw, 1.8rem) auto clamp(6.2rem, 10.5vw, 8rem);
+  z-index: 0;
+  height: 0.18rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.38) 0 0.42rem, transparent 0.42rem 0.84rem),
+    linear-gradient(90deg, transparent, rgba(122, 88, 113, 0.28), transparent);
+  box-shadow: 0 0.28rem 0.65rem rgba(47, 38, 35, 0.12);
+}
+
+.about-paper-room .about-room-spine::after {
+  content: "about path";
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  padding: 0.72rem 0.42rem;
+  clip-path: polygon(9% 2%, 93% 8%, 98% 88%, 82% 99%, 6% 93%);
+  background:
+    linear-gradient(165deg, rgba(111, 83, 111, 0.9), rgba(160, 123, 141, 0.72)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  color: rgba(255, 252, 246, 0.94);
+  font-size: clamp(0.62rem, 1vw, 0.74rem);
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(-0.5deg);
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.13),
+    0 0.72rem 1.1rem rgba(47, 38, 35, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.about-paper-room .about-room-spine__slip {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  min-height: clamp(6.4rem, 10vw, 7.4rem);
+  align-content: start;
+  padding: clamp(0.54rem, 1.3vw, 0.72rem);
+  clip-path: polygon(4% 5%, 96% 1%, 99% 84%, 88% 98%, 6% 94%);
+  background:
+    linear-gradient(152deg, rgba(255, 252, 246, 0.96), rgba(243, 232, 213, 0.78) 62%, rgba(154, 133, 166, 0.14)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.82rem 1.35rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.about-paper-room .about-room-spine__slip::before {
+  content: "";
+  position: absolute;
+  inset: 0.38rem auto auto 50%;
+  z-index: 3;
+  width: 2.3rem;
+  height: 0.48rem;
+  clip-path: polygon(0 18%, 100% 0, 92% 82%, 6% 100%);
+  background: rgba(255, 246, 219, 0.78);
+  box-shadow: 0 0.2rem 0.42rem rgba(47, 38, 35, 0.12);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.about-paper-room .about-room-spine__slip::after {
+  content: "";
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: rgba(111, 83, 111, 0.38);
+  box-shadow:
+    0 0.12rem 0.28rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.about-paper-room .about-room-spine__photo {
+  min-height: clamp(3rem, 5.4vw, 3.6rem);
+  align-content: center;
+  margin-bottom: 0.42rem;
+  padding-top: 0.86rem;
+  transform: rotate(0.55deg);
+}
+
+.about-paper-room .about-room-spine__copy {
+  padding-inline: 0.1rem;
+}
+
+@media (max-width: 960px) {
+  .about-paper-room .about-room-spine {
+    grid-template-columns: clamp(3.8rem, 12vw, 5.2rem) repeat(2, minmax(0, 1fr));
+  }
+
+  .about-paper-room .about-room-spine::before {
+    inset-inline-start: clamp(5.2rem, 15vw, 6.8rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .about-paper-room .about-room-spine {
+    grid-template-columns: 1fr;
+    padding: clamp(0.72rem, 4vw, 1rem);
+  }
+
+  .about-paper-room .about-room-spine::before {
+    inset: clamp(4.4rem, 18vw, 5.5rem) auto clamp(1rem, 5vw, 1.5rem) 1.1rem;
+    width: 0.16rem;
+    height: auto;
+    background: repeating-linear-gradient(180deg, rgba(96, 71, 89, 0.36) 0 0.42rem, transparent 0.42rem 0.84rem);
+  }
+
+  .about-paper-room .about-room-spine::after {
+    min-height: auto;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.7deg);
+  }
+
+  .about-paper-room .about-room-spine__slip,
+  .about-paper-room .about-room-spine__slip:nth-child(2n),
+  .about-paper-room .about-room-spine__slip:nth-child(3) {
+    grid-template-columns: minmax(4.8rem, 0.35fr) minmax(0, 1fr);
+    min-height: 4.8rem;
+    transform: none;
+  }
+
+  .about-paper-room .about-room-spine__photo {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-paper-room .about-room-spine__slip,
+  .about-paper-room .about-room-spine__slip:nth-child(2n),
+  .about-paper-room .about-room-spine__slip:nth-child(3) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -15,16 +15,16 @@ Make the Store preview board scan as one guided public-safe proof rail rather th
 
 ## State alignment
 
-- Current observed state: Store preview cards already had honest staged photo-like centers and copy that clarified they were mood/readiness cues.
-- Desired target state: the preview board should feel like one composed paper/photo proof sequence with direct labels and a visible route through the section.
-- Correction signal: add a rail, stitch/thread cues, numbered proof stamps, and caption slips without changing Store copy or implying products are live.
-- Internal state impact: supports the active photo-led content, flattened hierarchy, paper-snippet, and paper-first lessons for the Store page.
-- Future implementation guidance: when Store surfaces show preparation states, group them as honest proof/shelf/docket sequences instead of repeated independent cards.
+- Current observed state: Store preview cards already had honest staged photo-like centers and copy that clarified they were mood/readiness cues; the existing proof rail improved grouping but still left the staged card centers without direct public-safety cues inside each visual face.
+- Desired target state: the preview board should feel like one composed paper/photo proof docket with a backing sheet, stitch/thread cues, direct proof labels, and visible in-card reminders that the staged visuals are not live inventory.
+- Correction signal: strengthen the section backing, keep the proof rail, and add direct clipped cue slips to the staged image centers without changing Store copy or implying products are live.
+- Internal state impact: supports the active photo-led content, flattened hierarchy, paper-snippet, no-fake-inventory, and paper-first lessons for the Store page.
+- Future implementation guidance: when Store surfaces show preparation states, group them as honest proof/shelf/docket sequences with direct in-surface cues instead of repeated independent cards or ambiguous product-like previews.
 
 ## Satisfaction check
 
 - Before: partially satisfied.
-- After: improved; visually stronger Store preview proof rail.
+- After: improved; visually stronger Store preview proof docket with direct staged-center cue slips.
 - Rendered Website should change: yes, on `/Website/store/` around the preview board.
 
 ## Related IDs
@@ -55,4 +55,4 @@ Make the Store preview board scan as one guided public-safe proof rail rather th
 
 ## Public safety
 
-No fake product photos, live inventory, shop links, private planning notes, or unavailable product claims were added. The change is CSS-only plus layout import and uses the existing public-safe Store copy/data.
+No fake product photos, live inventory, shop links, private planning notes, or unavailable product claims were added. The change is CSS-only and uses the existing public-safe Store copy/data.

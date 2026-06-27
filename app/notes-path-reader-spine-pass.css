@@ -1,0 +1,136 @@
+.notes-path-photo-board {
+  grid-template-columns: minmax(7rem, 0.24fr) minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(1rem, 2.6vw, 2rem);
+}
+
+.notes-path-photo-board::after {
+  content: "reader path";
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: stretch;
+  display: grid;
+  place-items: start center;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.35rem) 0.55rem;
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.7vw, 2.05rem);
+  line-height: 0.86;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.72)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(13% 1%, 92% 4%, 86% 98%, 5% 95%);
+  box-shadow: 0.28rem 0.36rem 0 rgba(47, 38, 35, 0.08), 0 1rem 1.8rem rgba(47, 38, 35, 0.1);
+}
+
+.notes-path-photo-board__intro,
+.notes-path-photo-strip {
+  grid-column: 2;
+}
+
+.notes-path-photo-board__intro {
+  position: relative;
+  padding-left: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+.notes-path-photo-board__intro::before {
+  content: "open latest → archive → front room";
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.65rem;
+  padding: 0.36rem 0.72rem;
+  color: rgba(47, 38, 35, 0.66);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(2% 8%, 99% 1%, 97% 94%, 0 100%);
+  box-shadow: 0.14rem 0.18rem 0 rgba(47, 38, 35, 0.08), 0 0.55rem 1rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-path-photo-strip {
+  position: relative;
+  padding-top: clamp(0.65rem, 1.5vw, 1rem);
+}
+
+.notes-path-photo-strip::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: 4%;
+  right: 4%;
+  border-top: 2px dashed rgba(126, 139, 116, 0.36);
+  filter: drop-shadow(0 0.18rem 0 rgba(255, 252, 246, 0.74));
+}
+
+.notes-path-photo-card::before {
+  content: attr(data-path-index);
+  position: absolute;
+  top: 0.65rem;
+  right: 0.7rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  color: rgba(47, 38, 35, 0.62);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 176, 143, 0.2), transparent 52%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.95), rgba(245, 224, 198, 0.72)),
+    var(--grain-image);
+  background-size: cover, cover, 12rem 12rem;
+  clip-path: polygon(11% 3%, 96% 12%, 87% 94%, 3% 86%);
+  box-shadow: 0.12rem 0.16rem 0 rgba(47, 38, 35, 0.08), 0 0.45rem 0.9rem rgba(47, 38, 35, 0.09);
+}
+
+.notes-path-photo-card__copy small {
+  box-shadow: 0.1rem 0.14rem 0 rgba(47, 38, 35, 0.06);
+}
+
+@media (max-width: 780px) {
+  .notes-path-photo-board {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-path-photo-board::after,
+  .notes-path-photo-board__intro,
+  .notes-path-photo-strip {
+    grid-column: 1;
+  }
+
+  .notes-path-photo-board::after {
+    grid-row: auto;
+    justify-self: start;
+    min-height: auto;
+    writing-mode: horizontal-tb;
+    transform: rotate(-1deg);
+    padding: 0.46rem 0.8rem;
+    font-size: 1.15rem;
+    clip-path: polygon(3% 10%, 98% 1%, 95% 92%, 1% 98%);
+  }
+
+  .notes-path-photo-board__intro {
+    padding-left: 0;
+  }
+
+  .notes-path-photo-strip::before {
+    top: 0.15rem;
+    left: 0.8rem;
+    right: 0.8rem;
+  }
+}

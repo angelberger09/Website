@@ -19,6 +19,7 @@ import './about-contact-sheet-pass.css';
 import './about-contact-sheet-rail-pass.css';
 import './about-principle-photo-pass.css';
 import './about-principle-snippet-pass.css';
+import './about-principle-promise-trail-pass.css';
 import './about-text-slip-pass.css';
 import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';

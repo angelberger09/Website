@@ -2,6 +2,42 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 05:41 ET — Header paper contact shadow
+
+### Changed
+
+- Added `app/header-paper-contact-shadow-pass.css`.
+- Loaded the pass after `app/header-identity-paper-seal-pass.css` in `app/layout.jsx` so it can visibly reinforce the shared top strip after earlier header paper passes.
+- Strengthened the header sheet background, lower fiber strip, edge tabs, identity label, direct nav labels, active room tab, and mobile-safe shadows without changing routes, labels, focus behavior, or navigation structure.
+- Added `.agent/changes/2026-06-27-header-paper-contact-shadow.md`.
+- Added `.agent/matrices/header-paper-contact-shadow.matrix.md`.
+
+### Why
+
+METRIC-019 still marks the shared paper header as partially satisfied: the structure is correct, but the whole strip needs to read as tactile placed paper at screenshot scale. This pass targets that remaining mismatch with stronger contact shadows, handled-paper texture, and clearer tab depth while preserving direct unnumbered navigation, the offscreen/top-attached header shape, and accessible readable controls.
+
+### Related items
+
+- COMP-001
+- COMP-002
+- COMP-005
+- DESIGN-004
+- DESIGN-011
+- DESIGN-015
+- DESIGN-019
+- DESIGN-020
+- DESIGN-022
+- LESSON-011
+- LESSON-015
+- LESSON-019
+- LESSON-020
+- LESSON-022
+- METRIC-010
+- METRIC-014
+- METRIC-018
+- METRIC-019
+- METRIC-021
+
 ## 2026-06-27 04:08 ET — Portfolio room key compass
 
 ### Changed

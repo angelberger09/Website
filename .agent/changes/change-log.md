@@ -282,3 +282,54 @@ The house-rule cards already had a docket and photo-center treatment, but the in
 - LESSON-001
 - LESSON-002
 - LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
+## 2026-06-27 09:50 ET — Homepage reading folio
+
+### Changed
+
+- Updated `app/home-first-read-compass-pass.css`.
+- Bound the homepage reading map into a clearer `page order` paper folio with a left rail, dashed trail binding, sticky `follow gently` cue, stronger clipped chapter slips, and mobile-safe fallback rules.
+- Added `.agent/changes/2026-06-27-home-reading-folio.md`.
+- Added `.agent/matrices/home-reading-folio.matrix.md`.
+
+### Why
+
+The homepage reading map already had a compact compass/ledger treatment, but it could still scan as a horizontal row of separate small slips. This pass makes the first-read path visibly closer to the active left-docked editorial-path and calm-room sequencing lessons without changing homepage copy, routes, anchor links, data, accessibility labels, or inventing new content.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023

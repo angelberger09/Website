@@ -147,6 +147,7 @@ import './home-reading-path-rail-pass.css';
 import './home-chapter-spine-notes-pass.css';
 import './home-next-path-room-pass.css';
 import './home-next-path-ticket-stack-pass.css';
+import './home-next-path-bound-docket-pass.css';
 import './home-departure-desk-pass.css';
 import './shared-paper-depth-pass.css';
 import './page-intro-paper-desk-pass.css';

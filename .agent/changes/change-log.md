@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 14:28 ET — About room spine ledger
+
+### Changed
+
+- Added `app/about-room-spine-ledger-pass.css`.
+- Loaded the pass after `app/about-section-spine-labels-pass.css` in `app/layout.jsx`.
+- Bound the About section path into one clipped `room path ledger` with a visible label, paper-field backing, stronger lifted-paper depth, connector grouping, tape tabs, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-about-room-spine-ledger.md`.
+- Added `.agent/matrices/about-room-spine-ledger.matrix.md`.
+
+### Why
+
+The About section spine already had route-specific paper slips, but the group could still read as loose neighboring receipts between larger About boards. This pass makes the spine closer to the calm-room, paper-first, flattened hierarchy, text-snippet, continuity, and torn-paper goals without adding routes, fake content, private material, unavailable source claims, or product/portfolio assertions.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 14:11 ET — PageIntro room shelf ledger
 
 ### Changed

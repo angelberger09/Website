@@ -1,0 +1,55 @@
+/* Homepage arrival ticket pass.
+   The first screen already has the main studio title and route cards; this adds
+   small readable paper snippets so visitors immediately understand the front-door
+   promise before choosing a room. Kept lightweight for the final render budget. */
+
+.home-arrival-ticket {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+  width: min(100%, 28rem);
+  margin: 0.78rem 0 0 clamp(1.6rem, 3.8vw, 2.65rem);
+}
+
+.home-arrival-ticket span {
+  display: inline-grid;
+  min-height: 2.05rem;
+  place-items: center;
+  padding: 0.44rem 0.72rem 0.4rem;
+  clip-path: polygon(4% 8%, 96% 2%, 100% 78%, 92% 98%, 7% 93%, 0 22%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76) 62%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.1rem 0.14rem 0 rgba(47, 38, 35, 0.08),
+    0 0.48rem 0.86rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  color: rgba(62, 49, 46, 0.84);
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.1vw, 0.78rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-arrival-ticket span:nth-child(2) {
+  transform: translateY(0.1rem);
+}
+
+.home-arrival-ticket span:nth-child(3) {
+  transform: translateY(-0.05rem);
+}
+
+@media (max-width: 760px) {
+  .home-arrival-ticket {
+    margin-left: clamp(0.8rem, 4vw, 1.4rem);
+  }
+
+  .home-arrival-ticket span {
+    font-size: 0.66rem;
+  }
+}

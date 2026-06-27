@@ -1,0 +1,119 @@
+/* Terminal preview surface budget pass.
+   Loaded after the newest preview/proof rails so late Store photo surfaces stay visibly paper-like
+   without reintroducing heavy pseudo-layer stacks, filters, or noisy shadows after the prior budget pass. */
+
+:root {
+  --terminal-preview-shadow: 0.12rem 0.24rem 0 rgba(47, 38, 35, 0.05), 0 0.72rem 1.35rem rgba(47, 38, 35, 0.105);
+  --terminal-preview-shadow-soft: 0.08rem 0.16rem 0 rgba(47, 38, 35, 0.04), 0 0.42rem 0.86rem rgba(47, 38, 35, 0.08);
+  --terminal-preview-paper: linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.62) 58%, rgba(185, 201, 175, 0.13)), var(--grain-image);
+}
+
+.store-visual-board,
+.store-shot-strip,
+.store-gallery-board,
+.store-feed-ledger-board,
+.store-availability-board,
+.store-checklist-collage,
+.store-promise-board {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 680px;
+}
+
+.store-shot-card,
+.store-gallery-card,
+.store-feed-ledger-card,
+.store-availability-card,
+.store-checklist-note,
+.store-promise-note,
+.store-lane-piece {
+  background-image: var(--terminal-preview-paper);
+  background-size: cover, 20rem 20rem;
+  background-blend-mode: normal;
+  filter: none;
+  box-shadow: var(--terminal-preview-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+}
+
+.store-visual-board::before,
+.store-shot-strip::before,
+.store-gallery-board::before,
+.store-feed-ledger-board::before,
+.store-availability-board::before,
+.store-checklist-collage::before,
+.store-promise-board::before {
+  filter: none;
+  box-shadow: var(--terminal-preview-shadow-soft);
+  opacity: 0.84;
+}
+
+.store-visual-board__copy::before,
+.store-shot-card::after,
+.store-shot-card__caption::before,
+.store-shot-card__image::after,
+.store-gallery-card__tag,
+.store-feed-ledger-card__tab,
+.store-availability-card__status,
+.store-checklist-note__label,
+.store-promise-note__label {
+  filter: none;
+  box-shadow: var(--terminal-preview-shadow-soft);
+}
+
+.store-shot-strip::after,
+.store-visual-board__copy::after {
+  opacity: 0.66;
+  filter: none;
+}
+
+.store-shot-card::before,
+.store-shot-card::after,
+.store-shot-card__image::after,
+.store-gallery-card::before,
+.store-gallery-card::after,
+.store-feed-ledger-card::before,
+.store-feed-ledger-card::after,
+.store-availability-card::before,
+.store-availability-card::after,
+.store-checklist-note::before,
+.store-checklist-note::after,
+.store-promise-note::before,
+.store-promise-note::after {
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-shot-card,
+  .store-gallery-card,
+  .store-feed-ledger-card,
+  .store-availability-card,
+  .store-checklist-note,
+  .store-promise-note,
+  .store-lane-piece {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .store-visual-board,
+  .store-shot-strip,
+  .store-gallery-board,
+  .store-feed-ledger-board,
+  .store-availability-board,
+  .store-checklist-collage,
+  .store-promise-board {
+    contain-intrinsic-size: 1px 840px;
+  }
+
+  .store-shot-card,
+  .store-gallery-card,
+  .store-feed-ledger-card,
+  .store-availability-card,
+  .store-checklist-note,
+  .store-promise-note,
+  .store-lane-piece,
+  .store-shot-card:nth-child(even),
+  .store-shot-card:nth-child(odd),
+  .store-gallery-card:nth-child(even),
+  .store-gallery-card:nth-child(odd) {
+    transform: none;
+  }
+}

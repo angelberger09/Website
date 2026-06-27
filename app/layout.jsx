@@ -118,6 +118,7 @@ import './continuity-photo-steps-pass.css';
 import './continuity-map-cue-pass.css';
 import './continuity-exit-shelf-pass.css';
 import './home-room-status-photo-pass.css';
+import './home-room-status-compass-pass.css';
 import './header-active-room-pass.css';
 import './header-paper-labels-pass.css';
 import './header-paper-thread-pass.css';

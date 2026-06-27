@@ -7,6 +7,7 @@ import './header-paper-tabs-pass.css';
 import './root-paper-pass.css';
 import './home-paper-collage-pass.css';
 import './home-highlight-photo-pass.css';
+import './home-front-room-welcome-desk-pass.css';
 import './home-intro-copy-slips-pass.css';
 import './home-pillar-photo-pass.css';
 import './home-check-photo-pass.css';

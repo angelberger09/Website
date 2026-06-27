@@ -46,6 +46,7 @@ import './portfolio-state-path-shelf-pass.css';
 import './portfolio-record-state-docket-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
+import './store-entry-proof-desk-pass.css';
 import './store-preview-collage-pass.css';
 import './store-gallery-pass.css';
 import './store-hierarchy-pass.css';

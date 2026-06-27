@@ -1,0 +1,145 @@
+/* Homepage room-status compass pass.
+   Groups the current-room slips into one guided room compass instead of four detached cards. */
+
+.home-room-status {
+  overflow: visible;
+}
+
+.home-room-status .home-room-board {
+  grid-template-columns: minmax(8rem, 0.68fr) repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.78rem, 1.8vw, 1.15rem);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1rem, 2.4vw, 1.4rem) clamp(0.85rem, 2vw, 1.15rem);
+  overflow: visible;
+  isolation: isolate;
+}
+
+.home-room-status .home-room-board::before {
+  display: grid;
+  align-content: end;
+  min-height: 100%;
+  content: "room status\A compass";
+  white-space: pre-line;
+  padding: clamp(0.9rem, 2vw, 1.18rem) clamp(0.72rem, 1.7vw, 0.95rem);
+  color: rgba(58, 45, 42, 0.84);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.8vw, 2.15rem);
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+  text-transform: lowercase;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.74) 58%, rgba(185, 201, 175, 0.26)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(4% 3%, 96% 0, 100% 84%, 88% 100%, 8% 96%, 0 20%);
+  box-shadow:
+    0.2rem 0.34rem 0 rgba(47, 38, 35, 0.085),
+    0 0.86rem 1.55rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  transform: rotate(-1.2deg);
+}
+
+.home-room-status .home-room-board::after {
+  position: absolute;
+  inset: 50% clamp(1rem, 2vw, 1.45rem) auto clamp(7.5rem, 14vw, 10.2rem);
+  z-index: 0;
+  height: 0.14rem;
+  content: "";
+  border-top: 1px dashed rgba(88, 68, 50, 0.3);
+  opacity: 0.95;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.home-room-status .home-room-slip {
+  z-index: 1;
+  min-height: clamp(20rem, 28vw, 23.5rem);
+  box-shadow:
+    0.22rem 0.36rem 0 rgba(47, 38, 35, 0.09),
+    0 1rem 1.7rem rgba(47, 38, 35, 0.145),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.home-room-status .home-room-slip::before {
+  position: absolute;
+  top: 0.55rem;
+  right: clamp(0.55rem, 1.6vw, 0.8rem);
+  z-index: 2;
+  width: clamp(2.1rem, 4vw, 2.8rem);
+  height: clamp(2.1rem, 4vw, 2.8rem);
+  display: grid;
+  place-items: center;
+  content: "open";
+  color: rgba(58, 45, 42, 0.74);
+  font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle, rgba(255, 252, 246, 0.94), rgba(255, 176, 143, 0.34)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(50% 0, 91% 18%, 100% 61%, 72% 100%, 24% 94%, 0 53%, 12% 16%);
+  box-shadow: 0 0.36rem 0.72rem rgba(47, 38, 35, 0.11);
+  transform: rotate(6deg);
+}
+
+.home-room-status .home-room-slip:nth-child(3)::before {
+  content: "read";
+}
+
+.home-room-status .home-room-slip:nth-child(4)::before {
+  content: "view";
+}
+
+.home-room-status .home-room-slip:nth-child(5)::before {
+  content: "prep";
+}
+
+.home-room-status .home-room-slip__status {
+  transform: rotate(-1.4deg);
+  box-shadow: 0 0.38rem 0.74rem rgba(47, 38, 35, 0.1);
+}
+
+.home-room-status .home-room-slip__eyebrow {
+  box-shadow: 0 0.32rem 0.62rem rgba(47, 38, 35, 0.085);
+}
+
+@media (max-width: 1100px) {
+  .home-room-status .home-room-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: clamp(4.2rem, 8vw, 5.2rem);
+  }
+
+  .home-room-status .home-room-board::before {
+    position: absolute;
+    top: 0.5rem;
+    left: clamp(0.85rem, 3vw, 1.2rem);
+    min-height: auto;
+    max-width: 13rem;
+    font-size: clamp(1.36rem, 4.8vw, 1.9rem);
+  }
+
+  .home-room-status .home-room-board::after {
+    inset: clamp(3.35rem, 7vw, 4.15rem) clamp(1.4rem, 4vw, 2.2rem) auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-room-status .home-room-board {
+    grid-template-columns: 1fr;
+    padding-inline: 0.55rem;
+  }
+
+  .home-room-status .home-room-slip,
+  .home-room-status .home-room-slip:nth-child(2),
+  .home-room-status .home-room-slip:nth-child(3) {
+    min-height: auto;
+    transform: none;
+  }
+
+  .home-room-status .home-room-board::after {
+    display: block;
+  }
+}

@@ -462,3 +462,35 @@ The existing performance-budget pass protects many early paper/collage surfaces 
 - METRIC-026
 - METRIC-027
 - METRIC-028
+
+## 2026-06-26 21:20 ET — Notes post quote and code paper blocks
+
+### Changed
+
+- Updated `app/notes/post/PostReaderClient.jsx` so already-public Markdown blockquotes and fenced code blocks render as semantic `<blockquote>` and `<pre><code>` surfaces instead of collapsing into regular paragraph sheets.
+- Added `app/notes-post-markdown-block-scraps-pass.css` and loaded it after the existing Notes post Markdown heading/list paper passes in `app/layout.jsx`.
+- Added `.agent/matrices/notes-post-markdown-block-scraps.matrix.md` to document the reader subpattern and public-safety boundary.
+
+### Why
+
+The Notes post reader already had paper-specific treatments for headings and lists, but quote/code Markdown blocks were still unsupported by the simple parser and would not get a visible paper-scrap treatment. Current post-reader, paper-material, paper-card, torn-edge, and text-snippet metrics support preserving those public Markdown structures and making them read as calm paper blocks without changing post content or connected Blog data.
+
+### Related items
+
+- PAGE-003A
+- PAGE-003B
+- COMP-007
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-030
+- DESIGN-039
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-029

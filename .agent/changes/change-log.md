@@ -2,6 +2,46 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 01:38 ET — Portfolio record state docket
+
+### Changed
+
+- Added `app/portfolio-record-state-docket-pass.css`.
+- Loaded the pass after `app/portfolio-state-path-shelf-pass.css` in `app/layout.jsx`.
+- Turned the Portfolio record-state card stack into a more guided public/archive docket with a vertical `record docket` paper label, stitched thread, direct state cue slips, and small `public state` snippets.
+- Added `.agent/changes/2026-06-27-portfolio-record-state-docket.md`.
+- Added `.agent/matrices/portfolio-record-state-docket.matrix.md`.
+
+### Why
+
+The Portfolio record states already had public-safe state copy and paper/photo cards, but the area could still scan as four separate repeated cards instead of one readable archive-state path. This pass makes the section visibly closer to the calm-room, direct-label, paper-snippet, and flattened hierarchy goals without changing Portfolio data, route links, source contracts, or inventing project imagery.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-015
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-002
+- METRIC-014
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 01:08 ET — Notes reader path spine
 
 ### Changed
@@ -241,7 +281,7 @@ The homepage needed to feel like a real minimal public studio homepage instead o
 - Added root `agent.md`.
 - Added root `start-here.md`.
 - Added `.agent/` project memory folder.
-- Added matrices, lessons, maps, change templates, and reusable templates.
+- Added matrices, lessons, maps, and reusable templates.
 
 ### Why
 

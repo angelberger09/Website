@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 14:11 ET — PageIntro room shelf ledger
+
+### Changed
+
+- Added `app/page-intro-room-shelf-ledger-pass.css`.
+- Loaded the pass before `app/final-paper-surface-budget-pass.css` in `app/layout.jsx`.
+- Bound the shared PageIntro Open / Read / Trust / Continue shelf into a clipped `route ledger` with a visible label, dashed connector thread, taped step pieces, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-page-intro-room-shelf-ledger.md`.
+- Added `.agent/matrices/page-intro-room-shelf-ledger.matrix.md`.
+
+### Why
+
+The shared route-intro shelf already carried honest route-specific content, but it could still read as four neighboring cards instead of one composed room-entry path. This pass makes the shared page intro closer to the calm-room, paper-first, flattened hierarchy, text-snippet, and continuity goals without adding fake content, new routes, private material, or unavailable product/portfolio claims.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 13:51 ET — Footer room index terminal budget
 
 ### Changed
@@ -218,88 +263,3 @@ The About working-principles heading already had a promise docket, but the indiv
 - Loaded the new pass in `app/layout.jsx` after the existing homepage house-rules docket/ledger passes and before the late/final budget passes.
 - Added `.agent/changes/2026-06-27-home-house-rules-source-slips.md`.
 - Added `.agent/matrices/home-house-rules-source-slips.matrix.md`.
-
-### Why
-
-The homepage House rules docket already read as a paper section, but each rule card still used the same generic CSS-only corner stamp. This pass makes the cues specific, source-backed, and visibly paper-snippet based while preserving the existing public-safe rule copy and avoiding fake content, fake photos, new routes, or private context.
-
-### Related items
-
-- PAGE-001
-- COMP-004
-- COMP-008
-- DESIGN-006
-- DESIGN-015
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-002
-- LESSON-015
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-001
-- METRIC-002
-- METRIC-014
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 11:51 ET — Terminal final paper budget
-
-### Changed
-
-- Moved `app/final-paper-surface-budget-pass.css` to the terminal import position in `app/layout.jsx`.
-- Extended `app/final-paper-surface-budget-pass.css` to cover the newest About pathway door notes and footer exit receipt surfaces.
-- Added `.agent/changes/2026-06-27-terminal-final-paper-budget.md`.
-- Added `.agent/matrices/terminal-final-paper-budget.matrix.md`.
-
-### Why
-
-The existing final budget was no longer final after newer room/path/footer passes were added. This let late surfaces bypass the calmer paper budget and risked reintroducing heavier shadows, filters, rotation stacks, and separated-card reads. This pass keeps the visible Website aligned with the paper-first, flattened room hierarchy and performance-budget lessons without adding fake content or another decorative system.
-
-### Related items
-
-- PAGE-002
-- COMP-005
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-027
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 11:29 ET — About pathway door cue tickets
-
-### Changed
-
-- Added `app/about-pathway-door-cue-tickets-pass.css`.
-- Loaded the pass after the About departure-table CSS import in `app/layout.jsx`.
-- Updated `app/about/page.jsx` so the About next-door cards render source-backed door cue text from `aboutPathwayFrames` instead of relying on generic CSS-only pseudo-element stamps.
-- Added `.agent/changes/2026-06-27-about-pathway-door-cue-tickets.md`.

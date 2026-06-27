@@ -2,6 +2,47 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 16:49 ET — Blog old-door terminal budget
+
+### Changed
+
+- Added `app/blog-old-door-terminal-budget-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after the Blog old-door room docket pass.
+- Calmed the `/Website/blog/` compatibility room slip, bridge board, binding thread, image-like Blog card, handoff strip, and handoff cards with lighter shadows, reduced transform amplitude, containment, mobile fallbacks, and reduced-motion behavior.
+- Added `.agent/changes/2026-06-27-blog-old-door-terminal-budget.md`.
+- Added `.agent/matrices/blog-old-door-terminal-budget.matrix.md`.
+
+### Why
+
+The newest Blog compatibility docket made the old `/Website/blog/` route feel like one guided room, but it loaded after earlier surface budgets and could still exceed the calmer paper/collage render budget. This pass keeps the guided compatibility route visible while aligning its newest paper layer with the terminal budget.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 16:38 ET — Blog old-door room docket
 
 ### Changed

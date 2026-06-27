@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 11:09 ET — Blog bridge old door ledger
+
+### Changed
+
+- Added `app/blog-bridge-old-door-ledger-pass.css`.
+- Loaded the pass after the existing Blog bridge/handoff CSS imports in `app/layout.jsx`.
+- Bound the Blog compatibility route intro into a clearer `old door ledger` with a clipped route label, larger paper copy face, body copy slip, vertical stitch thread, connector ticks, staggered path cards, stronger lifted-paper depth, and responsive fallbacks.
+- Added `.agent/changes/2026-06-27-blog-bridge-old-door-ledger.md`.
+- Added `.agent/matrices/blog-bridge-old-door-ledger.matrix.md`.
+
+### Why
+
+The Blog route already explained that older public Blog links open the same Notes writing shelf, but the opening bridge could still scan as separate neighboring cards. This pass makes the compatibility route visibly closer to the calm-room continuity, paper-first material, flattened hierarchy, text-snippet, photo-led, and route-path goals without changing routes, public copy, note data, accessibility labels, or inventing new content.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 10:50 ET — Footer bound exit path
 
 ### Changed

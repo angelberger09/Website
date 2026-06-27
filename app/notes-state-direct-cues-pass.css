@@ -1,0 +1,57 @@
+/* Notes state direct cues pass. Replaces CSS-only state-card stamps with source-backed paper cue slips. */
+
+.notes-state-board .notes-state-note::after {
+  content: none;
+  display: none;
+}
+
+.notes-state-note__cue {
+  position: absolute;
+  right: 0.72rem;
+  top: 0.76rem;
+  z-index: 4;
+  width: fit-content;
+  max-width: 7.6rem;
+  padding: 0.34rem 0.52rem 0.29rem;
+  color: rgba(63, 49, 38, 0.78);
+  font-family: var(--font-hand);
+  font-size: 0.61rem;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.9), rgba(239, 221, 194, 0.74)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0 0.38rem 0.74rem rgba(74, 47, 29, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  clip-path: polygon(3% 9%, 97% 0, 100% 88%, 5% 100%);
+  transform: rotate(1.2deg);
+}
+
+.notes-state-note:nth-child(2) .notes-state-note__cue {
+  transform: rotate(-1deg);
+}
+
+.notes-state-note:nth-child(3) .notes-state-note__cue {
+  transform: rotate(0.6deg);
+}
+
+.notes-state-note__photo {
+  box-shadow:
+    0 0.56rem 0.95rem rgba(74, 47, 29, 0.1),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.72);
+}
+
+.notes-state-note__photo span {
+  box-shadow: 0 0.24rem 0.48rem rgba(74, 47, 29, 0.1);
+}
+
+@media (max-width: 760px) {
+  .notes-state-note__cue {
+    right: 0.65rem;
+    top: 0.68rem;
+    transform: none;
+  }
+}

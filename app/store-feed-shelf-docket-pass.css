@@ -1,0 +1,195 @@
+/* Store feed shelf docket pass.
+   Makes the future Store feed contract read as one guided public shelf docket instead of loose repeated field cards. */
+
+.store-feed-ledger-board {
+  position: relative;
+  grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
+  align-items: start;
+  column-gap: clamp(1rem, 3vw, 2.2rem);
+  padding: clamp(1.1rem, 3vw, 2rem) clamp(1rem, 2.6vw, 1.6rem) clamp(1.4rem, 3vw, 2.2rem) clamp(1rem, 2.6vw, 1.75rem);
+}
+
+.store-feed-ledger-board::before {
+  inset: 0.6rem -0.9rem 0.1rem -0.9rem;
+  filter: drop-shadow(0.48rem 1.05rem 1.95rem rgba(47, 38, 35, 0.17));
+}
+
+.store-feed-ledger-board::after {
+  inset: 2.15rem 0.75rem 1.15rem 33%;
+  background:
+    linear-gradient(180deg, rgba(47, 38, 35, 0.08), rgba(47, 38, 35, 0.01) 16%, rgba(47, 38, 35, 0.07) 17%, transparent 18% 36%, rgba(47, 38, 35, 0.06) 37%, transparent 38% 57%, rgba(47, 38, 35, 0.052) 58%, transparent 59% 78%, rgba(47, 38, 35, 0.05) 79%, transparent 80%),
+    linear-gradient(90deg, rgba(185, 201, 175, 0.18), transparent 18% 82%, rgba(216, 197, 236, 0.14));
+  opacity: 0.88;
+  transform: rotate(-0.18deg);
+}
+
+.store-feed-ledger-board__intro {
+  position: sticky;
+  top: clamp(5.75rem, 9vw, 7rem);
+  align-self: start;
+  max-width: 100%;
+  padding: clamp(0.85rem, 2.3vw, 1.25rem) clamp(0.8rem, 2vw, 1.05rem) clamp(1rem, 2.3vw, 1.35rem);
+  clip-path: polygon(2% 4%, 27% 1%, 63% 3%, 98% 1.5%, 96.4% 93%, 75% 98%, 39% 95.5%, 1% 99%);
+  background:
+    linear-gradient(137deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.74) 68%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 18rem 18rem, 28rem 28rem;
+  box-shadow:
+    0.2rem 0.38rem 0 rgba(47, 38, 35, 0.06),
+    0.42rem 0.84rem 1.45rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.store-feed-ledger-board__intro::before {
+  content: "future shelf docket";
+  width: fit-content;
+  padding: 0.34rem 0.52rem 0.3rem;
+  clip-path: polygon(0 14%, 21% 0, 71% 8%, 100% 2%, 96% 89%, 68% 100%, 27% 92%, 2% 98%);
+  background: rgba(255, 246, 218, 0.76);
+  color: rgba(87, 72, 58, 0.82);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0.1rem 0.2rem 0.44rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-1.4deg);
+}
+
+.store-feed-ledger-board__intro::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.05rem 0.72rem 1.05rem;
+  height: 0.12rem;
+  background: repeating-linear-gradient(90deg, rgba(87, 72, 58, 0.36) 0 0.38rem, transparent 0.38rem 0.76rem);
+  opacity: 0.72;
+}
+
+.store-feed-ledger-board__intro > p:not(.eyebrow) {
+  max-width: 100%;
+  padding: 0.7rem 0.82rem 0.78rem;
+  transform: rotate(0.46deg);
+}
+
+.store-feed-ledger-grid {
+  position: relative;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.8vw, 1rem);
+  margin-top: 0.3rem;
+  padding-left: clamp(0.75rem, 2vw, 1.2rem);
+}
+
+.store-feed-ledger-grid::before {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  bottom: 0.3rem;
+  left: 0.12rem;
+  width: 0.16rem;
+  clip-path: polygon(31% 0, 100% 10%, 62% 32%, 94% 58%, 38% 100%, 0 88%, 28% 50%, 0 16%);
+  background: linear-gradient(180deg, rgba(185, 201, 175, 0.68), rgba(216, 197, 236, 0.46), rgba(255, 176, 143, 0.36));
+  box-shadow: 0.08rem 0.18rem 0.4rem rgba(47, 38, 35, 0.12);
+  opacity: 0.92;
+}
+
+.store-feed-ledger-grid::after {
+  content: "card parts only";
+  position: absolute;
+  right: clamp(0.4rem, 1vw, 0.75rem);
+  top: -0.92rem;
+  z-index: 2;
+  padding: 0.28rem 0.46rem 0.24rem;
+  clip-path: polygon(0 18%, 20% 0, 62% 9%, 100% 1%, 96% 87%, 72% 100%, 28% 92%, 2% 100%);
+  background: rgba(255, 246, 218, 0.82);
+  color: rgba(87, 72, 58, 0.72);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0.14rem 0.26rem 0.56rem rgba(47, 38, 35, 0.12);
+  transform: rotate(1.1deg);
+}
+
+.store-feed-ledger-card {
+  min-height: 13.5rem;
+  padding: 1.35rem 0.9rem 0.85rem;
+}
+
+.store-feed-ledger-card:nth-child(odd) {
+  transform: rotate(-0.35deg);
+}
+
+.store-feed-ledger-card:nth-child(even) {
+  transform: translateY(0.56rem) rotate(0.42deg);
+}
+
+.store-feed-ledger-card__tab {
+  right: auto;
+  left: 0.62rem;
+  padding: 0.28rem 0.42rem 0.24rem;
+  clip-path: polygon(0 14%, 32% 1%, 70% 7%, 100% 0, 97% 90%, 62% 100%, 28% 93%, 1% 100%);
+  background: rgba(255, 247, 235, 0.74);
+  color: rgba(87, 72, 58, 0.68);
+  box-shadow: 0.08rem 0.16rem 0.34rem rgba(47, 38, 35, 0.08);
+}
+
+.store-feed-rule-tape {
+  grid-column: 2;
+  width: min(100%, 41rem);
+  justify-self: start;
+  margin-top: 0.55rem;
+  padding-left: clamp(0.65rem, 1.4vw, 1rem);
+  border-left: 0.14rem dashed rgba(87, 72, 58, 0.22);
+}
+
+.store-feed-rule-tape::before {
+  content: "public boundary";
+  display: block;
+  width: fit-content;
+  margin: -0.15rem 0 0.5rem;
+  padding: 0.3rem 0.48rem 0.26rem;
+  clip-path: polygon(1% 15%, 24% 0, 75% 8%, 100% 2%, 96% 88%, 69% 100%, 26% 93%, 0 100%);
+  background: rgba(245, 224, 198, 0.74);
+  color: rgba(87, 72, 58, 0.76);
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0.1rem 0.2rem 0.44rem rgba(47, 38, 35, 0.1);
+}
+
+@media (max-width: 840px) {
+  .store-feed-ledger-board {
+    grid-template-columns: 1fr;
+  }
+
+  .store-feed-ledger-board__intro {
+    position: relative;
+    top: auto;
+  }
+
+  .store-feed-ledger-board::after {
+    inset: 12rem 0.8rem 1.2rem 1rem;
+  }
+
+  .store-feed-rule-tape {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .store-feed-ledger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-feed-ledger-card:nth-child(even),
+  .store-feed-ledger-card:nth-child(odd) {
+    transform: none;
+  }
+}

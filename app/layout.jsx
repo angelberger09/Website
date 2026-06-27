@@ -177,6 +177,7 @@ import './notes-state-tray-direct-cues-pass.css';
 import './notes-state-reader-docket-pass.css';
 import './portfolio-feed-public-docket-pass.css';
 import './store-feed-shelf-docket-pass.css';
+import './home-house-rules-docket-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

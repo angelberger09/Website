@@ -219,6 +219,7 @@ import './about-pathway-door-cue-tickets-pass.css';
 import './footer-bound-exit-path-pass.css';
 import './footer-room-index-docket-pass.css';
 import './footer-room-index-terminal-budget-pass.css';
+import './page-intro-room-shelf-ledger-pass.css';
 import './final-paper-surface-budget-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 

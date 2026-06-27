@@ -2,6 +2,44 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 16:31 ET — Notes state source cues
+
+### Changed
+
+- Updated `app/notes/NotesPageClient.jsx` so the Notes reader-state tray renders direct cue slips from source markup.
+- Added `app/notes-state-direct-cues-pass.css` to style `Gathering shelf`, `Pause note`, and `Public only` as clipped paper slips and suppress the older CSS-only pseudo labels.
+- Loaded the pass in `app/layout.jsx` after the existing Notes state docket styling.
+- Added `.agent/changes/2026-06-27-notes-state-source-cues.md`.
+- Added `.agent/matrices/notes-state-source-cues.matrix.md`.
+
+### Why
+
+The Notes reader-state tray already read as a unified paper docket, but its top-right cues were still partly CSS-generated instead of source-backed rendered labels. This pass keeps the same honest public reader states while making the visible cue slips durable, direct, and aligned with the paper-snippet and direct-label goals.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- DESIGN-015
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-015
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-014
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 16:22 ET — Homepage room status ledger budget
 
 ### Changed

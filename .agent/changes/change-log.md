@@ -2,6 +2,59 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 14:41 ET — Terminal room surface budget
+
+### Changed
+
+- Added `app/terminal-room-surface-budget-pass.css`.
+- Loaded the pass after `app/footer-room-index-terminal-budget-pass.css` in `app/layout.jsx` so it covers the newest late route/footer room surfaces.
+- Normalized large room/docket board backings, lifted-paper shadows, connector thread opacity, filter use, `content-visibility`, reduced-motion transforms, and mobile intrinsic sizing across shared PageIntro, About, Notes, Notes post, Portfolio, Store, and footer surfaces.
+- Added `.agent/changes/2026-06-27-terminal-room-surface-budget.md`.
+- Added `.agent/matrices/terminal-room-surface-budget.matrix.md`.
+
+### Why
+
+The newest room/docket passes made the interface more visibly paper-like, but some late-added surfaces bypassed the terminal calm/performance budget and risked over-stacked shadows, competing pseudo-layer noise, and uneven mobile/reduced-motion behavior. This pass keeps the paper-first, flat editorial hierarchy, text-snippet, continuity, and gallery goals visible while consolidating the accumulated surfaces instead of adding a new decorative direction.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- COMP-006
+- COMP-007
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- DESIGN-032
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-031
+- METRIC-032
+
 ## 2026-06-27 14:28 ET — About room spine ledger
 
 ### Changed
@@ -257,48 +310,3 @@ The Portfolio future archive shelf already had a public-card docket and field/ru
 - METRIC-029
 - METRIC-030
 - METRIC-032
-
-## 2026-06-27 12:40 ET — About principle sequence ledger
-
-### Changed
-
-- Added `app/about-principle-sequence-ledger-pass.css`.
-- Loaded it through `app/about-principles-promise-docket-pass.css`, which is already imported by the root layout.
-- Bound the About working-principle notes into one visible `promise ledger` with a clipped paper backing, top label, stitch thread, direct cue slips, stronger grouped depth, and mobile/reduced-motion fallbacks.
-- Added `.agent/changes/2026-06-27-about-principle-sequence-ledger.md`.
-- Added `.agent/matrices/about-principle-sequence-ledger.matrix.md`.
-
-### Why
-
-The About working-principles heading already had a promise docket, but the individual principle notes could still read as separate cards. This pass makes the section closer to the paper-first, flattened-room, text-snippet, and calm section-field goals while preserving the existing public About copy and route structure.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-026
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-025
-- METRIC-028
-- METRIC-029
-
-## 2026-06-27 12:30 ET — Homepage house-rules source slips
-
-### Changed
-
-- Updated `app/page.jsx` so each homepage House rules card renders a real source-backed `home-check-note__rule-slip` from the existing rule frame label.
-- Added `app/home-house-rules-source-slips-pass.css` to replace the repeated generic `kept close` pseudo-stamp with clipped paper cue slips for `Paper leads`, `Human words`, and `Honest growth`.
-- Loaded the new pass in `app/layout.jsx` after the existing homepage house-rules docket/ledger passes and before the late/final budget passes.
-- Added `.agent/changes/2026-06-27-home-house-rules-source-slips.md`.
-- Added `.agent/matrices/home-house-rules-source-slips.matrix.md`.

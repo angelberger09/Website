@@ -1,0 +1,225 @@
+/* About pathway door compass pass.
+   Turns the About next-door collage into one composed doorway compass without changing copy, routes, or data. */
+
+.about-paper-room .about-pathways-board {
+  position: relative;
+  overflow: visible;
+  padding: clamp(1rem, 3vw, 1.65rem) clamp(1rem, 3.2vw, 2rem) clamp(1.15rem, 3vw, 1.9rem);
+}
+
+.about-paper-room .about-pathways-board::before {
+  inset: -0.42rem -0.72rem -0.86rem;
+  background:
+    linear-gradient(100deg, rgba(96, 71, 89, 0.18), transparent 15% 82%, rgba(255, 176, 143, 0.16)),
+    radial-gradient(circle at 12% 16%, rgba(216, 197, 236, 0.2), transparent 32%),
+    radial-gradient(circle at 92% 78%, rgba(185, 201, 175, 0.2), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.76), rgba(242, 230, 212, 0.36)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, cover, 20rem 20rem, 36rem 36rem;
+  clip-path: polygon(1% 7%, 18% 2%, 52% 4%, 98% 1%, 97% 86%, 91% 99%, 8% 96%, 0 78%);
+  filter:
+    drop-shadow(-0.22rem 0.2rem 0 rgba(47, 38, 35, 0.08))
+    drop-shadow(0.62rem 1.1rem 2rem rgba(47, 38, 35, 0.14));
+}
+
+.about-paper-room .about-pathways-board::after {
+  content: "door compass";
+  position: absolute;
+  top: clamp(0.78rem, 2vw, 1.1rem);
+  left: clamp(0.78rem, 2.2vw, 1.2rem);
+  z-index: 3;
+  display: grid;
+  min-height: clamp(5.3rem, 9vw, 7rem);
+  place-items: center;
+  padding: 0.55rem 0.4rem;
+  color: rgba(255, 252, 246, 0.95);
+  background:
+    linear-gradient(165deg, rgba(105, 83, 104, 0.93), rgba(159, 118, 139, 0.72)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  clip-path: polygon(10% 1%, 91% 8%, 98% 83%, 82% 99%, 5% 93%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.14),
+    0 0.72rem 1.2rem rgba(47, 38, 35, 0.18);
+  font-size: clamp(0.58rem, 0.9vw, 0.7rem);
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(-1.2deg);
+}
+
+.about-paper-room .about-pathways-board .about-board-heading {
+  position: relative;
+  z-index: 2;
+  margin-left: clamp(4.1rem, 7vw, 5.7rem);
+  padding: clamp(0.72rem, 1.7vw, 1rem) clamp(0.82rem, 2vw, 1.2rem);
+  width: min(100%, 42rem);
+  clip-path: polygon(2% 9%, 34% 2%, 99% 5%, 96% 91%, 72% 99%, 4% 94%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.86), rgba(247, 235, 216, 0.58)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.7rem 1.2rem rgba(47, 38, 35, 0.11);
+  transform: rotate(-0.4deg);
+}
+
+.about-paper-room .about-pathway-collage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: clamp(3.2rem, 6vw, 4.4rem) repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.65rem, 1.7vw, 1rem);
+  margin-top: clamp(0.86rem, 2vw, 1.25rem);
+  padding: clamp(0.7rem, 1.8vw, 0.95rem);
+}
+
+.about-paper-room .about-pathway-collage::before {
+  content: "next doors";
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  place-items: center;
+  padding: 0.55rem 0.34rem;
+  color: rgba(58, 45, 42, 0.78);
+  background:
+    linear-gradient(155deg, rgba(255, 246, 219, 0.94), rgba(255, 252, 246, 0.65)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(7% 2%, 94% 7%, 99% 89%, 80% 98%, 4% 94%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.1),
+    0 0.72rem 1.1rem rgba(47, 38, 35, 0.14);
+  font-size: clamp(0.6rem, 0.95vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(1deg);
+}
+
+.about-paper-room .about-pathway-collage::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: clamp(0.8rem, 2vw, 1.1rem);
+  left: clamp(4.6rem, 7.8vw, 5.9rem);
+  z-index: 0;
+  height: 0.16rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(90deg, rgba(96, 71, 89, 0.32) 0 0.42rem, transparent 0.42rem 0.84rem),
+    linear-gradient(90deg, transparent, rgba(122, 88, 113, 0.22), transparent);
+  box-shadow: 0 0.25rem 0.58rem rgba(47, 38, 35, 0.1);
+}
+
+.about-paper-room .about-pathway-note {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(16rem, 22vw, 18.4rem);
+  padding: clamp(0.72rem, 1.8vw, 0.95rem);
+  clip-path: polygon(3% 4%, 24% 1%, 70% 3%, 98% 1%, 96% 86%, 86% 99%, 7% 95%, 1% 66%);
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.1),
+    0 0.98rem 1.55rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.about-paper-room .about-pathway-note:nth-child(2n) {
+  transform: rotate(0.8deg) translateY(0.28rem);
+}
+
+.about-paper-room .about-pathway-note:nth-child(3n) {
+  transform: rotate(-0.65deg) translateY(-0.12rem);
+}
+
+.about-paper-room .about-pathway-note::before {
+  content: "door slip";
+  position: absolute;
+  top: 0.48rem;
+  right: 0.62rem;
+  z-index: 4;
+  width: max-content;
+  max-width: calc(100% - 1.2rem);
+  padding: 0.28rem 0.46rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(135deg, rgba(185, 201, 175, 0.72), rgba(255, 250, 242, 0.66)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(3% 16%, 42% 2%, 97% 8%, 93% 90%, 58% 99%, 6% 88%);
+  box-shadow: 0 0.2rem 0.45rem rgba(47, 38, 35, 0.12);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(1.5deg);
+}
+
+.about-paper-room .about-pathway-note__photo {
+  min-height: clamp(7.4rem, 12vw, 9.2rem);
+}
+
+@media (max-width: 880px) {
+  .about-paper-room .about-pathway-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .about-paper-room .about-pathway-collage::before {
+    grid-column: auto;
+    min-height: auto;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.6deg);
+  }
+
+  .about-paper-room .about-pathway-collage::after {
+    top: clamp(4.2rem, 15vw, 5.2rem);
+    right: auto;
+    bottom: clamp(1rem, 4vw, 1.4rem);
+    left: 1.12rem;
+    width: 0.16rem;
+    height: auto;
+    background: repeating-linear-gradient(180deg, rgba(96, 71, 89, 0.3) 0 0.42rem, transparent 0.42rem 0.84rem);
+  }
+
+  .about-paper-room .about-pathways-board::after {
+    position: relative;
+    top: auto;
+    left: auto;
+    min-height: auto;
+    margin-bottom: 0.72rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.8deg);
+  }
+
+  .about-paper-room .about-pathways-board .about-board-heading {
+    margin-left: 0;
+  }
+
+  .about-paper-room .about-pathway-note,
+  .about-paper-room .about-pathway-note:nth-child(2n),
+  .about-paper-room .about-pathway-note:nth-child(3n) {
+    min-height: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-paper-room .about-pathways-board {
+    padding-inline: 0.9rem;
+  }
+
+  .about-paper-room .about-pathway-note__photo {
+    min-height: 7.2rem;
+  }
+}

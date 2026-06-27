@@ -40,6 +40,7 @@ const storeChecklistCueLabels = ["Story ready", "Preview proof", "Delivery note"
 const storeAvailabilityCueLabels = ["Preparing room", "Preview room", "Open room"];
 const storeFeedCueLabels = ["Handle", "Name", "Status", "Note", "Preview", "Delivery"];
 const storePromiseCueLabels = ["Useful before links", "Clear after launch", "Quiet source path"];
+const storePathCueLabels = ["Archive room", "Studio map"];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -303,11 +304,11 @@ export default function StorePage() {
           </p>
         </div>
         <div className="store-path-photo-grid" aria-label="Store next room photo cards">
-          {storePathCards.map((step) => (
+          {storePathCards.map((step, index) => (
             <a className="store-path-photo-card" href={step.href} key={step.href}>
               <div className="store-path-photo-card__image" aria-hidden="true">
                 <b>{step.eyebrow}</b>
-                <span className="store-path-photo-card__cue">Open room</span>
+                <span className="store-path-photo-card__cue">{storePathCueLabels[index] ?? "Open room"}</span>
               </div>
               <div className="store-path-photo-card__copy">
                 <span>{step.eyebrow}</span>

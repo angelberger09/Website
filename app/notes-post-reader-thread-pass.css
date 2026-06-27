@@ -91,3 +91,101 @@
     margin-left: 0.42rem;
   }
 }
+
+/* Reader fold refinement: make the Markdown area read as one guided sheet, not just stacked scraps. */
+.notes-post-sheet {
+  overflow: visible;
+}
+
+.notes-post-sheet::after {
+  position: absolute;
+  top: clamp(8.1rem, 16vw, 9.9rem);
+  right: clamp(0.9rem, 2.2vw, 1.35rem);
+  z-index: 2;
+  width: clamp(6.6rem, 16vw, 9.4rem);
+  min-height: 2.35rem;
+  content: "reader fold";
+  display: grid;
+  place-items: center;
+  color: rgba(58, 45, 42, 0.74);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.96), rgba(185, 201, 175, 0.27) 58%, rgba(255, 176, 143, 0.18)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 32rem 32rem;
+  box-shadow:
+    0.18rem 0.28rem 0 rgba(255, 176, 143, 0.16),
+    0 0.66rem 1.15rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(4% 14%, 26% 3%, 58% 8%, 98% 1%, 92% 88%, 64% 99%, 31% 92%, 2% 100%);
+  font-family: var(--font-hand);
+  font-size: clamp(0.58rem, 0.86vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(1.7deg);
+}
+
+.notes-post-markdown {
+  position: relative;
+  margin-top: clamp(1.05rem, 2.6vw, 1.65rem);
+  padding: clamp(2.35rem, 5vw, 3.25rem) clamp(0.55rem, 1.4vw, 0.9rem) clamp(0.55rem, 1.4vw, 0.9rem);
+  border-top: 0;
+}
+
+.notes-post-markdown::after {
+  top: clamp(0.48rem, 1.4vw, 0.8rem);
+  left: clamp(0.65rem, 1.8vw, 1.05rem);
+  width: clamp(7.4rem, 18vw, 10.4rem);
+  height: 1.68rem;
+  content: "reading path";
+  transform: rotate(-1.8deg);
+}
+
+.notes-post-markdown::before {
+  top: clamp(2.25rem, 5.2vw, 3.2rem);
+  bottom: clamp(0.9rem, 2vw, 1.25rem);
+  left: clamp(0.28rem, 0.8vw, 0.48rem);
+}
+
+.notes-post-markdown h2,
+.notes-post-markdown h3 {
+  width: fit-content;
+  max-width: min(100%, 38rem);
+  padding: 0.42rem 0.72rem 0.34rem;
+  background:
+    linear-gradient(125deg, rgba(255, 250, 242, 0.92), rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 17rem 17rem;
+  box-shadow:
+    0.14rem 0.24rem 0 rgba(185, 201, 175, 0.17),
+    0 0.48rem 0.9rem rgba(47, 38, 35, 0.09);
+  clip-path: polygon(2% 12%, 98% 0, 94% 89%, 5% 100%);
+}
+
+.notes-post-markdown p {
+  max-width: min(100%, 54rem);
+}
+
+.notes-post-markdown p:first-of-type {
+  margin-top: clamp(0.35rem, 1.2vw, 0.7rem);
+}
+
+@media (max-width: 760px) {
+  .notes-post-sheet::after {
+    top: 7.9rem;
+    right: 0.72rem;
+    width: 6.8rem;
+    min-height: 2rem;
+  }
+
+  .notes-post-markdown {
+    padding: 2.65rem 0.2rem 0.2rem;
+  }
+
+  .notes-post-markdown::after {
+    left: 0.55rem;
+    width: 7.6rem;
+  }
+}

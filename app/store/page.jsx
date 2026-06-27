@@ -39,6 +39,7 @@ const storeGalleryCueLabels = ["Digital files", "Color pages", "Creature goods",
 const storeChecklistCueLabels = ["Story ready", "Preview proof", "Delivery note"];
 const storeAvailabilityCueLabels = ["Preparing room", "Preview room", "Open room"];
 const storeFeedCueLabels = ["Handle", "Name", "Status", "Note", "Preview", "Delivery"];
+const storePromiseCueLabels = ["Useful before links", "Clear after launch", "Quiet source path"];
 const storeGalleryItems = [
   ...storeSections.map((lane) => ({ ...lane, kind: "lane" })),
   {
@@ -275,8 +276,14 @@ export default function StorePage() {
           </p>
         </div>
         <div className="store-promise-note-stack" aria-label="Store promise notes">
-          {storePromises.map((promise) => (
+          {storePromises.map((promise, index) => (
             <article className="store-promise-note" key={promise.title}>
+              <div className="store-promise-note__photo" aria-hidden="true">
+                <b>{storePromiseCueLabels[index] ?? promise.eyebrow}</b>
+                <i />
+                <i />
+                <i />
+              </div>
               <span>{promise.eyebrow}</span>
               <h2>{promise.title}</h2>
               <p>{promise.description}</p>

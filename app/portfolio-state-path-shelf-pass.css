@@ -93,16 +93,155 @@
 .portfolio-process-photo-ribbon li:nth-child(3)::after { content: "preview"; }
 .portfolio-process-photo-ribbon li:nth-child(4)::after { content: "open"; }
 
+.portfolio-state-photo-board {
+  isolation: isolate;
+}
+
+.portfolio-state-photo-board .portfolio-board-heading,
+.portfolio-process-photo-board .portfolio-board-heading {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 42rem);
+  margin-left: clamp(0.25rem, 1.5vw, 0.8rem);
+  padding: clamp(0.88rem, 2vw, 1.12rem) clamp(0.95rem, 2.2vw, 1.35rem);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 232, 0.95), rgba(238, 219, 181, 0.78)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 1rem 1.8rem rgba(70, 48, 27, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.74);
+  clip-path: polygon(1.5% 1%, 98% 0, 100% 86%, 96% 100%, 0 94%);
+}
+
+.portfolio-state-photo-board .portfolio-board-heading::after,
+.portfolio-process-photo-board .portfolio-board-heading::after {
+  content: "";
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 1.4rem);
+  bottom: -0.45rem;
+  width: clamp(4.4rem, 10vw, 6.8rem);
+  height: 1rem;
+  background: rgba(219, 196, 151, 0.66);
+  box-shadow: 0 0.5rem 0.9rem rgba(74, 52, 31, 0.12);
+  transform: rotate(-1.8deg);
+  clip-path: polygon(4% 0, 100% 10%, 94% 100%, 0 88%);
+}
+
+.portfolio-state-stack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10.5rem, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.5rem);
+  align-items: stretch;
+  padding: clamp(1.2rem, 2.8vw, 1.7rem) clamp(0.2rem, 1vw, 0.45rem) 0;
+}
+
+.portfolio-state-stack::after {
+  content: "public card states";
+  position: absolute;
+  top: clamp(-0.35rem, -0.8vw, -0.1rem);
+  right: clamp(1rem, 3vw, 1.8rem);
+  z-index: 3;
+  padding: 0.36rem 0.58rem 0.3rem;
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(83, 58, 35, 0.78);
+  background:
+    linear-gradient(135deg, rgba(255, 249, 227, 0.95), rgba(230, 207, 164, 0.78)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.54rem 1rem rgba(72, 50, 29, 0.12);
+  clip-path: polygon(3% 5%, 100% 0, 96% 94%, 0 100%);
+  transform: rotate(1.5deg);
+}
+
+.portfolio-state-photo {
+  display: grid;
+  grid-template-rows: minmax(7rem, auto) 1fr;
+  min-width: 0;
+  transform-origin: 50% 20%;
+}
+
+.portfolio-state-photo:nth-child(1) { transform: rotate(-1.2deg); }
+.portfolio-state-photo:nth-child(2) { transform: rotate(0.8deg) translateY(0.35rem); }
+.portfolio-state-photo:nth-child(3) { transform: rotate(-0.7deg) translateY(0.12rem); }
+.portfolio-state-photo:nth-child(4) { transform: rotate(1.15deg) translateY(0.45rem); }
+
+.portfolio-state-photo__copy {
+  position: relative;
+  margin-top: -0.15rem;
+  padding: 0.92rem 0.62rem 0.28rem;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 242, 0.78), rgba(238, 222, 190, 0.5)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  clip-path: polygon(0 2%, 100% 0, 96% 100%, 3% 96%);
+}
+
+.portfolio-state-photo__copy::before {
+  content: "state note";
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.42rem;
+  padding: 0.26rem 0.42rem 0.2rem;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(75, 52, 31, 0.72);
+  background: rgba(242, 222, 181, 0.78);
+  clip-path: polygon(2% 0, 100% 10%, 96% 100%, 0 90%);
+}
+
+.portfolio-state-photo__copy span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.28rem 0.44rem 0.22rem;
+  color: rgba(255, 251, 238, 0.96);
+  background: rgba(65, 46, 31, 0.58);
+  clip-path: polygon(4% 0, 100% 8%, 96% 100%, 0 90%);
+}
+
+@media (max-width: 920px) {
+  .portfolio-state-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 680px) {
   .portfolio-state-photo-board,
   .portfolio-process-photo-board {
     padding-top: 4rem;
   }
 
+  .portfolio-state-stack {
+    grid-template-columns: 1fr;
+    gap: 0.92rem;
+  }
+
   .portfolio-state-stack::before,
   .portfolio-process-photo-ribbon::before {
     left: 1rem;
     right: 1rem;
+  }
+
+  .portfolio-state-stack::after {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: fit-content;
+    margin: 0.15rem 0 0.2rem auto;
+  }
+
+  .portfolio-state-photo,
+  .portfolio-state-photo:nth-child(1),
+  .portfolio-state-photo:nth-child(2),
+  .portfolio-state-photo:nth-child(3),
+  .portfolio-state-photo:nth-child(4) {
+    transform: none;
   }
 
   .portfolio-state-photo::after,

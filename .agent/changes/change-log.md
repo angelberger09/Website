@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 18:28 ET — Portfolio archive rule slips
+
+### Changed
+
+- Updated `app/portfolio/page.jsx` so future archive shelf rules render as source-backed `portfolio-rule-slip` articles instead of plain mapped paragraphs.
+- Added `app/portfolio-feed-rule-slips-pass.css` and loaded it from `app/layout.jsx` after the existing Portfolio feed shelf styling.
+- Styled the rules as three clipped paper slips labeled `Safe facts`, `Public preview`, and `Private drafts`, preserving the same public-safe archive rules while making the rule surface more readable and tactile.
+- Added `.agent/changes/2026-06-27-portfolio-archive-rule-slips.md`.
+- Added `.agent/matrices/portfolio-archive-rule-slips.matrix.md`.
+
+### Why
+
+The Portfolio future archive shelf already had a bound paper ledger, ticket path, and visitor-facing card-part fields, but its rule area still scanned as plain paragraph tape. This pass keeps the no-fake-projects boundary intact while making the rules into direct, source-backed paper slips that better satisfy the paper-snippet, direct-label, and calm-room sequence goals.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-015
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-004
+- LESSON-015
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- METRIC-002
+- METRIC-014
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 18:19 ET — Store return path terminal budget
 
 ### Changed

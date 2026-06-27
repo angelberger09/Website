@@ -2,6 +2,55 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 00:39 ET — PageIntro room key ticket
+
+### Changed
+
+- Added `app/page-intro-room-key-ticket-pass.css`.
+- Loaded the pass after `app/page-intro-trust-spine-pass.css` in `app/layout.jsx`.
+- Turned the existing shared `.page-hero__room-key` into a stronger clipped paper ticket with a direct `room key` label, dashed side thread, abstract paper/photo center, deeper lifted shadow, and mobile-safe sizing.
+- Added `.agent/changes/2026-06-27-pageintro-room-key-ticket.md`.
+- Added `.agent/matrices/pageintro-room-key-ticket.matrix.md`.
+
+### Why
+
+The shared PageIntro route stack already had route-specific shelf cues and a filled photo card, but the small room-key/status card still read quieter than the newer ticket and receipt surfaces. This pass makes the shared room key visibly part of the calm-room paper system across the top-level route intros without changing copy, routes, data, accessibility, or inventing imagery.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-023
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-023
+- LESSON-024
+- LESSON-025
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-022
+- METRIC-023
+- METRIC-024
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-27 00:11 ET — Homepage path map room spine
 
 ### Changed

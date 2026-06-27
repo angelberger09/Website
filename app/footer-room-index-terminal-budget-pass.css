@@ -1,0 +1,94 @@
+/* Footer room index terminal budget pass.
+   Keeps the newest footer room index visible while bringing it back under the
+   calm paper-surface budget before the global terminal budget lands. */
+
+.studio-footer__trail {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 360px;
+  background-image:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.88), rgba(248, 236, 214, 0.58) 58%, rgba(185, 201, 175, 0.14)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.05),
+    0 0.72rem 1.18rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.studio-footer__trail::before {
+  height: 0.12rem;
+  opacity: 0.68;
+  box-shadow: none;
+}
+
+.studio-footer__trail::after {
+  background-image:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.96), rgba(246, 232, 207, 0.74)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045), 0 0.42rem 0.72rem rgba(47, 38, 35, 0.085);
+}
+
+.studio-footer__trail-link,
+.studio-footer__trail-photo,
+.studio-footer__trail-title,
+.studio-footer__trail-state {
+  filter: none;
+  background-blend-mode: normal;
+}
+
+.studio-footer__trail-link {
+  min-height: 5.45rem;
+  background-image:
+    linear-gradient(138deg, rgba(255, 253, 247, 0.96), rgba(246, 232, 207, 0.68) 64%, rgba(255, 248, 231, 0.84)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.46rem 0.72rem rgba(47, 38, 35, 0.082),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.studio-footer__trail-link--active {
+  background-image:
+    linear-gradient(136deg, rgba(255, 252, 246, 0.98), rgba(255, 232, 214, 0.6) 56%, rgba(216, 197, 236, 0.2)),
+    var(--grain-image);
+}
+
+.studio-footer__trail-link::before {
+  opacity: 0.62;
+  box-shadow: 0 0.12rem 0.22rem rgba(64, 47, 31, 0.065);
+}
+
+.studio-footer__trail-photo {
+  min-height: 3.45rem;
+  box-shadow: inset 0 0 0 1px rgba(74, 58, 48, 0.08);
+}
+
+.studio-footer__trail-title,
+.studio-footer__trail-state {
+  background-image:
+    linear-gradient(108deg, rgba(255, 252, 244, 0.82), rgba(245, 230, 203, 0.62)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.04rem 0.08rem 0 rgba(47, 38, 35, 0.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-footer__trail::after,
+  .studio-footer__trail-link,
+  .studio-footer__trail-link:nth-child(odd),
+  .studio-footer__trail-link:nth-child(even) {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .studio-footer__trail {
+    contain-intrinsic-size: 1px 620px;
+  }
+
+  .studio-footer__trail-link {
+    min-height: 0;
+  }
+}

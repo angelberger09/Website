@@ -1,0 +1,198 @@
+.portfolio-feed-board--shelf {
+  --portfolio-docket-ink: rgba(70, 49, 31, 0.88);
+  --portfolio-docket-muted: rgba(96, 70, 46, 0.7);
+  overflow: visible;
+  padding-left: clamp(1.35rem, 3.4vw, 2.8rem);
+  padding-bottom: clamp(1.35rem, 3vw, 2.1rem);
+}
+
+.portfolio-feed-board--shelf > .portfolio-board-heading {
+  position: relative;
+  max-width: 52rem;
+  padding: clamp(1rem, 2.2vw, 1.45rem) clamp(1rem, 2.4vw, 1.55rem);
+  margin-left: clamp(0.3rem, 1vw, 0.7rem);
+  background:
+    linear-gradient(135deg, rgba(255, 251, 236, 0.98), rgba(239, 220, 182, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 1.2rem 2.2rem rgba(67, 45, 27, 0.15), 0 0.18rem 0.55rem rgba(67, 45, 27, 0.1);
+  clip-path: polygon(1.4% 0, 99% 4%, 97.5% 96%, 0 100%);
+}
+
+.portfolio-feed-board--shelf > .portfolio-board-heading::before {
+  content: "public card docket";
+  position: absolute;
+  top: -0.74rem;
+  right: clamp(1rem, 2vw, 1.5rem);
+  z-index: 3;
+  padding: 0.34rem 0.62rem 0.28rem;
+  font-size: 0.55rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 253, 246, 0.96);
+  background:
+    linear-gradient(135deg, rgba(58, 43, 29, 0.75), rgba(103, 74, 45, 0.55)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 120px 120px;
+  box-shadow: 0 0.5rem 0.95rem rgba(62, 44, 25, 0.16);
+  clip-path: polygon(5% 0, 100% 7%, 96% 100%, 0 91%);
+  transform: rotate(1.2deg);
+}
+
+.portfolio-feed-board--shelf::before {
+  top: clamp(6.8rem, 11vw, 9.2rem);
+  left: clamp(1.08rem, 2.3vw, 1.45rem);
+  width: 3px;
+  background-image: linear-gradient(180deg, rgba(80, 56, 34, 0.44) 0 42%, transparent 42% 100%);
+  background-size: 3px 1.05rem;
+}
+
+.portfolio-feed-board--shelf::after {
+  content: "future shelf path";
+  top: clamp(5rem, 7.5vw, 6.35rem);
+  left: clamp(0.42rem, 1.2vw, 0.72rem);
+  writing-mode: vertical-rl;
+  min-height: auto;
+  padding: 0.72rem 0.34rem;
+  color: rgba(255, 253, 245, 0.94);
+  background:
+    linear-gradient(180deg, rgba(68, 49, 31, 0.78), rgba(112, 81, 48, 0.55)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 110px 110px;
+  clip-path: polygon(0 3%, 100% 0, 94% 100%, 8% 97%);
+  transform: rotate(-1.1deg);
+}
+
+.portfolio-feed-shelf-intro {
+  margin-top: clamp(1rem, 2vw, 1.4rem);
+  padding-left: clamp(1.1rem, 2.3vw, 1.65rem);
+  border-left: 2px dashed rgba(90, 65, 39, 0.26);
+  clip-path: polygon(1.5% 0, 100% 4%, 98% 95%, 0 100%);
+}
+
+.portfolio-archive-ticket-board {
+  position: relative;
+  margin-top: clamp(1rem, 2.3vw, 1.5rem);
+  padding: clamp(1.05rem, 2.3vw, 1.45rem) clamp(0.7rem, 1.8vw, 1.05rem) clamp(0.6rem, 1.4vw, 0.9rem);
+  background:
+    linear-gradient(135deg, rgba(244, 231, 204, 0.72), rgba(255, 250, 232, 0.34)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, 220px 220px;
+  clip-path: polygon(0 3%, 99% 0, 100% 96%, 1% 100%);
+}
+
+.portfolio-archive-ticket-board::before {
+  content: "card path";
+  position: absolute;
+  top: 0.42rem;
+  left: clamp(0.65rem, 1.7vw, 1rem);
+  z-index: 4;
+  padding: 0.28rem 0.5rem 0.22rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--portfolio-docket-ink);
+  background: rgba(255, 253, 244, 0.82);
+  box-shadow: 0 0.42rem 0.82rem rgba(65, 45, 28, 0.1);
+  clip-path: polygon(4% 0, 98% 8%, 100% 90%, 0 100%);
+}
+
+.portfolio-feed-ledger--visitor {
+  position: relative;
+  margin-top: clamp(0.65rem, 1.6vw, 1rem);
+  padding-top: clamp(1.55rem, 2.8vw, 2rem);
+  border-top: 2px dashed rgba(92, 66, 40, 0.22);
+}
+
+.portfolio-feed-ledger--visitor::before {
+  content: "safe card parts";
+  position: absolute;
+  top: 0.38rem;
+  left: clamp(0.85rem, 2vw, 1.2rem);
+  z-index: 5;
+  padding: 0.3rem 0.56rem 0.24rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 245, 0.95);
+  background:
+    linear-gradient(135deg, rgba(65, 47, 29, 0.78), rgba(110, 80, 49, 0.55)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 110px 110px;
+  box-shadow: 0 0.5rem 0.95rem rgba(62, 44, 25, 0.14);
+  clip-path: polygon(4% 0, 100% 9%, 96% 100%, 0 90%);
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card {
+  border-left: 0;
+  padding-top: clamp(3.4rem, 5vw, 4.25rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.97), rgba(238, 219, 184, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  clip-path: polygon(2% 0, 99% 3%, 97% 98%, 0 94%);
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card::before {
+  content: "";
+  position: absolute;
+  top: 0.86rem;
+  left: clamp(0.75rem, 1.8vw, 1rem);
+  right: clamp(0.75rem, 1.8vw, 1rem);
+  height: 2.15rem;
+  z-index: 2;
+  border: 1px solid rgba(95, 69, 44, 0.16);
+  background:
+    linear-gradient(135deg, rgba(86, 121, 103, 0.22), rgba(246, 179, 130, 0.18)),
+    url('/Website/atmosphere/soft-scratches.svg');
+  background-size: cover, 180px 180px;
+  clip-path: polygon(1% 0, 100% 7%, 98% 100%, 0 91%);
+}
+
+.portfolio-rule-tapes--visitor {
+  position: relative;
+  margin-top: clamp(1.15rem, 2.5vw, 1.6rem);
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(0.7rem, 1.6vw, 1rem) 0;
+  border-top: 2px dashed rgba(92, 66, 40, 0.2);
+}
+
+.portfolio-rule-tapes--visitor::after {
+  content: "private drafts stay outside";
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  margin-top: clamp(0.6rem, 1.4vw, 0.9rem);
+  padding: 0.36rem 0.62rem 0.3rem;
+  font-size: 0.56rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--portfolio-docket-muted);
+  background: rgba(255, 253, 244, 0.78);
+  box-shadow: 0 0.48rem 0.9rem rgba(65, 45, 28, 0.1);
+  clip-path: polygon(3% 0, 100% 8%, 96% 100%, 0 91%);
+}
+
+@media (max-width: 680px) {
+  .portfolio-feed-board--shelf {
+    padding-left: clamp(0.78rem, 4vw, 1rem);
+    overflow: hidden;
+  }
+
+  .portfolio-feed-board--shelf > .portfolio-board-heading {
+    margin-left: 0;
+  }
+
+  .portfolio-feed-board--shelf::after {
+    writing-mode: horizontal-tb;
+  }
+
+  .portfolio-feed-ledger--visitor .portfolio-feed-card {
+    padding-top: 3.5rem;
+  }
+}

@@ -5,6 +5,9 @@
 .home-room-status {
   position: relative;
   overflow: hidden;
+  contain: layout paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 36rem;
 }
 
 .home-room-status::before {
@@ -21,7 +24,7 @@
   transform: rotate(180deg);
   clip-path: polygon(16% 0, 100% 4%, 84% 100%, 0 95%);
   background:
-    linear-gradient(180deg, rgba(216, 197, 236, 0.34), rgba(255, 176, 143, 0.24)),
+    linear-gradient(180deg, rgba(216, 197, 236, 0.3), rgba(255, 176, 143, 0.2)),
     var(--grain-image);
   background-size: cover, 11rem 11rem;
   color: rgba(58, 45, 42, 0.58);
@@ -30,8 +33,8 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   box-shadow:
-    0.13rem 0.16rem 0 rgba(47, 38, 35, 0.08),
-    0 0.55rem 1rem rgba(47, 38, 35, 0.08);
+    0.1rem 0.12rem 0 rgba(47, 38, 35, 0.07),
+    0 0.42rem 0.82rem rgba(47, 38, 35, 0.07);
   z-index: 0;
   pointer-events: none;
 }
@@ -42,13 +45,13 @@
   left: clamp(2.3rem, 4.5vw, 3.85rem);
   top: clamp(1.7rem, 4vw, 2.6rem);
   bottom: clamp(1.5rem, 4vw, 2.35rem);
-  width: 0.11rem;
+  width: 0.095rem;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(58, 45, 42, 0.28) 0 0.32rem,
-    transparent 0.32rem 0.74rem
+    rgba(58, 45, 42, 0.24) 0 0.3rem,
+    transparent 0.3rem 0.78rem
   );
-  opacity: 0.58;
+  opacity: 0.46;
   z-index: 0;
   pointer-events: none;
 }
@@ -70,12 +73,12 @@
   padding: clamp(1rem, 2.2vw, 1.45rem) clamp(0.85rem, 2vw, 1.2rem) clamp(1.1rem, 2.2vw, 1.45rem);
   clip-path: polygon(1% 4%, 98% 0, 100% 94%, 3% 100%, 0 18%);
   background:
-    linear-gradient(135deg, rgba(255, 252, 246, 0.72), rgba(245, 236, 222, 0.34)),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.7), rgba(245, 236, 222, 0.28)),
     var(--grain-image);
   background-size: cover, 13rem 13rem;
   box-shadow:
-    0.18rem 0.22rem 0 rgba(47, 38, 35, 0.08),
-    0 1.05rem 1.8rem rgba(47, 38, 35, 0.1);
+    0.14rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.82rem 1.35rem rgba(47, 38, 35, 0.09);
 }
 
 .home-room-board::before {
@@ -85,7 +88,7 @@
   top: 0.55rem;
   padding: 0.18rem 0.62rem;
   clip-path: polygon(4% 10%, 100% 0, 94% 100%, 0 88%);
-  background: rgba(255, 176, 143, 0.28);
+  background: rgba(255, 176, 143, 0.25);
   color: rgba(58, 45, 42, 0.58);
   font-size: 0.58rem;
   font-weight: 850;
@@ -100,27 +103,31 @@
   left: clamp(1.15rem, 2.5vw, 1.7rem);
   right: clamp(1.15rem, 2.5vw, 1.7rem);
   top: clamp(3.15rem, 5vw, 3.8rem);
-  height: 0.12rem;
+  height: 0.095rem;
   background: repeating-linear-gradient(
     to right,
-    rgba(58, 45, 42, 0.28) 0 0.42rem,
-    transparent 0.42rem 0.92rem
+    rgba(58, 45, 42, 0.23) 0 0.38rem,
+    transparent 0.38rem 0.96rem
   );
-  opacity: 0.48;
+  opacity: 0.42;
   z-index: 0;
 }
 
 .home-room-slip {
   z-index: 1;
   transform-origin: center top;
+  box-shadow:
+    0.11rem 0.14rem 0 rgba(47, 38, 35, 0.07),
+    0 0.68rem 1rem rgba(47, 38, 35, 0.08);
+  filter: none;
 }
 
 .home-room-slip:nth-child(odd) {
-  transform: translateY(0.18rem) rotate(-0.45deg);
+  transform: translateY(0.14rem) rotate(-0.28deg);
 }
 
 .home-room-slip:nth-child(even) {
-  transform: translateY(0.55rem) rotate(0.5deg);
+  transform: translateY(0.38rem) rotate(0.32deg);
 }
 
 .home-room-slip__status {
@@ -129,21 +136,22 @@
   max-width: 100%;
   padding-inline: 0.52rem;
   clip-path: polygon(0 18%, 100% 0, 94% 100%, 7% 86%);
-  background: rgba(216, 197, 236, 0.28);
-  box-shadow: 0.08rem 0.1rem 0 rgba(47, 38, 35, 0.07);
+  background: rgba(216, 197, 236, 0.24);
+  box-shadow: 0.06rem 0.08rem 0 rgba(47, 38, 35, 0.06);
 }
 
 .home-room-slip__image {
   position: relative;
+  box-shadow: inset 0 0 0 1px rgba(58, 45, 42, 0.07);
 }
 
 .home-room-slip__image::after {
   content: "checked";
   position: absolute;
-  right: -0.35rem;
+  right: -0.18rem;
   bottom: 0.42rem;
   padding: 0.16rem 0.42rem;
-  transform: rotate(-4deg);
+  transform: rotate(-2deg);
   clip-path: polygon(8% 0, 100% 12%, 92% 100%, 0 86%);
   background: rgba(255, 252, 246, 0.82);
   color: rgba(58, 45, 42, 0.5);
@@ -151,10 +159,14 @@
   font-weight: 850;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  box-shadow: 0.08rem 0.11rem 0 rgba(47, 38, 35, 0.08);
+  box-shadow: 0.06rem 0.08rem 0 rgba(47, 38, 35, 0.07);
 }
 
 @media (max-width: 760px) {
+  .home-room-status {
+    contain-intrinsic-size: 46rem;
+  }
+
   .home-room-status .home-section-scrap,
   .home-room-board {
     margin-left: clamp(1.85rem, 8vw, 3.1rem);
@@ -172,6 +184,7 @@
     top: 4.2rem;
   }
 
+  .home-room-slip,
   .home-room-slip:nth-child(odd),
   .home-room-slip:nth-child(even) {
     transform: none;
@@ -179,6 +192,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-room-status,
+  .home-room-board,
+  .home-room-slip,
   .home-room-slip:nth-child(odd),
   .home-room-slip:nth-child(even) {
     transform: none;

@@ -93,6 +93,52 @@
   outline-offset: 0.12rem;
 }
 
+.source-link span {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.15rem;
+  padding: 0.48rem 0.72rem 0.46rem;
+  color: rgba(58, 45, 42, 0.94);
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  font-weight: 920;
+  line-height: 1.12;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  background-image: var(--final-paper-face);
+  background-size: cover, 18rem 18rem;
+  border-radius: 0;
+  box-shadow: var(--final-paper-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(1% 8%, 24% 2%, 54% 5%, 98% 1%, 97% 86%, 72% 94%, 36% 98%, 2% 91%);
+}
+
+.source-link span::after {
+  position: absolute;
+  top: -0.24rem;
+  right: 0.64rem;
+  z-index: -1;
+  width: 2.4rem;
+  height: 0.42rem;
+  content: "";
+  background: rgba(255, 250, 242, 0.76);
+  box-shadow: 0 0.16rem 0.36rem rgba(47, 38, 35, 0.08);
+  opacity: 0.86;
+  transform: rotate(1.5deg);
+  clip-path: polygon(2% 18%, 28% 4%, 66% 14%, 98% 6%, 94% 86%, 70% 76%, 34% 94%, 4% 82%);
+}
+
+.source-link:nth-child(2n) span {
+  clip-path: polygon(2% 3%, 33% 6%, 59% 2%, 97% 5%, 99% 88%, 65% 96%, 29% 94%, 1% 98%);
+}
+
+.source-link:focus span,
+.source-link:hover span {
+  outline: 2px solid rgba(255, 176, 143, 0.42);
+  outline-offset: 0.12rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-hero__room-slip,
   .page-hero__trust-ticket,
@@ -110,5 +156,10 @@
   .home-path-map,
   .studio-footer--paper {
     contain-intrinsic-size: 1px 680px;
+  }
+
+  .source-link span {
+    font-size: 0.96rem;
+    letter-spacing: 0.025em;
   }
 }

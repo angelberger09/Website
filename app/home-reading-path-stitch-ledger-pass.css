@@ -1,36 +1,41 @@
 /* Homepage reading path stitch ledger pass.
    Makes the existing Read this page rail scan as one stitched table-of-contents ledger
-   instead of a set of compact neighboring slips. */
+   instead of a set of compact neighboring slips, while keeping the latest layer inside
+   the calmer terminal paper budget. */
 
 .home-path-map {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
 }
 
 .home-path-map::before {
   content: "stitched path";
   position: absolute;
   inset: clamp(0.72rem, 1.8vw, 1rem) auto clamp(0.72rem, 1.8vw, 1rem) clamp(1rem, 2.8vw, 1.7rem);
-  width: clamp(1.25rem, 2.1vw, 1.75rem);
+  width: clamp(1.1rem, 1.8vw, 1.48rem);
   display: grid;
   place-items: center;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 0.54rem;
+  font-size: 0.52rem;
   line-height: 1;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(58, 45, 42, 0.54);
+  color: rgba(58, 45, 42, 0.5);
   background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.92), rgba(255, 239, 220, 0.64)),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.9), rgba(255, 239, 220, 0.56)),
     var(--grain-image);
-  background-size: auto, 11rem 11rem;
-  clip-path: polygon(22% 0, 100% 2%, 86% 100%, 0 96%);
+  background-size: auto, 12rem 12rem;
+  clip-path: polygon(18% 0, 100% 3%, 87% 100%, 0 95%);
   box-shadow:
-    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
-    0.2rem 0.42rem 0.7rem rgba(47, 38, 35, 0.12);
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.055),
+    0.13rem 0.28rem 0.42rem rgba(47, 38, 35, 0.09);
   z-index: 0;
+  pointer-events: none;
 }
 
 .home-path-map::after {
@@ -39,9 +44,9 @@
   left: clamp(3.5rem, 7vw, 5.9rem);
   right: clamp(1rem, 3vw, 2rem);
   top: 50%;
-  height: 2px;
-  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.28) 0 0.42rem, transparent 0.42rem 0.78rem);
-  opacity: 0.62;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.2) 0 0.38rem, transparent 0.38rem 0.8rem);
+  opacity: 0.46;
   transform: translateY(-50%);
   z-index: 0;
   pointer-events: none;
@@ -56,16 +61,20 @@
 
 .home-path-map__label {
   clip-path: polygon(4% 10%, 95% 0, 100% 88%, 7% 100%);
-  padding: 0.48rem 0.62rem;
+  padding: 0.46rem 0.58rem;
   background:
-    linear-gradient(100deg, rgba(255, 252, 246, 0.96), rgba(255, 243, 229, 0.72)),
+    linear-gradient(100deg, rgba(255, 252, 246, 0.94), rgba(255, 243, 229, 0.66)),
     var(--grain-image);
-  background-size: auto, 9rem 9rem;
-  box-shadow: 0.1rem 0.16rem 0.34rem rgba(47, 38, 35, 0.12);
+  background-size: auto, 10rem 10rem;
+  box-shadow: 0.07rem 0.12rem 0.24rem rgba(47, 38, 35, 0.09);
+}
+
+.home-path-map__note {
+  text-wrap: pretty;
 }
 
 .home-path-map__trail {
-  border-left: 1px dashed rgba(58, 45, 42, 0.2);
+  border-left: 1px dashed rgba(58, 45, 42, 0.16);
   padding-left: clamp(0.68rem, 1.4vw, 0.95rem) !important;
 }
 
@@ -76,53 +85,58 @@
   border-radius: 0 !important;
   clip-path: polygon(3% 7%, 92% 0, 100% 86%, 13% 100%, 0 72%);
   background:
-    linear-gradient(140deg, rgba(255, 252, 246, 0.95), rgba(255, 245, 232, 0.8) 58%, rgba(153, 222, 201, 0.16)),
+    linear-gradient(140deg, rgba(255, 252, 246, 0.93), rgba(255, 245, 232, 0.74) 58%, rgba(153, 222, 201, 0.12)),
     var(--grain-image) !important;
-  background-size: auto, 10rem 10rem !important;
+  background-size: auto, 11rem 11rem !important;
   box-shadow:
-    0.1rem 0.14rem 0 rgba(47, 38, 35, 0.07),
-    0.22rem 0.34rem 0.58rem rgba(47, 38, 35, 0.13) !important;
+    0.07rem 0.1rem 0 rgba(47, 38, 35, 0.05),
+    0.14rem 0.24rem 0.38rem rgba(47, 38, 35, 0.1) !important;
+  transform: none !important;
 }
 
 .home-path-map__step::before {
   content: "";
   position: absolute;
-  left: -0.62rem;
+  left: -0.54rem;
   top: 50%;
-  width: 0.82rem;
-  height: 0.82rem;
+  width: 0.66rem;
+  height: 0.66rem;
   transform: translateY(-50%);
   border-radius: 999px;
-  background: rgba(58, 45, 42, 0.5);
-  box-shadow: 0 0 0 0.22rem rgba(255, 252, 246, 0.72);
+  background: rgba(58, 45, 42, 0.42);
+  box-shadow: 0 0 0 0.18rem rgba(255, 252, 246, 0.68);
   z-index: 2;
 }
 
 .home-path-map__thread {
   display: block !important;
   position: absolute;
-  left: -0.62rem;
+  left: -0.54rem;
   right: auto;
   top: 50%;
-  width: calc(100% + 0.62rem);
+  width: calc(100% + 0.54rem);
   height: 1px;
-  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.34) 0 0.34rem, transparent 0.34rem 0.62rem);
-  opacity: 0.58;
+  background: repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.23) 0 0.3rem, transparent 0.3rem 0.66rem);
+  opacity: 0.42;
   z-index: -1;
 }
 
 .home-path-map__number {
   width: max-content;
-  padding: 0.2rem 0.34rem !important;
+  padding: 0.18rem 0.32rem !important;
   clip-path: polygon(4% 12%, 96% 0, 100% 82%, 8% 100%);
-  background: rgba(255, 252, 246, 0.74) !important;
-  box-shadow: 0.06rem 0.1rem 0.22rem rgba(47, 38, 35, 0.1);
+  background: rgba(255, 252, 246, 0.68) !important;
+  box-shadow: 0.04rem 0.08rem 0.16rem rgba(47, 38, 35, 0.08);
 }
 
 @media (max-width: 760px) {
+  .home-path-map {
+    contain-intrinsic-size: 520px;
+  }
+
   .home-path-map::before {
     inset: 0.7rem auto auto 0.8rem;
-    height: 8rem;
+    height: 7.4rem;
   }
 
   .home-path-map::after {
@@ -130,21 +144,27 @@
     right: 1rem;
     top: auto;
     bottom: 1.3rem;
+    opacity: 0.34;
   }
 }
 
 @media (max-width: 520px) {
+  .home-path-map::before {
+    height: 6.6rem;
+    opacity: 0.82;
+  }
+
   .home-path-map::after {
     display: none;
   }
 
   .home-path-map__trail {
-    border-left: 1px dashed rgba(58, 45, 42, 0.22);
+    border-left: 1px dashed rgba(58, 45, 42, 0.18);
     margin-left: 1.2rem;
   }
 
   .home-path-map__step::before {
-    left: -1rem;
+    left: -0.92rem;
   }
 }
 
@@ -152,5 +172,7 @@
   .home-path-map,
   .home-path-map__step {
     scroll-behavior: auto;
+    transition: none !important;
+    animation: none !important;
   }
 }

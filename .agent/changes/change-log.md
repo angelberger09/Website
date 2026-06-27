@@ -2,6 +2,48 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 01:08 ET — Notes reader path spine
+
+### Changed
+
+- Added `app/notes-path-reader-spine-pass.css`.
+- Loaded the pass after `app/notes-path-direct-cues-pass.css` in `app/layout.jsx`.
+- Turned the existing Notes `After the shelf` path board into a more guided reader path with a vertical `reader path` paper spine, ordered route cue, dashed stitched thread, and numbered paper stamps on the existing next-path cards.
+- Added `.agent/changes/2026-06-27-notes-reader-path-spine.md`.
+- Added `.agent/matrices/notes-reader-path-spine.matrix.md`.
+
+### Why
+
+The Notes route already had public-safe continuity copy and paper/photo cards, but the path could still scan as three separate cards rather than one guided route through the room. This pass makes the reader path visibly more composed and human-readable without changing Blog data, route links, source contracts, or inventing note imagery.
+
+### Related items
+
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- COMP-006
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-026
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-032
+
 ## 2026-06-27 00:39 ET — PageIntro room key ticket
 
 ### Changed
@@ -218,215 +260,3 @@ Future site work needs a public-safe memory layer for intent, feedback lessons, 
 ### Changed
 
 - Added `.agent/feedback/` documentation.
-- Added intake, extraction, public-safety, workflow, inbox, and examples files.
-- Updated root `agent.md` to route future feedback through the workflow.
-- Updated `.agent/start-here.md`, `.agent/README.md`, and active lessons.
-
-### Why
-
-Small feedback points should be easy to convert into public-safe reusable lessons without storing raw private context.
-
-### Related items
-
-- LESSON-004
-- METRIC-004
-- METRIC-006
-
-## 2026-06-23 23:10 ET — Visual atmosphere and tactile depth feedback
-
-### Changed
-
-- Added timestamped `.agent/feedback/feedback-log.md` entry for static-structure feedback.
-- Added timestamped feedback entry for tactile polaroid/photo-like depth.
-- Added LESSON-005 through LESSON-010 to lesson log and active lessons.
-- Added proposed design items for gradient fade-offs, flat cel-shaded atmosphere, animated texture, and tactile polaroid depth.
-- Added proposed interaction items for mouse-reactive background and gloss/scratch overlay response.
-- Added metrics for alive-but-not-busy, flat-but-tactile, and borders-not-primary-structure.
-- Added DEC-006 to evaluate anime.js before implementation.
-
-## 2026-06-26 15:28 ET — Homepage room sequence stamps
-
-### Changed
-
-- Added `app/home-room-sequence-stamps-pass.css`.
-- Loaded the pass after the homepage section-thread styling in `app/layout.jsx`.
-- Added visible paper/photo room stamps for each homepage chapter section.
-- Strengthened the existing homepage left-docket paper slips and notes.
-
-### Why
-
-The homepage had the right chapter path and left-docket structure, but the in-page room sequence was still too subtle while scrolling. The new stamps make the homepage read more like a calm ordered studio-room path without changing copy, links, data, or adding fake content.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-001
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-26 22:29 ET — About room-key ticket depth
-
-### Changed
-
-- Added `app/about-room-key-ticket-depth-pass.css`.
-- Loaded it through `app/final-paper-surface-budget-pass.css` so the existing final paper budget still owns late surface tuning.
-- Strengthened the About room-key board with a clipped heading slip, stronger paper field, more visible dashed room thread, larger darker ticket/photo faces, deeper shadows, and direct `first room`, `public edge`, and `next doors` cue slips.
-- Added `.agent/changes/2026-06-26-about-room-key-ticket-depth.md`.
-
-### Why
-
-The About page already had the correct room-key structure, but its first entry shelf still read quieter than the newer receipt/ticket surfaces elsewhere. This makes the About entry path visibly read as the first public-room ticket shelf without changing copy, data, routes, or inventing imagery.
-
-### Related items
-
-- PAGE-002
-- COMP-005
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-26 22:40 ET — Homepage arrival ticket cues
-
-### Changed
-
-- Added `home-arrival-ticket` markup to `app/page.jsx`.
-- Added `app/home-arrival-ticket-pass.css`.
-- Loaded the pass in `app/layout.jsx`.
-- Added `.agent/changes/2026-06-26-homepage-arrival-ticket-cues.md`.
-
-### Why
-
-The homepage first screen already had a title and route-card strip, but the immediate arrival promise between the intro copy and room links could read more clearly as small paper snippets. The new `Front door`, `Four rooms`, and `Soft map` cues reinforce the public-room path without adding fake content or heavier visual effects.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- DESIGN-006
-- DESIGN-019
-- DESIGN-022
-- DESIGN-029
-- DESIGN-031
-- LESSON-001
-- LESSON-002
-- LESSON-019
-- LESSON-022
-- METRIC-001
-- METRIC-002
-- METRIC-018
-- METRIC-021
-- METRIC-029
-- METRIC-030
-
-## 2026-06-26 22:51 ET — Portfolio feed drawer path
-
-### Changed
-
-- Added `app/portfolio-feed-drawer-path-pass.css`.
-- Loaded it after `app/portfolio-feed-photo-ledger-pass.css` in `app/layout.jsx`.
-- Added a visible `archive card drawer` paper label, left-side thread, `public boundary` slip, direct field slips, deeper ticket/card shadows, and a `safe shelf rules` label to the Portfolio future archive shelf.
-- Added `.agent/changes/2026-06-26-portfolio-feed-drawer-path.md`.
-- Added `.agent/matrices/portfolio-feed-drawer-path.matrix.md`.
-
-### Why
-
-The Portfolio future archive/feed shelf already had the right public-safe contract content, but the section could still read as separate cards instead of one coherent archive drawer path. This pass makes the feed contract area visibly more aligned with the calm-room, paper-snippet, flattened hierarchy, and photo-led content metrics without inventing projects or screenshots.
-
-### Related items
-
-- PAGE-004
-- COMP-008
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-26 23:10 ET — Notes shelf promise strip
-
-### Changed
-
-- Added `notes-shelf-promise-strip` markup to `app/notes/NotesPageClient.jsx`.
-- Added `app/notes-shelf-promise-strip-pass.css`.
-- Loaded the pass in `app/layout.jsx` after the Notes source-room cues.
-- Added `.agent/changes/2026-06-26-notes-shelf-promise-strip.md`.
-- Added `.agent/matrices/notes-shelf-promise-strip.matrix.md`.
-
-### Why
-
-The Notes writing-shelf/source-map section already used visitor-facing language, but the public/backup boundary still lived mostly inside support cards and fallback receipts. This pass adds a visible paper promise strip for `Public shelf`, `Quiet backup`, and `Human labels`, making the Notes room's safety and no-raw-path promise visible before the source-map receipts without exposing technical URLs or private draft context.
-
-### Related items
-
-- PAGE-003
-- PAGE-003B
-- COMP-006
-- COMP-008
-- DESIGN-006
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-004
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029

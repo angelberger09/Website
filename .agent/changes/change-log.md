@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 10:08 ET — Homepage house rules ledger
+
+### Changed
+
+- Added `app/home-house-rules-ledger-pass.css`.
+- Loaded the pass after `app/home-house-rules-docket-pass.css` in `app/layout.jsx`.
+- Turned the homepage `House rules` intro into a clipped paper ledger with a left promise slip, dashed stitch line, paper-label eyebrow, and supporting copy slip.
+- Added `.agent/changes/2026-06-27-home-house-rules-ledger.md`.
+- Added `.agent/matrices/home-house-rules-ledger.matrix.md`.
+
+### Why
+
+The house-rule cards already had a docket and photo-center treatment, but the intro above them still read as a regular heading and paragraph instead of the opening face of the same composed paper section. This pass makes the rule section visibly closer to the homepage's calm editorial path, paper-first material, flattened hierarchy, and text-snippet goals without changing copy, routes, data, anchors, accessibility labels, or public content boundaries.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 09:50 ET — Homepage reading folio
 
 ### Changed
@@ -237,103 +276,3 @@ The Portfolio room-key board already used honest public-safe archive guidance an
 - METRIC-029
 - METRIC-030
 - METRIC-032
-
-## 2026-06-27 02:39 ET — About door docket
-
-### Changed
-
-- Added `app/about-door-docket-pass.css`.
-- Loaded the pass after `app/about-exit-shelf-pass.css` in `app/layout.jsx`.
-- Turned the About closing next-door shelf into a guided `door docket` composition with a left paper docket slip, stitched connector, staggered route cards, and small paper labels on the existing route-frame text.
-- Added `.agent/changes/2026-06-27-about-door-docket.md`.
-- Added `.agent/matrices/about-door-docket.matrix.md`.
-
-### Why
-
-The About closing pathway section already had honest public route links, direct exit slips, and abstract paper/photo centers. It still could scan as three separate next cards rather than one calm room-exit sequence. This pass makes the exit shelf more human-readable and paper-first without changing routes, copy contracts, data, accessibility labels, or inventing new public material.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019
-- DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-026
-- METRIC-002
-- METRIC-017
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 02:28 ET — Store promise photo cues
-
-### Changed
-
-- Updated `app/store/page.jsx` so each Store promise note includes a real `.store-promise-note__photo` visual center with direct public-safe cue text.
-- Updated `app/store-promise-docket-pass.css` so the promise docket pin, stitched path, abstract paper/photo center, and promise copy can coexist without competing for the same pseudo-element.
-- Added `.agent/changes/2026-06-27-store-promise-photo-cues.md`.
-- Added `.agent/matrices/store-promise-photo-cues.matrix.md`.
-
-### Why
-
-The Store promise section already had public-safe promise copy, a docket wrapper, and an earlier photo-center intent, but the later docket pass reused `.store-promise-note::after` for small pins. That made the photo-center treatment too quiet and fragile. This pass restores the Store promise notes as visible content-bearing paper/photo pieces without adding fake products, fake listings, fake photos, live inventory, or private planning details.
-
-### Related items
-
-- PAGE-005
-- COMP-008
-- DESIGN-019
-- DESIGN-021
-- DESIGN-022
-- DESIGN-024
-- DESIGN-029
-- DESIGN-030
-- DESIGN-031
-- LESSON-019
-- LESSON-021
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- LESSON-026
-- METRIC-018
-- METRIC-020
-- METRIC-021
-- METRIC-023
-- METRIC-028
-- METRIC-029
-- METRIC-030
-- METRIC-032
-
-## 2026-06-27 02:10 ET — About principle promise trail
-
-### Changed
-
-- Added `app/about-principle-promise-trail-pass.css`.
-- Loaded the pass after `app/about-principle-snippet-pass.css` in `app/layout.jsx`.
-- Turned the About working-principles board into a more guided public-promise trail with a clipped `promise trail` strip, heading stitch rail, numbered promise slips, connecting thread, and mobile-safe vertical trail behavior.
-- Added `.agent/changes/2026-06-27-about-principle-promise-trail.md`.
-- Added `.agent/matrices/about-principle-promise-trail.matrix.md`.
-
-### Why
-
-The About working-principles section already had public-safe copy and individual paper notes, but it could still scan as three separate card-like promises rather than one readable studio promise sequence. This pass makes the section visibly closer to the calm-room, paper-snippet, flattened hierarchy, and paper-first goals without changing About content, route links, data, accessibility labels, or inventing studio material.
-
-### Related items
-
-- PAGE-002
-- COMP-008

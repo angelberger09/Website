@@ -158,3 +158,122 @@
     height: 2.2rem;
   }
 }
+
+/* Homepage reading folio refinement.
+   Binds the compact chapter slips into one ordered paper folio instead of a
+   loose horizontal strip, supporting the left-docked editorial path lesson. */
+
+.home-path-map {
+  position: relative;
+}
+
+.home-path-map::after {
+  content: "page order";
+  position: absolute;
+  left: clamp(1.28rem, 2.8vw, 2.2rem);
+  top: clamp(1.05rem, 2.2vw, 1.45rem);
+  bottom: clamp(1.05rem, 2.2vw, 1.45rem);
+  width: clamp(0.72rem, 1.2vw, 0.9rem);
+  display: grid;
+  place-items: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  clip-path: polygon(42% 0, 86% 6%, 62% 28%, 94% 52%, 58% 76%, 78% 100%, 20% 96%, 36% 72%, 8% 50%, 34% 22%);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.38), rgba(216, 197, 236, 0.3) 52%, rgba(185, 201, 175, 0.34)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(58, 45, 42, 0.62);
+  font-size: 0.48rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-path-map .home-path-map__trail {
+  padding-left: clamp(0.36rem, 0.8vw, 0.58rem);
+  border-left: 1px dashed rgba(58, 45, 42, 0.18);
+}
+
+.home-path-map .home-path-map__trail::after {
+  content: "follow gently";
+  position: sticky;
+  right: 0.2rem;
+  align-self: center;
+  flex: 0 0 auto;
+  width: fit-content;
+  margin-left: 0.2rem;
+  padding: 0.24rem 0.58rem;
+  clip-path: polygon(4% 16%, 100% 0, 92% 88%, 8% 100%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.94), rgba(255, 231, 211, 0.7)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(58, 45, 42, 0.62);
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0 0.42rem 0.78rem rgba(47, 38, 35, 0.1);
+  z-index: 2;
+}
+
+.home-path-map .home-path-map__step,
+.home-path-map .home-path-map__step:nth-child(2n),
+.home-path-map .home-path-map__step:nth-child(2n + 1) {
+  clip-path: polygon(4% 7%, 62% 1%, 98% 6%, 94% 92%, 36% 99%, 2% 88%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.62rem 1rem rgba(47, 38, 35, 0.11) !important;
+}
+
+.home-path-map .home-path-map__step:nth-child(2n):not(:first-child) {
+  transform: translateY(0.18rem) rotate(0.65deg) !important;
+}
+
+.home-path-map .home-path-map__step:nth-child(2n + 1):not(:first-child) {
+  transform: translateY(-0.08rem) rotate(-0.55deg) !important;
+}
+
+.home-path-map .home-path-map__step:focus-visible {
+  outline: 0.16rem solid rgba(58, 45, 42, 0.72);
+  outline-offset: 0.16rem;
+}
+
+@media (max-width: 760px) {
+  .home-path-map::after {
+    content: "order";
+    left: auto;
+    right: 0.72rem;
+    top: 0.8rem;
+    bottom: auto;
+    width: auto;
+    min-height: 0;
+    padding: 0.22rem 0.5rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(1.5deg);
+  }
+
+  .home-path-map .home-path-map__trail {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-path-map .home-path-map__trail::after {
+    position: static;
+    justify-self: start;
+    margin: 0.2rem 0 0;
+  }
+
+  .home-path-map .home-path-map__step,
+  .home-path-map .home-path-map__step:nth-child(2n),
+  .home-path-map .home-path-map__step:nth-child(2n + 1) {
+    transform: none !important;
+  }
+}

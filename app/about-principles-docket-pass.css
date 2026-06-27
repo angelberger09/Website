@@ -1,0 +1,129 @@
+/* About principles docket pass.
+   Turns the Working principles heading into a visible promise docket instead of one broad heading block. */
+
+.about-principles-board .about-board-heading {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.34fr) minmax(0, 1fr);
+  gap: clamp(0.72rem, 2vw, 1.05rem);
+  align-items: stretch;
+  margin: 0 0 clamp(1rem, 3vw, 1.55rem);
+  padding: clamp(0.62rem, 2vw, 0.92rem);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 176, 143, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.86), rgba(255, 247, 235, 0.5)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1.4% 5%, 20% 1%, 48% 3%, 78% 1.4%, 98.6% 4%, 97% 38%, 99% 94%, 73% 98%, 45% 96.4%, 16% 99%, 1.2% 95%, 2.5% 54%);
+  box-shadow:
+    0.16rem 0.28rem 0 rgba(47, 38, 35, 0.07),
+    0.72rem 1rem 1.7rem rgba(47, 38, 35, 0.13);
+}
+
+.about-principles-board .about-board-heading::before {
+  position: absolute;
+  top: -0.42rem;
+  left: clamp(1.2rem, 8vw, 6rem);
+  width: clamp(4.8rem, 13vw, 8rem);
+  height: 0.92rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.8), rgba(185, 201, 175, 0.42), rgba(255, 250, 242, 0.64)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(2% 18%, 26% 4%, 52% 12%, 77% 2%, 98% 19%, 94% 92%, 63% 98%, 31% 88%, 5% 96%);
+  box-shadow: 0 0.22rem 0.58rem rgba(47, 38, 35, 0.12);
+  transform: rotate(-1.6deg);
+}
+
+.about-principles-board .about-board-heading .eyebrow,
+.about-principles-board .about-board-heading h1,
+.about-principles-board .about-board-heading p:not(.eyebrow) {
+  position: relative;
+  margin: 0;
+}
+
+.about-principles-board .about-board-heading .eyebrow {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: 0.78rem 0.72rem;
+  color: rgba(58, 45, 42, 0.82);
+  text-align: center;
+  background:
+    linear-gradient(145deg, rgba(216, 197, 236, 0.5), rgba(255, 250, 242, 0.72)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(3% 6%, 35% 1%, 69% 5%, 98% 2%, 96% 92%, 66% 99%, 28% 95%, 4% 98%);
+  box-shadow: 0.18rem 0.24rem 0 rgba(47, 38, 35, 0.08);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  transform: rotate(-0.7deg);
+}
+
+.about-principles-board .about-board-heading h1 {
+  align-self: end;
+  max-width: 28ch;
+  padding: clamp(0.82rem, 2vw, 1.12rem) clamp(0.9rem, 2.5vw, 1.35rem);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.74)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1.8% 5%, 26% 1.2%, 62% 3.2%, 98% 1.4%, 96% 41%, 98.4% 94%, 69% 98%, 34% 96%, 1.4% 99%, 2.8% 56%);
+  box-shadow:
+    0.12rem 0.24rem 0 rgba(47, 38, 35, 0.08),
+    0.32rem 0.52rem 0.95rem rgba(47, 38, 35, 0.1);
+  font-size: clamp(1.55rem, 3vw, 2.65rem);
+  line-height: 0.98;
+  transform: rotate(0.28deg);
+}
+
+.about-principles-board .about-board-heading p:not(.eyebrow) {
+  grid-column: 2;
+  width: min(100%, 44rem);
+  padding: 0.72rem 0.88rem;
+  color: rgba(58, 45, 42, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.72), rgba(185, 201, 175, 0.22)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(2% 8%, 32% 1%, 68% 5%, 98% 2%, 96% 88%, 62% 98%, 30% 94%, 4% 99%);
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.055);
+  font-size: 0.96rem;
+  line-height: 1.58;
+  transform: rotate(-0.18deg);
+}
+
+.about-principles-board .about-principles-collage {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .about-principles-board .about-board-heading {
+    grid-template-columns: 1fr;
+    padding: 0.78rem;
+  }
+
+  .about-principles-board .about-board-heading .eyebrow,
+  .about-principles-board .about-board-heading p:not(.eyebrow) {
+    grid-column: 1;
+    width: 100%;
+    min-height: auto;
+    text-align: left;
+  }
+
+  .about-principles-board .about-board-heading h1 {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-principles-board .about-board-heading .eyebrow,
+  .about-principles-board .about-board-heading h1,
+  .about-principles-board .about-board-heading p:not(.eyebrow),
+  .about-principles-board .about-board-heading::before {
+    transform: none;
+  }
+}

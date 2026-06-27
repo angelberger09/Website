@@ -1,0 +1,171 @@
+/* Store promise docket pass. Turns the existing promise notes into one guided paper docket without changing Store copy or inventing product material. */
+
+.store-promise-board {
+  overflow: visible;
+}
+
+.store-promise-board::before {
+  filter:
+    drop-shadow(0.34rem 0.86rem 1.65rem rgba(47, 38, 35, 0.16))
+    drop-shadow(-0.18rem 0.18rem 0 rgba(255, 252, 246, 0.7));
+}
+
+.store-promise-board__intro {
+  position: relative;
+  padding-top: 1.85rem;
+}
+
+.store-promise-board__intro::before {
+  position: absolute;
+  top: -0.18rem;
+  left: -0.2rem;
+  z-index: 2;
+  width: fit-content;
+  padding: 0.34rem 0.72rem 0.3rem;
+  content: "promise docket";
+  clip-path: polygon(2% 10%, 30% 1%, 62% 5%, 99% 0, 96% 90%, 75% 100%, 36% 94%, 1% 99%);
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.96), rgba(244, 219, 188, 0.6)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.18rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0.28rem 0.5rem 0.9rem rgba(47, 38, 35, 0.14);
+  transform: rotate(-1.1deg);
+}
+
+.store-promise-note-stack {
+  position: relative;
+  align-items: stretch;
+  padding: clamp(1.1rem, 2.5vw, 1.45rem) clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.store-promise-note-stack::before {
+  position: absolute;
+  top: 1rem;
+  bottom: 1.05rem;
+  left: 1.08rem;
+  width: 0.16rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(47, 38, 35, 0.32) 0 0.42rem,
+      transparent 0.42rem 0.74rem
+    );
+  opacity: 0.6;
+  transform: rotate(0.4deg);
+}
+
+.store-promise-note-stack::after {
+  position: absolute;
+  top: 0.08rem;
+  right: 1rem;
+  z-index: 2;
+  width: fit-content;
+  padding: 0.28rem 0.62rem 0.24rem;
+  content: "trust slips";
+  clip-path: polygon(1% 7%, 26% 1%, 66% 4%, 100% 2%, 96% 91%, 72% 99%, 32% 95%, 0 100%);
+  color: rgba(47, 38, 35, 0.64);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.9), rgba(185, 201, 175, 0.26)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.22rem 0.38rem 0.74rem rgba(47, 38, 35, 0.12);
+  transform: rotate(1.2deg);
+}
+
+.store-promise-note {
+  min-height: 15.2rem;
+  padding-left: clamp(1.15rem, 2vw, 1.5rem);
+  box-shadow:
+    -0.18rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0.42rem 0.78rem 1.28rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.store-promise-note::after {
+  position: absolute;
+  top: 1.28rem;
+  left: 0.38rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 42% 36%, rgba(255, 252, 246, 0.96) 0 18%, rgba(47, 38, 35, 0.5) 20% 28%, rgba(185, 201, 175, 0.88) 31% 100%);
+  box-shadow:
+    0.08rem 0.1rem 0 rgba(47, 38, 35, 0.18),
+    0 0 0 0.18rem rgba(255, 252, 246, 0.54);
+}
+
+.store-promise-note span {
+  margin-left: 0.28rem;
+}
+
+.store-promise-note h2::before {
+  display: block;
+  width: fit-content;
+  margin: 0 0 0.32rem;
+  padding: 0.2rem 0.42rem 0.18rem;
+  clip-path: polygon(3% 10%, 34% 2%, 69% 7%, 99% 1%, 96% 88%, 71% 98%, 30% 94%, 0 100%);
+  color: rgba(47, 38, 35, 0.58);
+  font-family: var(--font-hand);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.58);
+}
+
+.store-promise-note:nth-child(1) h2::before {
+  content: "useful before links";
+}
+
+.store-promise-note:nth-child(2) h2::before {
+  content: "clear after launch";
+}
+
+.store-promise-note:nth-child(3) h2::before {
+  content: "quiet source path";
+}
+
+@media (max-width: 860px) {
+  .store-promise-board__intro {
+    padding-top: 1.55rem;
+  }
+
+  .store-promise-note-stack::before {
+    left: 0.82rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .store-promise-note-stack {
+    padding: 1.1rem 0.6rem 0.6rem 1rem;
+  }
+
+  .store-promise-note-stack::before {
+    top: 1.25rem;
+    bottom: 0.95rem;
+    left: 0.45rem;
+  }
+
+  .store-promise-note-stack::after {
+    right: 0.62rem;
+  }
+
+  .store-promise-note {
+    min-height: 0;
+  }
+}

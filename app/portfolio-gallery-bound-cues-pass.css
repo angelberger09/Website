@@ -1,0 +1,99 @@
+.portfolio-gallery-board {
+  --portfolio-gallery-thread: rgba(92, 66, 39, 0.2);
+}
+
+.portfolio-gallery-board::before {
+  box-shadow:
+    0 1.6rem 3.1rem rgba(83, 61, 37, 0.12),
+    inset 0 0 0 1px rgba(105, 82, 50, 0.08);
+}
+
+.portfolio-gallery-scroll {
+  position: relative;
+  gap: clamp(1.05rem, 2.4vw, 1.65rem);
+  padding: 1.15rem 0.35rem 1.6rem;
+}
+
+.portfolio-gallery-scroll::before {
+  position: sticky;
+  left: 0.15rem;
+  z-index: 3;
+  align-self: start;
+  width: 0.34rem;
+  height: calc(100% - 0.85rem);
+  min-height: 19rem;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent, var(--portfolio-gallery-thread) 9%, var(--portfolio-gallery-thread) 88%, transparent),
+    repeating-linear-gradient(180deg, rgba(92, 66, 39, 0.28) 0 0.32rem, transparent 0.32rem 0.74rem);
+  border-radius: 999px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.portfolio-gallery-card {
+  min-height: 25rem;
+  box-shadow:
+    0 1.05rem 2rem rgba(82, 59, 35, 0.14),
+    0 0.28rem 0 rgba(255, 248, 228, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.portfolio-gallery-card__number {
+  right: auto;
+  left: 0.78rem;
+  min-width: 0;
+  padding: 0.4rem 0.66rem 0.36rem;
+  color: rgba(59, 45, 32, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.94), rgba(240, 221, 179, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0 0.5rem 0.9rem rgba(82, 59, 35, 0.1);
+  transform: rotate(-1.4deg);
+}
+
+.portfolio-gallery-card__number::before {
+  content: "archive cue";
+}
+
+.portfolio-gallery-card--image .portfolio-gallery-card__number::before {
+  content: "preview cue";
+}
+
+.portfolio-gallery-card--note .portfolio-gallery-card__number::before {
+  content: "paper note";
+}
+
+.portfolio-gallery-card__number::after {
+  content: "";
+}
+
+.portfolio-gallery-card__copy {
+  padding-top: 1.25rem;
+}
+
+.portfolio-gallery-card__image span,
+.portfolio-gallery-card .portfolio-note-label {
+  box-shadow: 0 0.36rem 0.65rem rgba(41, 31, 23, 0.12);
+}
+
+@media (max-width: 760px) {
+  .portfolio-gallery-scroll {
+    gap: 0.9rem;
+    padding-top: 0.75rem;
+  }
+
+  .portfolio-gallery-scroll::before {
+    display: none;
+  }
+
+  .portfolio-gallery-card__number {
+    left: 0.62rem;
+  }
+}

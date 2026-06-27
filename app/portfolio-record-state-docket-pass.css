@@ -1,0 +1,127 @@
+.portfolio-state-photo-board {
+  position: relative;
+  padding-left: clamp(1rem, 3vw, 2.4rem);
+}
+
+.portfolio-state-photo-board::after {
+  content: "record docket";
+  position: absolute;
+  top: clamp(5.6rem, 12vw, 7.6rem);
+  left: clamp(0.1rem, 1.2vw, 0.65rem);
+  z-index: 2;
+  padding: 0.42rem 0.58rem;
+  color: rgba(82, 61, 42, 0.86);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 235, 0.94), rgba(232, 214, 176, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 160px 160px;
+  box-shadow: 0 13px 24px rgba(86, 63, 39, 0.16);
+  clip-path: polygon(8% 0, 100% 4%, 93% 100%, 0 94%);
+}
+
+.portfolio-state-stack {
+  position: relative;
+  padding-top: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.portfolio-state-stack::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem auto 1rem clamp(1.1rem, 3vw, 1.7rem);
+  width: 0.12rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(111, 82, 54, 0.38) 0 0.5rem,
+      transparent 0.5rem 0.9rem
+    );
+  opacity: 0.78;
+}
+
+.portfolio-state-photo {
+  position: relative;
+  isolation: isolate;
+  margin-left: clamp(1.6rem, 4vw, 2.8rem);
+}
+
+.portfolio-state-photo::after {
+  position: absolute;
+  top: -0.72rem;
+  left: clamp(0.8rem, 2vw, 1.25rem);
+  z-index: 3;
+  padding: 0.32rem 0.54rem;
+  color: rgba(72, 52, 34, 0.9);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 242, 0.96), rgba(238, 218, 178, 0.88)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 10px 18px rgba(83, 59, 35, 0.14);
+  clip-path: polygon(4% 0, 100% 9%, 94% 100%, 0 90%);
+}
+
+.portfolio-state-photo[data-state-index="1"]::after {
+  content: "Card front";
+}
+
+.portfolio-state-photo[data-state-index="2"]::after {
+  content: "Deep route";
+}
+
+.portfolio-state-photo[data-state-index="3"]::after {
+  content: "Prep shelf";
+}
+
+.portfolio-state-photo[data-state-index="4"]::after {
+  content: "Hold back";
+}
+
+.portfolio-state-photo__copy {
+  position: relative;
+}
+
+.portfolio-state-photo__copy::before {
+  content: "public state";
+  width: fit-content;
+  padding: 0.24rem 0.48rem;
+  color: rgba(105, 77, 51, 0.78);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(255, 248, 225, 0.72);
+  clip-path: polygon(4% 7%, 100% 0, 94% 100%, 0 92%);
+}
+
+@media (max-width: 680px) {
+  .portfolio-state-photo-board {
+    padding-left: 0;
+  }
+
+  .portfolio-state-photo-board::after {
+    top: 1.25rem;
+    left: 1rem;
+    writing-mode: horizontal-tb;
+  }
+
+  .portfolio-state-stack {
+    padding-top: 3.3rem;
+  }
+
+  .portfolio-state-stack::before {
+    inset: 2.7rem auto 1rem 0.7rem;
+  }
+
+  .portfolio-state-photo {
+    margin-left: 1.35rem;
+  }
+}

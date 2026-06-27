@@ -1,0 +1,178 @@
+/* Terminal room surface budget pass.
+   Loaded after the newest route-room docket passes so accumulated paper pieces
+   stay visible, calm, and readable without another heavy decorative layer. */
+
+:root {
+  --terminal-room-shadow: 0.1rem 0.18rem 0 rgba(47, 38, 35, 0.055), 0 0.58rem 1rem rgba(47, 38, 35, 0.085);
+  --terminal-room-shadow-soft: 0.05rem 0.1rem 0 rgba(47, 38, 35, 0.045), 0 0.36rem 0.72rem rgba(47, 38, 35, 0.07);
+  --terminal-room-paper: linear-gradient(142deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.68) 60%, rgba(185, 201, 175, 0.12)), var(--grain-image);
+  --terminal-room-thread: rgba(91, 73, 66, 0.2);
+}
+
+.page-hero__room-shelf,
+.page-hero__room-key,
+.about-room-spine,
+.about-room-key-board,
+.about-contact-sheet-board,
+.about-principles-board,
+.about-pathways-board,
+.notes-gallery-board,
+.notes-support-board,
+.notes-state-tray,
+.notes-source-board,
+.notes-post-support-board,
+.notes-post-path-shelf,
+.portfolio-gallery-board,
+.portfolio-feed-board,
+.portfolio-state-board,
+.store-gallery-board,
+.store-feed-ledger-board,
+.store-availability-board,
+.store-checklist-collage,
+.studio-footer__exit-receipts {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
+}
+
+.page-hero__room-shelf > span,
+.page-hero__room-key,
+.about-room-spine__slip,
+.about-room-key-slip,
+.about-contact-sheet-rail__slip,
+.about-contact-card,
+.about-principle-note,
+.about-pathway-note,
+.notes-gallery-card,
+.notes-support-note,
+.notes-state-note,
+.notes-source-card,
+.notes-post-support-note,
+.notes-post-path-card,
+.portfolio-gallery-card,
+.portfolio-feed-card,
+.portfolio-state-note,
+.store-gallery-card,
+.store-feed-ledger-card,
+.store-feed-rule-tape,
+.store-availability-card,
+.store-checklist-note,
+.studio-footer__exit-receipt {
+  background-blend-mode: normal;
+  filter: none;
+  box-shadow: var(--terminal-room-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.about-room-spine,
+.about-room-key-board,
+.about-contact-sheet-board,
+.about-principles-board,
+.about-pathways-board,
+.notes-gallery-board,
+.notes-source-board,
+.notes-state-tray,
+.portfolio-gallery-board,
+.portfolio-feed-board,
+.store-gallery-board,
+.store-feed-ledger-board,
+.store-availability-board,
+.studio-footer__exit-receipts {
+  background-image: var(--terminal-room-paper);
+  background-size: cover, 24rem 24rem;
+}
+
+.page-hero__room-shelf::before,
+.about-room-spine::before,
+.about-room-key-strip::before,
+.about-contact-sheet-rail::before,
+.notes-gallery-scroll::before,
+.notes-state-tray::before,
+.portfolio-gallery-scroll::before,
+.portfolio-feed-board::before,
+.store-gallery-scroll::before,
+.store-feed-ledger-board::before,
+.studio-footer__exit-receipts::before {
+  opacity: 0.58;
+  filter: none;
+  box-shadow: var(--terminal-room-shadow-soft);
+}
+
+.page-hero__room-shelf::after,
+.about-room-spine::after,
+.about-room-key-strip::after,
+.about-contact-sheet-rail::after,
+.notes-gallery-scroll::after,
+.portfolio-gallery-scroll::after,
+.store-gallery-scroll::after,
+.studio-footer__exit-receipts::after {
+  border-color: var(--terminal-room-thread);
+  opacity: 0.72;
+}
+
+.page-hero__room-shelf-photo,
+.about-room-spine__photo,
+.about-room-key-slip__photo,
+.about-contact-sheet-rail__photo,
+.about-contact-card__image,
+.about-principle-note__photo,
+.about-pathway-note__photo,
+.notes-gallery-card__image,
+.notes-support-note__photo,
+.notes-state-note__photo,
+.notes-post-support-note__photo,
+.notes-post-path-card__visual,
+.portfolio-gallery-card__photo,
+.portfolio-feed-card__photo,
+.store-gallery-card__photo,
+.store-availability-card__photo,
+.store-checklist-note__photo,
+.studio-footer__exit-receipt-photo {
+  filter: none;
+  box-shadow: var(--terminal-room-shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__room-shelf > span,
+  .about-room-spine__slip,
+  .about-room-key-slip,
+  .about-contact-sheet-rail__slip,
+  .about-contact-card,
+  .about-principle-note,
+  .about-pathway-note,
+  .notes-gallery-card,
+  .notes-support-note,
+  .notes-state-note,
+  .notes-post-support-note,
+  .notes-post-path-card,
+  .portfolio-gallery-card,
+  .store-gallery-card,
+  .store-availability-card,
+  .store-checklist-note,
+  .studio-footer__exit-receipt {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-shelf,
+  .about-room-spine,
+  .about-room-key-board,
+  .about-contact-sheet-board,
+  .about-principles-board,
+  .about-pathways-board,
+  .notes-gallery-board,
+  .notes-support-board,
+  .notes-state-tray,
+  .notes-source-board,
+  .notes-post-support-board,
+  .notes-post-path-shelf,
+  .portfolio-gallery-board,
+  .portfolio-feed-board,
+  .portfolio-state-board,
+  .store-gallery-board,
+  .store-feed-ledger-board,
+  .store-availability-board,
+  .store-checklist-collage,
+  .studio-footer__exit-receipts {
+    contain-intrinsic-size: 1px 920px;
+  }
+}

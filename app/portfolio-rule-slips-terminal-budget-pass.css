@@ -1,0 +1,86 @@
+/* Portfolio rule slips terminal budget pass.
+   Loaded after the newest Portfolio rule-slip surface so the three public archive rules keep
+   their paper-slip read without becoming heavier than the surrounding archive shelf. */
+
+.portfolio-feed-ledger-board:has(.portfolio-rule-slip-board),
+.portfolio-rule-slip-board {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 380px;
+}
+
+.portfolio-rule-slip-board {
+  position: relative;
+  isolation: isolate;
+}
+
+.portfolio-rule-slip-board::before {
+  content: "";
+  position: absolute;
+  inset: clamp(-0.55rem, -1vw, -0.35rem) clamp(-0.35rem, -0.8vw, -0.2rem);
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 247, 0.5), rgba(226, 209, 177, 0.22)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  border-radius: 0.4rem;
+  clip-path: polygon(1% 4%, 100% 0, 98% 96%, 0 100%);
+  box-shadow: 0 0.42rem 0.88rem rgba(54, 39, 25, 0.075);
+  opacity: 0.78;
+}
+
+.portfolio-rule-slip-board::after {
+  box-shadow: 0 0.32rem 0.72rem rgba(65, 45, 28, 0.075);
+  opacity: 0.82;
+  filter: none;
+}
+
+.portfolio-rule-slip-board .portfolio-rule-slip {
+  background-image:
+    linear-gradient(145deg, rgba(255, 253, 246, 0.94), rgba(246, 232, 205, 0.72) 66%, rgba(187, 204, 178, 0.1)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  background-blend-mode: normal;
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(54, 39, 25, 0.045),
+    0 0.52rem 1rem rgba(54, 39, 25, 0.095),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  filter: none;
+  transform: none;
+}
+
+.portfolio-rule-slip-board .portfolio-rule-slip:nth-child(2),
+.portfolio-rule-slip-board .portfolio-rule-slip:nth-child(3) {
+  transform: none;
+}
+
+.portfolio-rule-slip-board .portfolio-rule-slip span {
+  box-shadow: 0 0.28rem 0.62rem rgba(62, 44, 25, 0.095);
+  filter: none;
+}
+
+.portfolio-rule-slip-board .portfolio-rule-slip::before,
+.portfolio-rule-slip-board .portfolio-rule-slip::after {
+  filter: none;
+  opacity: 0.68;
+}
+
+@media (max-width: 820px) {
+  .portfolio-rule-slip-board {
+    contain-intrinsic-size: 1px 620px;
+  }
+
+  .portfolio-rule-slip-board::before {
+    inset: -0.35rem -0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-rule-slip-board,
+  .portfolio-rule-slip-board::before,
+  .portfolio-rule-slip-board::after,
+  .portfolio-rule-slip-board .portfolio-rule-slip,
+  .portfolio-rule-slip-board .portfolio-rule-slip span {
+    transform: none !important;
+    transition: none !important;
+  }
+}

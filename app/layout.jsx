@@ -38,6 +38,7 @@ import './portfolio-process-public-thread-pass.css';
 import './portfolio-continuity-photo-pass.css';
 import './portfolio-readiness-photo-pass.css';
 import './portfolio-room-key-pass.css';
+import './portfolio-room-key-compass-pass.css';
 import './portfolio-section-spine-labels-pass.css';
 import './portfolio-lane-direct-labels-pass.css';
 import './portfolio-state-path-shelf-pass.css';

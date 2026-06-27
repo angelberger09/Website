@@ -16,6 +16,7 @@ import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';
 import './about-room-key-pass.css';
 import './about-section-spine-labels-pass.css';
+import './about-room-spine-ledger-pass.css';
 import './about-contact-sheet-pass.css';
 import './about-contact-sheet-rail-pass.css';
 import './about-principle-photo-pass.css';

@@ -1,0 +1,189 @@
+.portfolio-feed-board--shelf {
+  position: relative;
+  overflow: hidden;
+  padding-left: clamp(1.15rem, 3vw, 2.35rem);
+}
+
+.portfolio-feed-board--shelf::before {
+  content: "";
+  position: absolute;
+  top: clamp(5.8rem, 9vw, 7.4rem);
+  bottom: clamp(1.4rem, 4vw, 2.6rem);
+  left: clamp(0.82rem, 2vw, 1.18rem);
+  z-index: 0;
+  width: 2px;
+  background-image: linear-gradient(180deg, rgba(96, 68, 41, 0.38) 0 45%, transparent 45% 100%);
+  background-size: 2px 1rem;
+  opacity: 0.9;
+}
+
+.portfolio-feed-board--shelf::after {
+  content: "archive card drawer";
+  position: absolute;
+  top: clamp(1.02rem, 2.2vw, 1.42rem);
+  left: clamp(1.05rem, 2.8vw, 1.7rem);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.44rem 0.84rem 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(72, 51, 33, 0.86);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.98), rgba(238, 217, 174, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 0.7rem 1.3rem rgba(78, 55, 35, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(3% 0, 99% 9%, 96% 100%, 0 89%);
+  transform: rotate(-1.25deg);
+}
+
+.portfolio-feed-shelf-intro,
+.portfolio-archive-ticket-board,
+.portfolio-feed-ledger--visitor,
+.portfolio-rule-tapes--visitor {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-feed-shelf-intro {
+  margin-top: clamp(0.6rem, 1.4vw, 0.95rem);
+  border-left: 0;
+  box-shadow: 0 1.1rem 2.1rem rgba(78, 55, 35, 0.14), 0 0.18rem 0.6rem rgba(78, 55, 35, 0.08);
+}
+
+.portfolio-feed-shelf-intro::before {
+  content: "public boundary";
+  position: absolute;
+  top: -0.72rem;
+  right: clamp(0.9rem, 2vw, 1.35rem);
+  z-index: 3;
+  padding: 0.34rem 0.56rem 0.28rem;
+  font-size: 0.56rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 252, 244, 0.96);
+  background:
+    linear-gradient(135deg, rgba(58, 43, 29, 0.72), rgba(98, 72, 45, 0.52)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0 0.52rem 0.95rem rgba(62, 44, 25, 0.16);
+  clip-path: polygon(5% 0, 100% 8%, 96% 100%, 0 89%);
+  transform: rotate(1.15deg);
+}
+
+.portfolio-archive-ticket-board {
+  padding-top: clamp(0.85rem, 1.8vw, 1.2rem);
+}
+
+.portfolio-archive-ticket {
+  box-shadow: 0 1rem 1.85rem rgba(69, 48, 30, 0.14), 0 0.18rem 0.5rem rgba(69, 48, 30, 0.08);
+}
+
+.portfolio-feed-ledger--visitor {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10.5rem, 1fr));
+  gap: clamp(0.78rem, 1.55vw, 1.05rem);
+  padding: clamp(1.2rem, 2vw, 1.55rem) clamp(0.65rem, 1.5vw, 0.9rem) 0;
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(14rem, 20vw, 17rem);
+  transform: rotate(-0.45deg);
+  box-shadow: 0 1rem 1.8rem rgba(72, 51, 33, 0.13), 0 0.18rem 0.54rem rgba(72, 51, 33, 0.08);
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(2n) {
+  transform: rotate(0.5deg);
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card::after {
+  position: absolute;
+  top: 0.48rem;
+  right: 0.5rem;
+  z-index: 4;
+  padding: 0.3rem 0.48rem 0.24rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 252, 244, 0.95);
+  background:
+    linear-gradient(135deg, rgba(58, 43, 29, 0.7), rgba(98, 72, 45, 0.5)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 120px 120px;
+  box-shadow: 0 0.46rem 0.86rem rgba(62, 44, 25, 0.14);
+  clip-path: polygon(5% 0, 98% 10%, 100% 88%, 0 100%);
+}
+
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(1)::after { content: "title slip"; }
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(2)::after { content: "role slip"; }
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(3)::after { content: "preview slip"; }
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(4)::after { content: "source slip"; }
+.portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(n + 5)::after { content: "card part"; }
+
+.portfolio-rule-tapes--visitor {
+  margin-top: clamp(0.9rem, 2vw, 1.25rem);
+  padding-left: clamp(0.3rem, 1vw, 0.55rem);
+}
+
+.portfolio-rule-tapes--visitor::before {
+  content: "safe shelf rules";
+  display: inline-flex;
+  width: max-content;
+  margin: 0 0 clamp(0.42rem, 1vw, 0.62rem);
+  padding: 0.34rem 0.62rem 0.28rem;
+  font-size: 0.57rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(76, 54, 35, 0.84);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.96), rgba(238, 217, 174, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 130px 130px;
+  box-shadow: 0 0.52rem 0.95rem rgba(62, 44, 25, 0.12);
+  clip-path: polygon(4% 0, 98% 8%, 100% 90%, 0 100%);
+}
+
+@media (max-width: 860px) {
+  .portfolio-feed-ledger--visitor {
+    grid-template-columns: repeat(2, minmax(10.5rem, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-feed-board--shelf {
+    padding-left: clamp(0.75rem, 4vw, 1rem);
+  }
+
+  .portfolio-feed-board--shelf::before {
+    display: none;
+  }
+
+  .portfolio-feed-board--shelf::after {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 0 0.65rem;
+  }
+
+  .portfolio-feed-ledger--visitor {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-feed-ledger--visitor .portfolio-feed-card,
+  .portfolio-feed-ledger--visitor .portfolio-feed-card:nth-child(2n) {
+    transform: none;
+  }
+}

@@ -220,6 +220,7 @@ import './terminal-preview-surface-budget-pass.css';
 import './about-room-path-docket-pass.css';
 import './about-opening-room-table-pass.css';
 import './about-opening-terminal-budget-pass.css';
+import './portfolio-rule-slips-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

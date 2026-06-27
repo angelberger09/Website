@@ -1,0 +1,124 @@
+/* Footer bound exit path pass.
+   Binds the four footer exit receipts into one readable stitched paper route
+   so the bottom chrome feels like a composed exit map, not separate cards. */
+
+.studio-footer__exit-receipts {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(0.9rem, 1.8vw, 1.18rem) clamp(0.66rem, 1.5vw, 0.92rem) clamp(0.72rem, 1.4vw, 0.94rem);
+}
+
+.studio-footer__exit-receipts::before {
+  inset: 0.02rem 0.08rem 0.02rem;
+  background:
+    linear-gradient(100deg, rgba(238, 223, 190, 0.34), transparent 18% 78%, rgba(102, 81, 50, 0.08)),
+    linear-gradient(96deg, rgba(255, 252, 241, 0.92), rgba(236, 220, 190, 0.68) 56%, rgba(255, 250, 234, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, auto, 170px 170px;
+  clip-path: polygon(1% 12%, 16% 4%, 38% 9%, 63% 3%, 99% 9%, 98% 88%, 81% 96%, 57% 91%, 27% 97%, 2% 90%);
+  box-shadow:
+    0 0.92rem 1.6rem rgba(70, 50, 27, 0.14),
+    inset 0 -0.78rem 1.2rem rgba(118, 84, 43, 0.06),
+    inset 0 0.14rem 0 rgba(255, 253, 245, 0.62);
+}
+
+.studio-footer__exit-receipts::after {
+  content: "bound exit path";
+  top: 0.1rem;
+  left: clamp(1rem, 2.4vw, 1.55rem);
+  right: auto;
+  bottom: auto;
+  z-index: 5;
+  transform: rotate(-0.8deg);
+}
+
+.studio-footer__exit-receipt {
+  z-index: 2;
+  min-height: 6.15rem;
+  transform-origin: 50% 75%;
+}
+
+.studio-footer__exit-receipt::before {
+  top: -0.18rem;
+  left: 12%;
+  right: 12%;
+  width: auto;
+  height: 0.36rem;
+  z-index: 4;
+  background:
+    linear-gradient(92deg, rgba(169, 134, 82, 0.18), rgba(255, 250, 232, 0.52), rgba(145, 111, 66, 0.16));
+  box-shadow: 0 0.18rem 0.34rem rgba(67, 48, 27, 0.08);
+  opacity: 0.88;
+}
+
+.studio-footer__exit-receipt::after {
+  content: attr(aria-label);
+  left: 0.52rem;
+  right: auto;
+  bottom: 0.42rem;
+  max-width: calc(100% - 1.04rem);
+  color: rgba(57, 42, 25, 0.7);
+  background:
+    linear-gradient(108deg, rgba(255, 250, 234, 0.8), rgba(230, 211, 176, 0.5));
+  font-size: 0.5rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studio-footer__exit-receipt:nth-child(odd) {
+  margin-top: 0.28rem;
+}
+
+.studio-footer__exit-receipt:nth-child(even) {
+  margin-bottom: 0.2rem;
+}
+
+.studio-footer__exit-receipt + .studio-footer__exit-receipt::before {
+  box-shadow:
+    -1.2rem 0.92rem 0 -1.08rem rgba(88, 64, 34, 0.26),
+    0 0.18rem 0.34rem rgba(67, 48, 27, 0.08);
+}
+
+.studio-footer__exit-receipt-photo {
+  min-height: 4.82rem;
+}
+
+.studio-footer__trail {
+  margin-top: clamp(0.55rem, 1.2vw, 0.9rem);
+}
+
+@media (max-width: 980px) and (min-width: 761px) {
+  .studio-footer__exit-receipts {
+    gap: clamp(0.64rem, 1.6vw, 0.94rem);
+  }
+
+  .studio-footer__exit-receipt:nth-child(odd),
+  .studio-footer__exit-receipt:nth-child(even) {
+    margin: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .studio-footer__exit-receipts {
+    padding: 1rem 0.62rem 0.72rem;
+  }
+
+  .studio-footer__exit-receipts::after {
+    left: 0.92rem;
+  }
+
+  .studio-footer__exit-receipt {
+    min-height: 0;
+  }
+
+  .studio-footer__exit-receipt:nth-child(odd),
+  .studio-footer__exit-receipt:nth-child(even) {
+    margin: 0;
+  }
+
+  .studio-footer__exit-receipt::after {
+    display: none;
+  }
+}

@@ -1,0 +1,111 @@
+.portfolio-process-photo-board {
+  position: relative;
+  padding-left: clamp(1.1rem, 3vw, 2.4rem);
+}
+
+.portfolio-process-photo-board::after {
+  content: "public path";
+  position: absolute;
+  top: clamp(1.2rem, 4vw, 2.2rem);
+  left: clamp(0.35rem, 1.5vw, 0.9rem);
+  z-index: 1;
+  width: 2.35rem;
+  min-height: 10.5rem;
+  display: grid;
+  place-items: center;
+  padding: 0.7rem 0.32rem;
+  color: rgba(66, 48, 32, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) rotate(-1.8deg);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 229, 0.96), rgba(231, 210, 171, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow:
+    0 0.9rem 1.4rem rgba(82, 59, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(18% 0, 100% 5%, 90% 95%, 10% 100%, 0 12%);
+}
+
+.portfolio-process-photo-ribbon {
+  position: relative;
+  counter-reset: portfolio-process-step;
+}
+
+.portfolio-process-photo-ribbon::before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  bottom: 2.2rem;
+  left: clamp(0.65rem, 2vw, 1.25rem);
+  width: 1px;
+  background-image: linear-gradient(to bottom, rgba(92, 67, 43, 0.46) 48%, transparent 0);
+  background-size: 1px 0.72rem;
+  opacity: 0.7;
+}
+
+.portfolio-process-photo-ribbon li {
+  position: relative;
+  counter-increment: portfolio-process-step;
+  padding-left: clamp(1.1rem, 3vw, 1.8rem);
+}
+
+.portfolio-process-photo-ribbon li::after {
+  content: "step " counter(portfolio-process-step);
+  position: absolute;
+  top: 0.62rem;
+  left: 0;
+  z-index: 2;
+  width: fit-content;
+  padding: 0.34rem 0.48rem;
+  color: rgba(61, 44, 29, 0.72);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.96), rgba(237, 217, 177, 0.86)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 0.55rem 1rem rgba(82, 59, 35, 0.12);
+  transform: rotate(-3deg);
+  clip-path: polygon(5% 4%, 100% 0, 96% 92%, 8% 100%, 0 84%);
+}
+
+.portfolio-process-photo-ribbon li:nth-child(2n)::after {
+  transform: rotate(2.4deg);
+}
+
+.portfolio-process-ribbon__copy p {
+  max-width: 32rem;
+}
+
+@media (max-width: 760px) {
+  .portfolio-process-photo-board {
+    padding-left: 0;
+  }
+
+  .portfolio-process-photo-board::after {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: fit-content;
+    min-height: 0;
+    margin: 0 0 1rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-1.2deg);
+  }
+
+  .portfolio-process-photo-ribbon::before {
+    left: 0.52rem;
+  }
+
+  .portfolio-process-photo-ribbon li {
+    padding-left: 1.35rem;
+  }
+}

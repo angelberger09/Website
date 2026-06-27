@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-26 23:50 ET — About contact sheet exposure desk
+
+### Changed
+
+- Added `app/about-contact-sheet-exposure-desk-pass.css`.
+- Loaded the pass after `app/final-paper-surface-budget-pass.css` in `app/layout.jsx` so the refinement remains visible after shared budget rules.
+- Turned the existing About contact sheet into a two-column paper exposure desk with a clipped board, stitched side thread, left contact-desk note stack, staggered frame cards, and direct `contact desk` / `soft frame` labels.
+- Added `.agent/changes/2026-06-26-about-contact-sheet-exposure-desk.md`.
+- Added `.agent/matrices/about-contact-sheet-exposure-desk.matrix.md`.
+
+### Why
+
+The About contact sheet already had honest public orientation copy and content-bearing frame cards, but it still read as a row of separate cards rather than one composed room-reading surface. This pass makes the section visibly closer to the calm-room, paper-snippet, flattened hierarchy, and photo-led content goals without changing copy, routes, data, or inventing imagery.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-26 23:30 ET — Homepage hero room status cues
 
 ### Changed

@@ -77,33 +77,10 @@
   clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 1.5% 99%));
   background: rgba(216, 197, 236, 0.3);
   padding: 0.24rem 0.42rem;
-  color: rgba(58, 45, 42, 0.78);
-  font-family: var(--font-hand);
-  font-size: 0;
-  line-height: 1;
-}
-
-.home-hero-route-slip__copy small::before {
-  display: inline-block;
   color: rgba(58, 45, 42, 0.82);
+  font-family: var(--font-hand);
   font-size: 0.78rem;
   line-height: 1;
-}
-
-.home-hero-route-slip:nth-child(1) .home-hero-route-slip__copy small::before {
-  content: "Open map";
-}
-
-.home-hero-route-slip:nth-child(2) .home-hero-route-slip__copy small::before {
-  content: "Reading shelf";
-}
-
-.home-hero-route-slip:nth-child(3) .home-hero-route-slip__copy small::before {
-  content: "Public archive";
-}
-
-.home-hero-route-slip:nth-child(4) .home-hero-route-slip__copy small::before {
-  content: "Preparing";
 }
 
 @media (max-width: 760px) {

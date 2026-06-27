@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 02:28 ET — Store promise photo cues
+
+### Changed
+
+- Updated `app/store/page.jsx` so each Store promise note includes a real `.store-promise-note__photo` visual center with direct public-safe cue text.
+- Updated `app/store-promise-docket-pass.css` so the promise docket pin, stitched path, abstract paper/photo center, and promise copy can coexist without competing for the same pseudo-element.
+- Added `.agent/changes/2026-06-27-store-promise-photo-cues.md`.
+- Added `.agent/matrices/store-promise-photo-cues.matrix.md`.
+
+### Why
+
+The Store promise section already had public-safe promise copy, a docket wrapper, and an earlier photo-center intent, but the later docket pass reused `.store-promise-note::after` for small pins. That made the photo-center treatment too quiet and fragile. This pass restores the Store promise notes as visible content-bearing paper/photo pieces without adding fake products, fake listings, fake photos, live inventory, or private planning details.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 02:10 ET — About principle promise trail
 
 ### Changed
@@ -257,81 +296,3 @@ The About contact sheet already had honest public orientation copy and content-b
 ### Why
 
 The homepage hero already had useful route cards, but the repeated status slip made every room look equally open and flattened the honest readiness path. The new visible status cues clarify the room jobs without changing route links, source data, or inventing unavailable store content.
-
-### Related items
-
-- PAGE-001
-- COMP-003
-- COMP-004
-- DESIGN-006
-- DESIGN-019
-- DESIGN-021
-- DESIGN-022
-- DESIGN-029
-- DESIGN-030
-- LESSON-001
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-021
-- LESSON-022
-- LESSON-025
-- METRIC-001
-- METRIC-002
-- METRIC-018
-- METRIC-020
-- METRIC-021
-- METRIC-029
-- METRIC-030
-
-## 2026-06-23 22:40 ET — Minimal studio homepage
-
-### Changed
-
-- Replaced technical demo homepage copy.
-- Added floating header.
-- Added Pages folder menu.
-- Added scroll title sequence.
-- Added four minimal destination cards.
-
-### Why
-
-The homepage needed to feel like a real minimal public studio homepage instead of a repo/data viewer.
-
-### Related items
-
-- PAGE-001
-- COMP-001
-- COMP-002
-- COMP-003
-- COMP-004
-- LESSON-001
-- LESSON-002
-- LESSON-003
-
-## 2026-06-23 22:55 ET — Public agent memory system
-
-### Changed
-
-- Added root `agent.md`.
-- Added root `start-here.md`.
-- Added `.agent/` project memory folder.
-- Added matrices, lessons, maps, and reusable templates.
-
-### Why
-
-Future site work needs a public-safe memory layer for intent, feedback lessons, semantic items, decisions, and quality checks.
-
-### Related items
-
-- DEC-004
-- DEC-005
-- LESSON-004
-- METRIC-004
-- METRIC-006
-
-## 2026-06-23 23:03 ET — Feedback-to-lesson workflow
-
-### Changed
-
-- Added `.agent/feedback/` documentation.

@@ -114,6 +114,7 @@ import './footer-current-room-slip-pass.css';
 import './footer-room-trail-thread-pass.css';
 import './page-intro-performance-pass.css';
 import './home-entry-contact-sheet-pass.css';
+import './home-door-room-cue-slips-pass.css';
 import './performance-budget-pass.css';
 import './root-paper-budget-pass.css';
 import './root-paper-fold-map-pass.css';

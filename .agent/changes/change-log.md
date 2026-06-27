@@ -2,6 +2,41 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 12:40 ET — About principle sequence ledger
+
+### Changed
+
+- Added `app/about-principle-sequence-ledger-pass.css`.
+- Loaded it through `app/about-principles-promise-docket-pass.css`, which is already imported by the root layout.
+- Bound the About working-principle notes into one visible `promise ledger` with a clipped paper backing, top label, stitch thread, direct cue slips, stronger grouped depth, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-27-about-principle-sequence-ledger.md`.
+- Added `.agent/matrices/about-principle-sequence-ledger.matrix.md`.
+
+### Why
+
+The About working-principles heading already had a promise docket, but the individual principle notes could still read as separate cards. This pass makes the section closer to the paper-first, flattened-room, text-snippet, and calm section-field goals while preserving the existing public About copy and route structure.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 12:30 ET — Homepage house-rules source slips
 
 ### Changed

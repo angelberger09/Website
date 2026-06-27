@@ -1,0 +1,83 @@
+/* Give ordinary Notes post Markdown paragraphs their own calm paper-slip rhythm.
+   This keeps the reader paper-first after headings, lists, quotes, and code are already treated. */
+.notes-post-markdown p {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  max-width: min(100%, 58rem);
+  margin: clamp(0.82rem, 2vw, 1.18rem) 0;
+  padding: clamp(0.82rem, 2vw, 1.08rem) clamp(0.9rem, 2.4vw, 1.28rem);
+  color: rgba(58, 45, 42, 0.88);
+  line-height: 1.72;
+  border-radius: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.58) 62%, rgba(185, 201, 175, 0.12)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 19rem 19rem, 38rem 38rem;
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.055),
+    0 0.56rem 1rem rgba(47, 38, 35, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  clip-path: polygon(1% 4%, 24% 1.4%, 61% 3%, 98% 1.8%, 97% 93%, 74% 97.5%, 36% 96%, 1.6% 98.4%);
+}
+
+.notes-post-markdown p::before {
+  position: absolute;
+  top: 0.58rem;
+  left: 0.62rem;
+  z-index: -1;
+  width: 0.44rem;
+  height: 0.44rem;
+  content: "";
+  border-radius: 999px;
+  background: rgba(255, 176, 143, 0.58);
+  box-shadow: 0.12rem 0.16rem 0.24rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-post-markdown p:nth-of-type(2n) {
+  margin-left: clamp(0rem, 4vw, 1.4rem);
+  background:
+    linear-gradient(132deg, rgba(255, 250, 242, 0.78), rgba(245, 224, 198, 0.36) 58%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 20rem 20rem, 40rem 40rem;
+  transform: rotate(-0.18deg);
+  clip-path: polygon(1.4% 2.8%, 29% 4%, 58% 1.6%, 98% 3%, 96.8% 95%, 68% 98%, 32% 96%, 2% 97.5%);
+}
+
+.notes-post-markdown p:nth-of-type(3n) {
+  max-width: min(100%, 52rem);
+  transform: rotate(0.16deg);
+}
+
+.notes-post-markdown h2 + p,
+.notes-post-markdown h3 + p {
+  margin-top: clamp(0.7rem, 1.8vw, 1rem);
+}
+
+.notes-post-markdown p + ul,
+.notes-post-markdown p + ol,
+.notes-post-markdown p + blockquote,
+.notes-post-markdown p + pre {
+  margin-top: clamp(0.9rem, 2.3vw, 1.28rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-post-markdown p,
+  .notes-post-markdown p:nth-of-type(2n),
+  .notes-post-markdown p:nth-of-type(3n) {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown p,
+  .notes-post-markdown p:nth-of-type(2n),
+  .notes-post-markdown p:nth-of-type(3n) {
+    width: auto;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 0.78rem 0.82rem;
+  }
+}

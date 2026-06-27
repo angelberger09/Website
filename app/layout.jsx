@@ -51,6 +51,7 @@ import './store-availability-status-pass.css';
 import './store-lane-collage-pass.css';
 import './store-promise-collage-pass.css';
 import './store-promise-photo-pass.css';
+import './store-promise-docket-pass.css';
 import './store-checklist-collage-pass.css';
 import './store-checklist-direct-cues-pass.css';
 import './store-path-photo-pass.css';

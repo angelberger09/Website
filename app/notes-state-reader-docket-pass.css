@@ -1,0 +1,171 @@
+/* Notes state reader docket pass. Makes the reader behavior states read as one calm tray instead of three detached notes. */
+
+.notes-state-board {
+  --notes-docket-paper: rgba(255, 250, 235, 0.92);
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(0.9rem, 2.5vw, 1.6rem) clamp(1.45rem, 3.5vw, 2.25rem);
+}
+
+.notes-state-board::before {
+  content: "reader docket";
+  left: clamp(-0.85rem, -1.2vw, -0.35rem);
+  top: clamp(0.85rem, 1.8vw, 1.35rem);
+  max-width: 7.4rem;
+}
+
+.notes-state-board::after {
+  left: clamp(1.05rem, 2.3vw, 1.85rem);
+  top: clamp(5.1rem, 8vw, 6.6rem);
+  bottom: clamp(1.65rem, 4vw, 2.45rem);
+  width: 0.18rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(92, 70, 49, 0.32) 0 0.36rem,
+      transparent 0.36rem 0.72rem
+    );
+  box-shadow: 0.22rem 0 0 rgba(255, 252, 246, 0.58);
+}
+
+.notes-state-board .notes-state-board__intro::after {
+  content: "loading / unavailable / public only";
+  display: block;
+  width: fit-content;
+  margin-top: 0.72rem;
+  padding: 0.35rem 0.58rem 0.32rem;
+  color: rgba(63, 49, 38, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.9), rgba(231, 215, 188, 0.72)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0 0.45rem 0.9rem rgba(74, 47, 29, 0.12);
+  clip-path: polygon(3% 10%, 96% 0, 100% 86%, 4% 100%);
+  transform: rotate(-0.9deg);
+}
+
+.notes-state-list {
+  gap: clamp(0.95rem, 2.3vw, 1.7rem);
+  padding: clamp(0.8rem, 2vw, 1.15rem) clamp(0.25rem, 1vw, 0.55rem) 0 clamp(1.2rem, 3.4vw, 2.65rem);
+}
+
+.notes-state-list::before {
+  content: "";
+  position: absolute;
+  inset: 0 0.15rem -0.65rem clamp(0.45rem, 1.4vw, 0.9rem);
+  z-index: -1;
+  background:
+    linear-gradient(110deg, rgba(255, 252, 246, 0.56), rgba(245, 224, 198, 0.24)),
+    url('/Website/atmosphere/dust-specks.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 26rem 26rem, 18rem 18rem;
+  box-shadow:
+    0 1.2rem 2.4rem rgba(74, 47, 29, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  clip-path: polygon(1% 5%, 18% 2%, 45% 4%, 73% 1%, 99% 4%, 97% 92%, 76% 96%, 47% 93%, 19% 98%, 2% 94%);
+}
+
+.notes-state-note {
+  padding-top: clamp(6.4rem, 10vw, 7.3rem);
+  min-height: 17.5rem;
+  overflow: hidden;
+}
+
+.notes-state-note::after {
+  content: "state card";
+  position: absolute;
+  right: 0.75rem;
+  top: 0.82rem;
+  z-index: 3;
+  width: fit-content;
+  max-width: 6.8rem;
+  padding: 0.3rem 0.48rem 0.26rem;
+  color: rgba(63, 49, 38, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.8);
+  box-shadow: 0 0.32rem 0.65rem rgba(74, 47, 29, 0.11);
+  clip-path: polygon(2% 8%, 97% 0, 100% 88%, 5% 100%);
+  transform: rotate(1.5deg);
+}
+
+.notes-state-note:nth-child(1)::after {
+  content: "gathering";
+}
+
+.notes-state-note:nth-child(2)::after {
+  content: "pause note";
+}
+
+.notes-state-note:nth-child(3)::after {
+  content: "public only";
+}
+
+.notes-state-note__photo {
+  position: absolute;
+  top: 1.55rem;
+  right: 1rem;
+  left: 1rem;
+  height: clamp(4rem, 7.5vw, 4.9rem);
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background:
+    radial-gradient(circle at 26% 35%, rgba(185, 201, 175, 0.48), transparent 31%),
+    radial-gradient(circle at 78% 66%, rgba(216, 197, 236, 0.35), transparent 34%),
+    linear-gradient(145deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, cover, 14rem 14rem;
+}
+
+.notes-state-note__photo span {
+  padding: 0.28rem 0.45rem;
+  color: rgba(63, 49, 38, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.72);
+  clip-path: polygon(2% 6%, 96% 0, 100% 88%, 4% 100%);
+}
+
+.notes-state-note .eyebrow {
+  width: fit-content;
+  padding: 0.26rem 0.42rem 0.22rem;
+  background: rgba(255, 252, 246, 0.66);
+  clip-path: polygon(1% 9%, 96% 0, 100% 89%, 5% 100%);
+}
+
+@media (max-width: 760px) {
+  .notes-state-board {
+    padding: clamp(1rem, 4vw, 1.35rem);
+  }
+
+  .notes-state-board::before {
+    left: 0.45rem;
+    top: 0.6rem;
+  }
+
+  .notes-state-list {
+    padding: 0;
+  }
+
+  .notes-state-list::before {
+    inset: -0.3rem -0.25rem -0.45rem;
+  }
+
+  .notes-state-note {
+    min-height: auto;
+    padding-top: 6.35rem;
+  }
+
+  .notes-state-board .notes-state-board__intro::after,
+  .notes-state-note::after {
+    transform: none;
+  }
+}

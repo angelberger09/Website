@@ -23,36 +23,48 @@ const homepagePathSteps = [
   {
     href: "#studio-front-room",
     label: "Enter",
+    chapter: "Start here",
+    roomKey: "front desk",
     title: "Front room",
     detail: "enter softly"
   },
   {
     href: "#studio-room-status",
     label: "Ready",
+    chapter: "Room check",
+    roomKey: "public now",
     title: "Current rooms",
     detail: "see what is ready"
   },
   {
     href: "#studio-room-doors",
     label: "Doors",
+    chapter: "Choose door",
+    roomKey: "four rooms",
     title: "Studio rooms",
     detail: "choose a door"
   },
   {
     href: "#studio-shape",
     label: "Shape",
+    chapter: "Making rules",
+    roomKey: "paper path",
     title: "Studio shape",
     detail: "read the making rules"
   },
   {
     href: "#studio-house-rules",
     label: "Rules",
+    chapter: "Keep close",
+    roomKey: "studio promise",
     title: "House rules",
     detail: "keep the promise"
   },
   {
     href: "#studio-next-path",
     label: "Next",
+    chapter: "Leave gently",
+    roomKey: "next room",
     title: "Next path",
     detail: "continue gently"
   }
@@ -120,11 +132,13 @@ export default function HomePage() {
             <a className="home-path-map__step" href={step.href} key={step.href} role="listitem">
               <span className="home-path-map__thread" aria-hidden="true" />
               <span className="home-path-map__photo" aria-hidden="true">
+                <span className="home-path-map__chapter-slip">{step.chapter}</span>
                 <b>{step.label}</b>
                 <em>{step.title}</em>
               </span>
               <span className="home-path-map__number">{step.label}</span>
               <span className="home-path-map__copy">
+                <span className="home-path-map__room-key">{step.roomKey}</span>
                 <strong>{step.title}</strong>
                 <small>{step.detail}</small>
               </span>

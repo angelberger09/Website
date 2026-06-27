@@ -85,15 +85,15 @@
   transform: rotate(6deg);
 }
 
-.home-room-status .home-room-slip:nth-child(3)::before {
+.home-room-status .home-room-slip:nth-child(2)::before {
   content: "read";
 }
 
-.home-room-status .home-room-slip:nth-child(4)::before {
+.home-room-status .home-room-slip:nth-child(3)::before {
   content: "view";
 }
 
-.home-room-status .home-room-slip:nth-child(5)::before {
+.home-room-status .home-room-slip:nth-child(4)::before {
   content: "prep";
 }
 

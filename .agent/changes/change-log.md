@@ -2,6 +2,45 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-26 23:30 ET — Homepage hero room status cues
+
+### Changed
+
+- Updated `app/home-entry-contact-sheet-pass.css` so the homepage hero contact-sheet cards no longer repeat the same visible `Open room` cue on every destination.
+- The first-screen route cards now show direct room status slips: `Open map`, `Reading shelf`, `Public archive`, and `Preparing`.
+- Added `.agent/changes/2026-06-26-homepage-hero-room-status-cues.md`.
+- Added `.agent/matrices/homepage-hero-room-status-cues.matrix.md`.
+
+### Why
+
+The homepage hero already had useful route cards, but the repeated status slip made every room look equally open and flattened the honest readiness path. The new visible status cues clarify the room jobs without changing route links, source data, or inventing unavailable store content.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-006
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-23 22:40 ET — Minimal studio homepage
 
 ### Changed

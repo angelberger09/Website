@@ -187,6 +187,7 @@ import './store-feed-shelf-docket-pass.css';
 import './home-house-rules-docket-pass.css';
 import './late-paper-surface-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
+import './store-preview-proof-rail-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

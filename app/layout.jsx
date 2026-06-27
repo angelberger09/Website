@@ -149,6 +149,7 @@ import './home-departure-desk-pass.css';
 import './shared-paper-depth-pass.css';
 import './page-intro-paper-desk-pass.css';
 import './calm-structured-rooms-pass.css';
+import './site-shell-room-backing-pass.css';
 import './room-heading-ribbons-pass.css';
 import './page-intro-room-rhythm-pass.css';
 import './page-intro-room-thread-labels-pass.css';

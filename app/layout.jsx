@@ -167,6 +167,7 @@ import './notes-post-title-folio-pass.css';
 import './notes-post-title-cue-slip-pass.css';
 import './notes-post-support-ledger-pass.css';
 import './notes-state-tray-spine-pass.css';
+import './notes-state-tray-direct-cues-pass.css';
 import { AtmosphereLayer, SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {

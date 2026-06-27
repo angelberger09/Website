@@ -1,0 +1,113 @@
+/* Store promise binding path pass.
+   Binds the Store promise notes into one visible trust path instead of three separate promise cards. */
+
+.store-promise-note-stack {
+  position: relative;
+  padding: clamp(2.1rem, 4vw, 2.65rem) clamp(0.9rem, 2vw, 1.2rem) clamp(1rem, 2.4vw, 1.35rem);
+  clip-path: polygon(1% 4%, 18% 1.5%, 48% 3%, 82% 1%, 99% 4%, 97% 92%, 78% 98%, 42% 95.5%, 2% 99%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.62), rgba(255, 247, 235, 0.38) 58%, rgba(216, 197, 236, 0.14)),
+    radial-gradient(circle at 16% 20%, rgba(185, 201, 175, 0.2), transparent 31%),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, 18rem 18rem, 30rem 30rem;
+  box-shadow:
+    -0.14rem 0.2rem 0 rgba(47, 38, 35, 0.055),
+    0.42rem 0.86rem 1.55rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.store-promise-note-stack::before {
+  content: "";
+  position: absolute;
+  top: clamp(1.12rem, 2.4vw, 1.38rem);
+  right: clamp(1.05rem, 2.4vw, 1.55rem);
+  bottom: auto;
+  left: clamp(1.05rem, 2.4vw, 1.55rem);
+  width: auto;
+  height: 0.18rem;
+  border-radius: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(87, 72, 58, 0.38) 0 0.44rem, transparent 0.44rem 0.78rem),
+    linear-gradient(90deg, rgba(185, 201, 175, 0.42), rgba(216, 197, 236, 0.36), rgba(255, 176, 143, 0.28));
+  box-shadow: 0.08rem 0.18rem 0.38rem rgba(47, 38, 35, 0.1);
+  opacity: 0.86;
+  transform: rotate(-0.15deg);
+}
+
+.store-promise-note-stack::after {
+  content: "one promise path";
+  top: 0.46rem;
+  right: clamp(0.9rem, 2vw, 1.28rem);
+  background: rgba(255, 246, 218, 0.92);
+  box-shadow: 0.16rem 0.3rem 0.62rem rgba(47, 38, 35, 0.14);
+  transform: rotate(0.85deg);
+}
+
+.store-promise-note {
+  min-height: 19.2rem;
+  border-left: 0;
+}
+
+.store-promise-note::before {
+  content: "01";
+  top: 0.52rem;
+  left: 0.68rem;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  min-width: 2.15rem;
+  padding: 0.27rem 0.48rem 0.24rem;
+  clip-path: polygon(2% 14%, 28% 1%, 72% 8%, 100% 0, 96% 88%, 67% 100%, 28% 92%, 0 100%);
+  color: rgba(47, 38, 35, 0.68);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-align: center;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.86), rgba(245, 224, 198, 0.58)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow: 0.12rem 0.22rem 0.44rem rgba(47, 38, 35, 0.12);
+  transform: rotate(-1.6deg);
+}
+
+.store-promise-note:nth-child(2)::before {
+  content: "02";
+  transform: rotate(1.2deg);
+}
+
+.store-promise-note:nth-child(3)::before {
+  content: "03";
+  transform: rotate(-0.7deg);
+}
+
+.store-promise-note h2::before {
+  box-shadow: 0.08rem 0.16rem 0.34rem rgba(47, 38, 35, 0.08);
+}
+
+@media (max-width: 680px) {
+  .store-promise-note-stack {
+    padding: 2rem 0.65rem 0.75rem;
+  }
+
+  .store-promise-note-stack::before {
+    right: 0.86rem;
+    left: 0.86rem;
+  }
+
+  .store-promise-note-stack::after {
+    position: absolute;
+    top: 0.48rem;
+    right: 0.72rem;
+  }
+
+  .store-promise-note,
+  .store-promise-note:nth-child(1),
+  .store-promise-note:nth-child(2),
+  .store-promise-note:nth-child(3) {
+    transform: none;
+  }
+}

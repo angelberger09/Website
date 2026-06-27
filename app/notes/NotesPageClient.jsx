@@ -72,6 +72,17 @@ function readerStateVisualLabel(readerState) {
   return labelMap[readerState.title] || readerState.eyebrow || "state";
 }
 
+function readerStateCueLabel(readerState, index) {
+  const labelMap = {
+    Loading: "Gathering shelf",
+    Unavailable: "Pause note",
+    "Published only": "Public only"
+  };
+  const fallbackLabels = ["Gathering shelf", "Pause note", "Public only"];
+
+  return labelMap[readerState.title] || fallbackLabels[index] || "Reader state";
+}
+
 function buildNotesPathCards(featuredPost, routeBase) {
   return [
     {
@@ -297,11 +308,12 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
           <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
         </div>
         <div className="notes-state-list">
-          {notesReaderStates.map((readerState) => (
+          {notesReaderStates.map((readerState, index) => (
             <article className="notes-state-note" key={readerState.title}>
               <span className="notes-state-note__photo" aria-hidden="true">
                 <span>{readerStateVisualLabel(readerState)}</span>
               </span>
+              <span className="notes-state-note__cue" aria-hidden="true">{readerStateCueLabel(readerState, index)}</span>
               <p className="eyebrow">{readerState.eyebrow}</p>
               <h2>{readerState.title}</h2>
               <p>{readerState.description}</p>

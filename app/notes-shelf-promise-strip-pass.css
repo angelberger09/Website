@@ -1,0 +1,115 @@
+.notes-room-page .notes-shelf-promise-strip {
+  position: relative;
+  z-index: 2;
+  max-width: min(760px, 100%);
+  margin: clamp(0.95rem, 2.4vw, 1.35rem) 0 clamp(1rem, 2.6vw, 1.45rem);
+  padding: clamp(0.62rem, 1.7vw, 0.86rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.45rem, 1.4vw, 0.7rem);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 244, 0.92), rgba(233, 211, 178, 0.58) 62%, rgba(177, 139, 91, 0.18)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 145px 145px;
+  clip-path: polygon(1.8% 9%, 22% 2%, 55% 5%, 98% 0, 100% 84%, 94% 100%, 38% 96%, 2% 100%, 0 32%);
+  box-shadow:
+    0 0.95rem 1.8rem rgba(70, 49, 27, 0.15),
+    0 0.18rem 0.42rem rgba(70, 49, 27, 0.14),
+    inset 0 0 0 1px rgba(118, 85, 48, 0.11);
+  isolation: isolate;
+}
+
+.notes-room-page .notes-shelf-promise-strip::before {
+  content: "public reading boundary";
+  position: absolute;
+  right: clamp(0.72rem, 1.8vw, 1rem);
+  top: -0.52rem;
+  z-index: 2;
+  padding: 0.26rem 0.54rem 0.22rem;
+  color: rgba(60, 42, 26, 0.74);
+  font-size: clamp(0.56rem, 0.75vw, 0.64rem);
+  font-weight: 780;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 250, 236, 0.98), rgba(229, 201, 162, 0.76)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, 120px 120px;
+  clip-path: polygon(5% 18%, 96% 0, 100% 78%, 88% 100%, 0 92%);
+  box-shadow: 0 0.52rem 0.9rem rgba(70, 49, 27, 0.13);
+}
+
+.notes-room-page .notes-shelf-promise-strip::after {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 50%;
+  z-index: -1;
+  border-top: 2px dashed rgba(101, 75, 46, 0.24);
+  transform: translateY(-50%);
+}
+
+.notes-room-page .notes-shelf-promise-strip span {
+  position: relative;
+  min-height: 5rem;
+  padding: 0.62rem 0.6rem 0.58rem;
+  display: grid;
+  align-content: center;
+  gap: 0.28rem;
+  color: rgba(48, 34, 23, 0.88);
+  background:
+    linear-gradient(145deg, rgba(255, 253, 246, 0.98), rgba(240, 222, 193, 0.78) 68%, rgba(216, 185, 141, 0.28)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 118px 118px;
+  clip-path: polygon(5% 6%, 95% 0, 100% 20%, 96% 96%, 12% 100%, 0 88%, 2% 28%);
+  box-shadow:
+    0 0.72rem 1.2rem rgba(70, 49, 27, 0.14),
+    inset 0 0 0 1px rgba(118, 85, 48, 0.1);
+}
+
+.notes-room-page .notes-shelf-promise-strip span:nth-child(2) {
+  transform: translateY(0.28rem) rotate(0.45deg);
+}
+
+.notes-room-page .notes-shelf-promise-strip span:nth-child(3) {
+  transform: translateY(-0.08rem) rotate(-0.5deg);
+}
+
+.notes-room-page .notes-shelf-promise-strip strong,
+.notes-room-page .notes-shelf-promise-strip small {
+  display: block;
+}
+
+.notes-room-page .notes-shelf-promise-strip strong {
+  font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+  line-height: 1.05;
+}
+
+.notes-room-page .notes-shelf-promise-strip small {
+  color: rgba(69, 49, 31, 0.68);
+  font-size: clamp(0.68rem, 0.9vw, 0.76rem);
+  line-height: 1.22;
+}
+
+@media (max-width: 720px) {
+  .notes-room-page .notes-shelf-promise-strip {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 0.78rem;
+  }
+
+  .notes-room-page .notes-shelf-promise-strip::after {
+    left: 50%;
+    right: auto;
+    top: 0.8rem;
+    bottom: 0.8rem;
+    border-top: 0;
+    border-left: 2px dashed rgba(101, 75, 46, 0.2);
+  }
+
+  .notes-room-page .notes-shelf-promise-strip span {
+    min-height: auto;
+  }
+}

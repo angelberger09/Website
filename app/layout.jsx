@@ -11,6 +11,7 @@ import './home-front-room-welcome-desk-pass.css';
 import './home-front-room-highlight-ledger-pass.css';
 import './home-intro-copy-slips-pass.css';
 import './home-pillar-photo-pass.css';
+import './home-studio-shape-binding-ledger-pass.css';
 import './home-check-photo-pass.css';
 import './home-arrival-ticket-pass.css';
 import './about-paper-collage-pass.css';

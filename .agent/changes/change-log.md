@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 18:19 ET — About boundary ledger binding
+
+See `.agent/changes/2026-06-28-about-boundary-ledger-binding.md` and `.agent/matrices/about-boundary-ledger-binding.matrix.md`.
+
 ## 2026-06-28 18:08 ET — About room thread binding
 
 See `.agent/changes/2026-06-28-about-room-thread-binding.md` and `.agent/matrices/about-room-thread-binding.matrix.md`.

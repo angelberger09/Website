@@ -47,6 +47,7 @@ import './portfolio-archive-ticket-pass.css';
 import './portfolio-feed-photo-ledger-pass.css';
 import './portfolio-feed-drawer-path-pass.css';
 import './portfolio-public-boundary-rail-pass.css';
+import './portfolio-rule-slip-paper-pass.css';
 import './portfolio-state-process-photo-pass.css';
 import './portfolio-process-direct-labels-pass.css';
 import './portfolio-process-public-thread-pass.css';
@@ -218,11 +219,10 @@ import './detail-card-paper-face-pass.css';
 import './detail-card-binding-thread-pass.css';
 import './status-pill-paper-slip-pass.css';
 import './detail-card-room-pin-pass.css';
-import './eyebrow-paper-label-pass.css';
 
 export const metadata = {
-  title: 'Soft Strange Studio · Angel Berger',
-  description: 'A soft, strange studio home for artwork, notes, and small digital objects by Angel Berger.'
+  title: 'Soft Strange Studio',
+  description: 'A quiet studio homepage for Angel Berger.'
 };
 
 export default function RootLayout({ children }) {

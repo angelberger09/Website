@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 12:29 ET — About public boundary ledger
+
+See `.agent/changes/2026-06-28-about-public-boundary-ledger.md` and `.agent/matrices/about-public-boundary-ledger.matrix.md`.
+
 ## 2026-06-28 12:20 ET — Notes reader status ledger
 
 See `.agent/changes/2026-06-28-notes-reader-status-ledger.md` and `.agent/matrices/notes-reader-status-ledger.matrix.md`.

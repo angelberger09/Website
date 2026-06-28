@@ -1,0 +1,158 @@
+/* About next-door paper thread pass.
+   Gives the About exit choices a clearer room-to-room paper path without adding new public content. */
+
+.about-pathways-board {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 74rem);
+  padding: clamp(1rem, 2.4vw, 1.65rem);
+}
+
+.about-pathways-board::before {
+  position: absolute;
+  inset: 0.22rem -0.42rem -0.48rem;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 12% 20%, rgba(185, 201, 175, 0.22), transparent 31%),
+    radial-gradient(circle at 86% 18%, rgba(216, 197, 236, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.5)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+  clip-path: polygon(1.4% 5%, 22% 2.2%, 47% 3.8%, 74% 1.6%, 98% 4.2%, 96.5% 35%, 98% 72%, 96.2% 96.5%, 72% 98.4%, 42% 96.8%, 2.2% 98%, 3% 57%);
+  box-shadow:
+    0.34rem 0.5rem 0 rgba(47, 38, 35, 0.08),
+    0 1.15rem 2.35rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.about-pathways-board::after {
+  position: absolute;
+  left: clamp(1.1rem, 3vw, 2.2rem);
+  right: clamp(1.1rem, 3vw, 2.2rem);
+  top: clamp(5.6rem, 12vw, 7.4rem);
+  z-index: -1;
+  height: 0.34rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(94, 111, 92, 0), rgba(94, 111, 92, 0.34), rgba(94, 111, 92, 0)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(0 36%, 13% 18%, 32% 42%, 55% 21%, 78% 45%, 100% 28%, 100% 72%, 78% 58%, 55% 77%, 32% 56%, 13% 82%, 0 62%);
+  opacity: 0.72;
+}
+
+.about-pathways-board .about-board-heading {
+  position: relative;
+  width: max-content;
+  max-width: min(100%, 34rem);
+  padding: 0.86rem 1rem 0.94rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.68)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(2% 7%, 22% 1%, 54% 4%, 96% 2%, 98% 88%, 72% 98%, 28% 95%, 4% 100%);
+  box-shadow: 0.2rem 0.34rem 0 rgba(47, 38, 35, 0.09), 0 0.82rem 1.5rem rgba(47, 38, 35, 0.12);
+}
+
+.about-pathways-board .about-board-heading h1 {
+  max-width: 18ch;
+  margin-bottom: 0;
+  font-size: clamp(1.52rem, 3.1vw, 2.45rem);
+  line-height: 0.98;
+  letter-spacing: -0.058em;
+}
+
+.about-pathways-board .about-pathway-collage {
+  align-items: stretch;
+  gap: clamp(0.84rem, 1.8vw, 1.12rem);
+  margin-top: clamp(1rem, 2.4vw, 1.45rem);
+}
+
+.about-pathways-board .about-pathway-note {
+  min-height: 15.5rem;
+  padding: clamp(0.82rem, 2vw, 1rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.96), rgba(255, 248, 239, 0.74) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(2% 5%, 24% 1.8%, 50% 3.5%, 77% 1.4%, 97% 4.2%, 96.2% 42%, 98% 96%, 70% 98.4%, 36% 96.5%, 2.4% 98%, 3.2% 54%);
+  box-shadow:
+    0.22rem 0.38rem 0 rgba(47, 38, 35, 0.1),
+    0 0.95rem 1.75rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.about-pathways-board .about-pathway-note:nth-child(2) {
+  transform: translateY(0.32rem) rotate(-0.65deg);
+}
+
+.about-pathways-board .about-pathway-note:nth-child(3) {
+  transform: translateY(-0.1rem) rotate(0.58deg);
+}
+
+.about-pathways-board .about-pathway-note__photo {
+  min-height: 6rem;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 176, 143, 0.28), transparent 28%),
+    radial-gradient(circle at 78% 76%, rgba(216, 197, 236, 0.26), transparent 30%),
+    linear-gradient(135deg, rgba(94, 111, 92, 0.2), rgba(255, 252, 246, 0.76)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 14rem 14rem;
+  clip-path: polygon(3% 6%, 30% 2%, 62% 5%, 97% 3%, 95% 90%, 70% 98%, 32% 94%, 5% 98%);
+  box-shadow: inset 0 0 0 1px rgba(94, 111, 92, 0.12), 0 0.58rem 1rem rgba(47, 38, 35, 0.12);
+}
+
+.about-pathways-board .about-pathway-note__door-cue,
+.about-pathways-board .about-pathway-note i {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.28rem 0.5rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.9), rgba(185, 201, 175, 0.34)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(3% 10%, 34% 0, 68% 8%, 98% 2%, 94% 90%, 66% 100%, 28% 94%, 4% 99%);
+  color: rgba(58, 45, 42, 0.74);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-pathways-board .about-pathway-note i {
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .about-pathways-board {
+    padding: 0.95rem;
+  }
+
+  .about-pathways-board::after {
+    display: none;
+  }
+
+  .about-pathways-board .about-board-heading {
+    width: 100%;
+  }
+
+  .about-pathways-board .about-pathway-note {
+    min-height: 0;
+  }
+
+  .about-pathways-board .about-pathway-note:nth-child(2),
+  .about-pathways-board .about-pathway-note:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-pathways-board .about-pathway-note:nth-child(2),
+  .about-pathways-board .about-pathway-note:nth-child(3) {
+    transform: none;
+  }
+}

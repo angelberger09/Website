@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 10:09 ET — Homepage hero scale guard
+
+### Changed
+
+- Added `app/home-hero-scale-guard-pass.css`.
+- Loaded it from `app/layout.jsx` after `app/home-hero-above-fold-board-pass.css` and before `terminal-room-render-budget-pass.css`.
+- Constrained the homepage hero as a bounded entry board with a smaller title scale, tighter vertical rhythm, a desktop grid relationship between the welcome content and Open rooms card, and route choices placed higher in the above-fold path.
+- Kept homepage copy, route links, public-safe data, and no-fake-content boundaries unchanged.
+- Added `.agent/changes/2026-06-28-home-hero-scale-guard.md`.
+- Added `.agent/matrices/home-hero-scale-guard.matrix.md`.
+
+### Why
+
+The homepage hero was partially satisfying the left-docked editorial path direction, but recent visual review showed a structural scaling mismatch: the title still dominated the viewport, the entry path sat too low, and the right paper card felt detached from the board. This pass fixes the layout system before adding more decoration.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-002
+- DESIGN-014
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-028
+- METRIC-029
+- METRIC-032
+
 ## 2026-06-28 09:21 ET — Homepage path terminal ledger
 
 ### Changed

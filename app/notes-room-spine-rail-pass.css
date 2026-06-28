@@ -1,0 +1,146 @@
+/* Notes room spine rail pass.
+   Gives the Notes route a readable left-room spine so its many paper boards feel
+   intentionally sequenced instead of accumulated as separate collage patches. */
+
+.notes-room-page {
+  --notes-room-spine-label: "notes room path";
+}
+
+.notes-room-page > section {
+  position: relative;
+}
+
+.notes-room-page > section:not(.continuity-paper-trail)::before {
+  content: "";
+  position: absolute;
+  left: clamp(-0.55rem, -1vw, -0.25rem);
+  top: clamp(0.7rem, 2vw, 1.1rem);
+  bottom: clamp(0.75rem, 2vw, 1.1rem);
+  width: clamp(0.42rem, 0.8vw, 0.58rem);
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.92), rgba(240, 218, 191, 0.7)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  clip-path: polygon(22% 0, 88% 2%, 72% 30%, 100% 61%, 70% 100%, 7% 98%, 23% 68%, 0 37%);
+  box-shadow:
+    0.22rem 0.42rem 0.9rem rgba(74, 47, 29, 0.13),
+    inset 1px 0 rgba(255, 255, 255, 0.54),
+    inset -1px 0 rgba(74, 47, 29, 0.06);
+  opacity: 0.86;
+}
+
+.notes-reader-board::after,
+.notes-gallery-board::after,
+.notes-support-strip::after,
+.notes-source-board::before,
+.notes-state-board::after,
+.notes-path-photo-board::after {
+  position: absolute;
+  left: clamp(0.05rem, 1vw, 0.55rem);
+  top: clamp(-0.45rem, -0.6vw, -0.18rem);
+  z-index: 3;
+  width: fit-content;
+  max-width: min(78%, 18rem);
+  padding: 0.32rem 0.7rem 0.28rem;
+  color: rgba(63, 49, 38, 0.74);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 0.9vw, 0.78rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(116deg, rgba(255, 252, 246, 0.96), rgba(238, 222, 194, 0.82)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(4% 12%, 96% 0, 100% 84%, 8% 100%);
+  box-shadow:
+    0 0.42rem 0.78rem rgba(74, 47, 29, 0.15),
+    0.08rem 0.1rem 0 rgba(47, 38, 35, 0.05);
+  transform: rotate(-0.8deg);
+}
+
+.notes-reader-board::after {
+  content: "01 / reading desk";
+}
+
+.notes-gallery-board::after {
+  content: "02 / contact sheet";
+  transform: rotate(0.65deg);
+}
+
+.notes-support-strip::after {
+  content: "03 / support slips";
+}
+
+.notes-source-board::before {
+  content: "04 / source map";
+  transform: rotate(0.8deg);
+}
+
+.notes-state-board::after {
+  content: "05 / reader states";
+  transform: rotate(-0.55deg);
+}
+
+.notes-path-photo-board::after {
+  content: "06 / next paths";
+  transform: rotate(0.45deg);
+}
+
+.notes-reader-board,
+.notes-gallery-board,
+.notes-support-strip,
+.notes-source-board,
+.notes-state-board,
+.notes-path-photo-board {
+  box-shadow:
+    0 1.35rem 2.65rem rgba(74, 47, 29, 0.105),
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.04);
+}
+
+.notes-gallery-scroll,
+.notes-path-photo-strip,
+.notes-state-list,
+.notes-support-strip {
+  scroll-padding-left: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@media (max-width: 760px) {
+  .notes-room-page > section:not(.continuity-paper-trail)::before {
+    left: 0.2rem;
+    right: 0.2rem;
+    top: -0.32rem;
+    bottom: auto;
+    width: auto;
+    height: 0.45rem;
+    clip-path: polygon(0 22%, 28% 0, 54% 20%, 82% 4%, 100% 24%, 98% 88%, 64% 100%, 38% 82%, 9% 100%);
+  }
+
+  .notes-reader-board::after,
+  .notes-gallery-board::after,
+  .notes-support-strip::after,
+  .notes-source-board::before,
+  .notes-state-board::after,
+  .notes-path-photo-board::after {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: inline-flex;
+    margin: 0 0 0.72rem;
+    transform: rotate(-0.45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-reader-board::after,
+  .notes-gallery-board::after,
+  .notes-support-strip::after,
+  .notes-source-board::before,
+  .notes-state-board::after,
+  .notes-path-photo-board::after {
+    transform: none;
+  }
+}

@@ -1,5 +1,6 @@
 /* Store feed shelf docket pass.
-   Makes the future Store feed contract read as one guided public shelf docket instead of loose repeated field cards. */
+   Makes the future Store feed contract read as one guided public shelf docket.
+   Updated to target the current source-backed article rule slips, not only the older list-item markup. */
 
 .store-feed-ledger-board {
   position: relative;
@@ -43,6 +44,7 @@
 
 .store-feed-ledger-board__intro::before {
   content: "future shelf docket";
+  display: block;
   width: fit-content;
   padding: 0.34rem 0.52rem 0.3rem;
   clip-path: polygon(0 14%, 21% 0, 71% 8%, 100% 2%, 96% 89%, 68% 100%, 27% 92%, 2% 98%);
@@ -140,95 +142,10 @@
 .store-feed-rule-tape {
   position: relative;
   display: grid;
-  gap: clamp(0.45rem, 1.2vw, 0.7rem);
   grid-column: 2;
-  width: min(100%, 41rem);
-  justify-self: start;
-  margin-top: 0.55rem;
-  padding: clamp(0.75rem, 1.8vw, 1.05rem) 0 0 clamp(0.85rem, 1.8vw, 1.15rem);
-  border-left: 0;
-}
-
-.store-feed-rule-tape::before {
-  content: "public boundary";
-  display: block;
-  width: fit-content;
-  margin: -0.15rem 0 0.5rem;
-  padding: 0.3rem 0.48rem 0.26rem;
-  clip-path: polygon(1% 15%, 24% 0, 75% 8%, 100% 2%, 96% 88%, 69% 100%, 26% 93%, 0 100%);
-  background: rgba(245, 224, 198, 0.74);
-  color: rgba(87, 72, 58, 0.76);
-  font-family: var(--font-sans);
-  font-size: 0.64rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  text-transform: uppercase;
-  box-shadow: 0.1rem 0.2rem 0.44rem rgba(47, 38, 35, 0.1);
-}
-
-.store-feed-rule-tape::after {
-  position: absolute;
-  top: 0.25rem;
-  bottom: 0.15rem;
-  left: 0.18rem;
-  width: 0.18rem;
-  content: "";
-  clip-path: polygon(34% 0, 100% 9%, 58% 30%, 92% 56%, 46% 100%, 0 84%, 28% 52%, 0 16%);
-  background: linear-gradient(180deg, rgba(185, 201, 175, 0.7), rgba(216, 197, 236, 0.48), rgba(255, 176, 143, 0.36));
-  box-shadow: 0.08rem 0.2rem 0.45rem rgba(47, 38, 35, 0.12);
-  opacity: 0.86;
-}
-
-.store-feed-rule-tape li {
-  position: relative;
-  max-width: 42rem;
-  margin: 0;
-  padding: clamp(0.58rem, 1.5vw, 0.78rem) clamp(0.78rem, 1.8vw, 1rem) clamp(0.62rem, 1.5vw, 0.82rem) clamp(1.05rem, 2.2vw, 1.35rem);
-  list-style: none;
-  color: rgba(47, 38, 35, 0.73);
-  font-size: clamp(0.86rem, 1.7vw, 0.96rem);
-  line-height: 1.55;
-  clip-path: polygon(1% 8%, 18% 0, 61% 5%, 98% 2%, 100% 84%, 78% 100%, 34% 96%, 0 100%);
-  background:
-    linear-gradient(112deg, rgba(255, 252, 246, 0.86), rgba(255, 246, 218, 0.58) 64%, rgba(185, 201, 175, 0.18)),
-    var(--grain-image),
-    var(--dust-image);
-  background-size: cover, 13rem 13rem, 23rem 23rem;
-  box-shadow:
-    0.14rem 0.24rem 0 rgba(47, 38, 35, 0.045),
-    0 0.65rem 1.1rem rgba(47, 38, 35, 0.11),
-    inset 0 1px 0 rgba(255, 255, 255, 0.58);
-}
-
-.store-feed-rule-tape li::before {
-  position: absolute;
-  top: 0.48rem;
-  left: 0.38rem;
-  width: 0.42rem;
-  height: calc(100% - 0.96rem);
-  content: "";
-  clip-path: polygon(44% 0, 100% 12%, 68% 100%, 0 90%, 18% 36%);
-  background: linear-gradient(180deg, rgba(255, 176, 143, 0.44), rgba(216, 197, 236, 0.34));
-  opacity: 0.88;
-}
-
-.store-feed-rule-tape li:nth-child(1) {
-  transform: rotate(-0.4deg);
-}
-
-.store-feed-rule-tape li:nth-child(2) {
-  transform: translateX(clamp(0.25rem, 1.2vw, 0.7rem)) rotate(0.38deg);
-}
-
-.store-feed-rule-tape li:nth-child(3) {
-  transform: translateX(clamp(-0.15rem, -0.4vw, -0.05rem)) rotate(-0.18deg);
-}
-
-/* Boundary docket refinement.
-   Keeps the Store feed rules visually connected to the shelf ledger instead of reading as a loose list below it. */
-.store-feed-rule-tape {
   width: min(100%, 44rem);
+  justify-self: start;
+  gap: clamp(0.5rem, 1.2vw, 0.74rem);
   margin-top: clamp(0.9rem, 2vw, 1.35rem);
   padding: clamp(1.05rem, 2.4vw, 1.45rem) clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.2vw, 1.32rem) clamp(1.35rem, 2.8vw, 1.7rem);
   clip-path: polygon(1.2% 4%, 20% 1.2%, 55% 3.4%, 98.8% 1.5%, 97% 89%, 81% 97.4%, 44% 95.7%, 2% 99%);
@@ -238,6 +155,7 @@
     var(--grain-image),
     var(--dust-image);
   background-size: cover, cover, 17rem 17rem, 27rem 27rem;
+  border-left: 0;
   box-shadow:
     -0.12rem 0.16rem 0 rgba(47, 38, 35, 0.055),
     0.42rem 0.84rem 1.45rem rgba(47, 38, 35, 0.14),
@@ -250,47 +168,93 @@
   top: -0.42rem;
   left: clamp(0.8rem, 2vw, 1.3rem);
   z-index: 2;
-  margin: 0;
+  width: fit-content;
+  padding: 0.3rem 0.48rem 0.26rem;
+  clip-path: polygon(1% 15%, 24% 0, 75% 8%, 100% 2%, 96% 88%, 69% 100%, 26% 93%, 0 100%);
   background: rgba(255, 246, 218, 0.88);
+  color: rgba(87, 72, 58, 0.76);
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
   box-shadow: 0.16rem 0.28rem 0.58rem rgba(47, 38, 35, 0.13);
   transform: rotate(-1.1deg);
 }
 
 .store-feed-rule-tape::after {
+  position: absolute;
   top: clamp(1.2rem, 2.8vw, 1.65rem);
   bottom: clamp(0.85rem, 2vw, 1.15rem);
   left: clamp(0.72rem, 1.7vw, 0.95rem);
   width: 0.22rem;
+  content: "";
+  clip-path: polygon(34% 0, 100% 9%, 58% 30%, 92% 56%, 46% 100%, 0 84%, 28% 52%, 0 16%);
   background: linear-gradient(180deg, rgba(83, 101, 74, 0.55), rgba(216, 197, 236, 0.5), rgba(255, 176, 143, 0.42));
+  box-shadow: 0.08rem 0.2rem 0.45rem rgba(47, 38, 35, 0.12);
   opacity: 0.9;
 }
 
+.store-feed-rule-slip,
 .store-feed-rule-tape li {
-  padding-left: clamp(1.32rem, 3vw, 1.85rem);
+  position: relative;
+  display: grid;
+  gap: 0.42rem;
   max-width: 39rem;
+  margin: 0;
+  padding: clamp(0.72rem, 1.7vw, 0.92rem) clamp(0.86rem, 1.9vw, 1.08rem) clamp(0.72rem, 1.7vw, 0.95rem) clamp(1.35rem, 3vw, 1.85rem);
+  list-style: none;
+  clip-path: polygon(1% 8%, 18% 0, 61% 5%, 98% 2%, 100% 84%, 78% 100%, 34% 96%, 0 100%);
   background:
-    linear-gradient(112deg, rgba(255, 252, 246, 0.92), rgba(255, 246, 218, 0.58) 64%, rgba(216, 197, 236, 0.16)),
+    linear-gradient(112deg, rgba(255, 252, 246, 0.92), rgba(255, 246, 218, 0.6) 64%, rgba(216, 197, 236, 0.16)),
     var(--grain-image),
     var(--fine-scratch-image);
   background-size: cover, 13rem 13rem, 28rem 28rem;
+  color: rgba(47, 38, 35, 0.74);
   box-shadow:
     0.18rem 0.28rem 0 rgba(47, 38, 35, 0.055),
     0.28rem 0.62rem 1.08rem rgba(47, 38, 35, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.62);
 }
 
-.store-feed-rule-tape li::after {
+.store-feed-rule-slip::before,
+.store-feed-rule-tape li::before {
   position: absolute;
-  top: 0.42rem;
-  right: 0.58rem;
+  top: 0.5rem;
+  left: 0.42rem;
+  width: 0.42rem;
+  height: calc(100% - 1rem);
+  content: "";
+  clip-path: polygon(44% 0, 100% 12%, 68% 100%, 0 90%, 18% 36%);
+  background: linear-gradient(180deg, rgba(255, 176, 143, 0.44), rgba(216, 197, 236, 0.34));
+  opacity: 0.88;
+}
+
+.store-feed-rule-slip:nth-child(1),
+.store-feed-rule-tape li:nth-child(1) {
+  transform: rotate(-0.4deg);
+}
+
+.store-feed-rule-slip:nth-child(2),
+.store-feed-rule-tape li:nth-child(2) {
+  transform: translateX(clamp(0.25rem, 1.2vw, 0.7rem)) rotate(0.38deg);
+}
+
+.store-feed-rule-slip:nth-child(3),
+.store-feed-rule-tape li:nth-child(3) {
+  transform: translateX(clamp(-0.15rem, -0.4vw, -0.05rem)) rotate(-0.18deg);
+}
+
+.store-feed-rule-slip__label {
   width: fit-content;
-  max-width: 9rem;
-  padding: 0.22rem 0.36rem 0.2rem;
+  max-width: 15rem;
+  padding: 0.24rem 0.4rem 0.22rem;
   clip-path: polygon(3% 12%, 34% 0, 98% 8%, 94% 100%, 12% 88%);
-  background: rgba(245, 224, 198, 0.62);
-  color: rgba(87, 72, 58, 0.62);
+  background: rgba(245, 224, 198, 0.68);
+  color: rgba(87, 72, 58, 0.68);
   font-family: var(--font-sans);
-  font-size: 0.56rem;
+  font-size: 0.58rem;
   font-weight: 900;
   letter-spacing: 0.11em;
   line-height: 1;
@@ -298,16 +262,12 @@
   box-shadow: 0.08rem 0.16rem 0.34rem rgba(47, 38, 35, 0.08);
 }
 
-.store-feed-rule-tape li:nth-child(1)::after {
-  content: "public only";
-}
-
-.store-feed-rule-tape li:nth-child(2)::after {
-  content: "no private plan";
-}
-
-.store-feed-rule-tape li:nth-child(3)::after {
-  content: "honest card";
+.store-feed-rule-slip p,
+.store-feed-rule-tape li p {
+  margin: 0;
+  color: rgba(47, 38, 35, 0.74);
+  font-size: clamp(0.86rem, 1.7vw, 0.96rem);
+  line-height: 1.55;
 }
 
 @media (max-width: 840px) {
@@ -336,6 +296,9 @@
 
   .store-feed-ledger-card:nth-child(even),
   .store-feed-ledger-card:nth-child(odd),
+  .store-feed-rule-slip,
+  .store-feed-rule-slip:nth-child(2),
+  .store-feed-rule-slip:nth-child(3),
   .store-feed-rule-tape li,
   .store-feed-rule-tape li:nth-child(2),
   .store-feed-rule-tape li:nth-child(3) {
@@ -356,10 +319,19 @@
   .store-feed-rule-tape::after {
     display: none;
   }
+}
 
-  .store-feed-rule-tape li::after {
-    position: static;
-    display: block;
-    margin-top: 0.42rem;
+@media (prefers-reduced-motion: reduce) {
+  .store-feed-ledger-card:nth-child(even),
+  .store-feed-ledger-card:nth-child(odd),
+  .store-feed-rule-slip,
+  .store-feed-rule-slip:nth-child(2),
+  .store-feed-rule-slip:nth-child(3),
+  .store-feed-rule-tape li,
+  .store-feed-rule-tape li:nth-child(2),
+  .store-feed-rule-tape li:nth-child(3),
+  .store-feed-ledger-board__intro,
+  .store-feed-ledger-board::after {
+    transform: none;
   }
 }

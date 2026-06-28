@@ -1,0 +1,116 @@
+/* Notes state late terminal budget pass.
+   Covers the direct cue slips and intro docket layers that load after the first Notes state terminal budget. */
+
+.notes-state-board__intro {
+  margin-left: clamp(0.65rem, 2vw, 1.55rem);
+  transform: rotate(-0.18deg);
+}
+
+.notes-state-board__intro::before {
+  inset: -0.18rem -0.2rem -0.24rem -0.18rem;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.88), rgba(239, 224, 198, 0.56)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 14rem 14rem;
+  box-shadow:
+    0 0.62rem 1.05rem rgba(74, 47, 29, 0.08),
+    0 0.12rem 0.32rem rgba(74, 47, 29, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  clip-path: polygon(1.5% 7%, 22% 4%, 51% 5.5%, 78% 3%, 98.5% 7%, 97% 91%, 78% 95%, 53% 94%, 24% 97%, 2.5% 92%);
+}
+
+.notes-state-board__intro .eyebrow,
+.notes-state-board__intro h1,
+.notes-state-board .notes-state-board__intro::after,
+.notes-state-note__cue {
+  filter: none;
+}
+
+.notes-state-board__intro .eyebrow {
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.86), rgba(231, 216, 190, 0.58)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 11rem 11rem;
+  box-shadow: 0 0.2rem 0.46rem rgba(74, 47, 29, 0.065);
+  transform: rotate(-0.55deg);
+}
+
+.notes-state-board__intro h1 {
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.84), rgba(241, 225, 199, 0.5));
+  box-shadow: 0 0.26rem 0.58rem rgba(74, 47, 29, 0.075);
+  clip-path: polygon(1.5% 10%, 97.5% 3%, 99% 88%, 3% 98%);
+}
+
+.notes-state-board .notes-state-board__intro::after {
+  background:
+    linear-gradient(135deg, rgba(247, 234, 209, 0.82), rgba(255, 252, 246, 0.72)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 11rem 11rem;
+  box-shadow: 0 0.24rem 0.48rem rgba(74, 47, 29, 0.065);
+  transform: rotate(0.28deg);
+}
+
+.notes-state-note__cue {
+  top: 0.84rem;
+  right: 0.82rem;
+  max-width: 7rem;
+  color: rgba(63, 49, 38, 0.74);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.84), rgba(239, 224, 198, 0.6)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 11rem 11rem;
+  box-shadow:
+    0 0.22rem 0.44rem rgba(74, 47, 29, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  transform: rotate(0.42deg);
+}
+
+.notes-state-note:nth-child(2) .notes-state-note__cue {
+  transform: rotate(-0.34deg);
+}
+
+.notes-state-note:nth-child(3) .notes-state-note__cue {
+  transform: rotate(0.2deg);
+}
+
+.notes-state-note__photo,
+.notes-state-note__photo span {
+  filter: none;
+}
+
+.notes-state-note__photo {
+  box-shadow:
+    0 0.32rem 0.64rem rgba(74, 47, 29, 0.07),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.58);
+}
+
+.notes-state-note__photo span {
+  box-shadow: 0 0.14rem 0.3rem rgba(74, 47, 29, 0.065);
+}
+
+@media (max-width: 760px) {
+  .notes-state-board__intro {
+    margin-left: 0;
+    transform: none;
+  }
+
+  .notes-state-note__cue,
+  .notes-state-note:nth-child(2) .notes-state-note__cue,
+  .notes-state-note:nth-child(3) .notes-state-note__cue {
+    top: 0.72rem;
+    right: 0.66rem;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-state-board__intro,
+  .notes-state-board__intro .eyebrow,
+  .notes-state-board .notes-state-board__intro::after,
+  .notes-state-note__cue,
+  .notes-state-note:nth-child(2) .notes-state-note__cue,
+  .notes-state-note:nth-child(3) .notes-state-note__cue {
+    transform: none;
+  }
+}

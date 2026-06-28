@@ -16,7 +16,7 @@
   width: max-content;
   margin: -1.05rem 0 0.15rem;
   padding: 0.34rem 0.62rem;
-  content: "frame path";
+  content: "room frame path";
   align-self: start;
   background:
     linear-gradient(135deg, rgba(255, 250, 242, 0.94), rgba(255, 176, 143, 0.34)),
@@ -116,6 +116,54 @@
   content: "motion";
 }
 
+.about-paper-room .about-contact-card__copy {
+  position: relative;
+}
+
+.about-paper-room .about-contact-card__copy::before {
+  display: inline-grid;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 0.6rem;
+  padding: 0.32rem 0.56rem 0.28rem;
+  content: "room cue";
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(153, 222, 201, 0.22)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  clip-path: polygon(6% 10%, 38% 0, 100% 7%, 94% 88%, 58% 100%, 0 91%);
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.055),
+    0 0.38rem 0.68rem rgba(47, 38, 35, 0.085);
+  color: rgba(58, 45, 42, 0.68);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-0.45deg);
+}
+
+.about-paper-room .about-contact-card:nth-child(1) .about-contact-card__copy::before {
+  content: "front room cue";
+}
+
+.about-paper-room .about-contact-card:nth-child(2) .about-contact-card__copy::before {
+  content: "tone cue";
+}
+
+.about-paper-room .about-contact-card:nth-child(3) .about-contact-card__copy::before {
+  content: "public edge cue";
+}
+
+.about-paper-room .about-contact-card:nth-child(4) .about-contact-card__copy::before {
+  content: "motion cue";
+}
+
+.about-paper-room .about-contact-card h2 {
+  max-width: 16ch;
+}
+
 @media (max-width: 760px) {
   .about-paper-room .about-contact-sheet {
     padding-top: 1.25rem;
@@ -124,5 +172,9 @@
   .about-paper-room .about-contact-sheet::before {
     position: relative;
     left: 0;
+  }
+
+  .about-paper-room .about-contact-card__copy::before {
+    transform: none;
   }
 }

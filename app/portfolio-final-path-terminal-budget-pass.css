@@ -1,0 +1,135 @@
+/* Portfolio final path terminal budget pass
+   Calms the lower Portfolio exit path so the record states and publishing rhythm read as one bound archive handoff. */
+
+.portfolio-state-photo-board {
+  margin-top: clamp(0.4rem, 1.2vw, 0.9rem);
+  margin-bottom: clamp(0.85rem, 2vw, 1.35rem);
+  clip-path: polygon(0.8% 1.2%, 99% 0.4%, 99.2% 96.5%, 96.4% 99.1%, 1.4% 98.2%, 0.2% 5.5%);
+  background:
+    linear-gradient(145deg, rgb(255 250 238 / 0.96), rgb(238 226 201 / 0.86)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 0.9rem 1.55rem rgb(88 64 43 / 0.12),
+    0 0.2rem 0.48rem rgb(88 64 43 / 0.07);
+}
+
+.portfolio-state-photo-board::before {
+  content: "record handoff";
+  top: clamp(0.85rem, 1.8vw, 1.18rem);
+  right: clamp(0.95rem, 2vw, 1.35rem);
+  padding: 0.3rem 0.68rem 0.24rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+  color: rgb(82 66 49 / 0.76);
+  box-shadow: 0 0.38rem 0.64rem rgb(88 62 42 / 0.11);
+  transform: rotate(0.6deg);
+}
+
+.portfolio-state-photo-board::after {
+  left: clamp(1.5rem, 5vw, 3.1rem);
+  right: clamp(1.5rem, 5vw, 3.1rem);
+  bottom: clamp(-0.85rem, -0.7vw, -0.45rem);
+  height: 1.2rem;
+  opacity: 0.5;
+}
+
+.portfolio-state-photo-board .portfolio-state-stack {
+  gap: clamp(0.7rem, 1.5vw, 1rem);
+}
+
+.portfolio-state-photo-board .portfolio-state-photo {
+  clip-path: polygon(1.2% 3%, 98.6% 0, 100% 94.8%, 96.8% 100%, 0.7% 97%);
+  box-shadow:
+    0 0.48rem 0.82rem rgb(82 60 41 / 0.1),
+    0 0.12rem 0.28rem rgb(82 60 41 / 0.06);
+  transform: rotate(var(--portfolio-state-tilt, 0deg));
+}
+
+.portfolio-state-photo-board .portfolio-state-photo:nth-child(odd) {
+  --portfolio-state-tilt: -0.35deg;
+}
+
+.portfolio-state-photo-board .portfolio-state-photo:nth-child(even) {
+  --portfolio-state-tilt: 0.35deg;
+}
+
+.portfolio-process-photo-board {
+  margin-top: clamp(0.35rem, 1.1vw, 0.8rem);
+  padding-top: clamp(1.65rem, 3.2vw, 2.45rem);
+  clip-path: polygon(0.8% 2.8%, 98.9% 0.7%, 99.5% 95%, 96.7% 99.2%, 1.2% 98.3%, 0.1% 7%);
+  background:
+    linear-gradient(145deg, rgb(255 250 238 / 0.95), rgb(238 225 199 / 0.84)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 0.95rem 1.65rem rgb(84 61 42 / 0.11),
+    inset 0 0 0 1px rgb(132 104 73 / 0.055);
+}
+
+.portfolio-process-photo-board::before {
+  content: "archive exit receipt";
+  top: clamp(0.75rem, 1.6vw, 1.05rem);
+  left: clamp(0.95rem, 2.2vw, 1.45rem);
+  padding: 0.3rem 0.68rem 0.24rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+  color: rgb(78 62 47 / 0.76);
+  box-shadow: 0 0.36rem 0.62rem rgb(87 60 38 / 0.1);
+  transform: rotate(-0.45deg);
+}
+
+.portfolio-process-photo-board::after {
+  inset: clamp(0.72rem, 1.4vw, 1rem);
+  background:
+    linear-gradient(90deg, transparent, rgb(126 99 69 / 0.09), transparent) center 2.25rem / 76% 1px no-repeat,
+    radial-gradient(circle at 16% 2.25rem, rgb(126 99 69 / 0.13) 0 0.12rem, transparent 0.14rem),
+    radial-gradient(circle at 84% 2.25rem, rgb(126 99 69 / 0.13) 0 0.12rem, transparent 0.14rem);
+  opacity: 0.58;
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon {
+  gap: clamp(0.65rem, 1.5vw, 1rem);
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon > li {
+  clip-path: polygon(1.1% 3.8%, 98.8% 0.5%, 99.7% 94.4%, 96.6% 99.5%, 0.8% 96.6%);
+  box-shadow:
+    0 0.52rem 0.86rem rgb(80 57 37 / 0.1),
+    0 0.12rem 0.28rem rgb(80 57 37 / 0.055);
+  transform: rotate(var(--portfolio-process-tilt, 0deg));
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon > li:nth-child(odd) {
+  --portfolio-process-tilt: 0.28deg;
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon > li:nth-child(even) {
+  --portfolio-process-tilt: -0.28deg;
+}
+
+@media (max-width: 760px) {
+  .portfolio-state-photo-board,
+  .portfolio-process-photo-board {
+    margin-inline: 0;
+    clip-path: polygon(0 1%, 100% 0, 100% 98%, 0 99%);
+  }
+
+  .portfolio-state-photo-board::before,
+  .portfolio-process-photo-board::before {
+    margin-bottom: 0.75rem;
+    transform: none;
+  }
+
+  .portfolio-state-photo-board .portfolio-state-photo,
+  .portfolio-process-photo-board .portfolio-process-photo-ribbon > li {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-state-photo-board::before,
+  .portfolio-process-photo-board::before,
+  .portfolio-state-photo-board .portfolio-state-photo,
+  .portfolio-process-photo-board .portfolio-process-photo-ribbon > li {
+    transform: none;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 14:51 ET — PageIntro room shelf ledger
+
+See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger.md` and `.agent/matrices/page-intro-room-shelf-ledger.matrix.md`.
+
 ## 2026-06-28 14:41 ET — Store availability terminal ledger
 
 See `.agent/changes/2026-06-28-store-availability-terminal-ledger.md` and `.agent/matrices/store-availability-terminal-ledger.matrix.md`.

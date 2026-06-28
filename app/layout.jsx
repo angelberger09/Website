@@ -209,6 +209,7 @@ import './notes-post-support-ledger-pass.css';
 import './notes-state-tray-spine-pass.css';
 import './notes-state-tray-direct-cues-pass.css';
 import './notes-state-reader-docket-pass.css';
+import './notes-state-terminal-budget-pass.css';
 import './notes-state-direct-cues-pass.css';
 import './notes-state-intro-docket-pass.css';
 import './portfolio-feed-public-docket-pass.css';

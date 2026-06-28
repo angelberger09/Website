@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 19:50 ET — Notes post path style load repair
+
+See `.agent/changes/2026-06-28-notes-post-path-style-load.md` and `.agent/matrices/notes-post-path-style-load.matrix.md`.
+
 ## 2026-06-28 19:39 ET — Notes reading order thread
 
 See `.agent/changes/2026-06-28-notes-reading-order-thread.md` and `.agent/matrices/notes-reading-order-thread.matrix.md`.
@@ -117,59 +121,3 @@ See `.agent/changes/2026-06-28-about-contact-sheet-room-docket.md` and `.agent/m
 ## 2026-06-28 14:08 ET — Notes reader left docket
 
 See `.agent/changes/2026-06-28-notes-reader-left-docket.md` and `.agent/matrices/notes-reader-left-docket.matrix.md`.
-
-## 2026-06-28 13:50 ET — About slip depth selector repair
-
-See `.agent/changes/2026-06-28-about-slip-depth-selector-repair.md` and `.agent/matrices/about-slip-depth-selector-repair.matrix.md`.
-
-## 2026-06-28 13:41 ET — About next-door paper thread
-
-See `.agent/changes/2026-06-28-about-next-door-paper-thread.md` and `.agent/matrices/about-next-door-paper-thread.matrix.md`.
-
-## 2026-06-28 13:29 ET — Portfolio rule slip paper repair
-
-See `.agent/changes/2026-06-28-portfolio-rule-slip-paper-repair.md` and `.agent/matrices/portfolio-rule-slip-paper-repair.matrix.md`.
-
-## 2026-06-28 13:21 ET — Store feed rule slip repair
-
-See `.agent/changes/2026-06-28-store-feed-rule-slip-repair.md` and `.agent/matrices/store-feed-rule-slip-repair.matrix.md`.
-
-## 2026-06-28 13:11 ET — Notes room spine rail
-
-See `.agent/changes/2026-06-28-notes-room-spine-rail.md` and `.agent/matrices/notes-room-spine-rail.matrix.md`.
-
-## 2026-06-28 12:48 ET — Homepage section spine shadow
-
-See `.agent/changes/2026-06-28-home-section-spine-shadow.md` and `.agent/matrices/home-section-spine-shadow.matrix.md`.
-
-## 2026-06-28 12:41 ET — Portfolio public boundary rail
-
-See `.agent/changes/2026-06-28-portfolio-public-boundary-rail.md` and `.agent/matrices/portfolio-public-boundary-rail.matrix.md`.
-
-## 2026-06-28 12:29 ET — About public boundary ledger
-
-See `.agent/changes/2026-06-28-about-public-boundary-ledger.md` and `.agent/matrices/about-public-boundary-ledger.matrix.md`.
-
-## 2026-06-28 12:20 ET — Notes reader status ledger
-
-See `.agent/changes/2026-06-28-notes-reader-status-ledger.md` and `.agent/matrices/notes-reader-status-ledger.matrix.md`.
-
-## 2026-06-28 12:11 ET — Homepage path left rail refinement
-
-See `.agent/changes/2026-06-28-home-path-left-rail-refinement.md` and `.agent/matrices/home-path-left-rail-refinement.matrix.md`.
-
-## 2026-06-28 11:50 ET — Notes path terminal ledger
-
-See `.agent/changes/2026-06-28-notes-path-terminal-ledger.md` and `.agent/matrices/notes-path-terminal-ledger.matrix.md`.
-
-## 2026-06-28 11:43 ET — Visual notification channel update
-
-See `.agent/changes/2026-06-28-visual-tour-discord.md` and `.agent/matrices/visual-tour-workflow.matrix.md`.
-
-## 2026-06-28 11:35 ET — Visual tour webhook notification
-
-See `.agent/changes/2026-06-28-visual-tour-webhook.md`.
-
-## 2026-06-28 11:24 ET — Visual tour workflow setup
-
-See `.agent/changes/2026-06-28-visual-tour-workflow.md` and `.agent/matrices/visual-tour-workflow.matrix.md`.

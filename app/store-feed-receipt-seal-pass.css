@@ -1,0 +1,138 @@
+/* Store feed receipt seal pass.
+   Binds the future Store field ledger and boundary rules into one visible public-safety receipt
+   without adding fake products, inventory, screenshots, or live shop links. */
+
+.store-feed-ledger-board {
+  position: relative;
+}
+
+.store-feed-ledger-board::after {
+  content: "public shelf receipt";
+  position: absolute;
+  top: clamp(1.05rem, 2.7vw, 1.65rem);
+  right: clamp(0.78rem, 2.2vw, 1.35rem);
+  z-index: 4;
+  display: inline-grid;
+  place-items: center;
+  max-width: min(46vw, 12.5rem);
+  padding: 0.38rem 0.72rem 0.32rem;
+  clip-path: polygon(5% 8%, 29% 0, 77% 5%, 100% 2%, 96% 84%, 71% 100%, 21% 93%, 0 98%);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.92), rgba(245, 224, 198, 0.68) 62%, rgba(185, 201, 175, 0.28)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(47, 38, 35, 0.68);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow:
+    0.08rem 0.15rem 0 rgba(47, 38, 35, 0.055),
+    0 0.5rem 0.88rem rgba(47, 38, 35, 0.09);
+  transform: rotate(1.15deg);
+}
+
+.store-feed-ledger-board__intro {
+  position: relative;
+  padding-right: clamp(0rem, 9vw, 8.5rem);
+}
+
+.store-feed-ledger-board__intro::after {
+  content: "public fields only";
+  display: inline-grid;
+  place-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: clamp(0.52rem, 1.2vw, 0.72rem) 0 0;
+  padding: 0.3rem 0.58rem 0.26rem;
+  clip-path: polygon(3% 14%, 23% 0, 100% 8%, 96% 86%, 68% 100%, 0 91%);
+  background:
+    linear-gradient(105deg, rgba(216, 197, 236, 0.28), rgba(255, 252, 246, 0.78)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  color: rgba(47, 38, 35, 0.62);
+  font-size: 0.56rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0.06rem 0.12rem 0.28rem rgba(47, 38, 35, 0.075);
+  transform: rotate(-0.54deg);
+}
+
+.store-feed-ledger-card::after {
+  content: "";
+  position: absolute;
+  right: 0.54rem;
+  bottom: 0.5rem;
+  width: clamp(1.65rem, 4vw, 2.25rem);
+  height: 0.42rem;
+  clip-path: polygon(3% 12%, 32% 0, 100% 14%, 94% 100%, 8% 88%);
+  background: rgba(185, 201, 175, 0.28);
+  opacity: 0.76;
+  box-shadow: 0.06rem 0.12rem 0.28rem rgba(47, 38, 35, 0.055);
+  transform: rotate(-1.6deg);
+}
+
+.store-feed-rule-slips {
+  position: relative;
+}
+
+.store-feed-rule-slips::after {
+  content: "private plans stay offstage";
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 1.2rem);
+  bottom: clamp(-0.68rem, -1.1vw, -0.42rem);
+  z-index: 4;
+  width: fit-content;
+  max-width: min(100%, 18rem);
+  padding: 0.34rem 0.64rem 0.29rem;
+  clip-path: polygon(4% 0, 91% 7%, 100% 82%, 78% 100%, 0 92%);
+  background:
+    linear-gradient(104deg, rgba(255, 252, 246, 0.92), rgba(241, 219, 171, 0.62)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(47, 38, 35, 0.64);
+  font-size: 0.56rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.052),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.085);
+  transform: rotate(-0.7deg);
+}
+
+@media (max-width: 760px) {
+  .store-feed-ledger-board__intro {
+    padding-right: 0;
+  }
+
+  .store-feed-ledger-board::after {
+    position: relative;
+    inset: auto;
+    justify-self: start;
+    margin: 0 0 clamp(0.85rem, 2.4vw, 1.15rem) clamp(0.7rem, 4vw, 1rem);
+    max-width: calc(100% - 2rem);
+    transform: rotate(-0.35deg);
+  }
+
+  .store-feed-rule-slips::after {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    justify-self: start;
+    margin: 0.12rem 0 0;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-feed-ledger-board::after,
+  .store-feed-ledger-board__intro::after,
+  .store-feed-ledger-card::after,
+  .store-feed-rule-slips::after {
+    transform: none !important;
+  }
+}

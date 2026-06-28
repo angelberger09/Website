@@ -222,6 +222,7 @@ import './portfolio-feed-bound-shelf-pass.css';
 import './portfolio-feed-rule-slips-pass.css';
 import './store-feed-shelf-docket-pass.css';
 import './store-feed-boundary-rule-slips-pass.css';
+import './store-feed-receipt-seal-pass.css';
 import './home-house-rules-docket-pass.css';
 import './home-house-rules-ledger-pass.css';
 import './home-house-rules-source-slips-pass.css';

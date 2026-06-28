@@ -1,0 +1,185 @@
+/* About contact sheet terminal focus pass.
+   Keeps the existing public About contact-sheet copy and frames, but makes the
+   late-loaded exposure desk read as one calm bound sequence instead of another
+   set of neighboring paper cards. */
+
+.about-paper-room .about-contact-sheet-board {
+  --about-terminal-spine: rgba(88, 68, 50, 0.28);
+  --about-terminal-shadow: rgba(47, 38, 35, 0.12);
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  padding-block: clamp(1.55rem, 3vw, 2.4rem) clamp(1.35rem, 2.8vw, 2rem);
+}
+
+.about-paper-room .about-contact-sheet-board::before {
+  inset: 0.02rem -0.42rem -0.32rem;
+  background:
+    linear-gradient(90deg, rgba(88, 68, 50, 0.16) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 13% 20%, rgba(255, 176, 143, 0.22), transparent 29%),
+    radial-gradient(circle at 83% 78%, rgba(153, 222, 201, 0.2), transparent 31%),
+    linear-gradient(132deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 235, 0.7) 62%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image);
+  background-size: 3.2rem 100%, cover, cover, cover, 22rem 22rem;
+  box-shadow:
+    0.16rem 0.26rem 0 rgba(47, 38, 35, 0.055),
+    0 0.8rem 1.45rem rgba(47, 38, 35, 0.095);
+  opacity: 0.92;
+}
+
+.about-paper-room .about-contact-sheet-board::after {
+  inset: clamp(1rem, 2vw, 1.35rem) auto clamp(1rem, 2vw, 1.35rem) clamp(0.85rem, 1.8vw, 1.18rem);
+  z-index: 0;
+  width: clamp(0.34rem, 0.7vw, 0.46rem);
+  background:
+    radial-gradient(circle, rgba(255, 252, 246, 0.84) 0 34%, transparent 37% 100%) 0 0 / 100% 1.18rem repeat-y,
+    linear-gradient(to bottom, transparent, rgba(122, 93, 76, 0.26), rgba(153, 222, 201, 0.22), transparent);
+  clip-path: polygon(32% 0, 100% 4%, 72% 100%, 0 96%);
+  opacity: 0.84;
+}
+
+.about-paper-room .about-contact-sheet-heading {
+  z-index: 1;
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.055),
+    0 0.52rem 0.9rem rgba(47, 38, 35, 0.085),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.about-paper-room .about-contact-sheet-heading::before {
+  display: inline-grid;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 0.58rem;
+  padding: 0.34rem 0.58rem 0.29rem;
+  content: "bound frame sequence";
+  color: rgba(58, 45, 42, 0.74);
+  font-size: clamp(0.58rem, 0.76vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.92), rgba(255, 176, 143, 0.26)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  box-shadow: 0 0.34rem 0.58rem rgba(47, 38, 35, 0.075);
+  clip-path: polygon(5% 8%, 39% 0, 98% 7%, 94% 91%, 57% 100%, 0 88%);
+  transform: rotate(-0.65deg);
+}
+
+.about-paper-room .about-contact-sheet-heading::after {
+  content: "about room receipt";
+  box-shadow: 0 0.3rem 0.52rem rgba(47, 38, 35, 0.065);
+}
+
+.about-paper-room .about-contact-sheet-rail {
+  position: relative;
+  z-index: 1;
+  padding-left: clamp(0.25rem, 0.8vw, 0.45rem);
+}
+
+.about-paper-room .about-contact-sheet-rail::before {
+  content: "";
+  position: absolute;
+  left: clamp(0.45rem, 1vw, 0.72rem);
+  top: -0.3rem;
+  bottom: -0.3rem;
+  width: 1px;
+  border-left: 1px dashed var(--about-terminal-spine);
+  opacity: 0.78;
+}
+
+.about-paper-room .about-contact-sheet-rail__slip {
+  position: relative;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.04),
+    0 0.4rem 0.72rem rgba(47, 38, 35, 0.075);
+}
+
+.about-paper-room .about-contact-sheet {
+  z-index: 1;
+  padding: clamp(1.18rem, 2vw, 1.5rem) clamp(0.72rem, 1.4vw, 0.95rem) clamp(1rem, 2vw, 1.35rem);
+  background:
+    linear-gradient(90deg, rgba(122, 93, 76, 0.12), transparent 1.15rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.5), rgba(255, 247, 235, 0.2)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1.5% 5%, 22% 1.5%, 51% 4%, 79% 1%, 99% 6%, 97% 93%, 70% 98%, 42% 95%, 2% 98%);
+  box-shadow:
+    inset 0.28rem 0 0 rgba(88, 68, 50, 0.09),
+    0.1rem 0.2rem 0 rgba(47, 38, 35, 0.04),
+    0 0.62rem 1rem rgba(47, 38, 35, 0.075);
+}
+
+.about-paper-room .about-contact-sheet::before {
+  margin: -0.8rem 0 0.4rem;
+  content: "read left to right";
+  box-shadow: 0 0.3rem 0.52rem rgba(47, 38, 35, 0.07);
+}
+
+.about-paper-room .about-contact-card {
+  min-height: clamp(23rem, 35vw, 26.4rem);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.05),
+    0 0.54rem 0.94rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.about-paper-room .about-contact-card:nth-child(2n),
+.about-paper-room .about-contact-card:nth-child(3n) {
+  margin-top: clamp(0.34rem, 1.2vw, 0.72rem);
+}
+
+.about-paper-room .about-contact-card__image {
+  min-height: clamp(9.2rem, 14vw, 10.7rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(47, 38, 35, 0.065),
+    inset 0 -1rem 1.8rem rgba(47, 38, 35, 0.065);
+}
+
+@media (max-width: 900px) {
+  .about-paper-room .about-contact-sheet-board::after {
+    bottom: auto;
+    right: clamp(1rem, 3vw, 1.4rem);
+    left: clamp(1rem, 3vw, 1.4rem);
+    top: clamp(0.9rem, 3vw, 1.2rem);
+    width: auto;
+    height: 0.18rem;
+    background:
+      repeating-linear-gradient(to right, rgba(88, 68, 50, 0.24) 0 0.55rem, transparent 0.55rem 0.98rem),
+      linear-gradient(to right, transparent, rgba(122, 93, 76, 0.22), transparent);
+    clip-path: polygon(0 30%, 100% 0, 98% 100%, 1% 78%);
+  }
+
+  .about-paper-room .about-contact-sheet-rail::before {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-paper-room .about-contact-sheet-board {
+    padding: 1rem;
+  }
+
+  .about-paper-room .about-contact-sheet-heading::before,
+  .about-paper-room .about-contact-sheet-heading::after,
+  .about-paper-room .about-contact-sheet::before {
+    transform: none;
+  }
+
+  .about-paper-room .about-contact-sheet {
+    padding-inline: 0.7rem;
+  }
+
+  .about-paper-room .about-contact-card:nth-child(n) {
+    min-height: auto;
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-paper-room .about-contact-sheet-heading::before,
+  .about-paper-room .about-contact-card {
+    transform: none !important;
+  }
+}

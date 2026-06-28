@@ -1,0 +1,218 @@
+/* Bind the individual Notes/Blog post route into one calm reader-room folio.
+   This pass keeps the existing public note data honest while making the desk,
+   reading sheet, path shelf, and support board scan as one connected room. */
+.notes-post-room {
+  position: relative;
+  isolation: isolate;
+}
+
+.notes-post-room::before {
+  position: absolute;
+  content: "";
+  inset: clamp(5.5rem, 9vw, 7rem) clamp(0.35rem, 2vw, 1.2rem) auto;
+  z-index: -1;
+  min-height: clamp(38rem, 74vw, 54rem);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 176, 143, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(216, 197, 236, 0.15), transparent 30%),
+    linear-gradient(118deg, rgba(255, 250, 242, 0.72), rgba(248, 237, 219, 0.42) 55%, rgba(185, 201, 175, 0.15)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+  box-shadow:
+    0 1.2rem 2.8rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  clip-path: polygon(1% 2%, 17% 0, 36% 1.8%, 58% 0.4%, 81% 2.2%, 99% 0.6%, 98% 96%, 80% 98%, 56% 96.8%, 34% 99%, 12% 97%, 0 99%);
+  pointer-events: none;
+}
+
+.notes-post-desk,
+.notes-post-path-shelf,
+.notes-post-support-board {
+  position: relative;
+}
+
+.notes-post-desk::before {
+  position: absolute;
+  content: "reader room folio";
+  top: clamp(-0.95rem, -1.4vw, -0.45rem);
+  left: clamp(0.85rem, 2.4vw, 1.6rem);
+  z-index: 5;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.5rem 0.86rem 0.42rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(115deg, rgba(255, 252, 246, 0.96), rgba(255, 176, 143, 0.24)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 30rem 30rem;
+  box-shadow:
+    0.16rem 0.26rem 0 rgba(185, 201, 175, 0.18),
+    0 0.62rem 1.1rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  clip-path: polygon(2% 16%, 24% 0, 56% 7%, 99% 1%, 94% 88%, 66% 100%, 28% 91%, 0 98%);
+  font-family: var(--font-hand);
+  font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1.4deg);
+  pointer-events: none;
+}
+
+.notes-post-desk::after {
+  position: absolute;
+  content: "";
+  top: clamp(1.75rem, 4vw, 2.8rem);
+  bottom: clamp(-15rem, -12vw, -8rem);
+  left: clamp(1.25rem, 2.4vw, 1.9rem);
+  z-index: 0;
+  width: clamp(0.24rem, 0.5vw, 0.34rem);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.52), rgba(185, 201, 175, 0.46) 45%, rgba(216, 197, 236, 0.38)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow:
+    0.16rem 0 0 rgba(255, 250, 242, 0.58),
+    0.38rem 0.48rem 1.25rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(22% 0, 88% 2%, 74% 22%, 94% 48%, 71% 72%, 84% 100%, 14% 98%, 25% 74%, 4% 50%, 28% 22%);
+  pointer-events: none;
+}
+
+.notes-post-desk > *,
+.notes-post-path-shelf > *,
+.notes-post-support-board > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-path-shelf {
+  padding-top: clamp(2.7rem, 5vw, 3.8rem);
+}
+
+.notes-post-path-shelf::before {
+  position: absolute;
+  content: "read · return · continue";
+  top: clamp(0.6rem, 1.4vw, 1rem);
+  left: clamp(0.95rem, 2.6vw, 1.7rem);
+  z-index: 3;
+  padding: 0.46rem 0.82rem 0.38rem;
+  color: rgba(58, 45, 42, 0.7);
+  background:
+    linear-gradient(125deg, rgba(255, 250, 242, 0.94), rgba(185, 201, 175, 0.22)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(216, 197, 236, 0.14),
+    0 0.5rem 1rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(3% 9%, 30% 1%, 68% 7%, 98% 0, 93% 90%, 62% 97%, 25% 91%, 1% 100%);
+  font-size: clamp(0.56rem, 0.82vw, 0.68rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(0.8deg);
+  pointer-events: none;
+}
+
+.notes-post-path-shelf::after,
+.notes-post-support-board::before {
+  position: absolute;
+  content: "";
+  left: clamp(1.2rem, 2.6vw, 1.95rem);
+  right: clamp(1rem, 2.4vw, 1.7rem);
+  z-index: 0;
+  height: 0.16rem;
+  background: linear-gradient(90deg, transparent, rgba(58, 45, 42, 0.18), rgba(185, 201, 175, 0.34), rgba(58, 45, 42, 0.16), transparent);
+  box-shadow: 0 0.42rem 0.9rem rgba(47, 38, 35, 0.08);
+  pointer-events: none;
+}
+
+.notes-post-path-shelf::after {
+  top: clamp(1.95rem, 4vw, 2.9rem);
+}
+
+.notes-post-support-board {
+  margin-top: clamp(1.4rem, 3.5vw, 2.2rem);
+  padding-top: clamp(2.5rem, 4.8vw, 3.5rem);
+}
+
+.notes-post-support-board::before {
+  top: clamp(1.2rem, 2.7vw, 1.85rem);
+}
+
+.notes-post-support-board::after {
+  position: absolute;
+  content: "support ledger";
+  top: clamp(0.28rem, 1vw, 0.68rem);
+  right: clamp(0.9rem, 2.5vw, 1.6rem);
+  z-index: 3;
+  padding: 0.46rem 0.78rem 0.38rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.95), rgba(216, 197, 236, 0.2)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 17rem 17rem, 28rem 28rem;
+  box-shadow:
+    -0.12rem 0.2rem 0 rgba(255, 176, 143, 0.14),
+    0 0.58rem 1.05rem rgba(47, 38, 35, 0.105);
+  clip-path: polygon(1% 11%, 28% 0, 59% 6%, 99% 2%, 94% 89%, 70% 99%, 35% 93%, 4% 100%);
+  font-family: var(--font-hand);
+  font-size: clamp(0.56rem, 0.82vw, 0.68rem);
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(1.2deg);
+  pointer-events: none;
+}
+
+.notes-post-sheet,
+.notes-post-path-note,
+.notes-post-support-note,
+.notes-post-source-slip {
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(255, 250, 242, 0.5),
+    0 0.7rem 1.45rem rgba(47, 38, 35, 0.085),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+@media (max-width: 760px) {
+  .notes-post-room::before {
+    inset-inline: 0.08rem;
+    min-height: 46rem;
+  }
+
+  .notes-post-desk::before,
+  .notes-post-path-shelf::before,
+  .notes-post-support-board::after {
+    position: relative;
+    inset: auto;
+    display: inline-grid;
+    margin: 0 0 0.75rem 0.35rem;
+    transform: rotate(-0.4deg);
+  }
+
+  .notes-post-desk::after {
+    display: none;
+  }
+
+  .notes-post-path-shelf,
+  .notes-post-support-board {
+    padding-top: 0.6rem;
+  }
+
+  .notes-post-path-shelf::after,
+  .notes-post-support-board::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-post-desk::before,
+  .notes-post-path-shelf::before,
+  .notes-post-support-board::after {
+    transform: none;
+  }
+}

@@ -219,11 +219,12 @@ EOF
               continue
             fi
 
-            PAYLOAD=$(python - <<PY
+            PAYLOAD=$(FILE_NAME="$name" python - <<'PY'
           import json
+          import os
           print(json.dumps({
             "username": "Soft Strange Website Auditor",
-            "content": "Visual tour video: $name",
+            "content": f"Visual tour video: {os.environ.get('FILE_NAME')}",
             "allowed_mentions": {"parse": []}
           }))
           PY

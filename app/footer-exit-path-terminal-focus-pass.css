@@ -1,0 +1,130 @@
+/* Footer exit path terminal focus pass.
+   Runs after the footer terminal ledger so the lower shared chrome reads as one guided exit path, not separate receipt/card groups. */
+
+.studio-footer--paper {
+  grid-template-columns: minmax(0, 0.92fr) minmax(18rem, 1.55fr);
+  column-gap: clamp(0.8rem, 2.2vw, 1.55rem);
+  row-gap: clamp(0.72rem, 1.8vw, 1.15rem);
+}
+
+.studio-footer__exit-receipts {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.42rem, 1vw, 0.68rem);
+  padding: clamp(1.04rem, 2vw, 1.32rem) clamp(0.72rem, 1.8vw, 1.1rem) clamp(0.78rem, 1.5vw, 1rem);
+}
+
+.studio-footer__exit-receipts::before {
+  inset: 0.28rem 0.14rem 0.1rem;
+  z-index: -2;
+  height: auto;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.58), transparent 24%),
+    linear-gradient(102deg, rgba(238, 222, 191, 0.56), rgba(255, 252, 241, 0.88) 46%, rgba(220, 199, 164, 0.48)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, auto, 180px 180px;
+  clip-path: polygon(1% 13%, 18% 5%, 44% 8%, 73% 3%, 99% 12%, 97% 88%, 78% 96%, 48% 92%, 19% 98%, 3% 89%);
+  box-shadow:
+    0 0.76rem 1.34rem rgba(67, 48, 27, 0.13),
+    0 0.14rem 0.26rem rgba(67, 48, 27, 0.08),
+    inset 0 0.12rem 0 rgba(255, 255, 255, 0.56),
+    inset 0 -0.86rem 1.08rem rgba(103, 73, 39, 0.05);
+  transform: none;
+}
+
+.studio-footer__exit-receipts::after {
+  content: "guided exits";
+  left: clamp(0.95rem, 2.2vw, 1.38rem);
+  top: 0.02rem;
+  z-index: 3;
+  background:
+    linear-gradient(105deg, rgba(255, 251, 236, 0.94), rgba(230, 211, 177, 0.7)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, 130px 130px;
+  box-shadow:
+    0 0.22rem 0.48rem rgba(70, 50, 29, 0.13),
+    0 0.07rem 0 rgba(255, 255, 255, 0.54) inset;
+  transform: rotate(-0.58deg);
+}
+
+.studio-footer__exit-receipt {
+  min-height: 100%;
+  align-items: stretch;
+  padding: clamp(0.62rem, 1.3vw, 0.82rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 242, 0.94), rgba(246, 232, 205, 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 145px 145px;
+  box-shadow:
+    0 0.38rem 0.74rem rgba(66, 47, 26, 0.12),
+    0 0.07rem 0 rgba(255, 255, 255, 0.48) inset;
+}
+
+.studio-footer__exit-receipt::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  right: 0.55rem;
+  top: 0.32rem;
+  z-index: 2;
+  height: 0.18rem;
+  background: linear-gradient(90deg, rgba(91, 66, 37, 0), rgba(91, 66, 37, 0.22), rgba(91, 66, 37, 0));
+  clip-path: polygon(0 35%, 24% 0, 52% 42%, 76% 8%, 100% 44%, 100% 86%, 74% 56%, 49% 100%, 21% 58%, 0 84%);
+  opacity: 0.74;
+  pointer-events: none;
+}
+
+.studio-footer__exit-receipt-photo {
+  min-height: clamp(3.35rem, 7vw, 4.65rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 244, 0.22),
+    0 0.28rem 0.58rem rgba(64, 45, 25, 0.14);
+}
+
+.studio-footer__exit-receipt-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.26rem;
+}
+
+.studio-footer__exit-receipt-action {
+  width: fit-content;
+  margin-top: 0.08rem;
+  padding: 0.14rem 0.42rem;
+  background: rgba(255, 248, 231, 0.74);
+  clip-path: polygon(5% 9%, 100% 0, 94% 86%, 8% 100%);
+  box-shadow: 0 0.12rem 0.28rem rgba(70, 50, 29, 0.08);
+}
+
+.studio-footer__trail {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 920px) {
+  .studio-footer--paper {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-footer__exit-receipts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .studio-footer__exit-receipts {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-footer__exit-receipt {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-footer__exit-receipt,
+  .studio-footer__exit-receipts::after {
+    transform: none;
+  }
+}

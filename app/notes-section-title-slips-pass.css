@@ -1,0 +1,52 @@
+/* Notes section title slips pass.
+   Keeps the lower Notes room headings short, supportive, and physically placed on paper slips. */
+
+.notes-source-board__intro,
+.notes-state-board__intro,
+.notes-path-photo-board__intro {
+  position: relative;
+  padding-left: clamp(0.75rem, 2vw, 1rem);
+}
+
+.notes-source-board__intro::before,
+.notes-state-board__intro::before,
+.notes-path-photo-board__intro::before {
+  position: absolute;
+  top: 0.15rem;
+  bottom: 0.25rem;
+  left: 0;
+  width: 0.28rem;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(47, 38, 35, 0.26), rgba(255, 176, 143, 0.36), rgba(185, 201, 175, 0.28));
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.08);
+}
+
+.notes-source-board__intro > h1,
+.notes-state-board__intro > h1,
+.notes-path-photo-board__intro > h1 {
+  max-width: min(100%, 24rem);
+  padding: clamp(0.48rem, 1.25vw, 0.7rem) clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1;
+  white-space: nowrap;
+  clip-path: polygon(1.8% 9%, 28% 2%, 68% 4%, 98% 1%, 96% 91%, 72% 98%, 31% 96%, 2% 100%);
+  box-shadow: 0.16rem 0.25rem 0 rgba(47, 38, 35, 0.08), 0 0.7rem 1.15rem rgba(47, 38, 35, 0.1);
+}
+
+.notes-source-board__intro > p:not(.eyebrow),
+.notes-path-photo-board__intro > p:not(.eyebrow) {
+  max-width: 44rem;
+}
+
+.notes-state-board__intro {
+  align-self: start;
+}
+
+@media (max-width: 620px) {
+  .notes-source-board__intro > h1,
+  .notes-state-board__intro > h1,
+  .notes-path-photo-board__intro > h1 {
+    white-space: normal;
+  }
+}

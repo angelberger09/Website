@@ -1,0 +1,86 @@
+/* Feed receipt terminal budget pass.
+   Calms the newest Store and Portfolio public receipt/seal layers so they stay visibly
+   paper-like without overpowering the surrounding room surfaces. */
+
+.store-feed-ledger-board::after,
+.store-feed-ledger-board__intro::after,
+.store-feed-rule-slips::after,
+.portfolio-feed-board--shelf > .portfolio-board-heading::after,
+.portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after,
+.portfolio-feed-board--shelf .portfolio-rule-tapes--visitor::after {
+  filter: none;
+  box-shadow:
+    0.04rem 0.08rem 0 rgba(47, 38, 35, 0.035),
+    0 0.36rem 0.72rem rgba(47, 38, 35, 0.072);
+  opacity: 0.9;
+}
+
+.store-feed-ledger-board::after,
+.store-feed-rule-slips::after,
+.portfolio-feed-board--shelf > .portfolio-board-heading::after,
+.portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after {
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+}
+
+.store-feed-ledger-board__intro::after,
+.portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after {
+  opacity: 0.82;
+}
+
+.store-feed-ledger-card::after,
+.portfolio-feed-board--shelf .portfolio-feed-ledger--visitor .portfolio-feed-card::after {
+  opacity: 0.54;
+  box-shadow: 0.04rem 0.08rem 0.2rem rgba(47, 38, 35, 0.045);
+}
+
+.store-feed-ledger-board,
+.portfolio-feed-board--shelf {
+  isolation: isolate;
+}
+
+.store-feed-ledger-board .store-feed-ledger-card,
+.portfolio-feed-board--shelf .portfolio-feed-card,
+.portfolio-feed-board--shelf .portfolio-rule-slip {
+  box-shadow:
+    0.06rem 0.1rem 0 rgba(47, 38, 35, 0.034),
+    0 0.62rem 1.18rem rgba(47, 38, 35, 0.075);
+}
+
+.store-feed-rule-slips,
+.portfolio-feed-board--shelf .portfolio-rule-tapes--visitor {
+  margin-top: clamp(0.88rem, 2vw, 1.2rem);
+}
+
+@media (max-width: 760px) {
+  .store-feed-ledger-board::after,
+  .store-feed-ledger-board__intro::after,
+  .store-feed-rule-slips::after,
+  .portfolio-feed-board--shelf > .portfolio-board-heading::after,
+  .portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after,
+  .portfolio-feed-board--shelf .portfolio-rule-tapes--visitor::after {
+    max-width: 100%;
+    letter-spacing: 0.1em;
+    transform: none;
+  }
+
+  .store-feed-ledger-board .store-feed-ledger-card,
+  .portfolio-feed-board--shelf .portfolio-feed-card,
+  .portfolio-feed-board--shelf .portfolio-rule-slip {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-feed-ledger-board::after,
+  .store-feed-ledger-board__intro::after,
+  .store-feed-ledger-card::after,
+  .store-feed-rule-slips::after,
+  .portfolio-feed-board--shelf > .portfolio-board-heading::after,
+  .portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after,
+  .portfolio-feed-board--shelf .portfolio-feed-ledger--visitor .portfolio-feed-card::after,
+  .portfolio-feed-board--shelf .portfolio-rule-tapes--visitor::after {
+    transform: none !important;
+    transition: none !important;
+  }
+}

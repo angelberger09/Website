@@ -1,0 +1,147 @@
+/* About contact sheet terminal budget pass.
+   Calms the late frame-sequence layer so the About contact sheet reads as one
+   bound public-room receipt instead of separate heavy frame scraps. */
+
+.about-paper-room .about-contact-sheet-board {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.35rem, 3vw, 2.1rem);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 176, 143, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.78), rgba(244, 236, 224, 0.54)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1% 3%, 25% 0, 54% 2%, 99% 1%, 97% 96%, 70% 99%, 34% 97%, 0 99%);
+  box-shadow:
+    0.18rem 0.24rem 0 rgba(47, 38, 35, 0.045),
+    0 0.9rem 1.45rem rgba(47, 38, 35, 0.09);
+}
+
+.about-paper-room .about-contact-sheet-board::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.65rem, 1.4vw, 1rem) auto clamp(0.65rem, 1.4vw, 1rem) clamp(0.55rem, 1.2vw, 0.85rem);
+  z-index: -1;
+  width: 0.2rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(rgba(47, 38, 35, 0.18), rgba(47, 38, 35, 0.04)),
+    radial-gradient(circle, rgba(255, 252, 246, 0.72) 0 35%, transparent 38% 100%) 50% 0 / 0.2rem 1rem repeat-y;
+  opacity: 0.55;
+}
+
+.about-paper-room .about-contact-sheet-heading,
+.about-paper-room .about-contact-sheet-rail,
+.about-paper-room .about-contact-sheet {
+  position: relative;
+  z-index: 1;
+}
+
+.about-paper-room .about-contact-sheet-heading {
+  max-width: 44rem;
+  margin-inline: 0 auto;
+  padding: clamp(0.95rem, 1.8vw, 1.25rem) clamp(1rem, 2vw, 1.45rem);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.9), rgba(255, 250, 242, 0.58)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(0 7%, 32% 0, 100% 4%, 97% 91%, 67% 100%, 4% 96%);
+  box-shadow: 0 0.58rem 0.9rem rgba(47, 38, 35, 0.075);
+}
+
+.about-paper-room .about-contact-sheet-rail {
+  margin-block: clamp(1rem, 2vw, 1.35rem);
+  gap: clamp(0.75rem, 1.6vw, 1rem);
+}
+
+.about-paper-room .about-contact-sheet-rail__slip {
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.04),
+    0 0.48rem 0.74rem rgba(47, 38, 35, 0.075);
+  transform: rotate(-0.35deg);
+}
+
+.about-paper-room .about-contact-sheet-rail__slip:nth-child(even) {
+  transform: rotate(0.3deg);
+}
+
+.about-paper-room .about-contact-sheet {
+  padding: clamp(1rem, 2vw, 1.3rem) clamp(0.75rem, 1.6vw, 1rem) clamp(1.15rem, 2vw, 1.45rem);
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.045), transparent 1.1rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.5), rgba(185, 201, 175, 0.13)),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+  clip-path: polygon(1% 2%, 27% 0, 55% 1%, 99% 3%, 98% 95%, 76% 99%, 42% 97%, 0 98%);
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.38);
+}
+
+.about-paper-room .about-contact-sheet::before {
+  margin: -0.85rem 0 0.28rem;
+  box-shadow:
+    0.06rem 0.1rem 0 rgba(47, 38, 35, 0.04),
+    0 0.35rem 0.62rem rgba(47, 38, 35, 0.075);
+  opacity: 0.86;
+  transform: rotate(-0.25deg);
+}
+
+.about-paper-room .about-contact-card {
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.045),
+    0 0.7rem 1rem rgba(47, 38, 35, 0.085);
+  transform: rotate(-0.45deg);
+}
+
+.about-paper-room .about-contact-card:nth-child(even) {
+  transform: rotate(0.4deg);
+}
+
+.about-paper-room .about-contact-card::after,
+.about-paper-room .about-contact-card__copy::before {
+  box-shadow:
+    0.05rem 0.08rem 0 rgba(47, 38, 35, 0.035),
+    0 0.28rem 0.46rem rgba(47, 38, 35, 0.065);
+  opacity: 0.9;
+}
+
+.about-paper-room .about-contact-card__image {
+  min-height: clamp(8rem, 20vw, 10.5rem);
+  filter: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.36);
+}
+
+.about-paper-room .about-contact-card__image span {
+  text-shadow: none;
+}
+
+.about-paper-room .about-contact-card__copy {
+  padding-block-start: clamp(0.9rem, 1.8vw, 1.15rem);
+}
+
+@media (max-width: 760px) {
+  .about-paper-room .about-contact-sheet-board {
+    padding: 1rem;
+    clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%);
+  }
+
+  .about-paper-room .about-contact-sheet {
+    padding-inline: 0.55rem;
+    overflow-x: auto;
+  }
+
+  .about-paper-room .about-contact-sheet-rail__slip,
+  .about-paper-room .about-contact-card,
+  .about-paper-room .about-contact-card:nth-child(even),
+  .about-paper-room .about-contact-sheet::before {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-paper-room .about-contact-sheet-rail__slip,
+  .about-paper-room .about-contact-card,
+  .about-paper-room .about-contact-card:nth-child(even) {
+    transform: none;
+  }
+}

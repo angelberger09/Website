@@ -1,0 +1,104 @@
+/* Notes reader status ledger pass. */
+
+.notes-reader-board__copy {
+  position: relative;
+}
+
+.notes-reader-board__copy .reader-state,
+.notes-reader-board__copy .notes-source-stamp {
+  position: relative;
+  display: grid;
+  width: min(100%, 28rem);
+  margin-top: clamp(0.15rem, 0.8vw, 0.35rem);
+  padding: clamp(0.78rem, 1.6vw, 1rem) clamp(0.88rem, 2vw, 1.15rem) clamp(0.82rem, 1.8vw, 1.05rem) clamp(1rem, 2.2vw, 1.35rem);
+  color: rgba(54, 42, 33, 0.82);
+  line-height: 1.55;
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.94), rgba(247, 232, 205, 0.68) 66%, rgba(185, 201, 175, 0.16)),
+    repeating-linear-gradient(180deg, transparent 0 1.58rem, rgba(80, 61, 44, 0.045) 1.6rem 1.64rem),
+    var(--grain-image);
+  background-size: cover, auto, 12rem 12rem;
+  clip-path: polygon(2% 5%, 18% 1%, 51% 4%, 82% 0, 98% 5%, 96% 92%, 70% 98%, 31% 96%, 1% 99%);
+  box-shadow: 0.14rem 0.2rem 0 rgba(48, 36, 29, 0.065), 0 0.74rem 1.32rem rgba(60, 43, 30, 0.105), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  transform: rotate(-0.18deg);
+}
+
+.notes-reader-board__copy .notes-source-stamp {
+  gap: 0.34rem;
+  padding-top: clamp(1.28rem, 2.5vw, 1.62rem);
+}
+
+.notes-reader-board__copy .reader-state::before,
+.notes-reader-board__copy .notes-source-stamp::before {
+  position: absolute;
+  top: -0.42rem;
+  left: clamp(0.78rem, 1.8vw, 1.12rem);
+  z-index: 1;
+  width: fit-content;
+  padding: 0.22rem 0.5rem 0.18rem;
+  color: rgba(61, 47, 37, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: linear-gradient(124deg, rgba(255, 252, 246, 0.98), rgba(235, 219, 190, 0.74)), var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(5% 16%, 96% 0, 100% 82%, 8% 100%);
+  box-shadow: 0 0.28rem 0.52rem rgba(72, 48, 32, 0.115);
+  transform: rotate(1.2deg);
+}
+
+.notes-reader-board__copy .reader-state::before {
+  content: "reader status";
+}
+
+.notes-reader-board__copy .notes-source-stamp::before {
+  content: "shelf ledger";
+}
+
+.notes-reader-board__copy .reader-state::after,
+.notes-reader-board__copy .notes-source-stamp::after {
+  content: "";
+  position: absolute;
+  inset: auto clamp(0.72rem, 1.7vw, 1rem) 0.48rem;
+  height: 0.18rem;
+  pointer-events: none;
+  background: repeating-linear-gradient(to right, rgba(95, 70, 46, 0.22) 0 0.62rem, transparent 0.62rem 1.05rem);
+  opacity: 0.72;
+}
+
+.notes-reader-board__copy .reader-state--error small {
+  display: block;
+  width: fit-content;
+  margin-top: 0.48rem;
+  padding: 0.24rem 0.5rem 0.2rem;
+  color: rgba(61, 47, 37, 0.72);
+  background: rgba(255, 252, 246, 0.64);
+  clip-path: polygon(4% 12%, 96% 0, 94% 90%, 6% 100%);
+}
+
+@media (max-width: 860px) {
+  .notes-reader-board__copy .reader-state,
+  .notes-reader-board__copy .notes-source-stamp {
+    width: 100%;
+    transform: none;
+  }
+
+  .notes-reader-board__copy .reader-state::before,
+  .notes-reader-board__copy .notes-source-stamp::before {
+    position: static;
+    margin-bottom: 0.45rem;
+    transform: rotate(-0.7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-reader-board__copy .reader-state,
+  .notes-reader-board__copy .notes-source-stamp,
+  .notes-reader-board__copy .reader-state::before,
+  .notes-reader-board__copy .notes-source-stamp::before {
+    transform: none;
+  }
+}

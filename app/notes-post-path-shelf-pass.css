@@ -139,12 +139,106 @@
   line-height: 1.58;
 }
 
+/* Terminal room-path binding.
+   Keeps the three reader path cards legible but makes them scan as one return/continue ledger instead of isolated scraps. */
+.notes-post-path-shelf {
+  padding: clamp(0.9rem, 2vw, 1.2rem) clamp(0.86rem, 1.8vw, 1.08rem) clamp(1rem, 2vw, 1.22rem) clamp(1.7rem, 3vw, 2.3rem);
+  gap: clamp(0.68rem, 1.5vw, 0.9rem);
+}
+
+.notes-post-path-shelf::before {
+  inset: -0.48rem -0.5rem -0.56rem;
+  clip-path: polygon(1% 3%, 98.8% 1.2%, 98% 96.8%, 2% 99%);
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.09) 0 0.16rem, transparent 0.16rem 100%),
+    radial-gradient(circle at 10% 18%, rgba(255, 176, 143, 0.13), transparent 28%),
+    radial-gradient(circle at 88% 76%, rgba(216, 197, 236, 0.13), transparent 32%),
+    linear-gradient(138deg, rgba(255, 252, 246, 0.72), rgba(255, 247, 235, 0.36)),
+    var(--grain-image);
+  background-size: cover, cover, cover, cover, 22rem 22rem;
+  box-shadow:
+    0.22rem 0.34rem 0 rgba(47, 38, 35, 0.06),
+    0 1.05rem 1.9rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.notes-post-path-shelf::after {
+  position: absolute;
+  inset: 0.75rem auto 0.74rem 0.72rem;
+  z-index: -1;
+  width: 0.42rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    linear-gradient(rgba(47, 38, 35, 0.14), rgba(47, 38, 35, 0.03)),
+    repeating-linear-gradient(180deg, rgba(47, 38, 35, 0.2) 0 0.14rem, transparent 0.14rem 0.55rem);
+  opacity: 0.7;
+}
+
+.notes-post-path-note {
+  min-height: 14.25rem;
+  padding: clamp(0.76rem, 1.8vw, 0.94rem);
+  clip-path: polygon(2% 2.5%, 98% 1%, 96.8% 97%, 3% 98.5%);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.78)),
+    radial-gradient(circle at 25% 12%, rgba(255, 176, 143, 0.12), transparent 38%),
+    var(--grain-image);
+  background-size: cover, cover, 20rem 20rem;
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07),
+    0 0.62rem 1.15rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.notes-post-path-note::before {
+  position: absolute;
+  top: 0.54rem;
+  right: clamp(0.64rem, 2vw, 0.9rem);
+  width: 2.35rem;
+  height: 0.48rem;
+  content: "";
+  transform: rotate(2deg);
+  clip-path: polygon(0 22%, 100% 0, 96% 78%, 4% 100%);
+  background: rgba(255, 252, 246, 0.68);
+  box-shadow: 0 0.16rem 0.32rem rgba(47, 38, 35, 0.07);
+}
+
+.notes-post-path-note::after {
+  position: absolute;
+  inset: auto 0.7rem 0.64rem auto;
+  width: 2.4rem;
+  height: 0.36rem;
+  content: "";
+  clip-path: polygon(1% 18%, 100% 0, 96% 84%, 5% 100%);
+  background: rgba(47, 38, 35, 0.1);
+  opacity: 0.55;
+}
+
+.notes-post-path-note__visual {
+  min-height: 5.85rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(47, 38, 35, 0.06),
+    0 0.16rem 0.34rem rgba(47, 38, 35, 0.07);
+}
+
+.notes-post-path-note span {
+  box-shadow: 0.08rem 0.13rem 0 rgba(47, 38, 35, 0.06);
+}
+
 @media (max-width: 860px) {
   .notes-post-path-shelf {
     grid-template-columns: 1fr;
+    padding-left: clamp(1.15rem, 4vw, 1.45rem);
   }
 
   .notes-post-path-note {
     min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-post-path-note,
+  .notes-post-path-note::before {
+    transform: none;
   }
 }

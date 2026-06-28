@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 14:08 ET — Notes reader left docket
+
+See `.agent/changes/2026-06-28-notes-reader-left-docket.md` and `.agent/matrices/notes-reader-left-docket.matrix.md`.
+
 ## 2026-06-28 13:50 ET — About slip depth selector repair
 
 See `.agent/changes/2026-06-28-about-slip-depth-selector-repair.md` and `.agent/matrices/about-slip-depth-selector-repair.matrix.md`.

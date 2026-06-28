@@ -2,6 +2,54 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 08:08 ET — Store promise terminal trust board
+
+### Changed
+
+- Added `app/store-promise-terminal-trust-board-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after `store-promise-binding-path-pass.css` so the final Store promise treatment renders over the earlier promise-card layers.
+- Bound the Store promise section into one calmer clipped paper trust board with a `public trust board` label, connector thread, lower `one honest shelf` label, flatter note alignment, and lighter note shadows.
+- Kept Store copy, promise data, readiness boundaries, no-fake-inventory language, links, and public-safe data unchanged.
+- Added `.agent/changes/2026-06-28-store-promise-terminal-trust-board.md`.
+- Added `.agent/matrices/store-promise-terminal-trust-board.matrix.md`.
+
+### Why
+
+The Store promise notes already used paper/photo styling, but the section could still scan as adjacent cards instead of one bound public trust surface. The active `.agent` state asks Store and similar filled pages to flatten hierarchy away from nested panels, keep honest readiness states, and use paper placement and snippets to make public rooms readable without inventing products or live listings.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 07:49 ET — Footer exit terminal budget refinement
 
 ### Changed

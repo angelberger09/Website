@@ -1,5 +1,8 @@
+@import './about-room-path-docket-pass.css';
+
 /* About room spine ledger pass.
-   Binds the About section path into one readable paper ledger instead of five loose slips. */
+   Binds the About section path into one readable paper ledger instead of five loose slips.
+   Imports the stronger room path docket layer so the previously added docket styling renders. */
 
 .about-room-spine {
   overflow: visible;

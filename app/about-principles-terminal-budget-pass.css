@@ -1,0 +1,167 @@
+/* About principles terminal budget pass.
+   Calms the late Working principles promise trail so it reads as one bound public promise board. */
+
+.about-principles-board {
+  --about-principles-budget-ink: rgba(58, 45, 42, 0.78);
+  --about-principles-budget-shadow: rgba(47, 38, 35, 0.13);
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.about-principles-board::before {
+  position: absolute;
+  inset: clamp(0.55rem, 1.8vw, 0.95rem) clamp(0.35rem, 1.5vw, 0.8rem) clamp(0.45rem, 1.6vw, 0.85rem);
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(216, 197, 236, 0.18), transparent 34%),
+    linear-gradient(140deg, rgba(255, 252, 246, 0.56), rgba(255, 247, 235, 0.36)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1% 4%, 18% 1.2%, 47% 2.6%, 77% 0.8%, 99% 3.8%, 97.5% 36%, 99.2% 95%, 74% 98.4%, 43% 96.8%, 16% 99%, 1.4% 95.2%, 2.6% 54%);
+  box-shadow:
+    0.22rem 0.34rem 0 rgba(47, 38, 35, 0.05),
+    0.8rem 1.1rem 1.9rem rgba(47, 38, 35, 0.09);
+  opacity: 0.88;
+}
+
+.about-principles-board::after {
+  position: absolute;
+  top: clamp(1rem, 3vw, 1.8rem);
+  bottom: clamp(1rem, 3vw, 1.8rem);
+  left: clamp(0.9rem, 3vw, 1.55rem);
+  z-index: 1;
+  width: 0.18rem;
+  content: "";
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(94, 76, 68, 0.32) 0 0.42rem,
+    transparent 0.42rem 0.86rem
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0.08rem 0.12rem 0 rgba(47, 38, 35, 0.08));
+}
+
+.about-principles-board .about-board-heading,
+.about-principles-board .about-principles-collage {
+  position: relative;
+  z-index: 2;
+}
+
+.about-principles-board .about-board-heading {
+  max-width: min(100%, 46rem);
+  margin-left: clamp(0.55rem, 2vw, 1.05rem);
+  margin-bottom: clamp(0.82rem, 2.2vw, 1.2rem);
+  transform: rotate(-0.18deg);
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.06),
+    0.42rem 0.62rem 1rem rgba(47, 38, 35, 0.1);
+}
+
+.about-principles-collage {
+  margin-left: clamp(0.55rem, 2vw, 1.05rem);
+  padding: clamp(2.1rem, 4.2vw, 2.8rem) clamp(0.45rem, 1.6vw, 0.9rem) clamp(0.55rem, 1.8vw, 0.95rem);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.34), rgba(185, 201, 175, 0.12)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  clip-path: polygon(1.2% 4%, 26% 1.4%, 56% 3%, 98.4% 1.2%, 96.6% 38%, 99% 94.2%, 72% 98%, 39% 96.2%, 2% 98.8%, 3% 59%);
+  box-shadow:
+    inset 0.08rem 0.1rem 0 rgba(255, 255, 255, 0.34),
+    0.24rem 0.34rem 0 rgba(47, 38, 35, 0.045);
+}
+
+.about-principles-collage::after {
+  left: clamp(0.95rem, 3vw, 1.75rem);
+  width: min(16rem, 72vw);
+  content: "public promise board";
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0.24rem 0.36rem 0.72rem rgba(47, 38, 35, 0.11);
+  transform: rotate(-0.55deg);
+}
+
+.about-principles-board .about-principle-note {
+  padding: clamp(1.22rem, 2.8vw, 1.65rem) clamp(0.95rem, 2.2vw, 1.15rem) clamp(1rem, 2.5vw, 1.22rem);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.055),
+    0.28rem 0.42rem 0.82rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-0.28deg);
+}
+
+.about-principles-board .about-principle-note:nth-child(2) {
+  transform: rotate(0.22deg) translateY(0.18rem);
+}
+
+.about-principles-board .about-principle-note:nth-child(3) {
+  transform: rotate(-0.12deg);
+}
+
+.about-principles-board .about-principle-note::before {
+  top: 0.42rem;
+  left: clamp(0.72rem, 2vw, 0.92rem);
+  min-width: 5.2rem;
+  padding: 0.28rem 0.52rem 0.25rem;
+  box-shadow: 0.1rem 0.18rem 0.46rem rgba(47, 38, 35, 0.1);
+  font-size: 0.58rem;
+}
+
+.about-principles-board .about-principle-note::after {
+  right: -0.78rem;
+  opacity: 0.7;
+}
+
+.about-principles-board .about-principle-note__photo {
+  min-height: clamp(4.9rem, 10vw, 5.8rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(58, 45, 42, 0.05),
+    0.14rem 0.22rem 0.55rem rgba(47, 38, 35, 0.09);
+}
+
+.about-principles-board .about-principle-note h2 {
+  max-width: 13ch;
+  font-size: clamp(1.18rem, 2.2vw, 1.56rem);
+}
+
+.about-principles-board .about-principle-note p {
+  color: rgba(58, 45, 42, 0.73);
+}
+
+@media (max-width: 900px) {
+  .about-principles-board::after {
+    left: clamp(0.85rem, 5vw, 1.2rem);
+  }
+
+  .about-principles-board .about-board-heading,
+  .about-principles-collage {
+    margin-left: 0;
+  }
+
+  .about-principles-collage {
+    padding-top: 2.3rem;
+  }
+
+  .about-principles-board .about-principle-note,
+  .about-principles-board .about-principle-note:nth-child(2),
+  .about-principles-board .about-principle-note:nth-child(3) {
+    transform: none;
+  }
+
+  .about-principles-board .about-principle-note::after {
+    left: 1.15rem;
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-principles-board .about-board-heading,
+  .about-principles-board .about-principle-note,
+  .about-principles-board .about-principle-note:nth-child(2),
+  .about-principles-board .about-principle-note:nth-child(3),
+  .about-principles-collage::after {
+    transform: none;
+  }
+}

@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 11:03 ET — Homepage hero wordless entry
+
+### Changed
+
+- Removed visible hero wording from `app/page.jsx`: the kicker, large title list, support slip, arrival ticket, and Open rooms side card.
+- Kept a screen-reader-only `h1` so the homepage still has a semantic page title.
+- Kept the room-choice navigation as the only visible first-screen hero content.
+- Added `app/home-hero-wordless-entry-pass.css`.
+- Removed the failed `app/home-hero-ux-entry-board-pass.css` load from `app/layout.jsx` and loaded the wordless entry pass after the current front-desk hero pass.
+- Added `.agent/changes/2026-06-28-home-hero-wordless-entry.md`.
+- Updated `.agent/matrices/home-hero-scale-guard.matrix.md`.
+
+### Why
+
+Angel asked to get rid of all hero wording after the previous hero pass still felt broken and over-composed. This pass stops the first screen from behaving like a giant poster and turns it into a quieter room-choice entry surface while preserving semantic HTML for accessibility.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-002
+- DESIGN-014
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-028
+- METRIC-029
+- METRIC-032
+
 ## 2026-06-28 10:47 ET — Homepage UX entry board
 
 ### Changed

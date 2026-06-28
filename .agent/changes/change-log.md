@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 19:18 ET — Notes section title slips
+
+See `.agent/changes/2026-06-28-notes-section-title-slips.md` and `.agent/matrices/notes-section-title-slips.matrix.md`.
+
 ## 2026-06-28 19:10 ET — Notes post margin binding
 
 See `.agent/changes/2026-06-28-notes-post-margin-binding.md` and `.agent/matrices/notes-post-margin-binding.matrix.md`.

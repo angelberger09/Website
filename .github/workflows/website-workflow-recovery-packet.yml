@@ -2,7 +2,11 @@ name: Website Workflow Recovery Packet
 
 on:
   workflow_run:
-    types: [completed]
+    workflows:
+      - Deploy Website
+      - Visual Tour
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -17,56 +21,83 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Write recovery packet
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_RUN_ID: ${{ github.event.workflow_run.id }}
+          EVENT_RUN_NAME: ${{ github.event.workflow_run.name }}
+          EVENT_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          EVENT_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          EVENT_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_URL: ${{ github.event.workflow_run.html_url }}
+          FALLBACK_RUN_ID: ${{ github.run_id }}
+          FALLBACK_RUN_NAME: manual recovery check
+          FALLBACK_CONCLUSION: manual
+          FALLBACK_BRANCH: ${{ github.ref_name }}
+          FALLBACK_SHA: ${{ github.sha }}
+          FALLBACK_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          mkdir -p .agent/feedback/workflow-packets
-          RUN_ID="${{ github.event.workflow_run.id || github.run_id }}"
-          RUN_NAME="${{ github.event.workflow_run.name || 'manual recovery check' }}"
-          CONCLUSION="${{ github.event.workflow_run.conclusion || 'manual' }}"
-          BRANCH="${{ github.event.workflow_run.head_branch || github.ref_name }}"
-          SHA="${{ github.event.workflow_run.head_sha || github.sha }}"
-          URL="${{ github.event.workflow_run.html_url || github.server_url }}"
-          STAMP=$(TZ=America/New_York date '+%Y-%m-%d %H:%M ET')
-          FILE_STAMP=$(TZ=America/New_York date '+%Y-%m-%d-%H%M-ET')
-          SAFE_NAME=$(echo "$RUN_NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | cut -c1-48)
-          PACKET=".agent/feedback/workflow-packets/${FILE_STAMP}-${SAFE_NAME}-run-${RUN_ID}.md"
-          if ls .agent/feedback/workflow-packets/*run-${RUN_ID}.md >/dev/null 2>&1; then
-            echo "Packet already exists for run ${RUN_ID}."
-            exit 0
-          fi
-          cat > "$PACKET" <<EOF
-          # Workflow Recovery Packet — ${RUN_NAME}
+          python - <<'PY'
+          import os
+          import re
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
 
-          Timestamp: ${STAMP}
-          Status: captured workflow issue
-          Source: GitHub Actions recovery workflow
+          packets_dir = Path('.agent/feedback/workflow-packets')
+          packets_dir.mkdir(parents=True, exist_ok=True)
 
-          ## Summary
+          run_id = os.environ.get('EVENT_RUN_ID') or os.environ.get('FALLBACK_RUN_ID') or 'manual'
+          run_name = os.environ.get('EVENT_RUN_NAME') or os.environ.get('FALLBACK_RUN_NAME') or 'manual recovery check'
+          conclusion = os.environ.get('EVENT_CONCLUSION') or os.environ.get('FALLBACK_CONCLUSION') or 'manual'
+          branch = os.environ.get('EVENT_BRANCH') or os.environ.get('FALLBACK_BRANCH') or 'unknown'
+          sha = os.environ.get('EVENT_SHA') or os.environ.get('FALLBACK_SHA') or 'unknown'
+          url = os.environ.get('EVENT_URL') or os.environ.get('FALLBACK_URL') or 'unknown'
 
-          - Workflow: ${RUN_NAME}
-          - Run ID: ${RUN_ID}
-          - Run URL: ${URL}
-          - Branch: ${BRANCH}
-          - Commit: ${SHA}
-          - Conclusion: ${CONCLUSION}
-          - Matched recovery process: PROC-003
+          if any(packets_dir.glob(f'*run-{run_id}.md')):
+              print(f'Packet already exists for run {run_id}.')
+              raise SystemExit(0)
 
-          ## Next agent action
+          now = datetime.now(ZoneInfo('America/New_York'))
+          stamp = now.strftime('%Y-%m-%d %H:%M ET')
+          file_stamp = now.strftime('%Y-%m-%d-%H%M-ET')
+          safe_name = re.sub(r'[^a-z0-9]+', '-', run_name.lower()).strip('-')[:48] or 'workflow'
+          packet = packets_dir / f'{file_stamp}-{safe_name}-run-{run_id}.md'
 
-          1. Read this packet before starting another broad Website implementation pass.
-          2. Inspect the linked workflow run before changing visual Website source.
-          3. Repair workflow or process issues before continuing repeated implementation runs.
+          packet.write_text(f'''# Workflow Recovery Packet — {run_name}
 
-          ## Public-safe boundary
+Timestamp: {stamp}
+Status: captured workflow issue
+Source: GitHub Actions recovery workflow
 
-          This packet stores public repository workflow metadata only.
+## Summary
 
-          ## Related project memory
+- Workflow: {run_name}
+- Run ID: {run_id}
+- Run URL: {url}
+- Branch: {branch}
+- Commit: {sha}
+- Conclusion: {conclusion}
+- Matched recovery process: PROC-003
 
-          - FEEDBACK-019
-          - LESSON-029
-          - PROC-003
-          - METRIC-033
-          EOF
+## Next agent action
+
+1. Read this packet before starting another broad Website implementation pass.
+2. Inspect the linked workflow run before changing visual Website source.
+3. Repair workflow or process issues before continuing repeated implementation runs.
+
+## Public-safe boundary
+
+This packet stores public repository workflow metadata only.
+
+## Related project memory
+
+- FEEDBACK-019
+- LESSON-029
+- PROC-003
+- METRIC-033
+''', encoding='utf-8')
+          print(f'Wrote {packet}')
+          PY
 
       - name: Commit recovery packet
         run: |

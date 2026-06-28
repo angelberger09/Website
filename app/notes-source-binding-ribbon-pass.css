@@ -1,0 +1,126 @@
+/* Notes source binding ribbon pass.
+   Gives the Notes source compass a visible through-line so source receipts and fallback rules scan as one public reading path. */
+
+.notes-source-board {
+  --notes-binding-ink: rgba(57, 43, 35, 0.74);
+  --notes-binding-thread: rgba(112, 137, 112, 0.5);
+}
+
+.notes-source-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.35rem, 4vw, 3rem);
+  right: clamp(1.35rem, 4vw, 3rem);
+  top: clamp(9.4rem, 20vw, 12.8rem);
+  height: 0.34rem;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0 4%, var(--notes-binding-thread) 4% 28%, transparent 28% 35%, rgba(191, 146, 113, 0.42) 35% 64%, transparent 64% 71%, var(--notes-binding-thread) 71% 96%, transparent 96%),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(0 45%, 12% 32%, 27% 53%, 45% 35%, 64% 54%, 82% 38%, 100% 47%, 100% 70%, 82% 62%, 63% 78%, 45% 58%, 27% 74%, 12% 56%, 0 68%);
+  opacity: 0.86;
+  filter: drop-shadow(0 0.28rem 0.3rem rgba(74, 47, 29, 0.12));
+}
+
+.notes-source-receipt-ledger,
+.notes-fallback-receipts {
+  position: relative;
+}
+
+.notes-source-receipt-ledger::after,
+.notes-fallback-receipts::after {
+  content: "source path";
+  position: absolute;
+  right: clamp(0.75rem, 2.4vw, 1.25rem);
+  bottom: -0.66rem;
+  z-index: 3;
+  width: fit-content;
+  padding: 0.24rem 0.56rem 0.22rem;
+  color: var(--notes-binding-ink);
+  font-family: var(--font-hand);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(127deg, rgba(255, 252, 246, 0.94), rgba(231, 215, 188, 0.66)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  clip-path: polygon(5% 15%, 96% 0, 100% 86%, 8% 100%);
+  box-shadow: 0 0.32rem 0.62rem rgba(74, 47, 29, 0.12);
+  transform: rotate(1.3deg);
+}
+
+.notes-fallback-receipts::after {
+  content: "fallback path";
+  left: clamp(0.85rem, 2.4vw, 1.35rem);
+  right: auto;
+  bottom: -0.6rem;
+  transform: rotate(-1.2deg);
+}
+
+.notes-source-receipt,
+.notes-fallback-receipt {
+  isolation: isolate;
+}
+
+.notes-source-receipt::after,
+.notes-fallback-receipt::after {
+  content: "";
+  position: absolute;
+  inset: 0.52rem 0.5rem auto auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 252, 246, 0.92) 0 34%, transparent 35%),
+    linear-gradient(135deg, rgba(153, 222, 201, 0.62), rgba(216, 197, 236, 0.42));
+  border-radius: 999px;
+  box-shadow: 0 0.24rem 0.42rem rgba(74, 47, 29, 0.12);
+  opacity: 0.88;
+}
+
+.notes-source-receipt:nth-child(1)::after { content: "1"; }
+.notes-source-receipt:nth-child(2)::after { content: "2"; }
+.notes-source-receipt:nth-child(3)::after { content: "3"; }
+
+.notes-source-receipt:nth-child(1)::after,
+.notes-source-receipt:nth-child(2)::after,
+.notes-source-receipt:nth-child(3)::after {
+  display: grid;
+  place-items: center;
+  color: rgba(57, 43, 35, 0.64);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.notes-fallback-receipt::after {
+  width: 1.1rem;
+  height: 1.1rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 252, 246, 0.86) 0 36%, transparent 37%),
+    linear-gradient(135deg, rgba(255, 176, 143, 0.42), rgba(216, 197, 236, 0.4));
+}
+
+@media (max-width: 840px) {
+  .notes-source-board::after {
+    left: clamp(0.9rem, 5vw, 1.4rem);
+    right: clamp(0.9rem, 5vw, 1.4rem);
+    top: clamp(12rem, 36vw, 15rem);
+    opacity: 0.56;
+  }
+
+  .notes-source-receipt-ledger::after,
+  .notes-fallback-receipts::after {
+    position: relative;
+    display: inline-flex;
+    margin-top: 0.75rem;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 18:41 ET — Homepage room trail binding
+
+See `.agent/changes/2026-06-28-home-room-trail-binding.md` and `.agent/matrices/home-room-trail-binding.matrix.md`.
+
 ## 2026-06-28 18:29 ET — Shared status slip pass
 
 See `.agent/changes/2026-06-28-shared-status-slip-pass.md` and `.agent/matrices/shared-status-slip-pass.matrix.md`.

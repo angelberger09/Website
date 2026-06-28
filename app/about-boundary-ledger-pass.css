@@ -1,0 +1,160 @@
+/* About public boundary ledger pass.
+   Turns the About route's public-safety promise into visible clipped paper ledger slips. */
+
+.about-boundary-ledger-board {
+  position: relative;
+  width: min(100%, 74rem);
+  isolation: isolate;
+  padding: clamp(1rem, 2.6vw, 1.8rem);
+  color: var(--ink);
+}
+
+.about-boundary-ledger-board::before {
+  position: absolute;
+  inset: 0.1rem -0.35rem -0.4rem;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 14% 18%, rgba(185, 201, 175, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 12%, rgba(255, 176, 143, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.78), rgba(255, 247, 235, 0.44)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 24rem 24rem;
+  clip-path: polygon(1.2% 5%, 20% 2%, 48% 3.4%, 76% 1.4%, 98% 4%, 96.8% 38%, 98.2% 72%, 96.3% 96.4%, 70% 98.2%, 38% 96.8%, 1.8% 98%, 2.6% 56%);
+  box-shadow: 0.28rem 0.5rem 0 rgba(47, 38, 35, 0.07), 0 1.15rem 2.4rem rgba(47, 38, 35, 0.12);
+}
+
+.about-boundary-ledger-heading {
+  display: grid;
+  gap: 0.58rem;
+  max-width: 44rem;
+  margin-bottom: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.about-boundary-ledger-heading h1 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 3.9rem);
+  line-height: 0.94;
+  letter-spacing: -0.072em;
+}
+
+.about-boundary-ledger-heading p:not(.eyebrow) {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.about-boundary-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.72rem, 1.7vw, 1rem);
+  align-items: stretch;
+}
+
+.about-boundary-slip {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  min-height: 12rem;
+  padding: clamp(0.88rem, 2vw, 1.1rem);
+  background:
+    linear-gradient(150deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.72) 64%, rgba(216, 197, 236, 0.22)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(2% 4%, 24% 1.5%, 48% 3%, 76% 1%, 97% 3%, 96.2% 39%, 98% 96%, 68% 98.4%, 36% 96.6%, 2% 98%, 3.4% 54%);
+  box-shadow: 0.18rem 0.32rem 0 rgba(47, 38, 35, 0.1), 0 0.86rem 1.65rem rgba(47, 38, 35, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.about-boundary-slip:nth-child(2) {
+  transform: translateY(0.18rem) rotate(-0.5deg);
+}
+
+.about-boundary-slip:nth-child(3) {
+  transform: translateY(-0.08rem) rotate(0.55deg);
+}
+
+.about-boundary-slip::before {
+  position: absolute;
+  top: -0.34rem;
+  right: 1rem;
+  width: 4.2rem;
+  height: 0.86rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.7), rgba(185, 201, 175, 0.42), rgba(255, 250, 242, 0.62)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(4% 10%, 38% 0, 72% 8%, 98% 2%, 93% 94%, 54% 98%, 7% 88%);
+  box-shadow: 0 0.22rem 0.55rem rgba(47, 38, 35, 0.11);
+}
+
+.about-boundary-slip__mark {
+  width: max-content;
+  max-width: 100%;
+  padding: 0.36rem 0.58rem;
+  background:
+    linear-gradient(135deg, rgba(216, 197, 236, 0.52), rgba(255, 250, 242, 0.68)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(3% 13%, 34% 1%, 68% 8%, 98% 2%, 94% 91%, 65% 100%, 27% 94%, 4% 98%);
+  color: rgba(58, 45, 42, 0.86);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-boundary-slip h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(1.38rem, 3vw, 2rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.about-boundary-slip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.about-boundary-slip__cue {
+  align-self: end;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.32rem 0.54rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.86), rgba(185, 201, 175, 0.38)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  clip-path: polygon(2% 10%, 36% 0, 70% 8%, 98% 2%, 94% 90%, 66% 100%, 28% 94%, 4% 99%);
+  color: rgba(58, 45, 42, 0.78);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .about-boundary-ledger-board {
+    padding: 1rem;
+  }
+
+  .about-boundary-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .about-boundary-slip {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-boundary-slip:nth-child(2),
+  .about-boundary-slip:nth-child(3) {
+    transform: none;
+  }
+}

@@ -105,6 +105,86 @@
   background: radial-gradient(circle, rgba(120, 88, 55, 0.22), rgba(120, 88, 55, 0.04) 62%, transparent 64%);
 }
 
+.portfolio-feed-board--shelf .portfolio-archive-ticket-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.82rem, 1.8vw, 1.08rem);
+  padding-top: clamp(1.75rem, 3vw, 2.25rem);
+  padding-bottom: clamp(1.05rem, 2vw, 1.35rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(95, 70, 45, 0.055),
+    0 0.72rem 1.35rem rgba(65, 43, 26, 0.085);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket-board::after {
+  content: "three part receipt route";
+  position: absolute;
+  right: clamp(0.75rem, 1.8vw, 1.1rem);
+  top: 0.5rem;
+  z-index: 5;
+  width: max-content;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.3rem 0.58rem 0.24rem;
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: rgba(255, 253, 245, 0.93);
+  background:
+    linear-gradient(135deg, rgba(66, 48, 31, 0.76), rgba(111, 80, 48, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 108px 108px;
+  box-shadow:
+    0.04rem 0.08rem 0 rgba(47, 38, 35, 0.035),
+    0 0.34rem 0.68rem rgba(47, 38, 35, 0.072);
+  clip-path: polygon(5% 0, 100% 8%, 96% 100%, 0 91%);
+  transform: rotate(0.85deg);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket {
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0.06rem 0.1rem 0 rgba(47, 38, 35, 0.034),
+    0 0.64rem 1.18rem rgba(47, 38, 35, 0.078);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket::before {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  left: 50%;
+  z-index: 4;
+  width: clamp(2.1rem, 4.6vw, 2.8rem);
+  height: 0.58rem;
+  background:
+    linear-gradient(90deg, rgba(255, 246, 212, 0.58), rgba(231, 184, 124, 0.34)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, 100px 100px;
+  box-shadow: 0 0.22rem 0.42rem rgba(68, 45, 27, 0.08);
+  clip-path: polygon(4% 0, 100% 10%, 94% 100%, 0 88%);
+  transform: translateX(-50%) rotate(-0.7deg);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket:nth-child(2)::before {
+  transform: translateX(-50%) rotate(0.8deg);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket:nth-child(3)::before {
+  transform: translateX(-50%) rotate(-1.2deg);
+}
+
+.portfolio-feed-board--shelf .portfolio-archive-ticket__photo {
+  min-height: clamp(5.8rem, 10vw, 7rem);
+}
+
+@media (max-width: 860px) {
+  .portfolio-feed-board--shelf .portfolio-archive-ticket-board {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 680px) {
   .portfolio-feed-board--shelf > .portfolio-board-heading::after,
   .portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after {
@@ -123,12 +203,19 @@
     justify-self: start;
     margin-left: 0;
   }
+
+  .portfolio-feed-board--shelf .portfolio-archive-ticket-board::after,
+  .portfolio-feed-board--shelf .portfolio-archive-ticket::before {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio-feed-board--shelf > .portfolio-board-heading::after,
   .portfolio-feed-board--shelf .portfolio-feed-shelf-intro::after,
-  .portfolio-feed-board--shelf .portfolio-feed-ledger--visitor .portfolio-feed-card::after {
+  .portfolio-feed-board--shelf .portfolio-feed-ledger--visitor .portfolio-feed-card::after,
+  .portfolio-feed-board--shelf .portfolio-archive-ticket-board::after,
+  .portfolio-feed-board--shelf .portfolio-archive-ticket::before {
     transform: none;
   }
 }

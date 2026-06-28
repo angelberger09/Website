@@ -146,7 +146,7 @@
     0 0.26rem 0.56rem rgba(47, 38, 35, 0.11);
 }
 
-.store-promise-note > span:not(.store-promise-note__photo span) {
+.store-promise-note > span {
   display: inline-flex;
   width: fit-content;
   margin-top: 0.12rem;

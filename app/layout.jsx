@@ -114,6 +114,7 @@ import './notes-post-markdown-block-scraps-pass.css';
 import './notes-post-markdown-paragraph-slips-pass.css';
 import './notes-post-reader-thread-pass.css';
 import './notes-post-markdown-terminal-budget-pass.css';
+import './notes-post-room-binding-pass.css';
 import './blog-path-bridge-pass.css';
 import './blog-path-contact-cards-pass.css';
 import './blog-path-handoff-strip-pass.css';

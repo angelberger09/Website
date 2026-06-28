@@ -1,10 +1,83 @@
 name: Website Workflow Recovery Packet
 
 on:
+  workflow_run:
+    types: [completed]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+actions: read
+
 jobs:
-  note:
+  capture:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion != 'success'
     steps:
-      - run: echo "Workflow recovery packet placeholder"
+      - uses: actions/checkout@v4
+
+      - name: Write recovery packet
+        run: |
+          mkdir -p .agent/feedback/workflow-packets
+          RUN_ID="${{ github.event.workflow_run.id || github.run_id }}"
+          RUN_NAME="${{ github.event.workflow_run.name || 'manual recovery check' }}"
+          CONCLUSION="${{ github.event.workflow_run.conclusion || 'manual' }}"
+          BRANCH="${{ github.event.workflow_run.head_branch || github.ref_name }}"
+          SHA="${{ github.event.workflow_run.head_sha || github.sha }}"
+          URL="${{ github.event.workflow_run.html_url || github.server_url }}"
+          STAMP=$(TZ=America/New_York date '+%Y-%m-%d %H:%M ET')
+          FILE_STAMP=$(TZ=America/New_York date '+%Y-%m-%d-%H%M-ET')
+          SAFE_NAME=$(echo "$RUN_NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | cut -c1-48)
+          PACKET=".agent/feedback/workflow-packets/${FILE_STAMP}-${SAFE_NAME}-run-${RUN_ID}.md"
+          if ls .agent/feedback/workflow-packets/*run-${RUN_ID}.md >/dev/null 2>&1; then
+            echo "Packet already exists for run ${RUN_ID}."
+            exit 0
+          fi
+          cat > "$PACKET" <<EOF
+          # Workflow Recovery Packet — ${RUN_NAME}
+
+          Timestamp: ${STAMP}
+          Status: captured workflow issue
+          Source: GitHub Actions recovery workflow
+
+          ## Summary
+
+          - Workflow: ${RUN_NAME}
+          - Run ID: ${RUN_ID}
+          - Run URL: ${URL}
+          - Branch: ${BRANCH}
+          - Commit: ${SHA}
+          - Conclusion: ${CONCLUSION}
+          - Matched recovery process: PROC-003
+
+          ## Next agent action
+
+          1. Read this packet before starting another broad Website implementation pass.
+          2. Inspect the linked workflow run before changing visual Website source.
+          3. Repair workflow or process issues before continuing repeated implementation runs.
+
+          ## Public-safe boundary
+
+          This packet stores public repository workflow metadata only.
+
+          ## Related project memory
+
+          - FEEDBACK-019
+          - LESSON-029
+          - PROC-003
+          - METRIC-033
+          EOF
+
+      - name: Commit recovery packet
+        run: |
+          if git diff --quiet -- .agent/feedback/workflow-packets; then
+            echo "No packet changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .agent/feedback/workflow-packets
+          git commit -m "Add workflow recovery packet"
+          git pull --rebase
+          git push

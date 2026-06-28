@@ -2,6 +2,43 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 23:29 ET — Portfolio feed receipt seal
+
+### Changed
+
+- Added `app/portfolio-feed-receipt-seal-pass.css`.
+- Loaded it from `app/layout.jsx` after the Portfolio feed rule slips pass.
+- Added visible `public archive receipt`, `safe fields only`, and `private drafts stay offstage` paper/seal cues around the Portfolio future archive shelf.
+- Added small tape marks and seal pressure cues to the Portfolio feed field cards and rule slips so the future archive contract reads as one public-safe receipt system.
+- Added `.agent/changes/2026-06-27-portfolio-feed-receipt-seal.md`.
+- Added `.agent/matrices/portfolio-feed-receipt-seal.matrix.md`.
+
+### Why
+
+The Portfolio future archive shelf already had a bound paper ledger, safe field cards, and source-backed rule slips, but it still scanned as neighboring pieces rather than one finished public archive receipt. This pass keeps the no-fake-project and public-safe archive boundary intact while making the section visibly more unified, tactile, and easier to read as a calm public handoff.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 23:20 ET — Store feed receipt seal
 
 ### Changed

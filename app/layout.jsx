@@ -150,6 +150,7 @@ import './blog-bridge-old-door-ledger-pass.css';
 import './blog-old-door-room-docket-pass.css';
 import './blog-old-door-terminal-budget-pass.css';
 import './blog-compatibility-thread-pass.css';
+import './blog-post-reader-bridge-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-thread-pass.css';
 import './page-intro-subtitle-pass.css';

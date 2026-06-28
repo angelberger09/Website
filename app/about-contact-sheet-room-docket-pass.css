@@ -1,0 +1,132 @@
+/* About contact-sheet room docket pass.
+   Refines the About contact-sheet section into a calmer paper room board instead of a second hero-scale panel. */
+
+.about-contact-sheet-board {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1rem, 2.4vw, 1.7rem);
+  align-items: start;
+}
+
+.about-contact-sheet-board::after {
+  position: absolute;
+  top: clamp(1.1rem, 3vw, 1.8rem);
+  bottom: clamp(1rem, 3vw, 1.6rem);
+  left: clamp(12.6rem, 24vw, 17.8rem);
+  z-index: -1;
+  width: 0.58rem;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(47, 38, 35, 0.12), rgba(185, 201, 175, 0.28), rgba(47, 38, 35, 0.1)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(28% 0, 78% 2%, 58% 24%, 86% 48%, 54% 72%, 82% 100%, 18% 98%, 38% 76%, 12% 52%, 42% 26%, 14% 4%);
+  opacity: 0.82;
+  filter: drop-shadow(0.12rem 0.28rem 0.16rem rgba(47, 38, 35, 0.12));
+}
+
+.about-contact-sheet-heading {
+  position: sticky;
+  top: clamp(5.2rem, 10vw, 7rem);
+  align-self: start;
+  max-width: 18rem;
+  margin: 0;
+  padding: clamp(0.82rem, 1.8vw, 1.05rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.68)),
+    radial-gradient(circle at 18% 14%, rgba(255, 176, 143, 0.18), transparent 42%),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(3% 5%, 26% 1%, 58% 4%, 96% 2%, 94% 36%, 98% 71%, 94% 97%, 61% 96%, 28% 99%, 2% 95%, 5% 56%);
+  box-shadow:
+    0.16rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0 0.88rem 1.65rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74);
+}
+
+.about-contact-sheet-heading::before {
+  position: absolute;
+  top: -0.36rem;
+  left: 1rem;
+  width: 4.8rem;
+  height: 0.8rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.62), rgba(216, 197, 236, 0.42), rgba(255, 250, 242, 0.54)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(0 18%, 38% 0, 72% 12%, 100% 2%, 94% 88%, 56% 100%, 10% 84%);
+  box-shadow: 0 0.24rem 0.58rem rgba(47, 38, 35, 0.1);
+}
+
+.about-contact-sheet-heading .eyebrow {
+  width: max-content;
+  max-width: 100%;
+  padding: 0.32rem 0.54rem;
+  background:
+    linear-gradient(135deg, rgba(185, 201, 175, 0.4), rgba(255, 250, 242, 0.76)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  clip-path: polygon(2% 12%, 34% 0, 70% 7%, 98% 1%, 94% 90%, 66% 100%, 26% 94%, 3% 98%);
+}
+
+.about-contact-sheet-heading h1 {
+  max-width: 13ch;
+  font-size: clamp(1.36rem, 2.7vw, 2.35rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.about-contact-sheet-heading p:not(.eyebrow) {
+  max-width: 15.5rem;
+  font-size: clamp(0.86rem, 1.2vw, 0.98rem);
+  line-height: 1.52;
+}
+
+.about-contact-sheet-rail,
+.about-contact-sheet {
+  grid-column: 2;
+}
+
+.about-contact-sheet-rail {
+  margin-top: 0.08rem;
+}
+
+.about-contact-sheet {
+  padding-top: 0.38rem;
+}
+
+.about-contact-card {
+  min-height: 23.4rem;
+}
+
+@media (max-width: 920px) {
+  .about-contact-sheet-board {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact-sheet-board::after {
+    display: none;
+  }
+
+  .about-contact-sheet-heading {
+    position: relative;
+    top: auto;
+    max-width: 32rem;
+  }
+
+  .about-contact-sheet-rail,
+  .about-contact-sheet {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-contact-sheet-heading h1 {
+    max-width: 15ch;
+  }
+
+  .about-contact-card {
+    min-height: 22rem;
+  }
+}

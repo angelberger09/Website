@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 16:18 ET — Homepage path spine ticket
+
+See `.agent/changes/2026-06-28-home-path-spine-ticket.md` and `.agent/matrices/home-path-spine-ticket.matrix.md`.
+
 ## 2026-06-28 16:10 ET — Portfolio lower handoff binding
 
 See `.agent/changes/2026-06-28-portfolio-lower-handoff-binding.md` and `.agent/matrices/portfolio-lower-handoff-binding.matrix.md`.

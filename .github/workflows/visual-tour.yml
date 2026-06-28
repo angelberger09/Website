@@ -20,6 +20,10 @@ jobs:
     name: Build branch and render visual walkthrough
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      VISUAL_TOUR_WEBHOOK_URL: ${{ secrets.VISUAL_TOUR_WEBHOOK_URL }}
+      VISUAL_TOUR_WEBHOOK_TOKEN: ${{ secrets.VISUAL_TOUR_WEBHOOK_TOKEN }}
+      VISUAL_TOUR_WEBHOOK_SEND_FILES: ${{ vars.VISUAL_TOUR_WEBHOOK_SEND_FILES }}
 
     steps:
       - name: Checkout branch under test
@@ -107,6 +111,7 @@ EOF
             --recovery-dir .agent/feedback/workflow-packets
 
       - name: Upload walkthrough videos
+        id: upload_videos
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -115,6 +120,7 @@ EOF
           if-no-files-found: ignore
 
       - name: Upload visual receipts and recovery packets
+        id: upload_receipts
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -125,3 +131,82 @@ EOF
             .agent/visual-runs/latest/poster-home-laptop.png
             .agent/feedback/workflow-packets/*.md
           if-no-files-found: ignore
+
+      - name: Notify webhook with visual tour artifact links
+        if: ${{ always() && env.VISUAL_TOUR_WEBHOOK_URL != '' }}
+        env:
+          VIDEO_ARTIFACT_URL: ${{ steps.upload_videos.outputs.artifact-url }}
+          VIDEO_ARTIFACT_ID: ${{ steps.upload_videos.outputs.artifact-id }}
+          RECEIPT_ARTIFACT_URL: ${{ steps.upload_receipts.outputs.artifact-url }}
+          RECEIPT_ARTIFACT_ID: ${{ steps.upload_receipts.outputs.artifact-id }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          manifest_path = Path('.agent/visual-runs/latest/manifest.json')
+          manifest = None
+          if manifest_path.exists():
+              manifest = json.loads(manifest_path.read_text())
+
+          payload = {
+              "event": "soft_strange_visual_tour",
+              "status": os.environ.get("JOB_STATUS"),
+              "repository": os.environ.get("GITHUB_REPOSITORY"),
+              "ref": os.environ.get("GITHUB_REF"),
+              "sha": os.environ.get("GITHUB_SHA"),
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+              "workflow": os.environ.get("GITHUB_WORKFLOW"),
+              "video_artifact": {
+                  "id": os.environ.get("VIDEO_ARTIFACT_ID"),
+                  "url": os.environ.get("VIDEO_ARTIFACT_URL")
+              },
+              "receipt_artifact": {
+                  "id": os.environ.get("RECEIPT_ARTIFACT_ID"),
+                  "url": os.environ.get("RECEIPT_ARTIFACT_URL")
+              },
+              "manifest": manifest
+          }
+          Path('/tmp/soft-strange-visual-tour-webhook.json').write_text(json.dumps(payload, indent=2))
+          PY
+
+          HEADER_ARGS=(-H "Content-Type: application/json")
+          if [ -n "$VISUAL_TOUR_WEBHOOK_TOKEN" ]; then
+            HEADER_ARGS+=( -H "Authorization: Bearer $VISUAL_TOUR_WEBHOOK_TOKEN" )
+          fi
+
+          curl --fail --show-error --silent \
+            --request POST \
+            "${HEADER_ARGS[@]}" \
+            --data @/tmp/soft-strange-visual-tour-webhook.json \
+            "$VISUAL_TOUR_WEBHOOK_URL"
+
+      - name: Send video archive to webhook
+        if: ${{ always() && env.VISUAL_TOUR_WEBHOOK_URL != '' && env.VISUAL_TOUR_WEBHOOK_SEND_FILES == 'true' }}
+        run: |
+          if ! find .agent/visual-runs/latest -name '*.mp4' -print -quit | grep -q .; then
+            echo "No visual tour MP4 files found to send."
+            exit 0
+          fi
+
+          tar -czf /tmp/soft-strange-visual-tour-videos.tgz -C .agent/visual-runs/latest videos
+
+          HEADER_ARGS=()
+          if [ -n "$VISUAL_TOUR_WEBHOOK_TOKEN" ]; then
+            HEADER_ARGS+=( -H "Authorization: Bearer $VISUAL_TOUR_WEBHOOK_TOKEN" )
+          fi
+
+          curl --fail --show-error --silent \
+            --request POST \
+            "${HEADER_ARGS[@]}" \
+            -F event=soft_strange_visual_tour_videos \
+            -F repository="$GITHUB_REPOSITORY" \
+            -F ref="$GITHUB_REF" \
+            -F sha="$GITHUB_SHA" \
+            -F run_id="$GITHUB_RUN_ID" \
+            -F manifest=@.agent/visual-runs/latest/manifest.json \
+            -F videos=@/tmp/soft-strange-visual-tour-videos.tgz \
+            "$VISUAL_TOUR_WEBHOOK_URL"

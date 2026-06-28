@@ -1,0 +1,140 @@
+/* Homepage hero entry ledger pass.
+   Binds the first-screen arrival ticket and route contact sheet into one visible front-door paper ledger.
+   This keeps the homepage entry useful and calm without adding new content, fake images, or heavy render effects. */
+
+.scroll-title .title-lockup {
+  position: relative;
+}
+
+.scroll-title .title-lockup::after {
+  content: "front-door ledger";
+  position: absolute;
+  left: clamp(0.9rem, 3vw, 2rem);
+  bottom: clamp(0.1rem, 1.4vw, 0.8rem);
+  z-index: 1;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  clip-path: var(--fast-paper-cut, polygon(2% 8%, 98% 2%, 100% 84%, 94% 100%, 4% 94%, 0 18%));
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.56) 58%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.7rem 1.2rem rgba(47, 38, 35, 0.1);
+  color: rgba(62, 49, 46, 0.68);
+  font-family: var(--font-hand);
+  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.4rem 0.78rem 0.36rem;
+  pointer-events: none;
+  transform: rotate(-1.4deg);
+  text-transform: lowercase;
+}
+
+.home-arrival-ticket {
+  isolation: isolate;
+  margin-bottom: -0.2rem;
+  padding: 0.58rem 0.66rem 0.52rem;
+  clip-path: var(--fast-paper-cut, polygon(1% 3%, 99% 0, 98% 96%, 3% 100%));
+  background:
+    linear-gradient(116deg, rgba(255, 252, 246, 0.68), rgba(255, 247, 235, 0.34) 66%, rgba(216, 197, 236, 0.14)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.16rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0 0.62rem 1rem rgba(47, 38, 35, 0.08);
+}
+
+.home-arrival-ticket::before {
+  content: "entry cues";
+  position: absolute;
+  top: -0.34rem;
+  left: 0.78rem;
+  z-index: 2;
+  clip-path: var(--fast-paper-cut, polygon(3% 8%, 97% 2%, 100% 86%, 93% 100%, 5% 92%, 0 16%));
+  background: rgba(255, 252, 246, 0.86);
+  box-shadow: 0 0.28rem 0.56rem rgba(47, 38, 35, 0.08);
+  color: rgba(62, 49, 46, 0.64);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.28rem 0.52rem 0.24rem;
+  text-transform: lowercase;
+}
+
+.home-hero-contact-sheet {
+  margin-top: 0.34rem;
+  border-left: 0.28rem solid rgba(185, 201, 175, 0.34);
+}
+
+.home-hero-contact-sheet::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  bottom: calc(100% - 0.5rem);
+  left: clamp(1.4rem, 5vw, 2.6rem);
+  z-index: 0;
+  width: 0.18rem;
+  border-radius: 999px;
+  background: linear-gradient(rgba(99, 86, 77, 0.1), rgba(99, 86, 77, 0.24));
+  box-shadow: 0.44rem 0.18rem 0 rgba(99, 86, 77, 0.08);
+  pointer-events: none;
+}
+
+.home-hero-contact-sheet::after {
+  content: "choose one room";
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 1.25rem);
+  top: -0.54rem;
+  z-index: 3;
+  clip-path: var(--fast-paper-cut, polygon(2% 10%, 98% 0, 100% 82%, 94% 100%, 4% 94%, 0 18%));
+  background: rgba(255, 252, 246, 0.88);
+  box-shadow: 0 0.34rem 0.72rem rgba(47, 38, 35, 0.1);
+  color: rgba(62, 49, 46, 0.66);
+  font-family: var(--font-hand);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.32rem 0.6rem 0.28rem;
+  text-transform: lowercase;
+}
+
+.home-hero-contact-sheet .home-hero-route-strip__label {
+  top: -0.54rem;
+  transform: rotate(-1.2deg);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip {
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 0.5rem 0.94rem rgba(47, 38, 35, 0.1);
+}
+
+@media (max-width: 760px) {
+  .scroll-title .title-lockup::after {
+    bottom: 0;
+    left: 0.9rem;
+  }
+
+  .home-arrival-ticket {
+    width: min(100%, 24rem);
+    margin-bottom: 0.14rem;
+  }
+
+  .home-hero-contact-sheet {
+    border-left-width: 0.18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-title .title-lockup::after,
+  .home-hero-contact-sheet .home-hero-route-strip__label {
+    transform: none;
+  }
+}

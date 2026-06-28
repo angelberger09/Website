@@ -1,0 +1,146 @@
+/* Homepage path terminal ledger pass.
+   Finalizes the front-page reading path as one calm editorial rail instead of a repeated mini-card strip. */
+
+.home-page .home-path-map {
+  grid-template-columns: minmax(8.5rem, 12rem) minmax(0, 1fr) !important;
+  gap: clamp(0.72rem, 1.8vw, 1.1rem) !important;
+  padding: clamp(0.82rem, 2vw, 1.16rem) clamp(0.82rem, 2vw, 1.12rem) clamp(0.9rem, 2.1vw, 1.22rem) clamp(2.15rem, 4.7vw, 3.8rem) !important;
+  background:
+    linear-gradient(90deg, rgba(74, 57, 51, 0.07) 0 1px, transparent 1px 100%) left top / 2.7rem 100% repeat-y,
+    linear-gradient(108deg, rgba(255, 253, 246, 0.96), rgba(248, 238, 221, 0.74) 54%, rgba(188, 203, 178, 0.2)),
+    var(--grain-image);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.055),
+    0 0.55rem 1.2rem rgba(47, 38, 35, 0.082),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  clip-path: polygon(0.8% 5%, 36% 1.5%, 99% 0.8%, 98.5% 92%, 68% 100%, 1.5% 97%);
+}
+
+.home-page .home-path-map::before {
+  inset: 0.62rem 0.72rem 0.56rem 0.62rem;
+  opacity: 0.38;
+  background:
+    linear-gradient(90deg, rgba(74, 57, 51, 0.1) 0 1px, transparent 1px 100%) left top / 3.2rem 100% repeat-x,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(188, 203, 178, 0.08));
+}
+
+.home-page .home-path-map::after {
+  content: "front-page map";
+  top: -0.56rem;
+  right: clamp(0.78rem, 1.7vw, 1.05rem);
+  padding: 0.32rem 0.58rem 0.28rem;
+  font-size: clamp(0.52rem, 0.72vw, 0.62rem);
+  box-shadow: 0 0.36rem 0.72rem rgba(47, 38, 35, 0.085);
+  transform: rotate(0.45deg);
+}
+
+.home-page .home-path-map__label {
+  padding: 0.38rem 0.62rem 0.33rem;
+  box-shadow: 0 0.38rem 0.74rem rgba(47, 38, 35, 0.082);
+}
+
+.home-page .home-path-map__note {
+  max-width: 11.5rem;
+  color: rgba(58, 45, 42, 0.64);
+  font-size: clamp(0.74rem, 0.92vw, 0.84rem);
+}
+
+.home-page .home-path-map__trail {
+  gap: clamp(0.38rem, 0.85vw, 0.55rem) !important;
+  padding: 0.12rem 0.08rem 0.42rem;
+}
+
+.home-page .home-path-map__trail::before {
+  border-top-width: 1px;
+  opacity: 0.68;
+}
+
+.home-page .home-path-map__step,
+.home-page .home-path-map__step:nth-child(2n),
+.home-page .home-path-map__step:nth-child(2n + 1) {
+  flex-basis: clamp(7.7rem, 11vw, 9.6rem);
+  min-height: 4.85rem !important;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.34rem 0.44rem !important;
+  padding: 0.48rem 0.5rem !important;
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.05),
+    0 0.36rem 0.72rem rgba(47, 38, 35, 0.074),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.home-page .home-path-map__photo {
+  width: 2rem;
+  height: 2rem;
+  min-height: 2rem;
+  padding: 0.24rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 250, 242, 0.28);
+}
+
+.home-page .home-path-map__photo b {
+  font-size: 0.44rem;
+  letter-spacing: 0.075em;
+}
+
+.home-page .home-path-map__number {
+  display: none;
+}
+
+.home-page .home-path-map__copy {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.home-page .home-path-map__room-key {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.14rem;
+  padding: 0.14rem 0.34rem 0.11rem;
+  color: rgba(58, 45, 42, 0.58);
+  font-size: 0.48rem;
+  font-weight: 820;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 250, 242, 0.62);
+  clip-path: polygon(4% 17%, 98% 3%, 94% 91%, 0 100%);
+}
+
+.home-page .home-path-map__copy strong {
+  margin-top: 0 !important;
+  font-size: clamp(0.82rem, 1.08vw, 0.98rem) !important;
+  letter-spacing: -0.025em !important;
+}
+
+.home-page .home-path-map__copy small {
+  margin-top: 0.12rem;
+  font-size: 0.5rem !important;
+  line-height: 1.16;
+}
+
+@media (max-width: 760px) {
+  .home-page .home-path-map {
+    padding: clamp(0.78rem, 4vw, 1rem) !important;
+  }
+
+  .home-page .home-path-map__note {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-page .home-path-map__step,
+  .home-page .home-path-map__step:nth-child(2n),
+  .home-page .home-path-map__step:nth-child(2n + 1) {
+    min-height: 4.6rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-path-map__step,
+  .home-page .home-path-map__step:nth-child(2n),
+  .home-page .home-path-map__step:nth-child(2n + 1) {
+    transform: none !important;
+  }
+}

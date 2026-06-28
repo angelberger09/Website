@@ -30,6 +30,7 @@ import './about-room-spine-ledger-pass.css';
 import './about-contact-sheet-pass.css';
 import './about-contact-sheet-rail-pass.css';
 import './about-contact-sheet-room-docket-pass.css';
+import './about-room-thread-binding-pass.css';
 import './about-principle-photo-pass.css';
 import './about-principle-snippet-pass.css';
 import './about-principle-promise-trail-pass.css';

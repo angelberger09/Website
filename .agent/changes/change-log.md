@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 14:19 ET — About contact sheet room docket
+
+See `.agent/changes/2026-06-28-about-contact-sheet-room-docket.md` and `.agent/matrices/about-contact-sheet-room-docket.matrix.md`.
+
 ## 2026-06-28 14:08 ET — Notes reader left docket
 
 See `.agent/changes/2026-06-28-notes-reader-left-docket.md` and `.agent/matrices/notes-reader-left-docket.matrix.md`.

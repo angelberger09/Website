@@ -250,7 +250,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <section className="notes-source-board" aria-labelledby="notes-source-title">
         <div className="notes-source-board__intro">
           <p className="eyebrow">Writing shelf map</p>
-          <h1 id="notes-source-title">Every note has a clear public shape.</h1>
+          <h1 id="notes-source-title">Public note shape</h1>
           <p>
             The Notes room can stay calm while the writing shelf changes because the
             visible note pieces are named here in visitor-facing language.
@@ -305,7 +305,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <section className="notes-state-board" aria-labelledby="notes-states-title">
         <div className="notes-state-board__intro">
           <p className="eyebrow">Reader behavior</p>
-          <h1 id="notes-states-title">The notes page stays clear in every state.</h1>
+          <h1 id="notes-states-title">Clear reader states</h1>
         </div>
         <div className="notes-state-list">
           {notesReaderStates.map((readerState, index) => (
@@ -325,7 +325,7 @@ export default function NotesPageClient({ routeBase = "/Website/notes", routeLab
       <section className="notes-path-photo-board" aria-labelledby="notes-path-title">
         <div className="notes-path-photo-board__intro">
           <p className="eyebrow">After the shelf</p>
-          <h1 id="notes-path-title">Keep a reader path visible.</h1>
+          <h1 id="notes-path-title">Reader path visible</h1>
           <p>
             Notes should not end as a list of entries. These paper/photo route cards
             keep the reading room connected to the latest note, the public archive,

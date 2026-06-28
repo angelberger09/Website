@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 15:11 ET — Blog compatibility thread
+
+See `.agent/changes/2026-06-28-blog-compatibility-thread.md` and `.agent/matrices/blog-compatibility-thread.matrix.md`.
+
 ## 2026-06-28 14:51 ET — PageIntro room shelf ledger
 
 See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger.md` and `.agent/matrices/page-intro-room-shelf-ledger.matrix.md`.
@@ -104,4 +108,4 @@ See `.agent/changes/2026-06-28-home-path-terminal-ledger.md` and `.agent/matrice
 
 ## 2026-06-28 08:08 ET — Store promise terminal trust board
 
-See `.agent/changes/2026-06-28-store-promise-terminal-trust-board.md` and `.agent/matrices/store-promise-terminal-trust-board.matrix.md`.
+See `.agent/changes/2026-06-28-store-promise-terminal-trust-board.md`.

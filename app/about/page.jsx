@@ -124,6 +124,27 @@ const aboutPrincipleFrames = [
   }
 ];
 
+const aboutBoundaryLedger = [
+  {
+    mark: "Public",
+    title: "Share the room",
+    detail: "Only public-facing studio orientation, notes, work, and prepared paths belong here.",
+    cue: "public only"
+  },
+  {
+    mark: "Quiet",
+    title: "Keep machinery low",
+    detail: "The site can stay connected underneath while the visible page feels warm and readable.",
+    cue: "soft system"
+  },
+  {
+    mark: "Next",
+    title: "Open a door",
+    detail: "After the introduction, the page should guide visitors toward notes, archive work, or store prep.",
+    cue: "clear path"
+  }
+];
+
 const aboutPathwayFrames = [
   {
     label: "Writing shelf",
@@ -288,6 +309,27 @@ export default function AboutPage() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="about-boundary-ledger-board" aria-labelledby="about-boundary-ledger-title">
+        <div className="about-boundary-ledger-heading">
+          <p className="eyebrow">Public boundary ledger</p>
+          <h1 id="about-boundary-ledger-title">What stays in the room.</h1>
+          <p>
+            A small paper ledger keeps the About route clear: public-facing work,
+            soft orientation, quiet systems, and honest next doors.
+          </p>
+        </div>
+        <div className="about-boundary-ledger" aria-label="Public About room boundary notes">
+          {aboutBoundaryLedger.map((item) => (
+            <article className="about-boundary-slip" key={item.title}>
+              <span className="about-boundary-slip__mark">{item.mark}</span>
+              <h2>{item.title}</h2>
+              <p>{item.detail}</p>
+              <span className="about-boundary-slip__cue">{item.cue}</span>
+            </article>
+          ))}
         </div>
       </section>
 

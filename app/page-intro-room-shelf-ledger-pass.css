@@ -1,17 +1,32 @@
-/* Shared PageIntro room shelf ledger pass.
-   Binds the Open / Read / Trust / Continue shelf into one route ledger across major rooms
-   without adding routes, fake content, or heavier animation. */
+/* Page intro room shelf ledger pass.
+   Styles the shared PageIntro Open / Read / Trust / Continue shelf as a visible paper/photo ledger across major rooms without adding routes, fake content, or heavy animation. */
 
 .page-hero__room-shelf {
+  position: relative;
   isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
+  gap: clamp(0.48rem, 1vw, 0.74rem);
+  width: min(100%, 46rem);
+  margin-top: clamp(0.8rem, 2vw, 1.16rem);
   padding: clamp(1.92rem, 3.1vw, 2.32rem) clamp(0.74rem, 1.8vw, 1rem) clamp(0.86rem, 2vw, 1.05rem);
   overflow: visible;
+  background:
+    linear-gradient(90deg, rgba(90, 69, 60, 0.08), transparent 0.68rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.82), rgba(255, 247, 235, 0.48) 64%, rgba(185, 201, 175, 0.14)),
+    var(--grain-image);
+  background-size: 100% 100%, cover, 22rem 22rem;
   clip-path: polygon(1% 6%, 18% 2.6%, 42% 4.2%, 67% 1.7%, 99% 4.1%, 98% 91%, 82% 97%, 55% 95.6%, 22% 98.5%, 1.4% 93%);
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.06),
+    0 0.68rem 1.2rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
 }
 
 .page-hero__room-shelf::before {
   content: "route ledger";
+  position: absolute;
   top: -0.5rem;
   left: clamp(0.95rem, 2.2vw, 1.45rem);
   z-index: 4;
@@ -28,11 +43,15 @@
   clip-path: polygon(1% 12%, 24% 1%, 72% 6%, 99% 0, 95% 88%, 61% 100%, 28% 93%, 3% 98%);
   font-family: var(--font-hand);
   font-size: clamp(0.66rem, 0.95vw, 0.78rem);
+  font-weight: 900;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
   transform: rotate(-0.7deg);
 }
 
 .page-hero__room-shelf::after {
+  content: '';
+  position: absolute;
   left: clamp(1rem, 2.2vw, 1.45rem);
   right: clamp(1rem, 2.2vw, 1.45rem);
   top: clamp(1.34rem, 2.4vw, 1.58rem);
@@ -41,12 +60,25 @@
   background: repeating-linear-gradient(90deg, rgba(111, 83, 111, 0.28) 0 0.52rem, transparent 0.52rem 0.94rem);
   opacity: 0.78;
   box-shadow: 0 0.22rem 0.55rem rgba(47, 38, 35, 0.08);
+  pointer-events: none;
 }
 
 .page-hero__room-shelf > span {
+  position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(2.8rem, 0.68fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.52rem;
   min-height: 5.25rem;
   padding: 0.54rem 0.54rem 0.58rem;
+  color: rgba(58, 45, 42, 0.84);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.66) 68%, rgba(216, 197, 236, 0.14)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 32rem 32rem;
+  clip-path: polygon(4% 5%, 96% 1%, 100% 88%, 8% 98%, 0 72%);
   box-shadow:
     0.1rem 0.16rem 0 rgba(47, 38, 35, 0.07),
     0 0.58rem 0.98rem rgba(47, 38, 35, 0.1),
@@ -70,12 +102,60 @@
   transform: translateX(-50%) rotate(-2deg);
 }
 
+.page-hero__room-shelf > span:nth-child(2n) {
+  margin-top: 0.28rem;
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.94), rgba(245, 224, 198, 0.58) 64%, rgba(185, 201, 175, 0.16)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 32rem 32rem;
+  clip-path: polygon(2% 8%, 92% 3%, 98% 96%, 5% 91%);
+  transform: rotate(0.34deg);
+}
+
+.page-hero__room-shelf > span:nth-child(3n) {
+  transform: rotate(-0.28deg);
+}
+
 .page-hero__room-shelf > span:nth-child(2)::before,
 .page-hero__room-shelf > span:nth-child(4)::before {
   background:
     linear-gradient(135deg, rgba(185, 201, 175, 0.48), rgba(255, 252, 246, 0.76)),
     var(--grain-image);
   transform: translateX(-50%) rotate(2deg);
+}
+
+.page-hero__room-shelf-photo {
+  display: grid;
+  place-items: end start;
+  min-height: 4.12rem;
+  padding: 0.48rem;
+  color: rgba(58, 45, 42, 0.76);
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(255, 176, 143, 0.24), transparent 34%),
+    radial-gradient(circle at 78% 12%, rgba(216, 197, 236, 0.22), transparent 32%),
+    linear-gradient(145deg, rgba(87, 108, 75, 0.14), rgba(255, 250, 242, 0.64)),
+    var(--grain-image);
+  background-size: auto, auto, cover, 16rem 16rem;
+  clip-path: polygon(5% 2%, 97% 8%, 92% 96%, 2% 90%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.page-hero__room-shelf-copy {
+  display: grid;
+  align-content: center;
+  gap: 0.22rem;
+  min-width: 0;
+  font-size: clamp(0.72rem, 1vw, 0.88rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.18;
 }
 
 .page-hero__room-shelf-copy small {
@@ -85,20 +165,23 @@
   color: rgba(70, 54, 50, 0.76);
   background: rgba(255, 244, 224, 0.72);
   clip-path: polygon(2% 14%, 96% 0, 100% 82%, 7% 100%);
+  font-size: 0.54rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   .page-hero__room-shelf {
-    padding-top: 2.2rem;
-  }
-
-  .page-hero__room-shelf::after {
-    top: 1.55rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 760px) {
   .page-hero__room-shelf {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 0.72rem;
     padding-top: 2.45rem;
   }
 
@@ -109,9 +192,20 @@
     background: repeating-linear-gradient(180deg, rgba(111, 83, 111, 0.25) 0 0.52rem, transparent 0.52rem 0.92rem);
   }
 
+  .page-hero__room-shelf > span,
+  .page-hero__room-shelf > span:nth-child(2n),
+  .page-hero__room-shelf > span:nth-child(3n) {
+    min-height: 4.68rem;
+    transform: none;
+  }
+
   .page-hero__room-shelf > span::before {
     left: 1.1rem;
     transform: rotate(-2deg);
+  }
+
+  .page-hero__room-shelf-photo {
+    min-height: 3.58rem;
   }
 }
 

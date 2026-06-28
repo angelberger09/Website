@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 15:18 ET — Blog post reader bridge
+
+See `.agent/changes/2026-06-28-blog-post-reader-bridge.md` and `.agent/matrices/blog-post-reader-bridge.matrix.md`.
+
 ## 2026-06-28 15:11 ET — Blog compatibility thread
 
 See `.agent/changes/2026-06-28-blog-compatibility-thread.md` and `.agent/matrices/blog-compatibility-thread.matrix.md`.

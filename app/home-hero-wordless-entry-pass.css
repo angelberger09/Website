@@ -19,85 +19,119 @@
   min-height: auto !important;
   min-block-size: auto !important;
   place-items: start center !important;
-  padding: clamp(5rem, 8svh, 6.25rem) max(1rem, 8vw) clamp(1.15rem, 3svh, 2rem) !important;
+  padding: clamp(4.85rem, 7.2svh, 5.85rem) max(1rem, 8vw) clamp(1.05rem, 2.6svh, 1.7rem) !important;
 }
 
 .scroll-title--quiet .title-lockup--entry-only {
   position: relative !important;
   top: auto !important;
   display: block !important;
-  width: min(100%, 43rem) !important;
+  width: min(100%, 38rem) !important;
   max-height: none !important;
-  padding: clamp(0.7rem, 1.35vw, 1rem) !important;
+  padding: clamp(0.58rem, 1.12vw, 0.86rem) !important;
   animation: none !important;
-  transform: rotate(-0.25deg) !important;
+  transform: rotate(-0.18deg) !important;
 }
 
 .scroll-title--quiet .title-lockup--entry-only::before {
   clip-path: polygon(0.7% 3%, 99% 0.7%, 98.2% 96.5%, 1.4% 99%) !important;
   box-shadow:
     0.1rem 0.16rem 0 rgba(47, 38, 35, 0.065),
-    0 0.66rem 1.25rem rgba(47, 38, 35, 0.105),
+    0 0.58rem 1.05rem rgba(47, 38, 35, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.58) !important;
 }
 
 .scroll-title--quiet .title-lockup--entry-only::after {
-  opacity: 0.18 !important;
+  display: none !important;
+  content: none !important;
 }
 
 .scroll-title--quiet .home-hero-contact-sheet {
   width: 100% !important;
   margin: 0 !important;
-  padding: clamp(0.46rem, 0.9vw, 0.68rem) !important;
+  padding: clamp(0.38rem, 0.72vw, 0.56rem) !important;
+  background:
+    linear-gradient(110deg, rgba(255, 250, 241, 0.82), rgba(188, 203, 178, 0.2)),
+    rgba(255, 251, 242, 0.58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 0.34rem 0.72rem rgba(47, 38, 35, 0.065) !important;
 }
 
 .scroll-title--quiet .home-hero-route-strip__links {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: clamp(0.32rem, 0.7vw, 0.52rem) !important;
+  gap: clamp(0.26rem, 0.56vw, 0.42rem) !important;
 }
 
 .scroll-title--quiet .home-hero-route-slip {
   min-width: 0 !important;
-  padding: 0.28rem 0.3rem 0.4rem !important;
+  padding: 0.22rem 0.24rem 0.32rem !important;
+  box-shadow:
+    0.07rem 0.1rem 0 rgba(47, 38, 35, 0.05),
+    0 0.3rem 0.56rem rgba(47, 38, 35, 0.068) !important;
 }
 
 .scroll-title--quiet .home-hero-route-slip__preview {
-  min-height: clamp(2.75rem, 4.2vw, 3.8rem) !important;
-  padding: 0.36rem !important;
+  min-height: clamp(2.45rem, 3.75vw, 3.35rem) !important;
+  padding: 0.32rem !important;
 }
 
 .scroll-title--quiet .home-hero-route-slip__preview span,
 .scroll-title--quiet .home-hero-route-slip__copy span {
-  font-size: 0.56rem !important;
+  font-size: 0.52rem !important;
   letter-spacing: 0.12em !important;
 }
 
 .scroll-title--quiet .home-hero-route-slip__preview strong {
-  font-size: clamp(0.84rem, 1.35vw, 1.08rem) !important;
+  font-size: clamp(0.78rem, 1.16vw, 0.98rem) !important;
   line-height: 0.95 !important;
 }
 
+.scroll-title--quiet .home-hero-route-slip__copy {
+  gap: 0.18rem !important;
+}
+
 .scroll-title--quiet .home-hero-route-slip__copy strong {
-  font-size: clamp(0.7rem, 1vw, 0.84rem) !important;
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem) !important;
 }
 
 .scroll-title--quiet .home-hero-route-slip__copy small {
-  font-size: 0.62rem !important;
-  padding: 0.16rem 0.28rem !important;
+  font-size: 0.58rem !important;
+  padding: 0.14rem 0.24rem !important;
 }
 
 @media (max-width: 760px) {
   .scroll-title--quiet {
-    padding: 5.65rem 1rem 1.65rem !important;
+    padding: 5.45rem 1rem 1.45rem !important;
   }
 
   .scroll-title--quiet .title-lockup--entry-only {
-    width: min(100%, 25rem) !important;
-    padding: 0.72rem !important;
+    width: min(100%, 24rem) !important;
+    padding: 0.62rem !important;
   }
 
   .scroll-title--quiet .home-hero-route-strip__links {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-height: 720px) and (min-width: 761px) {
+  .scroll-title--quiet {
+    padding-top: 4.45rem !important;
+    padding-bottom: 0.95rem !important;
+  }
+
+  .scroll-title--quiet .title-lockup--entry-only {
+    width: min(100%, 35.5rem) !important;
+    padding: 0.54rem !important;
+  }
+
+  .scroll-title--quiet .home-hero-route-slip__preview {
+    min-height: 2.35rem !important;
+  }
+
+  .scroll-title--quiet .home-hero-route-slip__copy small {
+    display: none !important;
   }
 }

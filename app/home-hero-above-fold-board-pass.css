@@ -1,0 +1,177 @@
+/* Homepage hero above-fold board pass.
+   Compacts the first-screen studio entry so the title, welcome slip, and room choices
+   are visible together as one readable paper board on normal desktop windows. */
+
+.scroll-title {
+  min-height: min(94svh, 52rem);
+  padding-top: clamp(5.8rem, 10vh, 7.1rem);
+  padding-bottom: clamp(1.7rem, 4vh, 3rem);
+}
+
+.scroll-title .title-lockup {
+  top: clamp(5.7rem, 10vh, 6.9rem);
+  width: min(100%, 58rem);
+  padding: clamp(1.05rem, 2.7vw, 2rem) clamp(1.1rem, 3vw, 2.35rem) clamp(1.1rem, 2.5vw, 1.85rem);
+  transform: rotate(-1.6deg);
+}
+
+.scroll-title .title-lockup::before {
+  box-shadow:
+    0.28rem 0.42rem 0 rgba(47, 38, 35, 0.08),
+    0 1.45rem 3.2rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.05);
+}
+
+.scroll-title .title-kicker {
+  margin-bottom: clamp(0.48rem, 1vw, 0.72rem);
+  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  letter-spacing: 0.22em;
+}
+
+.scroll-title .title-list {
+  gap: clamp(0.04rem, 0.42vw, 0.22rem);
+}
+
+.scroll-title .title-list li {
+  grid-template-columns: clamp(0.72rem, 1.4vw, 1.05rem) minmax(0, 1fr);
+  gap: clamp(0.44rem, 1vw, 0.78rem);
+}
+
+.scroll-title .title-list li::before {
+  width: clamp(0.36rem, 0.78vw, 0.58rem);
+  height: clamp(0.36rem, 0.78vw, 0.58rem);
+}
+
+.scroll-title .title-line {
+  max-width: 11.4ch;
+  font-size: clamp(2.85rem, 8.6vw, 6.9rem);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+}
+
+.scroll-title .title-line--to {
+  font-size: clamp(2rem, 5.8vw, 4.2rem);
+}
+
+.scroll-title .title-line--studio {
+  max-width: 12ch;
+}
+
+.scroll-title .title-note {
+  width: min(100%, 31.5rem);
+  margin-top: clamp(0.58rem, 1.2vw, 0.78rem);
+  margin-left: clamp(1.15rem, 2.6vw, 1.95rem);
+  padding-block: clamp(0.58rem, 1.15vw, 0.78rem);
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.scroll-title .home-arrival-ticket {
+  width: fit-content;
+  max-width: min(100%, 29rem);
+  margin-top: clamp(0.62rem, 1.3vw, 0.82rem);
+  margin-left: clamp(1.25rem, 2.9vw, 2rem);
+  margin-bottom: 0.22rem;
+}
+
+.scroll-title .home-hero-contact-sheet {
+  width: min(100%, 42rem);
+  margin-top: 0.34rem;
+  margin-left: clamp(1rem, 2.4vw, 1.6rem);
+  padding: clamp(0.76rem, 1.5vw, 1rem);
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-strip__links {
+  gap: clamp(0.42rem, 1vw, 0.64rem);
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-slip {
+  padding: 0.32rem 0.34rem 0.48rem;
+}
+
+.scroll-title .home-hero-route-slip__preview {
+  min-height: clamp(3.45rem, 6.4vw, 4.85rem);
+  padding: 0.46rem;
+}
+
+.scroll-title .home-hero-route-slip__preview strong {
+  font-size: clamp(1.02rem, 2vw, 1.38rem);
+}
+
+.scroll-title .home-hero-route-slip__copy {
+  gap: 0.12rem;
+}
+
+.scroll-title .home-hero-route-slip__copy small {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.34rem;
+}
+
+.scroll-title .hero-polaroid {
+  top: clamp(1.9rem, 4.2vw, 3.4rem);
+  left: clamp(28rem, 57vw, 38rem);
+  width: clamp(13.8rem, 23vw, 20rem);
+  filter: drop-shadow(0 1.15rem 1.8rem rgba(47, 38, 35, 0.2));
+  opacity: 0.94;
+}
+
+.scroll-title .hero-polaroid::before {
+  opacity: 0.82;
+}
+
+@keyframes title-scroll-rotate {
+  0% {
+    transform: rotate(-2.2deg) translate3d(0, 0, 0);
+  }
+
+  45% {
+    transform: rotate(0.65deg) translate3d(0.7vw, -0.22rem, 0);
+  }
+
+  100% {
+    transform: rotate(-0.7deg) translate3d(0.18vw, 0.05rem, 0);
+  }
+}
+
+@media (max-width: 960px) {
+  .scroll-title .hero-polaroid {
+    left: auto;
+    right: clamp(-2.4rem, -4vw, -0.6rem);
+    width: clamp(12rem, 28vw, 17rem);
+    opacity: 0.74;
+  }
+}
+
+@media (max-width: 760px) {
+  .scroll-title {
+    min-height: auto;
+    padding-top: 6.5rem;
+    padding-bottom: 3.1rem;
+  }
+
+  .scroll-title .title-lockup {
+    top: auto;
+    padding: 1rem;
+  }
+
+  .scroll-title .title-line {
+    font-size: clamp(2.65rem, 15vw, 5.7rem);
+  }
+
+  .scroll-title .title-line--to {
+    font-size: clamp(2rem, 10vw, 3.8rem);
+  }
+
+  .scroll-title .title-note,
+  .scroll-title .home-arrival-ticket,
+  .scroll-title .home-hero-contact-sheet {
+    margin-left: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-title .title-lockup {
+    transform: rotate(-1deg);
+  }
+}

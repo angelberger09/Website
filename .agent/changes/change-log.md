@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 18:48 ET — Shared status slip load repair
+
+See `.agent/changes/2026-06-28-shared-status-slip-load-repair.md` and `.agent/matrices/shared-status-slip-load-repair.matrix.md`.
+
 ## 2026-06-28 18:41 ET — Homepage room trail binding
 
 See `.agent/changes/2026-06-28-home-room-trail-binding.md` and `.agent/matrices/home-room-trail-binding.matrix.md`.
@@ -157,27 +161,3 @@ See `.agent/changes/2026-06-28-visual-tour-workflow.md` and `.agent/matrices/vis
 ## 2026-06-28 11:12 ET — Homepage hero wordless entry refinement
 
 See `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`.
-
-## 2026-06-28 11:03 ET — Homepage hero wordless entry
-
-See `.agent/changes/2026-06-28-home-hero-wordless-entry.md`.
-
-## 2026-06-28 10:56 ET — Homepage hero front-desk repair
-
-See `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`.
-
-## 2026-06-28 10:47 ET — Homepage UX entry board
-
-See `.agent/changes/2026-06-28-home-hero-ux-entry-board.md`.
-
-## 2026-06-28 10:09 ET — Homepage hero scale guard
-
-See `.agent/changes/2026-06-28-home-hero-scale-guard.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.
-
-## 2026-06-28 09:21 ET — Homepage path terminal ledger
-
-See `.agent/changes/2026-06-28-home-path-terminal-ledger.md` and `.agent/matrices/home-path-terminal-ledger.matrix.md`.
-
-## 2026-06-28 08:08 ET — Store promise terminal trust board
-
-See `.agent/changes/2026-06-28-store-promise-terminal-trust-board.md`.

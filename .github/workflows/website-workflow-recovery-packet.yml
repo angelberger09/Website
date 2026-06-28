@@ -57,17 +57,18 @@ jobs:
           echo "- Branch: ${BRANCH}" >> "$PACKET"
           echo "- Commit: ${SHA}" >> "$PACKET"
           echo "- Conclusion: ${CONCLUSION}" >> "$PACKET"
+          echo "- Verbose log bundle: .agent/feedback/workflow-logs/${FILE_STAMP}-${SAFE_NAME}-run-${RUN_ID}.md" >> "$PACKET"
           echo "- Matched recovery process: PROC-003" >> "$PACKET"
           echo "" >> "$PACKET"
           echo "## Next agent action" >> "$PACKET"
           echo "" >> "$PACKET"
           echo "1. Read this packet before starting another broad Website implementation pass." >> "$PACKET"
-          echo "2. Inspect the linked workflow run before changing visual Website source." >> "$PACKET"
+          echo "2. Read the verbose log bundle in .agent/feedback/workflow-logs/." >> "$PACKET"
           echo "3. Repair workflow or process issues before continuing repeated implementation runs." >> "$PACKET"
           echo "" >> "$PACKET"
           echo "## Public-safe boundary" >> "$PACKET"
           echo "" >> "$PACKET"
-          echo "This packet stores public repository workflow metadata only." >> "$PACKET"
+          echo "This packet stores public repository workflow metadata and points to a redacted verbose log bundle." >> "$PACKET"
           echo "" >> "$PACKET"
           echo "## Related project memory" >> "$PACKET"
           echo "" >> "$PACKET"
@@ -76,15 +77,114 @@ jobs:
           echo "- PROC-003" >> "$PACKET"
           echo "- METRIC-033" >> "$PACKET"
 
-      - name: Commit recovery packet
+      - name: Write verbose redacted workflow logs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_RUN_ID: ${{ github.event.workflow_run.id }}
+          EVENT_RUN_NAME: ${{ github.event.workflow_run.name }}
+          EVENT_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          EVENT_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          EVENT_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_URL: ${{ github.event.workflow_run.html_url }}
         run: |
-          if git diff --quiet -- .agent/feedback/workflow-packets; then
-            echo "No packet changes to commit."
+          mkdir -p .agent/feedback/workflow-logs
+          RUN_ID="${EVENT_RUN_ID:-$GITHUB_RUN_ID}"
+          RUN_NAME="${EVENT_RUN_NAME:-manual recovery check}"
+          CONCLUSION="${EVENT_CONCLUSION:-manual}"
+          BRANCH="${EVENT_BRANCH:-$GITHUB_REF_NAME}"
+          SHA="${EVENT_SHA:-$GITHUB_SHA}"
+          URL="${EVENT_URL:-$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID}"
+          FILE_STAMP=$(TZ=America/New_York date '+%Y-%m-%d-%H%M-ET')
+          SAFE_NAME=$(echo "$RUN_NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | cut -c1-48)
+          LOG_FILE=".agent/feedback/workflow-logs/${FILE_STAMP}-${SAFE_NAME}-run-${RUN_ID}.md"
+          RAW_LOG="/tmp/soft-strange-workflow-${RUN_ID}.raw.log"
+          REDACTED_LOG="/tmp/soft-strange-workflow-${RUN_ID}.redacted.log"
+          JOBS_JSON="/tmp/soft-strange-workflow-${RUN_ID}-jobs.json"
+
+          echo "# Verbose Workflow Log - ${RUN_NAME}" > "$LOG_FILE"
+          echo "" >> "$LOG_FILE"
+          echo "Timestamp: $(TZ=America/New_York date '+%Y-%m-%d %H:%M ET')" >> "$LOG_FILE"
+          echo "Run ID: ${RUN_ID}" >> "$LOG_FILE"
+          echo "Run URL: ${URL}" >> "$LOG_FILE"
+          echo "Branch: ${BRANCH}" >> "$LOG_FILE"
+          echo "Commit: ${SHA}" >> "$LOG_FILE"
+          echo "Conclusion: ${CONCLUSION}" >> "$LOG_FILE"
+          echo "" >> "$LOG_FILE"
+          echo "## Redaction boundary" >> "$LOG_FILE"
+          echo "" >> "$LOG_FILE"
+          echo "This bundle captures verbose workflow diagnostics from GitHub Actions and applies an additional redaction pass before committing to the repo." >> "$LOG_FILE"
+          echo "" >> "$LOG_FILE"
+
+          if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/jobs" --paginate > "$JOBS_JSON" 2>/tmp/soft-strange-jobs-error.log; then
+            echo "## Job and step summary" >> "$LOG_FILE"
+            echo "" >> "$LOG_FILE"
+            python - <<'PY' "$JOBS_JSON" "$LOG_FILE"
+          import json, sys
+          jobs_path, log_path = sys.argv[1], sys.argv[2]
+          payload = json.load(open(jobs_path, encoding='utf-8'))
+          jobs = payload.get('jobs', []) if isinstance(payload, dict) else []
+          with open(log_path, 'a', encoding='utf-8') as out:
+              for job in jobs:
+                  out.write(f"### {job.get('name', 'unnamed job')}\n\n")
+                  out.write(f"- Job ID: {job.get('id', 'unknown')}\n")
+                  out.write(f"- Status: {job.get('status', 'unknown')}\n")
+                  out.write(f"- Conclusion: {job.get('conclusion', 'unknown')}\n")
+                  out.write(f"- Started: {job.get('started_at', 'unknown')}\n")
+                  out.write(f"- Completed: {job.get('completed_at', 'unknown')}\n\n")
+                  steps = job.get('steps', []) or []
+                  if steps:
+                      out.write('| Step | Status | Conclusion | Started | Completed |\n')
+                      out.write('| --- | --- | --- | --- | --- |\n')
+                      for step in steps:
+                          name = str(step.get('name', 'unnamed step')).replace('|', '/')
+                          out.write(f"| {name} | {step.get('status', '')} | {step.get('conclusion', '')} | {step.get('started_at', '')} | {step.get('completed_at', '')} |\n")
+                      out.write('\n')
+          PY
+          else
+            echo "## Job and step summary" >> "$LOG_FILE"
+            echo "" >> "$LOG_FILE"
+            echo "Could not fetch job summary with gh api." >> "$LOG_FILE"
+            cat /tmp/soft-strange-jobs-error.log >> "$LOG_FILE" || true
+            echo "" >> "$LOG_FILE"
+          fi
+
+          echo "## Full redacted log output" >> "$LOG_FILE"
+          echo "" >> "$LOG_FILE"
+          echo '```txt' >> "$LOG_FILE"
+          if gh run view "$RUN_ID" --repo "$GITHUB_REPOSITORY" --log > "$RAW_LOG" 2>/tmp/soft-strange-log-error.log; then
+            python - <<'PY' "$RAW_LOG" "$REDACTED_LOG"
+          import re, sys
+          raw_path, out_path = sys.argv[1], sys.argv[2]
+          text = open(raw_path, encoding='utf-8', errors='replace').read()
+          patterns = [
+              (r'gh[psu]_[A-Za-z0-9_]{20,}', '[REDACTED_GITHUB_TOKEN]'),
+              (r'github_pat_[A-Za-z0-9_]{20,}', '[REDACTED_GITHUB_PAT]'),
+              (r'Bearer\s+[A-Za-z0-9._\-]{20,}', 'Bearer [REDACTED]'),
+              (r'Authorization:\s*[^\n\r]+', 'Authorization: [REDACTED]'),
+              (r'(DISCORD_WEBHOOK_URL=)[^\s]+', r'\1[REDACTED]'),
+              (r'https://discord(?:app)?\.com/api/webhooks/[^\s\)\]\}]+', '[REDACTED_DISCORD_WEBHOOK]'),
+              (r'(token|secret|password|webhook)(=|:)[^\s]+', r'\1\2[REDACTED]'),
+          ]
+          for pattern, repl in patterns:
+              text = re.sub(pattern, repl, text, flags=re.IGNORECASE)
+          open(out_path, 'w', encoding='utf-8').write(text)
+          PY
+            cat "$REDACTED_LOG" >> "$LOG_FILE"
+          else
+            echo "Could not fetch full workflow log with gh run view." >> "$LOG_FILE"
+            cat /tmp/soft-strange-log-error.log >> "$LOG_FILE" || true
+          fi
+          echo '```' >> "$LOG_FILE"
+
+      - name: Commit recovery packet and verbose logs
+        run: |
+          if git diff --quiet -- .agent/feedback/workflow-packets .agent/feedback/workflow-logs; then
+            echo "No packet or log changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .agent/feedback/workflow-packets
-          git commit -m "Add workflow recovery packet"
+          git add .agent/feedback/workflow-packets .agent/feedback/workflow-logs
+          git commit -m "Add workflow recovery diagnostics"
           git pull --rebase
           git push

@@ -47,6 +47,49 @@ Angel asked to get rid of all hero wording after the previous hero pass still fe
 - METRIC-029
 - METRIC-032
 
+## 2026-06-28 10:56 ET — Homepage hero front-desk repair
+
+### Changed
+
+- Reworked `app/home-hero-front-desk-finish-pass.css` to reduce the previous over-compressed hero composition.
+- Reduced the fallback hero board width, title scale, route-slip scale, and Open rooms card scale.
+- Added tighter short-viewport fallbacks before the later wordless entry pass became the active hero treatment.
+- Added `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`.
+- Updated `.agent/matrices/home-hero-scale-guard.matrix.md` to record that this is now a legacy/fallback repair layer under the wordless entry pass.
+
+### Why
+
+The prior hero composition was too large, washed out, and visually compressed. This repair tightened the old visible-wording hero layer, then the newer wordless entry pass took over as the active first-screen treatment.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-002
+- DESIGN-014
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-028
+- METRIC-029
+- METRIC-032
+
 ## 2026-06-28 10:47 ET — Homepage UX entry board
 
 ### Changed

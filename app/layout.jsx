@@ -14,6 +14,7 @@ import './home-intro-copy-slips-pass.css';
 import './home-pillar-photo-pass.css';
 import './home-studio-shape-binding-ledger-pass.css';
 import './home-check-photo-pass.css';
+import './home-house-rules-terminal-budget-pass.css';
 import './home-arrival-ticket-pass.css';
 import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';

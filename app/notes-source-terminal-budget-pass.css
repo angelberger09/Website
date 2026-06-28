@@ -1,0 +1,198 @@
+/* Notes source terminal budget pass.
+   Binds the writing-shelf source map into one calm receipt board so the source ledger,
+   public promise strip, and fallback slips read as a single composed room surface. */
+
+.notes-source-board {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.notes-source-board::after {
+  content: "";
+  position: absolute;
+  inset: clamp(0.65rem, 1.8vw, 1rem) clamp(0.35rem, 1.4vw, 0.75rem) clamp(0.6rem, 1.6vw, 0.9rem);
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(102deg, rgba(255, 252, 246, 0.58), rgba(245, 224, 198, 0.22) 46%, rgba(216, 197, 236, 0.12)),
+    radial-gradient(circle at 12% 18%, rgba(255, 176, 143, 0.12), transparent 31%),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  clip-path: polygon(1% 4%, 18% 1%, 51% 3%, 83% 0, 99% 5%, 98% 94%, 77% 98%, 47% 95%, 17% 99%, 0 92%);
+  box-shadow:
+    0 1.4rem 2.6rem rgba(74, 47, 29, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -0.65rem 1.15rem rgba(74, 47, 29, 0.035);
+  opacity: 0.9;
+}
+
+.notes-source-board > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-source-board__intro {
+  max-width: 46rem;
+  margin-right: auto;
+  box-shadow:
+    0 0.78rem 1.25rem rgba(74, 47, 29, 0.105),
+    0.1rem 0.12rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.notes-source-board__intro::before {
+  content: "writing shelf receipt";
+  position: absolute;
+  right: clamp(0.7rem, 2vw, 1.05rem);
+  top: -0.52rem;
+  width: fit-content;
+  padding: 0.24rem 0.52rem 0.2rem;
+  color: rgba(63, 49, 38, 0.68);
+  font-family: var(--font-hand);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.94), rgba(235, 219, 190, 0.72)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  clip-path: polygon(5% 18%, 95% 0, 100% 82%, 8% 100%);
+  box-shadow: 0 0.32rem 0.6rem rgba(74, 47, 29, 0.12);
+  transform: rotate(1.2deg);
+}
+
+.notes-shelf-promise-strip {
+  max-width: min(58rem, 96%);
+  transform: rotate(-0.25deg);
+  box-shadow:
+    0 0.9rem 1.55rem rgba(74, 47, 29, 0.12),
+    0.12rem 0.16rem 0 rgba(47, 38, 35, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.notes-shelf-promise-strip span {
+  position: relative;
+}
+
+.notes-shelf-promise-strip span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.55rem;
+  width: 1.7rem;
+  height: 0.42rem;
+  transform: translateX(-50%) rotate(-2deg);
+  background: rgba(255, 252, 246, 0.58);
+  box-shadow: 0 0.18rem 0.35rem rgba(74, 47, 29, 0.08);
+  clip-path: polygon(8% 12%, 94% 0, 100% 86%, 0 100%);
+}
+
+.notes-source-receipt-ledger,
+.notes-fallback-receipts {
+  max-width: min(60rem, 96%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notes-source-receipt-ledger {
+  transform: rotate(0.18deg);
+  box-shadow:
+    0 1.05rem 1.95rem rgba(74, 47, 29, 0.12),
+    0.12rem 0.14rem 0 rgba(47, 38, 35, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.notes-source-receipt {
+  filter: none;
+  transform: rotate(-0.2deg);
+}
+
+.notes-source-receipt:nth-child(2) {
+  transform: translateY(0.25rem) rotate(0.45deg);
+}
+
+.notes-source-receipt:nth-child(3) {
+  transform: translateY(-0.12rem) rotate(-0.45deg);
+}
+
+.notes-source-receipt__photo,
+.notes-fallback-receipt__photo {
+  opacity: 0.88;
+}
+
+.notes-source-detail-slip,
+.notes-fallback-receipt__label {
+  box-shadow:
+    0 0.22rem 0.44rem rgba(74, 47, 29, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.notes-fallback-receipts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.8vw, 1rem);
+  transform: rotate(-0.18deg);
+}
+
+.notes-fallback-receipt {
+  position: relative;
+  min-height: 100%;
+  background:
+    linear-gradient(134deg, rgba(255, 252, 246, 0.86), rgba(246, 235, 213, 0.64)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  clip-path: polygon(3% 7%, 97% 0, 100% 91%, 5% 100%);
+}
+
+.notes-fallback-receipt:nth-child(2) {
+  transform: translateY(0.28rem) rotate(0.5deg);
+}
+
+.notes-fallback-receipt:nth-child(3) {
+  transform: rotate(-0.45deg);
+}
+
+@media (max-width: 840px) {
+  .notes-source-board::after {
+    inset: 0.35rem 0 0.4rem;
+  }
+
+  .notes-source-board__intro::before {
+    position: static;
+    display: inline-flex;
+    margin: 0 0 0.6rem;
+    transform: rotate(-0.7deg);
+  }
+
+  .notes-shelf-promise-strip,
+  .notes-source-receipt-ledger,
+  .notes-fallback-receipts {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .notes-fallback-receipts {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-source-receipt,
+  .notes-source-receipt:nth-child(2),
+  .notes-source-receipt:nth-child(3),
+  .notes-fallback-receipt,
+  .notes-fallback-receipt:nth-child(2),
+  .notes-fallback-receipt:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-shelf-promise-strip,
+  .notes-source-receipt-ledger,
+  .notes-fallback-receipts,
+  .notes-source-receipt,
+  .notes-fallback-receipt {
+    transform: none;
+  }
+}

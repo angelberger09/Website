@@ -2,6 +2,50 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 20:20 ET — Wire About next doors exit ledger
+
+### Changed
+
+- Updated `app/layout.jsx` to import `app/about-next-doors-exit-ledger-pass.css` after the existing About pathway-door compass pass.
+- This makes the documented About exit-ledger styling actually load in the rendered Website bundle.
+- Added `.agent/changes/2026-06-27-wire-about-next-doors-exit-ledger.md`.
+- Added `.agent/matrices/wire-about-next-doors-exit-ledger.matrix.md`.
+
+### Why
+
+The prior About next-door exit ledger pass existed in source and `.agent` state, but `app/layout.jsx` did not import it. That meant the documented final About exit ledger could not visibly render, leaving the `Where to go next` section partially satisfied and still closer to neighboring route cards than a composed paper exit handoff.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-025
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-27 19:40 ET — About next doors exit ledger
 
 ### Changed

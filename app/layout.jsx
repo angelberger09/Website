@@ -242,6 +242,7 @@ import './store-proof-gallery-terminal-budget-pass.css';
 import './store-room-sequence-terminal-pass.css';
 import './home-arrival-ticket-terminal-pass.css';
 import './home-arrival-ticket-room-budget-pass.css';
+import './home-room-status-ledger-binding-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

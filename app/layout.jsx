@@ -198,6 +198,7 @@ import './page-intro-trust-spine-pass.css';
 import './page-intro-room-key-ticket-pass.css';
 import './page-intro-calm-focus-pass.css';
 import './page-intro-room-shelf-ledger-pass.css';
+import './page-intro-terminal-room-board-pass.css';
 import './paper-asset-shell-pass.css';
 import './paper-asset-card-pass.css';
 import './detail-card-paper-face-pass.css';

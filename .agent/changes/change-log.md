@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 17:40 ET — PageIntro ticket depth
+
+See `.agent/changes/2026-06-28-page-intro-ticket-depth.md` and `.agent/matrices/page-intro-ticket-depth.matrix.md`.
+
 ## 2026-06-28 17:29 ET — Header paper label load repair
 
 See `.agent/changes/2026-06-28-header-paper-label-load-repair.md` and `.agent/matrices/header-paper-label-load-repair.matrix.md`.

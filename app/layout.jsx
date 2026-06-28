@@ -24,6 +24,7 @@ import './about-section-spine-labels-pass.css';
 import './about-room-spine-ledger-pass.css';
 import './about-contact-sheet-pass.css';
 import './about-contact-sheet-rail-pass.css';
+import './about-contact-sheet-room-docket-pass.css';
 import './about-principle-photo-pass.css';
 import './about-principle-snippet-pass.css';
 import './about-principle-promise-trail-pass.css';
@@ -218,13 +219,10 @@ import './page-intro-terminal-room-board-pass.css';
 import './paper-asset-shell-pass.css';
 import './paper-asset-card-pass.css';
 import './detail-card-paper-face-pass.css';
-import './detail-card-binding-thread-pass.css';
-import './status-pill-paper-slip-pass.css';
-import './detail-card-room-pin-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A soft, strange public studio home for Angel Berger.',
+  description: 'A soft, strange studio home for notes, creature work, and gentle experiments.'
 };
 
 export default function RootLayout({ children }) {

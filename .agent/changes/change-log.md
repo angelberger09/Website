@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 13:11 ET — Notes room spine rail
+
+See `.agent/changes/2026-06-28-notes-room-spine-rail.md` and `.agent/matrices/notes-room-spine-rail.matrix.md`.
+
 ## 2026-06-28 12:48 ET — Homepage section spine shadow
 
 See `.agent/changes/2026-06-28-home-section-spine-shadow.md` and `.agent/matrices/home-section-spine-shadow.matrix.md`.

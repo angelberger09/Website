@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 13:50 ET — About slip depth selector repair
+
+See `.agent/changes/2026-06-28-about-slip-depth-selector-repair.md` and `.agent/matrices/about-slip-depth-selector-repair.matrix.md`.
+
 ## 2026-06-28 13:41 ET — About next-door paper thread
 
 See `.agent/changes/2026-06-28-about-next-door-paper-thread.md` and `.agent/matrices/about-next-door-paper-thread.matrix.md`.

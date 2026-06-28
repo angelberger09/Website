@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 18:08 ET — About room thread binding
+
+See `.agent/changes/2026-06-28-about-room-thread-binding.md` and `.agent/matrices/about-room-thread-binding.matrix.md`.
+
 ## 2026-06-28 17:50 ET — Homepage section spine shadow load repair
 
 See `.agent/changes/2026-06-28-home-section-spine-shadow-load-repair.md` and `.agent/matrices/home-section-spine-shadow-load-repair.matrix.md`.

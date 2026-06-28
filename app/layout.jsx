@@ -79,6 +79,7 @@ import './store-path-direct-labels-pass.css';
 import './store-return-docket-pass.css';
 import './store-path-return-compass-pass.css';
 import './store-path-return-stamps-pass.css';
+import './store-path-terminal-budget-pass.css';
 import './store-direct-paper-cues-pass.css';
 import './store-section-spine-labels-pass.css';
 import './store-direct-cue-content-pass.css';

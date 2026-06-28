@@ -167,6 +167,7 @@ import './page-intro-room-shelf-ledger-pass.css';
 import './page-intro-room-tags-pass.css';
 import './page-intro-tag-photo-pass.css';
 import './page-intro-room-key-ticket-pass.css';
+import './page-intro-bound-room-ledger-pass.css';
 import './footer-paper-trail-pass.css';
 import './footer-current-room-slip-pass.css';
 import './footer-exit-receipt-board-pass.css';

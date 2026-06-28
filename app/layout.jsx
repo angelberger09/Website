@@ -121,6 +121,7 @@ import './notes-path-reader-spine-pass.css';
 import './notes-path-exit-ledger-pass.css';
 import './notes-path-direct-exit-slips-pass.css';
 import './notes-post-margin-binding-pass.css';
+import './notes-post-markdown-paper-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

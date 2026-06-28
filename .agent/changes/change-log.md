@@ -2,6 +2,51 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 05:08 ET — Header room ledger strip
+
+### Changed
+
+- Added `app/header-room-ledger-strip-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after `header-paper-contact-shadow-pass.css`.
+- Strengthened the shared floating header as one bound paper ledger strip with a cut-paper silhouette, stronger contact shadow, thread/spine cue, receipt notches, firmer identity label, tactile nav tabs, and clearer active-room underline.
+- Added `.agent/changes/2026-06-28-header-room-ledger-strip.md`.
+- Added `.agent/matrices/header-room-ledger-strip.matrix.md`.
+
+### Why
+
+The `.agent` state still marked the shared header paper read as partially satisfied: the top strip, identity area, and direct nav labels needed to read as one layered paper surface at screenshot scale rather than smooth rounded UI chips. This pass keeps direct navigation and public copy unchanged while making the shared chrome visibly more tactile on every route.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-001
+- COMP-002
+- COMP-005
+- DESIGN-004
+- DESIGN-011
+- DESIGN-015
+- DESIGN-019
+- DESIGN-020
+- DESIGN-022
+- DESIGN-024
+- LESSON-002
+- LESSON-011
+- LESSON-015
+- LESSON-019
+- LESSON-020
+- LESSON-022
+- LESSON-024
+- METRIC-014
+- METRIC-018
+- METRIC-019
+- METRIC-021
+- METRIC-023
+
 ## 2026-06-28 04:48 ET — About contact sheet terminal budget
 
 ### Changed

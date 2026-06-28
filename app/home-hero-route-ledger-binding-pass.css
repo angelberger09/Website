@@ -1,0 +1,141 @@
+/* Homepage hero route ledger binding pass.
+   Binds the first-screen route contact sheet into one visible front-door ledger without changing public copy. */
+
+.home-hero-contact-sheet {
+  isolation: isolate;
+  transform: rotate(-0.35deg);
+  background:
+    linear-gradient(90deg, rgba(87, 69, 60, 0.16), transparent 0.46rem),
+    linear-gradient(180deg, rgba(255, 255, 252, 0.92), rgba(255, 247, 235, 0.72) 58%, rgba(237, 213, 185, 0.42)),
+    var(--grain-image);
+  background-size: 100% 100%, 100% 100%, 18rem 18rem;
+  box-shadow:
+    0.34rem 0.44rem 0 rgba(85, 65, 55, 0.1),
+    0 1.25rem 2.4rem rgba(47, 38, 35, 0.18);
+}
+
+.home-hero-contact-sheet::before {
+  content: "front door ledger";
+  position: absolute;
+  top: 0.64rem;
+  right: clamp(0.72rem, 2vw, 1.05rem);
+  z-index: 3;
+  clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 0, 97% 97%, 2% 100%));
+  background: rgba(255, 252, 246, 0.88);
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.12);
+  color: rgba(68, 52, 46, 0.72);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  padding: 0.34rem 0.56rem;
+  text-transform: uppercase;
+}
+
+.home-hero-contact-sheet::after {
+  content: "";
+  position: absolute;
+  inset: 0.72rem auto 0.72rem 0.82rem;
+  z-index: 0;
+  width: 0.14rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(86, 67, 56, 0.3) 0 0.28rem,
+      transparent 0.28rem 0.62rem
+    );
+  opacity: 0.68;
+}
+
+.home-hero-contact-sheet .home-hero-route-strip__label {
+  top: 0.42rem;
+  left: clamp(1.28rem, 3vw, 1.75rem);
+  clip-path: var(--fast-paper-cut, polygon(2% 0, 100% 4%, 96% 100%, 0 96%));
+  background: rgba(244, 226, 185, 0.78);
+  box-shadow: 0.12rem 0.18rem 0 rgba(47, 38, 35, 0.1);
+  padding: 0.34rem 0.62rem;
+}
+
+.home-hero-contact-sheet .home-hero-route-strip__links {
+  position: relative;
+  z-index: 1;
+  gap: clamp(0.5rem, 1.2vw, 0.68rem);
+  padding: 1.48rem 0.26rem 0.16rem 0.7rem;
+}
+
+.home-hero-contact-sheet .home-hero-route-strip__links::before {
+  content: "";
+  position: absolute;
+  inset: 1.18rem 0.02rem 0.12rem 0.42rem;
+  z-index: -1;
+  clip-path: var(--fast-paper-cut, polygon(1% 2%, 99% 1%, 98% 98%, 2% 100%));
+  background: rgba(255, 252, 246, 0.38);
+  box-shadow: inset 0.12rem 0 0 rgba(79, 60, 51, 0.08);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip {
+  position: relative;
+  transform: rotate(-0.4deg);
+  background: rgba(255, 251, 242, 0.86);
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.1),
+    0 0.64rem 1.1rem rgba(47, 38, 35, 0.1);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip:nth-child(even) {
+  transform: rotate(0.45deg) translateY(0.24rem);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip::before {
+  content: "";
+  position: absolute;
+  top: -0.22rem;
+  left: 50%;
+  width: 2.1rem;
+  height: 0.46rem;
+  transform: translateX(-50%) rotate(-2deg);
+  clip-path: polygon(3% 10%, 100% 0, 94% 100%, 0 88%);
+  background: rgba(218, 196, 153, 0.5);
+  box-shadow: 0 0.08rem 0 rgba(47, 38, 35, 0.08);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip__preview {
+  min-height: clamp(5.15rem, 9vw, 6.75rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(47, 38, 35, 0.08),
+    inset 0 -1.2rem 2rem rgba(47, 38, 35, 0.14);
+}
+
+.home-hero-contact-sheet .home-hero-route-slip__copy small {
+  background: rgba(255, 252, 246, 0.72);
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.08);
+}
+
+@media (max-width: 760px) {
+  .home-hero-contact-sheet {
+    transform: none;
+  }
+
+  .home-hero-contact-sheet::before {
+    position: static;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+
+  .home-hero-contact-sheet .home-hero-route-strip__links {
+    padding-left: 0.45rem;
+  }
+
+  .home-hero-contact-sheet .home-hero-route-slip,
+  .home-hero-contact-sheet .home-hero-route-slip:nth-child(even) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-contact-sheet,
+  .home-hero-contact-sheet .home-hero-route-slip,
+  .home-hero-contact-sheet .home-hero-route-slip:nth-child(even) {
+    transform: none;
+  }
+}

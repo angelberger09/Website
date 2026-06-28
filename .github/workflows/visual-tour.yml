@@ -78,37 +78,27 @@ jobs:
             node .agent/tools/SoftStrange-WebsiteAuditor.mjs --help
             exit 0
           fi
-          python - <<'PY'
-          import os
-          from datetime import datetime
-          from pathlib import Path
-
-          packets_dir = Path('.agent/feedback/workflow-packets')
-          packets_dir.mkdir(parents=True, exist_ok=True)
-          stamp = datetime.utcnow().strftime('%Y-%m-%dT%H-%M-%SZ')
-          packet = packets_dir / f'{stamp}-visual-tour-auditor-fetch-failure.md'
-          packet.write_text(f'''# Visual Tour Auditor Fetch Failure
-
-Timestamp: {datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}
-Workflow: Visual Tour
-Run ID: {os.environ.get('GITHUB_RUN_ID', 'unknown')}
-Ref: {os.environ.get('GITHUB_REF', 'unknown')}
-SHA: {os.environ.get('GITHUB_SHA', 'unknown')}
-
-## Public-safe summary
-
-The visual tour workflow built the Website branch but could not fetch the pinned SoftStrange-WebsiteAuditor ESM entry point.
-
-## Likely repair
-
-Confirm that the configured auditor URL is reachable from GitHub Actions. If the Software repo remains private, expose a pinned public release path or configure SOFTSTRANGE_AUDITOR_URL to a reachable ESM file.
-
-## Boundary
-
-No raw logs, credentials, or private context are stored in this packet.
-''', encoding='utf-8')
-          print(f'Wrote {packet}')
-          PY
+          STAMP=$(date -u +'%Y-%m-%dT%H-%M-%SZ')
+          PACKET=".agent/feedback/workflow-packets/${STAMP}-visual-tour-auditor-fetch-failure.md"
+          echo "# Visual Tour Auditor Fetch Failure" > "$PACKET"
+          echo "" >> "$PACKET"
+          echo "Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> "$PACKET"
+          echo "Workflow: Visual Tour" >> "$PACKET"
+          echo "Run ID: $GITHUB_RUN_ID" >> "$PACKET"
+          echo "Ref: $GITHUB_REF" >> "$PACKET"
+          echo "SHA: $GITHUB_SHA" >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "## Public-safe summary" >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "The visual tour workflow built the Website branch but could not fetch the pinned SoftStrange-WebsiteAuditor ESM entry point." >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "## Likely repair" >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "Confirm that the configured auditor URL is reachable from GitHub Actions. If the Software repo remains private, expose a pinned public release path or configure SOFTSTRANGE_AUDITOR_URL to a reachable ESM file." >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "## Boundary" >> "$PACKET"
+          echo "" >> "$PACKET"
+          echo "No raw logs, credentials, or private context are stored in this packet." >> "$PACKET"
           exit 1
 
       - name: Render scroll walkthrough and interaction simulation videos

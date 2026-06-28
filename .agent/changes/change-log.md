@@ -2,6 +2,46 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 01:08 ET — Homepage studio shape binding ledger
+
+### Changed
+
+- Added `app/home-studio-shape-binding-ledger-pass.css`.
+- Loaded it from `app/layout.jsx` after the homepage pillar photo pass.
+- Bound the homepage `Studio shape` pillar strip into one clipped paper making-rules ledger with a shared backing sheet, left stitched thread, binder-hole cues, calmer shadows, and responsive fallbacks.
+- Added `.agent/changes/2026-06-28-home-studio-shape-binding-ledger.md`.
+- Added `.agent/matrices/home-studio-shape-binding-ledger.matrix.md`.
+
+### Why
+
+The homepage Studio shape section already had honest public copy and content-bearing paper/photo pillar notes, but the four rules still scanned as neighboring cards. This pass keeps the same source-backed text and anchors while making the section visibly read as one bound making-rules surface inside the long homepage room path.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 23:29 ET — Portfolio feed receipt seal
 
 ### Changed

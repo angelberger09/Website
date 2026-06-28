@@ -2,6 +2,58 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 07:49 ET — Footer exit terminal budget refinement
+
+### Changed
+
+- Refined the already-loaded `app/footer-exit-path-terminal-focus-pass.css` so the shared footer reads as one quieter bound paper exit desk instead of a stack of separate receipt/shelf passes.
+- Added a small `soft exit path` paper label, calmer footer backing, reduced receipt card shadows, smaller photo centers, tighter receipt spacing, and mobile/reduced-motion budget behavior.
+- Kept footer links, route labels, public-safe copy, and honest abstract photo language unchanged.
+- Added `.agent/matrices/footer-exit-terminal-budget.matrix.md`.
+
+### Why
+
+The active `.agent` state asks every major page to behave like a calm room with a guided path, and the shared footer appears after every route. The lower chrome already had a four-room exit shelf, but the accumulated footer passes could still read as separate stacked pieces rather than one terminal exit surface. This pass keeps the existing public navigation while calming and binding the rendered footer surface.
+
+### Related items
+
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-003A
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 07:38 ET — About room path docket load
 
 ### Changed

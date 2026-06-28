@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 11:12 ET — Homepage hero wordless entry refinement
+
+### Changed
+
+- Refined `app/home-hero-wordless-entry-pass.css` so the active wordless homepage hero suppresses the older inherited `title-lockup::after` label instead of leaving a faint `front desk` pseudo-label visible.
+- Narrowed and tightened the first-screen room-choice board, route-card gaps, route-card scale, and contact-sheet shadow stack.
+- Added a short-viewport desktop fallback that hides the smallest room-cue microcopy before the first screen becomes crowded.
+- Added `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`.
+- Updated `.agent/matrices/home-hero-scale-guard.matrix.md`.
+
+### Why
+
+The active homepage direction is now a wordless first-screen entry with only room choices visible. The source had removed the large hero wording, but older CSS could still leak a small pseudo-label and the remaining board could still feel a little too wide and composed. This pass keeps the semantic screen-reader title while making the visible entry surface quieter.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- DESIGN-002
+- DESIGN-014
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-025
+- METRIC-001
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-028
+- METRIC-029
+- METRIC-032
+
 ## 2026-06-28 11:03 ET — Homepage hero wordless entry
 
 ### Changed

@@ -1,0 +1,227 @@
+/* Notes post margin binding pass.
+   Strengthens the individual note reader as a left-bound paper desk without changing public Blog data. */
+
+.notes-post-desk {
+  align-items: stretch;
+}
+
+.notes-post-desk__intro {
+  position: sticky;
+  top: clamp(5.4rem, 12vh, 7rem);
+  min-height: 100%;
+  padding: clamp(1rem, 2.3vw, 1.35rem);
+  clip-path: polygon(1.2% 2%, 97.8% 0.6%, 96.5% 22%, 98.4% 55%, 95.8% 98%, 59% 96.8%, 24% 99%, 1.6% 96.5%, 3% 54%);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76) 60%, rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  box-shadow:
+    0.16rem 0.28rem 0 rgba(47, 38, 35, 0.08),
+    0 1.2rem 2.2rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.notes-post-desk__intro::before {
+  position: absolute;
+  inset: 0.8rem auto 0.8rem -0.12rem;
+  width: 0.62rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.42), rgba(185, 201, 175, 0.3), rgba(216, 197, 236, 0.34)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.16rem 0 0 rgba(47, 38, 35, 0.08);
+  opacity: 0.88;
+}
+
+.notes-post-desk__intro::after {
+  position: absolute;
+  top: 0.95rem;
+  right: clamp(0.8rem, 2vw, 1.1rem);
+  content: "reader margin";
+  padding: 0.28rem 0.58rem 0.24rem;
+  clip-path: polygon(3% 12%, 96% 0, 99% 86%, 5% 100%);
+  background: rgba(255, 176, 143, 0.24);
+  color: rgba(47, 38, 35, 0.72);
+  font-family: var(--font-hand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transform: rotate(1.4deg);
+}
+
+.notes-post-desk__intro > * {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-intro-receipts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.48rem;
+}
+
+.notes-post-intro-receipt,
+.notes-post-margin-slip {
+  position: relative;
+  display: grid;
+  gap: 0.22rem;
+  padding: 0.62rem 0.68rem;
+  clip-path: polygon(2% 6%, 97% 1%, 95% 92%, 5% 100%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.92), rgba(255, 247, 235, 0.7)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow: 0.08rem 0.14rem 0 rgba(47, 38, 35, 0.07), 0 0.44rem 0.9rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-post-intro-receipt:nth-child(2),
+.notes-post-margin-slip:nth-child(2) {
+  transform: rotate(-0.8deg) translateY(0.04rem);
+}
+
+.notes-post-intro-receipt:nth-child(3),
+.notes-post-margin-slip:nth-child(3) {
+  transform: rotate(0.7deg);
+}
+
+.notes-post-intro-receipt small,
+.notes-post-margin-slip small {
+  color: rgba(47, 38, 35, 0.62);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notes-post-intro-receipt strong,
+.notes-post-margin-slip strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.1;
+}
+
+.notes-post-margin-rail {
+  position: relative;
+  display: grid;
+  gap: 0.54rem;
+  padding-left: 0.64rem;
+}
+
+.notes-post-margin-rail::before {
+  position: absolute;
+  inset: 0.15rem auto 0.25rem 0.1rem;
+  width: 0.16rem;
+  content: "";
+  border-radius: 999px;
+  background: rgba(47, 38, 35, 0.16);
+  box-shadow: 0.48rem 0 0 rgba(255, 176, 143, 0.24);
+}
+
+.notes-post-margin-slip em {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-style: normal;
+  line-height: 1.38;
+}
+
+.notes-post-desk__photo-card {
+  position: relative;
+  display: grid;
+  min-height: 9.6rem;
+  align-content: end;
+  gap: 0.28rem;
+  padding: 1rem;
+  clip-path: polygon(1.4% 2.4%, 98% 0.8%, 96.2% 74%, 99% 97%, 66% 95.6%, 29% 98.6%, 1% 96.4%);
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 176, 143, 0.38), transparent 32%),
+    radial-gradient(circle at 78% 72%, rgba(185, 201, 175, 0.42), transparent 34%),
+    linear-gradient(140deg, rgba(216, 197, 236, 0.28), rgba(47, 38, 35, 0.12)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.07), 0 0.8rem 1.4rem rgba(47, 38, 35, 0.1);
+  overflow: hidden;
+}
+
+.notes-post-desk__photo-card::before {
+  position: absolute;
+  inset: 0.85rem 0.9rem auto;
+  height: 3.2rem;
+  content: "";
+  clip-path: polygon(1% 14%, 100% 0, 96% 88%, 5% 100%);
+  background: rgba(255, 252, 246, 0.56);
+}
+
+.notes-post-desk__photo-card i {
+  position: absolute;
+  right: 0.92rem;
+  bottom: 0.88rem;
+  width: 3.4rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.notes-post-desk__photo-kicker,
+.notes-post-desk__photo-card strong,
+.notes-post-desk__photo-card small {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-desk__photo-kicker,
+.notes-post-desk__photo-card small {
+  color: rgba(47, 38, 35, 0.64);
+  font-family: var(--font-hand);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notes-post-desk__photo-card strong {
+  max-width: 9ch;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 0.92;
+}
+
+.notes-post-sheet {
+  transform: rotate(0.18deg);
+}
+
+.notes-post-sheet::after {
+  position: absolute;
+  top: 1.2rem;
+  left: -0.28rem;
+  width: 0.58rem;
+  height: calc(100% - 2.4rem);
+  content: "";
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.34), rgba(185, 201, 175, 0.24)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.14rem 0 0 rgba(47, 38, 35, 0.06);
+  opacity: 0.82;
+}
+
+@media (max-width: 980px) {
+  .notes-post-desk__intro {
+    position: relative;
+    top: auto;
+  }
+
+  .notes-post-intro-receipts {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-post-sheet::after {
+    display: none;
+  }
+}

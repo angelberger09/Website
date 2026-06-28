@@ -1,0 +1,269 @@
+/* Homepage hero front-desk finish pass.
+   Finalizes the implementation plan's first priority: the homepage hero should read as
+   a calm, viewport-safe front desk with orientation, route choices, and the Open rooms
+   card visible together instead of a loud poster with scattered scraps. */
+
+.scroll-title {
+  min-height: min(82svh, 45rem);
+  padding-top: clamp(5rem, 7.4vh, 5.95rem);
+  padding-bottom: clamp(1.05rem, 2.4vh, 1.85rem);
+}
+
+.scroll-title .title-lockup {
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 17.25rem);
+  column-gap: clamp(0.9rem, 2.35vw, 1.85rem);
+  row-gap: clamp(0.26rem, 0.72vw, 0.54rem);
+  width: min(calc(100% - clamp(1rem, 4vw, 3rem)), 67rem);
+  max-height: calc(100svh - clamp(6.1rem, 10.6vh, 7.6rem));
+  padding: clamp(0.82rem, 1.65vw, 1.26rem) clamp(0.9rem, 2.1vw, 1.55rem) clamp(0.86rem, 1.8vw, 1.24rem);
+  background-size: 100% 100%, cover, 11rem 11rem !important;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.92rem 1.78rem rgba(47, 38, 35, 0.13),
+    -0.38rem 0.42rem 1.15rem rgba(86, 59, 105, 0.075) !important;
+}
+
+.scroll-title .title-lockup::after {
+  position: absolute;
+  right: clamp(1rem, 2.3vw, 1.5rem);
+  bottom: clamp(0.58rem, 1.25vw, 0.82rem);
+  z-index: 0;
+  display: inline-grid;
+  min-width: min(11rem, 34vw);
+  min-height: 1.36rem;
+  place-items: center;
+  padding: 0.34rem 0.72rem 0.28rem;
+  content: "front desk";
+  color: rgba(73, 55, 49, 0.7);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(90deg, rgba(74, 57, 51, 0.1), transparent 32% 68%, rgba(74, 57, 51, 0.06)),
+    linear-gradient(125deg, rgba(255, 251, 243, 0.92), rgba(188, 203, 178, 0.28));
+  box-shadow: 0.08rem 0.13rem 0 rgba(47, 38, 35, 0.055), 0 0.34rem 0.72rem rgba(47, 38, 35, 0.075);
+  clip-path: polygon(2% 14%, 98% 3%, 94% 84%, 6% 98%);
+  opacity: 0.82;
+  transform: rotate(0.7deg);
+  pointer-events: none;
+}
+
+.scroll-title .title-kicker {
+  width: fit-content;
+  padding: 0.26rem 0.66rem 0.2rem;
+  color: rgba(74, 57, 51, 0.7);
+  background: rgba(255, 249, 238, 0.66);
+  box-shadow: 0.06rem 0.1rem 0 rgba(47, 38, 35, 0.05), 0 0.24rem 0.5rem rgba(47, 38, 35, 0.06);
+  clip-path: polygon(1% 10%, 98% 0%, 96% 91%, 5% 100%);
+}
+
+.scroll-title .title-line {
+  max-width: 12.6ch;
+  font-size: clamp(2.2rem, 5.25vw, 5.05rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+
+.scroll-title .title-line--to {
+  font-size: clamp(1.42rem, 3.3vw, 2.8rem);
+}
+
+.scroll-title .title-note {
+  width: min(100%, 28rem);
+  margin-top: 0.08rem;
+  padding: 0.48rem 0.72rem 0.5rem;
+  color: rgba(58, 45, 41, 0.82);
+  font-size: clamp(0.84rem, 0.92vw, 0.94rem);
+  line-height: 1.38;
+  background:
+    linear-gradient(90deg, rgba(255, 176, 143, 0.13), transparent 30%),
+    rgba(255, 250, 241, 0.66);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 0.34rem 0.7rem rgba(47, 38, 35, 0.055);
+  clip-path: polygon(1% 4%, 99% 0%, 98% 94%, 3% 100%);
+}
+
+.scroll-title .home-arrival-ticket {
+  gap: 0.32rem;
+  width: fit-content;
+  padding: 0.24rem 0.36rem;
+  background: rgba(255, 251, 242, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.scroll-title .home-arrival-ticket span {
+  padding: 0.28rem 0.5rem 0.24rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+}
+
+.scroll-title .home-hero-contact-sheet {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.42rem, 0.8vw, 0.68rem);
+  width: min(100%, 36rem);
+  margin-top: 0.02rem;
+  padding: 0.5rem;
+  background:
+    linear-gradient(90deg, rgba(74, 57, 51, 0.06), transparent 34% 66%, rgba(74, 57, 51, 0.04)),
+    rgba(255, 251, 242, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62), 0 0.44rem 0.82rem rgba(47, 38, 35, 0.07);
+  clip-path: polygon(1% 8%, 99% 1%, 98% 92%, 3% 99%);
+}
+
+.scroll-title .home-hero-route-strip__label {
+  position: static;
+  align-self: stretch;
+  display: grid;
+  min-width: 5.7rem;
+  place-items: center;
+  margin: 0;
+  padding: 0.42rem 0.48rem;
+  color: rgba(74, 57, 51, 0.78);
+  background: rgba(255, 250, 240, 0.72);
+  box-shadow: 0.06rem 0.1rem 0 rgba(47, 38, 35, 0.05);
+  clip-path: polygon(4% 5%, 97% 0%, 93% 94%, 8% 100%);
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-strip__links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.28rem, 0.58vw, 0.44rem);
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-slip {
+  min-width: 0;
+  padding: 0.24rem 0.24rem 0.34rem;
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.055), 0 0.36rem 0.68rem rgba(47, 38, 35, 0.075);
+}
+
+.scroll-title .home-hero-route-slip__preview {
+  min-height: clamp(2.65rem, 4.2vw, 3.35rem);
+}
+
+.scroll-title .home-hero-route-slip__preview span,
+.scroll-title .home-hero-route-slip__copy span,
+.scroll-title .home-hero-route-slip__copy small {
+  font-size: 0.55rem;
+  letter-spacing: 0.11em;
+}
+
+.scroll-title .home-hero-route-slip__copy strong {
+  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+  line-height: 1.05;
+}
+
+.scroll-title .hero-polaroid {
+  width: min(100%, clamp(12.2rem, 15.5vw, 16.2rem));
+  margin-top: 0.08rem;
+  padding: clamp(0.72rem, 1.3vw, 0.96rem);
+  opacity: 0.9;
+  box-shadow:
+    0.1rem 0.15rem 0 rgba(47, 38, 35, 0.065),
+    0 0.68rem 1.25rem rgba(47, 38, 35, 0.12) !important;
+}
+
+.scroll-title .hero-polaroid::after {
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.62rem;
+  z-index: 1;
+  padding: 0.3rem 0.5rem 0.24rem;
+  content: "choose a room";
+  color: rgba(74, 57, 51, 0.72);
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 250, 240, 0.74);
+  box-shadow: 0.05rem 0.08rem 0 rgba(47, 38, 35, 0.055), 0 0.24rem 0.5rem rgba(47, 38, 35, 0.06);
+  clip-path: polygon(3% 12%, 97% 0%, 93% 86%, 8% 100%);
+  transform: rotate(-0.8deg);
+}
+
+@media (max-width: 980px) {
+  .scroll-title {
+    min-height: auto;
+  }
+
+  .scroll-title .title-lockup {
+    width: min(100%, 42rem);
+    max-height: none;
+    row-gap: 0.5rem;
+  }
+
+  .scroll-title .hero-polaroid {
+    width: min(68vw, 13.25rem);
+  }
+
+  .scroll-title .home-hero-contact-sheet {
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-title .home-hero-route-strip__label {
+    width: fit-content;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .scroll-title {
+    padding-top: 5.95rem;
+    padding-bottom: 2rem;
+  }
+
+  .scroll-title .title-lockup {
+    width: min(100%, calc(100vw - 1.15rem));
+    padding: 0.86rem;
+  }
+
+  .scroll-title .title-lockup::after {
+    right: 0.82rem;
+    bottom: 0.56rem;
+    min-width: 8.6rem;
+    font-size: 0.55rem;
+  }
+
+  .scroll-title .title-line {
+    font-size: clamp(2.18rem, 11.4vw, 4.2rem);
+  }
+
+  .scroll-title .title-line--to {
+    font-size: clamp(1.54rem, 7vw, 2.55rem);
+  }
+
+  .scroll-title .home-hero-contact-sheet .home-hero-route-strip__links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-height: 740px) and (min-width: 981px) {
+  .scroll-title {
+    min-height: 80svh;
+    padding-top: 4.9rem;
+  }
+
+  .scroll-title .title-line {
+    font-size: clamp(2rem, 4.85vw, 4.55rem);
+  }
+
+  .scroll-title .title-line--to {
+    font-size: clamp(1.28rem, 2.9vw, 2.35rem);
+  }
+
+  .scroll-title .title-note {
+    padding-block: 0.42rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-title .title-lockup,
+  .scroll-title .hero-polaroid,
+  .scroll-title .title-lockup::after,
+  .scroll-title .hero-polaroid::after {
+    transform: none !important;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 16:10 ET — Portfolio lower handoff binding
+
+See `.agent/changes/2026-06-28-portfolio-lower-handoff-binding.md` and `.agent/matrices/portfolio-lower-handoff-binding.matrix.md`.
+
 ## 2026-06-28 15:49 ET — Header active room cue load
 
 See `.agent/changes/2026-06-28-header-active-room-cue-load.md` and `.agent/matrices/header-active-room-cue-load.matrix.md`.

@@ -1,0 +1,146 @@
+/* Header room ledger strip pass.
+   Strengthens the shared top navigation as one bound paper ledger: direct labels stay unchanged, but the surface gains a spine, receipt notches, and stronger active-room paper depth. */
+
+.floating-header {
+  --header-ledger-ink: rgba(68, 53, 49, 0.22);
+  --header-ledger-thread: rgba(87, 108, 75, 0.42);
+  isolation: isolate;
+  border-radius: 0.7rem 0.86rem 1.05rem 0.82rem;
+  clip-path: polygon(0.9% 4%, 98.8% 0, 99.6% 82%, 96% 100%, 68% 94%, 43% 100%, 14% 92%, 0 96%);
+  box-shadow:
+    0 0.16rem 0 rgba(255, 255, 255, 0.84) inset,
+    0 -0.1rem 0 rgba(118, 91, 78, 0.14) inset,
+    0 0.7rem 0.95rem rgba(47, 38, 35, 0.19),
+    0 2rem 2.9rem rgba(47, 38, 35, 0.24),
+    0 4.4rem 6.8rem rgba(47, 38, 35, 0.12);
+}
+
+.floating-header::before {
+  content: "";
+  position: absolute;
+  inset: 0.36rem auto 0.38rem clamp(6.25rem, 22vw, 14.4rem);
+  z-index: 0;
+  width: 0.18rem;
+  border-radius: 99rem;
+  background:
+    repeating-linear-gradient(180deg, var(--header-ledger-thread) 0 0.32rem, transparent 0.32rem 0.56rem),
+    linear-gradient(180deg, transparent, rgba(68, 53, 49, 0.18), transparent);
+  box-shadow:
+    -0.34rem 0 0 -0.09rem rgba(68, 53, 49, 0.18),
+    0.34rem 0 0 -0.09rem rgba(255, 255, 255, 0.52);
+  pointer-events: none;
+}
+
+.floating-header::after {
+  content: "";
+  position: absolute;
+  inset: 0.3rem 0.58rem 0.36rem 0.58rem;
+  z-index: 0;
+  border-radius: 0.52rem 0.68rem 0.74rem 0.6rem;
+  background:
+    radial-gradient(circle at 1.1rem 50%, var(--header-ledger-ink) 0 0.05rem, transparent 0.065rem),
+    radial-gradient(circle at calc(100% - 1.1rem) 50%, var(--header-ledger-ink) 0 0.05rem, transparent 0.065rem),
+    repeating-linear-gradient(90deg, transparent 0 7.2rem, rgba(68, 53, 49, 0.055) 7.2rem 7.26rem, transparent 7.26rem 7.7rem);
+  mix-blend-mode: multiply;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.identity-link {
+  clip-path: polygon(3% 0, 100% 8%, 96% 100%, 0 88%);
+  border-radius: 0.36rem;
+  padding-inline: clamp(0.72rem, 1.7vw, 1.08rem);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.96), rgba(246, 226, 197, 0.82)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 10rem 10rem, 16rem 16rem;
+  box-shadow:
+    0 0.2rem 0.32rem rgba(47, 38, 35, 0.18),
+    0 0.9rem 1.14rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(118, 91, 78, 0.15);
+}
+
+.folder-panel {
+  gap: clamp(0.22rem, 0.8vw, 0.44rem);
+}
+
+.folder-panel__link {
+  clip-path: polygon(5% 5%, 96% 0, 100% 82%, 92% 100%, 7% 92%, 0 18%);
+  border-radius: 0.38rem;
+  background:
+    linear-gradient(150deg, rgba(255, 252, 246, 0.94), rgba(242, 222, 193, 0.78)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 9rem 9rem, 20rem 20rem;
+  box-shadow:
+    0 0.18rem 0.32rem rgba(47, 38, 35, 0.17),
+    0 0.72rem 0.94rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -1px 0 rgba(118, 91, 78, 0.12);
+}
+
+.folder-panel__link:nth-child(2n) {
+  transform: translateY(0.02rem) rotate(0.35deg);
+}
+
+.folder-panel__link:nth-child(2n + 1) {
+  transform: translateY(-0.01rem) rotate(-0.28deg);
+}
+
+.folder-panel__link[aria-current="page"],
+.folder-panel__link--active {
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 8% 92%, 0 18%);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.98), rgba(223, 238, 212, 0.86) 58%, rgba(246, 226, 197, 0.72)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 9rem 9rem, 15rem 15rem;
+  box-shadow:
+    0 0.24rem 0.38rem rgba(47, 38, 35, 0.22),
+    0 1rem 1.24rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    inset 0 -2px 0 rgba(87, 108, 75, 0.24);
+}
+
+.folder-panel__link[aria-current="page"] span,
+.folder-panel__link--active span {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.22em;
+  text-decoration-color: rgba(87, 108, 75, 0.45);
+}
+
+@media (max-width: 760px) {
+  .floating-header {
+    clip-path: polygon(1.4% 2%, 99% 0, 100% 86%, 92% 100%, 54% 94%, 12% 100%, 0 88%);
+    border-radius: 0.62rem 0.74rem 0.86rem 0.72rem;
+  }
+
+  .floating-header::before {
+    display: none;
+  }
+
+  .floating-header::after {
+    inset: 0.28rem 0.4rem;
+    opacity: 0.44;
+  }
+
+  .identity-link,
+  .folder-panel__link,
+  .folder-panel__link:nth-child(n),
+  .folder-panel__link[aria-current="page"],
+  .folder-panel__link--active {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folder-panel__link,
+  .folder-panel__link:nth-child(n),
+  .folder-panel__link[aria-current="page"],
+  .folder-panel__link--active {
+    transform: none;
+  }
+}

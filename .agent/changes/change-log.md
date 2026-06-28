@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 13:41 ET — About next-door paper thread
+
+See `.agent/changes/2026-06-28-about-next-door-paper-thread.md` and `.agent/matrices/about-next-door-paper-thread.matrix.md`.
+
 ## 2026-06-28 13:29 ET — Portfolio rule slip paper repair
 
 See `.agent/changes/2026-06-28-portfolio-rule-slip-paper-repair.md` and `.agent/matrices/portfolio-rule-slip-paper-repair.matrix.md`.

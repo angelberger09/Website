@@ -213,6 +213,7 @@ import './notes-state-reader-docket-pass.css';
 import './notes-state-terminal-budget-pass.css';
 import './notes-state-direct-cues-pass.css';
 import './notes-state-intro-docket-pass.css';
+import './notes-state-late-terminal-budget-pass.css';
 import './portfolio-feed-public-docket-pass.css';
 import './portfolio-feed-bound-shelf-pass.css';
 import './portfolio-feed-rule-slips-pass.css';

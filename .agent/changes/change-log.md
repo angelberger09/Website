@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 17:50 ET — Homepage section spine shadow load repair
+
+See `.agent/changes/2026-06-28-home-section-spine-shadow-load-repair.md` and `.agent/matrices/home-section-spine-shadow-load-repair.matrix.md`.
+
 ## 2026-06-28 17:40 ET — PageIntro ticket depth
 
 See `.agent/changes/2026-06-28-page-intro-ticket-depth.md` and `.agent/matrices/page-intro-ticket-depth.matrix.md`.

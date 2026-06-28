@@ -1,0 +1,86 @@
+/* Shared status-slip pass.
+   Converts small status pills, tag chips, and page-card labels into clipped paper slips so supporting metadata reads as placed paper rather than generic UI chips. */
+
+.page-card__label,
+.status-pill,
+.tag-row span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 1.7rem;
+  padding: 0.38rem 0.72rem 0.34rem;
+  border: 0;
+  border-radius: 0;
+  color: rgba(47, 38, 35, 0.82);
+  letter-spacing: 0.095em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  clip-path: polygon(2% 12%, 24% 3%, 47% 9%, 76% 1%, 99% 8%, 96% 91%, 75% 98%, 43% 94%, 18% 100%, 1% 90%);
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.75) 55%, rgba(185, 201, 175, 0.42)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 18rem 18rem, 28rem 28rem;
+  background-blend-mode: normal, multiply, multiply;
+  box-shadow:
+    0.16rem 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0.32rem 0.48rem 0.82rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+}
+
+.page-card__label::before,
+.status-pill::before,
+.tag-row span::before {
+  position: absolute;
+  top: -0.18rem;
+  left: 50%;
+  width: 1.15rem;
+  height: 0.34rem;
+  content: "";
+  clip-path: polygon(4% 12%, 38% 0, 96% 10%, 91% 88%, 58% 100%, 0 84%);
+  transform: translateX(-50%) rotate(-2.5deg);
+  background: linear-gradient(110deg, rgba(255, 236, 203, 0.74), rgba(255, 250, 242, 0.56)), var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0 0.1rem 0.24rem rgba(47, 38, 35, 0.14);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.detail-card .status-pill,
+.reader-card .status-pill,
+.link-card .status-pill {
+  margin-top: 0.85rem;
+}
+
+.tag-row {
+  gap: 0.54rem;
+}
+
+.tag-row span:nth-child(2n),
+.page-card__label:nth-child(2n),
+.status-pill:nth-child(2n) {
+  transform: rotate(0.55deg);
+}
+
+.tag-row span:nth-child(2n + 1),
+.page-card__label:nth-child(2n + 1),
+.status-pill:nth-child(2n + 1) {
+  transform: rotate(-0.45deg);
+}
+
+@media (max-width: 620px) {
+  .page-card__label,
+  .status-pill,
+  .tag-row span {
+    min-height: 1.55rem;
+    padding: 0.32rem 0.58rem 0.3rem;
+    letter-spacing: 0.075em;
+  }
+
+  .tag-row {
+    gap: 0.42rem;
+  }
+}

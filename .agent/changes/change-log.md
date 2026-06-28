@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 13:29 ET — Portfolio rule slip paper repair
+
+See `.agent/changes/2026-06-28-portfolio-rule-slip-paper-repair.md` and `.agent/matrices/portfolio-rule-slip-paper-repair.matrix.md`.
+
 ## 2026-06-28 13:21 ET — Store feed rule slip repair
 
 See `.agent/changes/2026-06-28-store-feed-rule-slip-repair.md` and `.agent/matrices/store-feed-rule-slip-repair.matrix.md`.

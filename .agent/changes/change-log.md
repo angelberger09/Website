@@ -2,6 +2,43 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-27 23:20 ET — Store feed receipt seal
+
+### Changed
+
+- Added `app/store-feed-receipt-seal-pass.css`.
+- Loaded it from `app/layout.jsx` after the Store feed boundary rule slips pass.
+- Added a visible `public shelf receipt`, `public fields only`, and `private plans stay offstage` receipt/seal layer around the Store future feed ledger and boundary rules.
+- Added small paper tape marks to Store future field cards so the feed contract reads as one public-safe receipt system instead of separate future-data cards and rule slips.
+- Added `.agent/changes/2026-06-27-store-feed-receipt-seal.md`.
+- Added `.agent/matrices/store-feed-receipt-seal.matrix.md`.
+
+### Why
+
+The Store future shelf already exposed honest field cards and boundary rules, but the section could still scan as a generic data ledger beside a separate list of rules. This pass keeps the no-fake-inventory and public-safe future-feed boundary intact while making the whole Store feed contract feel like a single visible public receipt.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-029
+- DESIGN-030
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-27 21:48 ET — Notes state late terminal budget
 
 ### Changed
@@ -258,3 +295,36 @@ The Portfolio future archive shelf already had a bound paper ledger, ticket path
 - Added `.agent/matrices/store-return-path-terminal-budget.matrix.md`.
 
 ### Why
+
+The Store return path had been refined into a photo-board and compass/stamp system after the earlier terminal preview budget was added. This meant the final path cards and connector cues could bypass the page’s calm render budget and feel more visually expensive than the surrounding Store room. This pass keeps the return path visible while simplifying the newest layer’s shadows, filters, rotations, and mobile/reduced-motion behavior.
+
+### Related items
+
+- PAGE-005
+- COMP-008
+- COMP-009
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032

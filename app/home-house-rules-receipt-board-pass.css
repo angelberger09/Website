@@ -1,0 +1,147 @@
+/* Homepage house-rules receipt board pass.
+   Strengthens the existing source-backed house-rules section as one composed
+   public studio receipt without changing copy, links, or data. */
+
+.home-studio-checks {
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.35rem);
+  padding-top: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.home-studio-checks .home-studio-checks__intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  max-width: min(52rem, 100%);
+  margin-inline: auto;
+  padding: clamp(1.1rem, 2.8vw, 1.65rem) clamp(1rem, 2.8vw, 1.55rem);
+  background:
+    linear-gradient(137deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.7) 62%, rgba(153, 222, 201, 0.18)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.055),
+    0 0.72rem 1.15rem rgba(47, 38, 35, 0.095),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(1% 5%, 99% 0, 97% 94%, 72% 100%, 42% 96%, 2% 100%);
+}
+
+.home-studio-checks .home-studio-checks__intro::before {
+  content: "house rules receipt";
+  justify-self: start;
+  width: fit-content;
+  margin: -0.22rem 0 0.72rem;
+  padding: 0.33rem 0.58rem 0.28rem;
+  color: rgba(58, 45, 42, 0.68);
+  font-size: clamp(0.58rem, 0.72vw, 0.64rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(125deg, rgba(255, 252, 246, 0.92), rgba(216, 197, 236, 0.24)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow: 0 0.32rem 0.54rem rgba(47, 38, 35, 0.075);
+  clip-path: polygon(4% 0, 100% 7%, 94% 100%, 0 91%);
+  transform: rotate(-0.7deg);
+}
+
+.home-studio-checks .home-studio-checks__intro::after {
+  content: "public-safe promise";
+  position: absolute;
+  right: clamp(0.72rem, 2vw, 1.15rem);
+  bottom: clamp(0.72rem, 1.8vw, 1rem);
+  padding: 0.28rem 0.5rem 0.24rem;
+  color: rgba(58, 45, 42, 0.56);
+  font-size: clamp(0.54rem, 0.68vw, 0.6rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.58);
+  clip-path: polygon(5% 8%, 100% 0, 96% 100%, 0 92%);
+}
+
+.home-studio-checks .home-studio-checks__intro .eyebrow {
+  width: fit-content;
+  margin-bottom: 0.36rem;
+  padding: 0.2rem 0.48rem 0.16rem;
+  background: rgba(255, 255, 255, 0.48);
+  clip-path: polygon(3% 0, 100% 8%, 95% 100%, 0 92%);
+}
+
+.home-studio-checks .home-studio-checks__intro h1 {
+  max-width: 19ch;
+  margin-bottom: 0.48rem;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  line-height: 0.96;
+}
+
+.home-studio-checks .home-studio-checks__intro p:not(.eyebrow) {
+  max-width: 58ch;
+  color: rgba(58, 45, 42, 0.76);
+}
+
+.home-studio-checks .home-check-rail {
+  max-width: min(65rem, 100%);
+  margin-inline: auto;
+  border-radius: 0;
+}
+
+.home-studio-checks .home-check-rail::before {
+  left: clamp(1.5rem, 5vw, 3.5rem);
+  right: clamp(1.5rem, 5vw, 3.5rem);
+  border-top-style: solid;
+  opacity: 0.48;
+}
+
+.home-studio-checks .home-check-note {
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.05),
+    0 0.78rem 1.18rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-studio-checks .home-check-note__photo {
+  display: grid;
+  align-content: end;
+  border-radius: 0;
+  clip-path: polygon(2% 5%, 98% 0, 100% 88%, 92% 100%, 5% 95%, 0 12%);
+}
+
+.home-studio-checks .home-check-note small {
+  color: rgba(58, 45, 42, 0.7);
+  background:
+    linear-gradient(130deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.58)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  clip-path: polygon(3% 7%, 100% 0, 96% 100%, 0 91%);
+}
+
+@media (max-width: 760px) {
+  .home-studio-checks {
+    padding-top: clamp(1.1rem, 5vw, 1.55rem);
+  }
+
+  .home-studio-checks .home-studio-checks__intro {
+    margin-inline: 0;
+  }
+
+  .home-studio-checks .home-studio-checks__intro::after {
+    position: static;
+    justify-self: start;
+    width: fit-content;
+    margin-top: 0.75rem;
+  }
+
+  .home-studio-checks .home-studio-checks__intro h1 {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-studio-checks .home-studio-checks__intro::before,
+  .home-studio-checks .home-studio-checks__intro::after {
+    transform: none !important;
+  }
+}

@@ -2,6 +2,64 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 07:09 ET — PageIntro terminal room board
+
+### Changed
+
+- Added `app/page-intro-terminal-room-board-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after `page-intro-room-shelf-ledger-pass.css` so it wins over the existing PageIntro room shelf/calm-focus layers.
+- Bound shared PageIntro route intros into one clipped paper room board with a grainy backing, stronger lifted shadow, left stitch/thread cue, `room board` label, calmer text slip, and `room key path` label above the visual stack.
+- Added `.agent/changes/2026-06-28-page-intro-terminal-room-board.md`.
+- Added `.agent/matrices/page-intro-terminal-room-board.matrix.md`.
+
+### Why
+
+The shared route intro system already had route-specific photo centers, room keys, and shelf tickets, but the full hero could still scan as separate neighboring pieces. This pass keeps existing public-safe route copy and visual material while making the top of each major room read as one composed terminal board.
+
+### Related items
+
+- PAGE-002
+- PAGE-003
+- PAGE-003B
+- PAGE-004
+- PAGE-005
+- COMP-005
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-023
+- DESIGN-024
+- DESIGN-026
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-023
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-022
+- METRIC-023
+- METRIC-025
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 06:50 ET — Homepage house rules terminal budget load
 
 ### Changed

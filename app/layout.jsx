@@ -76,6 +76,7 @@ import './store-promise-collage-pass.css';
 import './store-promise-photo-pass.css';
 import './store-promise-docket-pass.css';
 import './store-promise-binding-path-pass.css';
+import './store-promise-terminal-trust-board-pass.css';
 import './store-checklist-collage-pass.css';
 import './store-checklist-direct-cues-pass.css';
 import './store-path-photo-pass.css';
@@ -218,24 +219,10 @@ import './home-room-sequence-stamps-pass.css';
 import './home-path-map-room-cards-pass.css';
 import './home-path-ledger-consolidation-pass.css';
 import './home-path-map-room-spine-pass.css';
-import './home-reading-map-terminal-focus-pass.css';
-import './home-first-read-compass-pass.css';
-import './footer-exit-receipts-pass.css';
-import './footer-four-room-exit-pass.css';
-import './footer-exit-room-faces-pass.css';
-import './footer-current-room-stamp-pass.css';
-import './footer-store-prep-receipt-pass.css';
-import './footer-mark-copy-slips-pass.css';
-import './footer-exit-desk-consolidation-pass.css';
-import './footer-terminal-room-ledger-pass.css';
-import './footer-exit-path-terminal-focus-pass.css';
-import './about-contact-sheet-exposure-desk-pass.css';
-import './about-contact-sheet-frame-sequence-pass.css';
-import './about-contact-sheet-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A soft and strange studio by Angel Berger.',
+  description: 'A small studio home for Angel Berger, gathering notes, projects, and shop paths.'
 };
 
 export default function RootLayout({ children }) {

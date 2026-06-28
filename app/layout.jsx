@@ -90,6 +90,7 @@ import './store-direct-paper-cues-pass.css';
 import './store-section-spine-labels-pass.css';
 import './store-direct-cue-content-pass.css';
 import './notes-paper-reader-pass.css';
+import './notes-reader-status-ledger-pass.css';
 import './notes-gallery-pass.css';
 import './notes-gallery-room-docket-pass.css';
 import './notes-gallery-terminal-budget-pass.css';

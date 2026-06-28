@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 18:29 ET — Shared status slip pass
+
+See `.agent/changes/2026-06-28-shared-status-slip-pass.md` and `.agent/matrices/shared-status-slip-pass.matrix.md`.
+
 ## 2026-06-28 18:19 ET — About boundary ledger binding
 
 See `.agent/changes/2026-06-28-about-boundary-ledger-binding.md` and `.agent/matrices/about-boundary-ledger-binding.matrix.md`.

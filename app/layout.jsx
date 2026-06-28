@@ -224,6 +224,7 @@ import './home-path-map-room-spine-pass.css';
 import './home-path-terminal-ledger-pass.css';
 import './home-hero-above-fold-board-pass.css';
 import './home-hero-scale-guard-pass.css';
+import './home-hero-ux-entry-board-pass.css';
 import './terminal-room-render-budget-pass.css';
 
 export const metadata = {

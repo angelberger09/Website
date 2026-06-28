@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 17:21 ET — PageIntro bound room ledger
+
+See `.agent/changes/2026-06-28-page-intro-bound-room-ledger.md` and `.agent/matrices/page-intro-bound-room-ledger.matrix.md`.
+
 ## 2026-06-28 17:10 ET — PageIntro room key ticket load
 
 See `.agent/changes/2026-06-28-page-intro-room-key-ticket-load.md` and `.agent/matrices/page-intro-room-key-ticket-load.matrix.md`.

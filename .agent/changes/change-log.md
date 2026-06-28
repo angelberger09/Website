@@ -2,6 +2,60 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 09:21 ET — Homepage path terminal ledger
+
+### Changed
+
+- Added `app/home-path-terminal-ledger-pass.css`.
+- Loaded it from `app/layout.jsx` immediately before `terminal-room-render-budget-pass.css` so it refines the homepage reading path while still respecting the final render budget.
+- Tightened the homepage `home-path-map` into one calmer front-page ledger with a smaller `front-page map` label, lighter shadows, smaller chapter slips, hidden duplicate marker text, direct room-key snippets, and mobile/reduced-motion fallbacks.
+- Kept homepage copy, route anchors, links, and public-safe data unchanged.
+- Added `.agent/changes/2026-06-28-home-path-terminal-ledger.md`.
+- Added `.agent/matrices/home-path-terminal-ledger.matrix.md`.
+
+### Why
+
+The homepage reading path was already intended to be a left-docked editorial route map, but the rendered path still carried repeated marker text and a heavier mini-card rhythm. The active `.agent` state asks the homepage to stay human-readable, organized, direct-label, paper-first, and not scattered. This pass refines the existing path map instead of inventing a new section.
+
+### Related items
+
+- PAGE-001
+- COMP-003
+- COMP-004
+- COMP-008
+- DESIGN-014
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-015
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-001
+- METRIC-002
+- METRIC-014
+- METRIC-017
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 08:08 ET — Store promise terminal trust board
 
 ### Changed

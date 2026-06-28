@@ -2,6 +2,42 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 07:38 ET — About room path docket load
+
+### Changed
+
+- Loaded the existing `app/about-room-path-docket-pass.css` through `app/about-room-spine-ledger-pass.css` so the previously written About room path docket styling now renders.
+- Kept About page copy, links, public-safe data, and the existing CSS-only material system unchanged.
+- Added `.agent/changes/2026-06-28-about-room-path-docket-load.md`.
+- Added `.agent/matrices/about-room-path-docket-load.matrix.md`.
+
+### Why
+
+The About page path binding was still partially satisfied because a stronger supported CSS pass existed in the repo but was not connected to the rendered stylesheet graph. This pass avoids another new competing layer and instead makes the existing room path docket visible on `/Website/about/`.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-018
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-017
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-28 07:32 ET — Homepage hero entry terminal binding
 
 ### Changed

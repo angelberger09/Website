@@ -113,6 +113,7 @@ import './notes-gallery-room-docket-pass.css';
 import './notes-gallery-terminal-budget-pass.css';
 import './notes-direct-labels-pass.css';
 import './notes-section-title-slips-pass.css';
+import './notes-reading-order-thread-pass.css';
 import './notes-reader-photo-strip-pass.css';
 import './notes-path-photo-board-pass.css';
 import './notes-path-terminal-ledger-pass.css';

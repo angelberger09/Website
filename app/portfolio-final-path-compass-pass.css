@@ -1,0 +1,159 @@
+/* Portfolio final path compass pass
+   Binds the lower record-state and publishing-rhythm surfaces into one guided archive exit path. */
+
+.portfolio-state-photo-board {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: clamp(0.25rem, 1vw, 0.75rem);
+  border-radius: 0;
+  clip-path: polygon(1.1% 0.5%, 98.8% 0%, 99.4% 96%, 96% 100%, 2.2% 98.8%, 0% 4%);
+  box-shadow:
+    0 1.35rem 2.2rem rgb(92 67 45 / 0.16),
+    0 0.35rem 0.8rem rgb(92 67 45 / 0.1);
+}
+
+.portfolio-state-photo-board::before {
+  content: "archive compass";
+  position: absolute;
+  z-index: 2;
+  top: clamp(0.7rem, 1.8vw, 1.1rem);
+  right: clamp(1rem, 2vw, 1.5rem);
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.75rem 0.28rem;
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgb(86 68 49 / 0.8);
+  background:
+    linear-gradient(135deg, rgb(255 250 235 / 0.96), rgb(235 219 190 / 0.86)),
+    url('/Website/atmosphere/grain-noise.svg');
+  border-radius: 0;
+  clip-path: polygon(3% 0, 100% 5%, 96% 100%, 0 92%);
+  box-shadow: 0 0.55rem 0.9rem rgb(88 62 42 / 0.16);
+  transform: rotate(1.4deg);
+}
+
+.portfolio-state-photo-board::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: clamp(1.3rem, 5vw, 3.4rem);
+  right: clamp(1.3rem, 5vw, 3.4rem);
+  bottom: clamp(-1.35rem, -1vw, -0.7rem);
+  height: 1.8rem;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0 50%, rgb(116 96 71 / 0.24) 0 0.16rem, transparent 0.18rem),
+    radial-gradient(circle at 100% 50%, rgb(116 96 71 / 0.24) 0 0.16rem, transparent 0.18rem),
+    linear-gradient(90deg, transparent, rgb(116 96 71 / 0.24) 12%, rgb(116 96 71 / 0.24) 88%, transparent);
+  background-size: 1.4rem 100%, 1.4rem 100%, 100% 1px;
+  background-position: left center, right center, center;
+  background-repeat: no-repeat;
+  opacity: 0.82;
+}
+
+.portfolio-process-photo-board {
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(-0.3rem, -0.6vw, -0.05rem);
+  padding-top: clamp(2.2rem, 4vw, 3.2rem);
+  clip-path: polygon(0.7% 3%, 98.5% 0, 100% 94%, 97% 100%, 1.4% 98%, 0 6%);
+  background:
+    linear-gradient(145deg, rgb(255 250 238 / 0.94), rgb(236 224 198 / 0.82)),
+    url('/Website/atmosphere/grain-noise.svg');
+  box-shadow:
+    0 1.25rem 2.4rem rgb(84 61 42 / 0.14),
+    inset 0 0 0 1px rgb(132 104 73 / 0.08);
+}
+
+.portfolio-process-photo-board::before {
+  content: "final public path";
+  position: absolute;
+  top: clamp(0.85rem, 1.8vw, 1.3rem);
+  left: clamp(1rem, 2.4vw, 1.7rem);
+  z-index: 2;
+  padding: 0.38rem 0.8rem 0.3rem;
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgb(79 64 49 / 0.82);
+  background:
+    linear-gradient(135deg, rgb(249 239 211 / 0.98), rgb(223 205 172 / 0.88)),
+    url('/Website/atmosphere/dust-specks.svg');
+  clip-path: polygon(2% 6%, 98% 0, 100% 88%, 5% 100%, 0 24%);
+  box-shadow: 0 0.55rem 0.95rem rgb(87 60 38 / 0.14);
+  transform: rotate(-1.2deg);
+}
+
+.portfolio-process-photo-board::after {
+  content: "";
+  position: absolute;
+  inset: clamp(0.8rem, 1.6vw, 1.2rem);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgb(126 99 69 / 0.14), transparent) center 2.65rem / 82% 1px no-repeat,
+    radial-gradient(circle at 14% 2.65rem, rgb(126 99 69 / 0.18) 0 0.16rem, transparent 0.18rem),
+    radial-gradient(circle at 86% 2.65rem, rgb(126 99 69 / 0.18) 0 0.16rem, transparent 0.18rem);
+  opacity: 0.75;
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon {
+  position: relative;
+  z-index: 1;
+  align-items: stretch;
+}
+
+.portfolio-process-photo-board .portfolio-process-photo-ribbon > li {
+  border-radius: 0;
+  clip-path: polygon(1% 4%, 99% 0, 100% 94%, 96% 100%, 0 96%);
+  box-shadow:
+    0 0.9rem 1.25rem rgb(80 57 37 / 0.13),
+    0 0.18rem 0.35rem rgb(80 57 37 / 0.08);
+}
+
+.portfolio-state-photo-board .portfolio-state-stack {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-state-photo-board .portfolio-state-photo {
+  box-shadow:
+    0 0.75rem 1.15rem rgb(82 60 41 / 0.12),
+    0 0.16rem 0.36rem rgb(82 60 41 / 0.08);
+}
+
+@media (max-width: 760px) {
+  .portfolio-state-photo-board::before,
+  .portfolio-process-photo-board::before {
+    position: relative;
+    display: inline-block;
+    top: auto;
+    right: auto;
+    left: auto;
+    margin: 0 0 1rem;
+    transform: none;
+  }
+
+  .portfolio-state-photo-board::after {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: -0.75rem;
+    opacity: 0.55;
+  }
+
+  .portfolio-process-photo-board {
+    padding-top: clamp(1.2rem, 5vw, 1.8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-state-photo-board::before,
+  .portfolio-process-photo-board::before,
+  .portfolio-process-photo-board .portfolio-process-photo-ribbon > li {
+    transform: none;
+  }
+}

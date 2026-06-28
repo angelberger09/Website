@@ -1,0 +1,163 @@
+/* Homepage door room ledger pass.
+   Binds the Studio rooms door board into one composed room-door ledger instead of four neighboring cards. */
+
+.home-page .home-door-section {
+  position: relative;
+}
+
+.home-page .home-door-section::after {
+  position: absolute;
+  right: clamp(1.1rem, 5vw, 5rem);
+  bottom: clamp(0.8rem, 2vw, 1.25rem);
+  z-index: 0;
+  content: "four public doors";
+  clip-path: var(--fast-paper-cut, polygon(4% 8%, 98% 1%, 95% 92%, 2% 100%));
+  background:
+    linear-gradient(122deg, rgba(255, 176, 143, 0.22), rgba(255, 252, 246, 0.76) 58%, rgba(216, 197, 236, 0.28)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.065),
+    0 0.5rem 0.95rem rgba(47, 38, 35, 0.08);
+  padding: 0.36rem 0.58rem;
+  color: rgba(58, 45, 42, 0.58);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(1.2deg);
+}
+
+.home-page .home-door-board {
+  isolation: isolate;
+  z-index: 1;
+  align-items: stretch;
+  gap: clamp(0.7rem, 1.6vw, 1rem) !important;
+  margin-top: clamp(1rem, 2vw, 1.45rem);
+  padding: clamp(1.15rem, 2.2vw, 1.55rem) clamp(0.9rem, 2.2vw, 1.35rem) clamp(1.05rem, 2vw, 1.4rem) clamp(2.4rem, 4.8vw, 4.4rem);
+  clip-path: polygon(1.2% 4%, 14% 1.4%, 46% 2.7%, 77% 0.8%, 99% 3.2%, 97.8% 94%, 83% 98.5%, 47% 96.7%, 18% 99%, 0.8% 95%);
+  background:
+    radial-gradient(circle at 8% 22%, rgba(255, 176, 143, 0.12), transparent 26%),
+    linear-gradient(103deg, rgba(255, 253, 246, 0.94), rgba(248, 236, 216, 0.74) 54%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+  box-shadow:
+    0.18rem 0.26rem 0 rgba(47, 38, 35, 0.075),
+    0 0.9rem 1.7rem rgba(47, 38, 35, 0.12),
+    inset 0 0 0 1px rgba(112, 80, 45, 0.07);
+}
+
+.home-page .home-door-board::before {
+  position: absolute;
+  top: clamp(0.7rem, 1.6vw, 1.05rem);
+  bottom: clamp(0.75rem, 1.6vw, 1.05rem);
+  left: clamp(0.9rem, 2.4vw, 1.55rem);
+  z-index: -1;
+  width: 0.22rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(180deg, rgba(47, 38, 35, 0.24) 0 0.18rem, transparent 0.18rem 0.5rem),
+    linear-gradient(180deg, rgba(255, 176, 143, 0.2), rgba(185, 201, 175, 0.24));
+  box-shadow: 0.3rem 0 0 rgba(255, 252, 246, 0.48);
+  opacity: 0.82;
+}
+
+.home-page .home-door-board::after {
+  position: absolute;
+  top: -0.55rem;
+  left: clamp(1.4rem, 3.2vw, 2.35rem);
+  z-index: 2;
+  content: "room-door ledger";
+  clip-path: var(--fast-paper-cut, polygon(5% 8%, 100% 0, 96% 92%, 0 100%));
+  background:
+    linear-gradient(126deg, rgba(216, 197, 236, 0.45), rgba(255, 252, 246, 0.84) 58%, rgba(255, 176, 143, 0.2)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.07), 0 0.45rem 0.8rem rgba(47, 38, 35, 0.08);
+  padding: 0.38rem 0.62rem;
+  color: rgba(58, 45, 42, 0.68);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(-1.4deg);
+}
+
+.home-page .home-door-board .home-door-card,
+.home-page .home-door-board .home-door-card:nth-child(2n),
+.home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+  min-height: 14.25rem;
+  padding: clamp(0.9rem, 1.8vw, 1.2rem);
+  clip-path: polygon(4% 3%, 33% 1.2%, 66% 3.2%, 98% 1.8%, 96% 91%, 88% 98%, 54% 96%, 17% 99%, 1% 93%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.065),
+    0 0.52rem 0.95rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.home-page .home-door-board .home-door-card:nth-child(2n) {
+  transform: translateY(-0.18rem) rotate(0.36deg);
+}
+
+.home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+  transform: translateY(0.14rem) rotate(-0.28deg);
+}
+
+.home-page .home-door-board .home-door-card::before {
+  width: clamp(2.5rem, 5vw, 3.5rem);
+  height: 0.4rem;
+  background: rgba(255, 176, 143, 0.24);
+  box-shadow: 0 0.12rem 0.34rem rgba(47, 38, 35, 0.08);
+}
+
+.home-page .home-door-card__image {
+  min-height: 5.2rem;
+  box-shadow:
+    0.09rem 0.14rem 0 rgba(47, 38, 35, 0.065),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.18);
+}
+
+.home-page .home-door-card__label,
+.home-page .home-door-card__room-cue,
+.home-page .home-door-card__cue {
+  filter: none !important;
+}
+
+@media (max-width: 860px) {
+  .home-page .home-door-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: clamp(1.35rem, 4vw, 2.2rem);
+  }
+
+  .home-page .home-door-board::before {
+    left: 0.65rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-page .home-door-section::after {
+    display: none;
+  }
+
+  .home-page .home-door-board {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .home-page .home-door-board::before {
+    display: none;
+  }
+
+  .home-page .home-door-board::after {
+    top: -0.45rem;
+    left: 0.9rem;
+  }
+
+  .home-page .home-door-board .home-door-card,
+  .home-page .home-door-board .home-door-card:nth-child(2n),
+  .home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+    min-height: 0;
+    transform: none;
+  }
+}

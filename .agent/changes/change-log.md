@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 15:49 ET — Header active room cue load
+
+See `.agent/changes/2026-06-28-header-active-room-cue-load.md` and `.agent/matrices/header-active-room-cue-load.matrix.md`.
+
 ## 2026-06-28 15:42 ET — Footer trail room ledger
 
 See `.agent/changes/2026-06-28-footer-trail-room-ledger.md` and `.agent/matrices/footer-trail-room-ledger.matrix.md`.

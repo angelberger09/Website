@@ -246,3 +246,98 @@ body {
     transform: none !important;
   }
 }
+
+/* Detail card terminal binding.
+   Keep the shared card primitive useful, but make it read as one bound paper slip instead of a generic card face. */
+.detail-card {
+  padding-bottom: clamp(2.25rem, 4vw, 3rem);
+}
+
+.detail-card::before {
+  position: absolute;
+  top: 0.64rem;
+  right: clamp(0.7rem, 2vw, 1rem);
+  left: clamp(0.7rem, 2vw, 1rem);
+  z-index: 0;
+  display: block;
+  height: 1.15rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(112, 91, 76, 0.18) 0 56%, transparent 56% 100%) bottom left / 0.72rem 1px repeat-x,
+    linear-gradient(115deg, rgba(255, 250, 242, 0.9), rgba(220, 205, 173, 0.3));
+  box-shadow: 0 0.32rem 0.72rem rgba(47, 38, 35, 0.09);
+  clip-path: polygon(1% 23%, 98% 8%, 96% 78%, 5% 96%);
+  opacity: 0.82;
+  transform: rotate(-0.35deg);
+}
+
+.detail-card::after {
+  position: absolute;
+  right: clamp(0.9rem, 2.4vw, 1.35rem);
+  bottom: 0.84rem;
+  z-index: 2;
+  display: inline-grid;
+  width: min(10.5rem, calc(100% - 2rem));
+  min-height: 1.25rem;
+  place-items: center start;
+  padding: 0.34rem 0.68rem 0.28rem;
+  content: "public room slip";
+  color: rgba(74, 57, 51, 0.72);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 16% 30%, rgba(255, 176, 143, 0.24), transparent 42%),
+    linear-gradient(130deg, rgba(255, 250, 242, 0.95), rgba(188, 203, 178, 0.28));
+  box-shadow: var(--terminal-paper-small-shadow);
+  clip-path: polygon(2% 10%, 97% 3%, 94% 88%, 7% 98%);
+  opacity: 0.94;
+  transform: rotate(0.65deg);
+}
+
+.detail-card > h2,
+.detail-card > div,
+.detail-card > .status-pill,
+.detail-card > .eyebrow,
+.detail-card > .detail-card__paper-face {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-card > div {
+  margin-top: clamp(0.72rem, 1.8vw, 1rem);
+  padding: clamp(0.82rem, 2vw, 1.05rem);
+  background:
+    linear-gradient(90deg, rgba(74, 57, 51, 0.08), transparent 32% 68%, rgba(74, 57, 51, 0.05)),
+    linear-gradient(140deg, rgba(255, 250, 242, 0.56), rgba(255, 250, 242, 0.22));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 0.34rem 0.76rem rgba(47, 38, 35, 0.055);
+  clip-path: polygon(1% 5%, 98% 2%, 99% 94%, 4% 98%);
+}
+
+.detail-card .status-pill {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+  transform: rotate(-0.55deg);
+}
+
+@media (max-width: 640px) {
+  .detail-card {
+    padding-bottom: 2.45rem;
+  }
+
+  .detail-card::before {
+    right: 0.72rem;
+    left: 0.72rem;
+  }
+
+  .detail-card::after {
+    right: 0.82rem;
+    bottom: 0.72rem;
+    width: min(9.4rem, calc(100% - 1.6rem));
+  }
+
+  .detail-card > div {
+    padding: 0.78rem;
+  }
+}

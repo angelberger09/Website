@@ -46,6 +46,7 @@ import './portfolio-gallery-bound-cues-pass.css';
 import './portfolio-archive-ticket-pass.css';
 import './portfolio-feed-photo-ledger-pass.css';
 import './portfolio-feed-drawer-path-pass.css';
+import './portfolio-public-boundary-rail-pass.css';
 import './portfolio-state-process-photo-pass.css';
 import './portfolio-process-direct-labels-pass.css';
 import './portfolio-process-public-thread-pass.css';
@@ -182,7 +183,7 @@ import './page-intro-foreground-card-pass.css';
 import './home-left-docket-pass.css';
 import './home-editorial-chapters-pass.css';
 import './home-direct-path-labels-pass.css';
-import './home-reading-path-rail-pass.css';
+import './home-reading-path-rail.css';
 import './home-chapter-spine-notes-pass.css';
 import './home-next-path-room-pass.css';
 import './home-next-path-ticket-stack-pass.css';
@@ -221,8 +222,8 @@ import './list-paper-scraps-pass.css';
 import './section-intro-copy-slips-pass.css';
 
 export const metadata = {
-  title: 'Soft Strange Studio',
-  description: 'A soft public studio home for Angel Berger.'
+  title: "Soft Strange Studio",
+  description: "A quiet studio homepage for Angel Berger's public notes, work, and shop paths."
 };
 
 export default function RootLayout({ children }) {

@@ -58,6 +58,7 @@ import './portfolio-lane-direct-labels-pass.css';
 import './portfolio-state-path-shelf-pass.css';
 import './portfolio-record-state-docket-pass.css';
 import './portfolio-final-path-compass-pass.css';
+import './portfolio-final-path-terminal-budget-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-entry-proof-desk-pass.css';

@@ -38,6 +38,24 @@ const postReaderMarginRail = [
   }
 ];
 
+const postReaderStateSlips = {
+  loading: {
+    label: "Gathering shelf",
+    title: "Looking for the public note",
+    detail: "The reader is checking the published profile and writing sheet before placing anything on the page."
+  },
+  missing: {
+    label: "Choose note",
+    title: "No note is pinned yet",
+    detail: "This paper sheet needs a note from the public Notes room before it can open."
+  },
+  error: {
+    label: "Soft return",
+    title: "This sheet is not ready",
+    detail: "The reader keeps the failed note state inside the room and points back to the public shelf."
+  }
+};
+
 const postReaderSupportCards = [
   {
     title: "Inside the studio",
@@ -192,6 +210,19 @@ async function fetchJsonWithFallback(urls) {
   throw new Error("This public note profile could not be loaded right now.");
 }
 
+function ReaderStateCue({ stateKey }) {
+  const cue = postReaderStateSlips[stateKey];
+  if (!cue) return null;
+
+  return (
+    <div className="notes-post-state-cue" aria-hidden="true">
+      <span>{cue.label}</span>
+      <strong>{cue.title}</strong>
+      <em>{cue.detail}</em>
+    </div>
+  );
+}
+
 export default function PostReaderClient({ backHref = "/Website/notes/", backLabel = "Back to Notes", contextLabel = "Still Here Notes" }) {
   const [state, setState] = useState({ status: "loading", slug: "", profile: null, markdown: "", error: null });
 
@@ -288,25 +319,34 @@ export default function PostReaderClient({ backHref = "/Website/notes/", backLab
 
         <article className="notes-post-sheet">
           {state.status === "loading" && (
-            <div className="notes-post-state">
-              <p className="eyebrow inline">Loading</p>
-              <p>Gathering the public note profile and writing sheet inside the studio reader...</p>
+            <div className="notes-post-state notes-post-state--loading">
+              <ReaderStateCue stateKey="loading" />
+              <div className="notes-post-state__copy">
+                <p className="eyebrow inline">Loading</p>
+                <p>Gathering the public note profile and writing sheet inside the studio reader...</p>
+              </div>
             </div>
           )}
 
           {state.status === "missing" && (
-            <div className="notes-post-state">
-              <p className="eyebrow inline">Choose a note</p>
-              <p>{state.error}</p>
-              <a href={backHref}>{backLabel}</a>
+            <div className="notes-post-state notes-post-state--missing">
+              <ReaderStateCue stateKey="missing" />
+              <div className="notes-post-state__copy">
+                <p className="eyebrow inline">Choose a note</p>
+                <p>{state.error}</p>
+                <a href={backHref}>{backLabel}</a>
+              </div>
             </div>
           )}
 
           {state.status === "error" && (
             <div className="notes-post-state notes-post-state--error">
-              <p className="eyebrow inline">Reader note</p>
-              <p>{state.error}</p>
-              <a href={backHref}>Return to the notes index</a>
+              <ReaderStateCue stateKey="error" />
+              <div className="notes-post-state__copy">
+                <p className="eyebrow inline">Reader note</p>
+                <p>{state.error}</p>
+                <a href={backHref}>Return to the notes index</a>
+              </div>
             </div>
           )}
 

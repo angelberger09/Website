@@ -183,7 +183,7 @@ import './page-intro-foreground-card-pass.css';
 import './home-left-docket-pass.css';
 import './home-editorial-chapters-pass.css';
 import './home-direct-path-labels-pass.css';
-import './home-reading-path-rail.css';
+import './home-reading-path-rail-pass.css';
 import './home-chapter-spine-notes-pass.css';
 import './home-next-path-room-pass.css';
 import './home-next-path-ticket-stack-pass.css';

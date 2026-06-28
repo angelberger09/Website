@@ -38,6 +38,7 @@ import './about-principles-docket-pass.css';
 import './about-principles-terminal-budget-pass.css';
 import './about-text-slip-pass.css';
 import './about-boundary-ledger-pass.css';
+import './about-boundary-ledger-binding-pass.css';
 import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';
 import './about-exit-shelf-pass.css';

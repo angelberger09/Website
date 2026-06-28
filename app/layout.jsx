@@ -162,6 +162,7 @@ import './page-intro-room-tags-pass.css';
 import './page-intro-tag-photo-pass.css';
 import './footer-paper-trail-pass.css';
 import './footer-current-room-slip-pass.css';
+import './footer-exit-receipt-board-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

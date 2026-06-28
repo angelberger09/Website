@@ -120,6 +120,7 @@ import './notes-shelf-promise-strip-pass.css';
 import './notes-section-spine-labels-pass.css';
 import './notes-room-spine-rail-pass.css';
 import './notes-room-key-focus-pass.css';
+import './notes-reader-left-docket-pass.css';
 import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
 import './notes-post-path-shelf-pass.css';
@@ -223,7 +224,7 @@ import './detail-card-room-pin-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A quiet studio homepage for Angel Berger.'
+  description: 'A soft, strange public studio home for Angel Berger.',
 };
 
 export default function RootLayout({ children }) {

@@ -1,0 +1,153 @@
+/* Homepage next-path terminal budget pass.
+   Keeps the closing exit docket and shared continuity handoff visibly bound while
+   preventing the late paper layers from becoming heavier than the calm homepage room. */
+
+.home-next-path-room {
+  contain-intrinsic-size: 1px 620px;
+}
+
+.home-next-path-room::before,
+.home-next-path-room::after,
+.home-next-path-note,
+.home-next-path-note::before,
+.home-next-path-note::after,
+.home-next-path-note__tag,
+.home-next-path-note__tag::after,
+.home-next-path-note strong::after,
+.home-next-path-room .continuity-paper-trail::before,
+.home-next-path-room .continuity-paper-step,
+.home-next-path-room .continuity-paper-step::before,
+.home-next-path-room .continuity-paper-step::after {
+  filter: none;
+  text-shadow: none;
+}
+
+.home-next-path-room::before {
+  inset: clamp(0.42rem, 1.4vw, 0.78rem) clamp(0.35rem, 1.7vw, 0.95rem) clamp(0.55rem, 1.7vw, 0.95rem);
+  opacity: 0.72;
+  box-shadow:
+    0.12rem 0.22rem 0 rgba(47, 38, 35, 0.045),
+    0 0.72rem 1.18rem rgba(47, 38, 35, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-next-path-room::after {
+  bottom: clamp(1.2rem, 4vw, 2.2rem);
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.45rem 0.76rem rgba(47, 38, 35, 0.08);
+  transform: rotate(-0.9deg);
+}
+
+.home-next-path-note {
+  width: min(100%, 39rem);
+  grid-template-columns: minmax(0, 1fr) minmax(9.8rem, 13.4rem);
+  gap: clamp(0.72rem, 1.8vw, 1.06rem);
+  padding: clamp(0.86rem, 2vw, 1.12rem) clamp(0.92rem, 2.2vw, 1.28rem);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.06),
+    0 0.62rem 1.05rem rgba(47, 38, 35, 0.095),
+    -0.24rem 0.24rem 0 rgba(154, 133, 166, 0.08);
+  transform: rotate(-0.16deg);
+}
+
+.home-next-path-note::before {
+  top: -0.32rem;
+  height: 0.72rem;
+  opacity: 0.76;
+  box-shadow: 0 0.14rem 0.3rem rgba(47, 38, 35, 0.07);
+  transform: rotate(0.8deg);
+}
+
+.home-next-path-note::after {
+  min-height: 7rem;
+  padding: 0.78rem 0.76rem;
+  border-left-color: rgba(76, 60, 82, 0.16);
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.46rem 0.78rem rgba(47, 38, 35, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.36);
+  transform: rotate(0.55deg);
+}
+
+.home-next-path-note__tag {
+  box-shadow: 0 0.16rem 0.32rem rgba(47, 38, 35, 0.06);
+}
+
+.home-next-path-note__tag::after,
+.home-next-path-note strong::after {
+  box-shadow: 0 0.2rem 0.42rem rgba(47, 38, 35, 0.065);
+}
+
+.home-next-path-note strong::after {
+  margin-top: 0.44rem;
+  transform: rotate(-0.35deg);
+}
+
+.home-next-path-note p {
+  border-left-color: rgba(76, 60, 82, 0.14);
+}
+
+.home-next-path-room .continuity-paper-trail {
+  gap: clamp(0.72rem, 1.7vw, 1.05rem);
+}
+
+.home-next-path-room .continuity-paper-trail::before {
+  top: -0.66rem;
+  opacity: 0.62;
+  border-top-color: rgba(76, 60, 82, 0.16);
+  transform: rotate(-0.05deg);
+}
+
+.home-next-path-room .continuity-paper-step {
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.5rem 0.86rem rgba(47, 38, 35, 0.085);
+}
+
+@media (max-width: 700px) {
+  .home-next-path-room {
+    contain-intrinsic-size: 1px 760px;
+  }
+
+  .home-next-path-room::after {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: inline-grid;
+    width: fit-content;
+    margin: 0.25rem 0 0.8rem 1rem;
+    transform: none;
+  }
+
+  .home-next-path-note {
+    grid-template-columns: 1fr;
+    width: 100%;
+    transform: none;
+  }
+
+  .home-next-path-note::after {
+    width: min(100%, 13.5rem);
+    min-height: 5.8rem;
+    transform: none;
+  }
+
+  .home-next-path-note__tag::after,
+  .home-next-path-note strong::after {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-next-path-room::after,
+  .home-next-path-note,
+  .home-next-path-note::before,
+  .home-next-path-note::after,
+  .home-next-path-note__tag::after,
+  .home-next-path-note strong::after,
+  .home-next-path-room .continuity-paper-trail::before {
+    transform: none !important;
+  }
+}

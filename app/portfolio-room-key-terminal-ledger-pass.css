@@ -1,0 +1,148 @@
+/* Portfolio room key terminal ledger pass. Binds the opening archive-room key into one calm paper ledger after the compass layer, so the first Portfolio section reads as a guided room surface rather than three neighboring slips. */
+
+.portfolio-room-key-board {
+  margin-top: clamp(0.4rem, 1.6vw, 0.95rem);
+  padding: clamp(1.3rem, 3.2vw, 2.25rem) clamp(1rem, 3.6vw, 2.35rem) clamp(1.5rem, 3.4vw, 2.35rem);
+}
+
+.portfolio-room-key-board::before {
+  inset: -0.48rem -0.7rem -0.62rem;
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.11), rgba(47, 38, 35, 0.025) 1.05rem, transparent 1.05rem),
+    radial-gradient(circle at 12% 24%, rgba(185, 201, 175, 0.24), transparent 30%),
+    radial-gradient(circle at 84% 22%, rgba(216, 197, 236, 0.2), transparent 28%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.56) 68%, rgba(244, 224, 199, 0.34)),
+    var(--grain-image);
+  background-size: cover, cover, cover, cover, 22rem 22rem;
+  clip-path: polygon(1% 4%, 15% 1.5%, 42% 3%, 69% 1.3%, 99% 4.6%, 97.5% 31%, 98.8% 93.5%, 75% 98%, 42% 96.5%, 14% 99%, 1.2% 94%, 2.6% 51%);
+  filter:
+    drop-shadow(-0.16rem 0.24rem 0 rgba(47, 38, 35, 0.08))
+    drop-shadow(0.5rem 0.86rem 1.35rem rgba(47, 38, 35, 0.14));
+}
+
+.portfolio-room-key-board::after {
+  top: auto;
+  right: clamp(1.2rem, 6vw, 4.4rem);
+  bottom: -0.48rem;
+  width: auto;
+  min-width: min(18rem, 62vw);
+  height: auto;
+  padding: 0.32rem 0.82rem 0.28rem;
+  content: "archive room ledger";
+  color: rgba(47, 38, 35, 0.72);
+  font-size: clamp(0.58rem, 1.5vw, 0.7rem);
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  text-align: center;
+  background:
+    linear-gradient(110deg, rgba(255, 250, 242, 0.94), rgba(185, 201, 175, 0.32), rgba(255, 250, 242, 0.74)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(3% 10%, 24% 0, 53% 8%, 78% 2%, 98% 13%, 94% 87%, 63% 98%, 28% 91%, 4% 96%);
+  box-shadow: 0.16rem 0.28rem 0.66rem rgba(47, 38, 35, 0.14);
+  transform: rotate(-0.6deg);
+}
+
+.portfolio-room-key-board__heading {
+  max-width: 50rem;
+  padding: clamp(0.7rem, 1.8vw, 1rem) clamp(0.8rem, 2vw, 1.1rem) clamp(0.78rem, 1.8vw, 1.05rem) clamp(1rem, 2.3vw, 1.32rem);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.72), rgba(255, 247, 235, 0.34)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1% 5%, 24% 1%, 58% 3%, 98% 2%, 96% 91%, 70% 98%, 34% 95%, 2% 98%);
+  box-shadow: 0.14rem 0.24rem 0.62rem rgba(47, 38, 35, 0.08);
+}
+
+.portfolio-room-key-board__heading::before {
+  top: 0.54rem;
+  bottom: 0.52rem;
+  left: 0.45rem;
+  opacity: 0.64;
+}
+
+.portfolio-room-key-board__heading::after {
+  margin-left: 0.18rem;
+  content: "start here path";
+}
+
+.portfolio-room-key-strip {
+  gap: clamp(0.88rem, 2.3vw, 1.2rem);
+  padding: clamp(0.68rem, 1.6vw, 0.9rem) clamp(0.42rem, 1.6vw, 0.72rem) clamp(0.92rem, 1.8vw, 1.2rem);
+}
+
+.portfolio-room-key-strip::before {
+  top: 50%;
+  right: 2%;
+  left: 2%;
+  height: 0.28rem;
+  background:
+    linear-gradient(90deg, transparent, rgba(47, 38, 35, 0.18) 10%, rgba(47, 38, 35, 0.11) 86%, transparent),
+    var(--grain-image);
+  opacity: 0.46;
+}
+
+.portfolio-room-key-strip::after {
+  left: clamp(-0.32rem, -0.8vw, -0.12rem);
+  width: 0.32rem;
+  opacity: 0.62;
+}
+
+.portfolio-room-key-slip {
+  min-height: 9.4rem;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.08),
+    0.34rem 0.58rem 0.92rem rgba(47, 38, 35, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.portfolio-room-key-slip::before {
+  right: auto;
+  left: clamp(0.85rem, 2vw, 1.2rem);
+  width: 4.25rem;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.68), rgba(185, 201, 175, 0.44)),
+    var(--grain-image);
+  transform: rotate(-1.4deg);
+}
+
+.portfolio-room-key-slip__photo {
+  transform: rotate(-0.9deg);
+}
+
+.portfolio-room-key-slip:nth-child(2) .portfolio-room-key-slip__photo {
+  transform: rotate(1deg);
+}
+
+.portfolio-room-key-slip:nth-child(3) .portfolio-room-key-slip__photo {
+  transform: rotate(-0.35deg);
+}
+
+@media (max-width: 820px) {
+  .portfolio-room-key-board::after {
+    right: 1rem;
+    bottom: -0.34rem;
+    min-width: min(15rem, 72vw);
+  }
+
+  .portfolio-room-key-strip::before {
+    top: 0.4rem;
+    bottom: 0.4rem;
+    left: 0.75rem;
+    width: 0.2rem;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(47, 38, 35, 0.16), transparent);
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio-room-key-board {
+    padding-inline: clamp(0.85rem, 4vw, 1.05rem);
+  }
+
+  .portfolio-room-key-board__heading h1 {
+    max-width: 11ch;
+  }
+}

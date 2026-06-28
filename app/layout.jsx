@@ -120,6 +120,7 @@ import './notes-source-receipts-pass.css';
 import './notes-source-path-thread-pass.css';
 import './notes-source-room-cues-pass.css';
 import './notes-source-compass-docket-pass.css';
+import './notes-source-binding-ribbon-pass.css';
 import './notes-source-terminal-budget-pass.css';
 import './notes-state-terminal-budget-pass.css';
 import './notes-shelf-promise-strip-pass.css';

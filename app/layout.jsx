@@ -223,6 +223,7 @@ import './footer-store-prep-receipt-pass.css';
 import './footer-mark-copy-slips-pass.css';
 import './footer-exit-desk-consolidation-pass.css';
 import './footer-terminal-room-ledger-pass.css';
+import './footer-exit-path-terminal-focus-pass.css';
 import './about-contact-sheet-exposure-desk-pass.css';
 import './about-contact-sheet-frame-sequence-pass.css';
 import './about-contact-sheet-terminal-budget-pass.css';

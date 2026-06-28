@@ -2,6 +2,46 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 02:40 ET — Homepage room status ledger binding
+
+### Changed
+
+- Added `app/home-room-status-ledger-binding-pass.css`.
+- Loaded it from `app/layout.jsx` after the latest homepage arrival-ticket pass so it wins over earlier room-status photo and compass layers.
+- Bound the homepage `Current rooms` status board into one clipped paper ledger surface with a left backing sheet, vertical thread, stronger shared board field, tape cues on each room slip, and calmer mobile fallbacks.
+- Added `.agent/changes/2026-06-28-home-room-status-ledger-binding.md`.
+- Added `.agent/matrices/home-room-status-ledger-binding.matrix.md`.
+
+### Why
+
+The homepage `Current rooms` section already had image-bearing status slips and a compass label, but the cards could still scan as separate neighboring pieces. This pass keeps the existing public-safe room-status copy and links while making the section visibly read as one calm public-room ledger inside the homepage reading path.
+
+### Related items
+
+- PAGE-001
+- COMP-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- LESSON-001
+- LESSON-002
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- METRIC-001
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+
 ## 2026-06-28 02:30 ET — About contact sheet room cue slips
 
 ### Changed
@@ -238,22 +278,3 @@ The Notes reader behavior board already had tray, cue, and reader-docket styling
 - METRIC-030
 
 ## 2026-06-27 20:20 ET — Wire About next doors exit ledger
-
-### Changed
-
-- Updated `app/layout.jsx` to import `app/about-next-doors-exit-ledger-pass.css` after the existing About pathway-door compass pass.
-- This makes the documented About exit-ledger styling actually load in the rendered Website bundle.
-- Added `.agent/changes/2026-06-27-wire-about-next-doors-exit-ledger.md`.
-- Added `.agent/matrices/wire-about-next-doors-exit-ledger.matrix.md`.
-
-### Why
-
-The prior About next-door exit ledger pass existed in source and `.agent` state, but `app/layout.jsx` did not import it. That meant the documented final About exit ledger could not visibly render, leaving the `Where to go next` section partially satisfied and still closer to neighboring route cards than a composed paper exit handoff.
-
-### Related items
-
-- PAGE-002
-- COMP-008
-- COMP-009
-- DESIGN-018
-- DESIGN-019

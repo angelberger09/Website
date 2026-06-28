@@ -1,4 +1,3 @@
-import cardStyles from "./hero-polaroid-card-pass.module.css";
 import { pageContinuity } from "./page-continuity";
 import { NextStepBand } from "./next-step-band";
 import { homepageRoomMarkers } from "./homepage-room-markers";
@@ -80,31 +79,12 @@ const homepageChapterNotes = {
 };
 
 export default function HomePage() {
-  const heroCardClassName = ["hero-polaroid", "hero-polaroid--frame", cardStyles.card].join(" ");
-
   return (
     <main id="top" className="home-page">
-      <section className="scroll-title" aria-label="Welcome to Soft Strange Studio">
-        <div className="title-lockup">
-          <aside className={heroCardClassName} aria-label="Studio card preview">
-            <span className={cardStyles.label}>Open rooms</span>
-            <strong className={cardStyles.title}>Notes, archive, store</strong>
-            <span className={cardStyles.note}>Four calm doors, already framed for visitors.</span>
-          </aside>
-          <p className="title-kicker">Soft Strange Studio</p>
-          <ul className="title-list" aria-label="Welcome to Soft Strange Studio">
-            <li><span className="title-line title-line--welcome">Welcome</span></li>
-            <li><span className="title-line title-line--to">To</span></li>
-            <li><span className="title-line title-line--studio">Soft Strange Studio</span></li>
-          </ul>
-          <p className="title-note">A soft public studio for notes, art, creature work, and gentle project paths.</p>
-          <div className="home-arrival-ticket" aria-label="Homepage arrival cues">
-            <span>Front door</span>
-            <span>Four rooms</span>
-            <span>Soft map</span>
-          </div>
-          <nav className="home-hero-route-strip home-hero-contact-sheet" aria-label="Start with a studio room">
-            <span className="home-hero-route-strip__label">Start here</span>
+      <section className="scroll-title scroll-title--quiet" aria-labelledby="home-entry-title">
+        <div className="title-lockup title-lockup--entry-only">
+          <h1 id="home-entry-title" className="home-hero-sr">Soft Strange Studio</h1>
+          <nav className="home-hero-route-strip home-hero-contact-sheet" aria-label="Choose a studio room">
             <div className="home-hero-route-strip__links" role="list">
               {homepageCards.map((page) => (
                 <a className="home-hero-route-slip" href={page.href} key={page.href} role="listitem">

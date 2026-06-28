@@ -220,6 +220,7 @@ import './notes-state-late-terminal-budget-pass.css';
 import './portfolio-feed-public-docket-pass.css';
 import './portfolio-feed-bound-shelf-pass.css';
 import './portfolio-feed-rule-slips-pass.css';
+import './portfolio-feed-receipt-seal-pass.css';
 import './store-feed-shelf-docket-pass.css';
 import './store-feed-boundary-rule-slips-pass.css';
 import './store-feed-receipt-seal-pass.css';

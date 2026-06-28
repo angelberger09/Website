@@ -1,0 +1,110 @@
+/* Notes post markdown paper pass.
+   Makes live Blog note content inside the Website reader feel like placed paper sections instead of default article text. */
+
+.notes-post-markdown {
+  position: relative;
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+  border-top: 0;
+}
+
+.notes-post-markdown::before {
+  width: min(100%, 18rem);
+  height: 0.42rem;
+  content: "";
+  clip-path: polygon(0 28%, 34% 0, 68% 26%, 100% 6%, 96% 78%, 63% 100%, 28% 74%, 3% 96%);
+  background: linear-gradient(90deg, rgba(255, 176, 143, 0.34), rgba(185, 201, 175, 0.32), rgba(216, 197, 236, 0.28));
+  box-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.07);
+}
+
+.notes-post-markdown > h2,
+.notes-post-markdown > h3 {
+  width: fit-content;
+  max-width: min(100%, 38rem);
+  margin: clamp(0.7rem, 2vw, 1.1rem) 0 0;
+  padding: clamp(0.48rem, 1.35vw, 0.68rem) clamp(0.7rem, 2vw, 1rem);
+  clip-path: polygon(1.4% 9%, 28% 1%, 64% 4%, 98% 0, 96% 90%, 70% 98%, 32% 96%, 2% 100%);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.78) 62%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow: 0.12rem 0.2rem 0 rgba(47, 38, 35, 0.07), 0 0.5rem 0.95rem rgba(47, 38, 35, 0.1);
+  line-height: 1;
+}
+
+.notes-post-markdown > h2 {
+  font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+  transform: rotate(-0.28deg);
+}
+
+.notes-post-markdown > h3 {
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  transform: rotate(0.22deg);
+}
+
+.notes-post-markdown > p,
+.notes-post-markdown > ul,
+.notes-post-markdown > ol,
+.notes-post-markdown > blockquote,
+.notes-post-markdown > pre {
+  max-width: 62ch;
+  margin: 0;
+}
+
+.notes-post-markdown > blockquote,
+.notes-post-markdown > pre,
+.notes-post-markdown > ul,
+.notes-post-markdown > ol {
+  position: relative;
+  padding: clamp(0.85rem, 2vw, 1.1rem) clamp(0.95rem, 2.2vw, 1.3rem);
+  clip-path: polygon(1.5% 3%, 22% 1%, 52% 2.4%, 98% 1.2%, 96.5% 96%, 72% 98.7%, 32% 97.2%, 1% 99%);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.7)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.12rem 0.22rem 0 rgba(47, 38, 35, 0.06), 0 0.55rem 1rem rgba(47, 38, 35, 0.08);
+}
+
+.notes-post-markdown > blockquote {
+  border-left: 0;
+  color: rgba(47, 38, 35, 0.76);
+  font-family: var(--font-hand);
+  font-size: clamp(1.02rem, 2vw, 1.18rem);
+}
+
+.notes-post-markdown > blockquote::before {
+  position: absolute;
+  top: 0.48rem;
+  left: 0.62rem;
+  width: 2.4rem;
+  height: 0.38rem;
+  content: "";
+  clip-path: polygon(0 20%, 100% 0, 94% 82%, 6% 100%);
+  background: rgba(255, 176, 143, 0.32);
+  box-shadow: 0.08rem 0.12rem 0 rgba(47, 38, 35, 0.06);
+}
+
+.notes-post-markdown > pre {
+  overflow-x: auto;
+}
+
+.notes-post-code-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.45rem;
+  clip-path: polygon(3% 13%, 97% 0, 94% 87%, 6% 100%);
+  background: rgba(185, 201, 175, 0.24);
+  font-family: var(--font-hand);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 620px) {
+  .notes-post-markdown > h2,
+  .notes-post-markdown > h3 {
+    width: 100%;
+  }
+}

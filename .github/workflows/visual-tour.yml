@@ -24,6 +24,9 @@ jobs:
       VISUAL_TOUR_WEBHOOK_URL: ${{ secrets.VISUAL_TOUR_WEBHOOK_URL }}
       VISUAL_TOUR_WEBHOOK_TOKEN: ${{ secrets.VISUAL_TOUR_WEBHOOK_TOKEN }}
       VISUAL_TOUR_WEBHOOK_SEND_FILES: ${{ vars.VISUAL_TOUR_WEBHOOK_SEND_FILES }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      DISCORD_SEND_VIDEOS: ${{ vars.DISCORD_SEND_VIDEOS }}
+      DISCORD_VIDEO_MAX_MB: ${{ vars.DISCORD_VIDEO_MAX_MB }}
 
     steps:
       - name: Checkout branch under test
@@ -131,6 +134,110 @@ EOF
             .agent/visual-runs/latest/poster-home-laptop.png
             .agent/feedback/workflow-packets/*.md
           if-no-files-found: ignore
+
+      - name: Send Discord visual tour update
+        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' }}
+        env:
+          VIDEO_ARTIFACT_URL: ${{ steps.upload_videos.outputs.artifact-url }}
+          VIDEO_ARTIFACT_ID: ${{ steps.upload_videos.outputs.artifact-id }}
+          RECEIPT_ARTIFACT_URL: ${{ steps.upload_receipts.outputs.artifact-url }}
+          RECEIPT_ARTIFACT_ID: ${{ steps.upload_receipts.outputs.artifact-id }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          manifest_path = Path('.agent/visual-runs/latest/manifest.json')
+          manifest = None
+          if manifest_path.exists():
+              manifest = json.loads(manifest_path.read_text())
+
+          artifacts = manifest.get("artifacts", []) if manifest else []
+          videos = [item for item in artifacts if item.get("video")]
+          routes = sorted({item.get("route") for item in artifacts if item.get("route")})
+          viewports = sorted({item.get("viewport") for item in artifacts if item.get("viewport")})
+
+          status = os.environ.get("JOB_STATUS") or "unknown"
+          sha = os.environ.get("GITHUB_SHA") or ""
+          short_sha = sha[:7] if sha else "unknown"
+          ref = os.environ.get("GITHUB_REF_NAME") or os.environ.get("GITHUB_REF") or "unknown ref"
+          run_id = os.environ.get("GITHUB_RUN_ID") or "unknown"
+          video_url = os.environ.get("VIDEO_ARTIFACT_URL") or "not available"
+          receipt_url = os.environ.get("RECEIPT_ARTIFACT_URL") or "not available"
+
+          payload = {
+              "username": "Soft Strange Website Auditor",
+              "content": f"Visual tour finished for `{ref}` at `{short_sha}` with status **{status}**.",
+              "embeds": [
+                  {
+                      "title": "Soft Strange Studio Website visual receipt",
+                      "description": "The branch was built locally, rendered with Playwright, scrolled, clicked, and captured as 4fps walkthrough evidence.",
+                      "fields": [
+                          {"name": "Repository", "value": os.environ.get("GITHUB_REPOSITORY", "unknown"), "inline": True},
+                          {"name": "Run", "value": run_id, "inline": True},
+                          {"name": "Videos created", "value": str(len(videos)), "inline": True},
+                          {"name": "Routes", "value": ", ".join(routes)[:1024] or "none", "inline": False},
+                          {"name": "Viewports", "value": ", ".join(viewports) or "none", "inline": True},
+                          {"name": "Video artifact", "value": video_url, "inline": False},
+                          {"name": "Receipts artifact", "value": receipt_url, "inline": False}
+                      ],
+                      "footer": {"text": "SoftStrange-WebsiteAuditor"}
+                  }
+              ],
+              "allowed_mentions": {"parse": []}
+          }
+          Path('/tmp/soft-strange-discord-payload.json').write_text(json.dumps(payload, indent=2))
+          PY
+
+          curl --fail --show-error --silent \
+            --request POST \
+            --header "Content-Type: application/json" \
+            --data @/tmp/soft-strange-discord-payload.json \
+            "$DISCORD_WEBHOOK_URL"
+
+      - name: Send Discord video files when enabled
+        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' && env.DISCORD_SEND_VIDEOS == 'true' }}
+        run: |
+          if ! find .agent/visual-runs/latest -name '*.mp4' -print -quit | grep -q .; then
+            echo "No visual tour MP4 files found to send to Discord."
+            exit 0
+          fi
+
+          MAX_MB="${DISCORD_VIDEO_MAX_MB:-24}"
+          MAX_BYTES=$((MAX_MB * 1024 * 1024))
+          SENT=0
+          SKIPPED=0
+
+          while IFS= read -r file; do
+            size=$(wc -c < "$file")
+            name=$(basename "$file")
+            if [ "$size" -gt "$MAX_BYTES" ]; then
+              echo "Skipping $name because it is larger than ${MAX_MB}MB."
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+
+            PAYLOAD=$(python - <<PY
+          import json
+          print(json.dumps({
+            "username": "Soft Strange Website Auditor",
+            "content": "Visual tour video: $name",
+            "allowed_mentions": {"parse": []}
+          }))
+          PY
+          )
+
+            curl --fail --show-error --silent \
+              --request POST \
+              -F "payload_json=$PAYLOAD" \
+              -F "files[0]=@$file" \
+              "$DISCORD_WEBHOOK_URL"
+            SENT=$((SENT + 1))
+          done < <(find .agent/visual-runs/latest -name '*.mp4' | sort)
+
+          echo "Discord video upload complete. Sent=$SENT Skipped=$SKIPPED"
 
       - name: Notify webhook with visual tour artifact links
         if: ${{ always() && env.VISUAL_TOUR_WEBHOOK_URL != '' }}

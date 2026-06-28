@@ -17,6 +17,34 @@
     0 0.82rem 1.45rem rgba(47, 38, 35, 0.09);
 }
 
+.store-visual-board::after {
+  position: absolute;
+  top: clamp(1.35rem, 3vw, 2.1rem);
+  bottom: clamp(0.9rem, 2.4vw, 1.55rem);
+  left: clamp(-0.35rem, -0.8vw, -0.1rem);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(1.65rem, 3vw, 2.15rem);
+  content: "proof path";
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  clip-path: polygon(12% 1%, 96% 6%, 100% 92%, 78% 100%, 4% 96%, 0 12%);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.9), rgba(241, 219, 171, 0.64)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(47, 38, 35, 0.62);
+  font-size: 0.55rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow:
+    0.08rem 0.16rem 0 rgba(47, 38, 35, 0.055),
+    0 0.5rem 0.86rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-0.6deg);
+}
+
 .store-visual-board__copy::before,
 .store-gallery-board::after,
 .store-gallery-board__intro::after,
@@ -56,7 +84,58 @@
   box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.32);
 }
 
+.store-gallery-board__intro {
+  position: relative;
+  padding-left: clamp(0.2rem, 1vw, 0.7rem);
+}
+
+.store-gallery-board__intro::before {
+  display: inline-grid;
+  place-items: center;
+  width: fit-content;
+  max-width: min(100%, 18rem);
+  margin: 0 0 0.15rem;
+  padding: 0.34rem 0.62rem 0.3rem;
+  content: "shelf proof path";
+  clip-path: polygon(4% 0, 96% 7%, 100% 82%, 72% 100%, 0 90%);
+  background:
+    linear-gradient(108deg, rgba(185, 201, 175, 0.62), rgba(255, 252, 246, 0.82)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(47, 38, 35, 0.66);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.05),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.08);
+  transform: rotate(-0.65deg);
+}
+
+.store-gallery-card__number {
+  display: inline-grid;
+  place-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.48rem;
+  padding: 0.28rem 0.5rem 0.24rem;
+  clip-path: polygon(3% 9%, 91% 0, 100% 78%, 76% 100%, 0 91%);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.88), rgba(245, 224, 198, 0.5)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  color: rgba(47, 38, 35, 0.64);
+  font-size: 0.56rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0.06rem 0.12rem 0.3rem rgba(47, 38, 35, 0.08);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .store-visual-board::after,
+  .store-gallery-board__intro::before,
   .store-visual-board__copy::before,
   .store-shot-strip::after,
   .store-shot-card::after,
@@ -74,6 +153,17 @@
   .store-visual-board,
   .store-gallery-board {
     contain-intrinsic-size: 1px 900px;
+  }
+
+  .store-visual-board::after {
+    position: relative;
+    inset: auto;
+    justify-self: start;
+    width: auto;
+    min-height: 1.35rem;
+    padding: 0.2rem 0.55rem 0.18rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(-0.4deg);
   }
 
   .store-shot-card,

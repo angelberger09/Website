@@ -2,6 +2,55 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 07:18 ET — Notes gallery terminal budget load
+
+### Changed
+
+- Loaded existing `app/notes-gallery-terminal-budget-pass.css` from `app/layout.jsx` immediately after `notes-gallery-room-docket-pass.css`.
+- Made the Notes contact-sheet gallery terminal budget pass actually render on `/Website/notes/` and `/Website/blog/` compatibility views.
+- The contact-sheet gallery now receives the intended calmer scroll shelf, lighter card shadows, reduced late-layer thread cost, mobile sizing, and reduced-motion budget behavior.
+- Added `.agent/changes/2026-06-28-notes-gallery-terminal-budget-load.md`.
+- Added `.agent/matrices/notes-gallery-terminal-budget-load.matrix.md`.
+
+### Why
+
+The Notes gallery already had a terminal budget stylesheet in the repo, but it was not included in the root layout import list. That meant the rendered contact-sheet shelf could still display the earlier gallery and room-docket treatments without the final budget layer. This pass keeps the existing public-safe Notes copy and Blog feed behavior while making the gallery visibly calmer and better aligned with the terminal room budget.
+
+### Related items
+
+- PAGE-003
+- PAGE-003B
+- COMP-006
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-026
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 07:09 ET — PageIntro terminal room board
 
 ### Changed

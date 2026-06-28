@@ -1,0 +1,127 @@
+name: Visual Tour
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: visual-tour-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  visual-tour:
+    name: Build branch and render visual walkthrough
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout branch under test
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Website dependencies
+        run: npm install
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Build static Website for this branch
+        run: npm run build
+
+      - name: Serve built Website locally
+        run: |
+          npx serve out -l 4173 > /tmp/soft-strange-website-serve.log 2>&1 &
+          echo $! > /tmp/soft-strange-website-serve.pid
+          for attempt in {1..45}; do
+            if curl -fsS http://127.0.0.1:4173/Website/ > /dev/null; then
+              echo "Local Website is ready."
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Local Website did not become ready."
+          cat /tmp/soft-strange-website-serve.log || true
+          exit 1
+
+      - name: Fetch SoftStrange Website Auditor
+        env:
+          DEFAULT_AUDITOR_URL: https://cdn.jsdelivr.net/gh/angelberger09/Software@main/packages/SoftStrange-WebsiteAuditor/bin/SoftStrange-WebsiteAuditor.mjs
+          SOFTSTRANGE_AUDITOR_URL: ${{ vars.SOFTSTRANGE_AUDITOR_URL }}
+        run: |
+          mkdir -p .agent/tools .agent/feedback/workflow-packets
+          AUDITOR_URL="${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}"
+          echo "Fetching SoftStrange-WebsiteAuditor from $AUDITOR_URL"
+          if ! curl -fsSL "$AUDITOR_URL" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs; then
+            PACKET=".agent/feedback/workflow-packets/$(date -u +'%Y-%m-%dT%H-%M-%SZ')-visual-tour-auditor-fetch-failure.md"
+            cat > "$PACKET" <<EOF
+# Visual Tour Auditor Fetch Failure
+
+Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')
+Workflow: Visual Tour
+Run ID: $GITHUB_RUN_ID
+Ref: $GITHUB_REF
+SHA: $GITHUB_SHA
+
+## Public-safe summary
+
+The visual tour workflow built the Website branch but could not fetch the pinned SoftStrange-WebsiteAuditor ESM entry point.
+
+## Likely repair
+
+Confirm that the Software repo package is available from the configured URL. If Software remains private, publish the auditor as a package, make a public release path, or set the repository variable SOFTSTRANGE_AUDITOR_URL to a reachable pinned auditor URL.
+
+## Boundary
+
+No raw logs, credentials, or private context are stored in this packet.
+EOF
+            exit 1
+          fi
+          node .agent/tools/SoftStrange-WebsiteAuditor.mjs --help
+
+      - name: Render scroll walkthrough and interaction simulation videos
+        run: |
+          node .agent/tools/SoftStrange-WebsiteAuditor.mjs \
+            --base-url http://127.0.0.1:4173/Website \
+            --fps 4 \
+            --out .agent/visual-runs/latest \
+            --routes home=/,about=/about/,notes=/notes/,portfolio=/portfolio/,store=/store/ \
+            --viewports laptop:1280x720,mobile:390x844 \
+            --click-selector "header a[href], nav a[href], a.home-hero-route-slip[href], a.home-door-card[href], [role='tab'], button, input, textarea, select" \
+            --max-clicks 24 \
+            --recovery-dir .agent/feedback/workflow-packets
+
+      - name: Upload walkthrough videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-tour-videos-${{ github.run_id }}-${{ github.sha }}
+          path: .agent/visual-runs/latest/**/*.mp4
+          if-no-files-found: ignore
+
+      - name: Upload visual receipts and recovery packets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-tour-receipts-${{ github.run_id }}-${{ github.sha }}
+          path: |
+            .agent/visual-runs/latest/README.md
+            .agent/visual-runs/latest/manifest.json
+            .agent/visual-runs/latest/poster-home-laptop.png
+            .agent/feedback/workflow-packets/*.md
+          if-no-files-found: ignore

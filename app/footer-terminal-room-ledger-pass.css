@@ -1,0 +1,127 @@
+/* Footer terminal room ledger pass.
+   Runs after the footer exit desk consolidation so the shared footer reads as one
+   calm bound room ledger instead of adjacent receipt shelves. */
+
+.studio-footer--paper {
+  max-width: min(100% - clamp(1rem, 4vw, 3rem), 78rem);
+  margin-inline: auto;
+  margin-block-start: clamp(3rem, 6vw, 5.25rem);
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1rem, 2.6vw, 1.75rem) clamp(1.05rem, 2.2vw, 1.45rem);
+  border-radius: 0;
+}
+
+.studio-footer--paper::before {
+  inset: 0.18rem 0.1rem 0.08rem;
+  background:
+    radial-gradient(circle at 12% 24%, rgba(255, 255, 255, 0.58), transparent 24%),
+    linear-gradient(100deg, rgba(232, 215, 184, 0.56), rgba(255, 252, 239, 0.94) 43%, rgba(219, 198, 164, 0.52)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, auto, 190px 190px;
+  clip-path: polygon(1% 7%, 13% 3%, 34% 5%, 58% 2%, 82% 5%, 99% 9%, 98% 88%, 87% 96%, 62% 93%, 43% 98%, 18% 94%, 2% 90%);
+  box-shadow:
+    0 1rem 1.85rem rgba(63, 44, 24, 0.16),
+    0 0.2rem 0.46rem rgba(63, 44, 24, 0.1),
+    inset 0 0.12rem 0 rgba(255, 255, 255, 0.62),
+    inset 0 -1rem 1.35rem rgba(101, 73, 40, 0.065);
+}
+
+.studio-footer--paper::after {
+  content: "final room ledger";
+  left: clamp(1.15rem, 3vw, 2.1rem);
+  top: -0.02rem;
+  box-shadow:
+    0 0.28rem 0.56rem rgba(64, 45, 24, 0.16),
+    0 0.08rem 0 rgba(255, 255, 255, 0.56) inset;
+}
+
+.studio-footer__mark,
+.studio-footer__exit-receipts,
+.studio-footer__trail {
+  position: relative;
+  z-index: 1;
+}
+
+.studio-footer__mark {
+  align-self: start;
+  width: min(100%, 34rem);
+  margin-left: clamp(0.2rem, 1vw, 0.9rem);
+}
+
+.studio-footer__mark::before {
+  content: "";
+  position: absolute;
+  left: -0.46rem;
+  top: 0.18rem;
+  bottom: -0.34rem;
+  width: 0.28rem;
+  z-index: 4;
+  background:
+    linear-gradient(180deg, rgba(93, 67, 38, 0), rgba(93, 67, 38, 0.28), rgba(93, 67, 38, 0)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: auto, 90px 90px;
+  clip-path: polygon(38% 0, 78% 12%, 48% 34%, 92% 58%, 44% 100%, 12% 86%, 42% 62%, 4% 35%);
+  opacity: 0.84;
+  pointer-events: none;
+}
+
+.studio-footer__exit-receipts {
+  margin-block-start: clamp(0.1rem, 0.8vw, 0.35rem);
+  padding-block: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.studio-footer__exit-receipts::before {
+  height: 0.22rem;
+  opacity: 0.9;
+}
+
+.studio-footer__exit-receipt {
+  clip-path: polygon(2% 7%, 96% 1%, 100% 91%, 88% 98%, 8% 94%, 0 18%);
+}
+
+.studio-footer__trail {
+  width: min(100%, 66rem);
+  padding-block-start: clamp(0.7rem, 1.6vw, 0.95rem);
+}
+
+.studio-footer__trail::before {
+  inset: 0.04rem 0.12rem 0.02rem;
+  clip-path: polygon(2% 16%, 18% 9%, 46% 11%, 72% 6%, 98% 14%, 96% 86%, 75% 95%, 48% 91%, 22% 97%, 3% 88%);
+}
+
+.studio-footer__trail-link,
+.studio-footer__trail a {
+  box-shadow: 0 0.32rem 0.68rem rgba(67, 48, 27, 0.11);
+}
+
+@media (max-width: 760px) {
+  .studio-footer--paper {
+    max-width: min(100% - 1rem, 28rem);
+    padding-inline: 0.78rem;
+  }
+
+  .studio-footer__mark {
+    margin-inline: auto;
+  }
+
+  .studio-footer__mark::before {
+    left: 0.2rem;
+    right: 0.2rem;
+    top: auto;
+    bottom: -0.48rem;
+    width: auto;
+    height: 0.18rem;
+    clip-path: polygon(0 35%, 24% 0, 52% 42%, 76% 8%, 100% 45%, 100% 88%, 72% 58%, 48% 100%, 20% 60%, 0 84%);
+  }
+
+  .studio-footer__exit-receipts {
+    padding-block-start: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-footer__exit-receipt,
+  .studio-footer__trail,
+  .studio-footer--paper::after {
+    transform: none;
+  }
+}

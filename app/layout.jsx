@@ -223,6 +223,7 @@ import './home-house-rules-docket-pass.css';
 import './home-house-rules-ledger-pass.css';
 import './home-house-rules-source-slips-pass.css';
 import './late-paper-surface-budget-pass.css';
+import './home-house-rules-terminal-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
 import './store-preview-proof-rail-pass.css';
 import './store-proof-gallery-terminal-budget-pass.css';

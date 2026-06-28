@@ -1,0 +1,113 @@
+/* Homepage room choice left-depth pass.
+   Keeps the wordless hero direction, but makes the first visible room-choice surface
+   feel more left-docked, organized, and physically layered. */
+
+.scroll-title--quiet {
+  justify-items: start !important;
+  place-items: start stretch !important;
+  padding-inline: max(1rem, 9vw) max(1rem, 6vw) !important;
+}
+
+.scroll-title--quiet .title-lockup--entry-only {
+  width: min(100%, 34.5rem) !important;
+  margin-inline: 0 auto !important;
+  padding: clamp(0.72rem, 1.35vw, 0.98rem) !important;
+  transform: rotate(-0.32deg) !important;
+}
+
+.scroll-title--quiet .title-lockup--entry-only::before {
+  background:
+    linear-gradient(90deg, rgba(112, 91, 76, 0.1), transparent 18% 82%, rgba(112, 91, 76, 0.06)),
+    radial-gradient(circle at 8% 12%, rgba(255, 176, 143, 0.22), transparent 34%),
+    radial-gradient(circle at 92% 82%, rgba(188, 203, 178, 0.26), transparent 36%),
+    linear-gradient(126deg, rgba(255, 251, 242, 0.96), rgba(238, 225, 197, 0.82)) !important;
+  box-shadow:
+    0.18rem 0.24rem 0 rgba(47, 38, 35, 0.095),
+    0 0.9rem 1.7rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+.scroll-title--quiet .home-hero-contact-sheet {
+  position: relative !important;
+  padding: clamp(0.5rem, 0.95vw, 0.74rem) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.66),
+    0.16rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0 0.76rem 1.32rem rgba(47, 38, 35, 0.115) !important;
+}
+
+.scroll-title--quiet .home-hero-contact-sheet::before {
+  position: absolute;
+  top: -0.38rem;
+  left: 0.9rem;
+  z-index: 0;
+  width: min(9.5rem, 42%);
+  height: 1rem;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.9), rgba(220, 205, 173, 0.58));
+  box-shadow: 0 0.24rem 0.52rem rgba(47, 38, 35, 0.095);
+  clip-path: polygon(2% 22%, 98% 6%, 95% 84%, 7% 98%);
+  opacity: 0.9;
+  transform: rotate(-1.2deg);
+}
+
+.scroll-title--quiet .home-hero-route-strip__links {
+  position: relative !important;
+  z-index: 1 !important;
+  gap: clamp(0.34rem, 0.72vw, 0.52rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip {
+  box-shadow:
+    0.12rem 0.16rem 0 rgba(47, 38, 35, 0.075),
+    0 0.48rem 0.86rem rgba(47, 38, 35, 0.102),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip:nth-child(1) {
+  transform: rotate(-0.8deg) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip:nth-child(2) {
+  transform: rotate(0.45deg) translateY(0.08rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip:nth-child(3) {
+  transform: rotate(-0.25deg) translateY(-0.03rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip:nth-child(4) {
+  transform: rotate(0.7deg) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__preview {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 176, 143, 0.28), transparent 36%),
+    linear-gradient(145deg, rgba(84, 104, 91, 0.18), rgba(44, 38, 44, 0.82)),
+    rgba(44, 38, 44, 0.86) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 250, 242, 0.12),
+    inset 0 -0.75rem 1.1rem rgba(22, 19, 21, 0.18) !important;
+}
+
+@media (max-width: 760px) {
+  .scroll-title--quiet {
+    padding-inline: 1rem !important;
+  }
+
+  .scroll-title--quiet .title-lockup--entry-only {
+    width: min(100%, 24rem) !important;
+    margin-inline: auto !important;
+  }
+
+  .scroll-title--quiet .home-hero-route-slip:nth-child(n) {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-title--quiet .home-hero-route-slip:nth-child(n) {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,251 @@
+/* Homepage hero UX entry board pass.
+   Implements the plan's first principle: orientation before decoration.
+   The first screen becomes a bounded, flow-based entry board so the studio name,
+   welcome slip, room choices, and Open rooms card can be read together on laptop screens. */
+
+.scroll-title {
+  min-height: auto !important;
+  min-block-size: min(80svh, 42rem) !important;
+  padding-top: clamp(4.75rem, 7.2svh, 5.85rem) !important;
+  padding-bottom: clamp(0.95rem, 2.2svh, 1.65rem) !important;
+}
+
+.scroll-title .title-lockup {
+  position: relative !important;
+  top: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.18fr) minmax(11.5rem, 15.5rem) !important;
+  grid-template-areas:
+    "kicker card"
+    "title card"
+    "note card"
+    "ticket card"
+    "routes card" !important;
+  align-items: start;
+  column-gap: clamp(0.85rem, 2vw, 1.55rem) !important;
+  row-gap: clamp(0.16rem, 0.55vw, 0.38rem) !important;
+  width: min(100%, 66rem) !important;
+  max-height: none !important;
+  padding: clamp(0.78rem, 1.65vw, 1.18rem) clamp(0.92rem, 2.1vw, 1.5rem) clamp(0.9rem, 1.8vw, 1.24rem) !important;
+  animation: none !important;
+  transform: rotate(-0.45deg) !important;
+}
+
+.scroll-title .title-lockup::before {
+  clip-path: polygon(0.6% 1.4%, 99.1% 0.7%, 98.5% 97.5%, 1.3% 99.1%) !important;
+  box-shadow:
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.07),
+    0 0.9rem 1.85rem rgba(47, 38, 35, 0.13),
+    inset 0 0.16rem 0.5rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.14rem 0.42rem rgba(47, 38, 35, 0.055) !important;
+}
+
+.scroll-title .title-kicker {
+  grid-area: kicker;
+  margin: 0 0 0.08rem !important;
+  font-size: clamp(0.66rem, 0.8vw, 0.78rem) !important;
+  letter-spacing: 0.2em !important;
+}
+
+.scroll-title .title-list {
+  grid-area: title;
+  gap: 0 !important;
+}
+
+.scroll-title .title-list li {
+  grid-template-columns: clamp(0.54rem, 0.9vw, 0.78rem) minmax(0, 1fr) !important;
+  gap: clamp(0.32rem, 0.8vw, 0.56rem) !important;
+}
+
+.scroll-title .title-list li::before {
+  width: clamp(0.28rem, 0.52vw, 0.44rem) !important;
+  height: clamp(0.28rem, 0.52vw, 0.44rem) !important;
+}
+
+.scroll-title .title-list li:nth-child(2),
+.scroll-title .title-list li:nth-child(3) {
+  transform: none !important;
+}
+
+.scroll-title .title-line {
+  max-width: 12.6ch !important;
+  font-size: clamp(2.25rem, 5vw, 4.85rem) !important;
+  line-height: 0.91 !important;
+  letter-spacing: -0.036em !important;
+  text-shadow: 0 0.62rem 1.4rem rgba(47, 38, 35, 0.08) !important;
+}
+
+.scroll-title .title-line--to {
+  font-size: clamp(1.45rem, 3vw, 2.75rem) !important;
+}
+
+.scroll-title .title-line--studio {
+  max-width: 14ch !important;
+}
+
+.scroll-title .title-note {
+  grid-area: note;
+  width: min(100%, 29rem) !important;
+  margin: 0.12rem 0 0 clamp(0.42rem, 1vw, 0.78rem) !important;
+  padding: 0.5rem clamp(0.62rem, 1.2vw, 0.82rem) 0.54rem !important;
+  font-size: clamp(0.82rem, 0.94vw, 0.94rem) !important;
+  line-height: 1.36 !important;
+  clip-path: polygon(0.6% 7%, 99% 2%, 98.3% 93%, 1.2% 98%) !important;
+  background:
+    linear-gradient(100deg, rgba(255, 250, 242, 0.78), rgba(242, 230, 205, 0.42)),
+    var(--grain-image) !important;
+  background-size: cover, 9rem 9rem !important;
+  box-shadow: 0 0.18rem 0.5rem rgba(47, 38, 35, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.58) !important;
+}
+
+.scroll-title .home-arrival-ticket {
+  grid-area: ticket;
+  margin: 0.08rem 0 0 clamp(0.42rem, 1vw, 0.78rem) !important;
+}
+
+.scroll-title .home-hero-contact-sheet {
+  grid-area: routes;
+  width: min(100%, 35rem) !important;
+  margin: 0.06rem 0 0 clamp(0.32rem, 0.82vw, 0.68rem) !important;
+  padding: clamp(0.48rem, 0.82vw, 0.64rem) !important;
+}
+
+.scroll-title .home-hero-route-strip__label {
+  margin-bottom: 0.32rem !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.16em !important;
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-strip__links {
+  gap: clamp(0.28rem, 0.58vw, 0.42rem) !important;
+}
+
+.scroll-title .home-hero-contact-sheet .home-hero-route-slip {
+  min-width: clamp(6.35rem, 10.5vw, 7.65rem) !important;
+  padding: 0.24rem 0.25rem 0.36rem !important;
+}
+
+.scroll-title .home-hero-route-slip__preview {
+  min-height: clamp(2.65rem, 4vw, 3.5rem) !important;
+  padding: 0.34rem !important;
+}
+
+.scroll-title .home-hero-route-slip__preview span,
+.scroll-title .home-hero-route-slip__copy span {
+  font-size: 0.56rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+.scroll-title .home-hero-route-slip__preview strong {
+  font-size: clamp(0.86rem, 1.42vw, 1.12rem) !important;
+  line-height: 0.95 !important;
+}
+
+.scroll-title .home-hero-route-slip__copy strong {
+  font-size: clamp(0.72rem, 1.06vw, 0.86rem) !important;
+}
+
+.scroll-title .home-hero-route-slip__copy small {
+  font-size: 0.62rem !important;
+  padding: 0.16rem 0.28rem !important;
+}
+
+.scroll-title .hero-polaroid {
+  grid-area: card;
+  align-self: start;
+  justify-self: end;
+  width: min(100%, clamp(10.8rem, 14vw, 14.5rem)) !important;
+  margin-top: clamp(0.08rem, 0.6vw, 0.42rem) !important;
+  opacity: 0.9 !important;
+  transform: rotate(1.15deg) !important;
+  filter: drop-shadow(0 0.72rem 1.1rem rgba(47, 38, 35, 0.16)) !important;
+}
+
+@media (min-width: 981px) and (max-height: 760px) {
+  .scroll-title {
+    min-block-size: auto !important;
+    padding-top: clamp(4.35rem, 6.4svh, 5rem) !important;
+    padding-bottom: 0.85rem !important;
+  }
+
+  .scroll-title .title-lockup {
+    grid-template-columns: minmax(0, 1.22fr) minmax(10rem, 13rem) !important;
+    row-gap: 0.12rem !important;
+    padding: 0.72rem 0.96rem 0.86rem !important;
+  }
+
+  .scroll-title .title-line {
+    font-size: clamp(2.05rem, 4.35vw, 4.05rem) !important;
+  }
+
+  .scroll-title .title-line--to {
+    font-size: clamp(1.32rem, 2.7vw, 2.25rem) !important;
+  }
+
+  .scroll-title .title-note {
+    width: min(100%, 27.5rem) !important;
+    padding-block: 0.38rem !important;
+    font-size: clamp(0.78rem, 0.88vw, 0.88rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  .scroll-title .home-arrival-ticket {
+    display: none !important;
+  }
+
+  .scroll-title .home-hero-contact-sheet {
+    width: min(100%, 32.5rem) !important;
+    padding: 0.42rem !important;
+  }
+
+  .scroll-title .home-hero-route-slip__preview {
+    min-height: 2.35rem !important;
+  }
+
+  .scroll-title .hero-polaroid {
+    width: min(100%, 12.25rem) !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .scroll-title .title-lockup {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "kicker"
+      "title"
+      "note"
+      "routes"
+      "card" !important;
+    width: min(100%, 39rem) !important;
+  }
+
+  .scroll-title .home-arrival-ticket {
+    display: none !important;
+  }
+
+  .scroll-title .hero-polaroid {
+    justify-self: start;
+    width: min(66vw, 12.5rem) !important;
+    margin: 0.3rem 0 0 0.45rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .scroll-title {
+    padding-top: 5.95rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+
+  .scroll-title .title-lockup {
+    padding: 0.82rem !important;
+    transform: rotate(-0.35deg) !important;
+  }
+
+  .scroll-title .title-line {
+    font-size: clamp(2.32rem, 12vw, 4.45rem) !important;
+  }
+
+  .scroll-title .title-line--to {
+    font-size: clamp(1.65rem, 7vw, 2.95rem) !important;
+  }
+}

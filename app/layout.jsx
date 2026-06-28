@@ -227,6 +227,7 @@ import './home-hero-scale-guard-pass.css';
 import './home-hero-front-desk-finish-pass.css';
 import './home-hero-wordless-entry-pass.css';
 import './home-room-choice-left-depth-pass.css';
+import './home-room-choice-pocket-pass.css';
 import './terminal-room-render-budget-pass.css';
 
 export const metadata = {

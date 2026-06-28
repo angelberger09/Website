@@ -1,0 +1,125 @@
+/* Homepage door room terminal budget pass.
+   Keeps the Studio rooms door ledger visibly papery while calming the late door-board layer
+   so the four public doors read as one organized room choice instead of a heavy card cluster. */
+
+.home-page .home-door-section {
+  overflow: visible;
+}
+
+.home-page .home-door-section::after {
+  right: clamp(0.9rem, 4vw, 3.8rem);
+  bottom: clamp(0.62rem, 1.7vw, 1rem);
+  padding: 0.28rem 0.48rem;
+  color: rgba(58, 45, 42, 0.5);
+  box-shadow:
+    0.06rem 0.1rem 0 rgba(47, 38, 35, 0.035),
+    0 0.32rem 0.62rem rgba(47, 38, 35, 0.055);
+  transform: rotate(0.64deg);
+}
+
+.home-page .home-door-board {
+  gap: clamp(0.62rem, 1.35vw, 0.86rem) !important;
+  margin-top: clamp(0.9rem, 1.8vw, 1.25rem);
+  padding: clamp(1rem, 2vw, 1.32rem) clamp(0.82rem, 2vw, 1.18rem) clamp(0.95rem, 1.8vw, 1.2rem) clamp(2rem, 4vw, 3.45rem);
+  background:
+    radial-gradient(circle at 8% 22%, rgba(255, 176, 143, 0.085), transparent 25%),
+    linear-gradient(103deg, rgba(255, 253, 246, 0.9), rgba(248, 236, 216, 0.66) 55%, rgba(185, 201, 175, 0.15)),
+    var(--grain-image);
+  background-size: cover, cover, 18rem 18rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.045),
+    0 0.68rem 1.18rem rgba(47, 38, 35, 0.085),
+    inset 0 0 0 1px rgba(112, 80, 45, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-page .home-door-board::before {
+  width: 0.16rem;
+  opacity: 0.62;
+  box-shadow: 0.24rem 0 0 rgba(255, 252, 246, 0.38);
+}
+
+.home-page .home-door-board::after {
+  top: -0.44rem;
+  padding: 0.3rem 0.5rem;
+  color: rgba(58, 45, 42, 0.58);
+  box-shadow:
+    0.07rem 0.12rem 0 rgba(47, 38, 35, 0.045),
+    0 0.32rem 0.56rem rgba(47, 38, 35, 0.06);
+  transform: rotate(-0.82deg);
+}
+
+.home-page .home-door-board .home-door-card,
+.home-page .home-door-board .home-door-card:nth-child(2n),
+.home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+  min-height: 13.15rem;
+  padding: clamp(0.78rem, 1.55vw, 1.02rem);
+  box-shadow:
+    0.08rem 0.13rem 0 rgba(47, 38, 35, 0.045),
+    0 0.38rem 0.72rem rgba(47, 38, 35, 0.068),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-page .home-door-board .home-door-card:nth-child(2n) {
+  transform: translateY(-0.08rem) rotate(0.18deg);
+}
+
+.home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+  transform: translateY(0.06rem) rotate(-0.14deg);
+}
+
+.home-page .home-door-board .home-door-card::before {
+  height: 0.3rem;
+  opacity: 0.74;
+  box-shadow: 0 0.09rem 0.24rem rgba(47, 38, 35, 0.055);
+}
+
+.home-page .home-door-card__image {
+  min-height: 4.62rem;
+  box-shadow:
+    0.06rem 0.1rem 0 rgba(47, 38, 35, 0.04),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.14);
+}
+
+.home-page .home-door-card__copy p {
+  max-width: 31rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-door-section::after,
+  .home-page .home-door-board::after,
+  .home-page .home-door-board .home-door-card,
+  .home-page .home-door-board .home-door-card:nth-child(2n),
+  .home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .home-page .home-door-board {
+    gap: 0.72rem !important;
+    padding-left: clamp(1.22rem, 3.7vw, 1.88rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .home-page .home-door-board {
+    padding: 0.9rem;
+  }
+
+  .home-page .home-door-board::after {
+    top: -0.36rem;
+    left: 0.78rem;
+  }
+
+  .home-page .home-door-board .home-door-card,
+  .home-page .home-door-board .home-door-card:nth-child(2n),
+  .home-page .home-door-board .home-door-card:nth-child(2n + 1) {
+    min-height: 0;
+    padding: 0.82rem;
+  }
+
+  .home-page .home-door-card__image {
+    min-height: 4.1rem;
+  }
+}

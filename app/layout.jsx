@@ -50,6 +50,7 @@ import './portfolio-section-spine-labels-pass.css';
 import './portfolio-lane-direct-labels-pass.css';
 import './portfolio-state-path-shelf-pass.css';
 import './portfolio-record-state-docket-pass.css';
+import './portfolio-final-path-compass-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-entry-proof-desk-pass.css';
@@ -218,17 +219,10 @@ import './home-house-rules-source-slips-pass.css';
 import './late-paper-surface-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
 import './store-preview-proof-rail-pass.css';
-import './terminal-preview-surface-budget-pass.css';
-import './about-room-path-docket-pass.css';
-import './about-opening-room-table-pass.css';
-import './about-opening-terminal-budget-pass.css';
-import './about-next-doors-exit-ledger-pass.css';
-import './about-next-doors-terminal-budget-pass.css';
-import './portfolio-rule-slips-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A soft, strange studio home for Angel Berger.'
+  description: 'A small public studio homepage for Angel Berger.'
 };
 
 export default function RootLayout({ children }) {

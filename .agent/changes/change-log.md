@@ -2,6 +2,49 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 02:50 ET — Portfolio process terminal budget
+
+### Changed
+
+- Added `app/portfolio-process-terminal-budget-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after `portfolio-state-process-docket-pass.css` so it wins over the late Portfolio publishing-rhythm layer.
+- Calmed the Portfolio `Publishing rhythm` section by softening its board backing, heading sheet, runway field, step slips, photo centers, paper thread, mobile stacking, and reduced-motion behavior.
+- Added `.agent/changes/2026-06-28-portfolio-process-terminal-budget.md`.
+- Added `.agent/matrices/portfolio-process-terminal-budget.matrix.md`.
+
+### Why
+
+The Portfolio process area already had photo cards, public thread cues, runway treatment, and docket labels, but it lacked a final process-specific budget pass. This meant the publishing-rhythm section could still feel heavier and less integrated than the surrounding calm Portfolio room. This pass keeps the same public-safe copy and process steps while making the section read as one bound paper receipt.
+
+### Related items
+
+- PAGE-004
+- COMP-008
+- DESIGN-019
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-018
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+
 ## 2026-06-28 02:40 ET — Homepage room status ledger binding
 
 ### Changed
@@ -258,23 +301,3 @@ The Notes reader behavior board already had tray, cue, and reader-docket styling
 - COMP-008
 - DESIGN-019
 - DESIGN-022
-- DESIGN-024
-- DESIGN-028
-- DESIGN-029
-- DESIGN-030
-- LESSON-002
-- LESSON-018
-- LESSON-019
-- LESSON-022
-- LESSON-024
-- LESSON-025
-- METRIC-002
-- METRIC-018
-- METRIC-021
-- METRIC-023
-- METRIC-027
-- METRIC-028
-- METRIC-029
-- METRIC-030
-
-## 2026-06-27 20:20 ET — Wire About next doors exit ledger

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 12:41 ET — Portfolio public boundary rail
+
+See `.agent/changes/2026-06-28-portfolio-public-boundary-rail.md` and `.agent/matrices/portfolio-public-boundary-rail.matrix.md`.
+
 ## 2026-06-28 12:29 ET — About public boundary ledger
 
 See `.agent/changes/2026-06-28-about-public-boundary-ledger.md` and `.agent/matrices/about-public-boundary-ledger.matrix.md`.

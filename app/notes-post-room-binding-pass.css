@@ -178,6 +178,139 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.58);
 }
 
+.notes-post-sheet {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  padding-top: clamp(3.25rem, 5vw, 4.1rem);
+  background:
+    linear-gradient(118deg, rgba(255, 252, 246, 0.96), rgba(248, 237, 219, 0.76) 58%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 34rem 34rem;
+  box-shadow:
+    0.28rem 0.38rem 0 rgba(185, 201, 175, 0.16),
+    0 1.05rem 2.2rem rgba(47, 38, 35, 0.115),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  clip-path: polygon(0.8% 1.2%, 19% 0, 44% 1.1%, 72% 0.2%, 99% 1.5%, 97.8% 98.2%, 76% 99%, 51% 97.9%, 23% 99.2%, 0 97.8%);
+}
+
+.notes-post-sheet::before {
+  position: absolute;
+  content: "public note sheet";
+  top: clamp(0.9rem, 1.8vw, 1.25rem);
+  left: clamp(1rem, 2.5vw, 1.65rem);
+  z-index: 3;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.48rem 0.84rem 0.38rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(112deg, rgba(255, 250, 242, 0.96), rgba(255, 176, 143, 0.2)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.13rem 0.2rem 0 rgba(216, 197, 236, 0.14),
+    0 0.56rem 1.05rem rgba(47, 38, 35, 0.105);
+  clip-path: polygon(2% 12%, 22% 2%, 58% 7%, 98% 0, 93% 88%, 64% 100%, 31% 92%, 0 98%);
+  font-family: var(--font-hand);
+  font-size: clamp(0.56rem, 0.8vw, 0.68rem);
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-0.85deg);
+  pointer-events: none;
+}
+
+.notes-post-sheet::after {
+  position: absolute;
+  content: "";
+  inset: clamp(1.05rem, 2vw, 1.5rem) clamp(0.75rem, 1.8vw, 1.2rem) clamp(0.75rem, 1.8vw, 1.15rem);
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(58, 45, 42, 0.08), transparent 10% 90%, rgba(58, 45, 42, 0.05)),
+    repeating-linear-gradient(180deg, transparent 0 2.35rem, rgba(185, 201, 175, 0.16) 2.36rem 2.42rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.42), rgba(248, 237, 219, 0.18));
+  clip-path: polygon(1% 0, 22% 1.2%, 52% 0.2%, 81% 1.5%, 100% 0.4%, 99% 98%, 71% 99%, 42% 98%, 16% 100%, 0 97.8%);
+  pointer-events: none;
+}
+
+.notes-post-kicker,
+.notes-post-subtitle {
+  position: relative;
+  z-index: 1;
+}
+
+.notes-post-kicker {
+  display: inline-grid;
+  width: max-content;
+  max-width: 100%;
+  margin-bottom: 0.6rem;
+  padding: 0.38rem 0.72rem 0.32rem;
+  background:
+    linear-gradient(108deg, rgba(255, 250, 242, 0.92), rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow: 0 0.45rem 0.9rem rgba(47, 38, 35, 0.075);
+  clip-path: polygon(2% 9%, 33% 0, 69% 8%, 99% 1%, 94% 91%, 58% 100%, 22% 91%, 0 99%);
+}
+
+.notes-post-subtitle {
+  margin-top: 0.72rem;
+  padding: clamp(0.85rem, 1.7vw, 1.05rem) clamp(0.95rem, 2vw, 1.2rem);
+  background:
+    linear-gradient(122deg, rgba(255, 250, 242, 0.72), rgba(255, 176, 143, 0.13)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.16rem 0.18rem 0 rgba(255, 250, 242, 0.45),
+    0 0.55rem 1rem rgba(47, 38, 35, 0.06);
+  clip-path: polygon(1% 5%, 24% 0, 55% 3%, 99% 1%, 97% 93%, 70% 100%, 34% 96%, 0 99%);
+}
+
+.notes-post-markdown {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(2rem, 4vw, 2.7rem);
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) clamp(1.4rem, 3vw, 2rem);
+  background:
+    linear-gradient(90deg, rgba(58, 45, 42, 0.06), transparent 9% 92%, rgba(58, 45, 42, 0.035)),
+    repeating-linear-gradient(180deg, transparent 0 2.25rem, rgba(185, 201, 175, 0.13) 2.26rem 2.32rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.32), rgba(248, 237, 219, 0.24)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 20rem 20rem;
+  box-shadow:
+    inset 0.24rem 0 0 rgba(255, 176, 143, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 0.5rem 1.1rem rgba(47, 38, 35, 0.055);
+  clip-path: polygon(0.6% 0.8%, 22% 0, 50% 0.9%, 78% 0, 99.4% 0.9%, 98.8% 99%, 77% 98.2%, 51% 99.2%, 23% 98%, 0 99.1%);
+}
+
+.notes-post-markdown::before {
+  position: absolute;
+  content: "reader copy";
+  top: -0.92rem;
+  right: clamp(0.9rem, 2vw, 1.25rem);
+  z-index: 2;
+  padding: 0.38rem 0.72rem 0.32rem;
+  color: rgba(58, 45, 42, 0.66);
+  background:
+    linear-gradient(110deg, rgba(255, 250, 242, 0.94), rgba(216, 197, 236, 0.18)),
+    var(--grain-image);
+  background-size: cover, 15rem 15rem;
+  box-shadow: 0 0.46rem 0.85rem rgba(47, 38, 35, 0.08);
+  clip-path: polygon(2% 13%, 28% 1%, 64% 8%, 98% 0, 94% 90%, 58% 100%, 23% 91%, 0 99%);
+  font-family: var(--font-hand);
+  font-size: clamp(0.54rem, 0.78vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(0.9deg);
+  pointer-events: none;
+}
+
 @media (max-width: 760px) {
   .notes-post-room::before {
     inset-inline: 0.08rem;
@@ -186,7 +319,8 @@
 
   .notes-post-desk::before,
   .notes-post-path-shelf::before,
-  .notes-post-support-board::after {
+  .notes-post-support-board::after,
+  .notes-post-sheet::before {
     position: relative;
     inset: auto;
     display: inline-grid;
@@ -194,13 +328,28 @@
     transform: rotate(-0.4deg);
   }
 
-  .notes-post-desk::after {
+  .notes-post-desk::after,
+  .notes-post-sheet::after {
     display: none;
   }
 
   .notes-post-path-shelf,
   .notes-post-support-board {
     padding-top: 0.6rem;
+  }
+
+  .notes-post-sheet {
+    padding-top: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  .notes-post-markdown {
+    margin-top: 1.7rem;
+    padding-inline: clamp(0.9rem, 4vw, 1.1rem);
+  }
+
+  .notes-post-markdown::before {
+    top: -0.78rem;
+    right: 0.65rem;
   }
 
   .notes-post-path-shelf::after,
@@ -212,7 +361,9 @@
 @media (prefers-reduced-motion: reduce) {
   .notes-post-desk::before,
   .notes-post-path-shelf::before,
-  .notes-post-support-board::after {
+  .notes-post-support-board::after,
+  .notes-post-sheet::before,
+  .notes-post-markdown::before {
     transform: none;
   }
 }

@@ -21,11 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      VISUAL_TOUR_WEBHOOK_URL: ${{ secrets.VISUAL_TOUR_WEBHOOK_URL }}
-      VISUAL_TOUR_WEBHOOK_TOKEN: ${{ secrets.VISUAL_TOUR_WEBHOOK_TOKEN }}
-      VISUAL_TOUR_WEBHOOK_SEND_FILES: ${{ vars.VISUAL_TOUR_WEBHOOK_SEND_FILES }}
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      DISCORD_SEND_VIDEOS: ${{ vars.DISCORD_SEND_VIDEOS }}
       DISCORD_VIDEO_MAX_MB: ${{ vars.DISCORD_VIDEO_MAX_MB }}
 
     steps:
@@ -54,7 +50,6 @@ jobs:
       - name: Serve built Website locally
         run: |
           npx serve out -l 4173 > /tmp/soft-strange-website-serve.log 2>&1 &
-          echo $! > /tmp/soft-strange-website-serve.pid
           for attempt in {1..45}; do
             if curl -fsS http://127.0.0.1:4173/Website/ > /dev/null; then
               echo "Local Website is ready."
@@ -62,44 +57,19 @@ jobs:
             fi
             sleep 1
           done
-          echo "Local Website did not become ready."
           cat /tmp/soft-strange-website-serve.log || true
           exit 1
 
-      - name: Fetch SoftStrange Website Auditor
+      - name: Fetch SoftStrange visual tools
         env:
           DEFAULT_AUDITOR_URL: https://cdn.jsdelivr.net/gh/angelberger09/Software@main/packages/SoftStrange-WebsiteAuditor/bin/SoftStrange-WebsiteAuditor.mjs
+          DEFAULT_REPORTER_URL: https://cdn.jsdelivr.net/gh/angelberger09/Software@main/packages/SoftStrange-WorkflowReporter/bin/SoftStrange-WorkflowReporter.mjs
           SOFTSTRANGE_AUDITOR_URL: ${{ vars.SOFTSTRANGE_AUDITOR_URL }}
+          SOFTSTRANGE_REPORTER_URL: ${{ vars.SOFTSTRANGE_REPORTER_URL }}
         run: |
           mkdir -p .agent/tools .agent/feedback/workflow-packets
-          AUDITOR_URL="${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}"
-          echo "Fetching SoftStrange-WebsiteAuditor from $AUDITOR_URL"
-          if curl -fsSL "$AUDITOR_URL" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs; then
-            node .agent/tools/SoftStrange-WebsiteAuditor.mjs --help
-            exit 0
-          fi
-          STAMP=$(date -u +'%Y-%m-%dT%H-%M-%SZ')
-          PACKET=".agent/feedback/workflow-packets/${STAMP}-visual-tour-auditor-fetch-failure.md"
-          echo "# Visual Tour Auditor Fetch Failure" > "$PACKET"
-          echo "" >> "$PACKET"
-          echo "Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> "$PACKET"
-          echo "Workflow: Visual Tour" >> "$PACKET"
-          echo "Run ID: $GITHUB_RUN_ID" >> "$PACKET"
-          echo "Ref: $GITHUB_REF" >> "$PACKET"
-          echo "SHA: $GITHUB_SHA" >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "## Public-safe summary" >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "The visual tour workflow built the Website branch but could not fetch the pinned SoftStrange-WebsiteAuditor ESM entry point." >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "## Likely repair" >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "Confirm that the configured auditor URL is reachable from GitHub Actions. If the Software repo remains private, expose a pinned public release path or configure SOFTSTRANGE_AUDITOR_URL to a reachable ESM file." >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "## Boundary" >> "$PACKET"
-          echo "" >> "$PACKET"
-          echo "No raw logs, credentials, or private context are stored in this packet." >> "$PACKET"
-          exit 1
+          curl -fsSL "${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs
+          curl -fsSL "${SOFTSTRANGE_REPORTER_URL:-$DEFAULT_REPORTER_URL}" -o .agent/tools/SoftStrange-WorkflowReporter.mjs
 
       - name: Render scroll walkthrough and interaction simulation videos
         run: |
@@ -135,167 +105,43 @@ jobs:
             .agent/feedback/workflow-packets/*.md
           if-no-files-found: ignore
 
-      - name: Send Discord visual tour update
-        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' }}
+      - name: Author Discord preview package
+        if: always()
         env:
+          WORKFLOW_STATUS: ${{ job.status }}
           VIDEO_ARTIFACT_URL: ${{ steps.upload_videos.outputs.artifact-url }}
           RECEIPT_ARTIFACT_URL: ${{ steps.upload_receipts.outputs.artifact-url }}
-          JOB_STATUS: ${{ job.status }}
         run: |
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
+          MAX_MB="${DISCORD_VIDEO_MAX_MB:-20}"
+          node .agent/tools/SoftStrange-WorkflowReporter.mjs \
+            --mode visual-tour \
+            --name "Visual Tour" \
+            --status "$WORKFLOW_STATUS" \
+            --summary "Rendered the Website branch with Playwright and prepared a watchable visual receipt." \
+            --details "Scroll walkthrough and interaction simulation videos were generated for review." \
+            --videos .agent/visual-runs/latest/videos \
+            --manifest .agent/visual-runs/latest/manifest.json \
+            --preview-out /tmp/soft-strange-visual-tour-preview.mp4 \
+            --max-mb "$MAX_MB" \
+            --video-artifact-url "$VIDEO_ARTIFACT_URL" \
+            --receipt-artifact-url "$RECEIPT_ARTIFACT_URL" \
+            --message-json /tmp/soft-strange-discord-message.json \
+            --github-env "$GITHUB_ENV"
 
-          manifest_path = Path('.agent/visual-runs/latest/manifest.json')
-          manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
-          artifacts = manifest.get('artifacts', []) if manifest else []
-          videos = [item for item in artifacts if item.get('video')]
-          routes = sorted({item.get('route') for item in artifacts if item.get('route')})
-          viewports = sorted({item.get('viewport') for item in artifacts if item.get('viewport')})
-          sha = os.environ.get('GITHUB_SHA') or ''
-          ref = os.environ.get('GITHUB_REF_NAME') or os.environ.get('GITHUB_REF') or 'unknown ref'
-          status = os.environ.get('JOB_STATUS') or 'unknown'
-          video_url = os.environ.get('VIDEO_ARTIFACT_URL') or 'not available'
-          receipt_url = os.environ.get('RECEIPT_ARTIFACT_URL') or 'not available'
-
-          payload = {
-              'username': 'Soft Strange Website Auditor',
-              'content': f"Visual tour finished for `{ref}` at `{sha[:7] or 'unknown'}` with status **{status}**.",
-              'embeds': [{
-                  'title': 'Soft Strange Studio Website visual receipt',
-                  'description': 'The branch was built locally, rendered with Playwright, scrolled, clicked, and captured as 4fps walkthrough evidence.',
-                  'fields': [
-                      {'name': 'Repository', 'value': os.environ.get('GITHUB_REPOSITORY', 'unknown'), 'inline': True},
-                      {'name': 'Run', 'value': os.environ.get('GITHUB_RUN_ID', 'unknown'), 'inline': True},
-                      {'name': 'Videos created', 'value': str(len(videos)), 'inline': True},
-                      {'name': 'Routes', 'value': ', '.join(routes)[:1024] or 'none', 'inline': False},
-                      {'name': 'Viewports', 'value': ', '.join(viewports) or 'none', 'inline': True},
-                      {'name': 'Video artifact', 'value': video_url, 'inline': False},
-                      {'name': 'Receipts artifact', 'value': receipt_url, 'inline': False}
-                  ],
-                  'footer': {'text': 'SoftStrange-WebsiteAuditor'}
-              }],
-              'allowed_mentions': {'parse': []}
-          }
-          Path('/tmp/soft-strange-discord-payload.json').write_text(json.dumps(payload, indent=2), encoding='utf-8')
-          PY
-          curl --fail --show-error --silent \
-            --request POST \
-            --header "Content-Type: application/json" \
-            --data @/tmp/soft-strange-discord-payload.json \
-            "$DISCORD_WEBHOOK_URL"
-
-      - name: Send Discord video files when enabled
-        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' && env.DISCORD_SEND_VIDEOS == 'true' }}
+      - name: Send Discord preview
+        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' }}
         run: |
-          if ! find .agent/visual-runs/latest -name '*.mp4' -print -quit | grep -q .; then
-            echo "No visual tour MP4 files found to send to Discord."
-            exit 0
-          fi
-          MAX_MB="${DISCORD_VIDEO_MAX_MB:-24}"
-          MAX_BYTES=$((MAX_MB * 1024 * 1024))
-          SENT=0
-          SKIPPED=0
-          while IFS= read -r file; do
-            size=$(wc -c < "$file")
-            name=$(basename "$file")
-            if [ "$size" -gt "$MAX_BYTES" ]; then
-              echo "Skipping $name because it is larger than ${MAX_MB}MB."
-              SKIPPED=$((SKIPPED + 1))
-              continue
-            fi
-            PAYLOAD=$(FILE_NAME="$name" python - <<'PY'
-          import json
-          import os
-          print(json.dumps({
-            'username': 'Soft Strange Website Auditor',
-            'content': f"Visual tour video: {os.environ.get('FILE_NAME')}",
-            'allowed_mentions': {'parse': []}
-          }))
-          PY
-          )
-            curl --fail --show-error --silent \
+          if [ "$SOFTSTRANGE_HAS_DISCORD_PREVIEW" = "true" ] && [ -f "$SOFTSTRANGE_DISCORD_PREVIEW_PATH" ]; then
+            PAYLOAD=$(cat "$SOFTSTRANGE_DISCORD_MESSAGE_JSON")
+            curl --fail --show-error --silent --retry 5 --retry-delay 2 --retry-all-errors \
               --request POST \
               -F "payload_json=$PAYLOAD" \
-              -F "files[0]=@$file" \
-              "$DISCORD_WEBHOOK_URL"
-            SENT=$((SENT + 1))
-          done < <(find .agent/visual-runs/latest -name '*.mp4' | sort)
-          echo "Discord video upload complete. Sent=$SENT Skipped=$SKIPPED"
-
-      - name: Notify generic webhook with visual tour artifact links
-        if: ${{ always() && env.VISUAL_TOUR_WEBHOOK_URL != '' }}
-        env:
-          VIDEO_ARTIFACT_URL: ${{ steps.upload_videos.outputs.artifact-url }}
-          RECEIPT_ARTIFACT_URL: ${{ steps.upload_receipts.outputs.artifact-url }}
-          JOB_STATUS: ${{ job.status }}
-        run: |
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          manifest_path = Path('.agent/visual-runs/latest/manifest.json')
-          manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
-          payload = {
-              'event': 'soft_strange_visual_tour',
-              'status': os.environ.get('JOB_STATUS'),
-              'repository': os.environ.get('GITHUB_REPOSITORY'),
-              'ref': os.environ.get('GITHUB_REF'),
-              'sha': os.environ.get('GITHUB_SHA'),
-              'run_id': os.environ.get('GITHUB_RUN_ID'),
-              'workflow': os.environ.get('GITHUB_WORKFLOW'),
-              'video_artifact_url': os.environ.get('VIDEO_ARTIFACT_URL'),
-              'receipt_artifact_url': os.environ.get('RECEIPT_ARTIFACT_URL'),
-              'manifest': manifest
-          }
-          Path('/tmp/soft-strange-visual-tour-webhook.json').write_text(json.dumps(payload, indent=2), encoding='utf-8')
-          PY
-          if [ -n "$VISUAL_TOUR_WEBHOOK_TOKEN" ]; then
-            curl --fail --show-error --silent \
+              -F "files[0]=@$SOFTSTRANGE_DISCORD_PREVIEW_PATH;type=video/mp4" \
+              "$DISCORD_WEBHOOK_URL" || true
+          else
+            curl --fail --show-error --silent --retry 5 --retry-delay 2 --retry-all-errors \
               --request POST \
               --header "Content-Type: application/json" \
-              --header "Authorization: Bearer $VISUAL_TOUR_WEBHOOK_TOKEN" \
-              --data @/tmp/soft-strange-visual-tour-webhook.json \
-              "$VISUAL_TOUR_WEBHOOK_URL"
-          else
-            curl --fail --show-error --silent \
-              --request POST \
-              --header "Content-Type: application/json" \
-              --data @/tmp/soft-strange-visual-tour-webhook.json \
-              "$VISUAL_TOUR_WEBHOOK_URL"
-          fi
-
-      - name: Send video archive to generic webhook
-        if: ${{ always() && env.VISUAL_TOUR_WEBHOOK_URL != '' && env.VISUAL_TOUR_WEBHOOK_SEND_FILES == 'true' }}
-        run: |
-          if ! find .agent/visual-runs/latest -name '*.mp4' -print -quit | grep -q .; then
-            echo "No visual tour MP4 files found to send."
-            exit 0
-          fi
-          tar -czf /tmp/soft-strange-visual-tour-videos.tgz -C .agent/visual-runs/latest videos
-          if [ -n "$VISUAL_TOUR_WEBHOOK_TOKEN" ]; then
-            curl --fail --show-error --silent \
-              --request POST \
-              --header "Authorization: Bearer $VISUAL_TOUR_WEBHOOK_TOKEN" \
-              -F event=soft_strange_visual_tour_videos \
-              -F repository="$GITHUB_REPOSITORY" \
-              -F ref="$GITHUB_REF" \
-              -F sha="$GITHUB_SHA" \
-              -F run_id="$GITHUB_RUN_ID" \
-              -F manifest=@.agent/visual-runs/latest/manifest.json \
-              -F videos=@/tmp/soft-strange-visual-tour-videos.tgz \
-              "$VISUAL_TOUR_WEBHOOK_URL"
-          else
-            curl --fail --show-error --silent \
-              --request POST \
-              -F event=soft_strange_visual_tour_videos \
-              -F repository="$GITHUB_REPOSITORY" \
-              -F ref="$GITHUB_REF" \
-              -F sha="$GITHUB_SHA" \
-              -F run_id="$GITHUB_RUN_ID" \
-              -F manifest=@.agent/visual-runs/latest/manifest.json \
-              -F videos=@/tmp/soft-strange-visual-tour-videos.tgz \
-              "$VISUAL_TOUR_WEBHOOK_URL"
+              --data @"$SOFTSTRANGE_DISCORD_MESSAGE_JSON" \
+              "$DISCORD_WEBHOOK_URL" || true
           fi

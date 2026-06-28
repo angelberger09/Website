@@ -1,0 +1,195 @@
+/* Store room sequence terminal pass.
+   Binds the late Store proof, gallery, readiness, feed, promise, and return-path
+   surfaces into one calm room sequence without changing copy or implying live products. */
+
+.store-entry-receipts,
+.store-lane-collage,
+.store-visual-board,
+.store-gallery-board,
+.store-checklist-collage,
+.store-availability-board,
+.store-feed-ledger-board,
+.store-promise-board,
+.store-path-photo-board {
+  position: relative;
+  isolation: isolate;
+}
+
+.store-entry-receipts::after,
+.store-lane-collage::after,
+.store-checklist-collage::after,
+.store-availability-board::after,
+.store-feed-ledger-board::after,
+.store-promise-board::after,
+.store-path-photo-board::after {
+  filter: none;
+}
+
+.store-lane-collage,
+.store-visual-board,
+.store-gallery-board,
+.store-checklist-collage,
+.store-availability-board,
+.store-feed-ledger-board,
+.store-promise-board,
+.store-path-photo-board {
+  margin-top: clamp(3.6rem, 8vw, 5.8rem);
+}
+
+.store-entry-receipts::before,
+.store-lane-collage::before,
+.store-visual-board::before,
+.store-gallery-board::before,
+.store-checklist-collage::before,
+.store-availability-board::before,
+.store-feed-ledger-board::before,
+.store-promise-board::before,
+.store-path-photo-board::before {
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.035),
+    0 0.64rem 1.1rem rgba(47, 38, 35, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.44);
+}
+
+.store-visual-board::before,
+.store-gallery-board::before,
+.store-checklist-collage::before,
+.store-availability-board::before,
+.store-feed-ledger-board::before,
+.store-promise-board::before,
+.store-path-photo-board::before {
+  opacity: 0.84;
+}
+
+.store-lane-collage::after,
+.store-visual-board::after,
+.store-gallery-board::after,
+.store-checklist-collage::after,
+.store-availability-board::after,
+.store-feed-ledger-board::after,
+.store-promise-board::after,
+.store-path-photo-board::after {
+  opacity: 0.78;
+  letter-spacing: 0.12em;
+}
+
+.store-lane-piece,
+.store-shot-card,
+.store-gallery-card,
+.store-checklist-note,
+.store-availability-status,
+.store-feed-ledger-card,
+.store-feed-rule-slip,
+.store-promise-note,
+.store-path-photo-card {
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.035),
+    0 0.62rem 1rem rgba(47, 38, 35, 0.078),
+    inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.store-lane-piece__photo,
+.store-shot-card__image,
+.store-gallery-card__image,
+.store-checklist-note__visual,
+.store-availability-status__visual,
+.store-feed-ledger-card__photo,
+.store-promise-note__photo,
+.store-path-photo-card__image {
+  filter: saturate(0.96) contrast(0.98);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.26),
+    inset 0 -1rem 1.6rem rgba(47, 38, 35, 0.035);
+}
+
+.store-feed-ledger-board,
+.store-promise-board,
+.store-path-photo-board {
+  transform: translateZ(0);
+}
+
+.store-feed-ledger-board .store-feed-ledger-grid,
+.store-promise-note-stack,
+.store-path-photo-grid {
+  gap: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.store-feed-rule-slips,
+.store-path-photo-board__intro,
+.store-promise-board__intro {
+  margin-top: clamp(1rem, 2.3vw, 1.45rem);
+}
+
+.store-path-photo-board {
+  margin-bottom: clamp(1.2rem, 3vw, 2.2rem);
+}
+
+@media (min-width: 900px) {
+  .site-shell:has(.store-entry-receipts) {
+    --store-room-thread-x: clamp(1.25rem, 3.4vw, 2.15rem);
+  }
+
+  .site-shell:has(.store-entry-receipts)::before {
+    content: "";
+    position: fixed;
+    top: 7.5rem;
+    bottom: 2.5rem;
+    left: var(--store-room-thread-x);
+    width: 2px;
+    border-left: 2px dashed rgba(83, 57, 35, 0.13);
+    filter: drop-shadow(0.1rem 0.18rem 0.18rem rgba(47, 38, 35, 0.08));
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .site-shell:has(.store-entry-receipts) > section {
+    z-index: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .store-lane-collage,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-checklist-collage,
+  .store-availability-board,
+  .store-feed-ledger-board,
+  .store-promise-board,
+  .store-path-photo-board {
+    margin-top: clamp(2.7rem, 9vw, 3.6rem);
+  }
+
+  .store-lane-piece,
+  .store-shot-card,
+  .store-gallery-card,
+  .store-checklist-note,
+  .store-availability-status,
+  .store-feed-ledger-card,
+  .store-feed-rule-slip,
+  .store-promise-note,
+  .store-path-photo-card {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-lane-collage::before,
+  .store-visual-board::before,
+  .store-gallery-board::before,
+  .store-checklist-collage::before,
+  .store-availability-board::before,
+  .store-feed-ledger-board::before,
+  .store-promise-board::before,
+  .store-path-photo-board::before,
+  .store-lane-collage::after,
+  .store-visual-board::after,
+  .store-gallery-board::after,
+  .store-checklist-collage::after,
+  .store-availability-board::after,
+  .store-feed-ledger-board::after,
+  .store-promise-board::after,
+  .store-path-photo-board::after {
+    transform: none !important;
+    transition: none !important;
+  }
+}

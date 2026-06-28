@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 19:39 ET — Notes reading order thread
+
+See `.agent/changes/2026-06-28-notes-reading-order-thread.md` and `.agent/matrices/notes-reading-order-thread.matrix.md`.
+
 ## 2026-06-28 19:30 ET — Notes post markdown paper
 
 See `.agent/changes/2026-06-28-notes-post-markdown-paper.md` and `.agent/matrices/notes-post-markdown-paper.matrix.md`.

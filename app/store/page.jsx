@@ -39,6 +39,7 @@ const storeGalleryCueLabels = ["Digital files", "Color pages", "Creature goods",
 const storeChecklistCueLabels = ["Story ready", "Preview proof", "Delivery note"];
 const storeAvailabilityCueLabels = ["Preparing room", "Preview room", "Open room"];
 const storeFeedCueLabels = ["Handle", "Name", "Status", "Note", "Preview", "Delivery"];
+const storeFeedRuleLabels = ["Public facts only", "Plans stay offstage", "Honest card"];
 const storePromiseCueLabels = ["Useful before links", "Clear after launch", "Quiet source path"];
 const storePathCueLabels = ["Archive room", "Studio map"];
 const storePathBridgeLabels = ["See public work", "Meet the studio"];
@@ -263,9 +264,14 @@ export default function StorePage() {
             </article>
           ))}
         </div>
-        <ul className="store-feed-rule-tape" aria-label="Future Store shelf rules">
-          {storeFeedRules.map((rule) => <li key={rule}>{rule}</li>)}
-        </ul>
+        <div className="store-feed-rule-tape store-feed-rule-slips" aria-label="Future Store shelf rules">
+          {storeFeedRules.map((rule, index) => (
+            <article className="store-feed-rule-slip" key={rule}>
+              <span className="store-feed-rule-slip__label">{storeFeedRuleLabels[index] ?? "Public rule"}</span>
+              <p>{rule}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="store-editorial-section store-promise-section store-promise-board" aria-labelledby="store-promise-title">

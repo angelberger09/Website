@@ -63,13 +63,18 @@ jobs:
       - name: Fetch SoftStrange visual tools
         env:
           DEFAULT_AUDITOR_URL: https://cdn.jsdelivr.net/gh/angelberger09/Software@main/packages/SoftStrange-WebsiteAuditor/bin/SoftStrange-WebsiteAuditor.mjs
-          DEFAULT_REPORTER_URL: https://cdn.jsdelivr.net/gh/angelberger09/Software@main/packages/SoftStrange-WorkflowReporter/bin/SoftStrange-WorkflowReporter.mjs
+          DEFAULT_REPORTER_URL: https://raw.githubusercontent.com/angelberger09/Software-Live/Development/packages/SoftStrange-WorkflowReporter/bin/SoftStrange-WorkflowReporter.mjs
           SOFTSTRANGE_AUDITOR_URL: ${{ vars.SOFTSTRANGE_AUDITOR_URL }}
           SOFTSTRANGE_REPORTER_URL: ${{ vars.SOFTSTRANGE_REPORTER_URL }}
         run: |
           mkdir -p .agent/tools .agent/feedback/workflow-packets
           curl -fsSL "${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs
-          curl -fsSL "${SOFTSTRANGE_REPORTER_URL:-$DEFAULT_REPORTER_URL}" -o .agent/tools/SoftStrange-WorkflowReporter.mjs
+          if ! curl -fsSL "${SOFTSTRANGE_REPORTER_URL:-$DEFAULT_REPORTER_URL}" -o .agent/tools/SoftStrange-WorkflowReporter.mjs; then
+            echo "Reporter download unavailable; using checked-in fallback."
+            cp .github/tools/SoftStrange-WorkflowReporter.mjs .agent/tools/SoftStrange-WorkflowReporter.mjs
+          fi
+          test -s .agent/tools/SoftStrange-WebsiteAuditor.mjs
+          test -s .agent/tools/SoftStrange-WorkflowReporter.mjs
 
       - name: Render scroll walkthrough and interaction simulation videos
         run: |
@@ -119,7 +124,7 @@ jobs:
             --status "$WORKFLOW_STATUS" \
             --summary "Rendered the Website branch with Playwright and prepared a watchable visual receipt." \
             --details "Scroll walkthrough and interaction simulation videos were generated for review." \
-            --videos .agent/visual-runs/latest/videos \
+            --videos .agent/visual-runs/latest \
             --manifest .agent/visual-runs/latest/manifest.json \
             --preview-out /tmp/soft-strange-visual-tour-preview.mp4 \
             --max-mb "$MAX_MB" \

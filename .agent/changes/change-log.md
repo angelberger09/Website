@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 14:31 ET — Homepage editorial room ledger refinement
+
+See `.agent/changes/2026-06-28-homepage-editorial-room-ledger-refinement.md` and `.agent/matrices/homepage-editorial-room-ledger-refinement.matrix.md`.
+
 ## 2026-06-28 14:19 ET — About contact sheet room docket
 
 See `.agent/changes/2026-06-28-about-contact-sheet-room-docket.md` and `.agent/matrices/about-contact-sheet-room-docket.matrix.md`.

@@ -1,0 +1,120 @@
+/* Shared PageIntro ticket depth pass
+   Goal: make the shared room shelf and room key read as tacked, lifted paper tickets across every public route. */
+
+.page-hero {
+  --page-intro-ticket-shadow: rgba(65, 45, 31, 0.18);
+  --page-intro-ticket-edge: rgba(108, 78, 48, 0.22);
+}
+
+.page-hero__copy {
+  position: relative;
+}
+
+.page-hero__room-shelf {
+  position: relative;
+  overflow: visible;
+  transform: rotate(-0.2deg);
+}
+
+.page-hero__room-shelf::after {
+  content: "bound room path";
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 1.4rem);
+  bottom: -0.74rem;
+  z-index: 2;
+  padding: 0.32rem 0.68rem;
+  border-radius: 0.2rem;
+  color: rgba(58, 45, 42, 0.68);
+  font-size: clamp(0.58rem, 1vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.96), rgba(234, 211, 170, 0.86)),
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.55), transparent 38%);
+  box-shadow:
+    0 0.5rem 0.9rem rgba(65, 45, 31, 0.13),
+    inset 0 0 0 1px rgba(108, 78, 48, 0.13);
+  clip-path: polygon(3% 10%, 98% 0, 94% 92%, 8% 100%, 0 48%);
+  pointer-events: none;
+}
+
+.page-hero__room-shelf > span {
+  position: relative;
+  transform: rotate(var(--ticket-tilt, -0.45deg));
+  transform-origin: center;
+  clip-path: polygon(2% 4%, 98% 0, 100% 92%, 8% 100%, 0 42%);
+}
+
+.page-hero__room-shelf > span:nth-child(even) {
+  --ticket-tilt: 0.42deg;
+}
+
+.page-hero__room-shelf > span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.34rem;
+  z-index: 3;
+  width: 1.45rem;
+  height: 0.54rem;
+  background: linear-gradient(90deg, rgba(236, 207, 149, 0.72), rgba(255, 246, 209, 0.86), rgba(202, 167, 111, 0.66));
+  box-shadow: 0 0.28rem 0.48rem rgba(65, 45, 31, 0.12);
+  transform: translateX(-50%) rotate(-2deg);
+  clip-path: polygon(5% 0, 100% 8%, 92% 100%, 0 84%);
+  pointer-events: none;
+}
+
+.page-hero__room-shelf-photo {
+  clip-path: polygon(4% 7%, 96% 0, 100% 90%, 8% 100%, 0 46%);
+}
+
+.page-hero__room-key {
+  transform: rotate(1.1deg);
+  clip-path: polygon(4% 0, 100% 5%, 96% 94%, 10% 100%, 0 48%);
+}
+
+.page-hero__room-key::after {
+  content: "";
+  position: absolute;
+  right: 0.72rem;
+  top: -0.48rem;
+  width: 2rem;
+  height: 0.72rem;
+  background: linear-gradient(90deg, rgba(238, 210, 154, 0.78), rgba(255, 246, 213, 0.88));
+  box-shadow: 0 0.34rem 0.56rem rgba(65, 45, 31, 0.13);
+  transform: rotate(4deg);
+  clip-path: polygon(0 13%, 100% 0, 91% 100%, 8% 86%);
+  pointer-events: none;
+}
+
+.page-hero__room-key-photo {
+  clip-path: polygon(3% 6%, 96% 0, 100% 88%, 11% 100%, 0 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    0 0.46rem 0.78rem rgba(65, 45, 31, 0.13);
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-shelf {
+    transform: none;
+  }
+
+  .page-hero__room-shelf::after {
+    right: 0.65rem;
+    bottom: -0.64rem;
+  }
+
+  .page-hero__room-shelf > span,
+  .page-hero__room-key {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__room-shelf,
+  .page-hero__room-shelf > span,
+  .page-hero__room-key {
+    transform: none;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 13:21 ET — Store feed rule slip repair
+
+See `.agent/changes/2026-06-28-store-feed-rule-slip-repair.md` and `.agent/matrices/store-feed-rule-slip-repair.matrix.md`.
+
 ## 2026-06-28 13:11 ET — Notes room spine rail
 
 See `.agent/changes/2026-06-28-notes-room-spine-rail.md` and `.agent/matrices/notes-room-spine-rail.matrix.md`.

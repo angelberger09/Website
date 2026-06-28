@@ -99,6 +99,7 @@ import './notes-source-path-thread-pass.css';
 import './notes-source-room-cues-pass.css';
 import './notes-source-compass-docket-pass.css';
 import './notes-source-terminal-budget-pass.css';
+import './notes-state-terminal-budget-pass.css';
 import './notes-shelf-promise-strip-pass.css';
 import './notes-section-spine-labels-pass.css';
 import './notes-room-key-focus-pass.css';
@@ -218,41 +219,10 @@ import './footer-mark-copy-slips-pass.css';
 import './footer-exit-desk-consolidation-pass.css';
 import './about-contact-sheet-exposure-desk-pass.css';
 import './about-contact-sheet-frame-sequence-pass.css';
-import './about-contact-sheet-terminal-focus-pass.css';
-import './notes-post-title-folio-pass.css';
-import './notes-post-title-cue-slip-pass.css';
-import './notes-post-support-ledger-pass.css';
-import './notes-state-tray-spine-pass.css';
-import './notes-state-tray-direct-cues-pass.css';
-import './notes-state-reader-docket-pass.css';
-import './notes-state-terminal-budget-pass.css';
-import './notes-state-direct-cues-pass.css';
-import './notes-state-intro-docket-pass.css';
-import './notes-state-late-terminal-budget-pass.css';
-import './portfolio-feed-public-docket-pass.css';
-import './portfolio-feed-bound-shelf-pass.css';
-import './portfolio-feed-rule-slips-pass.css';
-import './portfolio-feed-receipt-seal-pass.css';
-import './store-feed-shelf-docket-pass.css';
-import './store-feed-boundary-rule-slips-pass.css';
-import './store-feed-receipt-seal-pass.css';
-import './feed-receipt-terminal-budget-pass.css';
-import './home-house-rules-docket-pass.css';
-import './home-house-rules-ledger-pass.css';
-import './home-house-rules-source-slips-pass.css';
-import './late-paper-surface-budget-pass.css';
-import './home-house-rules-terminal-budget-pass.css';
-import './store-gallery-slow-shelf-pass.css';
-import './store-preview-proof-rail-pass.css';
-import './store-proof-gallery-terminal-budget-pass.css';
-import './store-room-sequence-terminal-pass.css';
-import './home-arrival-ticket-terminal-pass.css';
-import './home-arrival-ticket-room-budget-pass.css';
-import './home-room-status-ledger-binding-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A small public studio homepage for Angel Berger.'
+  description: 'A soft and strange studio by Angel Berger.',
 };
 
 export default function RootLayout({ children }) {

@@ -1,0 +1,136 @@
+.about-boundary-ledger-board {
+  overflow: visible;
+  padding-inline-start: clamp(1rem, 3vw, 2.4rem);
+}
+
+.about-boundary-ledger-board::before {
+  left: clamp(-0.35rem, 0.4vw, 0.2rem);
+  top: clamp(1.6rem, 4vw, 3rem);
+  width: clamp(0.62rem, 0.9vw, 0.9rem);
+  height: calc(100% - clamp(3rem, 7vw, 5.2rem));
+  min-height: 13rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(106, 73, 48, 0), rgba(106, 73, 48, 0.34) 12%, rgba(106, 73, 48, 0.25) 88%, rgba(106, 73, 48, 0)),
+    repeating-linear-gradient(180deg, rgba(255, 252, 235, 0.56) 0 0.48rem, rgba(108, 74, 50, 0.16) 0.48rem 0.62rem);
+  box-shadow:
+    0.34rem 0 0.95rem rgba(78, 51, 34, 0.16),
+    inset 0.12rem 0 0 rgba(255, 255, 255, 0.58),
+    inset -0.12rem 0 0 rgba(74, 47, 30, 0.18);
+  clip-path: none;
+  transform: rotate(-0.6deg);
+}
+
+.about-boundary-ledger-heading {
+  position: relative;
+  width: min(100%, 38rem);
+  padding: clamp(1rem, 2.5vw, 1.45rem) clamp(1rem, 3vw, 1.65rem);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 231, 0.98), rgba(238, 219, 184, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 190px 190px;
+  clip-path: polygon(1% 5%, 97% 0, 100% 88%, 4% 100%, 0 18%);
+  box-shadow:
+    0 0.9rem 1.65rem rgba(74, 52, 35, 0.15),
+    inset 0.12rem 0.12rem 0 rgba(255, 255, 255, 0.52);
+  transform: rotate(-0.7deg);
+}
+
+.about-boundary-ledger-heading::after {
+  content: "public edge check";
+  position: absolute;
+  right: clamp(0.8rem, 2.4vw, 1.5rem);
+  top: -0.72rem;
+  padding: 0.36rem 0.72rem;
+  color: rgba(83, 55, 38, 0.82);
+  background:
+    linear-gradient(135deg, rgba(250, 236, 194, 0.98), rgba(230, 197, 146, 0.9)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, 180px 180px;
+  border-radius: 0.16rem 0.26rem 0.2rem 0.18rem;
+  box-shadow: 0 0.42rem 0.9rem rgba(78, 51, 34, 0.14);
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 88%);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-boundary-ledger {
+  position: relative;
+  align-items: stretch;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+  padding-block-start: clamp(0.65rem, 2vw, 1.2rem);
+}
+
+.about-boundary-ledger::before {
+  content: "";
+  position: absolute;
+  left: clamp(-0.6rem, -1vw, -0.2rem);
+  right: clamp(1.3rem, 4vw, 3rem);
+  top: 0.4rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(103, 70, 46, 0.24), rgba(103, 70, 46, 0.08), rgba(103, 70, 46, 0));
+  transform: rotate(-0.5deg);
+  pointer-events: none;
+}
+
+.about-boundary-slip {
+  position: relative;
+  padding-block-start: clamp(1rem, 2vw, 1.25rem);
+  box-shadow:
+    0 1.05rem 1.9rem rgba(72, 50, 34, 0.15),
+    0.18rem 0.18rem 0 rgba(255, 255, 255, 0.36) inset,
+    -0.12rem -0.08rem 0 rgba(97, 65, 42, 0.08) inset;
+}
+
+.about-boundary-slip::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  top: 0.48rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, rgba(103, 69, 46, 0.24) 0 0.42rem, rgba(255, 255, 255, 0.28) 0.42rem 0.72rem);
+  opacity: 0.62;
+}
+
+.about-boundary-slip:nth-child(1) {
+  transform: rotate(-1.1deg) translateY(0.15rem);
+}
+
+.about-boundary-slip:nth-child(2) {
+  transform: rotate(0.8deg) translateY(-0.1rem);
+}
+
+.about-boundary-slip:nth-child(3) {
+  transform: rotate(-0.45deg) translateY(0.25rem);
+}
+
+.about-boundary-slip__mark,
+.about-boundary-slip__cue {
+  border-radius: 0.12rem 0.26rem 0.14rem 0.2rem;
+  clip-path: polygon(3% 4%, 100% 0, 94% 100%, 0 86%);
+  box-shadow: 0 0.28rem 0.68rem rgba(76, 50, 34, 0.12);
+}
+
+@media (max-width: 760px) {
+  .about-boundary-ledger-board {
+    padding-inline-start: 0;
+  }
+
+  .about-boundary-ledger-board::before,
+  .about-boundary-ledger::before {
+    display: none;
+  }
+
+  .about-boundary-ledger-heading {
+    transform: none;
+  }
+
+  .about-boundary-slip:nth-child(n) {
+    transform: none;
+  }
+}

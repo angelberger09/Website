@@ -1,0 +1,138 @@
+/* Notes reader left docket pass.
+   Refines the opening Notes room into a clearer left-docked reading desk without changing Blog data or inventing posts. */
+
+.notes-reader-board {
+  grid-template-columns: minmax(13.5rem, 0.48fr) minmax(0, 1fr);
+  align-items: stretch;
+  padding: clamp(1.1rem, 3vw, 1.7rem);
+  border-radius: 0;
+  clip-path: polygon(0.8% 1.5%, 24% 0.4%, 52% 1.2%, 98.6% 0.8%, 97.4% 96.5%, 72% 98.4%, 38% 97.2%, 1.4% 99%);
+  background:
+    linear-gradient(104deg, rgba(255, 252, 244, 0.78), rgba(240, 225, 199, 0.44)),
+    radial-gradient(circle at 11% 15%, rgba(255, 176, 143, 0.14), transparent 30%),
+    radial-gradient(circle at 88% 78%, rgba(185, 201, 175, 0.16), transparent 34%),
+    var(--grain-image);
+  background-size: cover, cover, cover, 22rem 22rem;
+  box-shadow:
+    0.32rem 0.46rem 0 rgba(68, 49, 34, 0.055),
+    0 1.45rem 2.7rem rgba(58, 43, 32, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.notes-reader-board::after {
+  content: "reader path";
+  position: absolute;
+  top: clamp(1.05rem, 2.4vw, 1.55rem);
+  left: clamp(0.9rem, 2.4vw, 1.35rem);
+  z-index: 3;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.42rem 0.72rem 0.35rem;
+  color: rgba(76, 55, 38, 0.76);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  clip-path: polygon(3% 6%, 98% 0, 94% 92%, 0 100%);
+  background:
+    linear-gradient(118deg, rgba(255, 248, 229, 0.94), rgba(231, 211, 177, 0.9)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(68, 49, 34, 0.055),
+    0 0.42rem 0.8rem rgba(68, 49, 34, 0.11);
+  transform: rotate(-0.45deg);
+}
+
+.notes-reader-board__copy {
+  position: relative;
+  align-content: start;
+  padding: clamp(3rem, 5vw, 3.55rem) clamp(0.85rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.25rem);
+  clip-path: polygon(2% 0, 98% 1.5%, 96.5% 96%, 6% 100%, 0 55%);
+  background:
+    linear-gradient(150deg, rgba(255, 252, 246, 0.94), rgba(238, 224, 199, 0.78)),
+    repeating-linear-gradient(90deg, rgba(76, 55, 38, 0.032) 0 1px, transparent 1px 12px);
+  box-shadow:
+    0.16rem 0.24rem 0 rgba(68, 49, 34, 0.055),
+    0 0.72rem 1.25rem rgba(68, 49, 34, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.notes-reader-board__copy::after {
+  content: "";
+  position: absolute;
+  top: 0.76rem;
+  right: clamp(0.7rem, 1.8vw, 1rem);
+  width: min(5.2rem, 34%);
+  height: 0.42rem;
+  clip-path: polygon(2% 0, 100% 8%, 96% 94%, 0 100%);
+  background: rgba(190, 157, 107, 0.24);
+  box-shadow: 0 0.16rem 0.34rem rgba(70, 50, 34, 0.08);
+}
+
+.notes-reader-board__copy > p:not(.eyebrow):not(.reader-state):not(.source-note) {
+  max-width: 26rem;
+}
+
+.notes-source-stamp,
+.reader-state {
+  justify-self: start;
+  max-width: 27rem;
+  transform: rotate(-0.35deg);
+}
+
+.notes-paper-stack {
+  align-self: stretch;
+  padding: clamp(0.35rem, 1vw, 0.55rem);
+}
+
+.notes-paper-stack::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.2rem, 1vw, 0.42rem) clamp(0.1rem, 1vw, 0.3rem) auto;
+  height: 1px;
+  z-index: 0;
+  background: repeating-linear-gradient(90deg, rgba(104, 75, 50, 0.28) 0 0.7rem, transparent 0.7rem 1.18rem);
+  opacity: 0.64;
+  transform: rotate(0.24deg);
+}
+
+.notes-note-card {
+  z-index: 1;
+  box-shadow:
+    0.22rem 0.34rem 0 rgba(68, 49, 34, 0.07),
+    0 1rem 1.85rem rgba(58, 43, 32, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+.notes-note-card__photo {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 244, 0.46),
+    0 0.55rem 0.9rem rgba(58, 43, 32, 0.12);
+}
+
+@media (max-width: 860px) {
+  .notes-reader-board {
+    grid-template-columns: 1fr;
+    padding: clamp(0.95rem, 4vw, 1.25rem);
+    clip-path: polygon(0 0.8%, 100% 0, 98.5% 99%, 2% 100%);
+  }
+
+  .notes-reader-board__copy {
+    padding-top: 3rem;
+  }
+
+  .notes-paper-stack::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-reader-board::after,
+  .notes-source-stamp,
+  .reader-state {
+    transform: none;
+  }
+}

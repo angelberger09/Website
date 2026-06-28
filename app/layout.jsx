@@ -30,6 +30,7 @@ import './about-principle-promise-trail-pass.css';
 import './about-principles-docket-pass.css';
 import './about-principles-terminal-budget-pass.css';
 import './about-text-slip-pass.css';
+import './about-boundary-ledger-pass.css';
 import './about-direct-room-labels-pass.css';
 import './about-pathway-photo-pass.css';
 import './about-exit-shelf-pass.css';
@@ -218,12 +219,10 @@ import './global-metadata-paper-snippets-pass.css';
 import './reader-state-paper-scraps-pass.css';
 import './list-paper-scraps-pass.css';
 import './section-intro-copy-slips-pass.css';
-import './pathway-link-paper-trail-pass.css';
-import './home-path-ledger-focus-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A public studio home for Angel Berger, with notes, portfolio paths, and future shop links.'
+  description: 'A soft public studio home for Angel Berger.'
 };
 
 export default function RootLayout({ children }) {

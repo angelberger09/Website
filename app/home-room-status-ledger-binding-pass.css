@@ -1,0 +1,147 @@
+/* Homepage room-status ledger binding pass.
+   Binds the Current rooms board into one calm public status ledger instead of neighboring status cards. */
+
+.home-room-status {
+  position: relative;
+}
+
+.home-room-status::before {
+  position: absolute;
+  inset: clamp(1.25rem, 3vw, 2rem) auto auto max(0.8rem, calc((100vw - 1120px) / 2));
+  z-index: 0;
+  width: clamp(5.5rem, 12vw, 8.5rem);
+  height: clamp(68%, 24vw, 82%);
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.42), rgba(185, 201, 175, 0.13)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(12% 0, 93% 3%, 100% 92%, 74% 100%, 0 95%, 5% 11%);
+  box-shadow: 0.28rem 0.52rem 1.2rem rgba(47, 38, 35, 0.08);
+  opacity: 0.72;
+  transform: rotate(-1.6deg);
+}
+
+.home-room-status .home-room-board {
+  position: relative;
+  border: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 176, 143, 0.14), transparent 28%),
+    radial-gradient(circle at 88% 80%, rgba(216, 197, 236, 0.13), transparent 30%),
+    linear-gradient(112deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.63) 62%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 19rem 19rem;
+  clip-path: polygon(1% 3%, 17% 0, 42% 1.4%, 67% 0.4%, 99% 2%, 98% 96%, 75% 99%, 49% 97.8%, 21% 100%, 0 96%);
+  box-shadow:
+    0.42rem 0.72rem 0 rgba(47, 38, 35, 0.055),
+    0 1.45rem 2.8rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.home-room-status .home-room-board::before {
+  content: "room status\Aledger";
+  color: rgba(58, 45, 42, 0.82);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.76) 58%, rgba(255, 176, 143, 0.2)),
+    var(--grain-image);
+  background-size: cover, 14rem 14rem;
+  box-shadow:
+    0.18rem 0.32rem 0 rgba(47, 38, 35, 0.07),
+    0 0.74rem 1.2rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.home-room-status .home-room-board::after {
+  height: 100%;
+  inset: 0 auto 0 clamp(7.8rem, 14.7vw, 10.6rem);
+  width: 0.16rem;
+  border-top: 0;
+  border-left: 1px dashed rgba(88, 68, 50, 0.28);
+  background: linear-gradient(180deg, transparent, rgba(88, 68, 50, 0.11), transparent);
+  transform: none;
+}
+
+.home-room-status .home-room-slip {
+  position: relative;
+  min-height: clamp(18.5rem, 26vw, 22rem);
+  border: 0;
+  background:
+    linear-gradient(150deg, rgba(255, 252, 246, 0.96), rgba(255, 247, 235, 0.78)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
+  box-shadow:
+    0.16rem 0.28rem 0 rgba(47, 38, 35, 0.06),
+    0 0.78rem 1.28rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.home-room-status .home-room-slip::after {
+  position: absolute;
+  top: -0.52rem;
+  left: clamp(1rem, 2.4vw, 1.35rem);
+  z-index: 3;
+  width: clamp(3.7rem, 8vw, 5.2rem);
+  height: 0.72rem;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 252, 246, 0.6), rgba(255, 176, 143, 0.22)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow: 0 0.2rem 0.38rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(3% 12%, 97% 0, 100% 82%, 8% 100%);
+  transform: rotate(-2.4deg);
+}
+
+.home-room-status .home-room-slip__image {
+  min-height: clamp(6.9rem, 15vw, 9.4rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.22),
+    0 0.36rem 0.72rem rgba(47, 38, 35, 0.08);
+}
+
+.home-room-status .home-room-slip__status,
+.home-room-status .home-room-slip__eyebrow {
+  position: relative;
+  z-index: 2;
+}
+
+.home-room-status .home-room-slip h2 {
+  max-width: 10ch;
+}
+
+@media (max-width: 1100px) {
+  .home-room-status::before {
+    inset-inline-start: clamp(0.7rem, 2.5vw, 1rem);
+    height: clamp(5.2rem, 12vw, 7rem);
+    width: clamp(10rem, 34vw, 16rem);
+  }
+
+  .home-room-status .home-room-board {
+    clip-path: polygon(2% 1%, 96% 0, 99% 97%, 75% 100%, 46% 98%, 3% 100%, 0 8%);
+  }
+
+  .home-room-status .home-room-board::after {
+    inset: clamp(4.15rem, 7vw, 5rem) clamp(1.1rem, 4vw, 2rem) auto;
+    width: auto;
+    height: 0.12rem;
+    border-left: 0;
+    border-top: 1px dashed rgba(88, 68, 50, 0.25);
+  }
+}
+
+@media (max-width: 680px) {
+  .home-room-status::before {
+    display: none;
+  }
+
+  .home-room-status .home-room-board {
+    padding-inline: 0.62rem;
+    clip-path: polygon(2% 0, 98% 1%, 100% 98%, 49% 100%, 0 97%);
+  }
+
+  .home-room-status .home-room-slip {
+    min-height: auto;
+  }
+}

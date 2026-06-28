@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 17:10 ET — PageIntro room key ticket load
+
+See `.agent/changes/2026-06-28-page-intro-room-key-ticket-load.md` and `.agent/matrices/page-intro-room-key-ticket-load.matrix.md`.
+
 ## 2026-06-28 16:49 ET — Section intro copy slips load
 
 See `.agent/changes/2026-06-28-section-intro-copy-slips-load.md` and `.agent/matrices/section-intro-copy-slips-load.matrix.md`.

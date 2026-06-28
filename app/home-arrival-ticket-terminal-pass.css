@@ -1,0 +1,126 @@
+/* Homepage arrival ticket terminal pass.
+   Binds the first-screen arrival cues into one small front-door paper receipt so
+   the opening path reads as intentional orientation instead of loose UI chips. */
+
+.home-arrival-ticket {
+  isolation: isolate;
+  align-items: stretch;
+  gap: 0;
+  width: min(100%, 30.5rem);
+  padding: 0.32rem;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.68) 62%, rgba(185, 201, 175, 0.2)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.05),
+    0 0.7rem 1.1rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  clip-path: polygon(1% 12%, 10% 4%, 37% 7%, 66% 2%, 98% 10%, 100% 82%, 91% 98%, 58% 93%, 28% 99%, 0 88%);
+}
+
+.home-arrival-ticket::before {
+  content: "front-door receipt";
+  position: absolute;
+  z-index: 2;
+  top: -0.72rem;
+  left: clamp(0.62rem, 2vw, 1rem);
+  padding: 0.28rem 0.52rem 0.24rem;
+  color: rgba(58, 45, 42, 0.68);
+  font-family: var(--font-body);
+  font-size: clamp(0.56rem, 0.78vw, 0.62rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(125deg, rgba(255, 252, 246, 0.94), rgba(216, 197, 236, 0.24)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow: 0 0.28rem 0.48rem rgba(47, 38, 35, 0.08);
+  clip-path: polygon(5% 0, 100% 8%, 94% 100%, 0 91%);
+  transform: rotate(-0.75deg);
+}
+
+.home-arrival-ticket::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0.7rem;
+  right: 0.7rem;
+  top: 50%;
+  border-top: 1px dashed rgba(88, 68, 50, 0.2);
+  transform: translateY(-50%) rotate(-0.18deg);
+  pointer-events: none;
+}
+
+.home-arrival-ticket span {
+  position: relative;
+  z-index: 2;
+  min-height: 2.16rem;
+  padding-inline: clamp(0.62rem, 1.4vw, 0.82rem);
+  color: rgba(58, 45, 42, 0.78);
+  background: transparent;
+  box-shadow: none;
+  clip-path: none;
+}
+
+.home-arrival-ticket span + span {
+  border-left: 1px dashed rgba(88, 68, 50, 0.2);
+}
+
+.home-arrival-ticket span:nth-child(2),
+.home-arrival-ticket span:nth-child(3) {
+  transform: none;
+}
+
+.home-arrival-ticket span::before {
+  content: "";
+  position: absolute;
+  inset: 0.25rem 0.2rem;
+  z-index: -1;
+  background: rgba(255, 252, 246, 0.38);
+  clip-path: polygon(4% 11%, 96% 2%, 100% 82%, 91% 97%, 7% 93%, 0 23%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-arrival-ticket,
+  .home-arrival-ticket::before,
+  .home-arrival-ticket::after,
+  .home-arrival-ticket span {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-arrival-ticket {
+    width: min(100%, 24rem);
+    margin-top: 1rem;
+    padding: 0.26rem;
+  }
+
+  .home-arrival-ticket::before {
+    top: -0.62rem;
+    left: 0.58rem;
+  }
+
+  .home-arrival-ticket span {
+    min-height: 1.9rem;
+    padding-inline: 0.48rem;
+    font-size: 0.61rem;
+    letter-spacing: 0.095em;
+  }
+}
+
+@media (max-width: 460px) {
+  .home-arrival-ticket {
+    display: grid;
+    gap: 0.16rem;
+  }
+
+  .home-arrival-ticket::after,
+  .home-arrival-ticket span + span {
+    border-left: 0;
+    border-top: 1px dashed rgba(88, 68, 50, 0.18);
+  }
+}

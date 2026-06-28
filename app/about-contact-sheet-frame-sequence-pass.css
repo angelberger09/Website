@@ -1,10 +1,10 @@
-/* About contact sheet frame-sequence pass.
-   Makes the existing exposure desk read as one numbered contact-sheet path without
-   changing copy, routes, data, or inventing images. */
+/* About contact sheet direct-cue pass.
+   Keeps the exposure desk as one readable contact-sheet path while replacing
+   decorative frame numbering with direct named paper cues from the public About room. */
 
 .about-paper-room .about-contact-sheet {
   position: relative;
-  counter-reset: about-frame-sequence;
+  counter-reset: none;
   padding-top: clamp(1.35rem, 2vw, 1.65rem);
 }
 
@@ -32,11 +32,33 @@
 }
 
 .about-paper-room .about-contact-card {
-  counter-increment: about-frame-sequence;
+  counter-increment: none;
 }
 
 .about-paper-room .about-contact-card::after {
-  content: "frame " counter(about-frame-sequence, decimal-leading-zero);
+  content: "soft frame";
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.96), rgba(185, 201, 175, 0.24)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  color: rgba(58, 45, 42, 0.72);
+  letter-spacing: 0.12em;
+}
+
+.about-paper-room .about-contact-card:nth-child(1)::after {
+  content: "front room";
+}
+
+.about-paper-room .about-contact-card:nth-child(2)::after {
+  content: "tone cue";
+}
+
+.about-paper-room .about-contact-card:nth-child(3)::after {
+  content: "soft edge";
+}
+
+.about-paper-room .about-contact-card:nth-child(4)::after {
+  content: "gentle motion";
 }
 
 .about-paper-room .about-contact-card__image {
@@ -74,9 +96,24 @@
 .about-paper-room .about-contact-card__tags small:first-child::after {
   display: inline-block;
   margin-left: 0.38rem;
-  content: counter(about-frame-sequence, decimal-leading-zero);
   color: rgba(58, 45, 42, 0.58);
   font-weight: 900;
+}
+
+.about-paper-room .about-contact-card:nth-child(1) .about-contact-card__tags small:first-child::after {
+  content: "front";
+}
+
+.about-paper-room .about-contact-card:nth-child(2) .about-contact-card__tags small:first-child::after {
+  content: "tone";
+}
+
+.about-paper-room .about-contact-card:nth-child(3) .about-contact-card__tags small:first-child::after {
+  content: "edge";
+}
+
+.about-paper-room .about-contact-card:nth-child(4) .about-contact-card__tags small:first-child::after {
+  content: "motion";
 }
 
 @media (max-width: 760px) {

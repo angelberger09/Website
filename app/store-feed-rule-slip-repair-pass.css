@@ -1,0 +1,96 @@
+/* Store feed rule slip repair pass. The Store feed rules render as article.store-feed-rule-slip, so this pass applies the intended paper-slip treatment directly to the rendered elements. */
+
+.store-feed-rule-slips {
+  align-items: stretch;
+}
+
+.store-feed-rule-slip {
+  position: relative;
+  display: grid;
+  align-content: start;
+  min-height: 7.6rem;
+  margin: 0;
+  padding: 1.55rem 0.78rem 0.78rem;
+  clip-path: polygon(2% 8%, 31% 1%, 68% 5%, 98.5% 2%, 97% 38%, 99% 96%, 74% 98%, 39% 94%, 1% 99%);
+  background:
+    linear-gradient(138deg, rgba(255, 252, 246, 0.97), rgba(255, 247, 235, 0.66) 65%, rgba(245, 224, 198, 0.38)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 14rem 14rem, 30rem 30rem;
+  box-shadow:
+    -0.08rem 0.14rem 0 rgba(47, 38, 35, 0.055),
+    0.3rem 0.58rem 1rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  color: rgba(47, 38, 35, 0.78);
+  font-size: clamp(0.86rem, 1.5vw, 0.98rem);
+  line-height: 1.48;
+}
+
+.store-feed-rule-slip::before {
+  position: absolute;
+  top: 0.46rem;
+  left: 0.58rem;
+  width: fit-content;
+  padding: 0.28rem 0.42rem 0.24rem;
+  content: attr(aria-label);
+  clip-path: polygon(1% 16%, 34% 0, 72% 8%, 100% 2%, 96% 88%, 61% 100%, 27% 92%, 0 100%);
+  background: rgba(185, 201, 175, 0.24);
+  color: rgba(87, 72, 58, 0.72);
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.store-feed-rule-slip::after {
+  position: absolute;
+  top: 0.42rem;
+  right: 0.72rem;
+  width: 2rem;
+  height: 0.46rem;
+  content: "";
+  clip-path: polygon(0 23%, 18% 0, 73% 8%, 100% 26%, 94% 100%, 7% 86%);
+  background: rgba(255, 246, 218, 0.58);
+  box-shadow: 0 0.13rem 0.3rem rgba(47, 38, 35, 0.08);
+  transform: rotate(1.4deg);
+}
+
+.store-feed-rule-slip__label {
+  width: fit-content;
+  margin-bottom: 0.44rem;
+  padding: 0.34rem 0.48rem 0.3rem;
+  clip-path: polygon(0 12%, 28% 2%, 66% 8%, 100% 0, 98% 90%, 64% 100%, 28% 94%, 1% 100%);
+  background: rgba(255, 252, 246, 0.74);
+  color: rgba(87, 72, 58, 0.78);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.store-feed-rule-slip p {
+  margin: 0;
+}
+
+.store-feed-rule-slip:nth-child(odd) {
+  transform: rotate(-0.55deg) translateY(0.08rem);
+}
+
+.store-feed-rule-slip:nth-child(even) {
+  transform: rotate(0.48deg) translateY(-0.04rem);
+}
+
+.store-feed-rule-slip:nth-child(3n) {
+  transform: rotate(0.22deg) translateY(0.16rem);
+}
+
+@media (max-width: 760px) {
+  .store-feed-rule-slip,
+  .store-feed-rule-slip:nth-child(odd),
+  .store-feed-rule-slip:nth-child(even),
+  .store-feed-rule-slip:nth-child(3n) {
+    transform: none;
+  }
+}

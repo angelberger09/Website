@@ -1,0 +1,103 @@
+/* Homepage hero wordless entry pass.
+   Angel asked to get rid of hero wording. Keep an accessible page title for screen readers,
+   but remove the visible poster copy and let the first screen act as a quiet room-choice entry. */
+
+.home-hero-sr {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.scroll-title--quiet {
+  display: grid !important;
+  min-height: auto !important;
+  min-block-size: auto !important;
+  place-items: start center !important;
+  padding: clamp(5rem, 8svh, 6.25rem) max(1rem, 8vw) clamp(1.15rem, 3svh, 2rem) !important;
+}
+
+.scroll-title--quiet .title-lockup--entry-only {
+  position: relative !important;
+  top: auto !important;
+  display: block !important;
+  width: min(100%, 43rem) !important;
+  max-height: none !important;
+  padding: clamp(0.7rem, 1.35vw, 1rem) !important;
+  animation: none !important;
+  transform: rotate(-0.25deg) !important;
+}
+
+.scroll-title--quiet .title-lockup--entry-only::before {
+  clip-path: polygon(0.7% 3%, 99% 0.7%, 98.2% 96.5%, 1.4% 99%) !important;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.065),
+    0 0.66rem 1.25rem rgba(47, 38, 35, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58) !important;
+}
+
+.scroll-title--quiet .title-lockup--entry-only::after {
+  opacity: 0.18 !important;
+}
+
+.scroll-title--quiet .home-hero-contact-sheet {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: clamp(0.46rem, 0.9vw, 0.68rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-strip__links {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(0.32rem, 0.7vw, 0.52rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip {
+  min-width: 0 !important;
+  padding: 0.28rem 0.3rem 0.4rem !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__preview {
+  min-height: clamp(2.75rem, 4.2vw, 3.8rem) !important;
+  padding: 0.36rem !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__preview span,
+.scroll-title--quiet .home-hero-route-slip__copy span {
+  font-size: 0.56rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__preview strong {
+  font-size: clamp(0.84rem, 1.35vw, 1.08rem) !important;
+  line-height: 0.95 !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__copy strong {
+  font-size: clamp(0.7rem, 1vw, 0.84rem) !important;
+}
+
+.scroll-title--quiet .home-hero-route-slip__copy small {
+  font-size: 0.62rem !important;
+  padding: 0.16rem 0.28rem !important;
+}
+
+@media (max-width: 760px) {
+  .scroll-title--quiet {
+    padding: 5.65rem 1rem 1.65rem !important;
+  }
+
+  .scroll-title--quiet .title-lockup--entry-only {
+    width: min(100%, 25rem) !important;
+    padding: 0.72rem !important;
+  }
+
+  .scroll-title--quiet .home-hero-route-strip__links {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

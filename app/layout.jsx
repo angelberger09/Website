@@ -4,6 +4,7 @@ import './typography.css';
 import './paper-card-pass.css';
 import './paper-header-pass.css';
 import './header-paper-tabs-pass.css';
+import './header-active-room-pass.css';
 import './root-paper-pass.css';
 import './home-paper-collage-pass.css';
 import './home-highlight-photo-pass.css';

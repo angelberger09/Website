@@ -68,7 +68,10 @@ jobs:
           SOFTSTRANGE_REPORTER_URL: ${{ vars.SOFTSTRANGE_REPORTER_URL }}
         run: |
           mkdir -p .agent/tools .agent/feedback/workflow-packets
-          curl -fsSL "${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs
+          if ! curl -fsSL "${SOFTSTRANGE_AUDITOR_URL:-$DEFAULT_AUDITOR_URL}" -o .agent/tools/SoftStrange-WebsiteAuditor.mjs; then
+            echo "Auditor download unavailable; using checked-in fallback."
+            cp .github/tools/SoftStrange-WorkflowReporter.mjs .agent/tools/SoftStrange-WebsiteAuditor.mjs
+          fi
           if ! curl -fsSL "${SOFTSTRANGE_REPORTER_URL:-$DEFAULT_REPORTER_URL}" -o .agent/tools/SoftStrange-WorkflowReporter.mjs; then
             echo "Reporter download unavailable; using checked-in fallback."
             cp .github/tools/SoftStrange-WorkflowReporter.mjs .agent/tools/SoftStrange-WorkflowReporter.mjs

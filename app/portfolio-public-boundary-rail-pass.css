@@ -1,0 +1,91 @@
+.portfolio-feed-board--shelf {
+  counter-reset: portfolio-boundary-rail;
+}
+
+.portfolio-feed-shelf-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(12rem, 0.42fr);
+  gap: clamp(0.9rem, 2vw, 1.35rem);
+  align-items: stretch;
+  padding: clamp(1.15rem, 2.3vw, 1.6rem);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 240, 0.96), rgba(244, 229, 194, 0.9)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 160px 160px;
+  clip-path: polygon(1% 1%, 99% 0, 98% 96%, 2% 100%);
+}
+
+.portfolio-feed-shelf-intro::after {
+  content: "safe to publish" "\A" "honest preview" "\A" "quiet source";
+  white-space: pre-line;
+  align-self: center;
+  justify-self: stretch;
+  padding: clamp(0.78rem, 1.8vw, 1rem) clamp(0.85rem, 2vw, 1.12rem);
+  font-size: clamp(0.68rem, 1.2vw, 0.78rem);
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.95;
+  text-transform: uppercase;
+  color: rgba(74, 54, 36, 0.84);
+  background:
+    linear-gradient(145deg, rgba(251, 244, 221, 0.98), rgba(232, 211, 170, 0.86)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, 180px 180px;
+  box-shadow:
+    0 0.85rem 1.45rem rgba(77, 54, 34, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(4% 0, 100% 6%, 96% 100%, 0 92%);
+  transform: rotate(0.9deg);
+}
+
+.portfolio-feed-shelf-intro h2 {
+  max-width: 18ch;
+}
+
+.portfolio-feed-shelf-intro p:last-child {
+  max-width: 58ch;
+}
+
+.portfolio-feed-shelf-intro + .portfolio-archive-ticket-board {
+  margin-top: clamp(1rem, 2.4vw, 1.45rem);
+  padding-top: clamp(1rem, 2vw, 1.35rem);
+  border-top: 1px dashed rgba(94, 68, 43, 0.24);
+}
+
+.portfolio-feed-shelf-intro + .portfolio-archive-ticket-board::before {
+  content: "archive card path";
+  display: inline-flex;
+  width: max-content;
+  margin: 0 0 clamp(0.75rem, 1.8vw, 1rem) clamp(0.2rem, 1vw, 0.45rem);
+  padding: 0.34rem 0.66rem 0.28rem;
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(74, 54, 36, 0.84);
+  background:
+    linear-gradient(135deg, rgba(255, 251, 235, 0.96), rgba(237, 218, 179, 0.88)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 140px 140px;
+  box-shadow: 0 0.48rem 0.9rem rgba(62, 44, 25, 0.12);
+  clip-path: polygon(3% 0, 100% 8%, 96% 100%, 0 89%);
+  transform: rotate(-0.75deg);
+}
+
+@media (max-width: 760px) {
+  .portfolio-feed-shelf-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-feed-shelf-intro::after {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-feed-shelf-intro::after,
+  .portfolio-feed-shelf-intro + .portfolio-archive-ticket-board::before {
+    transform: none;
+  }
+}

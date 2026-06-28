@@ -45,6 +45,7 @@ import './portfolio-process-direct-labels-pass.css';
 import './portfolio-process-public-thread-pass.css';
 import './portfolio-process-runway-pass.css';
 import './portfolio-state-process-docket-pass.css';
+import './portfolio-process-terminal-budget-pass.css';
 import './portfolio-continuity-photo-pass.css';
 import './portfolio-readiness-photo-pass.css';
 import './portfolio-room-key-pass.css';

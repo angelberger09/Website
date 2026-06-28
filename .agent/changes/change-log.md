@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 19:10 ET — Notes post margin binding
+
+See `.agent/changes/2026-06-28-notes-post-margin-binding.md` and `.agent/matrices/notes-post-margin-binding.matrix.md`.
+
 ## 2026-06-28 18:48 ET — Shared status slip load repair
 
 See `.agent/changes/2026-06-28-shared-status-slip-load-repair.md` and `.agent/matrices/shared-status-slip-load-repair.matrix.md`.
@@ -157,7 +161,3 @@ See `.agent/changes/2026-06-28-visual-tour-webhook.md`.
 ## 2026-06-28 11:24 ET — Visual tour workflow setup
 
 See `.agent/changes/2026-06-28-visual-tour-workflow.md` and `.agent/matrices/visual-tour-workflow.matrix.md`.
-
-## 2026-06-28 11:12 ET — Homepage hero wordless entry refinement
-
-See `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`.

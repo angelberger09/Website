@@ -1,0 +1,197 @@
+/* Store promise terminal trust board pass.
+   Binds the Store promise notes into one calmer public trust board so the section reads as a single staged promise surface instead of neighboring cards. */
+
+.store-promise-board {
+  position: relative;
+  max-width: min(100%, 78rem);
+  padding: clamp(1.25rem, 3vw, 2.1rem) clamp(0.72rem, 2vw, 1.2rem) clamp(1.45rem, 3vw, 2.2rem);
+}
+
+.store-promise-board::before {
+  content: "";
+  position: absolute;
+  inset: 0.2rem -0.45rem 0.35rem;
+  z-index: -1;
+  clip-path: polygon(1% 7%, 18% 2%, 47% 4%, 74% 1.5%, 99% 6%, 97% 90%, 86% 98%, 54% 94%, 18% 98%, 0 91%);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 176, 143, 0.14), transparent 30%),
+    radial-gradient(circle at 86% 74%, rgba(216, 197, 236, 0.16), transparent 34%),
+    linear-gradient(130deg, rgba(255, 252, 246, 0.84), rgba(245, 224, 198, 0.36) 62%, rgba(185, 201, 175, 0.16)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, cover, cover, 20rem 20rem, 28rem 28rem;
+  box-shadow:
+    0.16rem 0.26rem 0 rgba(47, 38, 35, 0.045),
+    0 1.05rem 2.25rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.store-promise-board::after {
+  content: "public trust board";
+  position: absolute;
+  top: clamp(0.5rem, 1.8vw, 0.8rem);
+  right: clamp(1.1rem, 4vw, 3rem);
+  z-index: 2;
+  padding: 0.38rem 0.7rem 0.34rem;
+  clip-path: polygon(3% 12%, 22% 0, 78% 4%, 100% 0, 96% 88%, 72% 100%, 18% 94%, 0 100%);
+  color: rgba(47, 38, 35, 0.62);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  background:
+    linear-gradient(126deg, rgba(255, 252, 246, 0.92), rgba(255, 246, 218, 0.78)),
+    var(--grain-image);
+  background-size: cover, 12rem 12rem;
+  box-shadow: 0.16rem 0.28rem 0.62rem rgba(47, 38, 35, 0.14);
+  transform: rotate(0.75deg);
+}
+
+.store-promise-board__intro {
+  position: relative;
+  max-width: min(100%, 45rem);
+  margin-inline: clamp(0.15rem, 1.2vw, 0.75rem);
+}
+
+.store-promise-board__intro::before {
+  content: "";
+  position: absolute;
+  right: clamp(-8.5rem, -10vw, -5.2rem);
+  bottom: clamp(-1.65rem, -2.2vw, -1rem);
+  width: clamp(5.4rem, 12vw, 8.2rem);
+  height: 0.22rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(90deg, rgba(83, 101, 74, 0.36) 0 0.38rem, transparent 0.38rem 0.68rem),
+    linear-gradient(90deg, rgba(185, 201, 175, 0.36), rgba(255, 176, 143, 0.28));
+  box-shadow: 0.08rem 0.18rem 0.36rem rgba(47, 38, 35, 0.11);
+  transform: rotate(-0.7deg);
+  opacity: 0.82;
+}
+
+.store-promise-board__intro > .eyebrow,
+.store-promise-board__intro > h1,
+.store-promise-board__intro > p {
+  box-shadow:
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.035),
+    0 0.34rem 0.68rem rgba(47, 38, 35, 0.065);
+}
+
+.store-promise-board__intro > h1 {
+  max-width: 12em;
+  font-size: clamp(1.5rem, 3.2vw, 2.45rem);
+  line-height: 0.98;
+}
+
+.store-promise-note-stack {
+  margin-top: clamp(1.45rem, 3vw, 2.25rem);
+  padding: clamp(2.45rem, 4.6vw, 3rem) clamp(0.92rem, 2.2vw, 1.45rem) clamp(1.15rem, 2.5vw, 1.55rem);
+  clip-path: polygon(1% 5%, 16% 2%, 42% 4%, 70% 1%, 99% 5%, 98% 91%, 84% 98%, 56% 95%, 24% 99%, 0 92%);
+  background:
+    linear-gradient(90deg, rgba(83, 101, 74, 0.14) 0 0.28rem, transparent 0.28rem calc(100% - 0.28rem), rgba(83, 101, 74, 0.1) calc(100% - 0.28rem)),
+    radial-gradient(circle at 20% 28%, rgba(255, 176, 143, 0.11), transparent 30%),
+    linear-gradient(128deg, rgba(255, 252, 246, 0.78), rgba(255, 247, 235, 0.44) 58%, rgba(216, 197, 236, 0.13)),
+    var(--grain-image);
+  background-size: cover, cover, cover, 18rem 18rem;
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.045),
+    0 0.78rem 1.42rem rgba(47, 38, 35, 0.12),
+    inset 0 0 0 1px rgba(47, 38, 35, 0.045);
+}
+
+.store-promise-note-stack::before {
+  top: clamp(1.35rem, 2.7vw, 1.72rem);
+  right: clamp(1.25rem, 3vw, 2.2rem);
+  left: clamp(1.25rem, 3vw, 2.2rem);
+  height: 0.16rem;
+  opacity: 0.78;
+}
+
+.store-promise-note-stack::after {
+  content: "one honest shelf";
+  top: 0.62rem;
+  right: auto;
+  left: clamp(1.1rem, 3vw, 2rem);
+  background: rgba(255, 246, 218, 0.94);
+  box-shadow: 0.14rem 0.26rem 0.58rem rgba(47, 38, 35, 0.13);
+  transform: rotate(-0.7deg);
+}
+
+.store-promise-note,
+.store-promise-note:nth-child(1),
+.store-promise-note:nth-child(2),
+.store-promise-note:nth-child(3) {
+  min-height: 17.8rem;
+  transform: none;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.04),
+    0 0.5rem 0.9rem rgba(47, 38, 35, 0.095);
+}
+
+.store-promise-note:nth-child(2) {
+  margin-top: clamp(0.45rem, 1.2vw, 0.72rem);
+}
+
+.store-promise-note:nth-child(3) {
+  margin-top: clamp(0.9rem, 1.8vw, 1.15rem);
+}
+
+.store-promise-note__photo {
+  min-height: 7.4rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.2),
+    inset 0 -0.86rem 1.35rem rgba(47, 35, 25, 0.2),
+    0 0.26rem 0.56rem rgba(47, 38, 35, 0.11);
+}
+
+.store-promise-note > span:not(.store-promise-note__photo span) {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.12rem;
+  padding: 0.28rem 0.54rem 0.24rem;
+  clip-path: polygon(2% 12%, 30% 0, 74% 5%, 100% 0, 96% 88%, 70% 100%, 26% 93%, 0 100%);
+  background: rgba(255, 252, 246, 0.78);
+  box-shadow: 0.1rem 0.18rem 0.36rem rgba(47, 38, 35, 0.09);
+}
+
+@media (max-width: 760px) {
+  .store-promise-board {
+    padding-inline: 0.35rem;
+  }
+
+  .store-promise-board::after {
+    top: 0.38rem;
+    right: 0.82rem;
+  }
+
+  .store-promise-board__intro::before {
+    display: none;
+  }
+
+  .store-promise-note-stack {
+    margin-top: 1.25rem;
+    padding: 2.35rem 0.62rem 0.78rem;
+  }
+
+  .store-promise-note,
+  .store-promise-note:nth-child(1),
+  .store-promise-note:nth-child(2),
+  .store-promise-note:nth-child(3) {
+    min-height: auto;
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-promise-board::after,
+  .store-promise-board__intro::before,
+  .store-promise-note-stack::after,
+  .store-promise-note,
+  .store-promise-note:nth-child(1),
+  .store-promise-note:nth-child(2),
+  .store-promise-note:nth-child(3) {
+    transform: none;
+  }
+}

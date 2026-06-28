@@ -9,6 +9,7 @@ import './home-paper-collage-pass.css';
 import './home-highlight-photo-pass.css';
 import './home-front-room-welcome-desk-pass.css';
 import './home-front-room-highlight-ledger-pass.css';
+import './home-front-room-terminal-receipt-pass.css';
 import './home-intro-copy-slips-pass.css';
 import './home-pillar-photo-pass.css';
 import './home-studio-shape-binding-ledger-pass.css';

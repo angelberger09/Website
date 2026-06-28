@@ -1,13 +1,13 @@
-# Home House Rules Terminal Budget Matrix
+# Homepage House Rules Terminal Budget Matrix
 
 | Field | Value |
 |---|---|
 | Matrix type | Implementation relationship matrix |
-| Public source | `app/terminal-room-surface-budget-pass.css` |
+| Public source | `app/home-house-rules-terminal-budget-pass.css`, `app/layout.jsx` |
 | Agent record | `.agent/changes/2026-06-27-home-house-rules-terminal-budget.md` |
 | Satisfaction state | partially satisfied refinement |
-| Primary mismatch | The homepage house-rules docket/ledger was already visibly guided, but it was not included in the terminal room surface budget that calms newest paper surfaces. |
-| Visible correction | Add final-budget coverage for the house-rules intro, rail, notes, rule slips, photo centers, small slips, connector thread, reduced-motion state, and mobile intrinsic sizing. |
+| Primary mismatch | The homepage house-rules section already had public-safe source-backed rule cues, but its newest rule-slip label layer was not explicitly covered by a terminal budget after the late paper budget. |
+| Visible correction | Add a final imported budget pass that calms the house-rule source slips, photo centers, shadows, transforms, mobile stacking, and reduced-motion behavior while preserving the visible paper-rule read. |
 
 ## Affected semantic IDs
 
@@ -23,7 +23,6 @@
 | DESIGN-028 | Handled-paper cues remain present through restrained texture and slips. |
 | DESIGN-029 | Flattened editorial hierarchy is supported by a calmer intro/rail surface. |
 | DESIGN-030 | Text snippets and rule slips stay readable. |
-| DESIGN-031 | Photo-like centers keep honest authored cue material. |
 | LESSON-001 | Homepage remains authored and human-facing. |
 | LESSON-002 | Human-facing room-rule copy stays intact. |
 | LESSON-018 | Filled rooms stay useful and connected. |
@@ -33,7 +32,6 @@
 | LESSON-025 | Photo centers remain filled with route-relevant cue material. |
 | METRIC-001 | Homepage feels authored instead of demo-like. |
 | METRIC-002 | Visible copy remains human-facing. |
-| METRIC-017 | Continuity remains visible near the closing homepage path. |
 | METRIC-018 | Paper material reads first. |
 | METRIC-021 | Cards read as paper pieces. |
 | METRIC-023 | Torn/cut silhouettes remain present. |

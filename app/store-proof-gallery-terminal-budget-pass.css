@@ -1,0 +1,92 @@
+/* Store proof/gallery terminal budget pass.
+   Loaded after the late Store proof rail and slow shelf passes so their newest
+   preview surfaces stay visibly guided without adding another heavy paper stack. */
+
+.store-visual-board,
+.store-gallery-board {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 760px;
+}
+
+.store-visual-board::before,
+.store-gallery-board::before {
+  filter: none;
+  opacity: 0.76;
+  box-shadow:
+    0.14rem 0.28rem 0 rgba(47, 38, 35, 0.045),
+    0 0.82rem 1.45rem rgba(47, 38, 35, 0.09);
+}
+
+.store-visual-board__copy::before,
+.store-gallery-board::after,
+.store-gallery-board__intro::after,
+.store-shot-card::after,
+.store-shot-card__caption::before,
+.store-shot-card__image::after,
+.store-gallery-card::before,
+.store-gallery-card::after {
+  filter: none;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.46rem 0.82rem rgba(47, 38, 35, 0.08);
+}
+
+.store-shot-strip::before,
+.store-shot-card,
+.store-gallery-card {
+  background-blend-mode: normal;
+  filter: none;
+  box-shadow:
+    0.12rem 0.2rem 0 rgba(47, 38, 35, 0.055),
+    0 0.66rem 1.12rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.store-shot-strip::after,
+.store-gallery-scroll::after,
+.store-visual-board__copy::after {
+  opacity: 0.46;
+  filter: none;
+}
+
+.store-shot-card__image,
+.store-gallery-card__visual,
+.store-gallery-card__note {
+  filter: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-visual-board__copy::before,
+  .store-shot-strip::after,
+  .store-shot-card::after,
+  .store-shot-card__caption::before,
+  .store-shot-card__image::after,
+  .store-gallery-board::after,
+  .store-gallery-board__intro::after,
+  .store-gallery-card::before,
+  .store-gallery-card::after {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .store-visual-board,
+  .store-gallery-board {
+    contain-intrinsic-size: 1px 900px;
+  }
+
+  .store-shot-card,
+  .store-gallery-card,
+  .store-gallery-card:nth-child(even),
+  .store-gallery-card:nth-child(odd) {
+    transform: none;
+  }
+
+  .store-gallery-board::after,
+  .store-gallery-board__intro::after,
+  .store-shot-card::after,
+  .store-shot-card__image::after {
+    box-shadow: 0 0.34rem 0.62rem rgba(47, 38, 35, 0.07);
+  }
+}

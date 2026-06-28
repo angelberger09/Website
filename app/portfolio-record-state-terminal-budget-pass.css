@@ -1,0 +1,164 @@
+.portfolio-state-photo-board {
+  overflow: hidden;
+  margin-inline: auto;
+  padding: clamp(3.6rem, 6vw, 4.6rem) clamp(1rem, 3vw, 1.8rem) clamp(1.4rem, 3vw, 2rem);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 238, 0.82), rgba(238, 220, 184, 0.46)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 180px 180px;
+  box-shadow: 0 1.15rem 2.2rem rgba(72, 50, 31, 0.11);
+  clip-path: polygon(0.8% 1.5%, 99% 0, 100% 96%, 96% 100%, 1% 98%);
+}
+
+.portfolio-state-photo-board::before {
+  content: "";
+  position: absolute;
+  inset: clamp(1rem, 2vw, 1.35rem) auto clamp(1rem, 2vw, 1.35rem) clamp(0.85rem, 2vw, 1.2rem);
+  z-index: 0;
+  width: 0.16rem;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(105, 77, 47, 0.28) 0 0.42rem,
+      transparent 0.42rem 0.78rem
+    );
+  opacity: 0.68;
+}
+
+.portfolio-state-photo-board::after {
+  content: "record states";
+  top: clamp(1rem, 2vw, 1.35rem);
+  left: clamp(1.4rem, 3vw, 2.1rem);
+  min-height: auto;
+  padding: 0.38rem 0.66rem 0.32rem;
+  color: rgba(80, 57, 36, 0.78);
+  background:
+    linear-gradient(145deg, rgba(255, 251, 232, 0.96), rgba(234, 213, 173, 0.82)),
+    url('/Website/atmosphere/fine-scratches.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 0.55rem 1rem rgba(74, 52, 31, 0.11);
+  transform: rotate(-0.65deg);
+}
+
+.portfolio-state-photo-board .portfolio-board-heading {
+  max-width: 38rem;
+  margin-left: clamp(0.75rem, 3vw, 1.55rem);
+  padding: clamp(0.72rem, 1.8vw, 0.95rem) clamp(0.9rem, 2vw, 1.15rem);
+  box-shadow: 0 0.72rem 1.28rem rgba(70, 48, 27, 0.09);
+  transform: rotate(-0.25deg);
+}
+
+.portfolio-state-photo-board .portfolio-board-heading::after,
+.portfolio-state-stack::after,
+.portfolio-state-photo::after,
+.portfolio-state-photo__copy::before {
+  box-shadow: 0 0.38rem 0.76rem rgba(72, 50, 29, 0.09);
+}
+
+.portfolio-state-stack {
+  gap: clamp(0.72rem, 1.7vw, 1.05rem);
+  padding-top: clamp(1rem, 2vw, 1.35rem);
+}
+
+.portfolio-state-stack::before {
+  top: clamp(-1.45rem, -2vw, -1rem);
+  left: clamp(1.1rem, 3vw, 1.65rem);
+  right: clamp(0.9rem, 3vw, 1.45rem);
+  height: 1px;
+  opacity: 0.6;
+  background-size: 0.95rem 1px;
+}
+
+.portfolio-state-stack::after {
+  content: "public state ledger";
+  top: -0.1rem;
+  right: clamp(0.7rem, 2vw, 1.2rem);
+  opacity: 0.86;
+  transform: rotate(0.6deg);
+}
+
+.portfolio-state-photo,
+.portfolio-state-photo:nth-child(1),
+.portfolio-state-photo:nth-child(2),
+.portfolio-state-photo:nth-child(3),
+.portfolio-state-photo:nth-child(4) {
+  transform: none;
+}
+
+.portfolio-state-photo {
+  grid-template-rows: minmax(5.75rem, auto) 1fr;
+  filter: none;
+}
+
+.portfolio-state-photo::after {
+  top: -2.1rem;
+  color: rgba(255, 252, 242, 0.92);
+  background:
+    linear-gradient(135deg, rgba(63, 47, 32, 0.66), rgba(104, 78, 47, 0.42)),
+    url('/Website/atmosphere/grain-noise.svg');
+  transform: translateX(-50%) rotate(-0.35deg);
+}
+
+.portfolio-state-photo__image {
+  min-height: 5.85rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.portfolio-state-photo__copy {
+  padding: 0.78rem 0.66rem 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 242, 0.82), rgba(239, 224, 194, 0.54)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 155px 155px;
+}
+
+.portfolio-state-photo__copy span {
+  background: rgba(65, 46, 31, 0.5);
+}
+
+.portfolio-state-photo__copy p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 920px) {
+  .portfolio-state-photo-board {
+    padding-inline: clamp(0.85rem, 3vw, 1.3rem);
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-state-photo-board {
+    padding-top: 4.1rem;
+    clip-path: polygon(1% 0, 100% 1%, 99% 98%, 2% 100%);
+  }
+
+  .portfolio-state-photo-board::before {
+    left: 0.72rem;
+  }
+
+  .portfolio-state-photo-board::after {
+    left: 1rem;
+  }
+
+  .portfolio-state-photo-board .portfolio-board-heading {
+    margin-left: 0.5rem;
+  }
+
+  .portfolio-state-stack {
+    gap: 0.82rem;
+  }
+
+  .portfolio-state-stack::after {
+    margin-right: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-state-photo-board .portfolio-board-heading,
+  .portfolio-state-photo-board::after,
+  .portfolio-state-stack::after,
+  .portfolio-state-photo::after {
+    transform: none;
+  }
+}

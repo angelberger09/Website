@@ -1,0 +1,248 @@
+/* Terminal room render budget pass.
+   Loaded at the very end of the global stylesheet graph so late page-specific paper/collage passes stay calm, readable, and cheap to render. */
+
+:root {
+  --terminal-paper-cut: polygon(1.2% 1.8%, 98.8% 0.9%, 98.2% 97.8%, 1.5% 99%);
+  --terminal-paper-shadow: 0.16rem 0.24rem 0 rgba(47, 38, 35, 0.075), 0 0.7rem 1.45rem rgba(47, 38, 35, 0.105);
+  --terminal-paper-small-shadow: 0.1rem 0.16rem 0 rgba(47, 38, 35, 0.065), 0 0.42rem 0.86rem rgba(47, 38, 35, 0.085);
+}
+
+body {
+  background-attachment: scroll;
+  background-blend-mode: normal, normal, normal, normal, normal, multiply, multiply;
+}
+
+.site-shell::before {
+  opacity: 0.58;
+  filter: none;
+  background-blend-mode: normal;
+  box-shadow: 0 1.15rem 3.1rem rgba(47, 38, 35, 0.07), inset 0 -1px 0 rgba(47, 38, 35, 0.04);
+}
+
+.site-shell::after,
+.page-layout::before,
+.readable-shell::before {
+  opacity: 0.64;
+  filter: none;
+  box-shadow: var(--terminal-paper-small-shadow);
+}
+
+:where(
+  .page-hero,
+  .home-paper-field,
+  .home-note-board,
+  .home-room-board,
+  .home-door-board,
+  .home-pillar-strip,
+  .home-studio-checks,
+  .home-path-ledger,
+  .home-path-map,
+  .home-next-path-room,
+  .about-opening-board,
+  .about-paper-board,
+  .about-contact-sheet-board,
+  .portfolio-archive-board,
+  .portfolio-gallery-board,
+  .portfolio-paper-board,
+  .store-editorial-section,
+  .store-visual-board,
+  .store-gallery-board,
+  .store-lane-collage,
+  .store-promise-board,
+  .store-checklist-collage,
+  .store-feed-ledger-board,
+  .notes-reader-board,
+  .notes-gallery-board,
+  .notes-source-board,
+  .notes-state-board,
+  .notes-post-desk,
+  .notes-post-support-board,
+  .continuity-paper-trail,
+  .studio-footer--paper
+) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 820px;
+}
+
+:where(
+  .page-card,
+  .detail-card,
+  .source-link,
+  .link-card,
+  .reader-card,
+  .pathway-link,
+  .home-note-piece,
+  .home-room-slip,
+  .home-pillar-note,
+  .home-door-card,
+  .home-hero-route-slip,
+  .home-path-map-room-card,
+  .home-path-ledger-card,
+  .home-next-path-ticket,
+  .page-hero__photo-card,
+  .page-hero__text p,
+  .about-room-piece,
+  .about-principle-note,
+  .about-pathway-note,
+  .about-contact-card,
+  .portfolio-piece-card,
+  .portfolio-gallery-card,
+  .portfolio-readiness-note,
+  .portfolio-lane-piece,
+  .portfolio-feed-card,
+  .portfolio-state-note,
+  .portfolio-process-ribbon li,
+  .notes-note-card,
+  .notes-gallery-card,
+  .notes-source-card,
+  .notes-fallback-rule,
+  .notes-state-note,
+  .notes-support-note,
+  .notes-post-sheet,
+  .notes-post-state,
+  .notes-post-receipt-slip,
+  .continuity-paper-step,
+  .store-entry-receipt,
+  .store-lane-piece,
+  .store-gallery-card,
+  .store-checklist-note,
+  .store-feed-ledger-card,
+  .store-feed-rule-tape li,
+  .store-promise-note,
+  .store-availability-card,
+  .store-state-snippet,
+  .store-shot-card,
+  .studio-footer__mark,
+  .studio-footer__trail a
+) {
+  clip-path: var(--terminal-paper-cut);
+  border-radius: 0;
+  filter: none;
+  text-shadow: none;
+  background-blend-mode: normal;
+  box-shadow: var(--terminal-paper-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+:where(
+  .home-note-piece__visual,
+  .home-door-card__image,
+  .home-hero-route-slip__preview,
+  .home-path-map-room-card__image,
+  .page-hero__photo-card,
+  .about-contact-card__image,
+  .portfolio-gallery-card__image,
+  .notes-note-card__visual,
+  .notes-gallery-card__image,
+  .notes-post-desk__photo-card,
+  .store-entry-receipt__photo,
+  .store-shot-card__image,
+  .store-gallery-card__image
+) {
+  filter: none;
+  background-blend-mode: normal;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+:where(
+  .page-card,
+  .detail-card,
+  .source-link,
+  .link-card,
+  .reader-card,
+  .pathway-link,
+  .home-door-card,
+  .home-hero-route-slip,
+  .home-path-map-room-card,
+  .about-contact-card,
+  .portfolio-gallery-card,
+  .notes-gallery-card,
+  .store-gallery-card,
+  .store-lane-piece,
+  .continuity-paper-step
+):is(:hover, :focus, :focus-visible, :focus-within) {
+  transform: none;
+  filter: none;
+  outline: 2px solid rgba(255, 176, 143, 0.46);
+  outline-offset: 0.16rem;
+}
+
+:where(
+  .page-card::before,
+  .page-card::after,
+  .detail-card::before,
+  .detail-card::after,
+  .source-link::before,
+  .source-link::after,
+  .link-card::before,
+  .link-card::after,
+  .reader-card::before,
+  .reader-card::after,
+  .pathway-link::before,
+  .pathway-link::after,
+  .home-path-map-room-card::before,
+  .home-path-map-room-card::after,
+  .store-shot-card__image::after,
+  .portfolio-gallery-card--note::before,
+  .store-gallery-card--note::before
+) {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .site-shell::before {
+    opacity: 0.48;
+  }
+
+  :where(
+    .page-hero,
+    .home-paper-field,
+    .about-opening-board,
+    .portfolio-archive-board,
+    .store-editorial-section,
+    .notes-reader-board,
+    .continuity-paper-trail,
+    .studio-footer--paper
+  ) {
+    contain-intrinsic-size: 1px 660px;
+  }
+
+  :where(
+    .page-card,
+    .detail-card,
+    .home-door-card,
+    .home-path-map-room-card,
+    .about-contact-card,
+    .portfolio-gallery-card,
+    .notes-gallery-card,
+    .store-gallery-card,
+    .continuity-paper-step
+  ) {
+    box-shadow: var(--terminal-paper-small-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  :where(
+    .page-card,
+    .detail-card,
+    .home-door-card,
+    .home-hero-route-slip,
+    .home-path-map-room-card,
+    .about-contact-card,
+    .portfolio-gallery-card,
+    .notes-gallery-card,
+    .store-gallery-card,
+    .continuity-paper-step
+  ) {
+    transform: none !important;
+  }
+}

@@ -221,6 +221,7 @@ import './home-house-rules-source-slips-pass.css';
 import './late-paper-surface-budget-pass.css';
 import './store-gallery-slow-shelf-pass.css';
 import './store-preview-proof-rail-pass.css';
+import './store-proof-gallery-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

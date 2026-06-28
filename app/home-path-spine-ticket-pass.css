@@ -1,0 +1,125 @@
+/* Homepage path spine ticket pass.
+   Tightens the front-page reading map into a left-docked ticket spine with stronger paper depth. */
+
+.home-page .home-path-map {
+  position: relative;
+  isolation: isolate;
+  margin-inline: clamp(1rem, 4vw, 3.6rem) auto !important;
+  max-width: min(64rem, calc(100vw - 2rem));
+  border-left: 0;
+  box-shadow:
+    -0.34rem 0.44rem 0 rgba(87, 67, 58, 0.045),
+    0.16rem 0.24rem 0 rgba(47, 38, 35, 0.055),
+    0 1rem 2.1rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+.home-page .home-path-map::before {
+  z-index: -1;
+  inset: 0.42rem auto 0.36rem -0.72rem !important;
+  width: clamp(1.35rem, 2.8vw, 2.05rem);
+  opacity: 0.86 !important;
+  background:
+    repeating-linear-gradient(180deg, rgba(74, 57, 51, 0.18) 0 1px, transparent 1px 0.62rem),
+    linear-gradient(180deg, rgba(238, 218, 187, 0.92), rgba(188, 203, 178, 0.38)),
+    var(--grain-image) !important;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.7rem 1.15rem rgba(47, 38, 35, 0.12);
+  clip-path: polygon(8% 1%, 100% 4%, 92% 97%, 0 100%);
+}
+
+.home-page .home-path-map__label {
+  align-self: start;
+  margin-left: -0.28rem;
+  color: rgba(61, 46, 41, 0.76) !important;
+  background:
+    linear-gradient(105deg, rgba(255, 252, 243, 0.96), rgba(244, 226, 198, 0.78)),
+    var(--grain-image) !important;
+  clip-path: polygon(0 14%, 94% 0, 100% 86%, 8% 100%);
+  transform: rotate(-1.2deg);
+}
+
+.home-page .home-path-map__note {
+  margin-top: 0.7rem !important;
+  padding: 0.54rem 0.58rem 0.5rem;
+  background: rgba(255, 250, 242, 0.58);
+  box-shadow: inset 0.2rem 0 0 rgba(139, 164, 126, 0.18);
+  clip-path: polygon(2% 0, 100% 5%, 96% 100%, 0 94%);
+}
+
+.home-page .home-path-map__trail {
+  align-items: stretch;
+  border-left: 1px dashed rgba(74, 57, 51, 0.18);
+  padding-left: clamp(0.58rem, 1.2vw, 0.86rem) !important;
+}
+
+.home-page .home-path-map__trail::before {
+  opacity: 0 !important;
+}
+
+.home-page .home-path-map__step,
+.home-page .home-path-map__step:nth-child(2n),
+.home-page .home-path-map__step:nth-child(2n + 1) {
+  position: relative;
+  flex-basis: clamp(8.15rem, 12.5vw, 10.4rem) !important;
+  background:
+    linear-gradient(115deg, rgba(255, 253, 247, 0.97), rgba(244, 228, 202, 0.82) 62%, rgba(188, 203, 178, 0.24)),
+    var(--grain-image) !important;
+  box-shadow:
+    0.1rem 0.14rem 0 rgba(47, 38, 35, 0.065),
+    0 0.58rem 1.05rem rgba(47, 38, 35, 0.115),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  clip-path: polygon(3% 3%, 97% 0, 100% 88%, 92% 100%, 0 95%);
+}
+
+.home-page .home-path-map__step::after {
+  content: "";
+  position: absolute;
+  left: -0.72rem;
+  top: 50%;
+  width: 0.54rem;
+  height: 1px;
+  background: rgba(74, 57, 51, 0.24);
+  transform: translateY(-50%);
+}
+
+.home-page .home-path-map__photo {
+  transform: rotate(-2deg);
+  border-radius: 0.22rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 250, 242, 0.34),
+    0 0.28rem 0.5rem rgba(47, 38, 35, 0.12) !important;
+}
+
+.home-page .home-path-map__copy strong {
+  color: rgba(54, 39, 35, 0.88) !important;
+}
+
+.home-page .home-path-map__copy small {
+  color: rgba(58, 45, 42, 0.62) !important;
+}
+
+@media (max-width: 760px) {
+  .home-page .home-path-map {
+    margin-inline: 0.82rem !important;
+  }
+
+  .home-page .home-path-map::before {
+    inset: -0.52rem 0.6rem auto 0.72rem !important;
+    width: auto;
+    height: 1.05rem;
+    clip-path: polygon(1% 18%, 99% 0, 96% 100%, 0 84%);
+  }
+
+  .home-page .home-path-map__trail {
+    border-left: 0;
+    border-top: 1px dashed rgba(74, 57, 51, 0.18);
+    padding-left: 0 !important;
+    padding-top: 0.7rem !important;
+  }
+
+  .home-page .home-path-map__step::after {
+    display: none;
+  }
+}

@@ -162,6 +162,7 @@ import './header-paper-thread-pass.css';
 import './header-paper-edge-stamps-pass.css';
 import './header-identity-paper-seal-pass.css';
 import './header-paper-contact-shadow-pass.css';
+import './header-room-ledger-strip-pass.css';
 import './footer-studio-mark-photo-pass.css';
 import './page-intro-foreground-card-pass.css';
 import './home-left-docket-pass.css';

@@ -221,6 +221,7 @@ import './footer-mark-copy-slips-pass.css';
 import './footer-exit-desk-consolidation-pass.css';
 import './about-contact-sheet-exposure-desk-pass.css';
 import './about-contact-sheet-frame-sequence-pass.css';
+import './about-contact-sheet-terminal-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

@@ -1,0 +1,93 @@
+/* Terminal budget for the late Notes post Markdown paper slips.
+   The reader should still feel tactile, but paragraphs, quotes, code, and labels
+   should not out-shout the surrounding calm room. */
+.notes-post-markdown p,
+.notes-post-markdown blockquote,
+.notes-post-markdown pre {
+  background-size: cover, 28rem 28rem, 52rem 52rem;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.04),
+    0 0.42rem 0.82rem rgba(47, 38, 35, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  filter: none;
+}
+
+.notes-post-markdown p {
+  max-width: min(100%, 56rem);
+  color: rgba(58, 45, 42, 0.86);
+}
+
+.notes-post-markdown p::before {
+  width: 0.34rem;
+  height: 0.34rem;
+  opacity: 0.62;
+  box-shadow: 0.08rem 0.12rem 0.18rem rgba(47, 38, 35, 0.055);
+}
+
+.notes-post-markdown p:nth-of-type(2n),
+.notes-post-markdown p:nth-of-type(3n) {
+  transform: rotate(-0.08deg);
+}
+
+.notes-post-markdown blockquote,
+.notes-post-markdown pre {
+  margin-block: clamp(0.9rem, 2.3vw, 1.25rem);
+}
+
+.notes-post-markdown blockquote::before,
+.notes-post-markdown pre::before {
+  top: -0.22rem;
+  height: 0.44rem;
+  opacity: 0.68;
+  box-shadow: 0 0.12rem 0.26rem rgba(47, 38, 35, 0.065);
+  transform: rotate(0.45deg);
+}
+
+.notes-post-markdown blockquote {
+  font-size: clamp(1rem, 1.45vw, 1.12rem);
+  font-weight: 680;
+}
+
+.notes-post-markdown blockquote::after {
+  opacity: 0.58;
+  box-shadow: none;
+}
+
+.notes-post-markdown pre {
+  scrollbar-color: rgba(58, 45, 42, 0.28) transparent;
+}
+
+.notes-post-code-label {
+  opacity: 0.82;
+  box-shadow: 0 0.12rem 0.28rem rgba(47, 38, 35, 0.055);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-post-markdown p,
+  .notes-post-markdown p:nth-of-type(2n),
+  .notes-post-markdown p:nth-of-type(3n),
+  .notes-post-markdown blockquote::before,
+  .notes-post-markdown pre::before {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .notes-post-markdown p,
+  .notes-post-markdown blockquote,
+  .notes-post-markdown pre {
+    width: auto;
+    max-width: 100%;
+    margin-inline: 0;
+    box-shadow:
+      0.06rem 0.1rem 0 rgba(47, 38, 35, 0.035),
+      0 0.3rem 0.58rem rgba(47, 38, 35, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  }
+
+  .notes-post-markdown blockquote::before,
+  .notes-post-markdown pre::before {
+    right: 1rem;
+    width: 3rem;
+  }
+}

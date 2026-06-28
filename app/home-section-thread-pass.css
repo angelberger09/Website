@@ -105,3 +105,69 @@
     display: none;
   }
 }
+
+@media (min-width: 961px) {
+  .home-page .studio-pages {
+    isolation: isolate;
+  }
+
+  .home-page .studio-pages::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--home-thread-x) - clamp(0.85rem, 1.8vw, 1.2rem));
+    top: clamp(0.45rem, 1.6vw, 0.9rem);
+    bottom: clamp(0.45rem, 1.6vw, 0.9rem);
+    width: clamp(8.75rem, 15vw, 13rem);
+    background:
+      linear-gradient(180deg, rgba(255, 252, 243, 0.94), rgba(238, 220, 187, 0.68)),
+      url('/Website/atmosphere/grain-noise.svg'),
+      url('/Website/atmosphere/soft-scratches.svg');
+    background-size: auto, 165px 165px, 230px 230px;
+    clip-path: polygon(1% 2%, 98% 0, 96% 14%, 100% 29%, 97% 45%, 99% 63%, 95% 79%, 97% 98%, 3% 100%, 0 82%, 2% 64%, 0 48%, 3% 32%, 1% 16%);
+    box-shadow:
+      0.42rem 0.2rem 1.35rem rgba(73, 49, 29, 0.12),
+      -0.12rem 0.7rem 1rem rgba(73, 49, 29, 0.08),
+      inset 0.9rem 0 1.4rem rgba(112, 76, 42, 0.045),
+      inset -0.75rem 0 1.1rem rgba(255, 255, 255, 0.38);
+    opacity: 0.92;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .home-page .studio-pages:nth-of-type(even)::after {
+    transform: translateX(0.18rem) rotate(0.18deg);
+  }
+
+  .home-page .studio-pages:nth-of-type(odd)::after {
+    transform: translateX(-0.06rem) rotate(-0.14deg);
+  }
+
+  .home-page .studio-pages::before {
+    left: calc(var(--home-thread-x) + 0.18rem);
+    top: clamp(0.95rem, 3vw, 1.45rem);
+    bottom: clamp(0.95rem, 3vw, 1.45rem);
+    border-left-color: rgba(84, 58, 32, 0.28);
+    filter: drop-shadow(0.14rem 0.18rem 0.16rem rgba(80, 55, 32, 0.14));
+  }
+
+  .home-docket-step {
+    box-shadow:
+      0.08rem 0.18rem 0 rgba(103, 74, 41, 0.14),
+      0 0.84rem 1.45rem rgba(73, 52, 30, 0.16),
+      inset 0 0 0 1px rgba(111, 82, 48, 0.09);
+  }
+
+  .home-docket-note {
+    box-shadow:
+      0.12rem 0.2rem 0 rgba(103, 74, 41, 0.1),
+      0 0.72rem 1.2rem rgba(72, 52, 30, 0.13),
+      inset 0 -0.45rem 0.9rem rgba(126, 93, 50, 0.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .studio-pages:nth-of-type(even)::after,
+  .home-page .studio-pages:nth-of-type(odd)::after {
+    transform: none;
+  }
+}

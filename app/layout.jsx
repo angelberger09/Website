@@ -18,6 +18,7 @@ import './home-check-photo-pass.css';
 import './home-house-rules-terminal-budget-pass.css';
 import './home-house-rules-receipt-board-pass.css';
 import './home-arrival-ticket-pass.css';
+import './home-path-spine-ticket-pass.css';
 import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';
 import './about-room-key-pass.css';

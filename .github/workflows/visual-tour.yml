@@ -106,7 +106,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Author Discord preview package
-        if: always()
+        if: ${{ success() }}
         env:
           WORKFLOW_STATUS: ${{ job.status }}
           VIDEO_ARTIFACT_URL: ${{ steps.upload_videos.outputs.artifact-url }}
@@ -129,7 +129,7 @@ jobs:
             --github-env "$GITHUB_ENV"
 
       - name: Send Discord preview
-        if: ${{ always() && env.DISCORD_WEBHOOK_URL != '' }}
+        if: ${{ success() && env.DISCORD_WEBHOOK_URL != '' }}
         run: |
           if [ "$SOFTSTRANGE_HAS_DISCORD_PREVIEW" = "true" ] && [ -f "$SOFTSTRANGE_DISCORD_PREVIEW_PATH" ]; then
             PAYLOAD=$(cat "$SOFTSTRANGE_DISCORD_MESSAGE_JSON")

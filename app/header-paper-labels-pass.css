@@ -3,6 +3,7 @@
 
 .floating-header {
   isolation: isolate;
+  filter: drop-shadow(0 1.12rem 1.65rem rgba(47, 38, 35, 0.18));
 }
 
 .floating-header::before {
@@ -21,10 +22,38 @@
   pointer-events: none;
 }
 
+.floating-header__lower-fiber {
+  position: absolute;
+  right: clamp(0.9rem, 3.2vw, 2.8rem);
+  bottom: -0.42rem;
+  left: clamp(0.9rem, 3.2vw, 2.8rem);
+  z-index: -2;
+  height: clamp(0.52rem, 1vw, 0.82rem);
+  clip-path: polygon(0 18%, 11% 30%, 24% 12%, 37% 34%, 51% 16%, 64% 39%, 78% 20%, 90% 36%, 100% 18%, 96% 70%, 81% 84%, 65% 66%, 48% 91%, 34% 67%, 17% 86%, 3% 68%);
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0), rgba(47, 38, 35, 0.2) 18%, rgba(47, 38, 35, 0.14) 52%, rgba(47, 38, 35, 0.22) 80%, rgba(47, 38, 35, 0)),
+    var(--dust-image);
+  background-size: cover, 20rem 20rem;
+  opacity: 0.74;
+  filter: blur(0.18px);
+  pointer-events: none;
+}
+
 .identity-link,
 .folder-panel__link {
   letter-spacing: 0.012em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+.identity-link::before {
+  position: absolute;
+  inset: 0.2rem 0.28rem auto;
+  height: 0.24rem;
+  content: "";
+  clip-path: polygon(0 24%, 28% 6%, 61% 28%, 100% 11%, 94% 72%, 68% 100%, 31% 82%, 4% 94%);
+  background: rgba(255, 255, 255, 0.52);
+  opacity: 0.82;
+  pointer-events: none;
 }
 
 .identity-link::after {
@@ -55,6 +84,20 @@
     var(--dust-image);
   background-size: cover, 22rem 22rem;
   box-shadow: 0 0.28rem 0.9rem rgba(47, 38, 35, 0.11);
+  pointer-events: none;
+}
+
+.folder-menu::after {
+  position: absolute;
+  right: 0.36rem;
+  bottom: -0.26rem;
+  left: 0.36rem;
+  z-index: -2;
+  height: 0.36rem;
+  content: "";
+  clip-path: polygon(0 20%, 18% 4%, 34% 28%, 56% 10%, 73% 32%, 100% 18%, 96% 82%, 64% 70%, 43% 95%, 21% 72%, 2% 88%);
+  background: rgba(47, 38, 35, 0.18);
+  opacity: 0.72;
   pointer-events: none;
 }
 
@@ -92,9 +135,19 @@
 }
 
 @media (max-width: 760px) {
+  .floating-header {
+    filter: drop-shadow(0 0.78rem 1rem rgba(47, 38, 35, 0.14));
+  }
+
   .floating-header::before,
   .folder-menu::before {
     inset-inline: 0.36rem;
+  }
+
+  .floating-header__lower-fiber {
+    right: 0.8rem;
+    left: 0.8rem;
+    opacity: 0.52;
   }
 
   .folder-panel__link {

@@ -3,7 +3,7 @@
 
 .floating-header {
   isolation: isolate;
-  filter: drop-shadow(0 1.12rem 1.65rem rgba(47, 38, 35, 0.18));
+  filter: drop-shadow(0 1.18rem 1.68rem rgba(47, 38, 35, 0.22));
 }
 
 .floating-header::before {
@@ -13,36 +13,44 @@
   content: "";
   clip-path: polygon(1% 7%, 19% 2%, 42% 5%, 63% 1%, 98% 6%, 96% 87%, 72% 94%, 43% 90%, 3% 96%);
   background:
-    linear-gradient(112deg, rgba(255, 255, 255, 0.36), rgba(255, 244, 225, 0.34) 42%, rgba(47, 38, 35, 0.08)),
+    linear-gradient(112deg, rgba(255, 255, 255, 0.5), rgba(255, 244, 225, 0.4) 42%, rgba(47, 38, 35, 0.1)),
     var(--grain-image);
   background-size: cover, 16rem 16rem;
   box-shadow:
-    0 0.12rem 0 rgba(255, 255, 255, 0.42) inset,
-    0 0.22rem 0.55rem rgba(47, 38, 35, 0.1);
+    0 0.12rem 0 rgba(255, 255, 255, 0.5) inset,
+    0 0.22rem 0.55rem rgba(47, 38, 35, 0.14),
+    0 1rem 1.65rem rgba(47, 38, 35, 0.12);
   pointer-events: none;
 }
 
 .floating-header__lower-fiber {
   position: absolute;
   right: clamp(0.9rem, 3.2vw, 2.8rem);
-  bottom: -0.42rem;
+  bottom: -0.48rem;
   left: clamp(0.9rem, 3.2vw, 2.8rem);
   z-index: -2;
-  height: clamp(0.52rem, 1vw, 0.82rem);
+  height: clamp(0.58rem, 1vw, 0.9rem);
   clip-path: polygon(0 18%, 11% 30%, 24% 12%, 37% 34%, 51% 16%, 64% 39%, 78% 20%, 90% 36%, 100% 18%, 96% 70%, 81% 84%, 65% 66%, 48% 91%, 34% 67%, 17% 86%, 3% 68%);
   background:
-    linear-gradient(90deg, rgba(47, 38, 35, 0), rgba(47, 38, 35, 0.2) 18%, rgba(47, 38, 35, 0.14) 52%, rgba(47, 38, 35, 0.22) 80%, rgba(47, 38, 35, 0)),
+    linear-gradient(90deg, rgba(47, 38, 35, 0), rgba(47, 38, 35, 0.26) 18%, rgba(47, 38, 35, 0.18) 52%, rgba(47, 38, 35, 0.28) 80%, rgba(47, 38, 35, 0)),
     var(--dust-image);
   background-size: cover, 20rem 20rem;
-  opacity: 0.74;
-  filter: blur(0.18px);
+  opacity: 0.86;
+  filter: blur(0.22px);
   pointer-events: none;
 }
 
 .identity-link,
 .folder-panel__link {
   letter-spacing: 0.012em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.54);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.identity-link {
+  box-shadow:
+    0.1rem 0.18rem 0 rgba(47, 38, 35, 0.12),
+    0 0.72rem 1.12rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .identity-link::before {
@@ -51,21 +59,21 @@
   height: 0.24rem;
   content: "";
   clip-path: polygon(0 24%, 28% 6%, 61% 28%, 100% 11%, 94% 72%, 68% 100%, 31% 82%, 4% 94%);
-  background: rgba(255, 255, 255, 0.52);
-  opacity: 0.82;
+  background: rgba(255, 255, 255, 0.56);
+  opacity: 0.88;
   pointer-events: none;
 }
 
 .identity-link::after {
   position: absolute;
   right: 0.7rem;
-  bottom: 0.18rem;
+  bottom: 0.14rem;
   left: 0.7rem;
-  height: 0.14rem;
+  height: 0.16rem;
   content: "";
   clip-path: polygon(0 28%, 34% 6%, 100% 21%, 94% 78%, 48% 100%, 4% 84%);
-  background: rgba(47, 38, 35, 0.28);
-  opacity: 0.82;
+  background: rgba(47, 38, 35, 0.34);
+  opacity: 0.88;
   pointer-events: none;
 }
 
@@ -80,24 +88,26 @@
   content: "";
   clip-path: polygon(2% 9%, 26% 2%, 51% 7%, 74% 3%, 98% 10%, 95% 86%, 62% 96%, 31% 91%, 4% 98%);
   background:
-    linear-gradient(116deg, rgba(255, 250, 242, 0.56), rgba(245, 232, 211, 0.3)),
+    linear-gradient(116deg, rgba(255, 250, 242, 0.64), rgba(245, 232, 211, 0.36)),
     var(--dust-image);
   background-size: cover, 22rem 22rem;
-  box-shadow: 0 0.28rem 0.9rem rgba(47, 38, 35, 0.11);
+  box-shadow:
+    0 0.28rem 0.9rem rgba(47, 38, 35, 0.14),
+    0 1rem 1.55rem rgba(47, 38, 35, 0.1);
   pointer-events: none;
 }
 
 .folder-menu::after {
   position: absolute;
   right: 0.36rem;
-  bottom: -0.26rem;
+  bottom: -0.3rem;
   left: 0.36rem;
   z-index: -2;
-  height: 0.36rem;
+  height: 0.42rem;
   content: "";
   clip-path: polygon(0 20%, 18% 4%, 34% 28%, 56% 10%, 73% 32%, 100% 18%, 96% 82%, 64% 70%, 43% 95%, 21% 72%, 2% 88%);
-  background: rgba(47, 38, 35, 0.18);
-  opacity: 0.72;
+  background: rgba(47, 38, 35, 0.24);
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -114,8 +124,8 @@
   height: 0.18rem;
   content: "";
   clip-path: polygon(2% 16%, 42% 0, 98% 24%, 96% 78%, 55% 100%, 0 82%);
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0.86;
+  background: rgba(255, 255, 255, 0.54);
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -123,20 +133,20 @@
 .folder-panel__link--active {
   padding-inline: 0.86rem;
   background:
-    linear-gradient(135deg, rgba(255, 176, 143, 0.64), rgba(255, 252, 246, 0.98) 42%, rgba(185, 201, 175, 0.52)),
+    linear-gradient(135deg, rgba(255, 176, 143, 0.68), rgba(255, 252, 246, 1) 42%, rgba(185, 201, 175, 0.56)),
     var(--grain-image),
     var(--fine-scratch-image);
   background-size: cover, 13rem 13rem, 32rem 32rem;
   box-shadow:
-    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.14),
-    0 0.72rem 1.1rem rgba(47, 38, 35, 0.19),
-    inset 0 -1px 0 rgba(47, 38, 35, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    0.14rem 0.2rem 0 rgba(47, 38, 35, 0.16),
+    0 0.78rem 1.18rem rgba(47, 38, 35, 0.22),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
 }
 
 @media (max-width: 760px) {
   .floating-header {
-    filter: drop-shadow(0 0.78rem 1rem rgba(47, 38, 35, 0.14));
+    filter: drop-shadow(0 0.82rem 1.08rem rgba(47, 38, 35, 0.16));
   }
 
   .floating-header::before,
@@ -147,7 +157,7 @@
   .floating-header__lower-fiber {
     right: 0.8rem;
     left: 0.8rem;
-    opacity: 0.52;
+    opacity: 0.58;
   }
 
   .folder-panel__link {

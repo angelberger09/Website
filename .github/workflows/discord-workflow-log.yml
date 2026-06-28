@@ -1,0 +1,32 @@
+name: Discord Workflow Log
+
+on:
+  workflow_run:
+    workflows:
+      - Deploy Website
+      - Visual Tour
+      - Website Workflow Recovery Packet
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord status card
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          title: ${{ github.event.workflow_run.name || 'Manual workflow log' }}
+          description: |
+            Branch: ${{ github.event.workflow_run.head_branch || github.ref_name }}
+            Commit: ${{ github.event.workflow_run.head_sha || github.sha }}
+            Run: ${{ github.event.workflow_run.html_url || github.server_url }}
+          status: ${{ github.event.workflow_run.conclusion || 'success' }}
+          nodetail: true

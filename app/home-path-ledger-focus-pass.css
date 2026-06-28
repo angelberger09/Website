@@ -113,10 +113,112 @@
   line-height: 1.2;
 }
 
+/* Second focus pass: make the left docket read as the anchor rail for the whole
+   homepage path, so the trail scans as one ordered object instead of loose cards. */
+.home-path-map {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow:
+    0.24rem 0.34rem 0 rgba(47, 38, 35, 0.075),
+    0 1rem 2rem rgba(47, 38, 35, 0.12),
+    inset 0 0 0 1px rgba(255, 252, 246, 0.42);
+}
+
+.home-path-map::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: clamp(1.05rem, 3.4vw, 2.85rem);
+  top: clamp(0.68rem, 1.6vw, 0.95rem);
+  bottom: clamp(0.72rem, 1.8vw, 1.05rem);
+  width: clamp(0.42rem, 0.9vw, 0.62rem);
+  clip-path: polygon(22% 0, 100% 2%, 78% 100%, 0 96%);
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.58), rgba(153, 222, 201, 0.42) 52%, rgba(216, 197, 236, 0.42)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  box-shadow:
+    0.13rem 0.16rem 0 rgba(47, 38, 35, 0.11),
+    0.22rem 0.42rem 0.74rem rgba(47, 38, 35, 0.12);
+  opacity: 0.92;
+}
+
+.home-path-map__label {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding: 0.34rem 0.62rem 0.3rem;
+  clip-path: polygon(4% 8%, 96% 0, 100% 86%, 8% 100%, 0 42%);
+  background:
+    linear-gradient(105deg, rgba(255, 252, 246, 0.96), rgba(255, 238, 218, 0.78)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow:
+    0.12rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.42rem 0.9rem rgba(47, 38, 35, 0.1);
+}
+
+.home-path-map__note {
+  position: relative;
+  z-index: 1;
+  padding: 0.56rem 0.64rem 0.58rem;
+  clip-path: polygon(0 5%, 93% 0, 100% 92%, 9% 100%);
+  background:
+    linear-gradient(115deg, rgba(255, 252, 246, 0.76), rgba(255, 246, 232, 0.58)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow:
+    0.1rem 0.14rem 0 rgba(47, 38, 35, 0.055),
+    0 0.42rem 0.8rem rgba(47, 38, 35, 0.07);
+}
+
+.home-path-map__step,
+.home-path-map__step:nth-child(2n),
+.home-path-map__step:nth-child(2n + 1) {
+  position: relative;
+  clip-path: polygon(3% 5%, 97% 0, 100% 88%, 90% 100%, 0 96%);
+  background:
+    linear-gradient(140deg, rgba(255, 252, 246, 0.94), rgba(255, 245, 231, 0.76)),
+    var(--grain-image);
+  background-size: cover, 9rem 9rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.54rem 1rem rgba(47, 38, 35, 0.095) !important;
+}
+
+.home-path-map__step::after {
+  content: "";
+  position: absolute;
+  inset: auto 0.62rem 0.42rem 3.35rem;
+  height: 0.12rem;
+  clip-path: polygon(0 28%, 100% 0, 96% 100%, 3% 82%);
+  background: rgba(153, 222, 201, 0.35);
+}
+
+.home-path-map__room-key {
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 0.18rem;
+  padding: 0.13rem 0.28rem 0.1rem;
+  clip-path: polygon(2% 12%, 96% 0, 100% 86%, 6% 100%);
+  background: rgba(255, 176, 143, 0.16);
+}
+
 @media (max-width: 760px) {
   .home-path-map {
     grid-template-columns: 1fr !important;
     padding: clamp(0.8rem, 4vw, 1rem) clamp(0.78rem, 4vw, 1rem) !important;
+  }
+
+  .home-path-map::before {
+    left: clamp(0.7rem, 4vw, 1rem);
+    right: clamp(0.7rem, 4vw, 1rem);
+    top: clamp(0.72rem, 4vw, 0.95rem);
+    bottom: auto;
+    width: auto;
+    height: 0.34rem;
+    clip-path: polygon(0 28%, 100% 0, 96% 100%, 3% 82%);
   }
 
   .home-path-map__note {
@@ -147,5 +249,9 @@
   .home-path-map__step:nth-child(2n),
   .home-path-map__step:nth-child(2n + 1) {
     flex-basis: auto;
+  }
+
+  .home-path-map__step::after {
+    inset-inline-start: 3.2rem;
   }
 }

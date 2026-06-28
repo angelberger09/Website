@@ -1,0 +1,142 @@
+.about-paper-room {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-paper-room::before {
+  content: "";
+  position: absolute;
+  top: clamp(24rem, 31vw, 34rem);
+  bottom: clamp(9rem, 12vw, 14rem);
+  left: clamp(1.05rem, 4vw, 4.25rem);
+  width: clamp(0.7rem, 0.9vw, 1.05rem);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(103, 76, 57, 0), rgba(103, 76, 57, 0.28) 10%, rgba(103, 76, 57, 0.22) 88%, rgba(103, 76, 57, 0)),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0 0.6rem, rgba(103, 76, 57, 0.12) 0.6rem 0.74rem);
+  box-shadow:
+    0.55rem 0 1.3rem rgba(90, 63, 42, 0.13),
+    inset 0.14rem 0 0 rgba(255, 255, 255, 0.55),
+    inset -0.12rem 0 0 rgba(87, 58, 39, 0.16);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-paper-room::after {
+  content: "about room thread";
+  position: absolute;
+  top: clamp(26rem, 32vw, 36rem);
+  left: clamp(0.72rem, 3.15vw, 3.45rem);
+  z-index: 0;
+  max-width: 8.5rem;
+  padding: 0.48rem 0.78rem;
+  color: rgba(81, 55, 40, 0.82);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 232, 0.98), rgba(235, 216, 184, 0.94)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: auto, 180px 180px;
+  border-radius: 0.18rem 0.5rem 0.24rem 0.42rem;
+  box-shadow:
+    0 0.5rem 1rem rgba(74, 52, 36, 0.16),
+    0.18rem 0.2rem 0 rgba(255, 255, 255, 0.42) inset;
+  clip-path: polygon(3% 4%, 96% 0, 100% 87%, 9% 100%, 0 18%);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+.about-room-key-board,
+.about-opening-board,
+.about-contact-sheet-board,
+.about-principles-board,
+.about-boundary-ledger-board,
+.about-pathways-board {
+  position: relative;
+}
+
+.about-room-key-board::before,
+.about-opening-board::before,
+.about-contact-sheet-board::before,
+.about-principles-board::before,
+.about-boundary-ledger-board::before,
+.about-pathways-board::before {
+  content: "";
+  position: absolute;
+  left: clamp(-1.2rem, -2vw, -0.4rem);
+  top: clamp(1.2rem, 4vw, 2.6rem);
+  width: clamp(2.3rem, 4vw, 3.4rem);
+  height: clamp(0.72rem, 1.1vw, 0.9rem);
+  background:
+    linear-gradient(135deg, rgba(252, 240, 202, 0.95), rgba(226, 199, 154, 0.88)),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: auto, 200px 200px;
+  border-radius: 0.12rem 0.26rem 0.18rem 0.16rem;
+  box-shadow:
+    0 0.36rem 0.78rem rgba(83, 58, 40, 0.14),
+    inset 0 0.08rem 0 rgba(255, 255, 255, 0.52);
+  clip-path: polygon(4% 7%, 100% 0, 92% 100%, 0 86%);
+  opacity: 0.9;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.about-opening-board::before,
+.about-principles-board::before,
+.about-pathways-board::before {
+  transform: rotate(4deg);
+}
+
+.about-room-key-board::after,
+.about-opening-board::after,
+.about-contact-sheet-board::after,
+.about-principles-board::after,
+.about-boundary-ledger-board::after,
+.about-pathways-board::after {
+  content: "";
+  position: absolute;
+  inset: auto clamp(1.2rem, 5vw, 4rem) -0.5rem clamp(1rem, 4vw, 3rem);
+  height: 1.25rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(79, 54, 37, 0.18), rgba(79, 54, 37, 0));
+  filter: blur(0.2rem);
+  opacity: 0.58;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-room-spine {
+  box-shadow:
+    0 1.15rem 2.4rem rgba(69, 48, 34, 0.17),
+    0 0 0 0.35rem rgba(255, 250, 235, 0.44);
+}
+
+.about-room-spine__slip:nth-child(odd) {
+  transform: rotate(-1.2deg);
+}
+
+.about-room-spine__slip:nth-child(even) {
+  transform: rotate(1.1deg);
+}
+
+@media (max-width: 760px) {
+  .about-paper-room::before,
+  .about-paper-room::after {
+    display: none;
+  }
+
+  .about-room-key-board::before,
+  .about-opening-board::before,
+  .about-contact-sheet-board::before,
+  .about-principles-board::before,
+  .about-boundary-ledger-board::before,
+  .about-pathways-board::before {
+    left: 1rem;
+    top: 0.8rem;
+    width: 2.4rem;
+  }
+}

@@ -72,6 +72,7 @@ import './store-preview-collage-pass.css';
 import './store-gallery-pass.css';
 import './store-hierarchy-pass.css';
 import './store-feed-contract-pass.css';
+import './store-feed-rule-slip-repair-pass.css';
 import './store-availability-board-pass.css';
 import './store-availability-status-pass.css';
 import './store-lane-collage-pass.css';
@@ -218,11 +219,10 @@ import './detail-card-binding-thread-pass.css';
 import './status-pill-paper-slip-pass.css';
 import './detail-card-room-pin-pass.css';
 import './eyebrow-paper-label-pass.css';
-import './global-metadata-paper-snippets-pass.css';
 
 export const metadata = {
-  title: 'Soft Strange Studio',
-  description: 'A quiet studio homepage for Angel Berger.',
+  title: 'Soft Strange Studio · Angel Berger',
+  description: 'A soft, strange studio home for artwork, notes, and small digital objects by Angel Berger.'
 };
 
 export default function RootLayout({ children }) {

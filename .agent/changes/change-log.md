@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 17:29 ET — Header paper label load repair
+
+See `.agent/changes/2026-06-28-header-paper-label-load-repair.md` and `.agent/matrices/header-paper-label-load-repair.matrix.md`.
+
 ## 2026-06-28 17:21 ET — PageIntro bound room ledger
 
 See `.agent/changes/2026-06-28-page-intro-bound-room-ledger.md` and `.agent/matrices/page-intro-bound-room-ledger.matrix.md`.

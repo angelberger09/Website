@@ -32,7 +32,7 @@
   left: 0.58rem;
   width: fit-content;
   padding: 0.28rem 0.42rem 0.24rem;
-  content: attr(aria-label);
+  content: "public rule";
   clip-path: polygon(1% 16%, 34% 0, 72% 8%, 100% 2%, 96% 88%, 61% 100%, 27% 92%, 0 100%);
   background: rgba(185, 201, 175, 0.24);
   color: rgba(87, 72, 58, 0.72);

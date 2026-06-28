@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 12:11 ET — Homepage path left rail refinement
+
+See `.agent/changes/2026-06-28-home-path-left-rail-refinement.md` and `.agent/matrices/home-path-left-rail-refinement.matrix.md`.
+
 ## 2026-06-28 11:50 ET — Notes path terminal ledger
 
 See `.agent/changes/2026-06-28-notes-path-terminal-ledger.md` and `.agent/matrices/notes-path-terminal-ledger.matrix.md`.

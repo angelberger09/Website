@@ -1,0 +1,136 @@
+/* Notes support room docket pass.
+   Turns the support strip into one composed paper-room object instead of three loose notes. */
+
+.notes-support-strip {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.45rem);
+  padding: clamp(2.2rem, 5vw, 3.6rem) clamp(1.1rem, 3vw, 2rem) clamp(1.45rem, 3vw, 2rem);
+  margin-block: clamp(2.2rem, 5vw, 4rem);
+  border-radius: 0;
+  clip-path: polygon(1.2% 0, 99% 1.8%, 98.2% 96.4%, 2.1% 100%, 0 48%);
+  background:
+    linear-gradient(118deg, rgba(255, 251, 240, 0.94), rgba(240, 225, 197, 0.84)),
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.58), transparent 28%),
+    repeating-linear-gradient(92deg, rgba(88, 69, 48, 0.035) 0 1px, transparent 1px 10px);
+  box-shadow:
+    0.35rem 0.55rem 0 rgba(75, 57, 40, 0.07),
+    0 1.2rem 2.4rem rgba(56, 43, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.notes-support-strip::before {
+  content: "reader support docket";
+  position: absolute;
+  top: clamp(0.8rem, 2vw, 1.1rem);
+  left: clamp(1rem, 3vw, 1.7rem);
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.42rem 0.78rem 0.36rem;
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(84, 62, 43, 0.78);
+  background:
+    linear-gradient(104deg, rgba(255, 248, 229, 0.96), rgba(235, 213, 176, 0.9));
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 88%);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(62, 45, 35, 0.06),
+    0 0.48rem 0.9rem rgba(62, 45, 35, 0.12);
+}
+
+.notes-support-strip::after {
+  content: "";
+  position: absolute;
+  left: clamp(2rem, 5vw, 3.5rem);
+  right: clamp(2rem, 5vw, 3.5rem);
+  top: clamp(4.6rem, 8vw, 5.6rem);
+  height: 2px;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(90deg, rgba(117, 83, 57, 0.34) 0 0.55rem, transparent 0.55rem 0.95rem);
+  transform: rotate(-0.45deg);
+  opacity: 0.62;
+}
+
+.notes-support-note {
+  position: relative;
+  min-height: 100%;
+  padding-top: clamp(1.15rem, 2.2vw, 1.55rem);
+  border-radius: 0;
+  clip-path: polygon(3% 0, 98% 2.2%, 100% 92%, 94% 100%, 1.5% 96%);
+  transform: rotate(-0.55deg);
+  background:
+    linear-gradient(143deg, rgba(255, 253, 245, 0.96), rgba(238, 224, 197, 0.88)),
+    repeating-linear-gradient(0deg, rgba(80, 58, 40, 0.028) 0 1px, transparent 1px 8px);
+  box-shadow:
+    0.18rem 0.26rem 0 rgba(70, 50, 34, 0.055),
+    0 0.72rem 1.15rem rgba(62, 46, 35, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.notes-support-note:nth-child(2) {
+  transform: translateY(0.45rem) rotate(0.5deg);
+}
+
+.notes-support-note:nth-child(3) {
+  transform: translateY(-0.2rem) rotate(-0.25deg);
+}
+
+.notes-support-note::before {
+  content: "";
+  position: absolute;
+  inset: 0.58rem auto auto 50%;
+  width: 42%;
+  height: 0.42rem;
+  transform: translateX(-50%) rotate(-1deg);
+  background: rgba(190, 157, 107, 0.22);
+  clip-path: polygon(2% 0, 98% 8%, 100% 86%, 0 100%);
+  box-shadow: 0 0.18rem 0.42rem rgba(82, 58, 38, 0.08);
+  pointer-events: none;
+}
+
+.notes-support-note__pin {
+  top: 0.7rem;
+  right: 0.72rem;
+  background: rgba(112, 82, 54, 0.1);
+}
+
+.notes-support-note__photo {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 244, 0.46),
+    0 0.5rem 0.9rem rgba(55, 42, 32, 0.1);
+}
+
+@media (max-width: 820px) {
+  .notes-support-strip {
+    grid-template-columns: 1fr;
+    padding-top: 3.8rem;
+    clip-path: polygon(0 0.7%, 100% 0, 98.5% 99%, 2% 100%);
+  }
+
+  .notes-support-strip::after {
+    top: 3.2rem;
+    left: 1.35rem;
+    right: 1.35rem;
+  }
+
+  .notes-support-note,
+  .notes-support-note:nth-child(2),
+  .notes-support-note:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-support-note,
+  .notes-support-note:nth-child(2),
+  .notes-support-note:nth-child(3),
+  .notes-support-strip::after {
+    transform: none;
+  }
+}

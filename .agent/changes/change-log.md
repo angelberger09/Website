@@ -2,6 +2,53 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 04:48 ET — About contact sheet terminal budget
+
+### Changed
+
+- Added `app/about-contact-sheet-terminal-budget-pass.css`.
+- Loaded it from `app/layout.jsx` immediately after `about-contact-sheet-frame-sequence-pass.css` so it wins over the late About contact-sheet frame cues.
+- Bound the About contact sheet into one calmer clipped paper receipt with a shared board backing, subtle left stitch/thread, softened heading sheet, quieter rail slips, calmer contact-card shadows, and mobile/reduced-motion fallbacks.
+- Added `.agent/changes/2026-06-28-about-contact-sheet-terminal-budget.md`.
+- Added `.agent/matrices/about-contact-sheet-terminal-budget.matrix.md`.
+
+### Why
+
+The About contact sheet already had direct room cues, contact-sheet path labels, and frame texture, but the newest frame-sequence layer loaded after broader room and performance budgets. This pass keeps the same public-safe About copy while making the section visibly read as one calm bound paper/photo contact receipt.
+
+### Related items
+
+- PAGE-002
+- COMP-008
+- DESIGN-019
+- DESIGN-021
+- DESIGN-022
+- DESIGN-024
+- DESIGN-028
+- DESIGN-029
+- DESIGN-030
+- DESIGN-031
+- LESSON-001
+- LESSON-002
+- LESSON-004
+- LESSON-018
+- LESSON-019
+- LESSON-021
+- LESSON-022
+- LESSON-024
+- LESSON-025
+- LESSON-026
+- METRIC-002
+- METRIC-018
+- METRIC-020
+- METRIC-021
+- METRIC-023
+- METRIC-027
+- METRIC-028
+- METRIC-029
+- METRIC-030
+- METRIC-032
+
 ## 2026-06-28 03:10 ET — About principles terminal budget
 
 ### Changed

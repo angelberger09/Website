@@ -96,6 +96,7 @@ import './notes-gallery-terminal-budget-pass.css';
 import './notes-direct-labels-pass.css';
 import './notes-reader-photo-strip-pass.css';
 import './notes-path-photo-board-pass.css';
+import './notes-path-terminal-ledger-pass.css';
 import './notes-path-direct-cues-pass.css';
 import './notes-path-reader-spine-pass.css';
 import './notes-path-exit-ledger-pass.css';
@@ -218,12 +219,10 @@ import './list-paper-scraps-pass.css';
 import './section-intro-copy-slips-pass.css';
 import './pathway-link-paper-trail-pass.css';
 import './home-path-ledger-focus-pass.css';
-import './home-section-thread-pass.css';
-import './home-room-sequence-stamps-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A tiny, cozy studio site for art, notes, and experiments by Angel Berger.',
+  description: 'A public studio home for Angel Berger, with notes, portfolio paths, and future shop links.'
 };
 
 export default function RootLayout({ children }) {

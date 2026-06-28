@@ -194,6 +194,7 @@ import './home-room-sequence-stamps-pass.css';
 import './home-path-map-room-cards-pass.css';
 import './home-path-ledger-consolidation-pass.css';
 import './home-path-map-room-spine-pass.css';
+import './home-reading-map-terminal-focus-pass.css';
 import './home-first-read-compass-pass.css';
 import './footer-exit-receipts-pass.css';
 import './footer-four-room-exit-pass.css';

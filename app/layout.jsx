@@ -115,6 +115,7 @@ import './notes-source-terminal-budget-pass.css';
 import './notes-state-terminal-budget-pass.css';
 import './notes-shelf-promise-strip-pass.css';
 import './notes-section-spine-labels-pass.css';
+import './notes-room-spine-rail-pass.css';
 import './notes-room-key-focus-pass.css';
 import './notes-post-source-slip-pass.css';
 import './notes-post-photo-card-pass.css';
@@ -218,13 +219,10 @@ import './status-pill-paper-slip-pass.css';
 import './detail-card-room-pin-pass.css';
 import './eyebrow-paper-label-pass.css';
 import './global-metadata-paper-snippets-pass.css';
-import './reader-state-paper-scraps-pass.css';
-import './list-paper-scraps-pass.css';
-import './section-intro-copy-slips-pass.css';
 
 export const metadata = {
-  title: "Soft Strange Studio",
-  description: "A quiet studio homepage for Angel Berger's public notes, work, and shop paths."
+  title: 'Soft Strange Studio',
+  description: 'A quiet studio homepage for Angel Berger.',
 };
 
 export default function RootLayout({ children }) {

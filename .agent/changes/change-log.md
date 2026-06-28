@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 16:41 ET — Notes source binding ribbon
+
+See `.agent/changes/2026-06-28-notes-source-binding-ribbon.md` and `.agent/matrices/notes-source-binding-ribbon.matrix.md`.
+
 ## 2026-06-28 16:30 ET — Root paper budget load
 
 See `.agent/changes/2026-06-28-root-paper-budget-load.md` and `.agent/matrices/root-paper-budget-load.matrix.md`.

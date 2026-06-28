@@ -1,0 +1,89 @@
+/* Homepage house-rules terminal budget pass.
+   Keeps the source-backed rule slips visibly papery while preventing the late
+   label layer from becoming heavier than the surrounding calm-room budget. */
+
+.home-studio-checks {
+  contain-intrinsic-size: 1px 600px;
+}
+
+.home-studio-checks::before,
+.home-studio-checks::after,
+.home-check-rail::before,
+.home-check-rail::after {
+  filter: none;
+}
+
+.home-check-note,
+.home-check-note__photo,
+.home-check-note__rule-slip,
+.home-check-note small {
+  filter: none;
+  text-shadow: none;
+}
+
+.home-check-note__rule-slip {
+  top: clamp(0.72rem, 1.6vw, 0.95rem);
+  right: clamp(0.72rem, 1.7vw, 0.95rem);
+  max-width: min(10.2rem, 44%);
+  padding: 0.34rem 0.58rem 0.3rem;
+  color: rgba(58, 45, 42, 0.76);
+  font-size: clamp(0.62rem, 0.82vw, 0.68rem);
+  letter-spacing: 0.095em;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 235, 0.64) 62%, rgba(185, 201, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, 11rem 11rem;
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.045),
+    0 0.42rem 0.72rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.home-check-note:nth-child(1) .home-check-note__rule-slip,
+.home-check-note:nth-child(2) .home-check-note__rule-slip,
+.home-check-note:nth-child(3) .home-check-note__rule-slip {
+  transform: rotate(0.45deg);
+}
+
+.home-check-note__rule-slip::before {
+  opacity: 0.56;
+}
+
+.home-check-note__photo {
+  padding-top: clamp(1.95rem, 3.5vw, 2.28rem);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.045),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.085),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-check-note small {
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.04),
+    0 0.34rem 0.62rem rgba(47, 38, 35, 0.075);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-check-note__rule-slip,
+  .home-check-note__photo {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-studio-checks {
+    contain-intrinsic-size: 1px 720px;
+  }
+
+  .home-check-note__rule-slip {
+    position: static;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 0.66rem;
+    transform: none !important;
+  }
+
+  .home-check-note__photo {
+    padding-top: 1.15rem;
+  }
+}

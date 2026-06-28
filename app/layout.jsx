@@ -162,6 +162,7 @@ import './page-intro-subtitle-pass.css';
 import './page-intro-photo-card-pass.css';
 import './page-intro-photo-labels-pass.css';
 import './page-intro-copy-slip-pass.css';
+import './section-intro-copy-slips-pass.css';
 import './page-intro-room-shelf-ledger-pass.css';
 import './page-intro-room-tags-pass.css';
 import './page-intro-tag-photo-pass.css';

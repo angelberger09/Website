@@ -1,0 +1,94 @@
+.portfolio-rule-slip-board {
+  position: relative;
+  align-items: stretch;
+  padding: 0.25rem 0.1rem 0.45rem;
+}
+
+.portfolio-rule-slip-board::before {
+  content: "";
+  position: absolute;
+  inset: 0.05rem -0.15rem -0.25rem;
+  z-index: -1;
+  background:
+    linear-gradient(128deg, rgba(255, 250, 235, 0.36), rgba(226, 207, 168, 0.2)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 190px 190px;
+  box-shadow: 0 14px 28px rgba(82, 59, 35, 0.08);
+  clip-path: polygon(1% 9%, 99% 0, 100% 86%, 94% 100%, 4% 96%, 0 24%);
+}
+
+.portfolio-rule-slip {
+  position: relative;
+  display: grid;
+  gap: 0.48rem;
+  width: min(100%, 25rem);
+  padding: 0.72rem 0.82rem 0.78rem;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.54), transparent 24%),
+    linear-gradient(145deg, rgba(255, 252, 241, 0.96), rgba(235, 218, 183, 0.88)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, cover, 180px 180px, 170px 170px;
+  box-shadow:
+    0 17px 32px rgba(82, 59, 35, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.58) inset;
+  clip-path: polygon(3% 1%, 97% 0, 100% 88%, 94% 100%, 5% 96%, 0 13%);
+  transform: rotate(var(--portfolio-rule-tilt, -0.55deg));
+}
+
+.portfolio-rule-slip:nth-child(2n) {
+  --portfolio-rule-tilt: 0.68deg;
+  margin-top: 0.42rem;
+}
+
+.portfolio-rule-slip:nth-child(3n) {
+  --portfolio-rule-tilt: -0.2deg;
+}
+
+.portfolio-rule-slip::before {
+  content: "";
+  position: absolute;
+  top: -0.38rem;
+  left: 0.82rem;
+  width: 4.4rem;
+  height: 0.9rem;
+  background: rgba(241, 219, 171, 0.68);
+  box-shadow: 0 7px 14px rgba(74, 53, 30, 0.11);
+  transform: rotate(-2.8deg);
+  clip-path: polygon(5% 10%, 96% 0, 100% 82%, 12% 100%, 0 72%);
+}
+
+.portfolio-rule-slip span {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(59, 45, 32, 0.72);
+  background: rgba(255, 248, 225, 0.82);
+  box-shadow: 0 8px 16px rgba(91, 68, 41, 0.08);
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 90%);
+}
+
+.portfolio-rule-tapes .portfolio-rule-slip p,
+.portfolio-rule-slip p {
+  max-width: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  clip-path: none;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 680px) {
+  .portfolio-rule-slip,
+  .portfolio-rule-slip:nth-child(2n),
+  .portfolio-rule-slip:nth-child(3n) {
+    width: 100%;
+    margin-top: 0;
+    transform: none;
+  }
+}

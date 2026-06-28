@@ -1,0 +1,123 @@
+/* Homepage room trail binding pass.
+   Makes the reading path feel like one bound room trail instead of separate ticket stops. */
+
+.home-page .home-path-map {
+  overflow: visible;
+}
+
+.home-page .home-path-map__binding {
+  position: absolute;
+  top: clamp(0.95rem, 2vw, 1.25rem);
+  right: clamp(0.8rem, 2vw, 1.45rem);
+  z-index: 2;
+  display: grid;
+  gap: 0.16rem;
+  width: min(10.5rem, 24vw);
+  padding: 0.52rem 0.62rem 0.48rem;
+  color: rgba(62, 47, 42, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 245, 0.96), rgba(242, 224, 198, 0.74) 72%, rgba(153, 222, 201, 0.18)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0 0.58rem 0.95rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  clip-path: polygon(2% 8%, 96% 0, 100% 88%, 8% 100%);
+  transform: rotate(1.5deg);
+  pointer-events: none;
+}
+
+.home-page .home-path-map__binding::before {
+  content: "";
+  position: absolute;
+  inset: -0.18rem 42% auto auto;
+  width: 1.8rem;
+  height: 0.38rem;
+  background: rgba(255, 176, 143, 0.42);
+  border-radius: 999px;
+  box-shadow: 0 0.18rem 0.36rem rgba(47, 38, 35, 0.1);
+  transform: rotate(-5deg);
+}
+
+.home-page .home-path-map__binding span {
+  font-size: clamp(0.54rem, 0.72vw, 0.62rem);
+  font-weight: 900;
+}
+
+.home-page .home-path-map__binding b {
+  color: rgba(51, 39, 35, 0.82);
+  font-size: clamp(0.62rem, 0.86vw, 0.72rem);
+  line-height: 1.15;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.home-page .home-path-map__trail {
+  position: relative;
+  margin-top: clamp(0.95rem, 2vw, 1.35rem);
+}
+
+.home-page .home-path-map__trail::after {
+  content: "";
+  position: absolute;
+  left: clamp(0.64rem, 1.2vw, 0.86rem);
+  right: clamp(0.64rem, 1.2vw, 0.86rem);
+  top: 50%;
+  z-index: -1;
+  height: 0.42rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(74, 57, 51, 0.16) 0 1px, transparent 1px 0.54rem),
+    linear-gradient(90deg, rgba(139, 164, 126, 0.12), rgba(255, 176, 143, 0.18), rgba(216, 197, 236, 0.14));
+  box-shadow:
+    0 0.22rem 0.38rem rgba(47, 38, 35, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  clip-path: polygon(1% 18%, 99% 0, 97% 100%, 0 82%);
+  transform: translateY(-50%);
+}
+
+.home-page .home-path-map__step {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.home-page .home-path-map__step:hover,
+.home-page .home-path-map__step:focus-visible {
+  transform: translateY(-0.14rem) rotate(-0.6deg);
+  box-shadow:
+    0.16rem 0.22rem 0 rgba(47, 38, 35, 0.075),
+    0 0.78rem 1.25rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78) !important;
+}
+
+.home-page .home-path-map__step:hover .home-path-map__room-key,
+.home-page .home-path-map__step:focus-visible .home-path-map__room-key {
+  color: rgba(62, 47, 42, 0.9);
+}
+
+@media (max-width: 900px) {
+  .home-page .home-path-map__binding {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 0.7rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-page .home-path-map__trail::after {
+    left: 50%;
+    right: auto;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 0.32rem;
+    height: auto;
+    transform: translateX(-50%);
+    background:
+      repeating-linear-gradient(180deg, rgba(74, 57, 51, 0.14) 0 1px, transparent 1px 0.54rem),
+      linear-gradient(180deg, rgba(139, 164, 126, 0.12), rgba(255, 176, 143, 0.16), rgba(216, 197, 236, 0.14));
+  }
+}

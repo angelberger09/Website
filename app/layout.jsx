@@ -153,6 +153,8 @@ import './page-intro-performance-pass.css';
 import './home-entry-contact-sheet-pass.css';
 import './home-hero-entry-ledger-pass.css';
 import './home-hero-route-ledger-binding-pass.css';
+import './home-hero-wordless-entry-pass.css';
+import './home-room-choice-left-depth-pass.css';
 import './home-door-room-cue-slips-pass.css';
 import './home-door-room-ledger-pass.css';
 import './home-door-room-terminal-budget-pass.css';
@@ -218,21 +220,10 @@ import './pathway-link-paper-trail-pass.css';
 import './home-path-ledger-focus-pass.css';
 import './home-section-thread-pass.css';
 import './home-room-sequence-stamps-pass.css';
-import './home-path-map-room-cards-pass.css';
-import './home-path-ledger-consolidation-pass.css';
-import './home-path-map-room-spine-pass.css';
-import './home-path-terminal-ledger-pass.css';
-import './home-hero-above-fold-board-pass.css';
-import './home-hero-scale-guard-pass.css';
-import './home-hero-front-desk-finish-pass.css';
-import './home-hero-wordless-entry-pass.css';
-import './home-room-choice-left-depth-pass.css';
-import './home-room-choice-pocket-pass.css';
-import './terminal-room-render-budget-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',
-  description: 'A small studio home for Angel Berger, gathering notes, projects, and shop paths.'
+  description: 'A tiny, cozy studio site for art, notes, and experiments by Angel Berger.',
 };
 
 export default function RootLayout({ children }) {

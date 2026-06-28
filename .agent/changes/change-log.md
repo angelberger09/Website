@@ -2,6 +2,61 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 11:35 ET — Visual tour webhook notification
+
+### Changed
+
+- Updated `.github/workflows/visual-tour.yml`.
+- Added optional webhook notification support through repository secret `VISUAL_TOUR_WEBHOOK_URL`.
+- Added optional bearer-token support through repository secret `VISUAL_TOUR_WEBHOOK_TOKEN`.
+- Added video artifact and receipt artifact IDs and URLs to the JSON webhook payload.
+- Added run metadata, commit metadata, workflow status, and the generated visual-tour manifest to the JSON payload.
+- Added opt-in MP4 archive upload when repository variable `VISUAL_TOUR_WEBHOOK_SEND_FILES` is set to `true`.
+- Added `.agent/changes/2026-06-28-visual-tour-webhook.md`.
+- Updated `.agent/matrices/visual-tour-workflow.matrix.md`.
+
+### Why
+
+Angel wanted the visual tour video to be sent to a webhook. The workflow now sends a small JSON notification by default when a webhook URL secret exists, and it can also send the generated MP4 files as a compressed multipart archive when explicitly enabled.
+
+### Related items
+
+- PROC-004
+- TOOL-001
+- METRIC-033
+- METRIC-034
+
+## 2026-06-28 11:24 ET — Visual tour workflow setup
+
+### Changed
+
+- Added `.github/workflows/visual-tour.yml`.
+- The workflow builds the exact branch or pull request commit under test.
+- It serves the static export locally from `out/` on port `4173`.
+- It fetches the reusable `SoftStrange-WebsiteAuditor` ESM tool from a configurable URL, defaulting to the Software repo CDN path.
+- It runs the auditor against the local `/Website` build at 4fps.
+- It captures scroll walkthrough videos for Home, About, Notes, Portfolio, and Store.
+- It captures a clickthrough and interaction-simulation video using header links, nav links, homepage route cards, door cards, tabs, buttons, and form controls as targets.
+- It uploads MP4 videos plus visual receipts and recovery packets as GitHub Actions artifacts.
+
+### Why
+
+The Website needs a visual receipt loop so every branch or push can show what the rendered interface actually does while scrolling and interacting. This supports the recovery harness by reducing guesswork after CSS and layout changes.
+
+### Related items
+
+- PROC-004
+- TOOL-001
+- INT-010
+- INT-011
+- PAGE-001
+- PAGE-002
+- PAGE-003
+- PAGE-004
+- PAGE-005
+- METRIC-033
+- METRIC-034
+
 ## 2026-06-28 11:12 ET — Homepage hero wordless entry refinement
 
 ### Changed

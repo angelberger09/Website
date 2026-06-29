@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 05:10 ET — Homepage house rules receipt binding refinement
+
+See `.agent/changes/2026-06-29-home-house-rules-receipt-binding-refinement.md` and `.agent/matrices/home-house-rules-receipt-binding-refinement.matrix.md`.
+
 ## 2026-06-29 04:49 ET — Detail card binding thread load
 
 See `.agent/changes/2026-06-29-detail-card-binding-thread-load.md` and `.agent/matrices/detail-card-binding-thread-load.matrix.md`.
@@ -117,7 +121,3 @@ See `.agent/changes/2026-06-28-portfolio-manifest-next-frame-slips.md` and `.age
 ## 2026-06-28 23:18 ET — Footer exit receipt ledger
 
 See `.agent/changes/2026-06-28-footer-exit-receipt-ledger.md` and `.agent/matrices/footer-exit-receipt-ledger.matrix.md`.
-
-## 2026-06-28 23:10 ET — Footer paper trail style load
-
-See `.agent/changes/2026-06-28-footer-paper-trail-style-load.md` and `.agent/matrices/footer-paper-trail-style-load.matrix.md`.

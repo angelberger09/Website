@@ -28,6 +28,7 @@ import './root-paper-pass.css';
 import './root-paper-budget-pass.css';
 import './shared-room-path-rail-pass.css';
 import './shared-site-shell-room-spine-pass.css';
+import './shared-route-chapter-notebook-pass.css';
 import './home-paper-collage-pass.css';
 import './home-highlight-photo-pass.css';
 import './home-front-room-welcome-desk-pass.css';

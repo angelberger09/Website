@@ -48,6 +48,7 @@ import './home-next-path-exit-docket-pass.css';
 import './home-next-path-terminal-budget-pass.css';
 import './home-hero-wordless-entry-pass.css';
 import './home-room-choice-left-depth-pass.css';
+import './home-door-room-ledger-binding-pass.css';
 import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';
 import './about-room-key-pass.css';

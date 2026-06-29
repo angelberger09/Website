@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 04:20 ET — Detail card status tape pass
+
+See `.agent/changes/2026-06-29-detail-card-status-tape.md` and `.agent/matrices/detail-card-status-tape.matrix.md`.
+
 ## 2026-06-29 04:08 ET — Shared paper snippet status pass
 
 See `.agent/changes/2026-06-29-shared-paper-snippet-status.md` and `.agent/matrices/shared-paper-snippet-status.matrix.md`.

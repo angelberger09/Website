@@ -6,6 +6,7 @@ import './detail-card-paper-face-pass.css';
 import './shared-status-slip-pass.css';
 import './shared-paper-snippet-status-pass.css';
 import './detail-card-status-tape-pass.css';
+import './detail-card-copy-slip-pass.css';
 import './section-intro-paper-label-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-photo-steps-pass.css';

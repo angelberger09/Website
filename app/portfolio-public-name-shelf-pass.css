@@ -1,0 +1,46 @@
+/* Portfolio public-name shelf pass.
+   Turns the manifest shelf away from internal source language and toward visitor-facing public archive labels. */
+
+.portfolio-manifest-board::after {
+  content: "public name shelf";
+}
+
+.portfolio-manifest-card__copy small {
+  color: rgba(72, 53, 35, 0.72);
+  background:
+    linear-gradient(135deg, rgba(255, 246, 220, 0.94), rgba(231, 212, 172, 0.74)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 180px 180px;
+  box-shadow:
+    0 8px 15px rgba(91, 68, 41, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.portfolio-manifest-rules::before {
+  content: "how this shelf stays honest";
+  align-self: start;
+  max-width: 12rem;
+  padding: 0.56rem 0.72rem;
+  color: rgba(58, 43, 31, 0.68);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(140deg, rgba(255, 250, 235, 0.92), rgba(225, 207, 168, 0.72)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 180px 180px;
+  box-shadow: 0 12px 22px rgba(91, 68, 41, 0.12);
+  clip-path: polygon(4% 7%, 96% 0, 100% 86%, 92% 100%, 0 94%);
+  transform: rotate(-0.7deg);
+}
+
+.portfolio-manifest-rules li {
+  max-width: 24rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 620px) {
+  .portfolio-manifest-rules::before {
+    max-width: 100%;
+  }
+}

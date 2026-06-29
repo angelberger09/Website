@@ -14,6 +14,7 @@ import './continuity-exit-door-binding-pass.css';
 import './footer-paper-trail-pass.css';
 import './footer-studio-mark-photo-pass.css';
 import './footer-exit-receipt-ledger-pass.css';
+import './footer-four-room-exit-pass.css';
 import './paper-header-pass.css';
 import './header-paper-tabs-pass.css';
 import './header-active-room-pass.css';

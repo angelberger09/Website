@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 00:11 ET — Section intro paper labels
+
+See `.agent/changes/2026-06-29-section-intro-paper-labels.md` and `.agent/matrices/section-intro-paper-labels.matrix.md`.
+
 ## 2026-06-28 23:52 ET — PageIntro route ledger photo refinement
 
 See `.agent/changes/2026-06-28-page-intro-route-ledger-photo-refinement.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.

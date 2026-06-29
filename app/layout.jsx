@@ -33,6 +33,7 @@ import './home-house-rules-terminal-budget-pass.css';
 import './home-house-rules-receipt-board-pass.css';
 import './home-arrival-ticket-pass.css';
 import './home-path-spine-ticket-pass.css';
+import './home-path-map-bound-guide-pass.css';
 import './home-room-trail-binding-pass.css';
 import './home-section-spine-shadow-pass.css';
 import './home-next-path-exit-docket-pass.css';

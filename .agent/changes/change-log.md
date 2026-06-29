@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 05:38 ET — Detail card corner stitch pass
+
+See `.agent/changes/2026-06-29-detail-card-corner-stitch.md` and `.agent/matrices/detail-card-corner-stitch.matrix.md`.
+
 ## 2026-06-29 05:31 ET — Notes post bound sheet pass
 
 See `.agent/changes/2026-06-29-notes-post-bound-sheet.md` and `.agent/matrices/notes-post-bound-sheet.matrix.md`.
@@ -117,15 +121,3 @@ See `.agent/changes/2026-06-29-section-intro-paper-labels.md` and `.agent/matric
 ## 2026-06-28 23:52 ET — PageIntro route ledger photo refinement
 
 See `.agent/changes/2026-06-28-page-intro-route-ledger-photo-refinement.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.
-
-## 2026-06-28 23:41 ET — Homepage room choice binding board refinement
-
-See `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.
-
-## 2026-06-28 23:31 ET — Portfolio manifest next-frame slips
-
-See `.agent/changes/2026-06-28-portfolio-manifest-next-frame-slips.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.
-
-## 2026-06-28 23:18 ET — Footer exit receipt ledger
-
-See `.agent/changes/2026-06-28-footer-exit-receipt-ledger.md` and `.agent/matrices/footer-exit-receipt-ledger.matrix.md`.

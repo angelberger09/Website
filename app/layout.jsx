@@ -8,6 +8,7 @@ import './shared-paper-snippet-status-pass.css';
 import './detail-card-status-tape-pass.css';
 import './detail-card-copy-slip-pass.css';
 import './detail-card-title-ticket-pass.css';
+import './detail-card-binding-thread-pass.css';
 import './section-intro-paper-label-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-photo-steps-pass.css';

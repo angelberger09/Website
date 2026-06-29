@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 06:31 ET — Homepage room spine continuity pass
+
+See `.agent/changes/2026-06-29-home-room-spine-continuity.md` and `.agent/matrices/home-room-spine-continuity.matrix.md`.
+
 ## 2026-06-29 06:18 ET — PageIntro room path label refinement
 
 See `.agent/changes/2026-06-29-page-intro-room-path-label-refinement.md` and `.agent/matrices/page-intro-room-path-label-refinement.matrix.md`.

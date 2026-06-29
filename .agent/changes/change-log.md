@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 03:21 ET — Shared studio path rail refinement
+
+See `.agent/changes/2026-06-29-shared-studio-path-rail-refinement.md` and `.agent/matrices/shared-studio-path-rail-refinement.matrix.md`.
+
 ## 2026-06-29 03:10 ET — Shared room section binding tabs
 
 See `.agent/changes/2026-06-29-shared-room-section-binding-tabs.md` and `.agent/matrices/shared-room-section-binding-tabs.matrix.md`.

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 20:31 ET — Continuity paper trail load repair
+
+See `.agent/changes/2026-06-28-continuity-paper-trail-load.md` and `.agent/matrices/continuity-paper-trail-load.matrix.md`.
+
 ## 2026-06-28 20:21 ET — Portfolio archive room thread binding
 
 See `.agent/changes/2026-06-28-portfolio-archive-room-thread-binding.md` and `.agent/matrices/portfolio-archive-room-thread-binding.matrix.md`.

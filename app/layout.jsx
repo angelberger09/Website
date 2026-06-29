@@ -78,6 +78,7 @@ import './portfolio-record-state-terminal-budget-pass.css';
 import './portfolio-final-path-compass-pass.css';
 import './portfolio-final-path-terminal-budget-pass.css';
 import './portfolio-lower-handoff-binding-pass.css';
+import './portfolio-room-thread-binding-pass.css';
 import './store-paper-snippet-pass.css';
 import './store-entry-receipts-pass.css';
 import './store-entry-proof-desk-pass.css';

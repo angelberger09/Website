@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 00:29 ET — Notes fallback receipt pass load
+
+See `.agent/changes/2026-06-29-notes-fallback-receipt-pass-load.md` and `.agent/matrices/notes-fallback-receipt-pass-load.matrix.md`.
+
 ## 2026-06-29 00:21 ET — PageIntro photo stamp ledger
 
 See `.agent/changes/2026-06-29-page-intro-photo-stamp-ledger.md` and `.agent/matrices/page-intro-photo-stamp-ledger.matrix.md`.

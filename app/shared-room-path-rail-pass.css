@@ -16,6 +16,8 @@
   width: clamp(1.95rem, 3vw, 2.7rem);
   content: "";
   background:
+    linear-gradient(180deg, rgba(126, 93, 72, 0.2) 0 0.16rem, transparent 0.16rem 0.72rem, rgba(126, 93, 72, 0.13) 0.72rem 0.86rem, transparent 0.86rem 100%),
+    linear-gradient(0deg, rgba(126, 93, 72, 0.17) 0 0.15rem, transparent 0.15rem 0.74rem, rgba(126, 93, 72, 0.11) 0.74rem 0.88rem, transparent 0.88rem 100%),
     radial-gradient(circle at 50% 8%, rgba(86, 68, 58, 0.22) 0 0.12rem, transparent 0.14rem),
     radial-gradient(circle at 50% 26%, rgba(86, 68, 58, 0.2) 0 0.11rem, transparent 0.13rem),
     radial-gradient(circle at 50% 44%, rgba(86, 68, 58, 0.18) 0 0.105rem, transparent 0.13rem),
@@ -26,15 +28,19 @@
     linear-gradient(180deg, rgba(255, 250, 242, 0.95), rgba(255, 247, 235, 0.76)),
     var(--grain-image),
     var(--fine-scratch-image);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover, 24rem 24rem, 46rem 46rem;
+  background-size: 100% 3.2rem, 100% 3.2rem, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover, 24rem 24rem, 46rem 46rem;
+  background-position: top, bottom, center, center, center, center, center, center, center, center, center, center;
+  background-repeat: no-repeat, no-repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat;
   box-shadow:
     0.62rem 1.1rem 2.5rem rgba(47, 38, 35, 0.16),
+    0 0.28rem 0.7rem rgba(77, 55, 43, 0.1),
+    0 -0.12rem 0.55rem rgba(255, 255, 255, 0.35) inset,
     0.12rem 0.22rem 0 rgba(255, 255, 255, 0.5) inset,
     -0.12rem 0.08rem 0.35rem rgba(255, 255, 255, 0.45) inset,
     inset -1px 0 rgba(47, 38, 35, 0.1),
     inset 1px 0 rgba(255, 255, 255, 0.62);
   clip-path: polygon(17% 0, 88% 1%, 78% 13%, 95% 28%, 80% 45%, 92% 62%, 77% 79%, 88% 100%, 18% 98%, 7% 78%, 18% 56%, 6% 35%, 19% 14%);
-  opacity: 0.92;
+  opacity: 0.94;
   pointer-events: none;
 }
 
@@ -47,8 +53,8 @@
   min-height: 10.5rem;
   align-content: center;
   padding: 0.5rem 0.12rem;
-  content: "public room path";
-  color: rgba(58, 45, 42, 0.66);
+  content: "studio path";
+  color: rgba(58, 45, 42, 0.72);
   font-size: clamp(0.55rem, 0.7vw, 0.68rem);
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -57,11 +63,12 @@
   text-transform: uppercase;
   writing-mode: vertical-rl;
   background:
-    linear-gradient(180deg, rgba(255, 253, 247, 0.82), rgba(246, 232, 213, 0.72)),
+    linear-gradient(180deg, rgba(255, 253, 247, 0.9), rgba(246, 232, 213, 0.76)),
     var(--grain-image);
   background-size: cover, 18rem 18rem;
   box-shadow:
     0.18rem 0.32rem 0.95rem rgba(51, 39, 32, 0.13),
+    0.03rem 0.08rem 0 rgba(255, 255, 255, 0.55) inset,
     inset 0 0 0 1px rgba(111, 84, 70, 0.08);
   clip-path: polygon(12% 0, 91% 3%, 86% 100%, 16% 96%, 0 58%);
   pointer-events: none;

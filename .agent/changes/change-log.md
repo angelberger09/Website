@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 03:39 ET — Footer four-room exit load
+
+See `.agent/changes/2026-06-29-footer-four-room-exit-load.md` and `.agent/matrices/footer-four-room-exit-load.matrix.md`.
+
 ## 2026-06-29 03:29 ET — PageIntro room index board
 
 See `.agent/changes/2026-06-29-page-intro-room-index-board.md` and `.agent/matrices/page-intro-room-index-board.matrix.md`.

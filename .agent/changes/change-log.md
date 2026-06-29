@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 20:39 ET — Continuity stagger thread repair
+
+See `.agent/changes/2026-06-28-continuity-stagger-thread-repair.md` and `.agent/matrices/continuity-stagger-thread-repair.matrix.md`.
+
 ## 2026-06-28 20:31 ET — Continuity paper trail load repair
 
 See `.agent/changes/2026-06-28-continuity-paper-trail-load.md` and `.agent/matrices/continuity-paper-trail-load.matrix.md`.

@@ -1,0 +1,72 @@
+.site-shell .page-layout,
+.site-shell .readable-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-shell .page-layout::after,
+.site-shell .readable-shell::after {
+  position: absolute;
+  inset: clamp(-0.8rem, -1.6vw, -0.35rem) max(-0.7rem, -1.2vw) clamp(-1rem, -1.8vw, -0.45rem);
+  z-index: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0.1) 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(47, 38, 35, 0.045) 0 1px,
+      transparent 1px 2.45rem
+    ),
+    radial-gradient(circle at 8% 12%, rgba(255, 176, 143, 0.18), transparent 15rem),
+    radial-gradient(circle at 92% 72%, rgba(185, 201, 175, 0.16), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 250, 242, 0.58), rgba(255, 247, 235, 0.22));
+  background-size: 3.2rem 100%, 100% 2.45rem, auto, auto, auto;
+  box-shadow:
+    0.55rem 0.8rem 1.85rem rgba(47, 38, 35, 0.09),
+    inset 0 1px rgba(255, 255, 255, 0.52),
+    inset 0 -1px rgba(47, 38, 35, 0.05);
+  clip-path: polygon(0.45% 0.6%, 99.2% 0, 100% 98.5%, 1.1% 100%);
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.site-shell .page-layout > *,
+.site-shell .readable-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.site-shell .page-layout > section:not(.page-hero),
+.site-shell .page-layout > article,
+.site-shell .readable-shell > section:not(.page-hero),
+.site-shell .readable-shell > article {
+  filter: drop-shadow(0.18rem 0.26rem 0.34rem rgba(47, 38, 35, 0.055));
+}
+
+.site-shell .page-layout > section:not(.page-hero)::marker,
+.site-shell .readable-shell > section:not(.page-hero)::marker {
+  color: rgba(255, 176, 143, 0.6);
+}
+
+@media (max-width: 900px) {
+  .site-shell .page-layout::after,
+  .site-shell .readable-shell::after {
+    inset: -0.45rem -0.15rem -0.65rem;
+    background:
+      repeating-linear-gradient(
+        180deg,
+        rgba(47, 38, 35, 0.04) 0 1px,
+        transparent 1px 2.7rem
+      ),
+      linear-gradient(135deg, rgba(255, 250, 242, 0.42), rgba(255, 247, 235, 0.16));
+    box-shadow: 0.25rem 0.42rem 1rem rgba(47, 38, 35, 0.06);
+    opacity: 0.62;
+  }
+
+  .site-shell .page-layout > section:not(.page-hero),
+  .site-shell .page-layout > article,
+  .site-shell .readable-shell > section:not(.page-hero),
+  .site-shell .readable-shell > article {
+    filter: none;
+  }
+}

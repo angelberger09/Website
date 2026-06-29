@@ -10,6 +10,8 @@ import './continuity-map-cue-pass.css';
 import './continuity-stagger-thread-repair-pass.css';
 import './continuity-route-receipts-pass.css';
 import './continuity-exit-door-binding-pass.css';
+import './footer-paper-trail-pass.css';
+import './footer-studio-mark-photo-pass.css';
 import './paper-header-pass.css';
 import './header-paper-tabs-pass.css';
 import './header-active-room-pass.css';

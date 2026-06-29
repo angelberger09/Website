@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 22:39 ET — Portfolio project manifest shelf
+
+See `.agent/changes/2026-06-28-portfolio-project-manifest-shelf.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.
+
 ## 2026-06-28 22:31 ET — Detail card paper face load
 
 See `.agent/changes/2026-06-28-detail-card-paper-face-load.md` and `.agent/matrices/detail-card-paper-face-load.matrix.md`.

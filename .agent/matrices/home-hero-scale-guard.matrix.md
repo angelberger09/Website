@@ -3,16 +3,16 @@
 | Field | Value |
 |---|---|
 | Matrix ID | MATRIX-HOME-HERO-SCALE-GUARD |
-| Date | 2026-06-28 23:41 ET |
+| Date | 2026-06-29 00:38 ET |
 | Public source files | `app/page.jsx`, `app/home-hero-scale-guard-pass.css`, `app/home-hero-front-desk-finish-pass.css`, `app/home-hero-wordless-entry-pass.css`, `app/home-room-choice-left-depth-pass.css`, `app/layout.jsx` |
-| Agent files | `.agent/changes/2026-06-28-home-hero-scale-guard.md`, `.agent/changes/2026-06-28-home-hero-ux-entry-board.md`, `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`, `.agent/changes/2026-06-28-home-room-choice-left-depth.md`, `.agent/changes/2026-06-28-home-wordless-hero-load-repair.md`, `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md`, `.agent/matrices/home-hero-scale-guard.matrix.md` |
+| Agent files | `.agent/changes/2026-06-28-home-hero-scale-guard.md`, `.agent/changes/2026-06-28-home-hero-ux-entry-board.md`, `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`, `.agent/changes/2026-06-28-home-room-choice-left-depth.md`, `.agent/changes/2026-06-28-home-wordless-hero-load-repair.md`, `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md`, `.agent/changes/2026-06-29-home-wordless-room-choice-import-repair.md`, `.agent/matrices/home-hero-scale-guard.matrix.md` |
 | Primary page | PAGE-001 Homepage |
 | Components | COMP-003 Scroll Title Sequence, COMP-004 Studio Page Cards |
 | Design patterns | DESIGN-002 Large Editorial Type, DESIGN-014 Paper List Hero Lockup, DESIGN-019 Paper Material Authenticity, DESIGN-021 Content-Bearing Polaroid Cards, DESIGN-022 Paper Piece Card Surfaces, DESIGN-029 Flattened Paper Hierarchy, DESIGN-030 Text Paper Snippets, DESIGN-031 Photo-Led Content Surfaces |
 | Lessons | LESSON-001, LESSON-002, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-024, LESSON-029, LESSON-030, LESSON-033, LESSON-039 |
 | Metrics | METRIC-001, METRIC-002, METRIC-017, METRIC-018, METRIC-020, METRIC-021, METRIC-028, METRIC-029, METRIC-030, METRIC-032 |
 | Feedback target | Homepage first-screen hero wording, scaling, first-screen orientation, entry-action visibility, left-docked room-choice grouping, lifted-paper depth, and one-board binding clarity |
-| Satisfaction state | partially satisfied; visible hero wording removed, leftover pseudo-wording suppressed, route-choice entry preserved and tightened, active wordless/left-depth CSS passes reconnected, and the room-choice contact sheet now has a stronger left binding gutter plus fixed stitch rail cues so it reads more like one bound paper entry board instead of separate loose slips |
+| Satisfaction state | partially satisfied; visible hero wording removed, leftover pseudo-wording suppressed, route-choice entry preserved and tightened, and the current import graph now explicitly loads the wordless entry and left-depth room-choice CSS passes so the recorded compact paper entry board can render instead of being only documented |
 
 ## Implementation notes
 
@@ -28,9 +28,11 @@ The wordless entry refinement suppresses the old `title-lockup::after` label so 
 
 The left-depth pass loads `app/home-room-choice-left-depth-pass.css` after the wordless entry pass and before the terminal render budget. It keeps the wordless hero, but shifts the entry board to a left-docked desktop position, strengthens the backing paper sheet and contact-sheet shadows, adds a small tape tab, and gives the four room-choice slips subtle paper rotations. Mobile and reduced-motion states remove the rotations and keep the board centered/readable.
 
-The load repair pass reconnects `app/home-hero-wordless-entry-pass.css` and `app/home-room-choice-left-depth-pass.css` in `app/layout.jsx` after `app/home-hero-route-ledger-binding-pass.css`, repairing stylesheet drift between the recorded active matrix state and the actual rendered import graph.
+The load repair pass reconnects `app/home-hero-wordless-entry-pass.css` and `app/home-room-choice-left-depth-pass.css` in `app/layout.jsx`, repairing stylesheet drift between the recorded active matrix state and the actual rendered import graph.
 
 The binding board refinement updates the existing `app/home-room-choice-left-depth-pass.css` rather than adding another override file. It adds a stronger shared paper-board background, left binding gutter, stitched/dotted rail cue, and slightly firmer sheet depth around the first-screen route choices while preserving the compact wordless hero and mobile/reduced-motion fallbacks.
+
+The 2026-06-29 import repair rechecked `app/layout.jsx` and found the wordless and left-depth CSS passes absent from the current import graph again. This pass restores both imports so the already-authored homepage room-choice entry board should visibly load from the deployed root layout.
 
 ## Validation guidance
 

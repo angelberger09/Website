@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 22:20 ET — PageIntro shelf thread
+
+See `.agent/changes/2026-06-28-page-intro-shelf-thread.md` and `.agent/matrices/page-intro-shelf-thread.matrix.md`.
+
 ## 2026-06-28 22:09 ET — PageIntro left binding thread
 
 See `.agent/changes/2026-06-28-page-intro-left-binding-thread.md` and `.agent/matrices/page-intro-left-binding-thread.matrix.md`.

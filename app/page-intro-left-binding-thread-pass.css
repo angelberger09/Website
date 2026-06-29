@@ -1,0 +1,108 @@
+/* Shared PageIntro left binding thread pass.
+   Gives every major route intro a clearer left-docked room receipt spine without changing route copy. */
+
+.page-hero {
+  padding-left: max(var(--page-gutter, 1.25rem), clamp(1.2rem, 4vw, 3.75rem));
+  isolation: isolate;
+}
+
+.page-hero::before {
+  position: absolute;
+  top: clamp(1.1rem, 4vw, 3.2rem);
+  bottom: clamp(1rem, 3vw, 2.6rem);
+  left: clamp(0.55rem, 2vw, 1.55rem);
+  z-index: 0;
+  width: clamp(0.48rem, 0.9vw, 0.72rem);
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(47, 38, 35, 0.16), rgba(47, 38, 35, 0.04) 12%, rgba(47, 38, 35, 0.15) 48%, rgba(47, 38, 35, 0.06) 100%),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(30% 0, 86% 2%, 72% 18%, 96% 42%, 76% 62%, 100% 86%, 69% 100%, 8% 98%, 23% 76%, 0 54%, 18% 31%, 4% 8%);
+  filter:
+    drop-shadow(0.16rem 0.2rem 0 rgba(47, 38, 35, 0.1))
+    drop-shadow(0.2rem 0.74rem 1.05rem rgba(47, 38, 35, 0.14));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.page-hero__copy::before {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 0.68rem -0.16rem;
+  padding: 0.34rem 0.72rem 0.3rem;
+  content: "room receipt";
+  color: rgba(47, 38, 35, 0.58);
+  background:
+    linear-gradient(100deg, rgba(255, 252, 246, 0.96), rgba(245, 224, 198, 0.48)),
+    var(--fine-scratch-image);
+  background-size: cover, 24rem 24rem;
+  clip-path: polygon(2% 12%, 38% 0, 98% 10%, 94% 90%, 52% 100%, 0 86%);
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0.2rem 0.52rem 0.82rem rgba(47, 38, 35, 0.1);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+}
+
+.page-hero__copy {
+  max-width: min(41rem, 100%);
+}
+
+.page-hero__text {
+  position: relative;
+  max-width: 34rem;
+}
+
+.page-hero__text::after {
+  display: block;
+  width: min(100%, 15rem);
+  height: 1px;
+  margin-top: 0.92rem;
+  content: "";
+  background: linear-gradient(90deg, rgba(47, 38, 35, 0.2), rgba(47, 38, 35, 0.03), transparent);
+}
+
+.page-hero__stack::before {
+  position: absolute;
+  top: clamp(-0.35rem, -1vw, -0.12rem);
+  right: clamp(0.3rem, 2vw, 1.2rem);
+  z-index: 4;
+  padding: 0.32rem 0.68rem 0.28rem;
+  content: "public room";
+  color: rgba(47, 38, 35, 0.58);
+  background: rgba(255, 250, 242, 0.84);
+  clip-path: polygon(5% 10%, 42% 0, 96% 12%, 90% 88%, 46% 100%, 0 82%);
+  box-shadow: 0 0.24rem 0.55rem rgba(47, 38, 35, 0.12);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: rotate(2.8deg);
+}
+
+@media (max-width: 760px) {
+  .page-hero {
+    padding-left: var(--page-gutter, 1rem);
+  }
+
+  .page-hero::before {
+    top: 1rem;
+    bottom: auto;
+    left: 1rem;
+    width: 5.5rem;
+    height: 0.42rem;
+    clip-path: polygon(2% 20%, 28% 0, 96% 18%, 92% 80%, 44% 100%, 0 76%);
+  }
+
+  .page-hero__copy::before {
+    margin-top: 0.55rem;
+  }
+
+  .page-hero__stack::before {
+    right: auto;
+    left: 0.45rem;
+  }
+}

@@ -20,6 +20,7 @@ import './header-active-room-pass.css';
 import './header-paper-labels-pass.css';
 import './root-paper-pass.css';
 import './root-paper-budget-pass.css';
+import './shared-room-path-rail-pass.css';
 import './home-paper-collage-pass.css';
 import './home-highlight-photo-pass.css';
 import './home-front-room-welcome-desk-pass.css';

@@ -160,6 +160,7 @@ import './page-intro-composed-room-board-pass.css';
 import './page-intro-room-shelf-ticket-pass.css';
 import './page-intro-ticket-board-binding-pass.css';
 import './page-intro-open-room-board-pass.css';
+import './page-intro-room-index-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

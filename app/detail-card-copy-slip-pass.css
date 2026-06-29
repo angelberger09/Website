@@ -1,0 +1,96 @@
+/* DetailCard copy slip pass.
+   Turns remaining shared DetailCard body copy into smaller paper snippets so the
+   content area does not fall back to broad rounded UI-card text after the face
+   and status tape passes have made the surrounding card feel tactile. */
+
+.detail-card > div:not([class]) {
+  display: grid;
+  gap: clamp(0.62rem, 1.4vw, 0.92rem);
+  position: relative;
+  z-index: 1;
+}
+
+.detail-card > div:not([class]) > p,
+.detail-card > div:not([class]) > ul,
+.detail-card > div:not([class]) > ol {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: clamp(0.72rem, 1.5vw, 0.94rem) clamp(0.88rem, 2vw, 1.18rem);
+  border-radius: 0.22rem 0.38rem 0.26rem 0.18rem;
+  color: rgba(58, 45, 42, 0.84);
+  background:
+    linear-gradient(104deg, rgba(255, 252, 246, 0.94), rgba(255, 247, 236, 0.82) 62%, rgba(153, 222, 201, 0.16)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 16rem 16rem, 20rem 20rem;
+  box-shadow:
+    -0.24rem 0.2rem 0 rgba(255, 250, 242, 0.5),
+    0 0.62rem 1.15rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+  clip-path: polygon(0 5%, 21% 0, 68% 3%, 100% 0, 97% 94%, 75% 100%, 35% 97%, 3% 100%);
+  transform: rotate(-0.38deg);
+}
+
+.detail-card > div:not([class]) > p:nth-child(even),
+.detail-card > div:not([class]) > ul:nth-child(even),
+.detail-card > div:not([class]) > ol:nth-child(even) {
+  justify-self: start;
+  background:
+    linear-gradient(101deg, rgba(255, 250, 242, 0.9), rgba(255, 244, 233, 0.82) 58%, rgba(255, 176, 143, 0.13)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 17rem 17rem, 38rem 38rem;
+  transform: rotate(0.42deg);
+}
+
+.detail-card > div:not([class]) > ul,
+.detail-card > div:not([class]) > ol {
+  padding-left: clamp(1.2rem, 2.6vw, 1.62rem);
+}
+
+.detail-card > div:not([class]) > ul li + li,
+.detail-card > div:not([class]) > ol li + li {
+  margin-top: 0.34rem;
+}
+
+.detail-card > div:not([class]) > p strong,
+.detail-card > div:not([class]) > li strong {
+  color: rgba(58, 45, 42, 0.94);
+}
+
+.detail-card > div:not([class]) > p a,
+.detail-card > div:not([class]) > ul a,
+.detail-card > div:not([class]) > ol a {
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.2em;
+}
+
+.detail-card:focus-within > div:not([class]) > p,
+.detail-card:focus-within > div:not([class]) > ul,
+.detail-card:focus-within > div:not([class]) > ol,
+.detail-card:hover > div:not([class]) > p,
+.detail-card:hover > div:not([class]) > ul,
+.detail-card:hover > div:not([class]) > ol {
+  box-shadow:
+    -0.28rem 0.22rem 0 rgba(255, 250, 242, 0.56),
+    0 0.76rem 1.38rem rgba(47, 38, 35, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.09);
+}
+
+@media (max-width: 760px) {
+  .detail-card > div:not([class]) > p,
+  .detail-card > div:not([class]) > ul,
+  .detail-card > div:not([class]) > ol {
+    width: 100%;
+    transform: none;
+  }
+
+  .detail-card > div:not([class]) > p:nth-child(even),
+  .detail-card > div:not([class]) > ul:nth-child(even),
+  .detail-card > div:not([class]) > ol:nth-child(even) {
+    transform: none;
+  }
+}

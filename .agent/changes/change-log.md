@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 00:51 ET — Homepage path map bound guide
+
+See `.agent/changes/2026-06-29-home-path-map-bound-guide.md` and `.agent/matrices/home-path-map-bound-guide.matrix.md`.
+
 ## 2026-06-29 00:38 ET — Homepage wordless room-choice import repair
 
 See `.agent/changes/2026-06-29-home-wordless-room-choice-import-repair.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.

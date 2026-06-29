@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 01:19 ET — Portfolio public name shelf
+
+See `.agent/changes/2026-06-29-portfolio-public-name-shelf.md` and `.agent/matrices/portfolio-public-name-shelf.matrix.md`.
+
 ## 2026-06-29 01:11 ET — Shared room path rail
 
 See `.agent/changes/2026-06-29-shared-room-path-rail.md` and `.agent/matrices/shared-room-path-rail.matrix.md`.

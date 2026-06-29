@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 03:48 ET — Footer exit thread binding refinement
+
+See `.agent/changes/2026-06-29-footer-exit-thread-binding-refinement.md` and `.agent/matrices/footer-exit-thread-binding-refinement.matrix.md`.
+
 ## 2026-06-29 03:39 ET — Footer four-room exit load
 
 See `.agent/changes/2026-06-29-footer-four-room-exit-load.md` and `.agent/matrices/footer-four-room-exit-load.matrix.md`.
@@ -118,31 +122,3 @@ See `.agent/changes/2026-06-28-detail-card-paper-face-load.md` and `.agent/matri
 - Updated `.agent/matrices/feedback-lessons.matrix.md` with source-review mappings for layout, paper shell discipline, workflow reporting, base-path detection, data manifests, visible implementation, and report packetization.
 
 ### Why
-
-Repeated design/workflow issues from the source review should be stored as reusable lessons, not left as one-off discussion. Future runs need explicit guardrails before checking, editing, recovering, or reporting on the Website.
-
-### Related items
-
-- LESSON-029
-- LESSON-030
-- LESSON-031
-- LESSON-032
-- LESSON-033
-- LESSON-034
-- LESSON-035
-- LESSON-036
-- LESSON-037
-- LESSON-038
-- LESSON-039
-- LESSON-040
-- METRIC-033
-- METRIC-034
-- METRIC-035
-- METRIC-036
-- METRIC-037
-- METRIC-038
-- METRIC-039
-- METRIC-040
-- METRIC-041
-- METRIC-042
-- METRIC-043

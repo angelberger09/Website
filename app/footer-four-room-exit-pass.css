@@ -2,10 +2,28 @@
    Makes the shared footer read as one composed four-room studio exit shelf. */
 
 .studio-footer__exit-receipts {
+  position: relative;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   width: min(100%, 980px);
   margin-inline: auto;
   max-width: min(100%, 66rem);
+}
+
+.studio-footer__exit-receipts::before {
+  position: absolute;
+  right: clamp(1.2rem, 4vw, 3.2rem);
+  bottom: 0.58rem;
+  left: clamp(1.2rem, 4vw, 3.2rem);
+  z-index: 0;
+  height: 0.18rem;
+  content: "";
+  background:
+    repeating-linear-gradient(90deg, rgba(58, 45, 42, 0.22) 0 0.42rem, transparent 0.42rem 0.74rem),
+    linear-gradient(90deg, transparent, rgba(58, 45, 42, 0.18), transparent);
+  filter: drop-shadow(0 0.22rem 0.18rem rgba(47, 38, 35, 0.08));
+  opacity: 0.78;
+  transform: rotate(-0.18deg);
+  pointer-events: none;
 }
 
 .studio-footer__exit-receipts::after {
@@ -33,8 +51,24 @@
 }
 
 .studio-footer__exit-receipt {
+  z-index: 1;
   grid-template-rows: auto;
   transform-origin: center;
+}
+
+.studio-footer__exit-receipt::before {
+  position: absolute;
+  right: 0.64rem;
+  bottom: 0.5rem;
+  left: 0.64rem;
+  z-index: -1;
+  height: 0.42rem;
+  content: "";
+  clip-path: polygon(0 38%, 24% 22%, 52% 46%, 76% 18%, 100% 34%, 100% 68%, 76% 58%, 52% 78%, 24% 54%, 0 72%);
+  background: rgba(58, 45, 42, 0.11);
+  filter: blur(0.02rem);
+  transform: rotate(var(--footer-receipt-tilt, -0.25deg));
+  pointer-events: none;
 }
 
 .studio-footer__exit-receipt::after {
@@ -92,6 +126,11 @@
     linear-gradient(145deg, rgba(58, 45, 42, 0.84), rgba(111, 86, 75, 0.72));
 }
 
+.studio-footer__exit-receipt:hover .studio-footer__exit-receipt-photo,
+.studio-footer__exit-receipt:focus-visible .studio-footer__exit-receipt-photo {
+  transform: translateY(-0.08rem) rotate(-0.4deg);
+}
+
 .studio-footer__exit-receipt:hover .studio-footer__exit-receipt-action,
 .studio-footer__exit-receipt:focus-visible .studio-footer__exit-receipt-action {
   color: rgba(58, 45, 42, 0.94);
@@ -103,9 +142,26 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: min(100%, 44rem);
   }
+
+  .studio-footer__exit-receipts::before {
+    top: 50%;
+    bottom: auto;
+  }
 }
 
 @media (max-width: 620px) {
+  .studio-footer__exit-receipts::before {
+    top: 1.6rem;
+    bottom: 1.6rem;
+    left: 50%;
+    width: 0.16rem;
+    height: auto;
+    transform: translateX(-50%) rotate(0.2deg);
+    background:
+      repeating-linear-gradient(180deg, rgba(58, 45, 42, 0.2) 0 0.4rem, transparent 0.4rem 0.72rem),
+      linear-gradient(180deg, transparent, rgba(58, 45, 42, 0.16), transparent);
+  }
+
   .studio-footer__exit-receipts::after {
     right: 0.72rem;
     bottom: -0.58rem;

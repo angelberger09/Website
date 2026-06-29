@@ -1,0 +1,42 @@
+/* Continuity stagger thread repair pass.
+   Restores the shared next-room cards' alternating paper placement after the thread label became the first child in the steps grid. */
+
+.continuity-paper-trail__steps > .continuity-paper-step:nth-of-type(1) {
+  transform: rotate(0.55deg) translateX(-0.25rem);
+}
+
+.continuity-paper-trail__steps > .continuity-paper-step:nth-of-type(2) {
+  transform: rotate(-0.38deg) translateX(0.35rem);
+}
+
+.continuity-paper-thread {
+  justify-self: start;
+  margin-inline-start: clamp(0.2rem, 1vw, 0.65rem);
+  padding: 0.22rem 0.58rem 0.18rem;
+  clip-path: polygon(3% 8%, 97% 2%, 94% 92%, 6% 98%);
+  background:
+    linear-gradient(90deg, rgba(255, 252, 246, 0.82), rgba(245, 224, 198, 0.4)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: var(--muted);
+  font-family: var(--font-hand);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0.08rem 0.16rem 0 rgba(47, 38, 35, 0.07), 0 0.42rem 0.72rem rgba(47, 38, 35, 0.08);
+  transform: rotate(-1.2deg);
+}
+
+.continuity-paper-trail__steps > .continuity-paper-step:hover,
+.continuity-paper-trail__steps > .continuity-paper-step:focus {
+  transform: translateY(-0.08rem) rotate(0deg);
+}
+
+@media (max-width: 820px) {
+  .continuity-paper-trail__steps > .continuity-paper-step:nth-of-type(1),
+  .continuity-paper-trail__steps > .continuity-paper-step:nth-of-type(2),
+  .continuity-paper-thread {
+    transform: none;
+  }
+}

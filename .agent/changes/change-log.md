@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 04:30 ET — Detail card copy slip pass
+
+See `.agent/changes/2026-06-29-detail-card-copy-slips.md` and `.agent/matrices/detail-card-copy-slips.matrix.md`.
+
 ## 2026-06-29 04:20 ET — Detail card status tape pass
 
 See `.agent/changes/2026-06-29-detail-card-status-tape.md` and `.agent/matrices/detail-card-status-tape.matrix.md`.

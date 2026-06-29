@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 23:31 ET — Portfolio manifest next-frame slips
+
+See `.agent/changes/2026-06-28-portfolio-manifest-next-frame-slips.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.
+
 ## 2026-06-28 23:18 ET — Footer exit receipt ledger
 
 See `.agent/changes/2026-06-28-footer-exit-receipt-ledger.md` and `.agent/matrices/footer-exit-receipt-ledger.matrix.md`.

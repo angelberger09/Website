@@ -1,0 +1,148 @@
+/* Portfolio room thread binding pass */
+
+.portfolio-room-thread {
+  position: relative;
+  isolation: isolate;
+}
+
+.portfolio-room-thread::before {
+  content: "portfolio archive path";
+  position: absolute;
+  inset: clamp(10rem, 14vw, 16rem) auto clamp(8rem, 14vw, 13rem) clamp(0.55rem, 3vw, 2rem);
+  width: 1.35rem;
+  z-index: -1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.62rem;
+  font-weight: 850;
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
+  background: linear-gradient(180deg, rgba(255, 249, 234, 0.92), rgba(226, 204, 176, 0.44));
+  border-radius: 999px;
+  box-shadow: 0.25rem 0.4rem 0 rgba(80, 55, 38, 0.1), 0.6rem 1.2rem 2.3rem rgba(77, 55, 36, 0.18);
+  opacity: 0.82;
+  transform: rotate(-1.35deg);
+}
+
+.portfolio-room-thread::after {
+  content: "room key to pieces to shelf to public path";
+  position: absolute;
+  top: clamp(8.7rem, 13vw, 13.1rem);
+  left: clamp(1.45rem, 5vw, 4.4rem);
+  z-index: 2;
+  max-width: min(76vw, 32rem);
+  padding: 0.42rem 0.82rem 0.38rem;
+  color: color-mix(in srgb, var(--ink) 68%, transparent);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255, 253, 242, 0.96), rgba(239, 221, 191, 0.64));
+  clip-path: polygon(2% 8%, 98% 0, 100% 76%, 4% 100%);
+  box-shadow: 0 0.35rem 0 rgba(255, 255, 255, 0.55) inset, 0.24rem 0.55rem 1.2rem rgba(81, 57, 38, 0.18);
+  transform: rotate(0.65deg);
+}
+
+.portfolio-room-thread > .portfolio-room-key-board,
+.portfolio-room-thread > .portfolio-archive-board,
+.portfolio-room-thread > .portfolio-gallery-board,
+.portfolio-room-thread > .portfolio-paper-board,
+.portfolio-room-thread > .continuity-paper-trail {
+  position: relative;
+}
+
+.portfolio-room-thread > .portfolio-room-key-board::before,
+.portfolio-room-thread > .portfolio-archive-board::before,
+.portfolio-room-thread > .portfolio-gallery-board::before,
+.portfolio-room-thread > .portfolio-paper-board::before,
+.portfolio-room-thread > .continuity-paper-trail::before {
+  position: absolute;
+  top: clamp(-0.78rem, -0.7vw, -0.42rem);
+  left: clamp(0.8rem, 2vw, 1.45rem);
+  z-index: 5;
+  display: inline-flex;
+  min-width: 5.4rem;
+  justify-content: center;
+  padding: 0.32rem 0.62rem 0.28rem;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255, 252, 239, 0.98), rgba(234, 212, 181, 0.7));
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 90%);
+  box-shadow: 0 0.22rem 0 rgba(255, 255, 255, 0.55) inset, 0.18rem 0.36rem 0.9rem rgba(67, 47, 31, 0.2);
+  transform: rotate(-1.1deg);
+}
+
+.portfolio-room-thread > .portfolio-room-key-board::before { content: "room key"; }
+.portfolio-room-thread > .portfolio-archive-board::before { content: "public pieces"; }
+.portfolio-room-thread > .portfolio-gallery-board::before { content: "gallery path"; }
+.portfolio-room-thread > .portfolio-readiness-board::before { content: "holding pattern"; }
+.portfolio-room-thread > .portfolio-lane-board::before { content: "archive lanes"; }
+.portfolio-room-thread > .portfolio-feed-board::before { content: "future shelf"; }
+.portfolio-room-thread > .portfolio-state-board::before { content: "record states"; }
+.portfolio-room-thread > .portfolio-process-board::before { content: "publish path"; }
+.portfolio-room-thread > .continuity-paper-trail::before { content: "next room"; }
+
+.portfolio-room-thread > .portfolio-room-key-board::after,
+.portfolio-room-thread > .portfolio-archive-board::after,
+.portfolio-room-thread > .portfolio-gallery-board::after,
+.portfolio-room-thread > .portfolio-paper-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.05rem, 2.6vw, 1.9rem);
+  right: clamp(1.05rem, 2.6vw, 1.9rem);
+  bottom: clamp(-1.35rem, -1.6vw, -0.7rem);
+  height: 0.52rem;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(93, 65, 42, 0.18), transparent);
+  filter: blur(7px);
+  opacity: 0.82;
+}
+
+.portfolio-room-thread > .portfolio-room-key-board,
+.portfolio-room-thread > .portfolio-archive-board,
+.portfolio-room-thread > .portfolio-gallery-board,
+.portfolio-room-thread > .portfolio-paper-board {
+  margin-left: clamp(0rem, 2vw, 1.15rem);
+}
+
+@media (max-width: 760px) {
+  .portfolio-room-thread::before {
+    inset: 8.5rem auto auto 0.85rem;
+    width: 0.7rem;
+    height: calc(100% - 12rem);
+    content: "";
+    padding: 0;
+    opacity: 0.4;
+  }
+
+  .portfolio-room-thread::after {
+    top: 8rem;
+    left: 1.25rem;
+    max-width: calc(100% - 2.5rem);
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-room-thread > .portfolio-room-key-board,
+  .portfolio-room-thread > .portfolio-archive-board,
+  .portfolio-room-thread > .portfolio-gallery-board,
+  .portfolio-room-thread > .portfolio-paper-board {
+    margin-left: 0;
+  }
+
+  .portfolio-room-thread > .portfolio-room-key-board::before,
+  .portfolio-room-thread > .portfolio-archive-board::before,
+  .portfolio-room-thread > .portfolio-gallery-board::before,
+  .portfolio-room-thread > .portfolio-paper-board::before,
+  .portfolio-room-thread > .continuity-paper-trail::before {
+    left: 0.7rem;
+    font-size: 0.53rem;
+  }
+}

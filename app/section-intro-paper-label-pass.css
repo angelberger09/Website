@@ -1,0 +1,108 @@
+/* Shared section intro paper label pass.
+   Turns generic section introductions into calm placed-paper labels across filled Website rooms. */
+
+.section-intro {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: clamp(1.35rem, 3vw, 2.15rem);
+  padding: clamp(1rem, 2.6vw, 1.35rem) clamp(1.05rem, 3vw, 1.7rem) clamp(1.08rem, 2.6vw, 1.5rem);
+  background:
+    linear-gradient(90deg, rgba(90, 69, 60, 0.1), transparent 0.72rem),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.88), rgba(255, 247, 235, 0.54) 64%, rgba(185, 201, 175, 0.14)),
+    var(--grain-image);
+  background-size: 100% 100%, cover, 22rem 22rem;
+  clip-path: polygon(0.8% 8%, 19% 2%, 48% 5%, 74% 1.8%, 99% 7%, 98% 90%, 84% 98%, 55% 95%, 22% 99%, 1.2% 92%);
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.07),
+    0.34rem 0.72rem 0 rgba(47, 38, 35, 0.035),
+    0 0.9rem 1.45rem rgba(47, 38, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.section-intro::before {
+  content: "section note";
+  position: absolute;
+  top: -0.48rem;
+  left: clamp(0.95rem, 2vw, 1.38rem);
+  z-index: 2;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.26rem 0.66rem 0.22rem;
+  color: rgba(58, 45, 42, 0.72);
+  background:
+    linear-gradient(132deg, rgba(255, 252, 246, 0.98), rgba(255, 238, 216, 0.76)),
+    var(--fine-scratch-image);
+  background-size: cover, 16rem 16rem;
+  clip-path: polygon(2% 18%, 21% 3%, 78% 8%, 99% 0, 96% 83%, 70% 100%, 29% 92%, 0 96%);
+  box-shadow:
+    0.08rem 0.14rem 0 rgba(47, 38, 35, 0.08),
+    0 0.4rem 0.72rem rgba(47, 38, 35, 0.1);
+  font-family: var(--font-hand);
+  font-size: clamp(0.62rem, 0.9vw, 0.74rem);
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transform: rotate(-0.7deg);
+}
+
+.section-intro::after {
+  content: "";
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.28rem);
+  bottom: clamp(0.9rem, 2vw, 1.18rem);
+  left: clamp(0.6rem, 1.4vw, 0.88rem);
+  z-index: -1;
+  width: 0.22rem;
+  background:
+    linear-gradient(180deg, rgba(111, 83, 111, 0.28), rgba(255, 176, 143, 0.18) 48%, rgba(87, 108, 75, 0.18)),
+    var(--fine-scratch-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(22% 0, 100% 5%, 70% 28%, 96% 52%, 64% 78%, 88% 100%, 0 96%, 18% 72%, 2% 48%, 26% 22%);
+  opacity: 0.78;
+}
+
+.section-intro .eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.66rem;
+  padding: 0.16rem 0.46rem 0.12rem;
+  color: rgba(58, 45, 42, 0.7);
+  background: rgba(255, 244, 224, 0.74);
+  clip-path: polygon(2% 16%, 94% 0, 100% 82%, 8% 100%);
+}
+
+.section-intro h2,
+.section-intro h3 {
+  max-width: 16ch;
+  margin-bottom: 0.55rem;
+  font-size: clamp(1.45rem, 4vw, 2.6rem);
+  line-height: 0.96;
+}
+
+.section-intro p:not(.eyebrow) {
+  max-width: 62ch;
+  margin-bottom: 0;
+  color: rgba(58, 45, 42, 0.76);
+}
+
+@media (max-width: 700px) {
+  .section-intro {
+    padding: 1.05rem 1rem 1.1rem;
+    clip-path: polygon(1% 5%, 34% 2%, 98% 6%, 97% 94%, 68% 98%, 20% 96%, 1% 91%);
+  }
+
+  .section-intro::before {
+    top: -0.42rem;
+    left: 0.86rem;
+  }
+
+  .section-intro::after {
+    display: none;
+  }
+
+  .section-intro h2,
+  .section-intro h3 {
+    max-width: 100%;
+  }
+}

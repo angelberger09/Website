@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 05:20 ET — Notes post markdown ruled body pass
+
+See `.agent/changes/2026-06-29-notes-post-markdown-ruled-body.md` and `.agent/matrices/notes-post-markdown-paper.matrix.md`.
+
 ## 2026-06-29 05:10 ET — Homepage house rules receipt binding refinement
 
 See `.agent/changes/2026-06-29-home-house-rules-receipt-binding-refinement.md` and `.agent/matrices/home-house-rules-receipt-binding-refinement.matrix.md`.

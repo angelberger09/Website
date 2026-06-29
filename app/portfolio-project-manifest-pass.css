@@ -1,0 +1,218 @@
+.portfolio-manifest-board {
+  position: relative;
+  display: grid;
+  gap: clamp(1.1rem, 2.4vw, 1.8rem);
+  padding: clamp(1.25rem, 3.5vw, 2.6rem);
+  isolation: isolate;
+}
+
+.portfolio-manifest-board::before {
+  content: "";
+  position: absolute;
+  inset: 0.1rem -0.15rem 0.4rem 0.05rem;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 10% 16%, rgba(255, 255, 255, 0.52), transparent 22%),
+    linear-gradient(135deg, rgba(255, 250, 235, 0.9), rgba(232, 214, 177, 0.5)),
+    url('/Website/atmosphere/grain-noise.svg'),
+    url('/Website/atmosphere/dust-specks.svg');
+  background-size: cover, cover, 220px 220px, 260px 260px;
+  box-shadow: 0 26px 58px rgba(83, 61, 37, 0.14), inset 0 0 0 1px rgba(105, 82, 50, 0.07);
+  clip-path: polygon(1% 2%, 98% 0, 100% 92%, 96% 100%, 4% 97%, 0 11%);
+}
+
+.portfolio-manifest-board::after {
+  content: "manifest";
+  position: absolute;
+  top: 0.75rem;
+  right: clamp(1rem, 4vw, 3rem);
+  z-index: -1;
+  width: min(13rem, 40vw);
+  padding: 0.44rem 0.7rem;
+  color: rgba(75, 54, 34, 0.44);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: rgba(243, 220, 169, 0.64);
+  box-shadow: 0 9px 20px rgba(83, 61, 37, 0.12);
+  transform: rotate(2.2deg);
+  clip-path: polygon(2% 15%, 96% 0, 100% 82%, 8% 100%, 0 72%);
+}
+
+.portfolio-manifest-board__heading {
+  display: grid;
+  gap: 0.82rem;
+  max-width: 54rem;
+}
+
+.portfolio-manifest-board__heading .eyebrow {
+  width: fit-content;
+  padding: 0.42rem 0.7rem;
+  background: rgba(255, 250, 235, 0.85);
+  box-shadow: 0 11px 22px rgba(95, 70, 42, 0.12);
+  clip-path: polygon(3% 8%, 98% 0, 100% 86%, 93% 100%, 0 93%);
+}
+
+.portfolio-manifest-board__heading h1 {
+  max-width: 13em;
+  margin: 0;
+  font-size: clamp(1.95rem, 4.6vw, 4.3rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.portfolio-manifest-board__heading p:last-child {
+  max-width: 43rem;
+  margin: 0;
+  color: rgba(59, 45, 32, 0.72);
+}
+
+.portfolio-manifest-shelf {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.68rem, 1.6vw, 1rem);
+  align-items: start;
+}
+
+.portfolio-manifest-card {
+  position: relative;
+  display: grid;
+  gap: 0.62rem;
+  min-height: 10.5rem;
+  padding: 0.82rem;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 241, 0.96), rgba(239, 225, 194, 0.92)),
+    url('/Website/atmosphere/fine-scratches.svg'),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 185px 185px, 170px 170px;
+  box-shadow: 0 18px 32px rgba(82, 59, 35, 0.15), 0 2px 0 rgba(255,255,255,0.55) inset;
+  clip-path: polygon(3% 0, 97% 2%, 100% 93%, 92% 100%, 4% 97%, 0 10%);
+  transform: rotate(var(--manifest-tilt, -0.8deg));
+}
+
+.portfolio-manifest-card:nth-child(even) {
+  --manifest-tilt: 0.9deg;
+  margin-top: clamp(0.6rem, 1.6vw, 1.3rem);
+  clip-path: polygon(1% 4%, 96% 0, 100% 9%, 97% 100%, 7% 97%, 0 89%);
+}
+
+.portfolio-manifest-card:nth-child(3n) {
+  --manifest-tilt: -1.4deg;
+}
+
+.portfolio-manifest-card::before {
+  content: "";
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  width: 4.8rem;
+  height: 1rem;
+  background: rgba(241, 219, 171, 0.72);
+  box-shadow: 0 7px 15px rgba(74, 53, 30, 0.13);
+  transform: translateX(-50%) rotate(var(--tape-tilt, -2.8deg));
+  clip-path: polygon(5% 10%, 96% 0, 100% 82%, 9% 100%, 0 72%);
+}
+
+.portfolio-manifest-card:nth-child(even)::before {
+  --tape-tilt: 3deg;
+}
+
+.portfolio-manifest-card__photo {
+  min-height: 4.7rem;
+  display: grid;
+  place-items: end start;
+  padding: 0.7rem;
+  color: rgba(255, 250, 235, 0.92);
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255,255,255,0.78), transparent 22%),
+    radial-gradient(circle at 78% 18%, rgba(159, 176, 142, 0.42), transparent 25%),
+    linear-gradient(135deg, rgba(70, 60, 51, 0.9), rgba(150, 125, 87, 0.52) 52%, rgba(235, 214, 171, 0.78)),
+    url('/Website/atmosphere/soft-scratches.svg');
+  background-size: cover, cover, cover, 200px 200px;
+  clip-path: polygon(2% 4%, 96% 0, 100% 91%, 94% 100%, 0 96%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2), inset 0 -24px 40px rgba(47, 35, 25, 0.24);
+}
+
+.portfolio-manifest-card__photo span {
+  display: inline-block;
+  padding: 0.3rem 0.48rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(41, 31, 23, 0.42);
+  clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 90%);
+}
+
+.portfolio-manifest-card__copy {
+  display: grid;
+  gap: 0.44rem;
+}
+
+.portfolio-manifest-card__copy small,
+.portfolio-manifest-card__copy em {
+  width: fit-content;
+  padding: 0.25rem 0.42rem;
+  background: rgba(255, 248, 225, 0.82);
+  box-shadow: 0 7px 14px rgba(91, 68, 41, 0.08);
+  clip-path: polygon(5% 4%, 98% 0, 100% 84%, 92% 100%, 0 92%);
+}
+
+.portfolio-manifest-card__copy small {
+  color: rgba(59, 45, 32, 0.62);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.portfolio-manifest-card__copy h2 {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.8vw, 1.36rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.portfolio-manifest-card__copy em {
+  color: rgba(59, 45, 32, 0.66);
+  font-size: 0.74rem;
+  font-style: normal;
+}
+
+.portfolio-manifest-rules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.portfolio-manifest-rules li {
+  max-width: 22rem;
+  padding: 0.55rem 0.72rem;
+  color: rgba(59, 45, 32, 0.7);
+  background: rgba(255, 248, 225, 0.78);
+  box-shadow: 0 12px 24px rgba(91, 68, 41, 0.1);
+  clip-path: polygon(2% 6%, 98% 0, 100% 87%, 94% 100%, 0 94%);
+}
+
+@media (max-width: 980px) {
+  .portfolio-manifest-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio-manifest-board {
+    padding-inline: 1rem;
+  }
+
+  .portfolio-manifest-shelf {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-manifest-card:nth-child(even) {
+    margin-top: 0;
+  }
+}

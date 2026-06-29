@@ -1,0 +1,331 @@
+/* Homepage front-door reset pass.
+   Restores the first screen as a readable public entry instead of an internal paper-system test. */
+
+.home-page {
+  --home-front-door-max: min(74rem, calc(100vw - clamp(2rem, 7vw, 7rem)));
+}
+
+.home-front-door {
+  position: relative;
+  display: block;
+  padding: clamp(5.8rem, 10svh, 7.4rem) clamp(1rem, 4vw, 3rem) clamp(1.7rem, 4svh, 2.8rem);
+  isolation: isolate;
+}
+
+.home-front-door__board {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.72fr);
+  gap: clamp(1.15rem, 3vw, 2.5rem);
+  width: var(--home-front-door-max);
+  margin: 0 auto;
+  padding: clamp(1.35rem, 3.4vw, 2.45rem);
+  color: #3b302d;
+  background:
+    linear-gradient(132deg, rgba(255, 252, 244, 0.96), rgba(247, 235, 214, 0.82) 56%, rgba(211, 199, 226, 0.22)),
+    var(--grain-image);
+  background-size: auto, 18rem 18rem;
+  border-radius: 0;
+  clip-path: polygon(0.8% 2.2%, 99% 0.5%, 98.4% 96.6%, 1.6% 99%);
+  box-shadow:
+    0 1.15rem 2.45rem rgba(48, 36, 31, 0.16),
+    0 0.22rem 0 rgba(48, 36, 31, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74),
+    inset 0 -1px 0 rgba(91, 68, 58, 0.08);
+}
+
+.home-front-door__board::before {
+  content: "";
+  position: absolute;
+  inset: auto 8% -0.58rem 10%;
+  height: 0.8rem;
+  background: rgba(55, 40, 34, 0.12);
+  filter: blur(0.5rem);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.home-front-door__copy,
+.home-front-door__rooms {
+  position: relative;
+  z-index: 1;
+}
+
+.home-front-door__eyebrow,
+.home-front-door__rooms-label {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 0.75rem;
+  padding: 0.38rem 0.62rem 0.32rem;
+  color: rgba(64, 49, 44, 0.72);
+  background: rgba(255, 251, 239, 0.72);
+  box-shadow: inset 0 -1px 0 rgba(83, 60, 50, 0.08), 0 0.36rem 0.72rem rgba(47, 38, 35, 0.07);
+  clip-path: polygon(2% 6%, 96% 0, 100% 84%, 7% 100%, 0 78%);
+  font-family: var(--font-body);
+  font-size: clamp(0.66rem, 0.82vw, 0.78rem);
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-front-door h1 {
+  max-width: 8.7ch;
+  margin: 0;
+  color: #372b28;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 6.7rem);
+  font-weight: 800;
+  letter-spacing: -0.052em;
+  line-height: 0.86;
+  text-shadow: 0 0.6rem 1.4rem rgba(47, 38, 35, 0.08);
+}
+
+.home-front-door__dek {
+  max-width: 36rem;
+  margin: clamp(0.9rem, 2vw, 1.25rem) 0 0;
+  color: rgba(58, 45, 42, 0.72);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.home-front-door__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: clamp(1rem, 2.2vw, 1.45rem);
+}
+
+.home-front-door__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.55rem;
+  padding: 0.72rem 0.95rem 0.64rem;
+  color: rgba(49, 36, 33, 0.88);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 242, 0.98), rgba(235, 220, 192, 0.82)),
+    var(--grain-image);
+  background-size: auto, 12rem 12rem;
+  box-shadow:
+    0 0.48rem 0.95rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  clip-path: polygon(3% 7%, 96% 0, 100% 88%, 7% 100%, 0 78%);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.home-front-door__rooms {
+  align-self: stretch;
+  padding: clamp(0.9rem, 2.2vw, 1.25rem);
+  background:
+    linear-gradient(150deg, rgba(253, 248, 236, 0.84), rgba(239, 225, 203, 0.72)),
+    var(--grain-image);
+  background-size: auto, 14rem 14rem;
+  clip-path: polygon(1% 2%, 99% 0, 97% 98%, 3% 100%);
+  box-shadow:
+    0 0.78rem 1.35rem rgba(47, 38, 35, 0.12),
+    inset 0 0 0 1px rgba(91, 68, 58, 0.07);
+}
+
+.home-front-door__routes {
+  display: grid;
+  gap: 0.62rem;
+}
+
+.home-front-door__route {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.72rem 0.78rem 0.66rem;
+  color: #392b28;
+  background: rgba(255, 252, 242, 0.76);
+  box-shadow:
+    0 0.42rem 0.74rem rgba(47, 38, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  clip-path: polygon(2% 4%, 98% 0, 100% 88%, 4% 100%, 0 78%);
+  text-decoration: none;
+}
+
+.home-front-door__route strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.18rem, 2vw, 1.62rem);
+  line-height: 0.95;
+}
+
+.home-front-door__route span {
+  display: block;
+  color: rgba(61, 47, 43, 0.62);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-front-door__route small {
+  justify-self: end;
+  max-width: 8rem;
+  color: rgba(61, 47, 43, 0.64);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.home-front-door__route:focus-visible,
+.home-front-door__action:focus-visible {
+  outline: 2px solid rgba(70, 54, 48, 0.82);
+  outline-offset: 0.22rem;
+}
+
+.home-page .home-path-map {
+  display: grid !important;
+  grid-template-columns: minmax(12rem, 0.32fr) minmax(0, 1fr) !important;
+  gap: clamp(0.9rem, 2vw, 1.4rem) !important;
+  width: var(--home-front-door-max) !important;
+  max-width: var(--home-front-door-max) !important;
+  margin: clamp(1.2rem, 3svh, 2rem) auto clamp(2.2rem, 5svh, 3.4rem) !important;
+  padding: clamp(0.9rem, 2vw, 1.2rem) !important;
+  overflow: visible !important;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.78), rgba(244, 231, 210, 0.58)),
+    var(--grain-image) !important;
+  background-size: auto, 16rem 16rem !important;
+  box-shadow:
+    0 0.82rem 1.65rem rgba(47, 38, 35, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+  clip-path: polygon(0.6% 3%, 99% 0.6%, 98.2% 96%, 1.4% 99%) !important;
+}
+
+.home-page .home-path-map::before,
+.home-page .home-path-map__binding,
+.home-page .home-path-map__photo,
+.home-page .home-path-map__thread,
+.home-page .home-path-map__number,
+.home-page .home-path-map__step::before,
+.home-page .home-path-map__step::after {
+  display: none !important;
+  content: none !important;
+}
+
+.home-page .home-path-map__label,
+.home-page .home-path-map__note {
+  margin: 0 !important;
+}
+
+.home-page .home-path-map__note {
+  max-width: 17rem !important;
+  padding: 0.42rem 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  color: rgba(59, 46, 42, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.home-page .home-path-map__trail {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 0.55rem !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.home-page .home-path-map__step,
+.home-page .home-path-map__step:nth-child(2n),
+.home-page .home-path-map__step:nth-child(2n + 1) {
+  display: block !important;
+  min-width: 0 !important;
+  flex-basis: auto !important;
+  padding: 0.62rem 0.58rem 0.56rem !important;
+  transform: none !important;
+}
+
+.home-page .home-path-map__copy {
+  display: grid !important;
+  gap: 0.16rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+
+.home-page .home-path-map__room-key {
+  font-size: 0.56rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.home-page .home-path-map__copy strong {
+  font-size: 0.88rem !important;
+  line-height: 1 !important;
+}
+
+.home-page .home-path-map__copy small {
+  font-size: 0.66rem !important;
+  line-height: 1.18 !important;
+}
+
+.home-page .studio-pages {
+  margin-top: clamp(2rem, 4svh, 3.2rem) !important;
+  padding-top: clamp(2.2rem, 4.5vw, 3.4rem) !important;
+}
+
+.home-page .home-docket-step,
+.home-page .home-docket-note {
+  opacity: 0.78;
+}
+
+@media (max-width: 980px) {
+  .home-front-door__board,
+  .home-page .home-path-map {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-front-door__rooms {
+    align-self: auto;
+  }
+
+  .home-page .home-path-map__trail {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-front-door {
+    padding: 5.5rem 0.85rem 1.2rem;
+  }
+
+  .home-front-door__board {
+    padding: 1rem;
+  }
+
+  .home-front-door h1 {
+    font-size: clamp(2.65rem, 19vw, 4.6rem);
+  }
+
+  .home-front-door__route {
+    grid-template-columns: 1fr;
+  }
+
+  .home-front-door__route small {
+    justify-self: start;
+    max-width: none;
+    text-align: left;
+  }
+
+  .home-page .home-path-map__trail {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

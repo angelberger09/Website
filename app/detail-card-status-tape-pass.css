@@ -1,0 +1,71 @@
+/* DetailCard status tape pass.
+   Refines DetailCard status chips into attached paper tape receipts so the shared card
+   pattern keeps moving away from detached rounded UI pills. */
+
+.detail-card:has(.status-pill) {
+  padding-bottom: clamp(1.45rem, 3vw, 2.25rem);
+}
+
+.detail-card .status-pill {
+  align-self: flex-start;
+  margin-top: clamp(0.85rem, 2vw, 1.25rem);
+  margin-left: -0.16rem;
+  padding: 0.54rem 0.92rem 0.5rem 1.18rem;
+  border-radius: 0.16rem 0.34rem 0.22rem 0.18rem;
+  color: rgba(58, 45, 42, 0.86);
+  letter-spacing: 0.12em;
+  clip-path: polygon(0 12%, 24% 2%, 63% 6%, 100% 0, 96% 87%, 74% 98%, 38% 92%, 3% 100%);
+  background:
+    linear-gradient(92deg, rgba(255, 250, 242, 0.96), rgba(255, 247, 235, 0.86) 58%, rgba(255, 176, 143, 0.2)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem, 42rem 42rem;
+  box-shadow:
+    -0.42rem 0.16rem 0 rgba(255, 250, 242, 0.56),
+    0.12rem 0.48rem 0 rgba(185, 201, 175, 0.13),
+    0 0.86rem 1.42rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.1);
+  transform: rotate(-1.35deg);
+}
+
+.detail-card:nth-child(even) .status-pill {
+  margin-left: 0.12rem;
+  transform: rotate(1.05deg);
+}
+
+.detail-card .status-pill::before {
+  inset: 0.19rem auto 0.17rem 0.34rem;
+  width: 0.22rem;
+  border-radius: 999px;
+  background: rgba(47, 38, 35, 0.18);
+  box-shadow:
+    0.46rem 0 rgba(47, 38, 35, 0.055),
+    0.92rem 0 rgba(185, 201, 175, 0.18);
+}
+
+.detail-card .status-pill::after {
+  inset: -26% -9% auto auto;
+  width: 42%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 66%);
+  opacity: 0.4;
+}
+
+.detail-card:focus-within .status-pill,
+.detail-card:hover .status-pill {
+  box-shadow:
+    -0.42rem 0.16rem 0 rgba(255, 250, 242, 0.62),
+    0.16rem 0.54rem 0 rgba(185, 201, 175, 0.16),
+    0 1rem 1.8rem rgba(47, 38, 35, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.11);
+}
+
+@media (max-width: 760px) {
+  .detail-card .status-pill {
+    margin-left: 0;
+    max-width: 100%;
+    transform: rotate(-0.55deg);
+  }
+}

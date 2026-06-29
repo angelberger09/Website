@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 23:41 ET — Homepage room choice binding board refinement
+
+See `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.
+
 ## 2026-06-28 23:31 ET — Portfolio manifest next-frame slips
 
 See `.agent/changes/2026-06-28-portfolio-manifest-next-frame-slips.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.

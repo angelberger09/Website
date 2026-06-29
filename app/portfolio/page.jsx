@@ -143,6 +143,10 @@ export default function PortfolioPage() {
                 <small>{project.state}</small>
                 <h2>{project.title}</h2>
                 <em>{project.lane}</em>
+                <span className="portfolio-manifest-card__next">
+                  <b>Next public frame</b>
+                  <span>{project.nextNeed}</span>
+                </span>
               </div>
             </article>
           ))}

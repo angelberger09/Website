@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 21:21 ET — Home next path exit docket
+
+See `.agent/changes/2026-06-28-home-next-path-exit-docket.md` and `.agent/matrices/home-next-path-exit-docket.matrix.md`.
+
 ## 2026-06-28 21:11 ET — Continuity exit door binding
 
 See `.agent/changes/2026-06-28-continuity-exit-door-binding.md` and `.agent/matrices/continuity-exit-door-binding.matrix.md`.
@@ -117,31 +121,3 @@ See `.agent/changes/2026-06-28-footer-trail-room-ledger.md` and `.agent/matrices
 ## 2026-06-28 15:32 ET — Footer exit receipt board
 
 See `.agent/changes/2026-06-28-footer-exit-receipt-board.md` and `.agent/matrices/footer-exit-receipt-board.matrix.md`.
-
-## 2026-06-28 15:18 ET — Blog post reader bridge
-
-See `.agent/changes/2026-06-28-blog-post-reader-bridge.md` and `.agent/matrices/blog-post-reader-bridge.matrix.md`.
-
-## 2026-06-28 15:11 ET — Blog compatibility thread
-
-See `.agent/changes/2026-06-28-blog-compatibility-thread.md` and `.agent/matrices/blog-compatibility-thread.matrix.md`.
-
-## 2026-06-28 14:51 ET — PageIntro room shelf ledger
-
-See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger.md` and `.agent/matrices/page-intro-room-shelf-ledger.matrix.md`.
-
-## 2026-06-28 14:41 ET — Store availability terminal ledger
-
-See `.agent/changes/2026-06-28-store-availability-terminal-ledger.md` and `.agent/matrices/store-availability-terminal-ledger.matrix.md`.
-
-## 2026-06-28 14:31 ET — Homepage editorial room ledger refinement
-
-See `.agent/changes/2026-06-28-homepage-editorial-room-ledger-refinement.md` and `.agent/matrices/homepage-editorial-room-ledger-refinement.matrix.md`.
-
-## 2026-06-28 14:19 ET — About contact sheet room docket
-
-See `.agent/changes/2026-06-28-about-contact-sheet-room-docket.md` and `.agent/matrices/about-contact-sheet-room-docket.matrix.md`.
-
-## 2026-06-28 14:08 ET — Notes reader left docket
-
-See `.agent/changes/2026-06-28-notes-reader-left-docket.md` and `.agent/matrices/notes-reader-left-docket.matrix.md`.

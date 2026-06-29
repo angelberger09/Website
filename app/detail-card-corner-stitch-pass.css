@@ -1,0 +1,64 @@
+.detail-card {
+  position: relative;
+  overflow: visible;
+}
+
+.detail-card__corner-stitch {
+  position: absolute;
+  top: clamp(0.72rem, 1.8vw, 1rem);
+  right: clamp(0.82rem, 2vw, 1.1rem);
+  z-index: 4;
+  width: clamp(2.4rem, 6vw, 4.25rem);
+  height: clamp(1.15rem, 2.6vw, 1.58rem);
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0.42rem 50%, rgba(83, 61, 52, 0.34) 0 0.08rem, transparent 0.09rem) left center / 0.56rem 0.42rem repeat-x,
+    linear-gradient(135deg, rgba(255, 251, 242, 0.94), rgba(225, 207, 173, 0.52));
+  box-shadow:
+    0 0.24rem 0.56rem rgba(61, 45, 39, 0.16),
+    inset 0 0 0 1px rgba(118, 90, 72, 0.09);
+  clip-path: polygon(6% 18%, 96% 2%, 91% 85%, 12% 100%);
+  opacity: 0.9;
+  transform: rotate(2.8deg);
+}
+
+.detail-card__corner-stitch::before,
+.detail-card__corner-stitch::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.detail-card__corner-stitch::before {
+  inset: 0.34rem 0.46rem auto 0.52rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(81, 60, 53, 0.08), rgba(81, 60, 53, 0.52), rgba(81, 60, 53, 0.1));
+  box-shadow: 0 0.34rem 0 rgba(81, 60, 53, 0.22);
+}
+
+.detail-card__corner-stitch::after {
+  right: 0.42rem;
+  bottom: -0.28rem;
+  width: clamp(1.7rem, 5vw, 3.4rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(71, 52, 47, 0.46));
+  transform: rotate(-8deg);
+  transform-origin: right center;
+}
+
+.detail-card:has(.detail-card__paper-face) .detail-card__corner-stitch {
+  top: clamp(0.92rem, 2vw, 1.22rem);
+}
+
+.detail-card .status-pill + .detail-card__corner-stitch {
+  opacity: 0.72;
+}
+
+@media (max-width: 640px) {
+  .detail-card__corner-stitch {
+    top: 0.74rem;
+    right: 0.72rem;
+    width: 2.35rem;
+    height: 1.05rem;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 21:11 ET — Continuity exit door binding
+
+See `.agent/changes/2026-06-28-continuity-exit-door-binding.md` and `.agent/matrices/continuity-exit-door-binding.matrix.md`.
+
 ## 2026-06-28 20:50 ET — Continuity route receipts
 
 See `.agent/changes/2026-06-28-continuity-route-receipts.md` and `.agent/matrices/continuity-route-receipts.matrix.md`.

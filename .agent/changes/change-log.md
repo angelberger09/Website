@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 06:55 ET — Master convergence pass
+
+See `.agent/changes/2026-06-29-master-convergence-pass.md` and `.agent/matrices/master-convergence-pass.matrix.md`.
+
 ## 2026-06-29 06:50 ET — Shared route chapter notebook pass
 
 See `.agent/changes/2026-06-29-shared-route-chapter-notebook.md` and `.agent/matrices/shared-route-chapter-notebook.matrix.md`.

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 02:21 ET — PageIntro composed room board
+
+See `.agent/changes/2026-06-29-page-intro-composed-room-board.md` and `.agent/matrices/page-intro-composed-room-board.matrix.md`.
+
 ## 2026-06-29 02:08 ET — Shared room rail receipt notches
 
 See `.agent/changes/2026-06-29-shared-room-rail-receipt-notches.md` and `.agent/matrices/shared-room-rail-receipt-notches.matrix.md`.

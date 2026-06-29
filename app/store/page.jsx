@@ -65,7 +65,7 @@ const storePathCards = pageContinuity.store.steps;
 
 export default function StorePage() {
   return (
-    <main id="top" className="site-shell page-layout">
+    <main id="top" className="site-shell page-layout store-room-thread">
       <PageIntro eyebrow="Store" title="Future studio pieces">
         <p>
           This room gathers the product paths being prepared for later: soft
@@ -256,6 +256,7 @@ export default function StorePage() {
               <span className="store-feed-ledger-card__tab" aria-hidden="true">{storeFeedCueLabels[index] ?? field.label}</span>
               <div className="store-feed-ledger-card__photo" aria-hidden="true">
                 <b>{field.label}</b>
+                <i />
                 <i />
                 <i />
               </div>

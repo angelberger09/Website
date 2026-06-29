@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 22:49 ET — PageIntro room shelf ledger load
+
+See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger-load.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.
+
 ## 2026-06-28 22:39 ET — Portfolio project manifest shelf
 
 See `.agent/changes/2026-06-28-portfolio-project-manifest-shelf.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.

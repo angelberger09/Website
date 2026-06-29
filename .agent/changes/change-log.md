@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 02:48 ET — PageIntro open room board
+
+See `.agent/changes/2026-06-29-page-intro-open-room-board.md` and `.agent/matrices/page-intro-open-room-board.matrix.md`.
+
 ## 2026-06-29 02:39 ET — PageIntro ticket board binding
 
 See `.agent/changes/2026-06-29-page-intro-ticket-board-binding.md` and `.agent/matrices/page-intro-ticket-board-binding.matrix.md`.

@@ -1,0 +1,161 @@
+/* Store room thread binding pass */
+
+.store-room-thread {
+  position: relative;
+  isolation: isolate;
+}
+
+.store-room-thread::before {
+  content: "store room path";
+  position: absolute;
+  inset: clamp(10rem, 14vw, 16rem) auto clamp(9rem, 16vw, 14rem) clamp(0.55rem, 3vw, 2rem);
+  width: 1.35rem;
+  z-index: -1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
+  background: linear-gradient(180deg, rgba(255, 249, 234, 0.92), rgba(233, 210, 180, 0.42));
+  border-radius: 999px;
+  box-shadow: 0.28rem 0.42rem 0 rgba(80, 55, 38, 0.1), 0.65rem 1.25rem 2.4rem rgba(77, 55, 36, 0.18);
+  opacity: 0.82;
+  transform: rotate(-1.5deg);
+}
+
+.store-room-thread::after {
+  content: "preview to proof to availability to public path";
+  position: absolute;
+  top: clamp(8.6rem, 13vw, 13rem);
+  left: clamp(1.45rem, 5vw, 4.4rem);
+  z-index: 2;
+  max-width: min(72vw, 31rem);
+  padding: 0.42rem 0.8rem 0.38rem;
+  color: color-mix(in srgb, var(--ink) 68%, transparent);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255, 253, 242, 0.96), rgba(239, 221, 191, 0.64));
+  clip-path: polygon(2% 8%, 97% 0, 100% 76%, 4% 100%);
+  box-shadow: 0 0.35rem 0 rgba(255, 255, 255, 0.55) inset, 0.25rem 0.55rem 1.2rem rgba(81, 57, 38, 0.18);
+  transform: rotate(0.8deg);
+}
+
+.store-room-thread > .store-entry-receipts,
+.store-room-thread > .store-lane-collage,
+.store-room-thread > .store-visual-board,
+.store-room-thread > .store-gallery-board,
+.store-room-thread > .store-editorial-section,
+.store-room-thread > .store-path-photo-board,
+.store-room-thread > .continuity-paper-trail {
+  position: relative;
+}
+
+.store-room-thread > .store-entry-receipts::before,
+.store-room-thread > .store-lane-collage::before,
+.store-room-thread > .store-visual-board::before,
+.store-room-thread > .store-gallery-board::before,
+.store-room-thread > .store-editorial-section::before,
+.store-room-thread > .store-path-photo-board::before,
+.store-room-thread > .continuity-paper-trail::before {
+  position: absolute;
+  top: clamp(-0.78rem, -0.7vw, -0.42rem);
+  left: clamp(0.8rem, 2vw, 1.45rem);
+  z-index: 5;
+  display: inline-flex;
+  padding: 0.32rem 0.62rem 0.28rem;
+  min-width: 5.2rem;
+  justify-content: center;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255, 252, 239, 0.98), rgba(234, 212, 181, 0.7));
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 90%);
+  box-shadow: 0 0.22rem 0 rgba(255, 255, 255, 0.55) inset, 0.18rem 0.36rem 0.9rem rgba(67, 47, 31, 0.2);
+  transform: rotate(-1.2deg);
+}
+
+.store-room-thread > .store-entry-receipts::before { content: "trust slips"; }
+.store-room-thread > .store-lane-collage::before { content: "shelf lanes"; }
+.store-room-thread > .store-visual-board::before { content: "preview proof"; }
+.store-room-thread > .store-gallery-board::before { content: "slow shelf"; }
+.store-room-thread > .store-checklist-collage::before { content: "launch gates"; }
+.store-room-thread > .store-availability-board::before { content: "stage states"; }
+.store-room-thread > .store-feed-ledger-board::before { content: "future fields"; }
+.store-room-thread > .store-promise-board::before { content: "store promise"; }
+.store-room-thread > .store-path-photo-board::before { content: "return path"; }
+.store-room-thread > .continuity-paper-trail::before { content: "next room"; }
+
+.store-room-thread > .store-entry-receipts::after,
+.store-room-thread > .store-lane-collage::after,
+.store-room-thread > .store-visual-board::after,
+.store-room-thread > .store-gallery-board::after,
+.store-room-thread > .store-editorial-section::after,
+.store-room-thread > .store-path-photo-board::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.05rem, 2.6vw, 1.9rem);
+  right: clamp(1.05rem, 2.6vw, 1.9rem);
+  bottom: clamp(-1.35rem, -1.6vw, -0.7rem);
+  height: 0.52rem;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(93, 65, 42, 0.18), transparent);
+  filter: blur(7px);
+  opacity: 0.82;
+}
+
+.store-room-thread > .store-entry-receipts,
+.store-room-thread > .store-lane-collage,
+.store-room-thread > .store-visual-board,
+.store-room-thread > .store-gallery-board,
+.store-room-thread > .store-editorial-section,
+.store-room-thread > .store-path-photo-board {
+  margin-left: clamp(0rem, 2vw, 1.15rem);
+}
+
+@media (max-width: 760px) {
+  .store-room-thread::before {
+    inset: 8.5rem auto auto 0.85rem;
+    width: 0.7rem;
+    height: calc(100% - 12rem);
+    content: "";
+    padding: 0;
+    opacity: 0.4;
+  }
+
+  .store-room-thread::after {
+    top: 8rem;
+    left: 1.25rem;
+    max-width: calc(100% - 2.5rem);
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+  }
+
+  .store-room-thread > .store-entry-receipts,
+  .store-room-thread > .store-lane-collage,
+  .store-room-thread > .store-visual-board,
+  .store-room-thread > .store-gallery-board,
+  .store-room-thread > .store-editorial-section,
+  .store-room-thread > .store-path-photo-board {
+    margin-left: 0;
+  }
+
+  .store-room-thread > .store-entry-receipts::before,
+  .store-room-thread > .store-lane-collage::before,
+  .store-room-thread > .store-visual-board::before,
+  .store-room-thread > .store-gallery-board::before,
+  .store-room-thread > .store-editorial-section::before,
+  .store-room-thread > .store-path-photo-board::before,
+  .store-room-thread > .continuity-paper-trail::before {
+    left: 0.7rem;
+    font-size: 0.53rem;
+  }
+}

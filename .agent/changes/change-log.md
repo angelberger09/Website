@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 20:21 ET — Portfolio archive room thread binding
+
+See `.agent/changes/2026-06-28-portfolio-archive-room-thread-binding.md` and `.agent/matrices/portfolio-archive-room-thread-binding.matrix.md`.
+
 ## 2026-06-28 20:11 ET — Store room thread binding
 
 See `.agent/changes/2026-06-28-store-room-thread-binding.md` and `.agent/matrices/store-room-thread-binding.matrix.md`.

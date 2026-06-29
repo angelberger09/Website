@@ -1,0 +1,105 @@
+/*
+  Shared paper snippet status pass
+  Turns repeated small labels and state chips into clipped paper scraps instead of smooth UI pills.
+*/
+
+.page-card__label,
+.status-pill,
+.tag-row span,
+.page-card__cue,
+.source-link em {
+  position: relative;
+  isolation: isolate;
+  border-radius: 0.18rem 0.42rem 0.28rem 0.22rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.96), rgba(255, 247, 235, 0.76) 54%, rgba(185, 201, 175, 0.26)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 24rem 24rem, 42rem 42rem;
+  box-shadow:
+    0 0.34rem 0 rgba(255, 250, 242, 0.5),
+    0 0.78rem 1.45rem rgba(47, 38, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.74),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+  clip-path: polygon(2% 10%, 27% 2%, 64% 7%, 98% 0, 96% 88%, 73% 96%, 36% 91%, 0 100%);
+}
+
+.page-card__label::before,
+.status-pill::before,
+.tag-row span::before,
+.page-card__cue::before,
+.source-link em::before {
+  position: absolute;
+  inset: 0.16rem auto 0.14rem 0.22rem;
+  width: 0.18rem;
+  content: "";
+  border-radius: 999px;
+  background: rgba(47, 38, 35, 0.16);
+  box-shadow:
+    0.42rem 0 rgba(47, 38, 35, 0.06),
+    0.84rem 0 rgba(255, 176, 143, 0.16);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.page-card__label::after,
+.status-pill::after,
+.tag-row span::after,
+.page-card__cue::after,
+.source-link em::after {
+  position: absolute;
+  inset: -18% -10% auto auto;
+  width: 40%;
+  height: 60%;
+  content: "";
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.72), transparent 66%);
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.status-pill,
+.tag-row span {
+  padding: 0.5rem 0.78rem 0.48rem 0.9rem;
+}
+
+.page-card__label {
+  padding: 0.52rem 0.82rem 0.48rem 0.95rem;
+}
+
+.page-card__cue,
+.source-link em {
+  padding: 0.48rem 0.82rem 0.46rem 0.95rem;
+}
+
+.detail-card .status-pill,
+.reader-card .tag-row span,
+.link-card .tag-row span {
+  transform: rotate(-0.7deg);
+}
+
+.tag-row span:nth-child(even),
+.page-card:nth-child(even) .page-card__label,
+.source-link:nth-child(even) em {
+  transform: rotate(0.8deg);
+}
+
+.page-card:hover .page-card__label,
+.page-card:focus .page-card__label,
+.source-link:hover em,
+.source-link:focus em {
+  box-shadow:
+    0 0.42rem 0 rgba(255, 250, 242, 0.58),
+    0 1rem 1.85rem rgba(47, 38, 35, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.1);
+}
+
+@media (max-width: 760px) {
+  .page-card__label,
+  .status-pill,
+  .tag-row span,
+  .page-card__cue,
+  .source-link em {
+    clip-path: polygon(1% 5%, 96% 0, 100% 88%, 74% 98%, 2% 94%);
+  }
+}

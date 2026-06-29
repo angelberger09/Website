@@ -93,6 +93,42 @@
   pointer-events: none;
 }
 
+.site-shell.page-layout .studio-pages[id] {
+  position: relative;
+}
+
+.site-shell.page-layout .studio-pages[id]::before {
+  position: absolute;
+  z-index: 0;
+  top: clamp(0.95rem, 2vw, 1.45rem);
+  left: max(-1.15rem, calc((100vw - 76rem) / -2 - 0.2rem));
+  width: clamp(0.7rem, 1vw, 0.95rem);
+  height: clamp(3.2rem, 7vw, 5.1rem);
+  content: "";
+  background:
+    radial-gradient(circle at 50% 18%, rgba(89, 68, 56, 0.24) 0 0.095rem, transparent 0.11rem),
+    radial-gradient(circle at 50% 50%, rgba(89, 68, 56, 0.2) 0 0.085rem, transparent 0.105rem),
+    radial-gradient(circle at 50% 82%, rgba(89, 68, 56, 0.22) 0 0.09rem, transparent 0.11rem),
+    linear-gradient(180deg, rgba(255, 251, 244, 0.9), rgba(241, 221, 196, 0.74)),
+    var(--grain-image);
+  background-size: 100% 100%, 100% 100%, 100% 100%, cover, 16rem 16rem;
+  box-shadow:
+    0.22rem 0.38rem 1rem rgba(48, 37, 31, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  clip-path: polygon(24% 0, 100% 8%, 78% 100%, 0 92%, 13% 45%);
+  opacity: 0.86;
+  pointer-events: none;
+}
+
+.site-shell.page-layout .studio-pages[id]:nth-of-type(2n)::before {
+  height: clamp(2.65rem, 6vw, 4.4rem);
+  transform: translateX(0.15rem) rotate(1.4deg);
+}
+
+.site-shell.page-layout .studio-pages[id]:nth-of-type(3n)::before {
+  transform: translateX(-0.05rem) rotate(-1deg);
+}
+
 .site-shell.page-layout > * {
   position: relative;
   z-index: 1;
@@ -116,7 +152,8 @@
   .site-shell.page-layout::after,
   .page-hero::before,
   .next-step-band::before,
-  .studio-footer::before {
+  .studio-footer::before,
+  .site-shell.page-layout .studio-pages[id]::before {
     display: none;
   }
 }

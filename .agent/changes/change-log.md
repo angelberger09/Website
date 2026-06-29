@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 00:38 ET — Homepage wordless room-choice import repair
+
+See `.agent/changes/2026-06-29-home-wordless-room-choice-import-repair.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.
+
 ## 2026-06-29 00:29 ET — Notes fallback receipt pass load
 
 See `.agent/changes/2026-06-29-notes-fallback-receipt-pass-load.md` and `.agent/matrices/notes-fallback-receipt-pass-load.matrix.md`.

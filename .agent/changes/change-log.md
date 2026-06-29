@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 20:11 ET — Store room thread binding
+
+See `.agent/changes/2026-06-28-store-room-thread-binding.md` and `.agent/matrices/store-room-thread-binding.matrix.md`.
+
 ## 2026-06-28 19:50 ET — Notes post path style load repair
 
 See `.agent/changes/2026-06-28-notes-post-path-style-load.md` and `.agent/matrices/notes-post-path-style-load.matrix.md`.

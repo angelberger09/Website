@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 05:31 ET — Notes post bound sheet pass
+
+See `.agent/changes/2026-06-29-notes-post-bound-sheet.md` and `.agent/matrices/notes-post-bound-sheet.matrix.md`.
+
 ## 2026-06-29 05:20 ET — Notes post markdown ruled body pass
 
 See `.agent/changes/2026-06-29-notes-post-markdown-ruled-body.md` and `.agent/matrices/notes-post-markdown-paper.matrix.md`.

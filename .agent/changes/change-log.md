@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 01:50 ET — Homepage section docket spine refinement
+
+See `.agent/changes/2026-06-29-home-section-docket-spine-refinement.md` and `.agent/matrices/home-section-docket-spine-refinement.matrix.md`.
+
 ## 2026-06-29 01:39 ET — Homepage path thread reconciliation
 
 See `.agent/changes/2026-06-29-home-path-thread-reconciliation.md` and `.agent/matrices/home-path-ledger-focus-load.matrix.md`.

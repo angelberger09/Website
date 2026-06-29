@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 06:40 ET — Shared site shell room spine
+
+See `.agent/changes/2026-06-29-shared-site-shell-room-spine.md` and `.agent/matrices/shared-site-shell-room-spine.matrix.md`.
+
 ## 2026-06-29 06:31 ET — Homepage room spine continuity pass
 
 See `.agent/changes/2026-06-29-home-room-spine-continuity.md` and `.agent/matrices/home-room-spine-continuity.matrix.md`.

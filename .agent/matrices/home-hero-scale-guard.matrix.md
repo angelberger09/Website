@@ -3,16 +3,16 @@
 | Field | Value |
 |---|---|
 | Matrix ID | MATRIX-HOME-HERO-SCALE-GUARD |
-| Date | 2026-06-28 11:42 ET |
+| Date | 2026-06-28 23:41 ET |
 | Public source files | `app/page.jsx`, `app/home-hero-scale-guard-pass.css`, `app/home-hero-front-desk-finish-pass.css`, `app/home-hero-wordless-entry-pass.css`, `app/home-room-choice-left-depth-pass.css`, `app/layout.jsx` |
-| Agent files | `.agent/changes/2026-06-28-home-hero-scale-guard.md`, `.agent/changes/2026-06-28-home-hero-ux-entry-board.md`, `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`, `.agent/changes/2026-06-28-home-room-choice-left-depth.md`, `.agent/changes/2026-06-28-home-wordless-hero-load-repair.md`, `.agent/matrices/home-hero-scale-guard.matrix.md` |
+| Agent files | `.agent/changes/2026-06-28-home-hero-scale-guard.md`, `.agent/changes/2026-06-28-home-hero-ux-entry-board.md`, `.agent/changes/2026-06-28-home-hero-front-desk-repair.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry.md`, `.agent/changes/2026-06-28-home-hero-wordless-entry-refinement.md`, `.agent/changes/2026-06-28-home-room-choice-left-depth.md`, `.agent/changes/2026-06-28-home-wordless-hero-load-repair.md`, `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md`, `.agent/matrices/home-hero-scale-guard.matrix.md` |
 | Primary page | PAGE-001 Homepage |
 | Components | COMP-003 Scroll Title Sequence, COMP-004 Studio Page Cards |
 | Design patterns | DESIGN-002 Large Editorial Type, DESIGN-014 Paper List Hero Lockup, DESIGN-019 Paper Material Authenticity, DESIGN-021 Content-Bearing Polaroid Cards, DESIGN-022 Paper Piece Card Surfaces, DESIGN-029 Flattened Paper Hierarchy, DESIGN-030 Text Paper Snippets, DESIGN-031 Photo-Led Content Surfaces |
-| Lessons | LESSON-001, LESSON-002, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-025 |
+| Lessons | LESSON-001, LESSON-002, LESSON-018, LESSON-019, LESSON-021, LESSON-022, LESSON-024, LESSON-029, LESSON-030, LESSON-033, LESSON-039 |
 | Metrics | METRIC-001, METRIC-002, METRIC-017, METRIC-018, METRIC-020, METRIC-021, METRIC-028, METRIC-029, METRIC-030, METRIC-032 |
-| Feedback target | Homepage first-screen hero wording, scaling, first-screen orientation, entry-action visibility, left-docked room-choice grouping, and lifted-paper depth |
-| Satisfaction state | partially satisfied; visible hero wording removed, leftover pseudo-wording suppressed, route-choice entry preserved and tightened, and the active wordless/left-depth CSS passes are now reconnected in `app/layout.jsx` so the intended first-screen treatment can render |
+| Feedback target | Homepage first-screen hero wording, scaling, first-screen orientation, entry-action visibility, left-docked room-choice grouping, lifted-paper depth, and one-board binding clarity |
+| Satisfaction state | partially satisfied; visible hero wording removed, leftover pseudo-wording suppressed, route-choice entry preserved and tightened, active wordless/left-depth CSS passes reconnected, and the room-choice contact sheet now has a stronger left binding gutter plus fixed stitch rail cues so it reads more like one bound paper entry board instead of separate loose slips |
 
 ## Implementation notes
 
@@ -30,6 +30,8 @@ The left-depth pass loads `app/home-room-choice-left-depth-pass.css` after the w
 
 The load repair pass reconnects `app/home-hero-wordless-entry-pass.css` and `app/home-room-choice-left-depth-pass.css` in `app/layout.jsx` after `app/home-hero-route-ledger-binding-pass.css`, repairing stylesheet drift between the recorded active matrix state and the actual rendered import graph.
 
+The binding board refinement updates the existing `app/home-room-choice-left-depth-pass.css` rather than adding another override file. It adds a stronger shared paper-board background, left binding gutter, stitched/dotted rail cue, and slightly firmer sheet depth around the first-screen route choices while preserving the compact wordless hero and mobile/reduced-motion fallbacks.
+
 ## Validation guidance
 
-After deployment, check `/Website/` at common laptop heights around 1280×720 and 1440×800. The first screen should no longer show the oversized hero phrase, support copy, Open rooms card, arrival ticket, or inherited `front desk` label. It should show a compact paper entry surface with the room choices; on desktop that surface should sit in a clearer left-docked editorial position with stronger visible paper depth, while the accessible page title remains available to assistive technology.
+After deployment, check `/Website/` at common laptop heights around 1280×720 and 1440×800. The first screen should no longer show the oversized hero phrase, support copy, Open rooms card, arrival ticket, or inherited `front desk` label. It should show a compact paper entry surface with the room choices; on desktop that surface should sit in a clearer left-docked editorial position with stronger visible paper depth and a left-side binding rail that makes the four route slips read as one board, while the accessible page title remains available to assistive technology.

@@ -79,7 +79,7 @@
   position: relative;
   display: grid;
   gap: 0.62rem;
-  min-height: 10.5rem;
+  min-height: 12rem;
   padding: 0.82rem;
   color: var(--ink);
   background:
@@ -177,6 +177,38 @@
   color: rgba(59, 45, 32, 0.66);
   font-size: 0.74rem;
   font-style: normal;
+}
+
+.portfolio-manifest-card__next {
+  display: grid;
+  gap: 0.18rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0.1rem;
+  padding: 0.42rem 0.52rem 0.46rem;
+  color: rgba(59, 45, 32, 0.72);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 235, 0.9), rgba(238, 220, 182, 0.76)),
+    url('/Website/atmosphere/grain-noise.svg');
+  background-size: cover, 150px 150px;
+  box-shadow: 0 9px 18px rgba(89, 65, 38, 0.1), inset 0 0 0 1px rgba(115, 89, 53, 0.05);
+  clip-path: polygon(2% 9%, 100% 0, 96% 88%, 89% 100%, 0 93%);
+  transform: rotate(-0.35deg);
+}
+
+.portfolio-manifest-card:nth-child(even) .portfolio-manifest-card__next {
+  transform: rotate(0.5deg);
+}
+
+.portfolio-manifest-card__next b {
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.portfolio-manifest-card__next span {
+  font-size: 0.72rem;
+  line-height: 1.15;
 }
 
 .portfolio-manifest-rules {

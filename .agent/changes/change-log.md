@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 23:10 ET — Footer paper trail style load
+
+See `.agent/changes/2026-06-28-footer-paper-trail-style-load.md` and `.agent/matrices/footer-paper-trail-style-load.matrix.md`.
+
 ## 2026-06-28 22:49 ET — PageIntro room shelf ledger load
 
 See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger-load.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.

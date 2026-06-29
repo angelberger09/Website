@@ -44,6 +44,7 @@ import './home-path-map-bound-guide-pass.css';
 import './home-path-ledger-focus-pass.css';
 import './home-room-trail-binding-pass.css';
 import './home-section-spine-shadow-pass.css';
+import './home-room-spine-continuity-pass.css';
 import './home-next-path-exit-docket-pass.css';
 import './home-next-path-terminal-budget-pass.css';
 import './home-hero-wordless-entry-pass.css';

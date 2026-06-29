@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 03:10 ET — Shared room section binding tabs
+
+See `.agent/changes/2026-06-29-shared-room-section-binding-tabs.md` and `.agent/matrices/shared-room-section-binding-tabs.matrix.md`.
+
 ## 2026-06-29 02:48 ET — PageIntro open room board
 
 See `.agent/changes/2026-06-29-page-intro-open-room-board.md` and `.agent/matrices/page-intro-open-room-board.matrix.md`.

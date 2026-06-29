@@ -35,3 +35,7 @@ The Notes fallback/source receipt passes were present and already described in s
 ## Addendum — 2026-06-29 02:28 ET
 
 The shared PageIntro room shelf already existed and was bound into the composed route-room board, but its path cues could still read like soft inline tags. This run loads `app/page-intro-room-shelf-ticket-pass.css` so the shared shelf becomes a clipped ticket/receipt rail with individual paper path slips, route-specific abstract photo squares, and responsive collapse rules across major route intros.
+
+## Addendum — 2026-06-29 03:29 ET
+
+The shared PageIntro room shelf had ticket styling, but it could still read as separate loose slips rather than one composed route-room index. This run adds and loads `app/page-intro-room-index-pass.css`, giving the shelf a clipped backing board, a small `room index` label, stronger paper-slip shadows, subtle connecting thread, and mobile collapse rules across major route intros without changing route copy or adding fake visual content.

@@ -1,6 +1,7 @@
 import { pageContinuity } from "../page-continuity";
 import { NextStepBand } from "../next-step-band";
 import { portfolioFeedFields, portfolioFeedRules, portfolioRecordStates } from "../portfolio-feed-contract";
+import { portfolioManifestRules, portfolioProjectManifest } from "../portfolio-projects";
 import { portfolioLanes, portfolioPieces, portfolioProcess, portfolioReadiness } from "../site-data";
 import { PageIntro } from "../site-chrome";
 
@@ -14,7 +15,7 @@ const portfolioRoomKeys = [
     photo: "open",
     label: "Archive door",
     title: "Start with what is public",
-    caption: "The room opens with safe project doors first, then lets deeper records wait until they have enough public shape."
+    caption: "The room opens with safe public pieces first, then lets deeper records wait until they have enough public shape."
   },
   {
     photo: "frame",
@@ -120,6 +121,35 @@ export default function PortfolioPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="portfolio-manifest-board" aria-labelledby="portfolio-manifest-title">
+        <div className="portfolio-manifest-board__heading">
+          <p className="eyebrow">Project manifest</p>
+          <h1 id="portfolio-manifest-title">Named project shells now live in one place.</h1>
+          <p>
+            These are the named archive shells waiting for public-safe detail. The page renders
+            them from a single manifest so future cards can grow from one source of truth instead
+            of scattered hardcoded card fragments.
+          </p>
+        </div>
+        <div className="portfolio-manifest-shelf" aria-label="Portfolio project manifest shelf">
+          {portfolioProjectManifest.map((project, index) => (
+            <article className="portfolio-manifest-card" data-manifest-index={index + 1} key={project.title}>
+              <div className="portfolio-manifest-card__photo" aria-hidden="true">
+                <span>{project.cue}</span>
+              </div>
+              <div className="portfolio-manifest-card__copy">
+                <small>{project.state}</small>
+                <h2>{project.title}</h2>
+                <em>{project.lane}</em>
+              </div>
+            </article>
+          ))}
+        </div>
+        <ul className="portfolio-manifest-rules" aria-label="Manifest rules">
+          {portfolioManifestRules.map((rule) => <li key={rule}>{rule}</li>)}
+        </ul>
       </section>
 
       <section className="portfolio-archive-board" aria-labelledby="portfolio-pieces-title">

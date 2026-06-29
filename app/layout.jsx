@@ -4,6 +4,7 @@ import './typography.css';
 import './paper-card-pass.css';
 import './detail-card-paper-face-pass.css';
 import './shared-status-slip-pass.css';
+import './section-intro-paper-label-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-photo-steps-pass.css';
 import './continuity-map-cue-pass.css';

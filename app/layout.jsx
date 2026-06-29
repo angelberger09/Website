@@ -155,6 +155,7 @@ import './notes-path-direct-exit-slips-pass.css';
 import './notes-post-margin-binding-pass.css';
 import './notes-post-tag-snippets-pass.css';
 import './notes-post-markdown-paper-pass.css';
+import './notes-post-bound-sheet-pass.css';
 import './notes-post-receipt-strip-pass.css';
 import './notes-post-path-shelf-pass.css';
 import './page-intro-room-key-ledger-pass.css';

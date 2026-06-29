@@ -1,0 +1,131 @@
+/* Shared PageIntro room index pass.
+   Strengthens the route intro shelf into one composed paper-room index instead of loose slips. */
+
+.page-hero__room-shelf {
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(1.05rem, 2.6vw, 1.55rem);
+  padding: clamp(0.72rem, 1.8vw, 1rem);
+  background:
+    linear-gradient(115deg, rgba(255, 250, 232, 0.78), rgba(239, 218, 184, 0.45)),
+    repeating-linear-gradient(92deg, rgba(120, 82, 52, 0.055) 0 1px, transparent 1px 0.58rem);
+  box-shadow:
+    0 1rem 1.65rem rgba(73, 50, 32, 0.12),
+    0 0.12rem 0 rgba(255, 255, 255, 0.56) inset;
+  clip-path: polygon(1% 4%, 99% 0, 98% 92%, 2% 100%);
+}
+
+.page-hero__room-shelf::before {
+  content: "room index";
+  position: absolute;
+  left: clamp(0.82rem, 2.4vw, 1.25rem);
+  top: -0.48rem;
+  z-index: 3;
+  padding: 0.18rem 0.58rem 0.2rem;
+  transform: rotate(-2deg);
+  background:
+    linear-gradient(135deg, rgba(255, 245, 209, 0.98), rgba(224, 195, 151, 0.88)),
+    repeating-linear-gradient(90deg, rgba(105, 72, 45, 0.08) 0 1px, transparent 1px 0.42rem);
+  color: rgba(75, 53, 37, 0.72);
+  font-size: clamp(0.48rem, 0.72vw, 0.58rem);
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0 0.38rem 0.74rem rgba(70, 48, 31, 0.15);
+  clip-path: polygon(5% 0, 100% 10%, 94% 100%, 0 86%);
+  pointer-events: none;
+}
+
+.page-hero__room-shelf::after {
+  content: "";
+  position: absolute;
+  left: clamp(1rem, 3vw, 1.8rem);
+  right: clamp(1rem, 3vw, 1.8rem);
+  top: 50%;
+  z-index: -1;
+  height: 0.22rem;
+  transform: translateY(-50%) rotate(-0.4deg);
+  background: linear-gradient(90deg, transparent, rgba(106, 73, 47, 0.18), transparent);
+  opacity: 0.78;
+  clip-path: polygon(0 28%, 98% 0, 100% 72%, 2% 100%);
+  pointer-events: none;
+}
+
+.page-hero__room-shelf > span {
+  min-height: 100%;
+  padding: clamp(0.54rem, 1.4vw, 0.74rem);
+  background:
+    linear-gradient(145deg, rgba(255, 252, 239, 0.92), rgba(237, 215, 181, 0.7)),
+    radial-gradient(circle at 22% 12%, rgba(255, 255, 255, 0.42), transparent 2.1rem);
+  box-shadow:
+    0 0.7rem 1.05rem rgba(72, 50, 33, 0.13),
+    0 0.08rem 0 rgba(255, 255, 255, 0.62) inset;
+  clip-path: polygon(3% 0, 100% 4%, 96% 100%, 0 94%);
+}
+
+.page-hero__room-shelf > span:nth-child(2n) {
+  transform: rotate(1.2deg);
+}
+
+.page-hero__room-shelf > span:nth-child(2n + 1) {
+  transform: rotate(-0.8deg);
+}
+
+.page-hero__room-shelf > span:nth-child(1)::before,
+.page-hero__room-shelf > span:nth-child(2)::before,
+.page-hero__room-shelf > span:nth-child(3)::before,
+.page-hero__room-shelf > span:nth-child(4)::before {
+  position: absolute;
+  right: 0.46rem;
+  top: 0.32rem;
+  color: rgba(83, 57, 39, 0.34);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.page-hero__room-shelf > span:nth-child(1)::before { content: "01"; }
+.page-hero__room-shelf > span:nth-child(2)::before { content: "02"; }
+.page-hero__room-shelf > span:nth-child(3)::before { content: "03"; }
+.page-hero__room-shelf > span:nth-child(4)::before { content: "04"; }
+
+.page-hero__room-shelf-photo {
+  border-radius: 0.3rem;
+  background:
+    linear-gradient(145deg, rgba(96, 128, 105, 0.22), rgba(97, 77, 105, 0.18)),
+    radial-gradient(circle at 32% 20%, rgba(255, 255, 255, 0.48), transparent 2.2rem);
+  clip-path: polygon(4% 0, 100% 6%, 94% 100%, 0 92%);
+}
+
+.page-hero__room-shelf-copy small {
+  color: rgba(92, 65, 45, 0.58);
+  font-weight: 850;
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-shelf {
+    padding: 0.8rem 0.72rem;
+  }
+
+  .page-hero__room-shelf::after {
+    display: none;
+  }
+
+  .page-hero__room-shelf > span:nth-child(n) {
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero__room-shelf::before {
+    content: "index";
+    left: 0.75rem;
+  }
+
+  .page-hero__room-shelf > span:nth-child(1)::before,
+  .page-hero__room-shelf > span:nth-child(2)::before,
+  .page-hero__room-shelf > span:nth-child(3)::before,
+  .page-hero__room-shelf > span:nth-child(4)::before {
+    display: none;
+  }
+}

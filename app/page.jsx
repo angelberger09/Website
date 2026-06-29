@@ -81,22 +81,31 @@ const homepageChapterNotes = {
 export default function HomePage() {
   return (
     <main id="top" className="home-page">
-      <section className="scroll-title scroll-title--quiet" aria-labelledby="home-entry-title">
-        <div className="title-lockup title-lockup--entry-only">
-          <h1 id="home-entry-title" className="home-hero-sr">Soft Strange Studio</h1>
-          <nav className="home-hero-route-strip home-hero-contact-sheet" aria-label="Choose a studio room">
-            <div className="home-hero-route-strip__links" role="list">
+      <section className="home-front-door" aria-labelledby="home-entry-title">
+        <div className="home-front-door__board">
+          <div className="home-front-door__copy">
+            <p className="home-front-door__eyebrow">Soft Strange Studio</p>
+            <h1 id="home-entry-title">Soft Strange Studio</h1>
+            <p className="home-front-door__dek">
+              A calm public room for notes, work, and small shop paths. Start here,
+              then choose the room that fits what you want to read or see next.
+            </p>
+            <div className="home-front-door__actions" aria-label="Homepage first actions">
+              <a className="home-front-door__action" href="#studio-front-room">Read the front room</a>
+              <a className="home-front-door__action" href="#studio-room-doors">Choose a room</a>
+            </div>
+          </div>
+
+          <nav className="home-front-door__rooms" aria-label="Open studio rooms">
+            <span className="home-front-door__rooms-label">Open rooms</span>
+            <div className="home-front-door__routes" role="list">
               {homepageCards.map((page) => (
-                <a className="home-hero-route-slip" href={page.href} key={page.href} role="listitem">
-                  <span className="home-hero-route-slip__preview" aria-hidden="true">
-                    <span>{page.eyebrow}</span>
+                <a className="home-front-door__route" href={page.href} key={page.href} role="listitem">
+                  <span>
                     <strong>{page.title}</strong>
-                  </span>
-                  <span className="home-hero-route-slip__copy">
                     <span>{page.eyebrow}</span>
-                    <strong>{page.title}</strong>
-                    <small>{page.roomCue}</small>
                   </span>
+                  <small>{page.roomCue}</small>
                 </a>
               ))}
             </div>

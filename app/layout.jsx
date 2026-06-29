@@ -138,6 +138,7 @@ import './notes-post-receipt-strip-pass.css';
 import './notes-post-path-shelf-pass.css';
 import './page-intro-room-key-ledger-pass.css';
 import './page-intro-left-binding-thread-pass.css';
+import './page-intro-shelf-thread-pass.css';
 
 export const metadata = {
   title: 'Soft Strange Studio',

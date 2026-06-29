@@ -87,7 +87,7 @@ const portfolioProcessLabels = ["Read signal", "Shape card", "Add preview", "Ope
 
 export default function PortfolioPage() {
   return (
-    <main id="top" className="site-shell page-layout">
+    <main id="top" className="site-shell page-layout portfolio-room-thread">
       <PageIntro eyebrow="Portfolio" title="First public archive">
         <p>
           The portfolio starts as a clean set of project doors. As more public

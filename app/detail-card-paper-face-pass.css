@@ -1,91 +1,106 @@
+/* Shared DetailCard paper-face pass.
+   Uses the existing detail-card__paper-face markup so remaining shared DetailCard surfaces carry
+   a visible content-bearing paper/photo marker instead of reading as plain text cards. */
+
+.detail-card {
+  padding-top: clamp(1.35rem, 3vw, 2.15rem);
+}
+
 .detail-card__paper-face {
   position: relative;
   z-index: 2;
   display: grid;
-  width: min(12.75rem, 100%);
-  min-height: 6.25rem;
+  width: min(100%, 13rem);
+  min-height: 5.4rem;
   align-content: end;
-  justify-items: start;
-  gap: 0.28rem;
-  margin: -0.15rem 0 0.5rem auto;
-  padding: 0.9rem 0.95rem 0.78rem;
-  color: rgba(58, 45, 42, 0.92);
+  gap: 0.18rem;
+  margin: -0.25rem 0 0.25rem auto;
+  padding: 0.82rem 0.9rem 0.72rem;
+  color: rgba(58, 45, 42, 0.9);
+  clip-path: polygon(2% 4%, 23% 1%, 49% 3%, 78% 0, 98% 3%, 96% 33%, 99% 66%, 96% 97%, 68% 95%, 37% 99%, 2% 96%, 4% 58%);
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 176, 143, 0.3), transparent 34%),
-    radial-gradient(circle at 82% 20%, rgba(216, 197, 236, 0.23), transparent 34%),
-    linear-gradient(145deg, rgba(255, 250, 242, 0.97), rgba(185, 201, 175, 0.26)),
-    var(--grain-image);
-  background-size: auto, auto, cover, 22rem 22rem;
+    radial-gradient(circle at 18% 22%, rgba(255, 176, 143, 0.28), transparent 34%),
+    radial-gradient(circle at 84% 78%, rgba(185, 201, 175, 0.28), transparent 36%),
+    linear-gradient(142deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.72) 58%, rgba(216, 197, 236, 0.22)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, cover, cover, 18rem 18rem, 38rem 38rem;
   box-shadow:
-    0 0.72rem 1.55rem rgba(47, 38, 35, 0.15),
-    0 0.18rem 0.44rem rgba(47, 38, 35, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.72);
-  clip-path: polygon(4% 7%, 31% 2%, 63% 5%, 96% 3%, 98% 48%, 94% 96%, 66% 94%, 30% 98%, 3% 91%);
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.1);
+  filter:
+    drop-shadow(-0.18rem 0.22rem 0 rgba(47, 38, 35, 0.08))
+    drop-shadow(0.24rem 0.34rem 0 rgba(255, 176, 143, 0.13))
+    drop-shadow(0.18rem 0.68rem 1.15rem rgba(47, 38, 35, 0.16));
   transform: rotate(1.1deg);
 }
 
-.detail-card:nth-child(even) .detail-card__paper-face {
+.detail-card:nth-child(2n) .detail-card__paper-face {
   margin-right: auto;
   margin-left: 0;
-  transform: rotate(-1.4deg);
+  transform: rotate(-1deg);
+}
+
+.detail-card__paper-face::before,
+.detail-card__paper-face::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
 }
 
 .detail-card__paper-face::before {
-  position: absolute;
-  top: 0.48rem;
-  right: 0.55rem;
-  width: 3.2rem;
-  height: 0.66rem;
-  content: "";
-  background: rgba(255, 250, 242, 0.82);
+  top: -0.42rem;
+  left: 50%;
+  width: 3.8rem;
+  height: 0.82rem;
+  border-radius: 999px 72% 999px 66%;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.68), rgba(245, 224, 198, 0.34)),
+    var(--grain-image);
+  background-size: cover, 16rem 16rem;
   box-shadow: 0 0.24rem 0.62rem rgba(47, 38, 35, 0.12);
-  clip-path: polygon(3% 18%, 96% 6%, 92% 86%, 8% 94%);
-  opacity: 0.9;
+  transform: translateX(-50%) rotate(-3deg);
 }
 
 .detail-card__paper-face::after {
-  position: absolute;
-  inset: auto 0.65rem 0.54rem auto;
-  width: 38%;
-  height: 0.22rem;
-  content: "";
-  background: rgba(86, 70, 65, 0.16);
-  clip-path: polygon(1% 26%, 100% 6%, 94% 74%, 7% 92%);
+  inset: 0.45rem;
+  clip-path: polygon(3% 5%, 28% 2%, 64% 4%, 97% 1%, 95% 96%, 58% 93%, 31% 98%, 2% 95%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent 52%, rgba(47, 38, 35, 0.04)),
+    repeating-linear-gradient(0deg, rgba(47, 38, 35, 0.035) 0 1px, transparent 1px 0.48rem);
+  opacity: 0.72;
 }
 
 .detail-card__paper-face b,
 .detail-card__paper-face em {
   position: relative;
   z-index: 1;
+  display: block;
 }
 
 .detail-card__paper-face b {
-  max-width: 16ch;
-  font-family: var(--font-body);
-  font-size: clamp(0.7rem, 0.98vw, 0.84rem);
-  font-weight: 950;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
+  max-width: 11ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.48rem);
+  font-weight: 760;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 .detail-card__paper-face em {
-  max-width: 18ch;
-  color: rgba(66, 52, 48, 0.76);
-  font-size: clamp(0.63rem, 0.82vw, 0.72rem);
+  color: rgba(86, 70, 65, 0.72);
+  font-size: 0.66rem;
   font-style: normal;
-  font-weight: 850;
-  letter-spacing: 0.105em;
-  line-height: 1.22;
+  font-weight: 900;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-@media (max-width: 640px) {
-  .detail-card__paper-face,
-  .detail-card:nth-child(even) .detail-card__paper-face {
-    width: min(11rem, 88%);
+@media (max-width: 760px) {
+  .detail-card__paper-face {
+    width: min(100%, 11.5rem);
+    min-height: 4.85rem;
     margin-right: 0;
-    margin-left: auto;
-    transform: rotate(0.8deg);
+    margin-left: 0;
   }
 }

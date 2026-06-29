@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 01:29 ET — Homepage path ledger focus load
+
+See `.agent/changes/2026-06-29-home-path-ledger-focus-load.md` and `.agent/matrices/home-path-ledger-focus-load.matrix.md`.
+
 ## 2026-06-29 01:19 ET — Portfolio public name shelf
 
 See `.agent/changes/2026-06-29-portfolio-public-name-shelf.md` and `.agent/matrices/portfolio-public-name-shelf.matrix.md`.

@@ -59,6 +59,7 @@ import './about-next-doors-exit-ledger-pass.css';
 import './about-next-doors-terminal-budget-pass.css';
 import './about-next-door-paper-thread-pass.css';
 import './portfolio-paper-archive-pass.css';
+import './portfolio-project-manifest-pass.css';
 import './portfolio-gallery-pass.css';
 import './portfolio-gallery-direct-cues-pass.css';
 import './portfolio-gallery-room-rail-pass.css';

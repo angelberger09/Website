@@ -51,6 +51,35 @@
   margin: 0;
 }
 
+.notes-post-markdown > p {
+  position: relative;
+  padding: clamp(0.08rem, 0.4vw, 0.16rem) 0 clamp(0.18rem, 0.7vw, 0.28rem) clamp(0.86rem, 2.4vw, 1.15rem);
+  background-image:
+    linear-gradient(90deg, rgba(255, 176, 143, 0.2), rgba(255, 176, 143, 0.2)),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 1.62em,
+      rgba(47, 38, 35, 0.055) 1.66em,
+      transparent 1.72em
+    );
+  background-repeat: no-repeat, repeat;
+  background-size: 0.18rem 100%, 100% 1.72em;
+  background-position: 0.18rem 0, 0 0.28em;
+}
+
+.notes-post-markdown > p::before {
+  position: absolute;
+  top: 0.22rem;
+  left: 0;
+  width: 0.52rem;
+  height: calc(100% - 0.32rem);
+  content: "";
+  clip-path: polygon(18% 0, 100% 3%, 86% 100%, 0 96%);
+  background: rgba(185, 201, 175, 0.16);
+  box-shadow: 0.06rem 0.08rem 0 rgba(47, 38, 35, 0.04);
+}
+
 .notes-post-markdown > blockquote,
 .notes-post-markdown > pre,
 .notes-post-markdown > ul,
@@ -106,5 +135,11 @@
   .notes-post-markdown > h2,
   .notes-post-markdown > h3 {
     width: 100%;
+  }
+
+  .notes-post-markdown > p {
+    padding-left: 0.78rem;
+    background-size: 0.14rem 100%, 100% 1.72em;
+    background-position: 0.12rem 0, 0 0.28em;
   }
 }

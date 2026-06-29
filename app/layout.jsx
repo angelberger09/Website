@@ -6,6 +6,7 @@ import './shared-status-slip-pass.css';
 import './continuity-paper-trail-pass.css';
 import './continuity-photo-steps-pass.css';
 import './continuity-map-cue-pass.css';
+import './continuity-stagger-thread-repair-pass.css';
 import './paper-header-pass.css';
 import './header-paper-tabs-pass.css';
 import './header-active-room-pass.css';

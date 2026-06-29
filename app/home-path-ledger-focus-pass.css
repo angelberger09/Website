@@ -205,6 +205,67 @@
   background: rgba(255, 176, 143, 0.16);
 }
 
+/* Third focus pass: reconcile the older vertical path thread with the newer
+   horizontal ledger shelf, and turn the binding copy into a visible clipped tab. */
+.home-path-map__binding {
+  grid-column: 1;
+  align-self: center;
+  display: grid;
+  gap: 0.18rem;
+  width: min(100%, 11rem);
+  margin-top: 0.55rem;
+  padding: 0.58rem 0.68rem 0.54rem;
+  clip-path: polygon(0 8%, 94% 0, 100% 84%, 10% 100%);
+  background:
+    linear-gradient(128deg, rgba(255, 252, 246, 0.9), rgba(255, 238, 218, 0.72) 58%, rgba(153, 222, 201, 0.18)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow:
+    0.12rem 0.18rem 0 rgba(47, 38, 35, 0.075),
+    0 0.58rem 1rem rgba(47, 38, 35, 0.095);
+  color: rgba(58, 45, 42, 0.66);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.home-path-map__binding b {
+  color: rgba(58, 45, 42, 0.82);
+  font-family: var(--font-display);
+  font-size: clamp(0.96rem, 1.45vw, 1.18rem);
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.home-path-map__trail::before {
+  left: 0.5rem !important;
+  right: 0.5rem;
+  top: 50% !important;
+  bottom: auto !important;
+  width: auto !important;
+  height: 0.16rem;
+  transform: translateY(-50%);
+  clip-path: polygon(0 35%, 100% 0, 97% 100%, 2% 72%);
+  background:
+    linear-gradient(90deg, rgba(115, 79, 51, 0), rgba(115, 79, 51, 0.22) 12%, rgba(153, 222, 201, 0.34) 50%, rgba(115, 79, 51, 0.18) 88%, rgba(115, 79, 51, 0));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.home-path-map__step::before,
+.home-path-map__step:nth-child(even)::before,
+.home-path-map__step:nth-child(odd)::before {
+  left: 50% !important;
+  top: auto !important;
+  bottom: -0.18rem;
+  width: 0.54rem;
+  height: 0.54rem;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle, rgba(255, 252, 246, 0.95) 0 35%, rgba(255, 176, 143, 0.38) 36% 62%, rgba(58, 45, 42, 0.14) 63% 100%);
+}
+
 @media (max-width: 760px) {
   .home-path-map {
     grid-template-columns: 1fr !important;
@@ -221,8 +282,10 @@
     clip-path: polygon(0 28%, 100% 0, 96% 100%, 3% 82%);
   }
 
-  .home-path-map__note {
+  .home-path-map__note,
+  .home-path-map__binding {
     max-width: 100%;
+    width: fit-content;
   }
 
   .home-path-map__trail {
@@ -245,6 +308,17 @@
     padding-bottom: 0;
   }
 
+  .home-path-map__trail::before {
+    left: 0.7rem !important;
+    right: auto;
+    top: 0.4rem !important;
+    bottom: 0.4rem !important;
+    width: 0.18rem !important;
+    height: auto;
+    transform: none;
+    clip-path: polygon(22% 0, 100% 2%, 78% 100%, 0 96%);
+  }
+
   .home-path-map__step,
   .home-path-map__step:nth-child(2n),
   .home-path-map__step:nth-child(2n + 1) {
@@ -253,5 +327,14 @@
 
   .home-path-map__step::after {
     inset-inline-start: 3.2rem;
+  }
+
+  .home-path-map__step::before,
+  .home-path-map__step:nth-child(even)::before,
+  .home-path-map__step:nth-child(odd)::before {
+    left: 0.46rem !important;
+    top: 50% !important;
+    bottom: auto;
+    transform: translateY(-50%);
   }
 }

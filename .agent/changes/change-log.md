@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 21:38 ET — PageIntro room key ledger
+
+See `.agent/changes/2026-06-28-page-intro-room-key-ledger.md` and `.agent/matrices/page-intro-room-key-ledger.matrix.md`.
+
 ## 2026-06-28 21:30 ET — Notes post tag snippet load repair
 
 See `.agent/changes/2026-06-28-notes-post-tag-snippet-load.md` and `.agent/matrices/notes-post-tag-snippet-load.matrix.md`.

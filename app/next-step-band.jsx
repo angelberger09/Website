@@ -11,6 +11,8 @@ function getContinuityInitials(title = "Open") {
 }
 
 export function NextStepBand({ eyebrow, title, description, steps = [] }) {
+  const routeReceipts = steps.slice(0, 2);
+
   return (
     <section className="continuity-paper-trail" aria-labelledby="continuity-title">
       <div className="continuity-paper-trail__copy">
@@ -19,6 +21,14 @@ export function NextStepBand({ eyebrow, title, description, steps = [] }) {
             <span>Room trail</span>
           </span>
           <span className="continuity-paper-trail__map-slip">Choose softly</span>
+          <span className="continuity-paper-trail__route-receipts">
+            {routeReceipts.map((item, index) => (
+              <span className="continuity-paper-trail__route-receipt" key={item.title}>
+                <b>{trailLabels[index] ?? "Open door"}</b>
+                <em>{item.title}</em>
+              </span>
+            ))}
+          </span>
         </div>
         <p className="eyebrow">{eyebrow}</p>
         <h1 id="continuity-title">{title}</h1>

@@ -30,6 +30,7 @@ import './home-arrival-ticket-pass.css';
 import './home-path-spine-ticket-pass.css';
 import './home-room-trail-binding-pass.css';
 import './home-section-spine-shadow-pass.css';
+import './home-next-path-exit-docket-pass.css';
 import './about-paper-collage-pass.css';
 import './about-room-photo-pass.css';
 import './about-room-key-pass.css';

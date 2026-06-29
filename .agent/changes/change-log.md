@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 06:10 ET — Header contact shadow refinement
+
+See `.agent/changes/2026-06-29-header-contact-shadow-refinement.md` and `.agent/matrices/header-contact-shadow-refinement.matrix.md`.
+
 ## 2026-06-29 05:50 ET — Homepage door room ledger binding
 
 See `.agent/changes/2026-06-29-home-door-room-ledger-binding.md` and `.agent/matrices/home-door-room-ledger-binding.matrix.md`.

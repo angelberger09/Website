@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 01:39 ET — Homepage path thread reconciliation
+
+See `.agent/changes/2026-06-29-home-path-thread-reconciliation.md` and `.agent/matrices/home-path-ledger-focus-load.matrix.md`.
+
 ## 2026-06-29 01:29 ET — Homepage path ledger focus load
 
 See `.agent/changes/2026-06-29-home-path-ledger-focus-load.md` and `.agent/matrices/home-path-ledger-focus-load.matrix.md`.

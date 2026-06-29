@@ -1,0 +1,81 @@
+/* DetailCard title ticket pass.
+   Gives remaining shared DetailCard headings their own clipped paper title slip so
+   the card face, status tape, body-copy slips, and title hierarchy read as one
+   composed handmade paper piece instead of a broad card with plain text inside. */
+
+.detail-card > h2 {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.18rem 0 clamp(0.46rem, 1vw, 0.72rem);
+  padding: clamp(0.42rem, 1vw, 0.58rem) clamp(0.68rem, 1.5vw, 0.92rem);
+  line-height: 1.03;
+  color: rgba(58, 45, 42, 0.94);
+  background:
+    linear-gradient(96deg, rgba(255, 253, 247, 0.98), rgba(255, 246, 236, 0.9) 58%, rgba(153, 222, 201, 0.14)),
+    var(--grain-image),
+    var(--fine-scratch-image);
+  background-size: cover, 13rem 13rem, 32rem 32rem;
+  box-shadow:
+    -0.2rem 0.16rem 0 rgba(255, 250, 241, 0.62),
+    0.22rem 0.36rem 0 rgba(255, 176, 143, 0.12),
+    0 0.72rem 1.22rem rgba(47, 38, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+  clip-path: polygon(0 8%, 18% 1%, 62% 4%, 100% 0, 97% 88%, 78% 100%, 32% 96%, 3% 100%);
+  transform: rotate(-0.22deg);
+}
+
+.detail-card:nth-of-type(even) > h2 {
+  background:
+    linear-gradient(101deg, rgba(255, 250, 243, 0.97), rgba(255, 244, 234, 0.88) 60%, rgba(255, 176, 143, 0.13)),
+    var(--grain-image),
+    var(--dust-image);
+  background-size: cover, 14rem 14rem, 18rem 18rem;
+  transform: rotate(0.28deg);
+}
+
+.detail-card > h2::before {
+  content: "";
+  position: absolute;
+  inset: 0.18rem auto auto 0.42rem;
+  width: clamp(1.2rem, 3vw, 1.9rem);
+  height: 0.28rem;
+  border-radius: 999px;
+  background: rgba(153, 222, 201, 0.36);
+  box-shadow: 0 0.12rem 0.2rem rgba(47, 38, 35, 0.08);
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.detail-card > h2::after {
+  content: "";
+  position: absolute;
+  right: clamp(0.42rem, 1.4vw, 0.72rem);
+  bottom: -0.12rem;
+  width: clamp(1.6rem, 4vw, 2.5rem);
+  height: 0.16rem;
+  border-radius: 999px;
+  background: rgba(47, 38, 35, 0.16);
+  filter: blur(0.02rem);
+  pointer-events: none;
+}
+
+.detail-card:focus-within > h2,
+.detail-card:hover > h2 {
+  box-shadow:
+    -0.24rem 0.18rem 0 rgba(255, 250, 241, 0.68),
+    0.26rem 0.42rem 0 rgba(255, 176, 143, 0.15),
+    0 0.9rem 1.46rem rgba(47, 38, 35, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.09);
+}
+
+@media (max-width: 760px) {
+  .detail-card > h2,
+  .detail-card:nth-of-type(even) > h2 {
+    width: 100%;
+    transform: none;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 23:52 ET — PageIntro route ledger photo refinement
+
+See `.agent/changes/2026-06-28-page-intro-route-ledger-photo-refinement.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.
+
 ## 2026-06-28 23:41 ET — Homepage room choice binding board refinement
 
 See `.agent/changes/2026-06-28-home-room-choice-binding-board-refinement.md` and `.agent/matrices/home-hero-scale-guard.matrix.md`.

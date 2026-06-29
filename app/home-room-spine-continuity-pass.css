@@ -1,0 +1,93 @@
+/* Homepage room spine continuity pass.
+   Makes the long front page read as one bound left-docked paper path instead of separate loose boards. */
+
+.home-page {
+  --home-room-spine-ink: rgba(50, 38, 34, 0.16);
+  --home-room-spine-wash: rgba(255, 176, 143, 0.2);
+  --home-room-spine-mint: rgba(153, 222, 201, 0.24);
+}
+
+.home-page .studio-pages {
+  overflow: visible;
+}
+
+.home-page .studio-pages > .home-docket-step,
+.home-page .studio-pages > .home-docket-note {
+  transform-origin: left center;
+}
+
+.home-page .studio-pages > .home-docket-step {
+  box-shadow:
+    0.18rem 0.2rem 0 rgba(47, 38, 35, 0.08),
+    0.36rem 0.7rem 1.1rem rgba(47, 38, 35, 0.14);
+}
+
+.home-page .studio-pages > .home-docket-note {
+  border-left: 0.12rem solid rgba(255, 176, 143, 0.22);
+}
+
+.home-page .studio-pages > .home-docket-note::after {
+  content: "";
+  position: absolute;
+  right: -0.68rem;
+  top: 0.62rem;
+  width: 0.88rem;
+  height: 0.18rem;
+  clip-path: polygon(0 18%, 100% 0, 92% 100%, 4% 82%);
+  background: linear-gradient(90deg, rgba(47, 38, 35, 0.1), rgba(153, 222, 201, 0.28), transparent);
+  opacity: 0.9;
+}
+
+.home-page .studio-pages:is(.home-paper-field, .home-room-status, .home-door-section, .home-studio-checks, .home-next-path-room)::before {
+  filter: drop-shadow(0.16rem 0.28rem 0 rgba(47, 38, 35, 0.08));
+}
+
+.home-page .studio-pages:is(.home-paper-field, .home-room-status, .home-door-section, .home-studio-checks, .home-next-path-room)::after {
+  box-shadow:
+    0 0 0 0.04rem rgba(255, 252, 246, 0.42),
+    0.42rem 0.35rem 0.8rem rgba(47, 38, 35, 0.1);
+}
+
+.home-page .studio-pages:is(.home-paper-field, .home-room-status, .home-door-section, .home-studio-checks, .home-next-path-room) > :not(.home-docket-step):not(.home-docket-note):first-of-type {
+  position: relative;
+}
+
+.home-page .studio-pages:is(.home-paper-field, .home-room-status, .home-door-section, .home-studio-checks, .home-next-path-room) > :not(.home-docket-step):not(.home-docket-note):first-of-type::before {
+  content: "";
+  position: absolute;
+  left: clamp(-1.2rem, -1.8vw, -0.72rem);
+  top: 0.4rem;
+  width: clamp(0.46rem, 0.8vw, 0.62rem);
+  height: clamp(2.8rem, 5vw, 4.2rem);
+  pointer-events: none;
+  clip-path: polygon(26% 0, 100% 5%, 82% 92%, 12% 100%, 0 24%);
+  background:
+    linear-gradient(180deg, var(--home-room-spine-wash), var(--home-room-spine-mint)),
+    var(--grain-image);
+  background-size: cover, 8rem 8rem;
+  box-shadow:
+    0.13rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0.28rem 0.55rem 0.9rem var(--home-room-spine-ink);
+  opacity: 0.9;
+}
+
+.home-page .studio-pages:nth-of-type(2n) > :not(.home-docket-step):not(.home-docket-note):first-of-type::before {
+  transform: rotate(1.2deg);
+}
+
+.home-page .studio-pages:nth-of-type(2n + 1) > :not(.home-docket-step):not(.home-docket-note):first-of-type::before {
+  transform: rotate(-1deg);
+}
+
+@media (max-width: 760px) {
+  .home-page .studio-pages > .home-docket-step {
+    box-shadow:
+      0.12rem 0.16rem 0 rgba(47, 38, 35, 0.08),
+      0 0.48rem 0.75rem rgba(47, 38, 35, 0.12);
+  }
+
+  .home-page .studio-pages > .home-docket-note::after,
+  .home-page .studio-pages:is(.home-paper-field, .home-room-status, .home-door-section, .home-studio-checks, .home-next-path-room) > :not(.home-docket-step):not(.home-docket-note):first-of-type::before {
+    display: none;
+  }
+}

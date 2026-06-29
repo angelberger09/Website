@@ -1,0 +1,82 @@
+.site-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-shell::before {
+  position: absolute;
+  top: clamp(7.4rem, 11vw, 9rem);
+  bottom: clamp(2rem, 5vw, 4rem);
+  left: max(1rem, calc((100vw - 76rem) / 2 - 1.1rem));
+  z-index: 0;
+  width: clamp(0.42rem, 0.8vw, 0.7rem);
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(255, 176, 143, 0.42), rgba(185, 201, 175, 0.38) 44%, rgba(216, 197, 236, 0.34)),
+    var(--grain-image);
+  background-size: cover, 22rem 22rem;
+  border-radius: 999px;
+  box-shadow:
+    0.34rem 0.45rem 1rem rgba(47, 38, 35, 0.13),
+    inset 1px 0 rgba(255, 255, 255, 0.58),
+    inset -1px 0 rgba(47, 38, 35, 0.1);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.site-shell::after {
+  position: absolute;
+  top: clamp(8.1rem, 12vw, 10.1rem);
+  bottom: clamp(2.75rem, 6vw, 5rem);
+  left: max(1.55rem, calc((100vw - 76rem) / 2 - 0.38rem));
+  z-index: 0;
+  width: 1px;
+  content: "";
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(47, 38, 35, 0.18) 0 0.45rem,
+    transparent 0.45rem 1.35rem
+  );
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.site-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-layout::before,
+.readable-shell::before {
+  position: absolute;
+  top: clamp(0.1rem, 1vw, 0.6rem);
+  left: max(-0.35rem, calc((100% - 76rem) / 2 - 0.5rem));
+  z-index: 0;
+  width: clamp(4.8rem, 9vw, 7.8rem);
+  height: clamp(1.05rem, 1.9vw, 1.45rem);
+  content: "room spine";
+  display: grid;
+  place-items: center;
+  color: rgba(58, 45, 42, 0.62);
+  font-size: clamp(0.54rem, 0.72vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.96), rgba(255, 176, 143, 0.28)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow: 0.25rem 0.35rem 0.9rem rgba(47, 38, 35, 0.12);
+  clip-path: polygon(2% 8%, 96% 0, 100% 82%, 8% 100%);
+  transform: rotate(-1.8deg);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .site-shell::before,
+  .site-shell::after,
+  .page-layout::before,
+  .readable-shell::before {
+    display: none;
+  }
+}

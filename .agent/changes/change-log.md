@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 02:08 ET — Shared room rail receipt notches
+
+See `.agent/changes/2026-06-29-shared-room-rail-receipt-notches.md` and `.agent/matrices/shared-room-rail-receipt-notches.matrix.md`.
+
 ## 2026-06-29 01:50 ET — Homepage section docket spine refinement
 
 See `.agent/changes/2026-06-29-home-section-docket-spine-refinement.md` and `.agent/matrices/home-section-docket-spine-refinement.matrix.md`.

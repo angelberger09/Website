@@ -83,8 +83,11 @@
 }
 
 .home-studio-checks .home-check-rail {
+  position: relative;
+  isolation: isolate;
   max-width: min(65rem, 100%);
   margin-inline: auto;
+  padding: clamp(0.65rem, 1.8vw, 1rem) clamp(0.45rem, 1.4vw, 0.8rem) clamp(0.85rem, 2vw, 1.15rem);
   border-radius: 0;
 }
 
@@ -95,11 +98,71 @@
   opacity: 0.48;
 }
 
+.home-studio-checks .home-check-rail::after {
+  content: "three studio checks";
+  position: absolute;
+  z-index: 0;
+  inset: clamp(0.15rem, 0.8vw, 0.4rem) 0 clamp(0.2rem, 0.9vw, 0.48rem);
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  padding: clamp(0.72rem, 2vw, 1rem) clamp(0.8rem, 2.5vw, 1.35rem);
+  color: rgba(58, 45, 42, 0.46);
+  font-size: clamp(0.55rem, 0.7vw, 0.62rem);
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(104deg, rgba(255, 252, 246, 0.66), rgba(255, 247, 235, 0.28) 54%, rgba(216, 197, 236, 0.14)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.2rem 0.28rem 0 rgba(47, 38, 35, 0.055),
+    0 1.15rem 1.75rem rgba(47, 38, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  clip-path: polygon(1% 4%, 97% 0, 100% 92%, 82% 100%, 24% 96%, 0 99%);
+  pointer-events: none;
+}
+
 .home-studio-checks .home-check-note {
+  position: relative;
+  z-index: 1;
   box-shadow:
     0.12rem 0.18rem 0 rgba(47, 38, 35, 0.05),
     0 0.78rem 1.18rem rgba(47, 38, 35, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.home-studio-checks .home-check-note::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -0.46rem;
+  left: clamp(0.75rem, 1.8vw, 1.05rem);
+  width: clamp(2rem, 5vw, 3.1rem);
+  height: 0.82rem;
+  background:
+    linear-gradient(96deg, rgba(255, 252, 246, 0.78), rgba(153, 222, 201, 0.26)),
+    var(--grain-image);
+  background-size: cover, 7rem 7rem;
+  box-shadow: 0 0.24rem 0.4rem rgba(47, 38, 35, 0.1);
+  clip-path: polygon(6% 0, 100% 10%, 93% 100%, 0 85%);
+  transform: rotate(-1.6deg);
+  pointer-events: none;
+}
+
+.home-studio-checks .home-check-note:nth-child(2)::before {
+  left: auto;
+  right: clamp(0.95rem, 2vw, 1.25rem);
+  transform: rotate(1.2deg);
+}
+
+.home-studio-checks .home-check-note:nth-child(3)::before {
+  background:
+    linear-gradient(100deg, rgba(255, 252, 246, 0.8), rgba(216, 197, 236, 0.27)),
+    var(--grain-image);
+  background-size: cover, 7rem 7rem;
+  transform: rotate(-0.8deg);
 }
 
 .home-studio-checks .home-check-note__photo {
@@ -137,11 +200,21 @@
   .home-studio-checks .home-studio-checks__intro h1 {
     max-width: 100%;
   }
+
+  .home-studio-checks .home-check-rail {
+    padding-inline: 0;
+  }
+
+  .home-studio-checks .home-check-rail::after {
+    inset: 0 -0.12rem;
+    padding: 0.72rem 0.8rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-studio-checks .home-studio-checks__intro::before,
-  .home-studio-checks .home-studio-checks__intro::after {
+  .home-studio-checks .home-studio-checks__intro::after,
+  .home-studio-checks .home-check-note::before {
     transform: none !important;
   }
 }

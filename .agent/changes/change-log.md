@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 21:30 ET — Notes post tag snippet load repair
+
+See `.agent/changes/2026-06-28-notes-post-tag-snippet-load.md` and `.agent/matrices/notes-post-tag-snippet-load.matrix.md`.
+
 ## 2026-06-28 21:21 ET — Home next path exit docket
 
 See `.agent/changes/2026-06-28-home-next-path-exit-docket.md` and `.agent/matrices/home-next-path-exit-docket.matrix.md`.
@@ -77,47 +81,3 @@ See `.agent/changes/2026-06-28-home-section-spine-shadow-load-repair.md` and `.a
 ## 2026-06-28 17:40 ET — PageIntro ticket depth
 
 See `.agent/changes/2026-06-28-page-intro-ticket-depth.md` and `.agent/matrices/page-intro-ticket-depth.matrix.md`.
-
-## 2026-06-28 17:29 ET — Header paper label load repair
-
-See `.agent/changes/2026-06-28-header-paper-label-load-repair.md` and `.agent/matrices/header-paper-label-load-repair.matrix.md`.
-
-## 2026-06-28 17:21 ET — PageIntro bound room ledger
-
-See `.agent/changes/2026-06-28-page-intro-bound-room-ledger.md` and `.agent/matrices/page-intro-bound-room-ledger.matrix.md`.
-
-## 2026-06-28 17:10 ET — PageIntro room key ticket load
-
-See `.agent/changes/2026-06-28-page-intro-room-key-ticket-load.md` and `.agent/matrices/page-intro-room-key-ticket-load.matrix.md`.
-
-## 2026-06-28 16:49 ET — Section intro copy slips load
-
-See `.agent/changes/2026-06-28-section-intro-copy-slips-load.md` and `.agent/matrices/section-intro-copy-slips-load.matrix.md`.
-
-## 2026-06-28 16:41 ET — Notes source binding ribbon
-
-See `.agent/changes/2026-06-28-notes-source-binding-ribbon.md` and `.agent/matrices/notes-source-binding-ribbon.matrix.md`.
-
-## 2026-06-28 16:30 ET — Root paper budget load
-
-See `.agent/changes/2026-06-28-root-paper-budget-load.md` and `.agent/matrices/root-paper-budget-load.matrix.md`.
-
-## 2026-06-28 16:18 ET — Homepage path spine ticket
-
-See `.agent/changes/2026-06-28-home-path-spine-ticket.md` and `.agent/matrices/home-path-spine-ticket.matrix.md`.
-
-## 2026-06-28 16:10 ET — Portfolio lower handoff binding
-
-See `.agent/changes/2026-06-28-portfolio-lower-handoff-binding.md` and `.agent/matrices/portfolio-lower-handoff-binding.matrix.md`.
-
-## 2026-06-28 15:49 ET — Header active room cue load
-
-See `.agent/changes/2026-06-28-header-active-room-cue-load.md` and `.agent/matrices/header-active-room-cue-load.matrix.md`.
-
-## 2026-06-28 15:42 ET — Footer trail room ledger
-
-See `.agent/changes/2026-06-28-footer-trail-room-ledger.md` and `.agent/matrices/footer-trail-room-ledger.matrix.md`.
-
-## 2026-06-28 15:32 ET — Footer exit receipt board
-
-See `.agent/changes/2026-06-28-footer-exit-receipt-board.md` and `.agent/matrices/footer-exit-receipt-board.matrix.md`.

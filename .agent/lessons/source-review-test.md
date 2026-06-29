@@ -1,10 +1,14 @@
 # Source Review Active Lessons — 2026-06-28
 
 Timestamp: 2026-06-28 21:58 ET  
-Status: active lesson supplement  
+Status: active lesson supplement and documentation implementation record  
 Source: Source review of uploaded Soft Strange Studio workflow/design discussion and current `.agent` docs.
 
 Read this with `.agent/lessons/active-lessons.md` before checking, editing, recovering, or reporting on the Website.
+
+## Implementation record
+
+This pass promoted recurring source-review findings into reusable active lessons. It intentionally changed documentation only; public Website source files were not edited.
 
 ## LESSON-029 — Layout before material
 
@@ -53,3 +57,20 @@ Implementation runs should materially improve the rendered Website unless the ta
 ## LESSON-040 — Reports must be packetized
 
 Human-facing reports should use clean sections for status, changed files, validation, and next risk. Avoid duplicated prose, malformed code fences, and mixed raw tool/status noise.
+
+## Matrix mapping
+
+| Lesson | Applies to | Check |
+|---|---|---|
+| LESSON-029 | PAGE-001, COMP-003, DESIGN-019 | Layout is readable before more paper effects are added. |
+| LESSON-030 | PAGE-001, COMP-003 | Hero entry path is visible at laptop size. |
+| LESSON-031 | DESIGN-019, DESIGN-022 | Paper density stays fixed across surface sizes. |
+| LESSON-032 | ASSET-006, ASSET-007, DESIGN-019 | Assets provide paper shape/material; CSS handles layout/tint/shadow. |
+| LESSON-033 | COMP-005, DESIGN-022 | Repeated override passes are consolidated. |
+| LESSON-034 | PAGE-001 through PAGE-005 | Pages follow room structure. |
+| LESSON-035 | workflow docs | One reporter owns normal status output. |
+| LESSON-036 | workflow docs | Reports group by run identity. |
+| LESSON-037 | visual-tour workflow | Local base path is detected. |
+| LESSON-038 | DATA, PAGE-004 | Repeated records render from manifests. |
+| LESSON-039 | implementation workflow | Implementation produces visible site change unless scoped otherwise. |
+| LESSON-040 | reporting workflow | Reports use status, files, validation, and next risk. |

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 20:50 ET — Continuity route receipts
+
+See `.agent/changes/2026-06-28-continuity-route-receipts.md` and `.agent/matrices/continuity-route-receipts.matrix.md`.
+
 ## 2026-06-28 20:39 ET — Continuity stagger thread repair
 
 See `.agent/changes/2026-06-28-continuity-stagger-thread-repair.md` and `.agent/matrices/continuity-stagger-thread-repair.matrix.md`.

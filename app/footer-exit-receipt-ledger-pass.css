@@ -1,0 +1,186 @@
+/* Footer exit receipt ledger pass.
+   Binds the shared footer exit receipts into one readable paper map instead of loose links. */
+
+.studio-footer__exit-receipts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.5rem, 1.25vw, 0.82rem);
+  align-items: stretch;
+  padding: clamp(0.55rem, 1.2vw, 0.78rem);
+  clip-path: polygon(1.4% 5%, 20% 2%, 48% 4%, 75% 1.6%, 98% 4.5%, 97% 88%, 76% 96%, 46% 94%, 18% 97%, 2% 92%);
+  background:
+    linear-gradient(142deg, rgba(255, 252, 246, 0.74), rgba(255, 247, 235, 0.48) 56%, rgba(216, 197, 236, 0.16)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.07),
+    0 0.74rem 1.3rem rgba(47, 38, 35, 0.1),
+    inset 0 -1px 0 rgba(47, 38, 35, 0.08);
+  isolation: isolate;
+}
+
+.studio-footer__exit-receipts::before {
+  position: absolute;
+  top: 50%;
+  right: 0.95rem;
+  left: 0.95rem;
+  z-index: -1;
+  height: 0.16rem;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(185, 201, 175, 0.62), rgba(255, 176, 143, 0.52), transparent);
+  opacity: 0.72;
+  transform: translateY(-50%);
+}
+
+.studio-footer__exit-receipt {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(2.85rem, 3.4rem) minmax(0, 1fr);
+  gap: 0.58rem;
+  align-items: center;
+  min-height: 4.45rem;
+  padding: 0.48rem 0.62rem 0.52rem 0.48rem;
+  clip-path: polygon(4% 7%, 33% 2%, 73% 5%, 98% 3%, 96% 90%, 69% 98%, 28% 95%, 2% 98%);
+  color: rgba(58, 45, 42, 0.94);
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 246, 0.95), rgba(255, 247, 235, 0.72) 64%, rgba(185, 201, 175, 0.16)),
+    var(--grain-image);
+  background-size: cover, 13rem 13rem;
+  box-shadow:
+    0.1rem 0.16rem 0 rgba(47, 38, 35, 0.075),
+    0 0.48rem 0.82rem rgba(47, 38, 35, 0.1);
+}
+
+.studio-footer__exit-receipt:nth-child(2n) {
+  transform: rotate(0.35deg) translateY(-0.04rem);
+}
+
+.studio-footer__exit-receipt:nth-child(2n + 1) {
+  transform: rotate(-0.28deg) translateY(0.05rem);
+}
+
+.studio-footer__exit-receipt::before {
+  position: absolute;
+  top: 0.22rem;
+  right: 0.44rem;
+  left: 0.44rem;
+  height: 0.16rem;
+  content: "";
+  clip-path: polygon(1% 24%, 34% 0, 70% 18%, 99% 4%, 96% 78%, 64% 100%, 28% 82%, 0 96%);
+  background: rgba(47, 38, 35, 0.18);
+  opacity: 0.62;
+}
+
+.studio-footer__exit-receipt-photo {
+  position: relative;
+  display: grid;
+  min-height: 3.05rem;
+  place-items: center;
+  overflow: hidden;
+  clip-path: polygon(6% 5%, 92% 2%, 98% 18%, 95% 90%, 74% 98%, 10% 95%, 2% 76%);
+  background:
+    radial-gradient(circle at 26% 24%, rgba(255, 252, 246, 0.6), transparent 1.35rem),
+    radial-gradient(circle at 75% 77%, rgba(255, 176, 143, 0.54), transparent 1.6rem),
+    linear-gradient(145deg, rgba(47, 38, 35, 0.84), rgba(111, 86, 75, 0.72));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 252, 246, 0.24),
+    0.08rem 0.12rem 0 rgba(47, 38, 35, 0.1);
+}
+
+.studio-footer__exit-receipt-photo b {
+  max-width: 90%;
+  color: rgba(255, 252, 246, 0.95);
+  font-family: var(--font-hand);
+  font-size: clamp(0.72rem, 1.2vw, 0.86rem);
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(47, 38, 35, 0.34);
+}
+
+.studio-footer__exit-receipt-photo em {
+  position: absolute;
+  right: 0.22rem;
+  bottom: 0.22rem;
+  padding: 0.08rem 0.2rem;
+  clip-path: polygon(3% 7%, 96% 1%, 98% 82%, 8% 96%);
+  color: rgba(58, 45, 42, 0.88);
+  font-size: 0.4rem;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.82);
+}
+
+.studio-footer__exit-receipt-copy {
+  display: grid;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.studio-footer__exit-receipt-copy small,
+.studio-footer__exit-receipt-action {
+  width: fit-content;
+  padding: 0.08rem 0.24rem;
+  clip-path: polygon(2% 10%, 98% 2%, 95% 88%, 7% 96%);
+  color: rgba(58, 45, 42, 0.74);
+  font-size: 0.48rem;
+  font-weight: 950;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 252, 246, 0.66);
+}
+
+.studio-footer__exit-receipt-copy b {
+  font-size: clamp(0.76rem, 1.1vw, 0.9rem);
+  line-height: 1.05;
+}
+
+.studio-footer__exit-receipt-copy em {
+  color: rgba(58, 45, 42, 0.72);
+  font-size: 0.68rem;
+  font-style: normal;
+  line-height: 1.18;
+}
+
+.studio-footer__exit-receipt-action {
+  margin-top: 0.12rem;
+  color: rgba(58, 45, 42, 0.82);
+  background: rgba(255, 176, 143, 0.26);
+}
+
+.studio-footer__exit-receipt:hover,
+.studio-footer__exit-receipt:focus-visible {
+  outline: 2px solid rgba(255, 176, 143, 0.54);
+  outline-offset: 0.18rem;
+  box-shadow:
+    0.14rem 0.22rem 0 rgba(47, 38, 35, 0.1),
+    0 0.68rem 1rem rgba(47, 38, 35, 0.14);
+}
+
+@media (max-width: 980px) {
+  .studio-footer__exit-receipts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .studio-footer__exit-receipts {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-footer__exit-receipts::before {
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 1.15rem;
+    width: 0.14rem;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(185, 201, 175, 0.62), rgba(255, 176, 143, 0.5), transparent);
+    transform: none;
+  }
+}

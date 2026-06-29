@@ -1,0 +1,95 @@
+/* Shared PageIntro shelf thread pass.
+   Binds the small room-path shelf into one readable paper ticket rail across all route intros. */
+
+.page-hero__room-shelf {
+  position: relative;
+  align-items: stretch;
+  width: min(100%, 36rem);
+  margin-top: clamp(1rem, 2.5vw, 1.45rem);
+  padding: clamp(0.52rem, 1.5vw, 0.72rem);
+  background:
+    linear-gradient(112deg, rgba(255, 252, 246, 0.9), rgba(244, 225, 199, 0.38) 48%, rgba(255, 252, 246, 0.78)),
+    var(--grain-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(1.5% 9%, 18% 2%, 52% 5%, 82% 0, 99% 10%, 96.5% 90%, 74% 97%, 39% 93%, 8% 100%, 0 84%);
+  box-shadow:
+    0.1rem 0.12rem 0 rgba(47, 38, 35, 0.08),
+    0.28rem 0.58rem 1rem rgba(47, 38, 35, 0.12);
+  isolation: isolate;
+}
+
+.page-hero__room-shelf::before {
+  position: absolute;
+  top: 0.42rem;
+  bottom: 0.42rem;
+  left: clamp(0.5rem, 1.2vw, 0.72rem);
+  z-index: -1;
+  width: 0.32rem;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(112, 96, 78, 0.18), rgba(112, 96, 78, 0.05) 46%, rgba(112, 96, 78, 0.16)),
+    var(--fine-scratch-image);
+  background-size: cover, 12rem 12rem;
+  clip-path: polygon(18% 0, 92% 4%, 68% 22%, 100% 45%, 66% 66%, 88% 100%, 0 94%, 26% 71%, 2% 48%, 30% 24%);
+  opacity: 0.72;
+}
+
+.page-hero__room-shelf > span {
+  position: relative;
+  min-width: min(100%, 7.15rem);
+  padding: 0.46rem 0.55rem 0.5rem 0.62rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.94), rgba(245, 222, 194, 0.32)),
+    var(--fine-scratch-image);
+  background-size: cover, 18rem 18rem;
+  clip-path: polygon(4% 10%, 34% 0, 98% 8%, 94% 92%, 64% 100%, 0 88%);
+  box-shadow:
+    0.06rem 0.08rem 0 rgba(47, 38, 35, 0.07),
+    0.14rem 0.26rem 0.5rem rgba(47, 38, 35, 0.09);
+}
+
+.page-hero__room-shelf > span:nth-child(even) {
+  transform: rotate(0.7deg);
+}
+
+.page-hero__room-shelf > span:nth-child(odd) {
+  transform: rotate(-0.55deg);
+}
+
+.page-hero__room-shelf-photo {
+  min-height: 2.15rem;
+  border-radius: 0.14rem;
+  background:
+    radial-gradient(circle at 25% 24%, rgba(255, 255, 255, 0.5), transparent 34%),
+    linear-gradient(135deg, rgba(153, 222, 201, 0.34), rgba(255, 176, 143, 0.18) 48%, rgba(126, 107, 175, 0.18)),
+    var(--grain-image);
+  background-size: cover, cover, 16rem 16rem;
+  box-shadow: inset 0 0 0 1px rgba(47, 38, 35, 0.08);
+}
+
+.page-hero__room-shelf-copy {
+  gap: 0.12rem;
+  padding-top: 0.32rem;
+}
+
+.page-hero__room-shelf-copy small {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.14rem 0.34rem 0.1rem;
+  color: rgba(47, 38, 35, 0.62);
+  background: rgba(255, 252, 246, 0.66);
+  clip-path: polygon(4% 18%, 92% 0, 100% 82%, 12% 100%);
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 760px) {
+  .page-hero__room-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    padding: 0.56rem;
+  }
+
+  .page-hero__room-shelf > span {
+    min-width: 0;
+  }
+}

@@ -144,9 +144,55 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.58);
 }
 
+/* Contact-shadow refinement: make the top strip visibly touch the page instead of floating weightlessly. */
+.floating-header {
+  box-shadow:
+    0 0.32rem 0 rgba(255, 255, 255, 0.5) inset,
+    0 0.72rem 0 rgba(47, 38, 35, 0.075),
+    0 1.35rem 0.72rem rgba(47, 38, 35, 0.16),
+    0 2.35rem 2.9rem rgba(47, 38, 35, 0.22),
+    0 4.8rem 6.4rem rgba(47, 38, 35, 0.13);
+}
+
+.floating-header::after {
+  right: clamp(1rem, 3.2vw, 2.9rem);
+  bottom: -0.56rem;
+  left: clamp(1rem, 3.2vw, 2.9rem);
+  z-index: -3;
+  height: clamp(0.72rem, 1vw, 1rem);
+  clip-path: polygon(0 26%, 9% 12%, 21% 31%, 34% 10%, 49% 29%, 63% 14%, 78% 32%, 91% 13%, 100% 25%, 96% 72%, 82% 89%, 66% 72%, 51% 95%, 34% 73%, 18% 91%, 3% 76%);
+  background:
+    linear-gradient(90deg, rgba(47, 38, 35, 0), rgba(47, 38, 35, 0.34) 13%, rgba(47, 38, 35, 0.2) 52%, rgba(47, 38, 35, 0.32) 84%, rgba(47, 38, 35, 0)),
+    var(--dust-image);
+  background-size: cover, 18rem 18rem;
+  opacity: 0.82;
+  filter: blur(0.28px);
+  transform: rotate(-0.18deg);
+}
+
+.floating-header__lower-fiber {
+  bottom: -0.68rem;
+  height: clamp(0.72rem, 1.05vw, 1.06rem);
+  opacity: 0.92;
+}
+
+.identity-link,
+.folder-panel__link {
+  filter: drop-shadow(0 0.34rem 0.32rem rgba(47, 38, 35, 0.16));
+}
+
+.folder-panel__link[aria-current="page"],
+.folder-panel__link--active {
+  filter: drop-shadow(0 0.46rem 0.42rem rgba(47, 38, 35, 0.22));
+}
+
 @media (max-width: 760px) {
   .floating-header {
     filter: drop-shadow(0 0.82rem 1.08rem rgba(47, 38, 35, 0.16));
+    box-shadow:
+      0 0.2rem 0 rgba(255, 255, 255, 0.48) inset,
+      0 0.82rem 0.76rem rgba(47, 38, 35, 0.14),
+      0 1.9rem 2.8rem rgba(47, 38, 35, 0.14);
   }
 
   .floating-header::before,
@@ -154,14 +200,30 @@
     inset-inline: 0.36rem;
   }
 
+  .floating-header::after {
+    right: 0.72rem;
+    bottom: -0.42rem;
+    left: 0.72rem;
+    height: 0.64rem;
+    opacity: 0.6;
+  }
+
   .floating-header__lower-fiber {
     right: 0.8rem;
+    bottom: -0.5rem;
     left: 0.8rem;
-    opacity: 0.58;
+    opacity: 0.62;
   }
 
   .folder-panel__link {
     min-height: 2.02rem;
     padding: 0.46rem 0.68rem 0.4rem;
+  }
+
+  .identity-link,
+  .folder-panel__link,
+  .folder-panel__link[aria-current="page"],
+  .folder-panel__link--active {
+    filter: none;
   }
 }

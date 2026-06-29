@@ -1,0 +1,95 @@
+.page-hero__stack {
+  --route-stamp-ink: rgba(76, 58, 43, 0.72);
+}
+
+.page-hero__photo-card {
+  isolation: isolate;
+  box-shadow:
+    0 24px 42px rgba(73, 53, 35, 0.2),
+    -10px 14px 0 rgba(245, 235, 209, 0.6),
+    12px -10px 0 rgba(202, 168, 108, 0.16);
+}
+
+.page-hero__photo-card::before {
+  content: "room card";
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+  z-index: -1;
+  padding: 0.36rem 0.56rem;
+  transform: rotate(-5deg);
+  border: 1px solid rgba(105, 79, 52, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 249, 229, 0.92), rgba(231, 204, 151, 0.66)),
+    radial-gradient(circle at 20% 30%, rgba(111, 79, 45, 0.14), transparent 36%);
+  color: var(--route-stamp-ink);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 14px rgba(74, 54, 35, 0.16);
+  clip-path: polygon(2% 8%, 96% 0, 100% 86%, 8% 100%);
+}
+
+.page-hero__photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.72rem auto auto -1.4rem;
+  width: 3.8rem;
+  height: 1.1rem;
+  transform: rotate(-12deg);
+  background:
+    linear-gradient(90deg, rgba(255, 247, 218, 0.82), rgba(205, 169, 105, 0.28));
+  box-shadow: 0 7px 14px rgba(67, 48, 30, 0.14);
+  clip-path: polygon(0 18%, 100% 0, 92% 84%, 8% 100%);
+  opacity: 0.86;
+}
+
+.page-hero__room-key {
+  box-shadow:
+    0 20px 34px rgba(72, 50, 32, 0.18),
+    -8px 8px 0 rgba(248, 240, 219, 0.68);
+}
+
+.page-hero__room-key::before {
+  content: "public path";
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.54rem;
+  padding: 0.26rem 0.46rem;
+  transform: rotate(2deg);
+  background: rgba(255, 248, 224, 0.76);
+  color: rgba(83, 62, 43, 0.76);
+  font-size: 0.56rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  clip-path: polygon(4% 0, 100% 8%, 94% 100%, 0 88%);
+}
+
+.page-hero__room-shelf > span {
+  position: relative;
+}
+
+.page-hero__room-shelf > span::after {
+  content: "";
+  position: absolute;
+  right: -0.34rem;
+  bottom: -0.18rem;
+  width: 1.7rem;
+  height: 0.48rem;
+  transform: rotate(-4deg);
+  background: rgba(206, 172, 111, 0.24);
+  clip-path: polygon(2% 12%, 100% 0, 92% 84%, 8% 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .page-hero__photo-card::before {
+    inset: auto 0.8rem 0.8rem auto;
+  }
+
+  .page-hero__photo-card::after,
+  .page-hero__room-shelf > span::after {
+    opacity: 0.42;
+  }
+}

@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-29 04:49 ET — Detail card binding thread load
+
+See `.agent/changes/2026-06-29-detail-card-binding-thread-load.md` and `.agent/matrices/detail-card-binding-thread-load.matrix.md`.
+
 ## 2026-06-29 04:40 ET — Detail card title ticket pass
 
 See `.agent/changes/2026-06-29-detail-card-title-tickets.md` and `.agent/matrices/detail-card-title-tickets.matrix.md`.
@@ -117,24 +121,3 @@ See `.agent/changes/2026-06-28-footer-exit-receipt-ledger.md` and `.agent/matric
 ## 2026-06-28 23:10 ET — Footer paper trail style load
 
 See `.agent/changes/2026-06-28-footer-paper-trail-style-load.md` and `.agent/matrices/footer-paper-trail-style-load.matrix.md`.
-
-## 2026-06-28 22:49 ET — PageIntro room shelf ledger load
-
-See `.agent/changes/2026-06-28-page-intro-room-shelf-ledger-load.md` and `.agent/matrices/page-intro-room-shelf-ledger-load.matrix.md`.
-
-## 2026-06-28 22:39 ET — Portfolio project manifest shelf
-
-See `.agent/changes/2026-06-28-portfolio-project-manifest-shelf.md` and `.agent/matrices/portfolio-project-manifest-shelf.matrix.md`.
-
-## 2026-06-28 22:31 ET — Detail card paper face load
-
-See `.agent/changes/2026-06-28-detail-card-paper-face-load.md` and `.agent/matrices/detail-card-paper-face-load.matrix.md`.
-
-## 2026-06-28 21:58 ET — Source review lesson promotion
-
-### Changed
-
-- Added `.agent/lessons/source-review-test.md` as a source-review active lesson supplement covering LESSON-029 through LESSON-040.
-- Updated `.agent/matrices/feedback-lessons.matrix.md` with source-review mappings for layout, paper shell discipline, workflow reporting, base-path detection, data manifests, visible implementation, and report packetization.
-
-### Why

@@ -239,6 +239,7 @@ export function DetailCard({ eyebrow, title, children, status }) {
 
   return (
     <article className="detail-card">
+      <span className="detail-card__corner-stitch" aria-hidden="true" />
       {faceLabel && (
         <span className="detail-card__paper-face" aria-hidden="true">
           <b>{faceLabel}</b>

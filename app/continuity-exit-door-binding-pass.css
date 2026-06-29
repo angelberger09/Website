@@ -1,0 +1,143 @@
+/* Continuity exit door binding pass.
+   Adds a final room-door spine to the shared next-step band so route exits read as one bound paper decision instead of separate cards. */
+
+.continuity-paper-trail {
+  --continuity-spine-ink: rgba(58, 45, 42, 0.18);
+  --continuity-thread-wash: rgba(185, 201, 175, 0.22);
+}
+
+.continuity-paper-trail > .continuity-paper-trail__steps {
+  position: relative;
+  padding-left: clamp(0.7rem, 1.6vw, 1.15rem);
+}
+
+.continuity-paper-trail > .continuity-paper-trail__steps::before {
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.45rem;
+  left: 0.08rem;
+  width: 0.44rem;
+  content: "";
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, transparent 0 4%, var(--continuity-spine-ink) 4% 9%, transparent 9% 16%),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.42), var(--continuity-thread-wash), rgba(216, 197, 236, 0.18));
+  background-size: 100% 1.15rem, cover;
+  box-shadow:
+    0.12rem 0 0 rgba(255, 252, 246, 0.58),
+    0.24rem 0.25rem 0.62rem rgba(47, 38, 35, 0.08);
+  opacity: 0.92;
+}
+
+.continuity-paper-thread {
+  justify-self: start;
+  margin-left: -0.34rem;
+  padding: 0.34rem 0.66rem 0.28rem;
+  clip-path: polygon(3% 14%, 18% 4%, 94% 0, 98% 82%, 78% 97%, 8% 90%);
+  background:
+    linear-gradient(120deg, rgba(255, 252, 246, 0.92), rgba(255, 176, 143, 0.2)),
+    var(--grain-image);
+  background-size: cover, 10rem 10rem;
+  color: rgba(58, 45, 42, 0.72);
+  box-shadow: 0.08rem 0.18rem 0 rgba(47, 38, 35, 0.08), 0 0.42rem 0.72rem rgba(47, 38, 35, 0.09);
+}
+
+.continuity-paper-step {
+  grid-template-columns: minmax(5.8rem, 0.34fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.continuity-paper-step::after {
+  position: absolute;
+  left: -0.92rem;
+  top: 50%;
+  width: 1.18rem;
+  height: 0.2rem;
+  content: "";
+  transform: translateY(-50%);
+  clip-path: polygon(0 28%, 88% 0, 100% 82%, 12% 100%);
+  background: rgba(58, 45, 42, 0.16);
+  box-shadow: 0 0.12rem 0.28rem rgba(47, 38, 35, 0.08);
+}
+
+.continuity-paper-step__photo {
+  position: relative;
+  display: grid;
+  min-height: 6rem;
+  place-items: center;
+  padding: 0.6rem;
+  clip-path: polygon(5% 4%, 96% 0, 92% 90%, 68% 98%, 8% 94%);
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255, 176, 143, 0.22), transparent 34%),
+    linear-gradient(145deg, rgba(58, 45, 42, 0.9), rgba(58, 45, 42, 0.72)),
+    var(--grain-image);
+  background-size: cover, cover, 10rem 10rem;
+  color: rgba(255, 252, 246, 0.9);
+  box-shadow:
+    inset 0 0 0 0.34rem rgba(255, 252, 246, 0.78),
+    0.1rem 0.2rem 0 rgba(47, 38, 35, 0.1),
+    0 0.45rem 0.82rem rgba(47, 38, 35, 0.12);
+}
+
+.continuity-paper-step__photo::after {
+  position: absolute;
+  inset: 0.42rem;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 18%, rgba(255, 252, 246, 0.12) 48%, transparent 72%),
+    var(--scratch-image);
+  background-size: cover, 12rem 12rem;
+  opacity: 0.5;
+}
+
+.continuity-paper-step__photo-initials {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2.05rem);
+  letter-spacing: 0.03em;
+}
+
+.continuity-paper-step__photo-title {
+  position: absolute;
+  right: 0.76rem;
+  bottom: 0.58rem;
+  left: 0.76rem;
+  z-index: 1;
+  overflow: hidden;
+  color: rgba(255, 252, 246, 0.82);
+  font-family: var(--font-hand);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 720px) {
+  .continuity-paper-trail > .continuity-paper-trail__steps {
+    padding-left: 0;
+  }
+
+  .continuity-paper-trail > .continuity-paper-trail__steps::before,
+  .continuity-paper-step::after {
+    display: none;
+  }
+
+  .continuity-paper-step {
+    grid-template-columns: 1fr;
+  }
+
+  .continuity-paper-step__photo {
+    min-height: 4.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .continuity-paper-step:hover,
+  .continuity-paper-step:focus {
+    transform: none;
+  }
+}

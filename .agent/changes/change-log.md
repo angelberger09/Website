@@ -2,6 +2,10 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-06-28 22:09 ET — PageIntro left binding thread
+
+See `.agent/changes/2026-06-28-page-intro-left-binding-thread.md` and `.agent/matrices/page-intro-left-binding-thread.matrix.md`.
+
 ## 2026-06-28 21:50 ET — Home next path terminal budget load
 
 See `.agent/changes/2026-06-28-home-next-path-terminal-budget-load.md` and `.agent/matrices/home-next-path-terminal-budget-load.matrix.md`.

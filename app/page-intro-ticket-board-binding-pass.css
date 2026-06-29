@@ -1,0 +1,100 @@
+/* Shared PageIntro ticket board binding pass.
+   This binds the composed room board, photo stack, and ticket shelf into one readable paper path. */
+
+.page-hero {
+  overflow: visible;
+}
+
+.page-hero__copy::after {
+  content: "";
+  position: absolute;
+  left: clamp(0.9rem, 2vw, 1.35rem);
+  right: clamp(1rem, 34vw, 19rem);
+  bottom: clamp(0.35rem, 1.2vw, 0.9rem);
+  height: clamp(0.22rem, 0.6vw, 0.34rem);
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(124, 93, 61, 0.18), rgba(124, 93, 61, 0.04)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.38) 0 0.42rem, transparent 0.42rem 0.94rem);
+  box-shadow: 0 0.48rem 1rem rgba(70, 50, 32, 0.1);
+  clip-path: polygon(0 28%, 98% 0, 100% 78%, 2% 100%);
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.page-hero__room-shelf::after {
+  content: "room path →";
+  position: absolute;
+  right: clamp(0.75rem, 1.7vw, 1.1rem);
+  bottom: -0.58rem;
+  z-index: 3;
+  padding: 0.18rem 0.44rem 0.2rem;
+  transform: rotate(1.4deg);
+  background: rgba(250, 236, 202, 0.92);
+  color: rgba(82, 60, 43, 0.7);
+  font-size: 0.5rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  box-shadow: 0 0.45rem 0.9rem rgba(72, 50, 32, 0.12);
+  clip-path: polygon(5% 0, 100% 8%, 94% 100%, 0 88%);
+  pointer-events: none;
+}
+
+.page-hero__stack::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 12%;
+  bottom: 18%;
+  width: clamp(0.42rem, 0.9vw, 0.62rem);
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(124, 93, 61, 0.18), rgba(124, 93, 61, 0.04)),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0 0.36rem, transparent 0.36rem 0.86rem);
+  box-shadow:
+    0.42rem 0 0 rgba(246, 226, 190, 0.3),
+    0.72rem 0 1rem rgba(70, 50, 32, 0.11);
+  clip-path: polygon(16% 0, 100% 3%, 84% 100%, 0 96%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.page-hero__room-key::before {
+  content: "route key";
+  position: absolute;
+  right: 0.7rem;
+  top: -0.52rem;
+  z-index: 2;
+  padding: 0.18rem 0.42rem;
+  transform: rotate(2deg);
+  background: rgba(255, 247, 220, 0.92);
+  color: rgba(82, 60, 43, 0.68);
+  font-size: 0.48rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 0.38rem 0.8rem rgba(72, 50, 32, 0.12);
+  clip-path: polygon(4% 0, 100% 10%, 94% 100%, 0 86%);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .page-hero__copy::after {
+    right: 1.2rem;
+    bottom: -0.18rem;
+    opacity: 0.5;
+  }
+
+  .page-hero__stack::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-hero__copy::after,
+  .page-hero__room-shelf::after,
+  .page-hero__room-key::before {
+    display: none;
+  }
+}

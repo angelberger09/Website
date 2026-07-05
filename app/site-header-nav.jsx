@@ -33,14 +33,24 @@ export function HeaderNav() {
         const active = isActiveRoute(pathname, page.href);
 
         return (
-          <a
-            href={page.href}
+          <details
             key={page.href}
-            className={active ? "folder-panel__link folder-panel__link--active" : "folder-panel__link"}
-            aria-current={active ? "page" : undefined}
+            className={active ? "folder-panel__item folder-panel__item--active" : "folder-panel__item"}
+            open={active}
           >
-            <span>{page.title}</span>
-          </a>
+            <summary
+              className="folder-panel__tab"
+              aria-current={active ? "page" : undefined}
+            >
+              <span>{page.title}</span>
+            </summary>
+            <div className="folder-panel__foldout">
+              <p className="folder-panel__eyebrow">{page.eyebrow}</p>
+              <strong>{page.title}</strong>
+              <p>{page.description}</p>
+              <a href={page.href}>Open {page.title}</a>
+            </div>
+          </details>
         );
       })}
     </nav>

@@ -173,6 +173,8 @@ import './page-intro-ticket-board-binding-pass.css';
 import './page-intro-open-room-board-pass.css';
 import './page-intro-room-index-pass.css';
 import './home-front-door-reset-pass.css';
+import './single-column-cleanup-pass.css';
+import { SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {
   title: 'Soft Strange Studio',
@@ -182,7 +184,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <StudioFooter />
+      </body>
     </html>
   );
 }

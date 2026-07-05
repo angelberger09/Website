@@ -1,0 +1,169 @@
+[    1635ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/grain-noise.svg:0
+[    1637ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/dust-specks.svg:0
+[    1638ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/images/soft-pastel-watercolor-mist.svg:0
+[    1639ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/fine-scratches.svg:0
+[    1764ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/polaroid-frame-alpha.svg:0
+[    1766ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/polaroid-backing-alpha.svg:0
+[    2282ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[    2397ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[    2453ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/grain-noise.svg:0
+[    2570ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/dust-specks.svg:0
+[    2572ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/fine-scratches.svg:0
+[  370919ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  371010ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  371332ms] [LOG] [Fast Refresh] done in 1782890294397ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  372610ms] [LOG] [Fast Refresh] done in 1782890295675ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  372854ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  372858ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  383425ms] [LOG] [Fast Refresh] done in 1782890306490ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  390415ms] [LOG] [Fast Refresh] done in 1782890313480ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  395295ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  395306ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  396550ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  397200ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/Website/atmosphere/grain-noise.svg:0
+[  397202ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/Website/atmosphere/dust-specks.svg:0
+[  397207ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/Website/images/soft-pastel-watercolor-mist.svg:0
+[  397381ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/about/?_rsc=kTkQEnzVhV0Fquq1:0
+[  397590ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/about/?_rsc=kTkQEnzVhV0Fquq1:0
+[  400848ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/about/:0
+[  402692ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  402999ms] Error: Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found
+
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at getNotFoundError (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/parseNotFoundError.js:140:16)
+    at async getModuleBuildError (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/webpackModuleError.js:103:27)
+    at async (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/index.js:29:49)
+    at async (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/index.js:27:21)
+[  402937ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[  402991ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  403005ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  779981ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[  780141ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/665c4d630d06b074.webpack.hot-update.json:0
+[  780152ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  781867ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  781963ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/665c4d630d06b074.webpack.hot-update.json:0
+[  781964ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  782599ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/665c4d630d06b074.webpack.hot-update.json:0
+[  782600ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  782829ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  783030ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/about/:0
+[  783802ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  783901ms] Error: Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found
+
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at getNotFoundError (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/parseNotFoundError.js:140:16)
+    at async getModuleBuildError (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/webpackModuleError.js:103:27)
+    at async (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/index.js:29:49)
+    at async (file:///Users/crimsonwheeler/Documents/GitHub/Angelgithub/Website/node_modules/next/dist/build/webpack/plugins/wellknown-errors-plugin/index.js:27:21)
+[  783900ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[  783904ms] [ERROR] ./app/layout.jsx:176:1
+Module not found: Can't resolve './single-column-cleanup-pass.css'
+  174 | import './page-intro-room-index-pass.css';
+  175 | import './home-front-door-reset-pass.css';
+> 176 | import './single-column-cleanup-pass.css';
+      | ^
+  177 |
+  178 | export const metadata = {
+  179 |   title: 'Soft Strange Studio',
+
+https://nextjs.org/docs/messages/module-not-found @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  783941ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  813446ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/665c4d630d06b074.webpack.hot-update.json:0
+[  813451ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  813698ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[  815601ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/665c4d630d06b074.webpack.hot-update.json:0
+[  815601ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  819055ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/grain-noise.svg:0
+[  819056ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/dust-specks.svg:0
+[  819058ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/images/soft-pastel-watercolor-mist.svg:0
+[  819059ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/fine-scratches.svg:0
+[  819873ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[  820103ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/Website/atmosphere/grain-noise.svg:0

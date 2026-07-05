@@ -320,6 +320,177 @@ The top header should read as layered paper, not generic soft glass. Use texture
 
 Feedback stored in `.agent/` only. Public Website source should not change until an implementation run is requested.
 
+## FEEDBACK-021 — Homepage should stay stacked, but become image-led
+
+Timestamp: 2026-07-01 04:07 ET  
+Status: converted to active lesson  
+Source: Live homepage screenshot review
+
+### Public-safe summary
+
+The homepage is close in structure, but it still reads too much like a text-first front room. The stacked-card shape is good; the missing piece is a stronger image-led composition with a clearer hero photo/banner and more obvious lifted paper depth at screenshot scale.
+
+### Extracted signal
+
+Keep the stacked editorial layout, but let the image surfaces lead the page. The homepage should feel like a layered studio spread with a clear visual hero, stronger contrast, and more physically separated paper pieces.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-001 Floating Header
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- DESIGN-001 Warm Cream Background
+- DESIGN-002 Large Editorial Type
+- DESIGN-003 Rounded Minimal Cards
+
+### Created lessons
+
+- LESSON-024 Keep the homepage stacked but image-led
+
+### Implementation ideas to evaluate
+
+- add a dominant hero image or banner surface above the intro text
+- keep the stacked card language, but make each card feel more like a paper piece over a page
+- strengthen visible shadow separation so the hierarchy reads instantly
+- reduce the amount of first-screen text so the hero image can carry the page
+- keep the top nav and tabs, but let the content cards do more visual work
+
+## FEEDBACK-022 — Homepage hero needs a dominant visual anchor
+
+Timestamp: 2026-07-01 04:10 ET  
+Status: converted to active lesson  
+Source: Live homepage screenshot review
+
+### Public-safe summary
+
+The homepage hero still lacks a dominant visual anchor. The layout has the right stacked structure and strong header, but the large empty right side makes the first screen feel unfinished compared with the reference image.
+
+### Extracted signal
+
+Use the top hero area as a real composition, not just a text block with empty space beside it. A large image or collage-style anchor should balance the title, set the room’s material tone, and make the homepage feel intentionally designed at first glance.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- DESIGN-001 Warm Cream Background
+- DESIGN-002 Large Editorial Type
+- DESIGN-003 Rounded Minimal Cards
+
+### Created lessons
+
+- LESSON-025 Give the homepage hero a dominant visual anchor
+
+### Implementation ideas to evaluate
+
+- place a wide hero image or collage panel to the right of the title
+- reduce the empty cream field above the cards by using it as visual composition space
+- keep the stacked cards below, but make the first fold of the page feel complete
+- use image-led material to balance the oversized type and prevent the hero from reading as a text-only intro
+
+## FEEDBACK-023 — Homepage lower cards need stronger lift and separation
+
+Timestamp: 2026-07-01 04:12 ET  
+Status: converted to active lesson  
+Source: Live homepage screenshot review
+
+### Public-safe summary
+
+The lower room cards are useful, but they sit too flat against the page. They need stronger lift, clearer boundary contrast, and a little more separation so the page reads as stacked paper pieces instead of a single pale panel.
+
+### Extracted signal
+
+Keep the lower cards in the stack, but make their edges and shadows more readable. The homepage should separate the hero field from the room cards more aggressively so the structure is visible at a glance.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- DESIGN-001 Warm Cream Background
+- DESIGN-003 Rounded Minimal Cards
+- DESIGN-014 Soft/Sharp Balance
+
+### Created lessons
+
+- LESSON-026 Give the lower homepage cards stronger lift
+
+### Implementation ideas to evaluate
+
+- deepen the drop shadow on the open-room cards
+- give the card row a slightly firmer edge so it reads as a distinct layer
+- increase the gap between the hero block and the cards
+- keep the cards soft, but make the stacked paper separation obvious at screenshot scale
+
+## FEEDBACK-024 — Top tabs need more stagger and fold
+
+Timestamp: 2026-07-01 04:14 ET  
+Status: converted to active lesson  
+Source: Live homepage screenshot review
+
+### Public-safe summary
+
+The top navigation is in the right place, but the tabs still read too uniform. They need a stronger stagger, more visible torn-paper edges, and a clearer folded/pinned feel so they resemble separate pieces of paper rather than a flat nav row.
+
+### Extracted signal
+
+Keep the paper-tab concept, but make each tab feel individually cut and placed. The top bar should look more like a strip of layered paper pieces with slight offsets and depth, not a single aligned menu line.
+
+### Affected semantic items
+
+- COMP-001 Floating Header
+- COMP-002 Direct Studio Navigation
+- COMP-005 Shared Site Chrome
+- DESIGN-004 Floating Header
+- DESIGN-019 Paper Material Authenticity
+- DESIGN-020 Paper Header Surface
+
+### Created lessons
+
+- LESSON-027 Make the header tabs feel more staggered and folded
+
+### Implementation ideas to evaluate
+
+- offset the tabs a little more vertically so each one reads as a separate cut piece
+- increase the lower-edge irregularity on the tabs
+- add a clearer fold or curl treatment to the tab surfaces
+- keep the dark header strip, but make the tabs feel less mechanically aligned
+
+## FEEDBACK-025 — Homepage needs more vertical breathing room
+
+Timestamp: 2026-07-01 04:16 ET  
+Status: converted to active lesson  
+Source: Live homepage screenshot review
+
+### Public-safe summary
+
+The page needs more vertical breathing room. The hero field is too tall and empty, while the lower cards feel compressed toward the bottom, so the composition does not yet feel like a balanced stacked spread.
+
+### Extracted signal
+
+Balance the vertical rhythm of the homepage. The hero area should not dominate with empty space, and the lower cards should have more separation from the bottom edge so the whole page feels composed rather than stretched.
+
+### Affected semantic items
+
+- PAGE-001 Homepage
+- COMP-004 Studio Page Cards
+- COMP-005 Shared Site Chrome
+- DESIGN-001 Warm Cream Background
+- DESIGN-014 Soft/Sharp Balance
+
+### Created lessons
+
+- LESSON-028 Balance the homepage vertical rhythm
+
+### Implementation ideas to evaluate
+
+- reduce the height of the empty hero field
+- give the lower card row more bottom padding or margin
+- tighten the vertical gap between the intro area and the cards
+- keep the stacked look, but let the page breathe more evenly from top to bottom
+
 ## FEEDBACK-009 — Polaroid frames should become content cards
 
 Timestamp: 2026-06-24 19:41 ET  

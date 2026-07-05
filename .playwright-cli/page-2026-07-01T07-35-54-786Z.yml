@@ -1,0 +1,417 @@
+- generic [active] [ref=e1]:
+  - banner "Site header" [ref=e2]:
+    - link "Soft Strange Studio home" [ref=e3] [cursor=pointer]:
+      - /url: /Website/
+      - text: Angel Berger
+    - generic "Studio pages" [ref=e4]:
+      - navigation "Studio pages" [ref=e5]:
+        - group [ref=e6]:
+          - generic "About" [ref=e7] [cursor=pointer]:
+            - generic [ref=e8]: About
+        - group [ref=e9]:
+          - generic "Notes" [ref=e10] [cursor=pointer]:
+            - generic [ref=e11]: Notes
+        - group [ref=e12]:
+          - generic "Portfolio" [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]: Portfolio
+        - group [ref=e15]:
+          - generic "Store" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: Store
+  - main [ref=e18]:
+    - region "Soft Strange Studio" [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Soft Strange Studio
+          - heading "Soft Strange Studio" [level=1] [ref=e23]
+          - paragraph [ref=e24]: A calm public room for notes, work, and small shop paths. Start here, then choose the room that fits what you want to read or see next.
+          - generic "Homepage first actions" [ref=e25]:
+            - link "Read the front room" [ref=e26] [cursor=pointer]:
+              - /url: "#studio-front-room"
+            - link "Choose a room" [ref=e27] [cursor=pointer]:
+              - /url: "#studio-room-doors"
+        - navigation "Open studio rooms" [ref=e28]:
+          - generic [ref=e29]: Open rooms
+          - list [ref=e30]:
+            - listitem [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - strong [ref=e33]: About
+                - generic [ref=e34]: Studio intro
+              - generic [ref=e35]: Open map
+            - listitem [ref=e36] [cursor=pointer]:
+              - generic [ref=e37]:
+                - strong [ref=e38]: Notes
+                - generic [ref=e39]: Still Here Notes
+              - generic [ref=e40]: Reading shelf
+            - listitem [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - strong [ref=e43]: Portfolio
+                - generic [ref=e44]: Public work
+              - generic [ref=e45]: Public archive
+            - listitem [ref=e46] [cursor=pointer]:
+              - generic [ref=e47]:
+                - strong [ref=e48]: Store
+                - generic [ref=e49]: Future shop
+              - generic [ref=e50]: Preparing
+    - navigation "Homepage reading path" [ref=e51]:
+      - generic [ref=e52]: Read this page
+      - paragraph [ref=e53]: A simple chapter trail keeps the long front page calm, ordered, and easy to scan.
+      - list [ref=e54]:
+        - listitem [ref=e55] [cursor=pointer]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: front desk
+            - strong [ref=e58]: Front room
+            - generic [ref=e59]: enter softly
+        - listitem [ref=e60] [cursor=pointer]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: public now
+            - strong [ref=e63]: Current rooms
+            - generic [ref=e64]: see what is ready
+        - listitem [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]:
+            - generic [ref=e67]: four rooms
+            - strong [ref=e68]: Studio rooms
+            - generic [ref=e69]: choose a door
+        - listitem [ref=e70] [cursor=pointer]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: paper path
+            - strong [ref=e73]: Studio shape
+            - generic [ref=e74]: read the making rules
+        - listitem [ref=e75] [cursor=pointer]:
+          - generic [ref=e76]:
+            - generic [ref=e77]: studio promise
+            - strong [ref=e78]: House rules
+            - generic [ref=e79]: keep the promise
+        - listitem [ref=e80] [cursor=pointer]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: next room
+            - strong [ref=e83]: Next path
+            - generic [ref=e84]: continue gently
+    - region "A calm place to enter the work." [ref=e85]:
+      - generic [ref=e86]: Front room
+      - generic [ref=e87]: Start with the whole room before choosing a door.
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - paragraph [ref=e90]: Front room
+          - heading "A calm place to enter the work." [level=1] [ref=e91]
+        - paragraph [ref=e92]: "Soft Strange Studio now has a filled public shape: a welcome, a clear map, a notes reader, a first archive, and a store doorway that is honest about what is still being prepared."
+        - text: start with the room
+      - generic "Homepage highlights" [ref=e93]:
+        - article [ref=e94]:
+          - generic [ref=e96]:
+            - generic [ref=e97]: Public shape
+            - strong [ref=e98]: A real front room
+          - generic [ref=e99]: Public shape
+          - heading "A real front room" [level=2] [ref=e100]
+          - paragraph [ref=e101]: "The Website now gives every visitor a complete place to land: orientation, writing, work, and shop paths all live inside the same calm shell."
+          - generic [ref=e102]: ✦ Studio note
+        - article [ref=e103]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Back-room rhythm
+            - strong [ref=e107]: Connected, still warm
+          - generic [ref=e108]: Back-room rhythm
+          - heading "Connected, still warm" [level=2] [ref=e109]
+          - paragraph [ref=e110]: Writing, work, and store material can keep their own quiet shelves while this site turns them into pages that feel warm and readable.
+          - generic [ref=e111]: ✦ Studio note
+        - article [ref=e112]:
+          - generic [ref=e114]:
+            - generic [ref=e115]: Visual rule
+            - strong [ref=e116]: Soft, tactile, direct
+          - generic [ref=e117]: Visual rule
+          - heading "Soft, tactile, direct" [level=2] [ref=e118]
+          - paragraph [ref=e119]: Cream paper, quiet gloss, scratch texture, and direct navigation keep the experience authored without turning it into a technical demo.
+          - generic [ref=e120]: ✦ Studio note
+        - text: three opening notes
+      - text: front door receipt
+    - region "What is ready now, and what is still preparing." [ref=e121]:
+      - generic [ref=e122]: Current rooms
+      - generic [ref=e123]: Check what is public now and what is warming up.
+      - generic [ref=e124]:
+        - paragraph [ref=e125]: Current rooms
+        - heading "What is ready now, and what is still preparing." [level=1] [ref=e126]
+        - paragraph [ref=e127]: The front page now gives a quick status read before visitors choose a door, so the filled site feels honest without flattening every room into the same promise.
+      - generic "Current room states" [ref=e128]:
+        - article [ref=e129]:
+          - generic [ref=e130]:
+            - text: Filled
+            - strong [ref=e131]: About is ready for orientation
+          - generic [ref=e132]: Ready
+          - generic [ref=e133]: Filled
+          - heading "About is ready for orientation" [level=2] [ref=e134]
+          - paragraph [ref=e135]: The intro page explains the studio tone, public memory rules, working principles, and the best next paths.
+        - article [ref=e136]:
+          - generic [ref=e137]:
+            - text: Live reader
+            - strong [ref=e138]: Notes is ready for published writing
+          - generic [ref=e139]: Connected
+          - generic [ref=e140]: Live reader
+          - heading "Notes is ready for published writing" [level=2] [ref=e141]
+          - paragraph [ref=e142]: The Website reader can load public Blog posts, explain loading or empty states, and keep visitors inside the studio shell.
+        - article [ref=e143]:
+          - generic [ref=e144]:
+            - text: Growing
+            - strong [ref=e145]: Portfolio is ready as a first archive
+          - generic [ref=e146]: Active
+          - generic [ref=e147]: Growing
+          - heading "Portfolio is ready as a first archive" [level=2] [ref=e148]
+          - paragraph [ref=e149]: Project cards, archive lanes, and a publishing rhythm give public work a useful home before deeper case studies exist.
+        - article [ref=e150]:
+          - generic [ref=e151]:
+            - text: Future shop
+            - strong [ref=e152]: Store is honest while preparing
+          - generic [ref=e153]: Preparing
+          - generic [ref=e154]: Future shop
+          - heading "Store is honest while preparing" [level=2] [ref=e155]
+          - paragraph [ref=e156]: Product lanes name what may come later and keep availability clear until listings or shop links are live.
+    - region "The studio has real doors now." [ref=e157]:
+      - generic [ref=e158]: Studio rooms
+      - generic [ref=e159]: Move from the front room into one clear destination.
+      - generic [ref=e160]:
+        - paragraph [ref=e161]: Studio rooms
+        - heading "The studio has real doors now." [level=1] [ref=e162]
+        - paragraph [ref=e163]: Each main page is filled out as a calm public entry point. The deeper back rooms can keep growing quietly, while this Website keeps the visitor path warm, readable, and easy to follow.
+      - generic "Studio room doors" [ref=e164]:
+        - link "Studio intro About Meet the public shape of Soft Strange Studio and the kind of work this space is holding. About room cue" [ref=e165] [cursor=pointer]:
+          - /url: /Website/about/
+          - generic [ref=e166]:
+            - generic [ref=e167]: Studio intro
+            - strong [ref=e168]: About
+          - generic [ref=e169]:
+            - generic [ref=e170]: Studio intro
+            - heading "About" [level=2] [ref=e171]
+            - paragraph [ref=e172]: Meet the public shape of Soft Strange Studio and the kind of work this space is holding.
+            - generic "About room cue" [ref=e173]:
+              - generic [ref=e174]: Open map
+              - generic [ref=e175]: Enter About
+        - link "Still Here Notes Notes Read public notes in the studio reader while the writing source stays quietly organized. Notes room cue" [ref=e176] [cursor=pointer]:
+          - /url: /Website/notes/
+          - generic [ref=e177]:
+            - generic [ref=e178]: Still Here Notes
+            - strong [ref=e179]: Notes
+          - generic [ref=e180]:
+            - generic [ref=e181]: Still Here Notes
+            - heading "Notes" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Read public notes in the studio reader while the writing source stays quietly organized.
+            - generic "Notes room cue" [ref=e184]:
+              - generic [ref=e185]: Reading shelf
+              - generic [ref=e186]: Enter Notes
+        - link "Public work Portfolio Browse the first project doors for site systems, visual atmosphere, creature work, and public experiments. Portfolio room cue" [ref=e187] [cursor=pointer]:
+          - /url: /Website/portfolio/
+          - generic [ref=e188]:
+            - generic [ref=e189]: Public work
+            - strong [ref=e190]: Portfolio
+          - generic [ref=e191]:
+            - generic [ref=e192]: Public work
+            - heading "Portfolio" [level=2] [ref=e193]
+            - paragraph [ref=e194]: Browse the first project doors for site systems, visual atmosphere, creature work, and public experiments.
+            - generic "Portfolio room cue" [ref=e195]:
+              - generic [ref=e196]: Public archive
+              - generic [ref=e197]: Enter Portfolio
+        - link "Future shop Store See the product paths being prepared for digital downloads, creature goods, and soft strange studio pieces. Store room cue" [ref=e198] [cursor=pointer]:
+          - /url: /Website/store/
+          - generic [ref=e199]:
+            - generic [ref=e200]: Future shop
+            - strong [ref=e201]: Store
+          - generic [ref=e202]:
+            - generic [ref=e203]: Future shop
+            - heading "Store" [level=2] [ref=e204]
+            - paragraph [ref=e205]: See the product paths being prepared for digital downloads, creature goods, and soft strange studio pieces.
+            - generic "Store room cue" [ref=e206]:
+              - generic [ref=e207]: Preparing
+              - generic [ref=e208]: Enter Store
+        - text: four public rooms
+    - region "Built to feel handmade and clear." [ref=e209]:
+      - generic [ref=e210]: Studio shape
+      - generic [ref=e211]: Read the making rules behind the paper path.
+      - generic [ref=e212]:
+        - paragraph [ref=e213]: Studio shape
+        - heading "Built to feel handmade and clear." [level=1] [ref=e214]
+      - generic "Studio shape principles" [ref=e215]:
+        - article [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]: Writing
+            - emphasis [ref=e219]: Notes that stay human
+          - generic [ref=e220]: Writing
+          - heading "Notes that stay human" [level=2] [ref=e221]
+          - paragraph [ref=e222]: Public writing should feel authored, grounded, and easy to enter without exposing private draft space.
+        - article [ref=e223]:
+          - generic [ref=e224]:
+            - generic [ref=e225]: Visual world
+            - emphasis [ref=e226]: Soft strange art language
+          - generic [ref=e227]: Visual world
+          - heading "Soft strange art language" [level=2] [ref=e228]
+          - paragraph [ref=e229]: The site holds gentle creature work, tactile paper/photo layers, and flat illustrative atmosphere.
+        - article [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]: Structure
+            - emphasis [ref=e233]: Small doors, not machinery
+          - generic [ref=e234]: Structure
+          - heading "Small doors, not machinery" [level=2] [ref=e235]
+          - paragraph [ref=e236]: Behind-the-scenes shelves can stay organized, but visitors should meet pages, readers, cards, and warm orientation first.
+        - article [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]: Growth
+            - emphasis [ref=e240]: Ready to grow slowly
+          - generic [ref=e241]: Growth
+          - heading "Ready to grow slowly" [level=2] [ref=e242]
+          - paragraph [ref=e243]: Each page is filled enough to stand on its own now, with clear places for future writing, project records, and shop links to settle later.
+    - region "What every room should keep close." [ref=e244]:
+      - generic [ref=e245]: House rules
+      - generic [ref=e246]: Keep the public rooms soft, useful, and honest.
+      - generic [ref=e247]:
+        - paragraph [ref=e248]: House rules
+        - heading "What every room should keep close." [level=1] [ref=e249]
+        - paragraph [ref=e250]: "These small studio slips keep the public rooms grounded: paper should lead, the language should feel human, and unfinished work should stay honest without looking empty."
+        - text: public-safe promise
+      - generic "Soft Strange Studio house rules" [ref=e251]:
+        - article [ref=e252]:
+          - generic [ref=e253]:
+            - generic [ref=e254]: Paper leads
+            - emphasis [ref=e255]: material first
+          - generic [ref=e256]: Paper leads
+          - generic [ref=e257]: Material rule
+          - heading "Paper first" [level=2] [ref=e258]
+          - paragraph [ref=e259]: Pages should read as placed paper, clipped slips, and gentle photo surfaces before they read as app panels.
+          - generic [ref=e260]: ✦ Look for texture, cut edges, sheet depth
+        - article [ref=e261]:
+          - generic [ref=e262]:
+            - generic [ref=e263]: Human words
+            - emphasis [ref=e264]: warm public copy
+          - generic [ref=e265]: Human words
+          - generic [ref=e266]: Copy rule
+          - heading "Human words" [level=2] [ref=e267]
+          - paragraph [ref=e268]: Visitors should meet rooms, shelves, paths, and readiness notes instead of backstage source language.
+          - generic [ref=e269]: ✦ Keep raw or technical wording offstage
+        - article [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e272]: Honest growth
+            - emphasis [ref=e273]: no fake shelves
+          - generic [ref=e274]: Honest growth
+          - generic [ref=e275]: Trust rule
+          - heading "Honest growth" [level=2] [ref=e276]
+          - paragraph [ref=e277]: Portfolio and store material can show readiness without implying fake case studies, fake products, or live listings.
+          - generic [ref=e278]: ✦ Name the status before deeper links
+        - text: three studio checks
+    - region "Where to go next" [ref=e279]:
+      - generic [ref=e280]: Next path
+      - generic [ref=e281]: Leave by a neighboring room instead of a dead end.
+      - generic "Homepage closing path note" [ref=e282]:
+        - generic [ref=e283]: Leave gently
+        - strong [ref=e284]: Choose the neighboring room that fits the next step.
+        - paragraph [ref=e285]: The front page closes with a quiet path instead of a dead end, so the studio still feels like one connected place.
+      - region "Start anywhere, then follow the thread." [ref=e286]:
+        - generic [ref=e287]:
+          - generic [ref=e288]:
+            - generic [ref=e290]: Room trail
+            - generic [ref=e291]: Choose softly
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: Next room
+                - emphasis [ref=e295]: Meet the studio
+              - generic [ref=e296]:
+                - generic [ref=e297]: Soft path
+                - emphasis [ref=e298]: Read the notes
+          - paragraph [ref=e299]: Keep moving
+          - heading "Start anywhere, then follow the thread." [level=1] [ref=e300]
+          - paragraph [ref=e301]: "The homepage is the front room, but each door now has a clearer job: learn the studio shape, read public notes, browse active systems, or check what is being prepared for the store."
+        - generic "Suggested next rooms" [ref=e302]:
+          - generic [ref=e303]: Follow the thread
+          - link "Next room About Meet the studio Use About when you want the clearest orientation to the tone, scope, and public-safe memory rules." [ref=e304] [cursor=pointer]:
+            - /url: /Website/about/
+            - generic [ref=e305]:
+              - generic [ref=e306]: MT
+              - generic [ref=e307]: Meet the studio
+            - generic [ref=e308]:
+              - generic [ref=e309]: Next room
+              - generic [ref=e310]: About
+              - strong [ref=e311]: Meet the studio
+              - generic [ref=e312]: Use About when you want the clearest orientation to the tone, scope, and public-safe memory rules.
+          - link "Soft path Notes Read the notes Use Notes when you want the living writing surface that stays inside the Website shell." [ref=e313] [cursor=pointer]:
+            - /url: /Website/notes/
+            - generic [ref=e314]:
+              - generic [ref=e315]: RT
+              - generic [ref=e316]: Read the notes
+            - generic [ref=e317]:
+              - generic [ref=e318]: Soft path
+              - generic [ref=e319]: Notes
+              - strong [ref=e320]: Read the notes
+              - generic [ref=e321]: Use Notes when you want the living writing surface that stays inside the Website shell.
+      - text: exit docket
+  - contentinfo "Site footer" [ref=e322]:
+    - generic [ref=e323]:
+      - generic [ref=e325]:
+        - generic [ref=e326]: SSS
+        - emphasis [ref=e327]: public rooms
+      - generic [ref=e328]:
+        - paragraph [ref=e329]: Soft Strange Studio
+        - generic [ref=e330]: Public rooms, gently connected.
+    - generic "Footer exit receipts" [ref=e331]:
+      - 'link "Open map: Studio map" [ref=e332] [cursor=pointer]':
+        - /url: /Website/about/
+        - generic [ref=e333]:
+          - generic [ref=e334]: map room
+          - emphasis [ref=e335]: Start
+        - generic [ref=e336]:
+          - generic [ref=e337]: Start
+          - generic [ref=e338]: Studio map
+          - emphasis [ref=e339]: Begin with the public room shape.
+          - generic [ref=e340]: Open map
+        - text: "01"
+      - 'link "Read notes: Notes shelf" [ref=e341] [cursor=pointer]':
+        - /url: /Website/notes/
+        - generic [ref=e342]:
+          - generic [ref=e343]: latest note
+          - emphasis [ref=e344]: Read
+        - generic [ref=e345]:
+          - generic [ref=e346]: Read
+          - generic [ref=e347]: Notes shelf
+          - emphasis [ref=e348]: Move into published writing next.
+          - generic [ref=e349]: Read notes
+        - text: "02"
+      - 'link "View work: Archive path" [ref=e350] [cursor=pointer]':
+        - /url: /Website/portfolio/
+        - generic [ref=e351]:
+          - generic [ref=e352]: work shelf
+          - emphasis [ref=e353]: Browse
+        - generic [ref=e354]:
+          - generic [ref=e355]: Browse
+          - generic [ref=e356]: Archive path
+          - emphasis [ref=e357]: Continue through ready work.
+          - generic [ref=e358]: View work
+        - text: "03"
+      - 'link "Preview prep: Prepared pieces" [ref=e359] [cursor=pointer]':
+        - /url: /Website/store/
+        - generic [ref=e360]:
+          - generic [ref=e361]: prep shelf
+          - emphasis [ref=e362]: Prep
+        - generic [ref=e363]:
+          - generic [ref=e364]: Prep
+          - generic [ref=e365]: Prepared pieces
+          - emphasis [ref=e366]: Preview what is staged before links open.
+          - generic [ref=e367]: Preview prep
+        - text: "04"
+      - text: four room exit
+    - navigation "Footer pages" [ref=e368]:
+      - link "About" [ref=e369] [cursor=pointer]:
+        - /url: /Website/about/
+        - generic [ref=e370]:
+          - generic [ref=e371]: Studio
+          - strong [ref=e372]: A
+        - generic [ref=e373]: About
+      - link "Notes" [ref=e374] [cursor=pointer]:
+        - /url: /Website/notes/
+        - generic [ref=e375]:
+          - generic [ref=e376]: Read
+          - strong [ref=e377]: "N"
+        - generic [ref=e378]: Notes
+      - link "Portfolio" [ref=e379] [cursor=pointer]:
+        - /url: /Website/portfolio/
+        - generic [ref=e380]:
+          - generic [ref=e381]: Work
+          - strong [ref=e382]: P
+        - generic [ref=e383]: Portfolio
+      - link "Store" [ref=e384] [cursor=pointer]:
+        - /url: /Website/store/
+        - generic [ref=e385]:
+          - generic [ref=e386]: Prep
+          - strong [ref=e387]: S
+        - generic [ref=e388]: Store

@@ -15,7 +15,7 @@
 .home-front-door__board {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.72fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.15rem, 3vw, 2.5rem);
   width: var(--home-front-door-max);
   margin: 0 auto;
@@ -49,6 +49,10 @@
 .home-front-door__rooms {
   position: relative;
   z-index: 1;
+}
+
+.home-front-door__rooms {
+  max-width: 100%;
 }
 
 .home-front-door__eyebrow,
@@ -136,14 +140,15 @@
 
 .home-front-door__routes {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.62rem;
 }
 
 .home-front-door__route {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.65rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.3rem;
+  align-items: start;
   padding: 0.72rem 0.78rem 0.66rem;
   color: #392b28;
   background: rgba(255, 252, 242, 0.76);
@@ -172,13 +177,12 @@
 }
 
 .home-front-door__route small {
-  justify-self: end;
-  max-width: 8rem;
+  justify-self: start;
+  max-width: none;
   color: rgba(61, 47, 43, 0.64);
   font-size: 0.7rem;
   font-weight: 800;
   line-height: 1.15;
-  text-align: right;
   text-transform: uppercase;
 }
 

@@ -1,0 +1,227 @@
+/* Single-column cleanup pass.
+   Collapses the route intros and shared content grids into one vertical reading flow,
+   while keeping the stacked paper cards and header tabs as the main visual system. */
+
+.page-hero {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.page-hero__stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  min-height: 0;
+}
+
+.page-hero__stack .hero-polaroid {
+  display: none;
+}
+
+.page-hero__photo-card,
+.page-hero__room-key {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  transform: none;
+}
+
+.page-hero__photo-card {
+  z-index: 1;
+  min-height: clamp(11rem, 24vw, 16rem);
+}
+
+.page-hero__room-key {
+  z-index: 1;
+}
+
+.page-hero__copy {
+  max-width: 46rem;
+}
+
+.page-hero__room-shelf {
+  max-width: 46rem;
+}
+
+.split-feature {
+  grid-template-columns: 1fr;
+}
+
+.page-grid,
+.content-grid,
+.content-grid--small,
+.post-list {
+  grid-template-columns: 1fr;
+}
+
+.page-card,
+.detail-card,
+.source-link,
+.link-card,
+.reader-card {
+  box-shadow:
+    0 0.7rem 1.6rem rgba(47, 38, 35, 0.12),
+    0 0.14rem 0 rgba(47, 38, 35, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.floating-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem 1.05rem;
+  border-radius: 0;
+  color: #f6efe3;
+  background:
+    linear-gradient(180deg, rgba(19, 17, 16, 0.98), rgba(29, 26, 24, 0.98)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 72%);
+  box-shadow:
+    0 0.16rem 0 rgba(255, 255, 255, 0.18) inset,
+    0 1.1rem 2.8rem rgba(0, 0, 0, 0.26);
+  backdrop-filter: none;
+}
+
+.folder-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.72rem;
+  justify-content: center;
+}
+
+.folder-panel__item {
+  position: relative;
+  margin: 0;
+}
+
+.folder-panel__item > summary {
+  list-style: none;
+}
+
+.folder-panel__item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.folder-panel__tab {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.72rem 1.05rem 0.6rem;
+  border: 0;
+  cursor: pointer;
+  color: rgba(47, 38, 35, 0.96);
+  font-size: 0.96rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(142deg, rgba(255, 250, 242, 0.99), rgba(245, 232, 211, 0.72));
+  clip-path: polygon(2% 4%, 24% 1%, 55% 4%, 97% 0, 95% 88%, 73% 98%, 35% 94%, 3% 100%);
+  box-shadow:
+    0 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.58rem 1.15rem rgba(47, 38, 35, 0.22);
+}
+
+.folder-panel__item--active .folder-panel__tab {
+  background:
+    linear-gradient(142deg, rgba(255, 250, 242, 1), rgba(241, 226, 203, 0.88));
+  box-shadow:
+    0 0.16rem 0 rgba(47, 38, 35, 0.08),
+    0 0.55rem 1.08rem rgba(47, 38, 35, 0.18);
+}
+
+.folder-panel__foldout {
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  left: 50%;
+  z-index: 30;
+  display: none;
+  width: min(15rem, 76vw);
+  padding: 1rem 1rem 0.92rem;
+  color: rgba(58, 45, 42, 0.92);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 242, 0.98), rgba(245, 232, 211, 0.72)),
+    var(--grain-image);
+  background-size: cover, 20rem 20rem;
+  clip-path: polygon(3% 1%, 20% 4%, 46% 0%, 71% 3%, 97% 1%, 95% 98%, 67% 95%, 39% 99%, 7% 96%);
+  box-shadow:
+    0 0.18rem 0 rgba(47, 38, 35, 0.08),
+    0 1rem 1.8rem rgba(47, 38, 35, 0.26);
+  transform: translateX(-50%);
+}
+
+.folder-panel__item[open] .folder-panel__foldout {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.folder-panel__foldout p,
+.folder-panel__foldout strong {
+  margin: 0;
+}
+
+.folder-panel__eyebrow {
+  color: rgba(111, 83, 111, 0.8);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.folder-panel__foldout strong {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1.05;
+}
+
+.folder-panel__foldout p:not(.folder-panel__eyebrow) {
+  color: rgba(58, 45, 42, 0.76);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.folder-panel__foldout a {
+  width: fit-content;
+  margin-top: 0.2rem;
+  color: rgba(58, 45, 42, 0.92);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .floating-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .folder-panel {
+    width: 100%;
+  }
+
+  .folder-panel__item {
+    width: 100%;
+  }
+
+  .folder-panel__tab {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .folder-panel__foldout {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
+  .page-hero__copy,
+  .page-hero__room-shelf {
+    max-width: 100%;
+  }
+}

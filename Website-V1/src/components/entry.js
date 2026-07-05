@@ -1,6 +1,6 @@
 import { escapeHtml } from "../lib/dom.js";
 
-function entryButton(item, theme = "dark") {
+function entryButton(item, theme = "dark", options = {}) {
   const title = escapeHtml(item.title);
   const type = escapeHtml(item.type ?? "");
   const status = escapeHtml(item.status ?? "");
@@ -9,6 +9,12 @@ function entryButton(item, theme = "dark") {
   const note = escapeHtml(item.note ?? "");
   const price = item.price ? `<span class="entry__price">${escapeHtml(item.price)}</span>` : "";
   const themeClass = theme === "light" ? " entry--light" : "";
+  const featuredClass = options.featured ? " entry--featured" : "";
+  const loading = options.eager ? "eager" : "lazy";
+  const titleId = options.titleId ? ` id="${escapeHtml(options.titleId)}"` : "";
+  const sectionCopy = options.sectionCopy
+    ? `<p class="entry__summary">${escapeHtml(options.sectionCopy)}</p>`
+    : "";
   const media = item.image
     ? `
       <figure class="entry__media">
@@ -16,7 +22,7 @@ function entryButton(item, theme = "dark") {
           class="entry__image"
           src="${escapeHtml(item.image)}"
           alt="${title}"
-          loading="lazy"
+          loading="${loading}"
           data-parallax
         />
       </figure>
@@ -24,15 +30,16 @@ function entryButton(item, theme = "dark") {
     : "";
 
   return `
-    <article class="entry${themeClass}">
+    <article class="entry${featuredClass}${themeClass}">
       ${media}
       <div class="entry__content">
         <header class="entry__top">
           <span class="entry__type">${type}</span>
           <span class="entry__status">${status}</span>
         </header>
-        <h3 class="entry__title">${title}</h3>
+        <h3 class="entry__title"${titleId}>${title}</h3>
         <p class="entry__summary">${summary}</p>
+        ${sectionCopy}
         <div class="entry__bottom">
           <span class="entry__note">${note}</span>
           ${price}
@@ -54,6 +61,14 @@ function entryButton(item, theme = "dark") {
   `;
 }
 
+export function renderFeaturedEntry(item, options = {}) {
+  if (!item) return "";
+  return entryButton(item, options.theme ?? "dark", {
+    ...options,
+    featured: true,
+  });
+}
+
 export function renderEntryList(items = []) {
   return items
     .map(
@@ -61,6 +76,11 @@ export function renderEntryList(items = []) {
         `<li class="entry-shell">${entryButton(item, "light")}</li>`
     )
     .join("");
+}
+
+export function mountFeaturedEntry(container, item, options = {}) {
+  if (!container) return;
+  container.innerHTML = renderFeaturedEntry(item, options);
 }
 
 export function mountEntryList(container, items = []) {

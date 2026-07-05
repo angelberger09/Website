@@ -7,21 +7,31 @@ import "./styles/pages.css";
 import {
   bannerImages,
   contact,
-  digitalItems,
+  digitalList,
+  featuredDigital,
+  featuredJournal,
+  featuredPhysical,
   homePreviews,
-  journalNotes,
+  journalList,
   journalVisuals,
-  physicalItems,
+  navItems,
+  physicalList,
+  site,
+  socialLinks,
 } from "./data/content.js";
 import { syncActiveNav } from "./components/nav.js";
-import { mountEntryList } from "./components/entry.js";
+import { syncStaticChrome } from "./components/chrome.js";
+import { mountEntryList, mountFeaturedEntry } from "./components/entry.js";
 import { bindModal } from "./components/modal.js";
 import { mountPreview } from "./components/page-preview.js";
 import { mountVisualRail } from "./components/visual-rail.js";
 import { bindParallax } from "./components/parallax.js";
+import { bindPaperMotion } from "./components/paper-motion.js";
+import { mountScanScroll } from "./components/scan-scroll.js";
 import { cleanPath, escapeHtml } from "./lib/dom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  syncStaticChrome({ site, navItems, socialLinks });
   syncActiveNav();
 
   const page = document.body.dataset.page;
@@ -74,15 +84,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (page === "physical") {
-    mountEntryList(document.querySelector("[data-render='physical-items']"), physicalItems.slice(1));
+    mountFeaturedEntry(document.querySelector("[data-render='physical-featured']"), featuredPhysical, {
+      eager: true,
+      theme: "light",
+      titleId: "featured-object-entry-title",
+    });
+    mountEntryList(document.querySelector("[data-render='physical-items']"), physicalList);
   }
 
   if (page === "digital") {
-    mountEntryList(document.querySelector("[data-render='digital-items']"), digitalItems.slice(1));
+    mountFeaturedEntry(document.querySelector("[data-render='digital-featured']"), featuredDigital, {
+      eager: true,
+      titleId: "featured-digital-entry-title",
+    });
+    mountEntryList(document.querySelector("[data-render='digital-items']"), digitalList);
   }
 
   if (page === "journal") {
-    mountEntryList(document.querySelector("[data-render='journal-notes']"), journalNotes);
+    mountFeaturedEntry(document.querySelector("[data-render='journal-featured']"), featuredJournal, {
+      theme: "light",
+      titleId: "journal-featured-entry-title",
+    });
+    mountEntryList(document.querySelector("[data-render='journal-notes']"), journalList);
     mountVisualRail(document.querySelector("[data-render='journal-visuals']"), journalVisuals);
   }
 
@@ -96,4 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   bindParallax();
+  bindPaperMotion();
+  mountScanScroll();
 });

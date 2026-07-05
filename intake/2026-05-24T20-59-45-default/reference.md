@@ -1,1 +1,0 @@
-Validation review: default entry preview and packet write.

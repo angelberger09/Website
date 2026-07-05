@@ -1,3 +1,0 @@
-Status: Request Changes
-
-The navigation bar is off centered and half cut off. I do really like the brighten on hover effect, I'm questioning if having them like that only under text elements and for like the articles and not shop items would be better? I love that the poloraids do a little straighten up when you hover. I like the idea of having the physical products and digital products under different headings. I have no idea what language style this is but it's too close to like renaissance and romance languages.

@@ -2,79 +2,32 @@ const homeCards = [
   {
     href: "/Website/notes/",
     title: "Studio Notes",
-    eyebrow: "Studio Notes",
     description: "essays, updates, grief, chronic illness, and free patterns.",
-    kind: "notes"
+    image: "/Website/images/editorial/notes-journal.jpg",
+    imageAlt: "An illustrated open studio journal with botanical studies and a warm mug"
   },
   {
     href: "/Website/portfolio/",
     title: "Art",
-    eyebrow: "Art",
     description: "cozy creatures, ocean studies, garden magic, and experiments.",
-    kind: "art"
+    image: "/Website/images/editorial/art-sketchbook.jpg",
+    imageAlt: "An illustrated sketchbook filled with a coastal watercolor and botanical drawings"
   },
   {
     href: "/Website/store/",
     title: "Shop",
-    eyebrow: "Shop",
     description: "stickers, wearable things, paper goods, and free little things.",
-    kind: "shop"
+    image: "/Website/images/editorial/shop-goods.jpg",
+    imageAlt: "Illustrated botanical studio goods including a tote, mug, notebook, and paper tags"
   },
   {
     href: "/Website/about/",
     title: "About",
-    eyebrow: "About",
     description: "the person, grief, joy, and feelings behind the studio.",
-    kind: "about"
+    image: "/Website/images/editorial/about-studio.jpg",
+    imageAlt: "An illustrated ivy-covered doorway opening into a small sunlit art studio"
   }
 ];
-
-function ReferenceCardArt({ kind }) {
-  if (kind === "notes") {
-    return (
-      <>
-        <span className="reference-card__art-surface reference-card__art-surface--notes" aria-hidden="true" />
-        <span className="reference-card__art-ribbon" aria-hidden="true" />
-        <span className="reference-card__art-cup" aria-hidden="true" />
-      </>
-    );
-  }
-
-  if (kind === "art") {
-    return (
-      <>
-        <span className="reference-card__art-surface reference-card__art-surface--art" aria-hidden="true" />
-        <span className="reference-card__art-light" aria-hidden="true" />
-        <span className="reference-card__art-mountain reference-card__art-mountain--left" aria-hidden="true" />
-        <span className="reference-card__art-mountain reference-card__art-mountain--right" aria-hidden="true" />
-        <span className="reference-card__art-string reference-card__art-string--left" aria-hidden="true" />
-        <span className="reference-card__art-string reference-card__art-string--right" aria-hidden="true" />
-      </>
-    );
-  }
-
-  if (kind === "shop") {
-    return (
-      <>
-        <span className="reference-card__art-surface reference-card__art-surface--shop" aria-hidden="true" />
-        <span className="reference-card__art-shelf reference-card__art-shelf--top" aria-hidden="true" />
-        <span className="reference-card__art-shelf reference-card__art-shelf--bottom" aria-hidden="true" />
-        <span className="reference-card__art-pot" aria-hidden="true" />
-        <span className="reference-card__art-ring" aria-hidden="true" />
-      </>
-    );
-  }
-
-  return (
-    <>
-      <span className="reference-card__art-surface reference-card__art-surface--about" aria-hidden="true" />
-      <span className="reference-card__art-window reference-card__art-window--vertical" aria-hidden="true" />
-      <span className="reference-card__art-window reference-card__art-window--horizontal" aria-hidden="true" />
-      <span className="reference-card__art-candle" aria-hidden="true" />
-      <span className="reference-card__art-circle" aria-hidden="true" />
-    </>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -114,8 +67,8 @@ export default function HomePage() {
                 key={card.title}
               >
                 <span className="reference-card__tape" aria-hidden="true" />
-                <div className="reference-card__art" aria-hidden="true" data-kind={card.kind}>
-                  <ReferenceCardArt kind={card.kind} />
+                <div className="reference-card__art">
+                  <img src={card.image} alt={card.imageAlt} />
                 </div>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>

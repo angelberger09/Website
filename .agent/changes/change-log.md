@@ -2,6 +2,25 @@
 
 This log uses local project time in `America/New_York`.
 
+## 2026-07-09 18:54 EDT — Whole-site editorial reference overhaul
+
+### Changed
+
+- Replaced route-specific collage markup with shared editorial page views.
+- Reduced the active CSS runtime to two stylesheets.
+- Extended the approved Gemini homepage header, typography, paper depth, and stacked-card language to every public route.
+- Added four generated watercolor image assets for Notes, Art, Shop, and About.
+- Preserved the live Notes feed and both post-reader compatibility paths.
+- Added passing desktop/mobile design QA and browser proof.
+
+### Related items
+
+- PAGE-001 through PAGE-005
+- COMP-001
+- COMP-004
+- DESIGN-002
+- DESIGN-003
+
 ## 2026-06-29 07:05 ET — Homepage front door reset
 
 ### Changed

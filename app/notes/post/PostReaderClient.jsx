@@ -1,112 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { NextStepBand } from "../../next-step-band";
-import { pageContinuity } from "../../page-continuity";
+import { EditorialNext, editorialImages } from "../../editorial-page";
 import { PAGES_BASE, RAW_BASE } from "../../site-data";
-
-const postReaderIntroSlips = [
-  {
-    label: "Room",
-    value: "Reader sheet"
-  },
-  {
-    label: "Source",
-    value: "Public shelf"
-  },
-  {
-    label: "Return",
-    value: "Notes room"
-  }
-];
-
-const postReaderMarginRail = [
-  {
-    label: "Open sheet",
-    detail: "Start in the public reader room.",
-    mark: "Open"
-  },
-  {
-    label: "Read quietly",
-    detail: "Let the note sit on the paper sheet.",
-    mark: "Read"
-  },
-  {
-    label: "Return softly",
-    detail: "Step back to the Notes shelf when ready.",
-    mark: "Back"
-  }
-];
-
-const postReaderStateSlips = {
-  loading: {
-    label: "Gathering shelf",
-    title: "Looking for the public note",
-    detail: "The reader is checking the published profile and writing sheet before placing anything on the page."
-  },
-  missing: {
-    label: "Choose note",
-    title: "No note is pinned yet",
-    detail: "This paper sheet needs a note from the public Notes room before it can open."
-  },
-  error: {
-    label: "Soft return",
-    title: "This sheet is not ready",
-    detail: "The reader keeps the failed note state inside the room and points back to the public shelf."
-  }
-};
-
-const postReaderSupportCards = [
-  {
-    title: "Inside the studio",
-    eyebrow: "Context",
-    visualLabel: "room path",
-    paperCue: "Studio room",
-    description: "The note comes from the public writing shelf, but the reading surface keeps the same soft studio context as the rest of the rooms."
-  },
-  {
-    title: "Published only",
-    eyebrow: "Boundary",
-    visualLabel: "public shelf",
-    paperCue: "Public only",
-    description: "The reader checks the public note profile and does not present drafts or unavailable writing as finished public work."
-  },
-  {
-    title: "Clear way back",
-    eyebrow: "Path",
-    visualLabel: "return slip",
-    paperCue: "Back path",
-    description: "Missing, loading, and quiet-error states all point visitors back toward the notes index instead of leaving them at a dead end."
-  },
-  {
-    title: "Paper reader sheet",
-    eyebrow: "Material",
-    visualLabel: "reader sheet",
-    paperCue: "Paper sheet",
-    description: "The post surface should read like a calm paper sheet in the studio, not a file viewer or technical endpoint."
-  }
-];
-
-const readerPathNotes = [
-  {
-    eyebrow: "Read",
-    title: "Stay with the sheet",
-    visualLabel: "quiet sheet",
-    description: "The note opens on a lined paper surface so the writing has room before any supporting path appears."
-  },
-  {
-    eyebrow: "Return",
-    title: "Back to Notes",
-    visualLabel: "note stack",
-    description: "The shelf keeps a visible way back to the public notes room when the reader wants the wider stack."
-  },
-  {
-    eyebrow: "Continue",
-    title: "Follow the studio trail",
-    visualLabel: "soft trail",
-    description: "After the note, the route reconnects to related rooms instead of ending like a loose article page."
-  }
-];
 
 function escapeHtml(value) {
   return value
@@ -121,7 +17,6 @@ function renderListBlock(block) {
   const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
   const isOrdered = lines.every((line) => /^\d+\.\s+/.test(line));
   const isUnordered = lines.every((line) => /^[-*]\s+/.test(line));
-
   if (!isOrdered && !isUnordered) return null;
 
   const tag = isOrdered ? "ol" : "ul";
@@ -131,37 +26,23 @@ function renderListBlock(block) {
     .filter(Boolean)
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
-
   return `<${tag}>${items}</${tag}>`;
 }
 
 function renderQuoteBlock(block) {
   const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
-  const isQuote = lines.length > 0 && lines.every((line) => /^>\s?/.test(line));
-
-  if (!isQuote) return null;
-
-  const quote = lines
-    .map((line) => line.replace(/^>\s?/, "").trim())
-    .filter(Boolean)
-    .map(escapeHtml)
-    .join("<br />");
-
+  if (lines.length === 0 || !lines.every((line) => /^>\s?/.test(line))) return null;
+  const quote = lines.map((line) => escapeHtml(line.replace(/^>\s?/, ""))).join("<br />");
   return `<blockquote>${quote}</blockquote>`;
 }
 
 function renderCodeBlock(block) {
   if (!block.startsWith("```")) return null;
-
   const lines = block.split("\n");
-  const firstLine = lines.shift() || "";
-  const language = firstLine.replace(/^```/, "").trim();
+  const language = (lines.shift() || "").replace(/^```/, "").trim();
   if (lines.at(-1)?.trim() === "```") lines.pop();
-
-  const code = escapeHtml(lines.join("\n"));
-  const label = language ? `<span class="notes-post-code-label">${escapeHtml(language)}</span>` : "";
-
-  return `<pre>${label}<code>${code}</code></pre>`;
+  const label = language ? `<span class="reader-code-label">${escapeHtml(language)}</span>` : "";
+  return `<pre>${label}<code>${escapeHtml(lines.join("\n"))}</code></pre>`;
 }
 
 function markdownToHtml(markdown) {
@@ -173,17 +54,10 @@ function markdownToHtml(markdown) {
       if (block.startsWith("### ")) return `<h3>${escapeHtml(block.slice(4))}</h3>`;
       if (block.startsWith("## ")) return `<h2>${escapeHtml(block.slice(3))}</h2>`;
       if (block.startsWith("# ")) return `<h2>${escapeHtml(block.slice(2))}</h2>`;
-
-      const codeBlock = renderCodeBlock(block);
-      if (codeBlock) return codeBlock;
-
-      const quoteBlock = renderQuoteBlock(block);
-      if (quoteBlock) return quoteBlock;
-
-      const listBlock = renderListBlock(block);
-      if (listBlock) return listBlock;
-
-      return `<p>${escapeHtml(block).replaceAll("\n", "<br />")}</p>`;
+      return renderCodeBlock(block)
+        || renderQuoteBlock(block)
+        || renderListBlock(block)
+        || `<p>${escapeHtml(block).replaceAll("\n", "<br />")}</p>`;
     })
     .join("");
 }
@@ -192,10 +66,9 @@ async function fetchTextWithFallback(urls) {
   for (const url of urls) {
     try {
       const response = await fetch(url, { cache: "no-store" });
-      if (response.ok) return await response.text();
+      if (response.ok) return response.text();
     } catch {}
   }
-
   throw new Error("This public note could not be loaded right now.");
 }
 
@@ -203,212 +76,93 @@ async function fetchJsonWithFallback(urls) {
   for (const url of urls) {
     try {
       const response = await fetch(url, { cache: "no-store" });
-      if (response.ok) return await response.json();
+      if (response.ok) return response.json();
     } catch {}
   }
-
   throw new Error("This public note profile could not be loaded right now.");
 }
 
-function ReaderStateCue({ stateKey }) {
-  const cue = postReaderStateSlips[stateKey];
-  if (!cue) return null;
-
-  return (
-    <div className="notes-post-state-cue" aria-hidden="true">
-      <span>{cue.label}</span>
-      <strong>{cue.title}</strong>
-      <em>{cue.detail}</em>
-    </div>
-  );
-}
-
-export default function PostReaderClient({ backHref = "/Website/notes/", backLabel = "Back to Notes", contextLabel = "Still Here Notes" }) {
+export default function PostReaderClient({
+  backHref = "/Website/notes/",
+  backLabel = "Back to Studio Notes",
+  contextLabel = "Studio Notes"
+}) {
   const [state, setState] = useState({ status: "loading", slug: "", profile: null, markdown: "", error: null });
 
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get("slug");
     if (!slug) {
-      setState({
-        status: "missing",
-        slug: "",
-        profile: null,
-        markdown: "",
-        error: "Choose a note from the public notes index to open it here."
-      });
+      setState({ status: "missing", slug: "", profile: null, markdown: "", error: "Choose a note from the public notes shelf to open it here." });
       return;
     }
 
-    setState({ status: "loading", slug, profile: null, markdown: "", error: null });
+    let active = true;
+    const localPreview = window.location.hostname === "localhost";
+    const profileUrls = localPreview
+      ? [`${RAW_BASE}/posts/${slug}/profile.json`, `${PAGES_BASE}/posts/${slug}/profile.json`]
+      : [`${PAGES_BASE}/posts/${slug}/profile.json`, `${RAW_BASE}/posts/${slug}/profile.json`];
+    const contentUrls = localPreview
+      ? [`${RAW_BASE}/posts/${slug}/content.md`, `${PAGES_BASE}/posts/${slug}/content.md`]
+      : [`${PAGES_BASE}/posts/${slug}/content.md`, `${RAW_BASE}/posts/${slug}/content.md`];
 
     Promise.all([
-      fetchJsonWithFallback([
-        `${PAGES_BASE}/posts/${slug}/profile.json`,
-        `${RAW_BASE}/posts/${slug}/profile.json`,
-      ]),
-      fetchTextWithFallback([
-        `${PAGES_BASE}/posts/${slug}/content.md`,
-        `${RAW_BASE}/posts/${slug}/content.md`,
-      ]),
+      fetchJsonWithFallback(profileUrls),
+      fetchTextWithFallback(contentUrls)
     ])
       .then(([profile, markdown]) => {
-        if (profile.status && profile.status !== "published") {
-          throw new Error("This note is not public yet.");
-        }
-
-        setState({ status: "ready", slug, profile, markdown, error: null });
+        if (profile.status && profile.status !== "published") throw new Error("This note is not public yet.");
+        if (active) setState({ status: "ready", slug, profile, markdown, error: null });
       })
-      .catch((error) => setState({ status: "error", slug, profile: null, markdown: "", error: error.message }));
+      .catch((error) => {
+        if (active) setState({ status: "error", slug, profile: null, markdown: "", error: error.message });
+      });
+
+    return () => { active = false; };
   }, []);
 
   const html = useMemo(() => markdownToHtml(state.markdown), [state.markdown]);
-  const postMetaSlips = useMemo(() => {
-    if (!state.profile) return [];
-
-    return [
-      {
-        label: "Shelf mark",
-        value: state.profile.series || state.profile.category || "Public note"
-      },
-      {
-        label: "Placed",
-        value: state.profile.date || "Published shelf"
-      },
-      {
-        label: "Reader path",
-        value: state.slug ? "Open note" : "Notes room"
-      }
-    ];
-  }, [state.profile, state.slug]);
+  const title = state.profile?.title || (state.status === "loading" ? "Opening the note..." : "The note shelf is quiet");
+  const intro = state.profile?.subtitle || state.profile?.excerpt || "A public note from the Soft Strange Studio reading table.";
 
   return (
-    <main id="top" className="site-shell readable-shell notes-post-room">
-      <section className="notes-post-desk" aria-labelledby="reader-intro-title">
-        <div className="notes-post-desk__intro">
-          <p className="eyebrow">{contextLabel}</p>
-          <h1 id="reader-intro-title">A quiet reading sheet</h1>
-          <p>
-            Individual notes open as calm studio sheets so the writing stays connected
-            to the same public room path as the rest of Soft Strange Studio.
-          </p>
-          <div className="notes-post-intro-receipts" aria-label="Reader room cues">
-            {postReaderIntroSlips.map((slip) => (
-              <span className="notes-post-intro-receipt" key={slip.label}>
-                <small>{slip.label}</small>
-                <strong>{slip.value}</strong>
-              </span>
-            ))}
-          </div>
-          <div className="notes-post-margin-rail" aria-label="Reader margin path">
-            {postReaderMarginRail.map((slip) => (
-              <span className="notes-post-margin-slip" key={slip.label}>
-                <small>{slip.mark}</small>
-                <strong>{slip.label}</strong>
-                <em>{slip.detail}</em>
-              </span>
-            ))}
-          </div>
-          <div className="notes-post-desk__photo-card" aria-hidden="true">
-            <span className="notes-post-desk__photo-kicker">Reader room</span>
-            <strong>Public note</strong>
-            <i />
-            <small>writing shelf</small>
-          </div>
-          <a className="notes-post-back" href={backHref}>{backLabel}</a>
+    <main id="top" className="editorial-page editorial-reader-page">
+      <section className="editorial-hero" aria-labelledby="reader-title">
+        <div className="editorial-hero__copy">
+          <p className="paper-label">{contextLabel}</p>
+          <h1 id="reader-title">{title}</h1>
+          <p>{intro}</p>
+          <a className="paper-button" href={backHref}>← {backLabel}</a>
         </div>
-
-        <article className="notes-post-sheet">
-          {state.status === "loading" && (
-            <div className="notes-post-state notes-post-state--loading">
-              <ReaderStateCue stateKey="loading" />
-              <div className="notes-post-state__copy">
-                <p className="eyebrow inline">Loading</p>
-                <p>Gathering the public note profile and writing sheet inside the studio reader...</p>
-              </div>
-            </div>
-          )}
-
-          {state.status === "missing" && (
-            <div className="notes-post-state notes-post-state--missing">
-              <ReaderStateCue stateKey="missing" />
-              <div className="notes-post-state__copy">
-                <p className="eyebrow inline">Choose a note</p>
-                <p>{state.error}</p>
-                <a href={backHref}>{backLabel}</a>
-              </div>
-            </div>
-          )}
-
-          {state.status === "error" && (
-            <div className="notes-post-state notes-post-state--error">
-              <ReaderStateCue stateKey="error" />
-              <div className="notes-post-state__copy">
-                <p className="eyebrow inline">Reader note</p>
-                <p>{state.error}</p>
-                <a href={backHref}>Return to the notes index</a>
-              </div>
-            </div>
-          )}
-
-          {state.profile && (
-            <>
-              <p className="notes-post-kicker">{state.profile.series || state.profile.category || "Public note"}</p>
-              <h1>{state.profile.title}</h1>
-              <p className="notes-post-subtitle">{state.profile.subtitle || state.profile.excerpt}</p>
-              <div className="tag-row notes-post-tags">
-                {state.profile.category && <span>{state.profile.category}</span>}
-                {state.profile.date && <span>{state.profile.date}</span>}
-                {state.slug && <span>public note</span>}
-              </div>
-              <div className="notes-post-receipt-strip" aria-label="Note reader details">
-                {postMetaSlips.map((slip) => (
-                  <div className="notes-post-receipt-slip" key={slip.label}>
-                    <span>{slip.label}</span>
-                    <strong>{slip.value}</strong>
-                  </div>
-                ))}
-              </div>
-              <div className="markdown-body notes-post-markdown" dangerouslySetInnerHTML={{ __html: html }} />
-            </>
-          )}
-        </article>
+        <figure className="editorial-photo editorial-photo--hero">
+          <span className="paper-tape" aria-hidden="true" />
+          <img src={editorialImages.notes} alt="An illustrated open studio journal beside a warm mug" />
+        </figure>
       </section>
 
-      <section className="notes-post-path-shelf" aria-label="Reader path">
-        {readerPathNotes.map((note) => (
-          <article className="notes-post-path-note" key={note.title}>
-            <div className="notes-post-path-note__visual" aria-hidden="true">
-              <i />
-              <strong>{note.visualLabel}</strong>
-            </div>
-            <span>{note.eyebrow}</span>
-            <h2>{note.title}</h2>
-            <p>{note.description}</p>
-          </article>
-        ))}
-      </section>
+      <div className="editorial-page__stack">
+        <section className="reader-paper" aria-live="polite">
+          {state.status === "loading" && <div className="editorial-state"><span className="paper-label">Gathering</span><p>Placing the public note on the reading table...</p></div>}
+          {state.status === "missing" && <div className="editorial-state"><span className="paper-label">Choose a note</span><p>{state.error}</p></div>}
+          {state.status === "error" && <div className="editorial-state editorial-state--error"><span className="paper-label">Shelf paused</span><p>{state.error}</p></div>}
+          {state.status === "ready" && (
+            <article>
+              <div className="reader-paper__meta">
+                <span>{state.profile.series || state.profile.category || "Public note"}</span>
+                <span>{state.profile.date || "Published note"}</span>
+              </div>
+              <div className="reader-paper__body" dangerouslySetInnerHTML={{ __html: html }} />
+            </article>
+          )}
+        </section>
 
-      <section className="notes-post-support-board" aria-label="Post reader support">
-        <div className="notes-post-source-slip">
-          <span>Writing shelf</span>
-          <strong>Public writing first</strong>
-          <p>Each reader state keeps the note honest, published, and connected back to the studio notes room.</p>
-        </div>
-
-        {postReaderSupportCards.map((card) => (
-          <article className="notes-support-note notes-post-support-note" key={card.title}>
-            <span className="notes-support-note__photo" aria-hidden="true">
-              <span>{card.visualLabel}</span>
-            </span>
-            <span className="notes-post-support-note__cue">{card.paperCue}</span>
-            <span className="notes-support-note__pin">{card.eyebrow}</span>
-            <h2>{card.title}</h2>
-            <p>{card.description}</p>
-          </article>
-        ))}
-      </section>
-
-      <NextStepBand {...pageContinuity.notePost} />
+        <EditorialNext
+          title="When you finish reading"
+          links={[
+            { eyebrow: "Return", title: "Studio Notes", description: "Choose another note from the shelf.", href: backHref },
+            { eyebrow: "Continue", title: "Selected work", description: "Move from the writing table into the public archive.", href: "/Website/portfolio/" }
+          ]}
+        />
+      </div>
     </main>
   );
 }

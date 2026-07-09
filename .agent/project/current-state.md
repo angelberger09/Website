@@ -2,29 +2,31 @@
 
 ## Framework
 
-- Next.js app router
+- Next.js App Router
 - static export for GitHub Pages
 - deployed from `main` through GitHub Actions
 
 ## Public URL
 
-- Website: `https://angelberger09.github.io/Website/`
+- `https://angelberger09.github.io/Website/`
 
-## Current homepage
+## Current visual system
 
-- fixed floating header
-- left identity: `Angel Berger`
-- right folder menu: `Pages`
-- scroll title sequence: `Welcome` → `To` → `Soft Strange Studio`
-- four page cards linking to Blog destinations
+- shared sage torn-paper header and script identity on every route
+- warm cream editorial paper surfaces with visible drop shadows
+- one portrait stacked-card column on secondary pages
+- generated watercolor imagery for Notes, Art, Shop, and About
+- two active stylesheets instead of accumulated pass layers
 
-## Current data links
+## Current routes
 
-- Blog Home: `https://angelberger09.github.io/Blog/`
-- Posts Index: `https://angelberger09.github.io/Blog/posts/`
-- JSON Feed: `https://angelberger09.github.io/Blog/posts.json`
-- Example Post: `https://angelberger09.github.io/Blog/posts/learning-to-think-like-a-developer/`
+- Home, About, Notes, Portfolio, Store
+- Blog and Blog Post compatibility paths
+- Notes Post reader with public Blog feed fallback
 
-## Current limitation
+## Validation state
 
-The Website currently links to public Blog pages. It does not yet embed or render Blog feed content inside the Website app.
+- production build passing
+- all top-level routes passing desktop and mobile browser audits
+- note and legacy post readers passing with published content
+- no horizontal overflow or remaining console errors in final audits

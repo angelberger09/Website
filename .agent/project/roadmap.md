@@ -1,22 +1,15 @@
 # Roadmap
 
-## Near-term
+## Current checkpoint
 
-- Keep the homepage minimal and authored.
-- Verify Blog Pages deployment and links.
-- Add an embedded notes preview that reads the Blog `posts.json` feed.
-- Expand `.agent/` matrices as new semantic items are added.
+- Whole-site Gemini-reference visual system complete.
+- Shared editorial views replace route-specific collage markup.
+- Real watercolor imagery anchors each public room.
+- Desktop, mobile, feed, and post-reader validation pass.
 
-## Mid-term
+## Next
 
-- Add public Portfolio data source and homepage preview.
-- Add public Store data source and homepage preview.
-- Add About and Contact sections or pages.
-- Improve accessibility checks for menu and scroll sections.
-
-## Later
-
-- Build a full notes reader inside Website.
-- Add filtering by category, series, or tag.
-- Create matching content-feed patterns for Blog, Portfolio, and Store.
-- Add automated feed validation.
+- Replace repeated route imagery with project- or post-specific public assets as they become available.
+- Add real public shop links only when listings and delivery details exist.
+- Expand selected Portfolio cards into source-backed case studies when public images and summaries are ready.
+- Keep accessibility, contrast, and route audits in the GitHub Actions release path.

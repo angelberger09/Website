@@ -351,10 +351,13 @@ async function auditRoute(browser, runDir, base, route, viewport, options) {
 
     await page.screenshot({ path: path.join(screenshotDir, "after-interaction.png"), fullPage: true });
 
-    const [layout, animations, accessibility, performanceMetrics] = await Promise.all([
+    const accessibility = page.accessibility?.snapshot
+      ? await page.accessibility.snapshot({ interestingOnly: false }).catch((error) => ({ error: error.message }))
+      : { error: "page.accessibility.snapshot unavailable in this Playwright environment" };
+
+    const [layout, animations, performanceMetrics] = await Promise.all([
       captureLayout(page),
       captureAnimations(page),
-      page.accessibility.snapshot({ interestingOnly: false }).catch((error) => ({ error: error.message })),
       cdp.send("Performance.getMetrics").catch((error) => ({ error: error.message }))
     ]);
 

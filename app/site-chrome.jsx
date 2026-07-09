@@ -1,3 +1,6 @@
+ "use client";
+
+import { usePathname } from "next/navigation";
 import { siteNavPages } from "./site-data";
 import { FooterNav } from "./site-footer-nav";
 import { HeaderNav } from "./site-header-nav";
@@ -113,6 +116,64 @@ function getPageIntroVisual(title, eyebrow) {
   };
 }
 
+function normalizePath(path) {
+  if (!path) return "/Website";
+  const cleanPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
+  return cleanPath || "/Website";
+}
+
+function isActiveRoute(pathname, href) {
+  const currentPath = normalizePath(pathname);
+  const targetPath = normalizePath(href);
+
+  if (targetPath === "/Website") {
+    return currentPath === "/Website" || currentPath === "/";
+  }
+
+  if (targetPath === "/Website/notes") {
+    return currentPath.startsWith("/Website/notes") || currentPath.startsWith("/notes") || currentPath.startsWith("/Website/blog") || currentPath.startsWith("/blog");
+  }
+
+  return currentPath === targetPath || currentPath.startsWith(`${targetPath}/`);
+}
+
+function isHomeRoute(pathname) {
+  const normalizedPath = normalizePath(pathname);
+  return normalizedPath === "/Website" || normalizedPath === "/";
+}
+
+const homeNavItems = [
+  { title: "Home", href: "/Website/" },
+  { title: "Studio Notes", href: "/Website/notes/" },
+  { title: "Art", href: "/Website/portfolio/" },
+  { title: "Shop", href: "/Website/store/" },
+  { title: "About", href: "/Website/about/" },
+  { title: "Contact", href: "#contact" }
+];
+
+function HomeHeaderNav() {
+  const pathname = usePathname();
+
+  return (
+    <nav className="reference-header__nav" aria-label="Primary">
+      {homeNavItems.map((item) => {
+        const active = item.href !== "#contact" && isActiveRoute(pathname, item.href);
+
+        return (
+          <a
+            key={item.title}
+            href={item.href}
+            className={active ? "reference-header__nav-link reference-header__nav-link--active" : "reference-header__nav-link"}
+            aria-current={active ? "page" : undefined}
+          >
+            {item.title}
+          </a>
+        );
+      })}
+    </nav>
+  );
+}
+
 export function AtmosphereLayer() {
   return (
     <div className="atmosphere-layer" aria-hidden="true">
@@ -125,6 +186,23 @@ export function AtmosphereLayer() {
 }
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
+  if (isHomeRoute(pathname)) {
+    return (
+      <header className="reference-header" aria-label="Site header">
+        <div className="reference-header__shell">
+          <div className="reference-header__brand" aria-hidden="true">
+            <span className="reference-header__brand-mark" />
+            <span>Soft Strange Studio</span>
+          </div>
+          <h1 className="reference-header__title">Soft Strange Studio</h1>
+          <HomeHeaderNav />
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="floating-header" aria-label="Site header">
       <span className="floating-header__edge floating-header__edge--left" aria-hidden="true" />
@@ -142,6 +220,12 @@ export function SiteHeader() {
 }
 
 export function StudioFooter() {
+  const pathname = usePathname();
+
+  if (isHomeRoute(pathname)) {
+    return null;
+  }
+
   return (
     <footer className="studio-footer studio-footer--paper" aria-label="Site footer">
       <div className="studio-footer__mark">

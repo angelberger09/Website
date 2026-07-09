@@ -174,6 +174,7 @@ import './page-intro-open-room-board-pass.css';
 import './page-intro-room-index-pass.css';
 import './home-front-door-reset-pass.css';
 import './single-column-cleanup-pass.css';
+import './home-gemini-reference-pass.css';
 import { SiteHeader, StudioFooter } from './site-chrome';
 
 export const metadata = {
